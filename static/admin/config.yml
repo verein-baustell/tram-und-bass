@@ -59,15 +59,13 @@ collections:
                   widget: "select"                  
                   required: true 
                   options: ["Central", "Albisguetli", "Sihlquai", "Hauptbahnhof", "Bahnhofquai", "Buerkliplatz", "Bellevue", "Opernhaus", "Stadelhofen", "Kreuzplatz", "Hegibachplatz", "Balgrist", "Witikon", "Zuerichberg"]               
-                - label: "Start Time"                  
-                  name: "startTime"                  
-                  widget: "datetime"
-                  date_format: false
-                  time_format: “m:ss”                  
-                  required: true                
+                - label: "Start Time"
+                  name: "startTime"
+                  widget: "string"
+                  pattern: "^[0-5][0-9]:[0-5][0-9]$"
+                  required: true
                 - label: "End Time"
-                  name: "endTime"                  
-                  widget: "datetime"
-                  date_format: false
-                  time_format: “m:ss”                  
-                  required: true                 
+                  name: "endTime"
+                  widget: "string"
+                  pattern: "^[0-5][0-9]:[0-5][0-9]$"
+                  required: true
