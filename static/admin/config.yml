@@ -1,4 +1,15 @@
-- name: "lines"
+backend:
+  name: git-gateway
+  branch: main
+local_backend: true
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - label: "Pages"
+    name: "pages"
+    files:
+      - name: "lines"
         label: "Lines"
         file: "src/content/lines.md"
         editor:
