@@ -51,10 +51,11 @@ collections:
                 required: false
               - label: "Timestamps"
                 name: "timeStamps"                
-                widget: "list"                
+                widget: "list"     
+                summary: "{{fields.name}}"
                 fields:                
-                - label: "Stop Name"                  
-                  name: "stop_name"                  
+                - label: "Station"                  
+                  name: "name"                  
                   widget: "select"                  
                   required: true 
                   options: ["Central", "Albisguetli", "Sihlquai", "Hauptbahnhof", "Bahnhofquai", "Buerkliplatz", "Bellevue", "Opernhaus", "Stadelhofen", "Kreuzplatz", "Hegibachplatz", "Balgrist", "Witikon", "Zuerichberg"]               
@@ -62,11 +63,11 @@ collections:
                   name: "startTime"                  
                   widget: "datetime"
                   date_format: false
-                  time_format: “mm:ss”                  
+                  time_format: “m:ss”                  
                   required: true                
                 - label: "End Time"
                   name: "endTime"                  
                   widget: "datetime"
                   date_format: false
-                  time_format: “mm:ss”                  
+                  time_format: “m:ss”                  
                   required: true                 
