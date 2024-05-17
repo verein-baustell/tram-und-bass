@@ -60,13 +60,13 @@ collections:
                   options: ["Central", "Albisguetli", "Sihlquai", "Hauptbahnhof", "Bahnhofquai", "Buerkliplatz", "Bellevue", "Opernhaus", "Stadelhofen", "Kreuzplatz", "Hegibachplatz", "Balgrist", "Witikon", "Zuerichberg"]               
                 - label: "Start Time"                  
                   name: "startTime"                  
-                  widget: "dateTime"
+                  widget: "datetime"
                   date_format: false
                   time_format: “mm:ss”                  
                   required: true                
                 - label: "End Time"
                   name: "endTime"                  
-                  widget: "dateTime"
+                  widget: "datetime"
                   date_format: false
                   time_format: “mm:ss”                  
                   required: true                 
