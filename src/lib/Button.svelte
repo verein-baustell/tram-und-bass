@@ -1,12 +1,10 @@
 <script lang="ts">
-    let answer;
+    export let label
 </script>
     
-<button>{answer}</button>
+<button>{label} + 123</button>
 
-<style>
-    button {
-        border: thin solid black;
-    }
+<style lang="scss" scoped>
+    //here goes scss for the component
 </style>
     

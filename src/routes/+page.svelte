@@ -1,6 +1,8 @@
 <script lang="ts">
   import { attributes as content } from "../content/lines.md";
   import SvelteMarkdown from "svelte-markdown";
+  // import the component
+  import Button from "../lib/Button.svelte";
   const lines = content.lines;
 </script>
 
@@ -14,4 +16,6 @@
     <p>endTime: {timeStamp.endTime}</p>
     <p>location: {timeStamp.name}</p>
   {/each}
-{/each}
+  <!-- insert the component and declare what the prop is -->
+    <Button label={line.name} />
+  {/each}
