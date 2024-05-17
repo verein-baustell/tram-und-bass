@@ -13,9 +13,9 @@ declare module "*.md" {
   const attributes: Record<string, any> | undefined;
   export { attributes };
 }
-declare module ".*/content/home.md" {
+declare module ".*/content/lines.md" {
   const attributes: {
-    testFooter?: {content: string}[];
+    lines: DecapCMSLine[];
   };
   export { attributes };
 }
