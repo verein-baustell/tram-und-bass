@@ -1,2 +1,11 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+  import { attributes as content } from "../content/lines.md";
+  import SvelteMarkdown from "svelte-markdown";
+  console.log(content);
+  
+</script>
+
+<h1>Welcome to TnB</h1>
+<p>
+  <!-- <SvelteMarkdown source={content?.testFooter?.[0]?.content} /> -->
+</p>

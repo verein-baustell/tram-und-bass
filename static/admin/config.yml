@@ -1,28 +1,60 @@
-backend:
-  name: git-gateway
-  branch: main
-local_backend: true
-media_folder: "static/assets"
-public_folder: "/assets"
-
-collections:
-  - label: "Pages"
-    name: "pages"
-    files:
-      - name: "home"
-        label: "Home"
-        file: "src/content/home.md"
-        description: "home"
+- name: "lines"
+        label: "Lines"
+        file: "src/content/lines.md"
         editor:
-          preview: false    
+          preview: false
         fields:
-          - label: "TestFooter"
-            name: "testFooter"
+          - label: "Line"
+            name: "lines"
             widget: "list"
-            required: false
+            summary: "{{fields.name}}"
             fields:
-               - {
-                label: "Content", 
-                name: "content", 
-                widget: "markdown"    
-                }               
+              - label: "Name"
+                name: "name"
+                widget: "string"
+                required: true
+              - label: "number"
+                name: "number"
+                widget: "number"
+                value_type: "int"
+                required: true
+              - label: "Color"
+                name: "color"
+                widget: "color"
+                required: true
+              - label: "Inverted Color"
+                name: "isInverted"
+                widget: "boolean"
+                required: true
+              - label: "Video URL"
+                name: "videoUrl"
+                widget: "url"
+                required: true
+              - label: "Artist Name"
+                name: "artistName"
+                widget: "string"
+                required: true
+              - label: "Artist About Text"
+                name: "artistAboutText"
+                widget: "markdown"
+                required: false
+              - label: "Timestamps"
+                name: "timeStamps"                
+                widget: "list"                
+                fields:                
+                - label: "Stop Name"                  
+                  name: "stop_name"                  
+                  widget: "select"                  
+                  required: true                
+                - label: "Start Time"                  
+                  name: "arrival_time"                  
+                  widget: "dateTime"
+                  date_format: false
+                  time_format: “mm:ss”                  
+                  required: true                
+                - label: "End Time"
+                  name: "arrival_time"                  
+                  widget: "dateTime"
+                  date_format: false
+                  time_format: “mm:ss”                  
+                  required: true                 
