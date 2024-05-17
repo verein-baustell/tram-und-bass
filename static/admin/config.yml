@@ -16,23 +16,8 @@ collections:
         editor:
           preview: false    
         fields:
-          - label: 'Video'
-            name: 'video'
-            widget: 'object'
-            fields:
-              - {
-                label: "Video",
-                name: "video",
-                widget: "file",
-                multiple: false 
-                }
-              - {
-                label: "Caption",
-                name: "caption",
-                widget: "string"
-                }
-          - label: "Footer"
-            name: "footer"
+          - label: "TestFooter"
+            name: "testFooter"
             widget: "list"
             required: false
             fields:
