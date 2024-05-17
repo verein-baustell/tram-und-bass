@@ -39,7 +39,7 @@ collections:
                 required: true
               - label: "Video URL"
                 name: "videoUrl"
-                widget: "url"
+                widget: "string"
                 required: true
               - label: "Artist Name"
                 name: "artistName"
