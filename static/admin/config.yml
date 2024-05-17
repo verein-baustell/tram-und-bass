@@ -56,15 +56,16 @@ collections:
                 - label: "Stop Name"                  
                   name: "stop_name"                  
                   widget: "select"                  
-                  required: true                
+                  required: true 
+                  options: ["Central", "Albisguetli", "Sihlquai", "Hauptbahnhof", "Bahnhofquai", "Buerkliplatz", "Bellevue", "Opernhaus", "Stadelhofen", "Kreuzplatz", "Hegibachplatz", "Balgrist", "Witikon", "Zuerichberg"]               
                 - label: "Start Time"                  
-                  name: "arrival_time"                  
+                  name: "startTime"                  
                   widget: "dateTime"
                   date_format: false
                   time_format: “mm:ss”                  
                   required: true                
                 - label: "End Time"
-                  name: "arrival_time"                  
+                  name: "endTime"                  
                   widget: "dateTime"
                   date_format: false
                   time_format: “mm:ss”                  
