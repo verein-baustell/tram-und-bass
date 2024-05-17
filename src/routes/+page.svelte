@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { attributes as content } from "../content/lines.md";
+//   import { attributes as content } from "../content/lines.md";
   import SvelteMarkdown from "svelte-markdown";
-  console.log(content);
+//   console.log(content);
   
 </script>
 
