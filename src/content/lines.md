@@ -4,11 +4,11 @@ lines:
       - name: Central
         startTime: 01:10
         endTime: 01:50
-    name: Stettbach
-    number: 7
-    color: "#000000"
+    name: Kirche Fluntern
+    number: 5
+    color: "#b06400"
     isInverted: false
-    videoUrl: https://vimeo.com/772816133
+    videoUrl: https://vimeo.com/947764688/181299d19c?share=copy
     artistName: DJanina
     artistAboutText: Es chlöpft und tätscht
 ---
