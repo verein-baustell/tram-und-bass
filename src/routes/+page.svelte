@@ -14,7 +14,7 @@
       controls: false,
     });
     player.ready().then(() => {
-      const iframe = document.querySelector("#video-container iframe");
+      const iframe: HTMLIFrameElement | null = document.querySelector("#video-container iframe");
       if (iframe) {
         iframe.style.minWidth = "100%";
         iframe.style.minHeight = "100%";
@@ -28,13 +28,11 @@
 </script>
 
 <h1>Welcome to TnB</h1>
-{#each lines as line}
-  <p>artist: {line.artistName}</p>
-  <p>name: {line.name}</p>
-  <div id="video-container"></div>
-  <SvelteMarkdown source={line.artistAboutText} />
-  <Button on:click={() => playVideo()}>Play</Button>
-{/each}
+<p>artist: {currentLine.artistName}</p>
+<p>name: {currentLine.name}</p>
+<div id="video-container"></div>
+<SvelteMarkdown source={currentLine.artistAboutText} />
+<Button on:click={() => playVideo()}>Play</Button>
 
 <style lang="scss">
   #video-container {
