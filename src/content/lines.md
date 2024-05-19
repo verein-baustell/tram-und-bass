@@ -8,7 +8,7 @@ lines:
     number: 5
     color: "#b06400"
     isInverted: false
-    videoUrl: https://vimeo.com/947764688/181299d19c?share=copy
+    videoUrl: https://vimeo.com/947764688/181299d19c
     artistName: DJanina
     artistAboutText: Es chlöpft und tätscht
 ---
