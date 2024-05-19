@@ -1,10 +1,12 @@
-<script lang="ts">
-    export let label
-</script>
-    
-<button>{label} + 123</button>
+<button {...$$props} on:click>
+  <slot></slot>
+</button>
 
-<style lang="scss" scoped>
-    //here goes scss for the component
+<style scoped>
+  button {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: .4em;
+    cursor: pointer;
+  }
 </style>
-    
