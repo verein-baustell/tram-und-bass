@@ -1,4 +1,4 @@
-type DecapCMSLine {
+type DecapCMSLine = {
     timeStamps: TimeStamp[]
     name: string
     number: number
@@ -9,7 +9,7 @@ type DecapCMSLine {
     artistAboutText: string
   }
   
-type TimeStamp {
+type TimeStamp = {
     name: string
     startTime: string
     endTime: string
