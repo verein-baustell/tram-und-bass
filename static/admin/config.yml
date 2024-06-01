@@ -33,9 +33,9 @@ collections:
                 widget: "number"
                 value_type: "int"
                 required: true
-              - label: "ID", 
-                name: "id", 
-                widget: "hidden", 
+              - label: "ID"
+                name: "id"
+                widget: "hidden"
                 default: "" 
               - label: "Color"
                 name: "color"
