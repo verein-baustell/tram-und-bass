@@ -14,16 +14,20 @@
   CMS.registerEventListener({
     name: 'preSave',
     handler: ({ entry }) => {
-      const lines = entry.getIn(['data', 'lines']);
+      console.log('preSave entry', entry);
+      const lines = entry.getIn(['lines']);
+      console.log('preSave lines', lines);
       if (lines) {
         const updatedLines = lines.map(line => {
           const name = line.get('name');
           const number = line.get('number');
-          const id = `${name}${number}`;
+          const id = `${name.replaceAll(" ","")}${number}`;
           return line.set('id', id);
         });
-        entry = entry.setIn(['data', 'lines'], updatedLines);
+        entry = entry.setIn(['lines'], updatedLines);
       }
+      console.log('preSave return entry', entry);
+
       return entry;
     }
   });

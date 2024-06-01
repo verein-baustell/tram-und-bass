@@ -8,7 +8,7 @@
   import BottomMenu from "$lib/BottomMenu.svelte";
   import Map from "$lib/Map.svelte";
   import { currentLine, vimeoVideoObject } from "../store";
-
+console.log(content);
   const lines = content.lines;
 
   // TODO: Want it to maybe pick a random line?
