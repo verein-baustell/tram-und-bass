@@ -11,37 +11,20 @@
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script defer>
-     CMS.registerEditorComponent({
-    id: "id",
-    label: "ID",
-    fields: [
-      {name: 'name', label: 'Name', widget: 'string'},
-      {name: 'number', label: 'Number', widget: 'number'},
-    ],
-    pattern: /{{name}}-{{number}}/,
-    fromBlock: function(match) {
-      return {
-        name: match[1],
-        number: match[2],
-      };
-    },
-    toBlock: function(obj) {
-      return '{{name}}-{{number}}'
-        .replace('{{name}}', obj.name)
-        .replace('{{number}}', obj.number);
-    },
-    toPreview: function(obj) {
-      return obj.name + obj.number;
-    }
-  });
-
   CMS.registerEventListener({
     name: 'preSave',
     handler: ({ entry }) => {
-      const name = entry.getIn(['data', 'name']);
-      const number = entry.getIn(['data', 'number']);
-      const id = `${name}${number}`;
-      return entry.getIn(['data', 'id'], id);
+      const lines = entry.getIn(['data', 'lines']);
+      if (lines) {
+        const updatedLines = lines.map(line => {
+          const name = line.get('name');
+          const number = line.get('number');
+          const id = `${name}${number}`;
+          return line.set('id', id);
+        });
+        entry = entry.setIn(['data', 'lines'], updatedLines);
+      }
+      return entry;
     }
   });
   </script>
