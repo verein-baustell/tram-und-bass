@@ -26,7 +26,7 @@ collections:
                 required: true
               - label: "Release Date"
                 name: "releaseDate"
-                widget: "date"
+                widget: "datetime"
                 required: true
               - label: "number"
                 name: "number"
