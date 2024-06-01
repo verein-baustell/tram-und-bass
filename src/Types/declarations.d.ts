@@ -15,7 +15,7 @@ declare module "*.md" {
 }
 declare module ".*/content/lines.md" {
   const attributes: {
-    lines: DecapCMSLine[];
+    lines: Line[];
   };
   export { attributes };
 }

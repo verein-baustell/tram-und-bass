@@ -24,11 +24,19 @@ collections:
                 name: "name"
                 widget: "string"
                 required: true
+              - label: "Release Date"
+                name: "releaseDate"
+                widget: "date"
+                required: true
               - label: "number"
                 name: "number"
                 widget: "number"
                 value_type: "int"
                 required: true
+              - label: "ID", 
+                name: "id", 
+                widget: "hidden", 
+                default: "" 
               - label: "Color"
                 name: "color"
                 widget: "color"
@@ -50,22 +58,117 @@ collections:
                 widget: "markdown"
                 required: false
               - label: "Timestamps"
-                name: "timeStamps"                
-                widget: "list"     
+                name: "timeStamps"
+                widget: "list"
                 summary: "{{fields.name}}"
-                fields:                
-                - label: "Station"                  
-                  name: "name"                  
-                  widget: "select"                  
-                  required: true 
-                  options: ["Central", "Albisguetli", "Sihlquai", "Hauptbahnhof", "Bahnhofquai", "Buerkliplatz", "Bellevue", "Opernhaus", "Stadelhofen", "Kreuzplatz", "Hegibachplatz", "Balgrist", "Witikon", "Zuerichberg"]               
-                - label: "Start Time"
-                  name: "startTime"
-                  widget: "string"
-                  pattern: ["^[0-5][0-9]:[0-5][0-9]$", "Gültige Zeitangabe in mm:ss"]
-                  required: true
-                - label: "End Time"
-                  name: "endTime"
-                  widget: "string"
-                  pattern: ["^[0-5][0-9]:[0-5][0-9]$", "Gültige Zeitangabe in mm:ss"]
-                  required: true
+                fields:
+                  - label: "Station"
+                    name: "name"
+                    widget: "select"
+                    required: true
+                    options:
+                      [
+                        "Bahnhofstrasse/HB",
+                        "Bellevue",
+                        "Central",
+                        "Bahnhof Enge",
+                        "Bahnhof Stadelhofen",
+                        "Helvetiaplatz",
+                        "Hardplatz",
+                        "Kalkbreite/Bhf. Wiedikon",
+                        "Paradeplatz",
+                        "Rennweg",
+                        "Sihlquai/HB",
+                        "Stauffacher",
+                        "Stockerstrasse",
+                        "Tiefenbrunnen",
+                        "Zürich Flughafen",
+                        "Escher-Wyss-Platz",
+                        "Limmatplatz",
+                        "Letzigrund",
+                        "Albisriederplatz",
+                        "Bucheggplatz",
+                        "Milchbuck",
+                        "Oerlikon",
+                        "Schwamendingen",
+                        "Seebach",
+                        "Irchel",
+                        "Waidfussweg",
+                        "Universität Irchel",
+                        "ETH/Universitätsspital",
+                        "Schaffhauserplatz",
+                        "Tierspital",
+                        "Höschgasse",
+                        "Wildbachstrasse",
+                        "Zollikerstrasse",
+                        "Rehalp",
+                        "Klusplatz",
+                        "Heuried",
+                        "Triemli",
+                        "Goldbrunnenplatz",
+                        "Friesenberg",
+                        "Im Gut",
+                        "Albisgütli",
+                        "Morgental",
+                        "Bürkliplatz",
+                        "Enge/Bederstrasse",
+                        "Bahnhof Tiefenbrunnen",
+                        "Zürich Wollishofen",
+                        "Kunsthaus",
+                        "Hottingen",
+                        "Hegibachplatz",
+                        "Sihlcity Nord",
+                        "Saalsporthalle",
+                        "Talwiesenstrasse",
+                        "Manegg",
+                        "Leimbach",
+                        "Adliswil",
+                        "Thalwil",
+                        "Küsnacht Goldbach",
+                        "Herrliberg-Feldmeilen",
+                        "Erlenbach ZH",
+                        "Meilen",
+                        "Zollikon",
+                        "Rüschlikon",
+                        "Kilchberg ZH",
+                        "Forch",
+                        "Zumikon",
+                        "Egg",
+                        "Maur",
+                        "Fällanden",
+                        "Dübendorf",
+                        "Wangen",
+                        "Volketswil",
+                        "Dietlikon",
+                        "Wallisellen",
+                        "Opfikon",
+                        "Glattbrugg",
+                        "Rümlang",
+                        "Regensdorf",
+                        "Oetwil an der Limmat",
+                        "Uitikon Waldegg",
+                        "Birmensdorf",
+                        "Aesch ZH",
+                        "Schlieren",
+                        "Urdorf",
+                        "Weiningen ZH",
+                        "Dietikon",
+                        "Geroldswil",
+                        "Oberengstringen",
+                        "Stettbach",
+                        "Witikon",
+                        "Zürich Flughafen, Fracht",
+                        "Seebach",
+                      ]
+                  - label: "Start Time"
+                    name: "startTime"
+                    widget: "string"
+                    pattern:
+                      ["^[0-5][0-9]:[0-5][0-9]$", "Gültige Zeitangabe in mm:ss"]
+                    required: true
+                  - label: "End Time"
+                    name: "endTime"
+                    widget: "string"
+                    pattern:
+                      ["^[0-5][0-9]:[0-5][0-9]$", "Gültige Zeitangabe in mm:ss"]
+                    required: true

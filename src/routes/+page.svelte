@@ -1,38 +1,42 @@
 <script lang="ts">
   import { attributes as content } from "../content/lines.md";
   import SvelteMarkdown from "svelte-markdown";
-  import Button from "../lib/Button.svelte";
   import Vimeo from "@vimeo/player";
   import { onMount } from "svelte";
+  import TopMenu from "$lib/TopMenu.svelte";
+  import VideoControls from "$lib/VideoControls.svelte";
+  import BottomMenu from "$lib/BottomMenu.svelte";
+  import Map from "$lib/Map.svelte";
+  import { currentLine, vimeoVideoObject } from "../store";
 
   const lines = content.lines;
-  const currentLine = lines[0];
-  let player: Vimeo;
+
+  // TODO: Want it to maybe pick a random line?
+  $currentLine = lines[0];
   onMount(() => {
-    player = new Vimeo("video-container", {
-      url: currentLine.videoUrl,
+    $vimeoVideoObject = new Vimeo("video-container", {
+      url: $currentLine.videoUrl,
       controls: false,
     });
-    player.ready().then(() => {
-      const iframe: HTMLIFrameElement | null = document.querySelector("#video-container iframe");
+
+    $vimeoVideoObject.ready().then(() => {
+      const iframe: HTMLIFrameElement | null = document.querySelector(
+        "#video-container iframe"
+      );
       if (iframe) {
         iframe.style.minWidth = "100%";
         iframe.style.minHeight = "100%";
       }
     });
   });
-  const playVideo = () => {
-    console.log("play video");
-    player.play();
-  };
 </script>
 
 <h1>Welcome to TnB</h1>
-<p>artist: {currentLine.artistName}</p>
-<p>name: {currentLine.name}</p>
 <div id="video-container"></div>
-<SvelteMarkdown source={currentLine.artistAboutText} />
-<Button on:click={() => playVideo()}>Play</Button>
+<TopMenu {lines} aboutContent={"aboutContent"} />
+<VideoControls />
+<BottomMenu {lines} />
+<Map {lines} />
 
 <style lang="scss">
   #video-container {
