@@ -26,4 +26,17 @@ lines:
         startTime: 11:11
         endTime: 11:14
     isInverted: false
+  - color: "#da0000"
+    number: 2
+    name: Tiefenbrunnen
+    artistName: Some Juan Differenté
+    artistAboutText: About Some Juan Differenté
+    videoUrl: https://vimeo.com/950558411/452ef92b18?share=copy
+    releaseDate: 2024-06-02T18:34:00.000Z
+    id: ""
+    timeStamps:
+      - name: Bahnhofstrasse/HB
+        startTime: 11:11
+        endTime: 11:15
+    isInverted: false
 ---
