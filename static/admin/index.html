@@ -14,8 +14,8 @@
   CMS.registerEventListener({
     name: 'preSave',
     handler: ({ entry }) => {
-      console.log('preSave entry', entry);
-      const lines = entry.getIn(['lines']);
+      console.log('preSave entry',  );
+      const lines = entry.get('lines');
       console.log('preSave lines', lines);
       if (lines) {
         const updatedLines = lines.map(line => {
@@ -24,6 +24,7 @@
           const id = `${name.replaceAll(" ","")}${number}`;
           return line.set('id', id);
         });
+        console.log('preSave updatedLines', updatedLines);
         entry = entry.setIn(['lines'], updatedLines);
       }
       console.log('preSave return entry', entry);
