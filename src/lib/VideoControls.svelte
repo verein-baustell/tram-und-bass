@@ -1,17 +1,55 @@
 <script lang="ts">
-  import { vimeoVideoObject } from "../store";
+  import {
+    vimeoVideoObject,
+    videoIsPlaying,
+    isImmersive,
+    isMuted,
+  } from "../store";
   import Button from "./Button.svelte";
-
-
-
-
 </script>
 
-<div>
-    VideoControls
-    <Button
+<div id="video-controls">
+  <Button
     on:click={() => {
-      $vimeoVideoObject.play();
+      if ($videoIsPlaying) {
+        $vimeoVideoObject.pause();
+      } else {
+        $vimeoVideoObject.play();
+      }
     }}
-    >Play</Button>
+  >
+    {#if $videoIsPlaying}
+      Pause
+    {:else}
+      Play
+    {/if}
+  </Button>
+  <Button
+    on:click={() => {
+      $vimeoVideoObject.setMuted(!$isMuted);
+    }}
+  >
+    {#if $isMuted}
+      Unmute
+    {:else}
+      Mute
+    {/if}
+  </Button>
+  <Button
+    on:click={() => {
+      $isImmersive = !$isImmersive;
+    }}
+  >
+    Toggle Immersive
+  </Button>
 </div>
+
+<style scoped>
+  #video-controls {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    display: flex;
+    gap: .5em;
+  }
+</style>

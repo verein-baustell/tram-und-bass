@@ -12,4 +12,7 @@ currentLine.subscribe((value) => {
 export const currentStation = writable<Station>();
 export const nextStation = writable<Station>();
 export const vimeoVideoObject = writable<Vimeo>();
+export const videoIsPlaying = writable<boolean>(false);
+export const isImmersive = writable<boolean>(false);
+export const isMuted = writable<boolean>(false);
 export const isAtStation = writable<boolean>(false);

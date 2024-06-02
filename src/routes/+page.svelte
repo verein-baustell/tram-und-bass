@@ -7,10 +7,14 @@
   import VideoControls from "$lib/VideoControls.svelte";
   import BottomMenu from "$lib/BottomMenu.svelte";
   import Map from "$lib/Map.svelte";
-  import { currentLine, vimeoVideoObject } from "../store";
-console.log(content);
+  import { currentLine, isMuted, videoIsPlaying, vimeoVideoObject } from "../store";
+  console.log(content);
   const lines = content.lines;
-
+  // TODO: Generate ids on save in the CMS
+  // add missing ids
+  lines.forEach((line) => {
+    line.id = line.name.replace(/\s/g, "") + line.number;
+  });
   // TODO: Want it to maybe pick a random line?
   $currentLine = lines[0];
   onMount(() => {
@@ -18,7 +22,17 @@ console.log(content);
       url: $currentLine.videoUrl,
       controls: false,
     });
-
+    $vimeoVideoObject.on("playing", () => {
+      $videoIsPlaying = true;
+    });
+    $vimeoVideoObject.on("pause", () => {
+      $videoIsPlaying = false;
+    });
+    $vimeoVideoObject.on("volumechange", () => {
+      $vimeoVideoObject.getMuted().then((muted) => {
+        $isMuted = muted;
+      });
+    });
     $vimeoVideoObject.ready().then(() => {
       const iframe: HTMLIFrameElement | null = document.querySelector(
         "#video-container iframe"
