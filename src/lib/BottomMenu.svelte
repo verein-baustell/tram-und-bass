@@ -1,6 +1,5 @@
 <script lang="ts">
   import { currentLine } from "../store";
-  import LineList from "./LineList.svelte";
   import LineNumber from "./LineNumber.svelte";
   import ChangeStationList from "./ChangeStationList.svelte";
   import StationList from "./StationList.svelte";
@@ -21,7 +20,7 @@
   {#if isOpen}
     <svelte:component this={currentComponent} />
   {/if}
-  <nav>
+  <nav style:background-color={$currentLine.color}>
     <LineNumber number={$currentLine.number} />
     {#each meuEntries as { name, component } (name)}
       <Button
