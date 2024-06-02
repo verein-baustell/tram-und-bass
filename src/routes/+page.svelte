@@ -7,7 +7,13 @@
   import VideoControls from "$lib/VideoControls.svelte";
   import BottomMenu from "$lib/BottomMenu.svelte";
   import Map from "$lib/Map.svelte";
-  import { currentLine, isMuted, videoIsPlaying, vimeoVideoObject } from "../store";
+  import {
+    currentLine,
+    isImmersive,
+    isMuted,
+    videoIsPlaying,
+    vimeoVideoObject,
+  } from "../store";
   console.log(content);
   const lines = content.lines;
   // TODO: Generate ids on save in the CMS
@@ -25,11 +31,11 @@
       loop: true,
     });
     $vimeoVideoObject.on("playing", (e) => {
-      console.log("playing",e);
+      console.log("playing", e);
       $videoIsPlaying = true;
     });
     $vimeoVideoObject.on("pause", (e) => {
-      console.log("pause",e);
+      console.log("pause", e);
       $videoIsPlaying = false;
     });
     $vimeoVideoObject.on("volumechange", () => {
@@ -50,10 +56,11 @@
 </script>
 
 <div id="video-container"></div>
-<TopMenu {lines} aboutContent={"aboutContent"} />
 <VideoControls />
-<BottomMenu {lines} />
-<Map {lines} />
+{#if !$isImmersive}
+  <TopMenu {lines} aboutContent={"aboutContent"} />
+  <BottomMenu {lines} />
+{/if}
 
 <style lang="scss">
   #video-container {
