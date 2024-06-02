@@ -14,7 +14,9 @@
   CMS.registerEventListener({
     name: 'preSave',
     handler: ({ entry }) => {
-      console.log('preSave entry',  );
+      const data = entry.get('data');
+      console.log('preSave data', data);
+      console.log('preSave entry', entry);
       const lines = entry.get('lines');
       console.log('preSave lines', lines);
       if (lines) {
