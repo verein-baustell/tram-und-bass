@@ -18,7 +18,7 @@ collections:
           - label: "Line"
             name: "lines"
             widget: "list"
-            summary: "{{fields.name}}"
+            summary: "{{fields.name}}-{{fields.number}}"
             fields:
               - label: "Name"
                 name: "name"
