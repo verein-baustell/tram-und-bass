@@ -39,4 +39,17 @@ lines:
         startTime: 11:11
         endTime: 11:15
     isInverted: false
+  - color: "#8f00ff"
+    number: 17
+    name: Werdhölzli
+    artistName: Some Juan Élse Entire Lee
+    artistAboutText: About Some Juan Élse Entire Lee
+    videoUrl: https://vimeo.com/950812961/6d0ba88b36?share=copy
+    releaseDate: 2024-06-02T19:43:00.000Z
+    id: ""
+    timeStamps:
+      - name: Bellevue
+        startTime: 11:11
+        endTime: 11:13
+    isInverted: false
 ---
