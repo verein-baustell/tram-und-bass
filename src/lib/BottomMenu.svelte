@@ -7,13 +7,13 @@
   import Artist from "./Artist.svelte";
   import Button from "./Button.svelte";
   export let lines: Line[];
-
-  const meuEntries = [
+  let meuEntries;
+  $: meuEntries = [
     { name: $currentLine.name, component: ChangeStationList },
     { name: "StationList", component: StationList },
     { name: $currentLine.artistName, component: Artist },
   ];
-  let currentComponent = meuEntries[0].component;
+  let currentComponent = meuEntries?.[0]?.component;
   let isOpen = false;
 </script>
 
@@ -48,7 +48,7 @@
     bottom: 0;
     right: 0;
   }
-    nav {
-        display: flex;
-    }   
+  nav {
+    display: flex;
+  }
 </style>
