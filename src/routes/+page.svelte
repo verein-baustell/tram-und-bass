@@ -21,11 +21,15 @@
     $vimeoVideoObject = new Vimeo("video-container", {
       url: $currentLine.videoUrl,
       controls: false,
+      autopause: false,
+      loop: true,
     });
-    $vimeoVideoObject.on("playing", () => {
+    $vimeoVideoObject.on("playing", (e) => {
+      console.log("playing",e);
       $videoIsPlaying = true;
     });
-    $vimeoVideoObject.on("pause", () => {
+    $vimeoVideoObject.on("pause", (e) => {
+      console.log("pause",e);
       $videoIsPlaying = false;
     });
     $vimeoVideoObject.on("volumechange", () => {
@@ -45,7 +49,6 @@
   });
 </script>
 
-<h1>Welcome to TnB</h1>
 <div id="video-container"></div>
 <TopMenu {lines} aboutContent={"aboutContent"} />
 <VideoControls />

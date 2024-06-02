@@ -1,4 +1,8 @@
-<button {...$$props} on:click>
+<script>
+  export let isActive = false;
+</script>
+
+<button {...$$props} class:active={isActive} on:click>
   <slot></slot>
 </button>
 
@@ -8,5 +12,11 @@
     border: none;
     border-radius: .4em;
     cursor: pointer;
+  }
+
+  .active {
+    /* TODO: replace the colors with variables */
+    background-color: black;
+    color: white;
   }
 </style>
