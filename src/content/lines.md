@@ -31,7 +31,7 @@ lines:
     name: Tiefenbrunnen
     artistName: Some Juan Differenté
     artistAboutText: About Some Juan Differenté
-    videoUrl: https://vimeo.com/950558411/452ef92b18?share=copy
+    videoUrl: https://vimeo.com/950558411/452ef92b18
     releaseDate: 2024-06-02T18:34:00.000Z
     id: ""
     timeStamps:
