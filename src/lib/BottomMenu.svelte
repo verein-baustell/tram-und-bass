@@ -1,5 +1,54 @@
 <script lang="ts">
+  import { currentLine } from "../store";
+  import LineList from "./LineList.svelte";
+  import LineNumber from "./LineNumber.svelte";
+  import ChangeStationList from "./ChangeStationList.svelte";
+  import StationList from "./StationList.svelte";
+  import Artist from "./Artist.svelte";
+  import Button from "./Button.svelte";
   export let lines: Line[];
+
+  const meuEntries = [
+    { name: $currentLine.name, component: ChangeStationList },
+    { name: "StationList", component: StationList },
+    { name: $currentLine.artistName, component: Artist },
+  ];
+  let currentComponent = meuEntries[0].component;
+  let isOpen = false;
 </script>
 
-<div>BottomMenu</div>
+<div id="bottom-menu">
+  {#if isOpen}
+    <svelte:component this={currentComponent} />
+  {/if}
+  <nav>
+    <LineNumber number={$currentLine.number} />
+    {#each meuEntries as { name, component } (name)}
+      <Button
+        isActive={currentComponent === component && isOpen}
+        on:click={() => {
+          if (isOpen && currentComponent === component) {
+            isOpen = false;
+            return;
+          }
+          currentComponent = component;
+          isOpen = true;
+        }}
+      >
+        {name}
+      </Button>
+    {/each}
+  </nav>
+</div>
+
+<style lang="scss" scoped>
+  #bottom-menu {
+    margin: 1em;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+    nav {
+        display: flex;
+    }   
+</style>

@@ -3,7 +3,6 @@
   import About from "./About.svelte";
   import LineList from "./LineList.svelte";
   import Button from "./Button.svelte";
-  import type { SvelteComponent } from "svelte";
   export let lines: Line[];
   export let aboutContent: string;
   const meuEntries = [

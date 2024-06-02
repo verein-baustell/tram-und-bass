@@ -50,6 +50,5 @@
     bottom: 1em;
     left: 1em;
     display: flex;
-    gap: .5em;
   }
 </style>
