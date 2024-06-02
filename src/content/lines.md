@@ -18,7 +18,7 @@ lines:
     name: Stadelhofen
     artistName: Some Juan Èlse
     artistAboutText: About Some Juan Èlse
-    videoUrl: https://vimeo.com/950808090/55d4d27811?share=copy
+    videoUrl: https://player.vimeo.com/video/950808090?h=55d4d27811
     releaseDate: 2024-06-02T18:26:00.000Z
     id: ""
     timeStamps:
