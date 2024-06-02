@@ -36,7 +36,7 @@ collections:
               - label: "ID"
                 name: "id"
                 widget: "hidden"
-                default: "{{fields.name}}-{{fields.number}}"
+                default: ""
               - label: "Color"
                 name: "color"
                 widget: "color"
