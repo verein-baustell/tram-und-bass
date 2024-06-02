@@ -11,29 +11,29 @@
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script defer>
-  CMS.registerEventListener({
-    name: 'preSave',
-    handler: ({ entry }) => {
-      const data = entry.get('data');
-      console.log('preSave data', data);
-      console.log('preSave entry', entry);
-      const lines = entry.get('lines');
-      console.log('preSave lines', lines);
-      if (lines) {
-        const updatedLines = lines.map(line => {
-          const name = line.get('name');
-          const number = line.get('number');
-          const id = `${name.replaceAll(" ","")}${number}`;
-          return line.set('id', id);
-        });
-        console.log('preSave updatedLines', updatedLines);
-        entry = entry.setIn(['lines'], updatedLines);
-      }
-      console.log('preSave return entry', entry);
+  // CMS.registerEventListener({
+  //   name: 'preSave',
+  //   handler: ({ entry }) => {
+  //     const data = entry.get('data');
+  //     console.log('preSave data', data);
+  //     console.log('preSave entry', entry);
+  //     const lines = entry.get('lines');
+  //     console.log('preSave lines', lines);
+  //     if (lines) {
+  //       const updatedLines = lines.map(line => {
+  //         const name = line.get('name');
+  //         const number = line.get('number');
+  //         const id = `${name.replaceAll(" ","")}${number}`;
+  //         return line.set('id', id);
+  //       });
+  //       console.log('preSave updatedLines', updatedLines);
+  //       entry = entry.setIn(['lines'], updatedLines);
+  //     }
+  //     console.log('preSave return entry', entry);
 
-      return entry;
-    }
-  });
+  //     return entry;
+  //   }
+  // });
   </script>
 </body>
 </html>
