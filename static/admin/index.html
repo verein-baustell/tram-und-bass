@@ -12,28 +12,6 @@
   <!-- Include the script that builds the page and powers Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script defer>
-    CMS.registerEventListener({
-      name: 'preSave',
-      handler: ({ entry }) => {
-        const data = entry.get('data');
-        const lines = data.get('lines');
-        console.log('data', data);
-        console.log('lines', lines);
-        if (!lines) {
-          return entry;
-        }
-        const updatedLines = lines.map(line => {
-          const name = line.get('name');
-          const number = line.get('number');
-          const id = `${name}${number}`;
-          return line.set('id', id);
-        });
-        const updatedData = data.set('lines', updatedLines);
-        return entry.set('data', updatedData);
-      }
-    });
-  </script>
 </body>
 
 </html>
