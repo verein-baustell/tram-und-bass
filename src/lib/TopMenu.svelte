@@ -3,6 +3,7 @@
   import About from "./About.svelte";
   import LineList from "./LineList.svelte";
   import Button from "./Button.svelte";
+  import type { SvelteComponent } from "svelte";
   export let lines: Line[];
   export let aboutContent: string;
   const meuEntries = [
@@ -18,16 +19,23 @@
   <nav>
     {#each meuEntries as { name, component } (name)}
       <Button
-        isActive={currentComponent === component}
+        isActive={currentComponent === component && isOpen}
         on:click={() => {
+          if (isOpen && currentComponent === component) {
+            isOpen = false;
+            return;
+          }
           currentComponent = component;
+          isOpen = true;
         }}
       >
         {name}
       </Button>
     {/each}
   </nav>
-  <svelte:component this={currentComponent} {lines} {aboutContent} />
+  {#if isOpen}
+    <svelte:component this={currentComponent} {lines} {aboutContent} />
+  {/if}
 </div>
 
 <style lang="scss" scoped>
