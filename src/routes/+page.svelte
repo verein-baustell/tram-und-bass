@@ -15,6 +15,8 @@
     vimeoVideoObject,
   } from "../store";
   console.log(content);
+  let videoWrapperWidth = "100%";
+  let videoWrapperHeight = "100%";
   const lines = content.lines;
   // TODO: Generate ids on save in the CMS
   // add missing ids
@@ -52,10 +54,25 @@
         iframe.style.minHeight = "100%";
       }
     });
+    const adjustDimensionsOfVideoWrapper = () => {
+      if (window.innerHeight > (window.innerWidth * 9) / 16) {
+        videoWrapperWidth = "auto";
+        videoWrapperHeight = "100%";
+      } else {
+        videoWrapperWidth = "100%";
+        videoWrapperHeight = "auto";
+      }
+    };
+    adjustDimensionsOfVideoWrapper();
+    // register on resize
+    window.addEventListener("resize", adjustDimensionsOfVideoWrapper);
   });
 </script>
 
-<div id="video-container"></div>
+<div
+  id="video-container"
+  style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
+></div>
 <VideoControls />
 {#if !$isImmersive}
   <TopMenu {lines} aboutContent={"aboutContent"} />
@@ -65,9 +82,11 @@
 <style lang="scss">
   #video-container {
     position: absolute;
+    aspect-ratio: 16 / 9;
     pointer-events: none;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
     display: grid;
