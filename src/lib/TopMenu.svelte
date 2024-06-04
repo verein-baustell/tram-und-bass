@@ -3,6 +3,7 @@
   import About from "./About.svelte";
   import LineList from "./LineList.svelte";
   import Button from "./Button.svelte";
+  import { clickoutside } from "@svelte-put/clickoutside";
   export let lines: Line[];
   export let aboutContent: string;
   const meuEntries = [
@@ -14,7 +15,13 @@
   let isOpen = false;
 </script>
 
-<div id="top-menu">
+<div
+  id="top-menu"
+  use:clickoutside on:clickoutside={() => {
+    console.log("click outside");
+    isOpen = false;
+  }}
+>
   <nav>
     {#each meuEntries as { name, component } (name)}
       <Button

@@ -5,6 +5,7 @@
   import StationList from "./StationList.svelte";
   import Artist from "./Artist.svelte";
   import Button from "./Button.svelte";
+  import { clickoutside } from "@svelte-put/clickoutside";
   export let lines: Line[];
   let meuEntries;
   $: meuEntries = [
@@ -16,7 +17,13 @@
   let isOpen = false;
 </script>
 
-<div id="bottom-menu">
+<div
+  id="bottom-menu"
+  use:clickoutside
+  on:clickoutside={() => {
+    isOpen = false;
+  }}
+>
   {#if isOpen}
     <svelte:component this={currentComponent} />
   {/if}
