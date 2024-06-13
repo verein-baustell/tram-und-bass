@@ -16,7 +16,6 @@
   let currentComponent = meuEntries?.[0]?.component;
   let isOpen = false;
   let isInverted = $currentLine.isInverted
-  let color = $currentLine.color
 </script>
 
 <div
@@ -29,7 +28,7 @@
   {#if isOpen}
     <svelte:component this={currentComponent} />
   {/if}
-  <nav style:background-color={color}>
+  <nav style:background-color={$currentLine.color}>
     <LineNumber number={$currentLine.number} isInverted={$currentLine.isInverted}/>
     {#each meuEntries as { name, component } (name)}
       <Button
@@ -43,7 +42,7 @@
           currentComponent = component;
           isOpen = true;
         }}
-        style={currentComponent === component && isOpen ? `color: ${color}` : ``}
+        style={currentComponent === component && isOpen ? `color: ${$currentLine.color}` : ``}
       >
         {name}
       </Button>
