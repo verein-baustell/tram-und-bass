@@ -1,17 +1,27 @@
 <script lang="ts">
   export let number: number;
+  export let isInverted = false;
 </script>
 
-<div>{number}</div>
+<div class={isInverted ? 'inverted' : 'notInverted'}>
+  {number}
+</div>
 
-<style scoped>
+<style scoped lang=scss>
   div {
     aspect-ratio: 1;
-    width: 2em;
-    height: 2em;
+    width: 1.75em;
+    height: 1.75em;
     display: grid;
     place-items: center;
     /* TODOO: make border with a variable */
-    border: solid 1px black;
+    border: solid 2px black;
+    border-radius: .4em;
+    margin:  0rem .5em 0em .5em;
+
+    &.notInverted {
+      border: solid 2px white;
+      color: white;
+    }
   }
 </style>
