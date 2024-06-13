@@ -47,10 +47,11 @@
 <style lang="scss" scoped>
   #top-menu {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 1em;
+    left: 1em;
     nav {
       display: flex;
+      gap: 2px;
     }
   }
 </style>
