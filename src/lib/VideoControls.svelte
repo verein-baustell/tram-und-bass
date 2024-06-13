@@ -48,7 +48,7 @@
 
 <style scoped>
   #video-controls {
-    position: absolute;
+    position: fixed;
     bottom: 1em;
     left: 1em;
     display: flex;
