@@ -51,7 +51,8 @@
     left: 1em;
     nav {
       display: flex;
-      gap: 2px;
+      background: #dddddd;
+      border-radius: 0.4em;
     }
   }
 </style>

@@ -52,9 +52,7 @@
     bottom: 1em;
     left: 1em;
     display: flex;
-    gap: 2px;
     background: #dddddd;
-    padding: 0.1em;
     border-radius: 0.4em;
   }
 </style>

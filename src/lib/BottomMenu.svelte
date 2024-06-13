@@ -59,8 +59,6 @@
   }
   nav {
     display: flex;
-    gap: 2px;
-    padding: .2em;
     border-radius: .4em;
     align-items: center
   }

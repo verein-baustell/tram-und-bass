@@ -12,6 +12,11 @@
     border: none;
     border-radius: .4em;
     cursor: pointer;
+    margin: 2px 2px 2px 0px;
+  }
+
+  button:first-child {
+    margin: 2px 2px 2px 2px;
   }
 
   .active {
