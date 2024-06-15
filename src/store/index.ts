@@ -1,4 +1,5 @@
 import { derived, writable } from "svelte/store";
+import { hmsToSeconds } from "../utils/timeFormatter";
 
 export const currentLine = writable<Line>();
 // update query params when currentLine changes
@@ -37,8 +38,9 @@ export const currentStation = writable<Station>();
 export const nextStation = derived(
   [currentTime, currentLine],
   ([$currentTime, $currentLine]) => {
+    console.log({ $currentTime, $currentLine, timeStamps: $currentLine.timeStamps.map(({ startTime }) => hmsToSeconds(startTime))});
     const nextStation = $currentLine.timeStamps.find(
-      (timeStamp) => timeStamp.startTime > $currentTime
+      (timeStamp) => hmsToSeconds(timeStamp.startTime) > $currentTime
     );
     return nextStation;
   })
@@ -51,9 +53,10 @@ export const timeUntilNextStation = derived(
   [currentLine, currentTime, nextStation],
   ([$currentLine, $currentTime, $nextStation]) => {
     if ($nextStation) {
-      const nextStartTime = $currentLine.timeStamps.find(
+      const nextStartTimeString = $currentLine.timeStamps.find(
         (timeStamp) => timeStamp.name === $nextStation.name
       )?.startTime;
+      const nextStartTime = hmsToSeconds(nextStartTimeString);
       if (typeof nextStartTime === "number") {
         return nextStartTime - $currentTime;
       }

@@ -12,3 +12,13 @@ export const secondsToHms = (secondsToFormat: number) => {
     .toString()
     .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
 };
+// format hh:mm:ss and mm:ss or ss into seconds
+export const hmsToSeconds = (hms?: string) => {
+  if (!hms) return 0;
+  const hmsArray = hms.split(":").map(Number);
+  if (hmsArray.length === 1) return hmsArray[0];
+  if (hmsArray.length === 2) return hmsArray[0] * 60 + hmsArray[1];
+  const [hours, minutes, seconds] = hmsArray;
+  if (isNaN(hours)) return minutes * 60 + seconds;
+  return hours * 3600 + minutes * 60 + seconds;
+};

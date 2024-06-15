@@ -13,6 +13,6 @@ type Line = {
   
 type TimeStamp = {
     name: string
-    startTime: number 
-    endTime: number 
+    startTime: string 
+    endTime: string 
   }
