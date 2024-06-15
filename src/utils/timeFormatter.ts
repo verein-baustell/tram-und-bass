@@ -15,6 +15,7 @@ export const secondsToHms = (secondsToFormat: number) => {
 // format hh:mm:ss and mm:ss or ss into seconds
 export const hmsToSeconds = (hms?: string) => {
   if (!hms) return 0;
+  if(typeof hms === "number") return hms;
   const hmsArray = hms.split(":").map(Number);
   if (hmsArray.length === 1) return hmsArray[0];
   if (hmsArray.length === 2) return hmsArray[0] * 60 + hmsArray[1];
