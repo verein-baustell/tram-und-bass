@@ -1,7 +1,9 @@
-import { writable } from "svelte/store";
+import { derived, writable } from "svelte/store";
 
 export const currentLine = writable<Line>();
 // update query params when currentLine changes
+export const currentTime = writable<number>(0);
+
 currentLine.subscribe((value) => {
   if (value && typeof window !== "undefined") {
     const url = new URL(window.location.href);
@@ -13,6 +15,8 @@ currentLine.subscribe((value) => {
         console.log("⬇️ load video", value.videoUrl);
         vimeo.loadVideo(value.videoUrl).then(() => {
           console.log("🎥 video loaded");
+          console.log({ vimeo });
+
           if (videoIsPlaying) return;
           vimeo
             .play()
@@ -28,10 +32,39 @@ currentLine.subscribe((value) => {
     });
   }
 });
+
 export const currentStation = writable<Station>();
-export const nextStation = writable<Station>();
-export const vimeoVideoObject = writable<Vimeo>();
+export const nextStation = derived(
+  [currentTime, currentLine],
+  ([$currentTime, $currentLine]) => {
+    const nextStation = $currentLine.timeStamps.find(
+      (timeStamp) => timeStamp.startTime > $currentTime
+    );
+    return nextStation;
+  })
+
 export const videoIsPlaying = writable<boolean>(false);
 export const isImmersive = writable<boolean>(false);
 export const isMuted = writable<boolean>(false);
 export const isAtStation = writable<boolean>(false);
+export const timeUntilNextStation = derived(
+  [currentLine, currentTime, nextStation],
+  ([$currentLine, $currentTime, $nextStation]) => {
+    if ($nextStation) {
+      const nextStartTime = $currentLine.timeStamps.find(
+        (timeStamp) => timeStamp.name === $nextStation.name
+      )?.startTime;
+      if (typeof nextStartTime === "number") {
+        return nextStartTime - $currentTime;
+      }
+    }
+    return 0;
+  }
+);
+export const vimeoVideoObject = writable<Vimeo>();
+vimeoVideoObject.subscribe((vimeo) => {
+  if (!vimeo) return;
+  vimeo.on("timeupdate", function (data) {
+    currentTime.set(data.seconds);
+  });
+});

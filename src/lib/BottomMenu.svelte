@@ -7,15 +7,22 @@
   import Button from "./Button.svelte";
   import { clickoutside } from "@svelte-put/clickoutside";
   export let lines: Line[];
-  let meuEntries;
-  $: meuEntries = [
-    { name: $currentLine.name, component: ChangeStationList },
-    { name: "StationList", component: StationList },
-    { name: $currentLine.artistName, component: Artist },
-  ];
-  let currentComponent = meuEntries?.[0]?.component;
-  let isOpen = false;
-  let isInverted = $currentLine.isInverted
+  type ComponentType =
+    | typeof ChangeStationList
+    | typeof StationList
+    | typeof Artist;
+  let menuEntries: { name: string; component: ComponentType }[];
+  let currentComponent: ComponentType;
+  $: if ($currentLine) {
+    menuEntries = [
+      { name: $currentLine.name, component: ChangeStationList },
+      { name: "StationList", component: StationList },
+      { name: $currentLine.artistName, component: Artist },
+    ];
+    currentComponent = menuEntries?.[0]?.component;
+  }
+  let isOpen = true;
+  let isInverted = $currentLine.isInverted;
 </script>
 
 <div
@@ -29,8 +36,11 @@
     <svelte:component this={currentComponent} />
   {/if}
   <nav style:background-color={$currentLine.color}>
-    <LineNumber number={$currentLine.number} isInverted={$currentLine.isInverted}/>
-    {#each meuEntries as { name, component } (name)}
+    <LineNumber
+      number={$currentLine.number}
+      isInverted={$currentLine.isInverted}
+    />
+    {#each menuEntries as { name, component } (name)}
       <Button
         isActive={currentComponent === component && isOpen}
         class="isInverted-{isInverted}"
@@ -42,7 +52,9 @@
           currentComponent = component;
           isOpen = true;
         }}
-        style={currentComponent === component && isOpen ? `color: ${$currentLine.color}` : ``}
+        style={currentComponent === component && isOpen
+          ? `color: ${$currentLine.color}`
+          : ``}
       >
         {name}
       </Button>
@@ -59,7 +71,7 @@
   }
   nav {
     display: flex;
-    border-radius: .4em;
-    align-items: center
+    border-radius: 0.4em;
+    align-items: center;
   }
 </style>
