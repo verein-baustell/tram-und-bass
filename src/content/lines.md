@@ -9,9 +9,15 @@ lines:
     releaseDate: 2024-06-02T18:26:00.000Z
     id: ""
     timeStamps:
-      - name: Central
-        startTime: 11:11
-        endTime: 11:14
+      - name: Milchbuck
+        startTime: 01:48
+        endTime: 02:08
+      - name: Schaffhauserplatz
+        startTime: 04:53
+        endTime: 05:08
+      - name: Bellevue
+        startTime: 06:17
+        endTime: 06:29
     isInverted: false
   - color: "#6027ff"
     number: 17
