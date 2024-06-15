@@ -34,16 +34,26 @@ currentLine.subscribe((value) => {
   }
 });
 
-export const currentStation = writable<Station>();
+export const currentStation = derived(
+  [currentTime, currentLine],
+  ([$currentTime, $currentLine]) => {
+    const currentStation = $currentLine.timeStamps.find(
+      (timeStamp) =>
+        hmsToSeconds(timeStamp.startTime) <= $currentTime &&
+        hmsToSeconds(timeStamp.endTime) >= $currentTime
+    );
+    return currentStation;
+  }
+);
 export const nextStation = derived(
   [currentTime, currentLine],
   ([$currentTime, $currentLine]) => {
-    console.log({ $currentTime, $currentLine, timeStamps: $currentLine.timeStamps.map(({ startTime }) => hmsToSeconds(startTime))});
     const nextStation = $currentLine.timeStamps.find(
       (timeStamp) => hmsToSeconds(timeStamp.startTime) > $currentTime
     );
     return nextStation;
-  })
+  }
+);
 
 export const videoIsPlaying = writable<boolean>(false);
 export const isImmersive = writable<boolean>(false);
