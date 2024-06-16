@@ -9,13 +9,16 @@ lines:
     releaseDate: 2024-06-02T18:26:00.000Z
     id: ""
     timeStamps:
-      - name: Milchbuck
-        startTime: 01:48
+      - name: Bucheggplatz
+        startTime: 00:01
         endTime: 02:08
+      - name: Laubiweg
+        startTime: 03:19
+        endTime: 03:32
       - name: Schaffhauserplatz
         startTime: 04:53
         endTime: 05:08
-      - name: Bellevue
+      - name: Röslistrasse
         startTime: 06:17
         endTime: 06:29
     isInverted: false
