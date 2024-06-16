@@ -21,6 +21,33 @@ lines:
       - name: Röslistrasse
         startTime: 06:17
         endTime: 06:29
+      - name: Ottikerstrasse
+        startTime: 07:24
+        endTime: 07:37
+      - name: Sonneggstrasse
+        startTime: 08:36
+        endTime: 08:52
+      - name: Haldenegg
+        startTime: 09:50
+        endTime: 10:00
+      - name: Central
+        startTime: 11:42
+        endTime: 11:58
+      - name: Rudolf-Brun-Brücke
+        startTime: 13:03
+        endTime: 13:07
+      - startTime: 13:56
+        name: Rathaus
+        endTime: 14:19
+      - name: Helmhaus
+        startTime: 15:21
+        endTime: 15:26
+      - name: Bellevue
+        startTime: 17:13
+        endTime: 17:36
+      - name: Bahnhof Stadelhofen
+        startTime: 19:14
+        endTime: 19:29
     isInverted: false
   - color: "#6027ff"
     number: 17
