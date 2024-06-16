@@ -1,24 +1,29 @@
 <script lang="ts">
-  import SvelteMarkdown from "svelte-markdown";
   import Vimeo from "@vimeo/player";
   import { onMount } from "svelte";
   import TopMenu from "$lib/TopMenu.svelte";
   import VideoControls from "$lib/VideoControls.svelte";
   import BottomMenu from "$lib/BottomMenu.svelte";
-  import Map from "$lib/Map.svelte";
   import {
     currentLine,
     isImmersive,
     isMuted,
     videoIsPlaying,
-    vimeoVideoObject,allLines
+    vimeoVideoObject,
+    allLines,
   } from "../store";
+  import DevTools from "$lib/DevTools.svelte";
   let videoWrapperWidth = "100%";
   let videoWrapperHeight = "100%";
-  
+  let isDevMode = false;
   // TODO: Want it to maybe pick a random line?
   $currentLine = $allLines[0];
   onMount(() => {
+    isDevMode = window.location.hostname === "localhost";
+    // @ts-ignore
+    window.devMode = () => {
+      isDevMode = true;
+    };
     $vimeoVideoObject = new Vimeo("video-container", {
       url: $currentLine.videoUrl,
       controls: false,
@@ -67,6 +72,8 @@
   style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
 ></div>
 <VideoControls />
+{#if isDevMode}
+  <DevTools />{/if}
 {#if !$isImmersive}
   <TopMenu aboutContent={"aboutContent"} />
   <BottomMenu />

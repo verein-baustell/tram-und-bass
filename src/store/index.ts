@@ -51,19 +51,25 @@ export const currentStation = derived(
     return currentStation;
   }
 );
+/*
+ * All lines that have a station at the currentStation. If we are not at a station, this will be undefined.
+ */
 export const linesAtCurrentStation = derived(
-  [currentStation, currentLine],
-  ([$currentStation, $currentLine]) => {
-    if (!$currentStation) return [];
-    return $currentLine.timeStamps.filter(
-      (timeStamp) => timeStamp.name === $currentStation.name
+  [currentStation, currentLine, allLines],
+  ([$currentStation, $currentLine, $allLines]) => {
+    if (!$currentStation) return;
+    return $allLines.filter((line) =>
+      line.timeStamps.find(
+        (timeStamp) =>
+          timeStamp.name === $currentStation.name && line.id !== $currentLine.id
+      )
     );
   }
 );
 export const nextStation = derived(
   [currentTime, currentLine],
   ([$currentTime, $currentLine]) => {
-    const nextStation = $currentLine.timeStamps.find(
+    const nextStation = $currentLine?.timeStamps?.find(
       (timeStamp) => hmsToSeconds(timeStamp.startTime) > $currentTime
     );
     return nextStation;

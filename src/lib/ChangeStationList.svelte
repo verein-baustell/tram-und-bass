@@ -1,6 +1,12 @@
 <script lang="ts">
-  import { currentStation, nextStation, timeUntilNextStation } from "../store";
+  import {
+    currentStation,
+    linesAtCurrentStation,
+    nextStation,
+    timeUntilNextStation,
+  } from "../store";
   import { secondsToHms } from "../utils/timeFormatter";
+  import LineList from "./LineList.svelte";
   let formattedTime: string;
   $: {
     formattedTime = secondsToHms($timeUntilNextStation);
@@ -13,6 +19,9 @@
   {#if $currentStation}
     <br />
     <small>Current station: {$currentStation?.name}</small>
+  {/if}
+  {#if $linesAtCurrentStation}
+    <LineList lines={$linesAtCurrentStation} />
   {/if}
 </div>
 
