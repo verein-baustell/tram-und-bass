@@ -1,16 +1,19 @@
 <script lang="ts">
-  import { currentLine } from "../store";
   import LineListItem from "./LineListItem.svelte";
 
   export let lines: Line[];
+  export let keepStationWhenChangingLine = false;
 </script>
 
 <ul>
   {#each lines as line}
-    <LineListItem line={line} />
-   
+    <LineListItem
+      {keepStationWhenChangingLine}
+      {line}
+    />
   {/each}
 </ul>
+
 <style lang="scss" scoped>
   // reset ul li
   ul {
@@ -18,5 +21,4 @@
     padding: 0;
     margin: 0;
   }
-
 </style>

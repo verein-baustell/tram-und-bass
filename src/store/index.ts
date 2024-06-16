@@ -1,4 +1,4 @@
-import { derived, writable } from "svelte/store";
+import { derived, get, writable } from "svelte/store";
 import { attributes as content } from "../content/lines.md";
 import { hmsToSeconds } from "../utils/timeFormatter";
 const lines = content.lines;
@@ -11,6 +11,16 @@ export const allLines = writable<Line[]>(lines);
 export const currentLine = writable<Line>();
 // update query params when currentLine changes
 export const currentTime = writable<number>(0);
+const seekVideoAfterLoad = (vimeoObject: Vimeo) => {
+  const timeToSeekTo = get(timeToSeekAfterVideoLoad);
+  if (timeToSeekTo) {
+    vimeoObject.setCurrentTime(timeToSeekTo).then(() => {
+      console.log("🎥 video seeked to", timeToSeekTo)
+    });
+    timeToSeekAfterVideoLoad.set(0);
+  }
+};
+export const timeToSeekAfterVideoLoad = writable<number>(0);
 currentLine.subscribe((value) => {
   if (value && typeof window !== "undefined") {
     const url = new URL(window.location.href);
@@ -23,11 +33,12 @@ currentLine.subscribe((value) => {
         vimeo.loadVideo(value.videoUrl).then(() => {
           console.log("🎥 video loaded");
           console.log({ vimeo });
-
+          seekVideoAfterLoad(vimeo);
           if (videoIsPlaying) return;
           vimeo
             .play()
             .then(() => {
+              seekVideoAfterLoad(vimeo);
               console.log("🎥 video is playing");
             })
             .catch((error) => {
@@ -40,6 +51,9 @@ currentLine.subscribe((value) => {
   }
 });
 
+/**
+ * If we are not at a station, this will be undefined.
+ */
 export const currentStation = derived(
   [currentTime, currentLine],
   ([$currentTime, $currentLine]) => {
@@ -51,7 +65,7 @@ export const currentStation = derived(
     return currentStation;
   }
 );
-/*
+/**
  * All lines that have a station at the currentStation. If we are not at a station, this will be undefined.
  */
 export const linesAtCurrentStation = derived(

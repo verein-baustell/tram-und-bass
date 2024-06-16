@@ -69,6 +69,7 @@
 
 <div
   id="video-container"
+  class={$videoIsPlaying ? "" : "isLoading"}
   style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
 ></div>
 <VideoControls />
@@ -81,6 +82,10 @@
 
 <style lang="scss">
   #video-container {
+    transition: filter 0.5s ease-in-out;
+    &.isLoading {
+      filter: blur(10px);
+    }
     position: absolute;
     aspect-ratio: 16 / 9;
     pointer-events: none;

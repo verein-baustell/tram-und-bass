@@ -21,7 +21,7 @@
     <small>Current station: {$currentStation?.name}</small>
   {/if}
   {#if $linesAtCurrentStation}
-    <LineList lines={$linesAtCurrentStation} />
+    <LineList keepStationWhenChangingLine lines={$linesAtCurrentStation} />
   {/if}
 </div>
 
