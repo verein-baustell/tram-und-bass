@@ -10,6 +10,8 @@ node_modules
 .output
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+.lockb
 
 # Local Netlify folder
 .netlify
+bun.lockb
