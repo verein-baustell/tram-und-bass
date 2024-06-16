@@ -81,6 +81,11 @@
 {/if}
 
 <style lang="scss">
+  :root{
+    --background-color: rgb(255, 255, 255);
+    --foreground-color: black;
+    --border-radius: 0.5em;
+  }
   #video-container {
     transition: filter 0.5s ease-in-out;
     &.isLoading {

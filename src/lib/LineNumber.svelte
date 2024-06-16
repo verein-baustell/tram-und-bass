@@ -3,11 +3,11 @@
   export let isInverted = false;
 </script>
 
-<div class={isInverted ? 'inverted' : 'notInverted'}>
+<div class={isInverted ? "inverted" : "notInverted"}>
   {number}
 </div>
 
-<style scoped lang=scss>
+<style scoped lang="scss">
   div {
     aspect-ratio: 1;
     width: 1.75em;
@@ -15,13 +15,13 @@
     display: grid;
     place-items: center;
     /* TODOO: make border with a variable */
-    border: solid 2px black;
-    border-radius: .4em;
-    margin:  0rem .5em 0em .5em;
+    border: solid 2px var(--foreground-color);
+    border-radius: 0.4em;
+    margin: 0rem 0.5em 0em 0.5em;
 
     &.notInverted {
-      border: solid 2px white;
-      color: white;
+      border: solid 2px var(--background-color);
+      color: var(--background-color);
     }
   }
 </style>

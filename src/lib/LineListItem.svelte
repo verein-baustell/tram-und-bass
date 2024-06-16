@@ -39,7 +39,7 @@
       filter: invert(1);
     }
     // reset button
-    background-color: white;
+    background-color: var(--background-color);
     border: none;
     cursor: pointer;
     display: flex;

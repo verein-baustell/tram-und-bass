@@ -21,17 +21,17 @@
 
   .active {
     /* TODO: replace the colors with variables */
-    background-color: black;
-    color: white;
+    background-color: var(--foreground-color);
+    color: var(--background-color);
 
     &.isInverted-false {
-      background-color: white;
-      color: black;
+      background-color: var(--background-color);
+      color: var(--foreground-color);
     }
   }
   .isInverted-false {
     /* filter: invert(1); */
     background-color: rgba(0,0,0,0.2);
-    color: white;
+    color: var(--background-color);
   }
 </style>
