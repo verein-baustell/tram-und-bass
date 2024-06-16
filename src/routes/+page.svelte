@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { attributes as content } from "../content/lines.md";
   import SvelteMarkdown from "svelte-markdown";
   import Vimeo from "@vimeo/player";
   import { onMount } from "svelte";
@@ -12,19 +11,13 @@
     isImmersive,
     isMuted,
     videoIsPlaying,
-    vimeoVideoObject,
+    vimeoVideoObject,allLines
   } from "../store";
-  console.log(content);
   let videoWrapperWidth = "100%";
   let videoWrapperHeight = "100%";
-  const lines = content.lines;
-  // TODO: Generate ids on save in the CMS
-  // add missing ids
-  lines.forEach((line) => {
-    line.id = line.name.replace(/\s/g, "") + line.number;
-  });
+  
   // TODO: Want it to maybe pick a random line?
-  $currentLine = lines[0];
+  $currentLine = $allLines[0];
   onMount(() => {
     $vimeoVideoObject = new Vimeo("video-container", {
       url: $currentLine.videoUrl,
@@ -75,8 +68,8 @@
 ></div>
 <VideoControls />
 {#if !$isImmersive}
-  <TopMenu {lines} aboutContent={"aboutContent"} />
-  <BottomMenu {lines} />
+  <TopMenu aboutContent={"aboutContent"} />
+  <BottomMenu />
 {/if}
 
 <style lang="scss">

@@ -6,7 +6,6 @@
   import Artist from "./Artist.svelte";
   import Button from "./Button.svelte";
   import { clickoutside } from "@svelte-put/clickoutside";
-  export let lines: Line[];
   type ComponentType =
     | typeof ChangeStationList
     | typeof StationList

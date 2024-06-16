@@ -1,10 +1,16 @@
 import { derived, writable } from "svelte/store";
+import { attributes as content } from "../content/lines.md";
 import { hmsToSeconds } from "../utils/timeFormatter";
-
+const lines = content.lines;
+// TODO: Generate ids on save in the CMS
+// add missing ids
+lines.forEach((line) => {
+  line.id = line.name.replace(/\s/g, "") + line.number;
+});
+export const allLines = writable<Line[]>(lines);
 export const currentLine = writable<Line>();
 // update query params when currentLine changes
 export const currentTime = writable<number>(0);
-
 currentLine.subscribe((value) => {
   if (value && typeof window !== "undefined") {
     const url = new URL(window.location.href);
@@ -43,6 +49,15 @@ export const currentStation = derived(
         hmsToSeconds(timeStamp.endTime) >= $currentTime
     );
     return currentStation;
+  }
+);
+export const linesAtCurrentStation = derived(
+  [currentStation, currentLine],
+  ([$currentStation, $currentLine]) => {
+    if (!$currentStation) return [];
+    return $currentLine.timeStamps.filter(
+      (timeStamp) => timeStamp.name === $currentStation.name
+    );
   }
 );
 export const nextStation = derived(
