@@ -1,12 +1,13 @@
 <script lang="ts">
-  import { currentLine } from "../store";
+  import { currentLine, currentTime } from "../store";
+  import { hmsToSeconds } from "../utils/timeFormatter";
   import Circle from "./Circle.svelte";
 </script>
 
 <div id="station-list">
   <ol>
     {#each $currentLine.timeStamps as station}
-      <li><Circle />{station.name}</li>
+      <li><Circle isFilled={hmsToSeconds(station.endTime) < $currentTime} />{station.name}</li>
     {/each}
   </ol>
   <div id="stations-line"></div>

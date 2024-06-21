@@ -1,20 +1,20 @@
 <script lang="ts">
   import { currentLine } from "../store";
   import LineNumber from "./LineNumber.svelte";
-  import ChangeStationList from "./ChangeStationList.svelte";
+  import ChangeLineList from "./ChangeLineList.svelte";
   import StationList from "./StationList.svelte";
   import Artist from "./Artist.svelte";
   import Button from "./Button.svelte";
   import { clickoutside } from "@svelte-put/clickoutside";
   type ComponentType =
-    | typeof ChangeStationList
+    | typeof ChangeLineList
     | typeof StationList
     | typeof Artist;
   let menuEntries: { name: string; component: ComponentType }[];
   let currentComponent: ComponentType;
   $: if ($currentLine) {
     menuEntries = [
-      { name: $currentLine.name, component: ChangeStationList },
+      { name: $currentLine.name, component: ChangeLineList },
       { name: "StationList", component: StationList },
       { name: $currentLine.artistName, component: Artist },
     ];
