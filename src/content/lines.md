@@ -67,7 +67,7 @@ lines:
     name: Tiefenbrunnen
     artistName: Some Juan Differenté
     artistAboutText: About Some Juan Differenté
-    videoUrl: https://vimeo.com/video/950558411?h=452ef92b18
+    videoUrl: https://player.vimeo.com/video/950558411?h=452ef92b18
     releaseDate: 2024-06-02T18:34:00.000Z
     id: ""
     timeStamps:
@@ -80,7 +80,7 @@ lines:
     name: Werdhölzli
     artistName: Some Juan Élse Entire Lee
     artistAboutText: About Some Juan Élse Entire Lee
-    videoUrl: https://vimeo.com/video/950812961?h=6d0ba88b36
+    videoUrl: https://player.vimeo.com/video/950812961?h=6d0ba88b36
     releaseDate: 2024-06-02T19:43:00.000Z
     id: ""
     timeStamps:
