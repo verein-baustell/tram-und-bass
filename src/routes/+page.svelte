@@ -83,7 +83,7 @@
       font-style: normal;
       font-weight: 500;
       src:
-        url("/fonts/NaNHolo_TRIAL-Medium.woff2") format("woff2");
+        url("/fonts/NaNHoloNarrow_TRIAL-Regular.woff2") format("woff2");
     }
     @font-face {
       font-family: HoloMono;
