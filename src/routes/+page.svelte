@@ -19,10 +19,16 @@
   // TODO: Want it to maybe pick a random line?
   $currentLine = $allLines[0];
   onMount(() => {
-    isDevMode = window.location.hostname === "localhost";
+    isDevMode = window.location.hostname === "localhost" || localStorage.getItem("devMode") === "true";
     // @ts-ignore
     window.devMode = () => {
       isDevMode = true;
+      localStorage.setItem("devMode", "true");
+    };
+    // @ts-ignore
+    window.disableDevMode = () => {
+      isDevMode = false;
+      localStorage.setItem("devMode", "false");
     };
     $vimeoVideoObject = new Vimeo("video-container", {
       url: $currentLine.videoUrl,
