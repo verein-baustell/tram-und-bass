@@ -71,6 +71,28 @@
 
 <style lang="scss">
   :root {
+    @font-face {
+      font-family: Rene;
+      font-style: normal;
+      font-weight: 400;
+      src:
+        url("/fonts/Rene-Regular-Web.woff") format("woff");
+    }
+    @font-face {
+      font-family: Holo;
+      font-style: normal;
+      font-weight: 500;
+      src:
+        url("/fonts/NaNHolo_TRIAL-Medium.woff2") format("woff2");
+    }
+    @font-face {
+      font-family: HoloMono;
+      font-style: normal;
+      font-weight: 500;
+      src:
+        url("/fonts/NaNHoloMono_TRIAL-Medium.woff2") format("woff2");
+    }
+
     --background-color: rgb(255, 255, 255);
     --foreground-color: black;
     --border-radius: 0.5em;

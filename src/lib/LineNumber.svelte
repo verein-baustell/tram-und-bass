@@ -9,6 +9,7 @@
 
 <style scoped lang="scss">
   div {
+    font-family: HoloMono;
     aspect-ratio: 1;
     width: 1.75em;
     height: 1.75em;

@@ -8,6 +8,7 @@
 
 <style scoped lang="scss">
   button {
+    background-color: white;
     padding: 0.5em 0.8em;
     border: none;
     border-radius: .4em;
