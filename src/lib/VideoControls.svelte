@@ -48,6 +48,7 @@
 
 <style scoped>
   #video-controls {
+    z-index: 1;
     position: fixed;
     bottom: 1em;
     left: 1em;
