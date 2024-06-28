@@ -15,7 +15,7 @@
 
 <div id="change-station-list">
   {$nextStation?.name}
-  in {formattedTime}
+  in <span class="mono-font">{formattedTime}</span>
   {#if $currentStation}
     <br />
     <small>Current station: {$currentStation?.name}</small>
