@@ -54,7 +54,7 @@ lines:
     name: Albisgüetli
     artistName: Some Juan
     artistAboutText: Some Juan
-    videoUrl: https://vimeo.com/950809685/ee311a9fe0?share=copy
+    videoUrl: https://player.vimeo.com/video/950809685/ee311a9fe0?share=copy
     releaseDate: 2024-06-02T15:52:00.000Z
     id: ""
     timeStamps:
