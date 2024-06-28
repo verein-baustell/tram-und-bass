@@ -11,15 +11,19 @@
     videoIsPlaying,
     vimeoVideoObject,
     allLines,
+    currentTime,
   } from "../store";
   import DevTools from "$lib/DevTools.svelte";
+  import registerVimeoEventListeners from "../utils/registerVimeoEventListeners";
   let videoWrapperWidth = "100%";
   let videoWrapperHeight = "100%";
   let isDevMode = false;
   // TODO: Want it to maybe pick a random line?
   $currentLine = $allLines[0];
   onMount(() => {
-    isDevMode = window.location.hostname === "localhost" || localStorage.getItem("devMode") === "true";
+    isDevMode =
+      window.location.hostname === "localhost" ||
+      localStorage.getItem("devMode") === "true";
     // @ts-ignore
     window.devMode = () => {
       isDevMode = true;
@@ -36,28 +40,7 @@
       autopause: false,
       loop: true,
     });
-    $vimeoVideoObject.on("playing", (e) => {
-      console.log("playing", e);
-      $videoIsPlaying = true;
-    });
-    $vimeoVideoObject.on("pause", (e) => {
-      console.log("pause", e);
-      $videoIsPlaying = false;
-    });
-    $vimeoVideoObject.on("volumechange", () => {
-      $vimeoVideoObject.getMuted().then((muted) => {
-        $isMuted = muted;
-      });
-    });
-    $vimeoVideoObject.ready().then(() => {
-      const iframe: HTMLIFrameElement | null = document.querySelector(
-        "#video-container iframe"
-      );
-      if (iframe) {
-        iframe.style.minWidth = "100%";
-        iframe.style.minHeight = "100%";
-      }
-    });
+    registerVimeoEventListeners();
     const adjustDimensionsOfVideoWrapper = () => {
       if (window.innerHeight > (window.innerWidth * 9) / 16) {
         videoWrapperWidth = "auto";
@@ -87,7 +70,7 @@
 {/if}
 
 <style lang="scss">
-  :root{
+  :root {
     @font-face {
       font-family: Rene;
       font-style: normal;

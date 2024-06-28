@@ -1,6 +1,7 @@
 import { derived, get, writable } from "svelte/store";
 import { attributes as content } from "../content/lines.md";
 import { hmsToSeconds } from "../utils/timeFormatter";
+import { goto } from "$app/navigation";
 const lines = content.lines;
 // TODO: Generate ids on save in the CMS
 // add missing ids
@@ -15,7 +16,7 @@ const seekVideoAfterLoad = (vimeoObject: Vimeo) => {
   const timeToSeekTo = get(timeToSeekAfterVideoLoad);
   if (timeToSeekTo) {
     vimeoObject.setCurrentTime(timeToSeekTo).then(() => {
-      console.log("🎥 video seeked to", timeToSeekTo)
+      console.log("🎥 video seeked to", timeToSeekTo);
     });
     timeToSeekAfterVideoLoad.set(0);
   }
@@ -25,7 +26,7 @@ currentLine.subscribe((value) => {
   if (value && typeof window !== "undefined") {
     const url = new URL(window.location.href);
     url.searchParams.set("line", value.id);
-    window.history.replaceState(null, "", url.toString());
+    goto(url.toString(), { replaceState: true });
 
     vimeoVideoObject.update((vimeo) => {
       if (vimeo) {
@@ -34,12 +35,11 @@ currentLine.subscribe((value) => {
           console.log("🎥 video loaded");
           console.log({ vimeo });
           seekVideoAfterLoad(vimeo);
-          if (videoIsPlaying) return;
           vimeo
             .play()
             .then(() => {
               seekVideoAfterLoad(vimeo);
-              console.log("🎥 video is playing");
+              console.log("🎥 video is playing at 2nd attempt");
             })
             .catch((error) => {
               console.error("🎥 video play error", error);
@@ -110,9 +110,4 @@ export const timeUntilNextStation = derived(
   }
 );
 export const vimeoVideoObject = writable<Vimeo>();
-vimeoVideoObject.subscribe((vimeo) => {
-  if (!vimeo) return;
-  vimeo.on("timeupdate", function (data) {
-    currentTime.set(data.seconds);
-  });
-});
+vimeoVideoObject.subscribe((vimeo) => {});
