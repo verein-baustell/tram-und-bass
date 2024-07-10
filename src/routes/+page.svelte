@@ -95,7 +95,14 @@
 
     --background-color: rgb(255, 255, 255);
     --foreground-color: black;
-    --border-radius: 0.5em;
+    --background-color-light: #EEEEEE;
+    --hover-color: #DDDDDD;
+    --border-radius-button: 0.4em;
+    --border-radius-view: 0.52em;
+    --padding-view: 0.5em 0.8em;
+    --font-size: 1em;
+    --global-padding: 0.8em;
+    --transition: ease-in-out 0.3s;
   }
   #video-container {
     transition: filter 0.5s ease-in-out;

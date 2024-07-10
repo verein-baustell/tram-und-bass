@@ -63,14 +63,15 @@
 
 <style lang="scss" scoped>
   #bottom-menu {
-    margin: 1em;
+    margin: var(--global-padding);
     position: fixed;
     bottom: 0;
     right: 0;
   }
   nav {
     display: flex;
-    border-radius: 0.4em;
+    border-radius: var(--border-radius-view);
     align-items: center;
+    background-color: var(--background-color-light);
   }
 </style>

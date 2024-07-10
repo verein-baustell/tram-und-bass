@@ -4,15 +4,16 @@
   export let lines: Line[];
   export let keepStationWhenChangingLine = false;
 </script>
-
-<ul>
-  {#each lines as line}
-    <LineListItem
-      {keepStationWhenChangingLine}
-      {line}
-    />
-  {/each}
-</ul>
+<div class="view">
+  <ul>
+    {#each lines as line}
+      <LineListItem
+        {keepStationWhenChangingLine}
+        {line}
+      />
+    {/each}
+  </ul>
+</div>
 
 <style lang="scss" scoped>
   // reset ul li
