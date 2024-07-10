@@ -24,6 +24,9 @@
   :hover{
     background: var(--hover-color);
     transition: var(--transition);
+    background-image: url("/images/patternDots.png");
+    background-size: 2em;
+    box-shadow: inset 0.5em 0.5em 2em var(--hover-color);
   }
 
   .active {
