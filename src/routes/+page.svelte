@@ -105,7 +105,7 @@
     --transition: ease-in-out 0.3s;
   }
   #video-container {
-    transition: filter 1.2s ease-in-out;
+    transition: filter 1s ease-in-out;
     &.isLoading {
       filter: blur(24px);
     }
