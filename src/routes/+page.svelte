@@ -61,6 +61,7 @@
   class={$videoIsPlaying ? "" : "isLoading"}
   style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
 ></div>
+<div><img src="/images/tram_bass_2-15.png" width="auto" height="auto"></div>
 <VideoControls />
 {#if isDevMode}
   <DevTools />{/if}
