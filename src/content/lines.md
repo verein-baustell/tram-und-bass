@@ -1,6 +1,6 @@
 ---
 lines:
-  - color: "#ff0000"
+  - color: "#de2b2b"
     number: 15
     name: Stadelhofen
     artistName: Some Juan Èlse
