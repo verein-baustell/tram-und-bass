@@ -61,7 +61,7 @@
   class={$videoIsPlaying ? "" : "isLoading"}
   style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
 ></div>
-<div><img src="/images/tram_bass_2-15.png" width="auto" height="auto"></div>
+<div class="logo"><img src="/images/tram_bass_2-15.png" width="auto" height="auto"></div>
 <VideoControls />
 {#if isDevMode}
   <DevTools />{/if}
@@ -104,6 +104,8 @@
     --font-size: 1em;
     --global-padding: 0.8em;
     --transition: ease-in-out 0.3s;
+    --padding-m: 0.24em;
+    --padding-s: 0.12em;
   }
   #video-container {
     transition: filter 1s ease-in-out;

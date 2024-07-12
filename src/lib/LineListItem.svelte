@@ -24,7 +24,7 @@
     }}
     class:isActive={$currentLine === line}
   >
-    <LineNumber number={line.number} />
+    <LineNumber number={line.number} style="color: white"/>
     <span>{line.name}</span>
     <!-- TODO: Add Icon -->
     -
@@ -43,7 +43,16 @@
     border: none;
     cursor: pointer;
     display: flex;
+    width: 100%;
+    padding: var(--padding-m);
+    border-radius: var(--border-radius-button);
     align-items: center;
     gap: 0.5em;
+    transition: var(--transition);
+  }
+
+  button:hover{
+    background-color: var(--hover-color);
+    transition: var(--transition);
   }
 </style>
