@@ -62,7 +62,7 @@ lines:
         startTime: 11:11
         endTime: 11:19
     isInverted: false
-  - color: "#da0000"
+  - color: "#de2b2b"
     number: 2
     name: Tiefenbrunnen
     artistName: Some Juan Differenté
@@ -75,7 +75,7 @@ lines:
         startTime: 11:11
         endTime: 11:15
     isInverted: false
-  - color: "#8f00ff"
+  - color: "#8b2062"
     number: 17
     name: Werdhölzli
     artistName: Some Juan Élse Entire Lee
