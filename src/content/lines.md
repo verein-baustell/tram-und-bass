@@ -88,4 +88,16 @@ lines:
         startTime: 11:11
         endTime: 11:13
     isInverted: false
+  - color: "#f4d332"
+    number: 13
+    name: Albisgütli
+    artistName: Fabini
+    artistAboutText: Fabian Frey is an artist, designer and researcher. Fabi works
+      at the intersections of nature, democracy, socioculture and speculative
+      future. In doing so, his search leads him along forms of activation of the
+      more-than-.
+    videoUrl: https://vimeo.com/950707919/af30ff979c?share=copy
+    releaseDate: 2024-07-12T16:16:00.000Z
+    id: ""
+    isInverted: true
 ---
