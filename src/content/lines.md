@@ -97,7 +97,15 @@ lines:
       future. In doing so, his search leads him along forms of activation of the
       more-than-.
     videoUrl: https://vimeo.com/950707919/af30ff979c?share=copy
-    releaseDate: 2024-07-12T16:16:00.000Z
+    releaseDate: 2024-07-10T16:16:00.000Z
     id: ""
     isInverted: true
+  - id: ""
+    releaseDate: 2024-07-10T16:19:00.000Z
+    name: Hardturm
+    number: 8
+    color: "#b4ca3f"
+    isInverted: true
+    artistName: Radiant
+    videoUrl: https://vimeo.com/950568957/0962988f6e?share=copy
 ---
