@@ -49,7 +49,7 @@ lines:
         startTime: 19:14
         endTime: 19:29
     isInverted: false
-  - color: "#6027ff"
+  - color: "#8b2062"
     number: 17
     name: Albisgüetli
     artistName: Some Juan
