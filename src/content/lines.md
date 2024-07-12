@@ -1,6 +1,6 @@
 ---
 lines:
-  - color: "#ff0000"
+  - color: "#de2b2b"
     number: 15
     name: Stadelhofen
     artistName: Some Juan Èlse
@@ -49,7 +49,7 @@ lines:
         startTime: 19:14
         endTime: 19:29
     isInverted: false
-  - color: "#6027ff"
+  - color: "#8b2062"
     number: 17
     name: Albisgüetli
     artistName: Some Juan
@@ -62,7 +62,7 @@ lines:
         startTime: 11:11
         endTime: 11:19
     isInverted: false
-  - color: "#da0000"
+  - color: "#de2b2b"
     number: 2
     name: Tiefenbrunnen
     artistName: Some Juan Differenté
@@ -75,7 +75,7 @@ lines:
         startTime: 11:11
         endTime: 11:15
     isInverted: false
-  - color: "#8f00ff"
+  - color: "#8b2062"
     number: 17
     name: Werdhölzli
     artistName: Some Juan Élse Entire Lee
@@ -88,4 +88,24 @@ lines:
         startTime: 11:11
         endTime: 11:13
     isInverted: false
+  - color: "#f4d332"
+    number: 13
+    name: Albisgütli
+    artistName: Fabini
+    artistAboutText: Fabian Frey is an artist, designer and researcher. Fabi works
+      at the intersections of nature, democracy, socioculture and speculative
+      future. In doing so, his search leads him along forms of activation of the
+      more-than-.
+    videoUrl: https://vimeo.com/950707919/af30ff979c?share=copy
+    releaseDate: 2024-07-10T16:16:00.000Z
+    id: ""
+    isInverted: true
+  - id: ""
+    releaseDate: 2024-07-10T16:19:00.000Z
+    name: Hardturm
+    number: 8
+    color: "#b4ca3f"
+    isInverted: true
+    artistName: Radiant
+    videoUrl: https://vimeo.com/950568957/0962988f6e?share=copy
 ---
