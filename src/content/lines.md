@@ -96,7 +96,7 @@ lines:
       at the intersections of nature, democracy, socioculture and speculative
       future. In doing so, his search leads him along forms of activation of the
       more-than-.
-    videoUrl: https://vimeo.com/950707919/af30ff979c?share=copy
+    videoUrl: https://player.vimeo.com/video/950707919?h=af30ff979c
     releaseDate: 2024-07-10T16:16:00.000Z
     id: ""
     isInverted: true
@@ -107,5 +107,5 @@ lines:
     color: "#b4ca3f"
     isInverted: true
     artistName: Radiant
-    videoUrl: https://vimeo.com/950568957/0962988f6e
+    videoUrl: https://player.vimeo.com/video/950568957?h=0962988f6e
 ---
