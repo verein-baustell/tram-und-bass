@@ -51,7 +51,7 @@ lines:
     isInverted: false
   - color: "#8b2062"
     number: 17
-    name: Albisgüetli
+    name: Albisgütli
     artistName: Some Juan
     artistAboutText: Some Juan
     videoUrl: https://player.vimeo.com/video/950809685?h=ee311a9fe0
@@ -108,4 +108,20 @@ lines:
     isInverted: true
     artistName: Radiant
     videoUrl: https://player.vimeo.com/video/950568957?h=0962988f6e
+  - id: ""
+    releaseDate: 2024-07-15T14:54:00.000Z
+    videoUrl: https://player.vimeo.com/video/950719687?h=29fa4163a3
+    artistName: DJ BOBO
+    isInverted: true
+    number: 13
+    name: Frankental
+    color: "#f4d332"
+  - id: ""
+    releaseDate: 2024-07-15T14:55:00.000Z
+    name: Geissweid
+    number: 2
+    color: "#de2b2b"
+    artistName: "1312"
+    videoUrl: https://player.vimeo.com/video/947761973?h=1c135204fe
+    isInverted: false
 ---
