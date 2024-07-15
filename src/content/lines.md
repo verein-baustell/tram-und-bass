@@ -1,5 +1,70 @@
 ---
 lines:
+  - id: ""
+    releaseDate: 2024-07-15T14:55:00.000Z
+    name: Geissweid
+    number: 2
+    color: "#de2b2b"
+    artistName: "1312"
+    videoUrl: https://player.vimeo.com/video/947761973?h=1c135204fe
+    isInverted: false
+  - color: "#de2b2b"
+    number: 2
+    name: Tiefenbrunnen
+    artistName: Some Juan Differenté
+    artistAboutText: About Some Juan Differenté
+    videoUrl: https://player.vimeo.com/video/950558411?h=452ef92b18
+    releaseDate: 2024-06-02T18:34:00.000Z
+    id: ""
+    timeStamps:
+      - name: Bahnhofstrasse/HB
+        startTime: 11:11
+        endTime: 11:15
+    isInverted: false
+  - id: ""
+    releaseDate: 2024-07-15T15:00:00.000Z
+    number: 3
+    name: Klusplatz
+    color: "#589c44"
+    artistName: aMadeUpName
+    videoUrl: https://player.vimeo.com/video/950561793?h=2b51bbc0bb
+    isInverted: false
+  - id: ""
+    releaseDate: 2024-07-15T15:02:00.000Z
+    name: Albisrieden
+    color: "#589c44"
+    number: 3
+    videoUrl: https://player.vimeo.com/video/950560428?h=f9744206bd
+    artistName: Calm Mothers
+    isInverted: false
+  - id: ""
+    releaseDate: 2024-07-10T16:19:00.000Z
+    name: Hardturm
+    number: 8
+    color: "#b4ca3f"
+    isInverted: true
+    artistName: Radiant
+    videoUrl: https://player.vimeo.com/video/950568957?h=0962988f6e
+  - color: "#f4d332"
+    number: 13
+    name: Albisgütli
+    artistName: Fabini
+    artistAboutText: Fabian Frey is an artist, designer and researcher. Fabi works
+      at the intersections of nature, democracy, socioculture and speculative
+      future. In doing so, his search leads him along forms of activation of the
+      more-than-.
+    videoUrl: https://player.vimeo.com/video/950707919?h=af30ff979c
+    releaseDate: 2024-07-10T16:16:00.000Z
+    id: ""
+    isInverted: true
+  - id: ""
+    releaseDate: 2024-07-15T14:54:00.000Z
+    videoUrl: https://player.vimeo.com/video/950719687?h=29fa4163a3
+    artistName: DJ BOBO
+    isInverted: true
+    number: 13
+    name: Frankental
+    color: "#f4d332"
   - color: "#de2b2b"
     number: 15
     name: Stadelhofen
@@ -62,19 +127,6 @@ lines:
         startTime: 11:11
         endTime: 11:19
     isInverted: false
-  - color: "#de2b2b"
-    number: 2
-    name: Tiefenbrunnen
-    artistName: Some Juan Differenté
-    artistAboutText: About Some Juan Differenté
-    videoUrl: https://player.vimeo.com/video/950558411?h=452ef92b18
-    releaseDate: 2024-06-02T18:34:00.000Z
-    id: ""
-    timeStamps:
-      - name: Bahnhofstrasse/HB
-        startTime: 11:11
-        endTime: 11:15
-    isInverted: false
   - color: "#8b2062"
     number: 17
     name: Werdhölzli
@@ -87,41 +139,5 @@ lines:
       - name: Bellevue
         startTime: 11:11
         endTime: 11:13
-    isInverted: false
-  - color: "#f4d332"
-    number: 13
-    name: Albisgütli
-    artistName: Fabini
-    artistAboutText: Fabian Frey is an artist, designer and researcher. Fabi works
-      at the intersections of nature, democracy, socioculture and speculative
-      future. In doing so, his search leads him along forms of activation of the
-      more-than-.
-    videoUrl: https://player.vimeo.com/video/950707919?h=af30ff979c
-    releaseDate: 2024-07-10T16:16:00.000Z
-    id: ""
-    isInverted: true
-  - id: ""
-    releaseDate: 2024-07-10T16:19:00.000Z
-    name: Hardturm
-    number: 8
-    color: "#b4ca3f"
-    isInverted: true
-    artistName: Radiant
-    videoUrl: https://player.vimeo.com/video/950568957?h=0962988f6e
-  - id: ""
-    releaseDate: 2024-07-15T14:54:00.000Z
-    videoUrl: https://player.vimeo.com/video/950719687?h=29fa4163a3
-    artistName: DJ BOBO
-    isInverted: true
-    number: 13
-    name: Frankental
-    color: "#f4d332"
-  - id: ""
-    releaseDate: 2024-07-15T14:55:00.000Z
-    name: Geissweid
-    number: 2
-    color: "#de2b2b"
-    artistName: "1312"
-    videoUrl: https://player.vimeo.com/video/947761973?h=1c135204fe
     isInverted: false
 ---
