@@ -107,5 +107,5 @@ lines:
     color: "#b4ca3f"
     isInverted: true
     artistName: Radiant
-    videoUrl: https://vimeo.com/950568957/0962988f6e?share=copy
+    videoUrl: https://vimeo.com/950568957/0962988f6e
 ---
