@@ -10,7 +10,7 @@ lines:
     isInverted: false
   - color: "#de2b2b"
     number: 2
-    name: Tiefenbrunnen
+    name: Bahnhof Tiefenbrunnen
     artistName: Some Juan Differenté
     artistAboutText: About Some Juan Differenté
     videoUrl: https://player.vimeo.com/video/950558411?h=452ef92b18
@@ -140,4 +140,20 @@ lines:
         startTime: 11:11
         endTime: 11:13
     isInverted: false
+  - id: ""
+    releaseDate: 2024-07-15T15:09:00.000Z
+    number: 4
+    color: "#473d8c"
+    isInverted: false
+    name: Bahnhof Tiefenbrunnen
+    artistName: Baustell
+    videoUrl: https://player.vimeo.com/video/950564216?h=895d1fb002
+  - id: ""
+    releaseDate: 2024-07-15T15:09:00.000Z
+    number: 4
+    color: "#473d8c"
+    name: Bahnhof Altstetten Nord
+    isInverted: false
+    artistName: Filou
+    videoUrl: https://player.vimeo.com/video/950563061?h=9bf1b84be2
 ---
