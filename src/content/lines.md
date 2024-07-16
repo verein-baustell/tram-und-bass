@@ -525,14 +525,69 @@ lines:
     color: "#589c44"
     artistName: AU
     isInverted: false
-  - id: ""
-    releaseDate: 2024-07-16T11:59:00.000Z
+  - color: "#a1cfe3"
     number: 12
     name: Fracht
-    isInverted: true
     artistName: Ei Wuche Maledive
-    color: "#a1cfe3"
     videoUrl: https://player.vimeo.com/video/950697436?h=67800866e7
+    releaseDate: 2024-07-16T11:59:00.000Z
+    id: ""
+    timeStamps:
+      - name: Bahnhof Stettbach
+        startTime: 00:01
+        endTime: 00:42
+      - name: Ringwiesen
+        startTime: 02:29
+        endTime: 02:46
+      - name: Am Ring
+        startTime: 03:47
+        endTime: 04:00
+      - name: Neugut
+        startTime: 05:02
+        endTime: 05:16
+      - name: Glatt (Tram)
+        startTime: 06:27
+        endTime: 06:47
+      - name: Wallisellen Bahnhof
+        startTime: 07:45
+        endTime: 08:24
+      - name: Belair
+        startTime: 09:19
+        endTime: 09:36
+      - name: Herti
+        startTime: 10:55
+        endTime: 11:09
+      - name: Auzelg
+        startTime: 12:23
+        endTime: 12:37
+      - name: Fernsehstudio
+        startTime: 13:40
+        endTime: 13:54
+      - name: Glattpark
+        startTime: 15:07
+        endTime: 15:30
+      - name: Lindberghplatz
+        startTime: 16:23
+        endTime: 16:46
+      - name: Glattbrugg Bahnhof
+        startTime: 17:50
+        endTime: 18:15
+      - name: Bäuler
+        startTime: 19:32
+        endTime: 19:45
+      - name: Unterriet
+        startTime: 20:31
+        endTime: 20:48
+      - name: Kloten Balsberg Bahnhof
+        startTime: 21:43
+        endTime: 21:58
+      - name: Zürich Flughafen Bahnhof
+        endTime: 23:59
+        startTime: 23:41
+      - name: Fracht
+        startTime: 25:43
+        endTime: 25:51
+    isInverted: true
   - id: ""
     releaseDate: 2024-07-16T11:59:00.000Z
     number: 12
