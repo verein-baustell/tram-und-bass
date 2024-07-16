@@ -86,6 +86,22 @@ lines:
     artistName: Dolce Vita
     name: Bahnhof Enge
   - id: ""
+    releaseDate: 2024-07-16T11:58:00.000Z
+    number: 7
+    color: "#000000"
+    isInverted: false
+    artistName: RTFM
+    name: Bahnhof Stettbach
+    videoUrl: https://player.vimeo.com/video/950567543?h=8e4eb0457c
+  - id: ""
+    releaseDate: 2024-07-16T11:58:00.000Z
+    number: 7
+    color: "#000000"
+    name: Wollishoferplatz
+    videoUrl: https://player.vimeo.com/video/950568271?h=72f40f9183
+    artistName: Carlo Cobra
+    isInverted: false
+  - id: ""
     releaseDate: 2024-07-10T16:19:00.000Z
     name: Hardturm
     number: 8
@@ -93,6 +109,78 @@ lines:
     isInverted: true
     artistName: Radiant
     videoUrl: https://player.vimeo.com/video/950568957?h=0962988f6e
+  - id: ""
+    releaseDate: 2024-07-16T11:58:00.000Z
+    number: 8
+    isInverted: true
+    videoUrl: https://player.vimeo.com/video/950570324?h=ddbc1bdffa
+    artistName: Gott123
+    name: Klusplatz
+    color: "#b4ca3f"
+  - id: ""
+    releaseDate: 2024-07-16T11:58:00.000Z
+    number: 9
+    name: Triemli
+    artistName: Invalid Question
+    videoUrl: https://player.vimeo.com/video/950573466?h=7fb8f08ec8
+    color: "#473d8c"
+    isInverted: false
+  - id: ""
+    releaseDate: 2024-07-16T11:58:00.000Z
+    number: 9
+    name: Hirzenbach
+    artistName: wie lang kann ein disc-jockey name denn sein?!
+    color: "#473d8c"
+    videoUrl: https://player.vimeo.com/video/950571962?h=b4953715b2
+    isInverted: false
+  - id: ""
+    releaseDate: 2024-07-16T11:58:00.000Z
+    number: 10
+    isInverted: false
+    artistName: Flugscham
+    name: Fracht
+    color: "#c83086"
+    videoUrl: https://player.vimeo.com/video/950672105?h=0f80c5bf39
+  - id: ""
+    releaseDate: 2024-07-16T11:58:00.000Z
+    name: Bahnhofplatz HB
+    number: 10
+    isInverted: false
+    artistName: Zugstolz
+    color: "#c83086"
+    videoUrl: https://player.vimeo.com/video/950661521?h=164e96d180
+  - id: ""
+    releaseDate: 2024-07-16T11:58:00.000Z
+    number: 11
+    name: Rehalp
+    artistName: Bambi
+    color: "#589c44"
+    videoUrl: https://player.vimeo.com/video/950688315?h=444abd1672
+    isInverted: false
+  - id: ""
+    releaseDate: 2024-07-16T11:58:00.000Z
+    name: Auzelg
+    number: 11
+    videoUrl: https://player.vimeo.com/video/950679463?h=03df9a86bb
+    color: "#589c44"
+    artistName: AU
+    isInverted: false
+  - id: ""
+    releaseDate: 2024-07-16T11:59:00.000Z
+    number: 12
+    name: Fracht
+    isInverted: true
+    artistName: Ei Wuche Maledive
+    color: "#a1cfe3"
+    videoUrl: https://player.vimeo.com/video/950697436?h=67800866e7
+  - id: ""
+    releaseDate: 2024-07-16T11:59:00.000Z
+    number: 12
+    name: Bahnhof Stettbach
+    isInverted: true
+    artistName: XYZ
+    color: "#a1cfe3"
+    videoUrl: https://player.vimeo.com/video/950700571?h=cc9bd2b94d
   - color: "#f4d332"
     number: 13
     name: Albisgütli
@@ -113,6 +201,30 @@ lines:
     number: 13
     name: Frankental
     color: "#f4d332"
+  - id: ""
+    releaseDate: 2024-07-16T11:59:00.000Z
+    number: 14
+    color: "#599de0"
+    name: Triemli
+    artistName: Dj Get Well Soon
+    videoUrl: https://player.vimeo.com/video/950742749?h=57745ef270
+    isInverted: false
+  - id: ""
+    releaseDate: 2024-07-16T11:59:00.000Z
+    number: 14
+    color: "#599de0"
+    isInverted: false
+    artistName: Cumulonimbus
+    name: Seebach
+    videoUrl: https://player.vimeo.com/video/950721895?h=02c06df905
+  - id: ""
+    releaseDate: 2024-07-16T11:59:00.000Z
+    number: 15
+    color: "#de2b2b"
+    name: Bucheggplatz
+    artistName: DJ Bürcherwurm
+    videoUrl: https://player.vimeo.com/video/950805249?h=1f4d17577f
+    isInverted: false
   - color: "#de2b2b"
     number: 15
     name: Stadelhofen
