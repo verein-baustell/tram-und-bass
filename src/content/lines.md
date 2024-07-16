@@ -54,6 +54,38 @@ lines:
     artistName: Baustell
     videoUrl: https://player.vimeo.com/video/950564216?h=895d1fb002
   - id: ""
+    releaseDate: 2024-07-16T10:50:00.000Z
+    number: 5
+    name: Laubegg
+    artistName: Andi Amo
+    color: "#865a2d"
+    isInverted: false
+    videoUrl: https://player.vimeo.com/video/950565372?h=3c31783cab
+  - id: ""
+    releaseDate: 2024-07-16T11:48:00.000Z
+    color: "#865a2d"
+    number: 5
+    isInverted: false
+    name: Kirche Fluntern
+    artistName: Glenn
+    videoUrl: https://player.vimeo.com/video/947764688?h=181299d19c
+  - id: ""
+    releaseDate: 2024-07-16T11:48:00.000Z
+    isInverted: true
+    color: "#cc9f4c"
+    number: 6
+    name: Zoo
+    artistName: Simba
+    videoUrl: https://player.vimeo.com/video/950566927?h=92df0178c5
+  - id: ""
+    releaseDate: 2024-07-16T11:48:00.000Z
+    number: 6
+    color: "#cc9f4c"
+    isInverted: true
+    videoUrl: https://player.vimeo.com/video/950566054?h=9f68eea5d2
+    artistName: Dolce Vita
+    name: Bahnhof Enge
+  - id: ""
     releaseDate: 2024-07-10T16:19:00.000Z
     name: Hardturm
     number: 8
@@ -156,12 +188,4 @@ lines:
         startTime: 11:11
         endTime: 11:13
     isInverted: false
-  - id: ""
-    releaseDate: 2024-07-16T10:50:00.000Z
-    number: 5
-    name: Laubegg
-    artistName: Andi Amo
-    color: "#865a2d"
-    isInverted: false
-    videoUrl: https://player.vimeo.com/video/950565372?h=3c31783cab
 ---
