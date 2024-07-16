@@ -199,14 +199,87 @@ lines:
     isInverted: true
     artistName: Radiant
     videoUrl: https://player.vimeo.com/video/950568957?h=0962988f6e
-  - id: ""
-    releaseDate: 2024-07-16T11:58:00.000Z
+  - color: "#b4ca3f"
     number: 8
-    isInverted: true
-    videoUrl: https://player.vimeo.com/video/950570324?h=ddbc1bdffa
-    artistName: Gott123
     name: Klusplatz
-    color: "#b4ca3f"
+    artistName: Gott123
+    videoUrl: https://player.vimeo.com/video/950570324?h=ddbc1bdffa
+    releaseDate: 2024-07-16T11:58:00.000Z
+    id: ""
+    timeStamps:
+      - name: Hardturm
+        startTime: 00:01
+        endTime: 00:08
+      - name: Bernoulli-Häuser
+        startTime: 00:59
+        endTime: 01:19
+      - name: Fischerweg
+        startTime: 01:56
+        endTime: 02:19
+      - name: Förrlibuckstrasse
+        startTime: 03:13
+        endTime: 03:26
+      - name: Escher-Wyss-Platz
+        startTime: 05:02
+        endTime: 05:18
+      - name: Schiffbau
+        startTime: 06:08
+        endTime: 06:31
+      - name: Bahnhof Hardbrücke
+        startTime: 07:33
+        endTime: 07:52
+      - name: Hardplatz
+        startTime: 09:03
+        endTime: 09:21
+      - name: Güterbahnhof
+        startTime: 10:10
+        endTime: 10:33
+      - name: Bäckeranlage
+        startTime: 11:43
+        endTime: 12:11
+      - name: Helvetiaplatz
+        startTime: 13:14
+        endTime: 13:35
+      - name: Stauffacher
+        startTime: 14:43
+        endTime: 15:00
+      - name: Bahnhof Selnau
+        startTime: 15:55
+        endTime: 16:12
+      - name: Stockerstrasse
+        startTime: 17:45
+        endTime: 18:02
+      - name: Paradeplatz
+        startTime: 19:11
+        endTime: 19:30
+      - name: Kantonalbank
+        startTime: 20:13
+        endTime: 20:25
+      - name: Bürkliplatz
+        startTime: 22:17
+        endTime: 22:42
+      - name: Bellevue
+        startTime: 23:54
+        endTime: 24:07
+      - name: Bahnhof Stadelhofen
+        startTime: 25:32
+        endTime: 25:55
+      - name: Kreuzplatz
+        startTime: 27:55
+        endTime: 28:25
+      - name: Englischviertelstrasse
+        startTime: 29:19
+        endTime: 29:35
+      - name: Römerhof
+        startTime: 30:11
+        endTime: 30:30
+      - name: Hölderlinstrasse
+        startTime: 31:20
+        endTime: 31:29
+      - name: Klusplatz
+        startTime: 32:53
+        endTime: 33:07
+    isInverted: true
   - id: ""
     releaseDate: 2024-07-16T11:58:00.000Z
     number: 9
