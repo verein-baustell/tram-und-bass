@@ -16,7 +16,6 @@
     height: 1.75em;
     display: grid;
     place-items: center;
-    /* TODOO: make border with a variable */
     border: solid 1px var(--foreground-color);
     border-radius: var(--padding-m);
 

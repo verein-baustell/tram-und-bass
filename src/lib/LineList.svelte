@@ -4,7 +4,7 @@
   export let lines: Line[];
   export let keepStationWhenChangingLine = false;
 </script>
-<div class="view">
+<div class="view" id="line-list">
   <ul>
     {#each lines as line}
       <LineListItem
@@ -21,5 +21,11 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
+  }
+
+  #line-list{
+    max-height: calc(100vh - 24em);
+    overflow: scroll;
+
   }
 </style>

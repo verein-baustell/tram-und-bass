@@ -108,6 +108,7 @@
     --padding-s: 0.12em;
   }
   #video-container {
+    filter: saturate(1.3);
     transition: filter 1s ease-in-out;
     &.isLoading {
       filter: blur(24px);

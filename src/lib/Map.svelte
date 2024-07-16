@@ -53,15 +53,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: transparent;
-    backdrop-filter: blur(40px) invert(100%);
+    background-color: white;
+    backdrop-filter: blur(40px);
     animation: fadeIn 0.8s ease-in-out;
     @keyframes fadeIn {
       from {
-        backdrop-filter: blur(0px) invert(0%);
+        backdrop-filter: blur(0px);
       }
       to {
-        backdrop-filter: blur(40px) invert(100%);
+        backdrop-filter: blur(40px);
       }
     }
   }

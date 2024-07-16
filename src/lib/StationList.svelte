@@ -17,6 +17,8 @@
   #station-list {
     --distance-to-left-edge: 0.5em;
     position: relative;
+    max-height: calc(100vh - 24em);
+    overflow: scroll;
     #stations-line {
       position: absolute;
       top: 0;
