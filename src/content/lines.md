@@ -1,13 +1,5 @@
 ---
 lines:
-  - id: ""
-    releaseDate: 2024-07-15T14:55:00.000Z
-    name: Geissweid
-    number: 2
-    color: "#de2b2b"
-    artistName: "1312"
-    videoUrl: https://player.vimeo.com/video/947761973?h=1c135204fe
-    isInverted: false
   - color: "#de2b2b"
     number: 2
     name: Bahnhof Tiefenbrunnen
@@ -20,6 +12,14 @@ lines:
       - name: Bahnhofstrasse/HB
         startTime: 11:11
         endTime: 11:15
+    isInverted: false
+  - id: ""
+    releaseDate: 2024-07-15T14:55:00.000Z
+    name: Geissweid
+    number: 2
+    color: "#de2b2b"
+    artistName: "1312"
+    videoUrl: https://player.vimeo.com/video/947761973?h=1c135204fe
     isInverted: false
   - id: ""
     releaseDate: 2024-07-15T15:00:00.000Z
