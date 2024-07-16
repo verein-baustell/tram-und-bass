@@ -374,13 +374,116 @@ lines:
         startTime: 32:53
         endTime: 33:07
     isInverted: true
-  - id: ""
-    releaseDate: 2024-07-16T11:58:00.000Z
+  - color: "#473d8c"
     number: 9
     name: Triemli
     artistName: Invalid Question
     videoUrl: https://player.vimeo.com/video/950573466?h=7fb8f08ec8
-    color: "#473d8c"
+    releaseDate: 2024-07-16T11:58:00.000Z
+    id: ""
+    timeStamps:
+      - name: Hirzenbach
+        startTime: 00:01
+        endTime: 00:23
+      - name: Altried
+        startTime: 01:43
+        endTime: 02:03
+      - name: Luchswiesen
+        startTime: 02:57
+        endTime: 03:18
+      - name: Luegisland
+        startTime: 04:02
+        endTime: 04:20
+      - name: Heerenwiesen
+        startTime: 05:07
+        endTime: 05:26
+      - name: Schwamendingerplatz
+        startTime: 06:29
+        endTime: 06:52
+      - name: Aargauerstrasse
+        startTime: 08:02
+        endTime: 08:22
+      - name: Waldgarten
+        startTime: 09:19
+        endTime: 09:34
+      - name: Tierspital
+        startTime: 10:28
+        endTime: 10:45
+      - name: Milchbuck
+        startTime: 12:40
+        endTime: 12:59
+      - name: Universität Irchel
+        startTime: 14:01
+        endTime: 14:35
+      - name: Langmauerstrasse
+        startTime: 15:40
+        endTime: 15:59
+      - name: Letzistrasse
+        startTime: 16:39
+        endTime: 16:55
+      - name: Kinkelstrasse
+        startTime: 17:24
+        endTime: 17:41
+      - name: Seilbahn Rigiblick
+        startTime: 18:33
+        endTime: 18:50
+      - name: Winkelriedstrasse
+        startTime: 19:40
+        endTime: 19:55
+      - name: Haldenbach
+        startTime: 20:47
+        endTime: 21:13
+      - name: ETH Universitätsspital
+        startTime: 22:17
+        endTime: 22:39
+      - name: Kantonsschule
+        startTime: 23:56
+        endTime: 24:22
+      - name: Kunsthaus
+        startTime: 25:33
+        endTime: 26:06
+      - name: Bellevue
+        startTime: 28:13
+        endTime: 29:11
+      - name: Bürkliplatz
+        startTime: 30:17
+        endTime: 30:57
+      - name: Kantonalbank
+        startTime: 31:53
+        endTime: 32:10
+      - name: Paradeplatz
+        startTime: 33:00
+        endTime: 33:24
+      - name: Sihlstrasse
+        startTime: 34:34
+        endTime: 35:01
+      - name: Stauffacher
+        startTime: 36:26
+        endTime: 36:53
+      - name: Werd
+        startTime: 37:45
+        endTime: 38:00
+      - name: Bahnhof Wiedikon
+        startTime: 38:53
+        endTime: 39:22
+      - name: Schmiede Wiedikon
+        startTime: 40:25
+        endTime: 40:47
+      - name: Goldbrunnenplatz
+        startTime: 41:50
+        endTime: 42:15
+      - name: Talwiesenstrasse
+        startTime: 43:03
+        endTime: 43:26
+      - name: Heuried
+        startTime: 44:00
+        endTime: 44:14
+      - name: Schaufelbergerstrasse
+        startTime: 45:01
+        endTime: 45:36
+      - name: Triemli
+        startTime: 46:48
+        endTime: 47:26
     isInverted: false
   - id: ""
     releaseDate: 2024-07-16T11:58:00.000Z
