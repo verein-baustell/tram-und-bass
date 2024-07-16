@@ -400,7 +400,7 @@ lines:
       - name: Schwamendingerplatz
         startTime: 06:29
         endTime: 06:52
-      - name: Aargauerstrasse
+      - name: Ueberlandpark
         startTime: 08:02
         endTime: 08:22
       - name: Waldgarten
