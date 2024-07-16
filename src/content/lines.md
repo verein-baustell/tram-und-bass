@@ -156,4 +156,12 @@ lines:
         startTime: 11:11
         endTime: 11:13
     isInverted: false
+  - id: ""
+    releaseDate: 2024-07-16T10:50:00.000Z
+    number: 5
+    name: Laubegg
+    artistName: Andi Amo
+    color: "#865a2d"
+    isInverted: false
+    videoUrl: https://player.vimeo.com/video/950565372?h=3c31783cab
 ---
