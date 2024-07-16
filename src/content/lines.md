@@ -237,22 +237,108 @@ lines:
     name: Bahnhof Tiefenbrunnen
     artistName: Baustell
     videoUrl: https://player.vimeo.com/video/950564216?h=895d1fb002
-  - id: ""
-    releaseDate: 2024-07-16T10:50:00.000Z
+  - color: "#865a2d"
     number: 5
     name: Laubegg
     artistName: Andi Amo
-    color: "#865a2d"
-    isInverted: false
     videoUrl: https://player.vimeo.com/video/950565372?h=3c31783cab
-  - id: ""
-    releaseDate: 2024-07-16T11:48:00.000Z
-    color: "#865a2d"
-    number: 5
+    releaseDate: 2024-07-16T10:50:00.000Z
+    id: ""
+    timeStamps:
+      - name: Kirche Fluntern
+        startTime: 00:01
+        endTime: 00:10
+      - name: Voltastrasse
+        startTime: 01:38
+        endTime: 01:52
+      - name: Platte
+        startTime: 03:16
+        endTime: 03:30
+      - name: Kantonsschule
+        startTime: 05:01
+        endTime: 05:17
+      - name: Kunsthaus
+        startTime: 06:22
+        endTime: 07:03
+      - name: Bellevue
+        startTime: 08:51
+        endTime: 09:25
+      - name: Bürkliplatz
+        startTime: 11:27
+        endTime: 12:05
+      - name: Rentenanstalt
+        startTime: 13:17
+        endTime: 13:31
+      - name: Bahnhof Enge
+        startTime: 14:45
+        endTime: 15:19
+      - name: Bahnhof Enge Bederstrasse
+        startTime: 16:26
+        endTime: 16:46
+      - name: Waffenplatzstrasse
+        startTime: 17:58
+        endTime: 18:10
+      - name: Sihlcity Nord
+        startTime: 18:51
+        endTime: 19:13
+      - name: Saalsporthalle
+        startTime: 20:15
+        endTime: 20:29
+      - name: Laubegg
+        startTime: 21:07
+        endTime: 22:20
     isInverted: false
+  - color: "#865a2d"
+    number: 5
     name: Kirche Fluntern
     artistName: Glenn
     videoUrl: https://player.vimeo.com/video/947764688?h=181299d19c
+    releaseDate: 2024-07-16T11:48:00.000Z
+    id: ""
+    timeStamps:
+      - name: Laubegg
+        startTime: 01:04
+        endTime: 01:27
+      - name: Saalsporthalle
+        startTime: 02:10
+        endTime: 02:26
+      - name: Sihlcity Nord
+        startTime: 03:31
+        endTime: 03:55
+      - name: Waffenplatzstrasse
+        startTime: 05:13
+        endTime: 05:32
+      - name: Bahnhof Enge Bederstrasse
+        startTime: 06:28
+        endTime: 06:48
+      - name: Bahnhof Enge
+        startTime: 08:05
+        endTime: 08:35
+      - name: Rentenanstalt
+        startTime: 10:03
+        endTime: 10:29
+      - name: Bürkliplatz
+        startTime: 12:13
+        endTime: 12:36
+      - name: Bellevue
+        startTime: 14:26
+        endTime: 14:55
+      - name: Kunsthaus
+        startTime: 16:53
+        endTime: 17:32
+      - name: Kantonsschule
+        startTime: 18:20
+        endTime: 18:43
+      - name: Platte
+        startTime: 20:13
+        endTime: 20:29
+      - name: Voltastrasse
+        startTime: 21:52
+        endTime: 22:08
+      - name: Kirche Fluntern
+        startTime: 23:45
+        endTime: 24:40
+    isInverted: false
   - id: ""
     releaseDate: 2024-07-16T11:48:00.000Z
     isInverted: true
