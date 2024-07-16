@@ -6,8 +6,9 @@ const lines = content.lines;
 // TODO: Generate ids on save in the CMS
 // add missing ids
 lines.forEach((line) => {
-  line.id = line.name.replace(/\s/g, "") + line.number;
+  line.id = line.name.toLowerCase().replace(/\s/g, "") + line.number;
 });
+console.log({ lines });
 export const allLines = writable<Line[]>(lines);
 export const currentLine = writable<Line>();
 // update query params when currentLine changes
