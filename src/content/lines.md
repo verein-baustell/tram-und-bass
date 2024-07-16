@@ -103,13 +103,107 @@ lines:
         startTime: 42:27
         endTime: 43:23
     isInverted: false
-  - id: ""
-    releaseDate: 2024-07-15T14:55:00.000Z
-    name: Geissweid
+  - color: "#de2b2b"
     number: 2
-    color: "#de2b2b"
+    name: Geissweid
     artistName: "1312"
     videoUrl: https://player.vimeo.com/video/947761973?h=1c135204fe
+    releaseDate: 2024-07-15T14:55:00.000Z
+    id: ""
+    timeStamps:
+      - name: Bahnhof Tiefenbrunnen
+        startTime: 00:01
+        endTime: 00:12
+      - name: Wildbachstrasse
+        startTime: 01:27
+        endTime: 01:43
+      - name: Fröhlichstrasse
+        startTime: 02:33
+        endTime: 02:47
+      - name: Höschgasse
+        startTime: 03:40
+        endTime: 03:58
+      - name: Feldeggstrasse
+        startTime: 04:37
+        endTime: 04:56
+      - name: Kreuzstrasse
+        startTime: 05:52
+        endTime: 06:12
+      - name: Opernhaus
+        startTime: 07:03
+        endTime: 07:52
+      - name: Bellevue
+        startTime: 09:26
+        endTime: 09:58
+      - name: Bürkliplatz
+        startTime: 12:27
+        endTime: 13:08
+      - name: Kantonalbank
+        startTime: 14:08
+        endTime: 14:22
+      - name: Paradeplatz
+        startTime: 15:06
+        endTime: 15:42
+      - name: Sihlstrasse
+        startTime: 16:59
+        endTime: 17:17
+      - name: Stauffacher
+        startTime: 18:22
+        endTime: 18:46
+      - name: Bezirksgebäude
+        startTime: 19:39
+        endTime: 19:55
+      - name: Zürich, Kalkbreite Bhf.Wiedikon
+        startTime: 20:47
+        endTime: 21:09
+      - name: Lochergut
+        startTime: 21:56
+        endTime: 22:25
+      - name: Zypressenstrasse
+        startTime: 23:11
+        endTime: 23:38
+      - name: Albisriederplatz
+        startTime: 24:28
+        endTime: 24:50
+      - name: Letzigrund
+        startTime: 26:01
+        endTime: 26:15
+      - name: Freihofstrasse
+        startTime: 27:02
+        endTime: 27:30
+      - name: Kappeli
+        startTime: 28:19
+        endTime: 28:45
+      - name: Grimselstrasse
+        startTime: 29:41
+        endTime: 30:02
+      - name: Lindenplatz
+        startTime: 30:49
+        endTime: 31:11
+      - name: Bachmattstrasse
+        startTime: 31:49
+        endTime: 32:02
+      - name: Farbhof
+        startTime: 32:48
+        endTime: 33:08
+      - name: Micafil
+        startTime: 33:53
+        endTime: 34:05
+      - name: Mülligen
+        startTime: 35:08
+        endTime: 35:21
+      - name: Gasometerbrücke
+        startTime: 36:12
+        endTime: 36:27
+      - name: Wagonsfabrik
+        startTime: 37:15
+        endTime: 37:28
+      - name: Schlieren, Zentrum Bahnhof
+        startTime: 38:21
+        endTime: 38:34
+      - name: Geissweid
+        startTime: 39:29
+        endTime: 40:08
     isInverted: false
   - id: ""
     releaseDate: 2024-07-15T15:00:00.000Z
