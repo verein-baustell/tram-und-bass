@@ -1,3 +1,3 @@
-<div>
+<div class="view">
     Artist
 </div>

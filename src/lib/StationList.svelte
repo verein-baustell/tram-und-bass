@@ -4,7 +4,7 @@
   import Circle from "./Circle.svelte";
 </script>
 
-<div id="station-list">
+<div id="station-list" class="view">
   <ol>
     {#each $currentLine.timeStamps as station}
       <li><Circle isFilled={hmsToSeconds(station.endTime) < $currentTime} />{station.name}</li>
@@ -17,6 +17,8 @@
   #station-list {
     --distance-to-left-edge: 0.5em;
     position: relative;
+    max-height: calc(100vh - 24em);
+    overflow: scroll;
     #stations-line {
       position: absolute;
       top: 0;

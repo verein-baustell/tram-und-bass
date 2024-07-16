@@ -61,6 +61,7 @@
   class={$videoIsPlaying ? "" : "isLoading"}
   style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
 ></div>
+<div class="logo"><img src="/images/tram_bass_2-15.png" width="auto" height="auto"></div>
 <VideoControls />
 {#if isDevMode}
   <DevTools />{/if}
@@ -83,7 +84,7 @@
       font-style: normal;
       font-weight: 500;
       src:
-        url("/fonts/NaNHolo_TRIAL-Medium.woff2") format("woff2");
+        url("/fonts/NaNHoloNarrow_TRIAL-Regular.woff2") format("woff2");
     }
     @font-face {
       font-family: HoloMono;
@@ -95,12 +96,22 @@
 
     --background-color: rgb(255, 255, 255);
     --foreground-color: black;
-    --border-radius: 0.5em;
+    --background-color-light: #EEEEEE;
+    --hover-color: #DDDDDD;
+    --border-radius-button: 0.4em;
+    --border-radius-view: 0.52em;
+    --padding-view: 0.5em 0.8em;
+    --font-size: 1em;
+    --global-padding: 0.8em;
+    --transition: ease-in-out 0.3s;
+    --padding-m: 0.24em;
+    --padding-s: 0.12em;
   }
   #video-container {
-    transition: filter 0.5s ease-in-out;
+    filter: saturate(1.5);
+    transition: filter 1s ease-in-out;
     &.isLoading {
-      filter: blur(10px);
+      filter: blur(24px);
     }
     position: absolute;
     aspect-ratio: 16 / 9;

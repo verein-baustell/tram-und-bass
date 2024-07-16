@@ -11,13 +11,21 @@
     background-color: white;
     padding: 0.5em 0.8em;
     border: none;
-    border-radius: .4em;
+    border-radius: var(--border-radius-button);
     cursor: pointer;
-    margin: 2px 2px 2px 0px;
+    margin: 0.12em 0.12em 0.12em 0em;
+    transition: var(--transition);
   }
 
   button:first-child {
-    margin: 2px 2px 2px 2px;
+    margin: 0.12em 0.12em 0.12em 0.12em;
+  }
+
+  :hover{
+    background: var(--hover-color);
+    transition: var(--transition);
+    background-image: url("/images/patternDots.png");
+    background-size: 2em;
   }
 
   .active {

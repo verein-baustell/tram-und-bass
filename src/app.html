@@ -29,8 +29,19 @@
 	3. Add accessible line-height
 	4. Improve text rendering
 	*/
+	.logo{
+		width: 400px;
+		height: 300px;
+		position: absolute;
+		bottom: calc(50vh - 75px);
+		left: calc(50vw - 200px);
+		z-index: 1000;
+	}
+
 	body {
 		line-height: 1.5;
+		font-size: 16px;
+		background-color: black;
 		-webkit-font-smoothing: antialiased;
 		margin: 0px;
 		font-family: Holo, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -39,6 +50,16 @@
   	.mono-font{
     	font-family: HoloMono;
   	}
+
+	.view{
+		padding: var(--padding-m);
+		background: var(--background-color);
+		border-radius: var(--border-radius-view);
+		margin-top: var(--padding-m);
+		margin-bottom: var(--padding-m);
+		box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+		border: var(--padding-s) var(--background-color-light) solid;
+	}
 	/*
 	5. Improve media defaults
 	*/

@@ -4,15 +4,16 @@
   export let lines: Line[];
   export let keepStationWhenChangingLine = false;
 </script>
-
-<ul>
-  {#each lines as line}
-    <LineListItem
-      {keepStationWhenChangingLine}
-      {line}
-    />
-  {/each}
-</ul>
+<div class="view" id="line-list">
+  <ul>
+    {#each lines as line}
+      <LineListItem
+        {keepStationWhenChangingLine}
+        {line}
+      />
+    {/each}
+  </ul>
+</div>
 
 <style lang="scss" scoped>
   // reset ul li
@@ -20,5 +21,11 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
+  }
+
+  #line-list{
+    max-height: calc(100vh - 24em);
+    overflow: scroll;
+
   }
 </style>

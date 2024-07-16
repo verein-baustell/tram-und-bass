@@ -9,20 +9,19 @@
 
 <style scoped lang="scss">
   div {
+    color: black;
     font-family: HoloMono;
     aspect-ratio: 1;
     width: 1.75em;
     height: 1.75em;
     display: grid;
     place-items: center;
-    /* TODOO: make border with a variable */
-    border: solid 2px var(--foreground-color);
-    border-radius: 0.4em;
-    margin: 0rem 0.5em 0em 0.5em;
+    border: solid 1px var(--foreground-color);
+    border-radius: var(--padding-m);
 
     &.notInverted {
-      border: solid 2px var(--background-color);
-      color: var(--background-color);
+      border: solid 1px var(--foreground-color);
+      color: var(--foreground-color);
     }
   }
 </style>

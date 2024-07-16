@@ -47,12 +47,13 @@
 <style lang="scss" scoped>
   #top-menu {
     position: fixed;
-    top: 1em;
-    left: 1em;
+    top: 0;
+    left: 0;
+    margin: var(--global-padding);
     nav {
       display: flex;
-      background: #dddddd;
-      border-radius: 0.4em;
+      background: var(--background-color-light);
+      border-radius: var(--border-radius-view);
     }
   }
 </style>

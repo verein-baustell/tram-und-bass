@@ -50,10 +50,11 @@
   #video-controls {
     z-index: 1;
     position: fixed;
-    bottom: 1em;
-    left: 1em;
+    bottom: 0;
+    left: 0;
+    margin: var(--global-padding);
     display: flex;
-    background: #dddddd;
-    border-radius: 0.4em;
+    background: var(--background-color-light);
+    border-radius: var(--border-radius-view);
   }
 </style>

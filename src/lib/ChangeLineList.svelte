@@ -13,7 +13,7 @@
   }
 </script>
 
-<div id="change-station-list">
+<div id="change-station-list" class="view">
   {$nextStation?.name}
   in <span class="mono-font">{formattedTime}</span>
   {#if $currentStation}
