@@ -588,14 +588,69 @@ lines:
         startTime: 25:43
         endTime: 25:51
     isInverted: true
-  - id: ""
-    releaseDate: 2024-07-16T11:59:00.000Z
+  - color: "#a1cfe3"
     number: 12
     name: Bahnhof Stettbach
-    isInverted: true
     artistName: XYZ
-    color: "#a1cfe3"
     videoUrl: https://player.vimeo.com/video/950700571?h=cc9bd2b94d
+    releaseDate: 2024-07-16T11:59:00.000Z
+    id: ""
+    timeStamps:
+      - name: Fracht
+        startTime: 00:01
+        endTime: 00:44
+      - name: Zürich Flughafen Bahnhof
+        startTime: 02:07
+        endTime: 02:54
+      - name: Kloten Balsberg Bahnhof
+        startTime: 04:44
+        endTime: 05:02
+      - name: Unterriet
+        startTime: 06:03
+        endTime: 06:23
+      - name: Bäuler
+        startTime: 07:17
+        endTime: 07:36
+      - name: Glattbrugg Bahnhof
+        startTime: 08:45
+        endTime: 09:06
+      - name: Lindberghplatz
+        startTime: 10:15
+        endTime: 10:33
+      - name: Glattpark
+        startTime: 12:00
+        endTime: 12:24
+      - name: Fernsehstudio
+        startTime: 13:07
+        endTime: 13:30
+      - name: Auzelg
+        startTime: 14:39
+        endTime: 14:55
+      - name: Herti
+        startTime: 16:13
+        endTime: 16:29
+      - name: Belair
+        startTime: 17:52
+        endTime: 18:04
+      - name: Wallisellen Bahnhof
+        startTime: 19:05
+        endTime: 19:21
+      - name: Glatt (Tram)
+        startTime: 20:19
+        endTime: 20:43
+      - name: Neugut
+        startTime: 21:54
+        endTime: 22:20
+      - name: Am Ring
+        startTime: 23:29
+        endTime: 23:46
+      - name: Ringwiesen
+        startTime: 24:55
+        endTime: 25:13
+      - name: Bahnhof Stettbach
+        startTime: 27:30
+        endTime: 27:37
+    isInverted: true
   - color: "#f4d332"
     number: 13
     name: Albisgütli
