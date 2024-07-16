@@ -27,6 +27,81 @@ lines:
       - name: Micafil
         startTime: 06:42
         endTime: 06:56
+      - name: Farbhof
+        startTime: 07:45
+        endTime: 08:04
+      - name: Bachmattstrasse
+        startTime: 08:53
+        endTime: 09:08
+      - name: Lindenplatz
+        startTime: 09:52
+        endTime: 10:19
+      - name: Grimselstrasse
+        startTime: 11:03
+        endTime: 11:28
+      - name: Kappeli
+        startTime: 12:32
+        endTime: 12:50
+      - name: Freihofstrasse
+        startTime: 13:45
+        endTime: 14:03
+      - name: Letzigrund
+        startTime: 14:53
+        endTime: 15:13
+      - name: Albisriederplatz
+        startTime: 16:25
+        endTime: 16:43
+      - name: Zypressenstrasse
+        startTime: 17:34
+        endTime: 17:50
+      - name: Lochergut
+        startTime: 18:32
+        endTime: 19:03
+      - name: Zürich, Kalkbreite Bhf.Wiedikon
+        startTime: 19:51
+        endTime: 21:04
+      - name: Bezirksgebäude
+        startTime: 22:04
+        endTime: 22:21
+      - name: Stauffacher
+        startTime: 23:33
+        endTime: 24:18
+      - name: Sihlstrasse
+        startTime: 25:44
+        endTime: 26:15
+      - name: Paradeplatz
+        startTime: 28:17
+        endTime: 28:38
+      - name: Kantonalbank
+        startTime: 29:23
+        endTime: 29:49
+      - name: Bürkliplatz
+        startTime: 31:36
+        endTime: 31:58
+      - name: Bellevue
+        startTime: 33:11
+        endTime: 33:31
+      - name: Opernhaus
+        startTime: 35:07
+        endTime: 35:37
+      - name: Kreuzstrasse
+        startTime: 36:17
+        endTime: 36:34
+      - name: Feldeggstrasse
+        startTime: 37:24
+        endTime: 37:40
+      - name: Höschgasse
+        startTime: 38:38
+        endTime: 38:56
+      - name: Fröhlichstrasse
+        startTime: 39:57
+        endTime: 40:15
+      - name: Wildbachstrasse
+        startTime: 40:58
+        endTime: 41:17
+      - name: Bahnhof Tiefenbrunnen
+        startTime: 42:27
+        endTime: 43:23
     isInverted: false
   - id: ""
     releaseDate: 2024-07-15T14:55:00.000Z
