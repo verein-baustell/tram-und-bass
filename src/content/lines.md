@@ -9,9 +9,24 @@ lines:
     releaseDate: 2024-06-02T18:34:00.000Z
     id: ""
     timeStamps:
-      - name: Bahnhofstrasse/HB
-        startTime: 11:11
-        endTime: 11:15
+      - name: Geissweid
+        startTime: 00:01
+        endTime: 01:12
+      - name: Schlieren, Zentrum Bahnhof
+        startTime: 02:07
+        endTime: 02:23
+      - name: Wagonsfabrik
+        startTime: 03:15
+        endTime: 03:28
+      - name: Gasometerbrücke
+        startTime: 04:19
+        endTime: 04:33
+      - name: Mülligen
+        startTime: 05:24
+        endTime: 05:35
+      - name: Micafil
+        startTime: 06:42
+        endTime: 06:56
     isInverted: false
   - id: ""
     releaseDate: 2024-07-15T14:55:00.000Z
