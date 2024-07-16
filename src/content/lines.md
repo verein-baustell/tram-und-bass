@@ -339,22 +339,120 @@ lines:
         startTime: 23:45
         endTime: 24:40
     isInverted: false
-  - id: ""
-    releaseDate: 2024-07-16T11:48:00.000Z
-    isInverted: true
-    color: "#cc9f4c"
+  - color: "#cc9f4c"
     number: 6
     name: Zoo
     artistName: Simba
     videoUrl: https://player.vimeo.com/video/950566927?h=92df0178c5
-  - id: ""
     releaseDate: 2024-07-16T11:48:00.000Z
-    number: 6
-    color: "#cc9f4c"
+    id: ""
+    timeStamps:
+      - name: Bahnhof Enge
+        startTime: 01:51
+        endTime: 02:16
+      - name: Tunnelstrasse
+        startTime: 03:14
+        endTime: 03:30
+      - name: Stockerstrasse
+        startTime: 04:31
+        endTime: 04:58
+      - name: Paradeplatz
+        startTime: 06:15
+        endTime: 06:46
+      - name: Rennweg
+        startTime: 08:08
+        endTime: 08:37
+      - name: Bahnhofstrasse HB
+        startTime: 09:44
+        endTime: 10:18
+      - name: Central
+        startTime: 12:35
+        endTime: 13:07
+      - name: Haldenegg
+        startTime: 14:28
+        endTime: 14:47
+      - name: ETH Universitätsspital
+        startTime: 16:14
+        endTime: 16:32
+      - name: Platte
+        startTime: 17:59
+        endTime: 18:26
+      - name: Voltastrasse
+        startTime: 19:44
+        endTime: 20:02
+      - name: Kirche Fluntern
+        startTime: 21:27
+        endTime: 21:45
+      - name: Toblerplatz
+        startTime: 23:02
+        endTime: 23:28
+      - name: Zürichbergstrasse
+        startTime: 24:14
+        endTime: 24:27
+      - name: Susenbergstrasse
+        startTime: 25:02
+        endTime: 25:24
+      - name: Zoo
+        startTime: 26:58
+        endTime: 27:43
     isInverted: true
-    videoUrl: https://player.vimeo.com/video/950566054?h=9f68eea5d2
-    artistName: Dolce Vita
+  - color: "#cc9f4c"
+    number: 6
     name: Bahnhof Enge
+    artistName: Dolce Vita
+    videoUrl: https://player.vimeo.com/video/950566054?h=9f68eea5d2
+    releaseDate: 2024-07-16T11:48:00.000Z
+    id: ""
+    timeStamps:
+      - name: Zoo
+        startTime: 00:01
+        endTime: 00:08
+      - name: Susenbergstrasse
+        startTime: 01:32
+        endTime: 01:51
+      - name: Zürichbergstrasse
+        startTime: 02:45
+        endTime: 02:59
+      - name: Toblerplatz
+        startTime: 03:59
+        endTime: 04:22
+      - name: Kirche Fluntern
+        startTime: 05:26
+        endTime: 06:55
+      - name: Voltastrasse
+        startTime: 08:14
+        endTime: 08:37
+      - name: Platte
+        startTime: 09:53
+        endTime: 10:18
+      - name: ETH Universitätsspital
+        startTime: 12:10
+        endTime: 12:29
+      - name: Haldenegg
+        startTime: 13:32
+        endTime: 13:46
+      - name: Central
+        startTime: 15:17
+        endTime: 15:44
+      - name: Bahnhofstrasse HB
+        startTime: 18:12
+        endTime: 18:50
+      - name: Rennweg
+        startTime: 19:54
+        endTime: 20:19
+      - name: Paradeplatz
+        startTime: 21:32
+        endTime: 22:01
+      - name: Stockerstrasse
+        startTime: 23:08
+        endTime: 23:28
+      - name: Tunnelstrasse
+        startTime: 24:15
+        endTime: 24:32
+      - name: Bahnhof Enge
+        startTime: 25:40
+        endTime: 26:01
+    isInverted: true
   - id: ""
     releaseDate: 2024-07-16T11:58:00.000Z
     number: 7
