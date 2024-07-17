@@ -349,22 +349,180 @@ lines:
         startTime: 33:45
         endTime: 33:57
     isInverted: false
-  - id: ""
-    releaseDate: 2024-07-15T15:09:00.000Z
+  - color: "#473d8c"
     number: 4
-    color: "#473d8c"
     name: Bahnhof Altstetten Nord
-    isInverted: false
     artistName: Filou
     videoUrl: https://player.vimeo.com/video/950563061?h=9bf1b84be2
-  - id: ""
     releaseDate: 2024-07-15T15:09:00.000Z
-    number: 4
-    color: "#473d8c"
+    id: ""
+    timeStamps:
+      - name: Bahnhof Tiefenbrunnen
+        startTime: 00:01
+        endTime: 01:00
+      - name: Wildbachstrasse
+        startTime: 02:05
+        endTime: 02:22
+      - name: Fröhlichstrasse
+        startTime: 03:11
+        endTime: 03:28
+      - name: Höschgasse
+        startTime: 04:16
+        endTime: 04:36
+      - name: Feldeggstrasse
+        startTime: 05:17
+        endTime: 05:34
+      - name: Kreuzstrasse
+        startTime: 06:20
+        endTime: 06:45
+      - name: Opernhaus
+        startTime: 07:48
+        endTime: 08:25
+      - name: Bellevue
+        startTime: 10:43
+        endTime: 11:36
+      - name: Helmhaus
+        startTime: 12:37
+        endTime: 12:57
+      - name: Rathaus
+        startTime: 13:47
+        endTime: 14:02
+      - name: Rudolf-Brun-Brücke
+        startTime: 14:42
+        endTime: 15:03
+      - name: Central
+        startTime: 17:22
+        endTime: 17:55
+      - name: Bahnhofquai HB
+        startTime: 21:19
+        endTime: 21:52
+      - name: Sihlquai HB
+        startTime: 23:52
+        endTime: 24:17
+      - name: Museum für Gestaltung
+        startTime: 24:52
+        endTime: 25:08
+      - name: Limmatplatz
+        startTime: 25:55
+        endTime: 26:19
+      - name: Quellenstrasse
+        startTime: 26:57
+        endTime: 27:15
+      - name: Löwenbräu
+        startTime: 27:54
+        endTime: 28:12
+      - name: Escher-Wyss-Platz
+        startTime: 28:55
+        endTime: 29:16
+      - name: Schiffbau
+        startTime: 30:52
+        endTime: 31:14
+      - name: Technopark
+        startTime: 32:22
+        endTime: 32:42
+      - name: Toni-Areal
+        startTime: 33:31
+        endTime: 33:49
+      - name: Sportweg
+        startTime: 34:31
+        endTime: 34:51
+      - name: Aargauerstrasse
+        startTime: 35:36
+        endTime: 35:53
+      - name: Würzgraben
+        startTime: 36:49
+        endTime: 37:04
+      - name: Bahnhof Altstetten Nord
+        startTime: 38:33
+        endTime: 39:00
     isInverted: false
+  - color: "#473d8c"
+    number: 4
     name: Bahnhof Tiefenbrunnen
     artistName: Baustell
     videoUrl: https://player.vimeo.com/video/950564216?h=895d1fb002
+    releaseDate: 2024-07-15T15:09:00.000Z
+    id: ""
+    timeStamps:
+      - name: Bahnhof Altstetten Nord
+        startTime: 00:01
+        endTime: 00:24
+      - name: Würzgraben
+        startTime: 01:39
+        endTime: 01:47
+      - name: Aargauerstrasse
+        startTime: 02:50
+        endTime: 03:07
+      - name: Sportweg
+        startTime: 04:10
+        endTime: 04:31
+      - name: Toni-Areal
+        startTime: 05:11
+        endTime: 05:33
+      - name: Technopark
+        startTime: 06:16
+        endTime: 06:34
+      - name: Schiffbau
+        startTime: 07:36
+        endTime: 07:53
+      - name: Escher-Wyss-Platz
+        startTime: 09:24
+        endTime: 09:40
+      - name: Löwenbräu
+        startTime: 10:23
+        endTime: 10:43
+      - name: Quellenstrasse
+        startTime: 11:22
+        endTime: 11:46
+      - name: Limmatplatz
+        startTime: 12:26
+        endTime: 12:56
+      - name: Museum für Gestaltung
+        startTime: 13:39
+        endTime: 13:53
+      - name: Sihlquai HB
+        startTime: 14:27
+        endTime: 14:45
+      - name: Bahnhofquai HB
+        startTime: 16:55
+        endTime: 17:25
+      - name: Central
+        startTime: 18:56
+        endTime: 19:18
+      - name: Rudolf-Brun-Brücke
+        startTime: 20:07
+        endTime: 20:23
+      - name: Rathaus
+        startTime: 20:59
+        endTime: 21:18
+      - name: Helmhaus
+        startTime: 22:01
+        endTime: 22:21
+      - name: Bellevue
+        startTime: 23:24
+        endTime: 24:10
+      - name: Opernhaus
+        startTime: 25:03
+        endTime: 25:29
+      - name: Kreuzstrasse
+        startTime: 26:05
+        endTime: 26:23
+      - name: Feldeggstrasse
+        startTime: 27:22
+        endTime: 27:34
+      - name: Höschgasse
+        startTime: 28:22
+        endTime: 28:46
+      - name: Fröhlichstrasse
+        startTime: 29:39
+        endTime: 29:53
+      - name: Wildbachstrasse
+        startTime: 30:30
+        endTime: 30:43
+      - name: Bahnhof Tiefenbrunnen
+        startTime: 32:37
+        endTime: 33:10
+    isInverted: false
   - color: "#865a2d"
     number: 5
     name: Laubegg
