@@ -205,21 +205,149 @@ lines:
         startTime: 39:29
         endTime: 40:08
     isInverted: false
-  - id: ""
-    releaseDate: 2024-07-15T15:00:00.000Z
+  - color: "#589c44"
     number: 3
     name: Klusplatz
-    color: "#589c44"
     artistName: aMadeUpName
     videoUrl: https://player.vimeo.com/video/950561793?h=2b51bbc0bb
+    releaseDate: 2024-07-15T15:00:00.000Z
+    id: ""
+    timeStamps:
+      - name: Albisrieden
+        startTime: 00:01
+        endTime: 05:03
+      - name: Fellenbergstrasse
+        startTime: 06:32
+        endTime: 06:48
+      - name: Siemens
+        startTime: 07:44
+        endTime: 07:58
+      - name: Hubertus
+        startTime: 09:11
+        endTime: 09:28
+      - name: Altes Krematorium
+        startTime: 10:32
+        endTime: 10:50
+      - name: Albisriederplatz
+        startTime: 11:28
+        endTime: 11:55
+      - name: Zypressenstrasse
+        startTime: 12:41
+        endTime: 12:55
+      - name: Lochergut
+        startTime: 13:36
+        endTime: 14:08
+      - name: Zürich, Kalkbreite Bhf.Wiedikon
+        startTime: 15:00
+        endTime: 16:22
+      - name: Bezirksgebäude
+        startTime: 17:31
+        endTime: 17:55
+      - name: Stauffacher
+        startTime: 19:09
+        endTime: 20:22
+      - name: Sihlpost HB
+        startTime: 22:25
+        endTime: 22:54
+      - name: Löwenplatz
+        startTime: 24:03
+        endTime: 24:38
+      - name: Bahnhofplatz HB
+        startTime: 25:35
+        endTime: 26:24
+      - name: Central
+        startTime: 28:09
+        endTime: 28:27
+      - name: Neumarkt
+        startTime: 29:50
+        endTime: 30:07
+      - name: Kunsthaus
+        startTime: 30:59
+        endTime: 31:56
+      - name: Hottingerplatz
+        startTime: 32:59
+        endTime: 33:36
+      - name: Römerhof
+        startTime: 34:45
+        endTime: 35:14
+      - name: Hölderlinstrasse
+        startTime: 36:02
+        endTime: 36:23
+      - name: Klusplatz
+        startTime: 38:42
+        endTime: 38:59
     isInverted: false
-  - id: ""
-    releaseDate: 2024-07-15T15:02:00.000Z
-    name: Albisrieden
-    color: "#589c44"
+  - color: "#589c44"
     number: 3
-    videoUrl: https://player.vimeo.com/video/950560428?h=f9744206bd
+    name: Albisrieden
     artistName: Calm Mothers
+    videoUrl: https://player.vimeo.com/video/950560428?h=f9744206bd
+    releaseDate: 2024-07-15T15:02:00.000Z
+    id: ""
+    timeStamps:
+      - name: Klusplatz
+        startTime: 00:01
+        endTime: 00:25
+      - name: Hölderlinstrasse
+        startTime: 01:56
+        endTime: 02:15
+      - name: Römerhof
+        startTime: 03:10
+        endTime: 03:32
+      - name: Hottingerplatz
+        startTime: 04:36
+        endTime: 05:10
+      - name: Kunsthaus
+        startTime: 06:25
+        endTime: 06:43
+      - name: Neumarkt
+        startTime: 07:34
+        endTime: 08:00
+      - name: Central
+        startTime: 09:33
+        endTime: 10:22
+      - name: Bahnhofplatz HB
+        startTime: 13:18
+        endTime: 14:07
+      - name: Löwenplatz
+        startTime: 15:05
+        endTime: 15:27
+      - name: Sihlpost HB
+        startTime: 16:34
+        endTime: 16:56
+      - name: Stauffacher
+        startTime: 18:46
+        endTime: 19:42
+      - name: Bezirksgebäude
+        startTime: 21:20
+        endTime: 21:41
+      - name: Zürich, Kalkbreite Bhf.Wiedikon
+        startTime: 22:38
+        endTime: 22:56
+      - name: Lochergut
+        startTime: 23:45
+        endTime: 24:04
+      - name: Zypressenstrasse
+        startTime: 24:48
+        endTime: 25:03
+      - name: Albisriederplatz
+        startTime: 26:39
+        endTime: 27:01
+      - name: Altes Krematorium
+        startTime: 27:54
+        endTime: 28:12
+      - name: Hubertus
+        startTime: 29:19
+        endTime: 29:44
+      - name: Siemens
+        startTime: 31:02
+        endTime: 31:20
+      - name: Fellenbergstrasse
+        startTime: 32:24
+        endTime: 32:39
+      - name: Albisrieden
+        startTime: 33:45
+        endTime: 33:57
     isInverted: false
   - id: ""
     releaseDate: 2024-07-15T15:09:00.000Z
