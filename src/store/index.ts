@@ -58,7 +58,7 @@ currentLine.subscribe((value) => {
 export const currentStation = derived(
   [currentTime, currentLine],
   ([$currentTime, $currentLine]) => {
-    const currentStation = $currentLine.timeStamps.find(
+    const currentStation = $currentLine.timeStamps?.find(
       (timeStamp) =>
         hmsToSeconds(timeStamp.startTime) <= $currentTime &&
         hmsToSeconds(timeStamp.endTime) >= $currentTime
@@ -73,12 +73,14 @@ export const linesAtCurrentStation = derived(
   [currentStation, currentLine, allLines],
   ([$currentStation, $currentLine, $allLines]) => {
     if (!$currentStation) return;
-    return $allLines.filter((line) =>
-      line.timeStamps.find(
+    return $allLines.filter((line) => {
+      
+     console.log(line)
+      return line.timeStamps?.find(
         (timeStamp) =>
           timeStamp.name === $currentStation.name && line.id !== $currentLine.id
-      )
-    );
+      );
+    });
   }
 );
 export const nextStation = derived(
@@ -99,7 +101,7 @@ export const timeUntilNextStation = derived(
   [currentLine, currentTime, nextStation],
   ([$currentLine, $currentTime, $nextStation]) => {
     if ($nextStation) {
-      const nextStartTimeString = $currentLine.timeStamps.find(
+      const nextStartTimeString = $currentLine.timeStamps?.find(
         (timeStamp) => timeStamp.name === $nextStation.name
       )?.startTime;
       const nextStartTime = hmsToSeconds(nextStartTimeString);

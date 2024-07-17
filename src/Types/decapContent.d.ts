@@ -8,7 +8,7 @@ type Line = {
   videoUrl: string
   artistName: string
   artistAboutText: string
-  timeStamps: TimeStamp[]
+  timeStamps?: TimeStamp[]
   }
   
 type TimeStamp = {
