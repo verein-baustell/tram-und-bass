@@ -64,7 +64,7 @@
 ></div>
 <div class="blur-vignette"></div>
 {#if !$videoIsPlaying}
-<SplashScreen/>{/if}
+  <SplashScreen />{/if}
 <VideoControls />
 {#if isDevMode}
   <DevTools />{/if}
@@ -126,7 +126,7 @@
     z-index: -1;
   }
 
-    .blur-vignette {
+  .blur-vignette {
     --radius: 0px;
     --inset: 32px;
     --transition-length: 128px;

@@ -1,4 +1,4 @@
-import { derived, get, writable } from "svelte/store";
+import { derived, get, writable, type Readable } from "svelte/store";
 import { attributes as content } from "../content/lines.md";
 import { hmsToSeconds } from "../utils/timeFormatter";
 import { goto } from "$app/navigation";
@@ -51,19 +51,26 @@ currentLine.subscribe((value) => {
     });
   }
 });
-
+export const previousStation = writable<TimeStamp>();
 /**
  * If we are not at a station, this will be undefined.
  */
-export const currentStation = derived(
-  [currentTime, currentLine],
-  ([$currentTime, $currentLine]) => {
-    const currentStation = $currentLine.timeStamps?.find(
+export const currentStation: Readable<TimeStamp | undefined> = derived(
+  [currentTime, currentLine, previousStation],
+  ([$currentTime, $currentLine, $previousStation], set) => {
+    const newStation = $currentLine.timeStamps?.find(
       (timeStamp) =>
         hmsToSeconds(timeStamp.startTime) <= $currentTime &&
         hmsToSeconds(timeStamp.endTime) >= $currentTime
     );
-    return currentStation;
+    if(!newStation) {
+      set(undefined);
+      return;
+    }
+    if (newStation !== $previousStation) {
+      previousStation.set(newStation);
+      set(newStation);
+    }
   }
 );
 /**
