@@ -1,3 +1,4 @@
+<svg width="2560" height="2560" viewBox="0 0 2560 2560" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path id="city-limits" d="M628.485 747.515L211.515 1164.49C209.264 1166.74 208 1169.79 208 1172.97V1659.03C208 1662.21 209.264 1665.26 211.515 1667.51L412.485 1868.49C414.736 1870.74 416 1873.79 416 1876.97V2484C416 2490.63 421.373 2496 428 2496H1276C1282.63 2496 1288 2490.63 1288 2484V2324C1288 2317.37 1293.37 2312 1300 2312H2019.03C2022.21 2312 2025.26 2310.74 2027.51 2308.49L2212.49 2123.51C2214.74 2121.26 2217.79 2120 2220.97 2120H2308C2314.63 2120 2320 2114.63 2320 2108V1980.97C2320 1977.79 2318.74 1974.74 2316.49 1972.49L2235.51 1891.51C2233.26 1889.26 2232 1886.21 2232 1883.03V1340.97C2232 1337.79 2230.74 1334.74 2228.49 1332.49L2163.51 1267.51C2161.26 1265.26 2160 1262.21 2160 1259.03V1132.97C2160 1129.79 2158.74 1126.74 2156.49 1124.49L2139.51 1107.51C2137.26 1105.26 2136 1102.21 2136 1099.03V860.971C2136 857.788 2137.26 854.736 2139.51 852.485L2215.51 776.485C2220.2 771.799 2220.2 764.201 2215.51 759.515L1875.51 419.515C1873.26 417.264 1870.21 416 1867.03 416H1812C1805.37 416 1800 410.627 1800 404V292.971C1800 289.788 1798.74 286.736 1796.49 284.485L1651.51 139.515C1649.26 137.264 1646.21 136 1643.03 136H980.971C977.788 136 974.736 137.265 972.485 139.515L699.515 412.525C697.264 414.775 694.212 416.04 691.029 416.04H604C597.373 416.04 592 421.413 592 428.04V523.029C592 526.212 593.264 529.264 595.515 531.515L628.485 564.485C630.736 566.736 632 569.788 632 572.971V739.029C632 742.212 630.736 745.264 628.485 747.515Z" fill="white" stroke="#EEEEEE" stroke-width="2"/>
 <path id="water" d="M1268.48 2052.07V2560H1751.04V2430.17C1751.04 2421.52 1747.54 2413.24 1741.34 2407.21L1397.49 2073.19C1394.39 2070.18 1392.64 2066.04 1392.64 2061.72V1872.87C1392.64 1868.62 1390.95 1864.55 1387.95 1861.55L1376.85 1850.45C1373.85 1847.45 1372.16 1843.38 1372.16 1839.13V1470.95C1372.16 1466.7 1370.47 1462.63 1367.47 1459.63L1039.99 1132.15C1035.49 1127.65 1029.38 1125.12 1023.02 1125.12H965.347C961.104 1125.12 957.034 1123.43 954.034 1120.43L835.19 1001.59C830.689 997.089 824.584 994.56 818.219 994.56H747.747C743.504 994.56 739.434 992.874 736.434 989.874L512.629 766.069C508.129 761.569 502.024 759.04 495.659 759.04H417.507C413.264 759.04 409.194 757.354 406.194 754.354L300.351 648.511C284.34 632.5 258.38 632.5 242.369 648.511L0 890.88V925.44L248.025 677.415C260.913 664.527 281.807 664.527 294.695 677.415L393.611 776.331C398.111 780.831 404.216 783.36 410.581 783.36H488.733C492.976 783.36 497.046 785.046 500.046 788.046L726.411 1014.41C730.911 1018.91 737.016 1021.44 743.381 1021.44H808.733C812.976 1021.44 817.046 1023.13 820.046 1026.13L937.611 1143.69C942.112 1148.19 948.216 1150.72 954.581 1150.72H1014.81C1019.06 1150.72 1023.13 1152.41 1026.13 1155.41L1228.57 1357.85C1233.64 1362.92 1233.64 1371.16 1228.57 1376.23L1128.31 1476.49C1123.81 1480.99 1121.28 1487.1 1121.28 1493.46V1650.97C1121.28 1655.22 1119.59 1659.29 1116.59 1662.29L880.898 1897.98C864.496 1914.38 864.497 1940.98 880.899 1957.38L1000.9 2077.38C1008.71 2085.19 1008.71 2097.85 1000.9 2105.66L685.43 2421.13C680.929 2425.63 678.4 2431.74 678.4 2438.1V2560H707.84V2443.75C707.84 2439.5 709.526 2435.43 712.526 2432.43L1032.23 2112.73C1043.94 2101.02 1043.94 2082.02 1032.23 2070.31L910.948 1949.03C898.451 1936.53 898.451 1916.27 910.948 1903.77L1139.85 1674.87C1144.35 1670.37 1146.88 1664.26 1146.88 1657.9V1502.95C1146.88 1498.7 1148.57 1494.63 1151.57 1491.63L1254.13 1389.07C1255.69 1387.51 1258.23 1387.51 1259.79 1389.07L1321.39 1450.67C1324.39 1453.67 1326.08 1457.74 1326.08 1461.99V1981.21C1326.08 1985.46 1324.39 1989.53 1321.39 1992.53L1273.17 2040.75C1270.17 2043.75 1268.48 2047.82 1268.48 2052.07Z" fill="#F7F7F7"/>
 <g id="lines">
@@ -102,11 +103,11 @@
 </g>
 </g>
 <g id="17">
-<g id="albisgütli17">
+<g id="albisg&#195;&#188;tli17">
 <path id="17shadow" d="M580 912L718.828 1050.83C719.579 1051.58 720.596 1052 721.657 1052H806.343C807.404 1052 808.421 1052.42 809.172 1053.17L1234.83 1478.83C1235.58 1479.58 1236 1480.6 1236 1481.66V1732.69C1236 1734.81 1235.16 1736.84 1233.66 1738.34L857.172 2114.83C856.421 2115.58 855.404 2116 854.343 2116H772.993C769.797 2116 766.733 2117.27 764.481 2119.54L591.36 2293.76" stroke="white" stroke-width="18" stroke-linecap="round"/>
 <path id="17_2" d="M580 912L718.828 1050.83C719.579 1051.58 720.596 1052 721.657 1052H806.343C807.404 1052 808.421 1052.42 809.172 1053.17L1234.83 1478.83C1235.58 1479.58 1236 1480.6 1236 1481.66V1732.69C1236 1734.81 1235.16 1736.84 1233.66 1738.34L857.172 2114.83C856.421 2115.58 855.404 2116 854.343 2116H772.993C769.797 2116 766.733 2117.27 764.481 2119.54L591.36 2293.76" stroke="#D9D9D9" stroke-width="8" stroke-linecap="round"/>
 </g>
-<g id="werdhölzli17">
+<g id="werdh&#195;&#182;lzli17">
 <path id="17shadow_2" d="M580 912L718.828 1050.83C719.579 1051.58 720.596 1052 721.657 1052H806.343C807.404 1052 808.421 1052.42 809.172 1053.17L1234.83 1478.83C1235.58 1479.58 1236 1480.6 1236 1481.66V1732.69C1236 1734.81 1235.16 1736.84 1233.66 1738.34L857.172 2114.83C856.421 2115.58 855.404 2116 854.343 2116H772.993C769.797 2116 766.733 2117.27 764.481 2119.54L591.36 2293.76" stroke="white" stroke-width="18" stroke-linecap="round"/>
 <path id="17_3" d="M580 912L718.828 1050.83C719.579 1051.58 720.596 1052 721.657 1052H806.343C807.404 1052 808.421 1052.42 809.172 1053.17L1234.83 1478.83C1235.58 1479.58 1236 1480.6 1236 1481.66V1732.69C1236 1734.81 1235.16 1736.84 1233.66 1738.34L857.172 2114.83C856.421 2115.58 855.404 2116 854.343 2116H772.993C769.797 2116 766.733 2117.27 764.481 2119.54L591.36 2293.76" stroke="#D9D9D9" stroke-width="8" stroke-linecap="round"/>
 </g>
@@ -116,7 +117,7 @@
 <path id="13shadow" d="M602.879 2305.28L773.655 2134.35C775.156 2132.84 777.192 2132 779.315 2132H860.685C862.807 2132 864.842 2131.16 866.342 2129.66L1248.48 1747.51C1250.73 1745.26 1252 1742.21 1252 1739.03V1475.31C1252 1473.19 1251.16 1471.16 1249.66 1469.66L986.827 1206.83C985.265 1205.27 985.265 1202.73 986.827 1201.17L1085.17 1102.83C1086.73 1101.27 1086.73 1098.73 1085.17 1097.17L981.171 993.172C980.42 992.421 979.999 991.404 979.999 990.343V905.657C979.999 904.596 979.578 903.579 978.827 902.828L897.171 821.172C896.42 820.421 895.403 820 894.342 820H809.656C808.595 820 807.578 819.579 806.827 818.828L707.999 720" stroke="white" stroke-width="18" stroke-linecap="round"/>
 <path id="13_2" d="M602.879 2305.28L773.655 2134.35C775.156 2132.84 777.192 2132 779.315 2132H860.685C862.807 2132 864.842 2131.16 866.342 2129.66L1248.48 1747.51C1250.73 1745.26 1252 1742.21 1252 1739.03V1475.31C1252 1473.19 1251.16 1471.16 1249.66 1469.66L986.827 1206.83C985.265 1205.27 985.265 1202.73 986.827 1201.17L1085.17 1102.83C1086.73 1101.27 1086.73 1098.73 1085.17 1097.17L981.171 993.172C980.42 992.421 979.999 991.404 979.999 990.343V905.657C979.999 904.596 979.578 903.579 978.827 902.828L897.171 821.172C896.42 820.421 895.403 820 894.342 820H809.656C808.595 820 807.578 819.579 806.827 818.828L707.999 720" stroke="#D9D9D9" stroke-width="8" stroke-linecap="round"/>
 </g>
-<g id="albisgütli13">
+<g id="albisg&#195;&#188;tli13">
 <path id="13shadow_2" d="M602.879 2305.28L773.655 2134.35C775.156 2132.84 777.192 2132 779.315 2132H860.685C862.807 2132 864.842 2131.16 866.342 2129.66L1248.48 1747.51C1250.73 1745.26 1252 1742.21 1252 1739.03V1475.31C1252 1473.19 1251.16 1471.16 1249.66 1469.66L986.827 1206.83C985.265 1205.27 985.265 1202.73 986.827 1201.17L1085.17 1102.83C1086.73 1101.27 1086.73 1098.73 1085.17 1097.17L981.171 993.172C980.42 992.421 979.999 991.404 979.999 990.343V905.657C979.999 904.596 979.578 903.579 978.827 902.828L897.171 821.172C896.42 820.421 895.403 820 894.342 820H809.656C808.595 820 807.578 819.579 806.827 818.828L707.999 720" stroke="white" stroke-width="18" stroke-linecap="round"/>
 <path id="13_3" d="M602.879 2305.28L773.655 2134.35C775.156 2132.84 777.192 2132 779.315 2132H860.685C862.807 2132 864.842 2131.16 866.342 2129.66L1248.48 1747.51C1250.73 1745.26 1252 1742.21 1252 1739.03V1475.31C1252 1473.19 1251.16 1471.16 1249.66 1469.66L986.827 1206.83C985.265 1205.27 985.265 1202.73 986.827 1201.17L1085.17 1102.83C1086.73 1101.27 1086.73 1098.73 1085.17 1097.17L981.171 993.172C980.42 992.421 979.999 991.404 979.999 990.343V905.657C979.999 904.596 979.578 903.579 978.827 902.828L897.171 821.172C896.42 820.421 895.403 820 894.342 820H809.656C808.595 820 807.578 819.579 806.827 818.828L707.999 720" stroke="#D9D9D9" stroke-width="8" stroke-linecap="round"/>
 </g>
@@ -154,18 +155,18 @@
 <g id="stations">
 <rect id="zypressenstrasse" x="770.799" y="1546.76" width="16" height="34" rx="8" transform="rotate(45 770.799 1546.76)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="zwielplatz" x="868" y="812" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="zürich,kalkbreitebhf.wiedikon" x="900" y="1596" width="16" height="32" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="zürichberstrasse" x="1928" y="1452" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="z&#195;&#188;rich,kalkbreitebhf.wiedikon" x="900" y="1596" width="16" height="32" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="z&#195;&#188;richberstrasse" x="1928" y="1452" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="zoo" x="2028" y="1352" width="16" height="16" rx="8" fill="black" stroke="black" stroke-width="6"/>
 <rect id="schlieren,zentrumbahnhof" x="276" y="900" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="würzgraben" x="744.52" y="1169.48" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="w&#195;&#188;rzgraben" x="744.52" y="1169.48" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="wollishoferplatz" x="916" y="2488" width="16" height="16" rx="8" fill="black" stroke="black" stroke-width="6"/>
 <rect id="wipkingerplatz" x="1064" y="1076" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="winzerstrasse" x="768" y="780" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="winkelriedstrasse" x="1612" y="1356" width="32" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="wildbachstrasse" x="1762.38" y="2178.76" width="16" height="32" rx="8" transform="rotate(45 1762.38 2178.76)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="wetlistrasse" x="1904" y="2036" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="werdhölzli" x="576" y="908" width="16" height="16" rx="8" fill="black" stroke="black" stroke-width="6"/>
+<rect id="werdh&#195;&#182;lzli" x="576" y="908" width="16" height="16" rx="8" fill="black" stroke="black" stroke-width="6"/>
 <rect id="werd" x="977.757" y="1686.07" width="16" height="34" rx="8" transform="rotate(-45 977.757 1686.07)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="wartau" x="820" y="812" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="wallisellenbahnhof" x="-3" y="3" width="16" height="16" rx="8" transform="matrix(1 0 0 -1 2187 639)" fill="white" stroke="black" stroke-width="6"/>
@@ -175,14 +176,14 @@
 <rect id="waffenplatzstrasse" x="977.757" y="1982.07" width="16" height="50" rx="8" transform="rotate(-45 977.757 1982.07)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="voltastrasse" x="1726.76" y="1601.07" width="16" height="34" rx="8" transform="rotate(-45 1726.76 1601.07)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="unterriet" x="1779.76" y="211.902" width="34" height="16" rx="8" transform="rotate(-45 1779.76 211.902)" fill="white" stroke="black" stroke-width="6"/>
-<rect id="universitätirchel" x="1514.76" y="1074.1" width="34" height="16" rx="8" transform="rotate(-45 1514.76 1074.1)" fill="white" stroke="black" stroke-width="6"/>
+<rect id="universit&#195;&#164;tirchel" x="1514.76" y="1074.1" width="34" height="16" rx="8" transform="rotate(-45 1514.76 1074.1)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="uetlihof" x="681.757" y="2190.07" width="16" height="34" rx="8" transform="rotate(-45 681.757 2190.07)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="tunnelstrasse" x="1097.76" y="1862.07" width="16" height="68" rx="8" transform="rotate(-45 1097.76 1862.07)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="triemli" x="468" y="1740" width="16" height="32" rx="8" fill="black" stroke="black" stroke-width="6"/>
 <rect id="toni-areal" x="798.28" y="1223.24" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="toblerplatz" x="1840" y="1484" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="tierspital" x="1661.07" y="914.757" width="34" height="16" rx="8" transform="rotate(45 1661.07 914.757)" fill="white" stroke="black" stroke-width="6"/>
-<rect id="tüffenwies" x="764" y="1044" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="t&#195;&#188;ffenwies" x="764" y="1044" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="technopark" x="846.92" y="1271.88" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="talwiesenstrasse" x="684" y="1740" width="16" height="32" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="susenberstrasse" x="1976" y="1404" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
@@ -201,21 +202,21 @@
 <rect id="seebach" x="1716" y="336" width="16" height="16" rx="8" fill="black" stroke="black" stroke-width="6"/>
 <rect id="schwert" x="952" y="876" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="schwamendingerplatz" x="-3" y="3" width="16" height="32" rx="8" transform="matrix(1 0 0 -1 1935 839)" fill="white" stroke="black" stroke-width="6"/>
-<rect id="schörlistrasse" x="-3" y="3" width="16" height="32" rx="8" transform="matrix(1 0 0 -1 1839 839)" fill="white" stroke="black" stroke-width="6"/>
+<rect id="sch&#195;&#182;rlistrasse" x="-3" y="3" width="16" height="32" rx="8" transform="matrix(1 0 0 -1 1839 839)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="schmiedewiedikon" x="868" y="1740" width="16" height="32" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="schiffbau" x="890.757" y="1286.07" width="16" height="34" rx="8" transform="rotate(-45 890.757 1286.07)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="schaufelbergerstrasse" x="524" y="1740" width="16" height="32" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="salersteig" x="1581.64" y="802.157" width="34" height="16" rx="8" transform="rotate(45 1581.64 802.157)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="saalsporthalle" x="857.757" y="2102.07" width="16" height="50" rx="8" transform="rotate(-45 857.757 2102.07)" fill="white" stroke="black" stroke-width="6"/>
-<rect id="rudolf-brun-brücke" x="1380" y="1700" width="16" height="32" rx="8" transform="rotate(-90 1380 1700)" fill="white" stroke="black" stroke-width="6"/>
-<rect id="röslistrasse" x="1434.76" y="1218.8" width="34" height="16" rx="8" transform="rotate(-45 1434.76 1218.8)" fill="white" stroke="black" stroke-width="6"/>
+<rect id="rudolf-brun-br&#195;&#188;cke" x="1380" y="1700" width="16" height="32" rx="8" transform="rotate(-90 1380 1700)" fill="white" stroke="black" stroke-width="6"/>
+<rect id="r&#195;&#182;slistrasse" x="1434.76" y="1218.8" width="34" height="16" rx="8" transform="rotate(-45 1434.76 1218.8)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="roswiesen" x="-3" y="3" width="16" height="16" rx="8" transform="matrix(1 0 0 -1 1987 871)" fill="white" stroke="black" stroke-width="6"/>
-<rect id="römerhof" x="1774.07" y="1774.11" width="16" height="34" rx="8" transform="rotate(-135 1774.07 1774.11)" fill="white" stroke="black" stroke-width="6"/>
+<rect id="r&#195;&#182;merhof" x="1774.07" y="1774.11" width="16" height="34" rx="8" transform="rotate(-135 1774.07 1774.11)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="ringwiesen" x="-3" y="3" width="16" height="16" rx="8" transform="matrix(1 0 0 -1 2243 967)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="rentenanstalt" x="1224" y="1980" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="rennweg" x="1212" y="1700" width="16" height="80" rx="8" transform="rotate(-90 1212 1700)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="rehalp" x="2076" y="2208" width="16" height="16" rx="8" fill="black" stroke="black" stroke-width="6"/>
-<rect id="regensbergbrücke" x="1448" y="756" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="regensbergbr&#195;&#188;cke" x="1448" y="756" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="rathaus" x="1380" y="1748" width="16" height="32" rx="8" transform="rotate(-90 1380 1748)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="radiostudio" x="1300" y="920" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="quellenstrasse" x="1099.11" y="1282.76" width="16" height="50" rx="8" transform="rotate(45 1099.11 1282.76)" fill="white" stroke="black" stroke-width="6"/>
@@ -228,17 +229,17 @@
 <rect id="neumarkt" x="1488" y="1636" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="neugut" x="-3" y="3" width="16" height="16" rx="8" transform="matrix(1 0 0 -1 2303 823)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="museumrietberg" x="1100" y="2052" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="museumfürgestaltung" x="1171.11" y="1354.76" width="16" height="50" rx="8" transform="rotate(45 1171.11 1354.76)" fill="white" stroke="black" stroke-width="6"/>
+<rect id="museumf&#195;&#188;rgestaltung" x="1171.11" y="1354.76" width="16" height="50" rx="8" transform="rotate(45 1171.11 1354.76)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="morgental" x="1052" y="2352" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="mülligen" x="316" y="1004" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="m&#195;&#188;lligen" x="316" y="1004" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="milchbuck" x="1388" y="1024" width="64" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="micafil" x="316" y="1076" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="messehallenstadion" x="1664" y="716" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="meierhofplatz" x="928" y="852" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="mattenhof" x="-3" y="3" width="16" height="16" rx="8" transform="matrix(1 0 0 -1 2091 975)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="luchswiesen" x="-3" y="3" width="16" height="16" rx="8" transform="matrix(1 0 0 -1 2107 759)" fill="white" stroke="black" stroke-width="6"/>
-<rect id="löwenplatz" x="1148" y="1556" width="16" height="32" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="löwenbrau" x="1067.11" y="1250.76" width="16" height="50" rx="8" transform="rotate(45 1067.11 1250.76)" fill="white" stroke="black" stroke-width="6"/>
+<rect id="l&#195;&#182;wenplatz" x="1148" y="1556" width="16" height="32" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="l&#195;&#182;wenbrau" x="1067.11" y="1250.76" width="16" height="50" rx="8" transform="rotate(45 1067.11 1250.76)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="luegisland" x="-3" y="3" width="16" height="16" rx="8" transform="matrix(1 0 0 -1 2035 791)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="lochergut" x="802.799" y="1578.76" width="16" height="34" rx="8" transform="rotate(45 802.799 1578.76)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="lindenplatz" x="440" y="1228" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
@@ -261,9 +262,9 @@
 <rect id="kantonsschule" x="1590.76" y="1673.07" width="16" height="34" rx="8" transform="rotate(-45 1590.76 1673.07)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="kantonalbank" x="1282.84" y="1834.76" width="16" height="68" rx="8" transform="rotate(45 1282.84 1834.76)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="hubertus" x="532" y="1488" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="höschgasse" x="1682.38" y="2098.76" width="16" height="32" rx="8" transform="rotate(45 1682.38 2098.76)" fill="white" stroke="black" stroke-width="6"/>
+<rect id="h&#195;&#182;schgasse" x="1682.38" y="2098.76" width="16" height="32" rx="8" transform="rotate(45 1682.38 2098.76)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="hottingerplatz" x="1644" y="1724" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="hölderlinstrasse" x="1826.8" y="1778.76" width="16" height="34" rx="8" transform="rotate(45 1826.8 1778.76)" fill="white" stroke="black" stroke-width="6"/>
+<rect id="h&#195;&#182;lderlinstrasse" x="1826.8" y="1778.76" width="16" height="34" rx="8" transform="rotate(45 1826.8 1778.76)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="hirzenbach" x="-3" y="3" width="16" height="16" rx="8" transform="matrix(1 0 0 -1 2091 871)" fill="black" stroke="black" stroke-width="6"/>
 <rect id="hirschenwiesenstrasse" x="1494.6" y="889.197" width="34" height="16" rx="8" transform="rotate(45 1494.6 889.197)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="heuried" x="612" y="1740" width="16" height="32" rx="8" fill="white" stroke="black" stroke-width="6"/>
@@ -279,46 +280,46 @@
 <rect id="haldenegg" x="1457.66" y="1446.1" width="16" height="68" rx="8" transform="rotate(-45 1457.66 1446.1)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="haldenbach" x="1612" y="1444" width="32" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="guggachstrasse" x="1388.08" y="1076.32" width="32" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="güterbahnhof" x="880" y="1428" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="grünaustrasse" x="664" y="996" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="g&#195;&#188;terbahnhof" x="880" y="1428" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="gr&#195;&#188;naustrasse" x="664" y="996" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="grimselstrasse" x="512" y="1300" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="goldbrunnenpplatz" x="740" y="1740" width="16" height="32" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="glattwiesen" x="-3" y="3" width="16" height="16" rx="8" transform="matrix(1 0 0 -1 2027 911)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="glatt(tram)" x="-3" y="3" width="16" height="16" rx="8" transform="matrix(1 0 0 -1 2303 755)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="glattbruggbahnhof" x="1839.76" y="271.902" width="34" height="16" rx="8" transform="rotate(-45 1839.76 271.902)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="geissweid" x="204" y="900" width="16" height="16" rx="8" fill="black" stroke="black" stroke-width="6"/>
-<rect id="gasometerbrücke" x="316" y="972" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="förrlibuckstrasse" x="946.799" y="1178.76" width="16" height="34" rx="8" transform="rotate(45 946.799 1178.76)" fill="white" stroke="black" stroke-width="6"/>
-<rect id="friedhofenzenbühl" x="2040" y="2172" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="fröhlichstrasse" x="1730.38" y="2146.76" width="16" height="32" rx="8" transform="rotate(45 1730.38 2146.76)" fill="white" stroke="black" stroke-width="6"/>
+<rect id="gasometerbr&#195;&#188;cke" x="316" y="972" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="f&#195;&#182;rrlibuckstrasse" x="946.799" y="1178.76" width="16" height="34" rx="8" transform="rotate(45 946.799 1178.76)" fill="white" stroke="black" stroke-width="6"/>
+<rect id="friedhofenzenb&#195;&#188;hl" x="2040" y="2172" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="fr&#195;&#182;hlichstrasse" x="1730.38" y="2146.76" width="16" height="32" rx="8" transform="rotate(45 1730.38 2146.76)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="freihofstrasse" x="624" y="1412" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="frankental" x="700" y="712" width="16" height="16" rx="8" fill="black" stroke="black" stroke-width="6"/>
 <rect id="fracht" x="1732" y="72" width="32" height="16" rx="8" fill="black" stroke="black" stroke-width="6"/>
-<rect id="zürichflughafenbahnhof" x="1732" y="120" width="32" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="z&#195;&#188;richflughafenbahnhof" x="1732" y="120" width="32" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="fischerweg" x="922.799" y="1154.76" width="16" height="34" rx="8" transform="rotate(45 922.799 1154.76)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="fernsehstudio" x="1905.76" y="457.799" width="34" height="16" rx="8" transform="rotate(-45 1905.76 457.799)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="felsenrainstrasse" x="1616" y="436" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="fellenberstrasse" x="404" y="1576" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="feldeggstrasse" x="1634.38" y="2050.76" width="16" height="32" rx="8" transform="rotate(45 1634.38 2050.76)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="farbhof" x="360" y="1148" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="ethuniversitätsspital" x="1592" y="1516" width="52" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="ethuniversit&#195;&#164;tsspital" x="1592" y="1516" width="52" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="eschergutweg" x="992" y="1004" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="englischviertelstrasse" x="1700" y="1788" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="butzenstrasse" x="964" y="2440" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="burgwies" x="1952" y="2084" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="bäuler" x="1810.76" y="242.799" width="34" height="16" rx="8" transform="rotate(-45 1810.76 242.799)" fill="white" stroke="black" stroke-width="6"/>
+<rect id="b&#195;&#164;uler" x="1810.76" y="242.799" width="34" height="16" rx="8" transform="rotate(-45 1810.76 242.799)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="bucheggplatz" x="1300" y="996" width="32" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="brunaustrasse" x="1100" y="2140" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="bürkliplatz" x="1312" y="1860" width="16" height="80" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="bändliweg" x="608" y="940" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="b&#195;&#188;rkliplatz" x="1312" y="1860" width="16" height="80" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="b&#195;&#164;ndliweg" x="608" y="940" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="billoweg" x="1100" y="2212" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="bhf.wollishofenstaubenstrasse" x="1100" y="2304" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="bezirksgebäude" x="956" y="1596" width="16" height="32" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="bernullli-häuser" x="890.799" y="1122.76" width="16" height="34" rx="8" transform="rotate(45 890.799 1122.76)" fill="white" stroke="black" stroke-width="6"/>
+<rect id="bezirksgeb&#195;&#164;ude" x="956" y="1596" width="16" height="32" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="bernullli-h&#195;&#164;user" x="890.799" y="1122.76" width="16" height="34" rx="8" transform="rotate(45 890.799 1122.76)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="berninaplatz" x="1538.12" y="845.677" width="34" height="16" rx="8" transform="rotate(45 1538.12 845.677)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="belair" x="-3" y="3" width="16" height="16" rx="8" transform="matrix(1 0 0 -1 2131 599)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="beckenhof" x="1361.76" y="1310.07" width="16" height="34" rx="8" transform="rotate(-45 1361.76 1310.07)" fill="white" stroke="black" stroke-width="6"/>
-<rect id="bäckeranlage" x="928" y="1476" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="b&#195;&#164;ckeranlage" x="928" y="1476" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="balgrist" x="1992" y="2124" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="bahnhofwiedikon" x="937.757" y="1726.07" width="16" height="34" rx="8" transform="rotate(-45 937.757 1726.07)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="bahnhoftiefenbrunnen" x="1787.6" y="2304" width="16.24" height="31.6" rx="8.12" transform="rotate(90 1787.6 2304)" fill="black" stroke="black" stroke-width="6"/>
@@ -329,7 +330,7 @@
 <rect id="bahnhofplatzhb" x="1196" y="1556" width="16" height="32" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="bahnhofoerlikonost" x="1604" y="596" width="32" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="bahnhofoerlikon" x="1512" y="716" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="bahnhofhardbrücke" x="856" y="1316" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="bahnhofhardbr&#195;&#188;cke" x="856" y="1316" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="bahnhofengebederstrasse" x="1009.76" y="1950.07" width="16" height="50" rx="8" transform="rotate(-45 1009.76 1950.07)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="bahnhofenge" x="1100" y="1996" width="16" height="48" rx="8" transform="rotate(-90 1100 1996)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="bahnhofaltstettennord" x="662.6" y="1087.56" width="16" height="16" rx="8" fill="black" stroke="black" stroke-width="6"/>
@@ -342,7 +343,7 @@
 <rect id="alteskrematorium" x="644" y="1508" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="albisriederplatz" x="738.799" y="1514.76" width="16" height="34" rx="8" transform="rotate(45 738.799 1514.76)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="albisrieden" x="324" y="1628" width="16" height="16" rx="8" fill="black" stroke="black" stroke-width="6"/>
-<rect id="albisgütli" x="577.757" y="2294.07" width="16" height="34" rx="8" transform="rotate(-45 577.757 2294.07)" fill="black" stroke="black" stroke-width="6"/>
+<rect id="albisg&#195;&#188;tli" x="577.757" y="2294.07" width="16" height="34" rx="8" transform="rotate(-45 577.757 2294.07)" fill="black" stroke="black" stroke-width="6"/>
 <rect id="aargauerstrasse" x="762.44" y="1187.4" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="bellevue" x="1416" y="1812" width="16" height="113" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <path id="paradeplatz" d="M1271.05 1794.81L1224.62 1748.38C1221.24 1745 1215.76 1745 1212.38 1748.38C1209 1751.76 1209 1757.24 1212.38 1760.62L1255.05 1803.29C1255.44 1803.68 1255.44 1804.32 1255.05 1804.71L1211.88 1847.88C1208.5 1851.26 1208.5 1856.74 1211.88 1860.12C1215.26 1863.5 1220.74 1863.5 1224.12 1860.12L1271.05 1813.19C1276.13 1808.12 1276.13 1799.88 1271.05 1794.81Z" fill="white" stroke="black" stroke-width="6"/>
@@ -355,3 +356,4 @@
 <path id="kunsthaus" d="M1533.19 1723.87L1557.79 1748.47C1560.96 1751.64 1566.1 1751.64 1569.27 1748.47C1572.44 1745.3 1572.44 1740.16 1569.27 1736.99L1547.65 1715.37C1547.26 1714.98 1547.26 1714.34 1547.65 1713.95L1556.46 1705.14C1559.63 1701.97 1559.63 1696.83 1556.46 1693.66C1553.29 1690.49 1548.14 1690.49 1544.97 1693.67L1533.18 1705.5C1528.11 1710.58 1528.12 1718.8 1533.19 1723.87Z" fill="white" stroke="black" stroke-width="6"/>
 <path id="escher-wyss-platz" d="M976.941 1196L954.304 1218.64C949.228 1223.71 949.227 1231.94 954.302 1237.02L964.68 1247.4C967.85 1250.57 972.992 1250.57 976.164 1247.4C979.334 1244.23 979.334 1239.09 976.164 1235.92L968.782 1228.54C968.391 1228.15 968.391 1227.52 968.782 1227.12L988.424 1207.48C991.595 1204.31 991.595 1199.17 988.424 1196C985.253 1192.83 980.112 1192.83 976.941 1196Z" fill="white" stroke="black" stroke-width="6"/>
 </g>
+</svg>
