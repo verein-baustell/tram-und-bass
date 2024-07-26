@@ -62,17 +62,23 @@
   style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
 ></div>
 <div class="blur-vignette"></div>
-<div class="splash">
-  <img class="logo" src="/images/tram_bass_2-15.png" width="auto" height="auto">
-  <div class="supporters">
-    <img class="supporter" src="/images/Stadt.png">
-    <img class="supporter" src="/images/Migros.png">
-    <img class="supporter" src="/images/ErnstGohner.png">
-    <img class="supporter" src="/images/Temperatio.png">
-    <img class="supporter" src="/images/Kanton.png">
-    <img class="supporter" src="/images/VBZ.png">
+{#if !$videoIsPlaying}<div class="splash">
+    <img
+      class="logo"
+      src="/images/tram_bass_2-15.png"
+      width="auto"
+      height="auto"
+    />
+    <div class="supporters">
+      <img class="supporter" src="/images/Stadt.png" />
+      <img class="supporter" src="/images/Migros.png" />
+      <img class="supporter" src="/images/ErnstGohner.png" />
+      <img class="supporter" src="/images/Temperatio.png" />
+      <img class="supporter" src="/images/Kanton.png" />
+      <img class="supporter" src="/images/VBZ.png" />
+    </div>
   </div>
-</div>
+{/if}
 <VideoControls />
 {#if isDevMode}
   <DevTools />{/if}
@@ -87,28 +93,25 @@
       font-family: Rene;
       font-style: normal;
       font-weight: 400;
-      src:
-        url("/fonts/Rene-Regular-Web.woff") format("woff");
+      src: url("/fonts/Rene-Regular-Web.woff") format("woff");
     }
     @font-face {
       font-family: Holo;
       font-style: normal;
       font-weight: 500;
-      src:
-        url("/fonts/NaNHoloNarrow_TRIAL-Regular.woff2") format("woff2");
+      src: url("/fonts/NaNHoloNarrow_TRIAL-Regular.woff2") format("woff2");
     }
     @font-face {
       font-family: HoloMono;
       font-style: normal;
       font-weight: 500;
-      src:
-        url("/fonts/NaNHoloMono_TRIAL-Medium.woff2") format("woff2");
+      src: url("/fonts/NaNHoloMono_TRIAL-Medium.woff2") format("woff2");
     }
 
     --background-color: rgb(255, 255, 255);
     --foreground-color: black;
-    --background-color-light: #EEEEEE;
-    --hover-color: #DDDDDD;
+    --background-color-light: #eeeeee;
+    --hover-color: #dddddd;
     --border-radius-button: 0.4em;
     --border-radius-view: 0.52em;
     --padding-view: 0.5em 0.8em;
@@ -137,8 +140,9 @@
     z-index: -1;
   }
 
-  .splash{
-		z-index: 1000;
+  .splash {
+    pointer-events: none;
+    z-index: 1000;
     height: 100vh;
     width: 100vw;
     margin: 0;
@@ -146,17 +150,17 @@
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-	}
+  }
 
-  .logo{
-		width: auto;
-		height: 300px;
+  .logo {
+    width: auto;
+    height: 300px;
     margin: auto;
-	}
+  }
 
-  .supporters{
+  .supporters {
     display: flex;
-    justify-content : space-between;
+    justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
     width: calc(100vw - 1.6em);
@@ -166,47 +170,52 @@
     background-color: var(--background-color);
   }
 
-  .supporter{
+  .supporter {
     height: 30px;
     width: auto;
-    
   }
 
   .blur-vignette {
-  --radius: 0px;
-  --inset: 32px;
-  --transition-length: 128px;
-  --blur: 32px;
+    --radius: 0px;
+    --inset: 32px;
+    --transition-length: 128px;
+    --blur: 32px;
 
-
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius);
-  -webkit-backdrop-filter: blur(var(--blur));
-  backdrop-filter: blur(var(--blur));
-  --r: max(var(--transition-length), calc(var(--radius) - var(--inset)));
-  --corner-size: calc(var(--r) + var(--inset)) calc(var(--r) + var(--inset));
-  --corner-gradient: transparent 0px,
-    transparent calc(var(--r) - var(--transition-length)), black var(--r);
-  --fill-gradient: black, black var(--inset),
-    transparent calc(var(--inset) + var(--transition-length)),
-    transparent calc(100% - var(--transition-length) - var(--inset)),
-    black calc(100% - var(--inset));
-  --fill-narrow-size: calc(100% - (var(--inset) + var(--r)) * 2);
-  --fill-farther-position: calc(var(--inset) + var(--r));
-  -webkit-mask-image: linear-gradient(to right, var(--fill-gradient)),
-    linear-gradient(to bottom, var(--fill-gradient)),
-    radial-gradient(at bottom right, var(--corner-gradient)),
-    radial-gradient(at bottom left, var(--corner-gradient)),
-    radial-gradient(at top left, var(--corner-gradient)),
-    radial-gradient(at top right, var(--corner-gradient));
-  -webkit-mask-size: 100% var(--fill-narrow-size), var(--fill-narrow-size) 100%,
-    var(--corner-size), var(--corner-size), var(--corner-size),
-    var(--corner-size);
-  -webkit-mask-position: 0 var(--fill-farther-position), var(--fill-farther-position) 0,
-    0 0, 100% 0, 100% 100%, 0 100%;
-  -webkit-mask-repeat: no-repeat;
-}
-  
-  
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+    -webkit-backdrop-filter: blur(var(--blur));
+    backdrop-filter: blur(var(--blur));
+    --r: max(var(--transition-length), calc(var(--radius) - var(--inset)));
+    --corner-size: calc(var(--r) + var(--inset)) calc(var(--r) + var(--inset));
+    --corner-gradient: transparent 0px,
+      transparent calc(var(--r) - var(--transition-length)), black var(--r);
+    --fill-gradient: black, black var(--inset),
+      transparent calc(var(--inset) + var(--transition-length)),
+      transparent calc(100% - var(--transition-length) - var(--inset)),
+      black calc(100% - var(--inset));
+    --fill-narrow-size: calc(100% - (var(--inset) + var(--r)) * 2);
+    --fill-farther-position: calc(var(--inset) + var(--r));
+    -webkit-mask-image: linear-gradient(to right, var(--fill-gradient)),
+      linear-gradient(to bottom, var(--fill-gradient)),
+      radial-gradient(at bottom right, var(--corner-gradient)),
+      radial-gradient(at bottom left, var(--corner-gradient)),
+      radial-gradient(at top left, var(--corner-gradient)),
+      radial-gradient(at top right, var(--corner-gradient));
+    -webkit-mask-size:
+      100% var(--fill-narrow-size),
+      var(--fill-narrow-size) 100%,
+      var(--corner-size),
+      var(--corner-size),
+      var(--corner-size),
+      var(--corner-size);
+    -webkit-mask-position:
+      0 var(--fill-farther-position),
+      var(--fill-farther-position) 0,
+      0 0,
+      100% 0,
+      100% 100%,
+      0 100%;
+    -webkit-mask-repeat: no-repeat;
+  }
 </style>
