@@ -2,26 +2,70 @@
   import { onMount } from "svelte";
   import MapInlineSvg from "./MapInlineSvg.svelte";
   import * as d3 from "d3";
-  import { currentStation } from "../store";
+  import { currentLine, currentStation, currentTime } from "../store";
+  import { hmsToSeconds } from "../utils/timeFormatter";
   const INITIAL_WIDTH = 2560;
   const INITIAL_HEIGHT = 2560;
   const EXTENT_PADDING = 400;
+  let currentLineGroupSelection: d3.Selection<
+    SVGGElement,
+    unknown,
+    HTMLElement,
+    any
+  >;
   const addClassesToStations = () => {
-    const stationsGroupSelection = d3
-      .select("#map-svg")
-      .selectAll<SVGGElement, unknown>("g #stations");
+    const stationsGroupSelection = d3.select("#map-svg #stations");
     console.log({ stationsGroupSelection });
-    stationsGroupSelection.selectChildren().attr("class",function() {
-      const id = this.getAttribute('id');
+    stationsGroupSelection.selectChildren().attr("class", function () {
+      const id = (this as Element)?.getAttribute("id");
       const currentStationName = $currentStation?.name.toLocaleLowerCase();
 
-      if (!id) return 'station';
-
-      return id === currentStationName ? 'activeStation' : 'station';
-    }); 
+      if (!id) return "station";
+      if (id === currentStationName) {
+        console.log("activeStation found:", id);
+      }
+      return id === currentStationName ? "activeStation" : "station";
+    });
   };
+  const removeInlineStyleAttributes = () => {
+    const stationsGroupSelection = d3.select("#map-svg #stations");
+    stationsGroupSelection.selectChildren().attr("fill", null);
+    stationsGroupSelection.selectChildren().attr("stroke", null);
+  };
+  const setActiveLine = (newLine: Line) => {
+    console.log("currentLine changed", "#map-svg #lines #" + newLine.id);
+    const groupSelection = d3.select<SVGGElement, unknown>(
+      "#map-svg #lines #" + newLine.id
+    );
+    groupSelection.attr("class", "activeLine").attr("stroke", newLine.color);
+    if (groupSelection) {
+      currentLineGroupSelection = groupSelection;
+      const linePaths =
+        currentLineGroupSelection.selectChild<SVGPathElement>("path");
+      // add animation to line. Make the line animate linear from station to station
+      const totalLength = linePaths.node()?.getTotalLength();
+      console.log({ linePaths, totalLength });
 
+      if (totalLength) {
+        const durationOfLine =
+          hmsToSeconds(newLine.timeStamps?.at(-1)?.startTime) + hmsToSeconds(newLine.timeStamps?.at(0)?.endTime) ?? 0;
+
+        const currentProgressInPercent = $currentTime / durationOfLine;
+        const currentProgressInPixels = totalLength * currentProgressInPercent;
+        linePaths
+          .attr("stroke-dasharray", totalLength + " " + totalLength)
+          .attr("stroke-dashoffset", totalLength - currentProgressInPixels)
+          .transition()
+          .duration(
+            +(1000 * durationOfLine ?? 0)
+          )
+          .ease(d3.easeLinear)
+          .attr("stroke-dashoffset", 0);
+      }
+    }
+  };
   onMount(() => {
+    removeInlineStyleAttributes();
     const mapSvg = d3.select<SVGElement, unknown>("#map-svg");
     // add zoom capabilities
     const zoomed = (event: any) => {
@@ -48,12 +92,17 @@
     mapSvg.call(zoom as any);
 
     addClassesToStations();
+    setActiveLine($currentLine);
   });
 
   currentStation.subscribe(() => {
-    console.log('currentStation changed')
+    console.log("currentStation changed");
     addClassesToStations();
   });
+  currentLine.subscribe((newLine) => {
+    setActiveLine(newLine);
+  });
+  currentTime.subscribe(() => {});
 </script>
 
 <div id="map">
@@ -67,7 +116,7 @@
   </svg>
 </div>
 
-<style lang="scss">
+<style lang="scss" scoped>
   #map {
     z-index: -1;
     position: fixed;
@@ -90,8 +139,17 @@
   #map-svg {
     width: 100%;
     height: 100%;
-    .activeStation {
-      fill: red;
+  }
+  :global(.station) {
+    stroke: var(--foreground-color);
+    fill: var(--background-color);
+  }
+  :global(.activeStation) {
+    fill: green;
+  }
+  :global(.activeLine) {
+    :global(path) {
+      stroke: inherit; // TODO make this the color of the line
     }
   }
 </style>
