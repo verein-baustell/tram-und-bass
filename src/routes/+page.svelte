@@ -8,6 +8,7 @@
     currentLine,
     isImmersive,
     isMuted,
+    isMobile,
     videoIsPlaying,
     vimeoVideoObject,
     allLines,
@@ -62,7 +63,6 @@
   class={$videoIsPlaying ? "" : "isLoading"}
   style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
 ></div>
-<div class="blur-vignette"></div>
 {#if !$videoIsPlaying}
   <SplashScreen />{/if}
 <VideoControls />
@@ -105,7 +105,10 @@
     --global-padding: 0.8em;
     --transition: ease-in-out 0.3s;
     --padding-m: 0.24em;
+    --padding-l: 0.48em;
+    --mobile-breakpoint: 600px;
     --padding-s: 0.12em;
+    $mobile-breakpoint: 600px;
   }
   #video-container {
     filter: saturate(1.5);
@@ -124,49 +127,5 @@
     display: grid;
     place-items: center;
     z-index: -1;
-  }
-
-  .blur-vignette {
-    --radius: 0px;
-    --inset: 32px;
-    --transition-length: 128px;
-    --blur: 32px;
-
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius);
-    -webkit-backdrop-filter: blur(var(--blur));
-    backdrop-filter: blur(var(--blur));
-    --r: max(var(--transition-length), calc(var(--radius) - var(--inset)));
-    --corner-size: calc(var(--r) + var(--inset)) calc(var(--r) + var(--inset));
-    --corner-gradient: transparent 0px,
-      transparent calc(var(--r) - var(--transition-length)), black var(--r);
-    --fill-gradient: black, black var(--inset),
-      transparent calc(var(--inset) + var(--transition-length)),
-      transparent calc(100% - var(--transition-length) - var(--inset)),
-      black calc(100% - var(--inset));
-    --fill-narrow-size: calc(100% - (var(--inset) + var(--r)) * 2);
-    --fill-farther-position: calc(var(--inset) + var(--r));
-    -webkit-mask-image: linear-gradient(to right, var(--fill-gradient)),
-      linear-gradient(to bottom, var(--fill-gradient)),
-      radial-gradient(at bottom right, var(--corner-gradient)),
-      radial-gradient(at bottom left, var(--corner-gradient)),
-      radial-gradient(at top left, var(--corner-gradient)),
-      radial-gradient(at top right, var(--corner-gradient));
-    -webkit-mask-size:
-      100% var(--fill-narrow-size),
-      var(--fill-narrow-size) 100%,
-      var(--corner-size),
-      var(--corner-size),
-      var(--corner-size),
-      var(--corner-size);
-    -webkit-mask-position:
-      0 var(--fill-farther-position),
-      var(--fill-farther-position) 0,
-      0 0,
-      100% 0,
-      100% 100%,
-      0 100%;
-    -webkit-mask-repeat: no-repeat;
   }
 </style>

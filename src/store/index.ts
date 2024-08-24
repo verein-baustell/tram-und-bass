@@ -103,6 +103,7 @@ export const nextStation = derived(
 export const videoIsPlaying = writable<boolean>(false);
 export const isImmersive = writable<boolean>(false);
 export const isMuted = writable<boolean>(false);
+export const isMobile = writable<boolean>(false);
 export const isAtStation = writable<boolean>(false);
 export const timeUntilNextStation = derived(
   [currentLine, currentTime, nextStation],
