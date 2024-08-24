@@ -4,6 +4,7 @@
   import TopMenu from "$lib/TopMenu.svelte";
   import VideoControls from "$lib/VideoControls.svelte";
   import BottomMenu from "$lib/BottomMenu.svelte";
+  import LandingScreen from "$lib/LandingScreen.svelte";
   import {
     currentLine,
     isImmersive,
@@ -63,6 +64,8 @@
   class={$videoIsPlaying ? "" : "isLoading"}
   style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
 ></div>
+<LandingScreen />
+
 {#if !$videoIsPlaying}
   <SplashScreen />{/if}
 <VideoControls />
