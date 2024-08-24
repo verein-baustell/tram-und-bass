@@ -15,6 +15,9 @@
     cursor: pointer;
     margin: 0.12em 0.12em 0.12em 0em;
     transition: var(--transition);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
   }
 
   button:first-child {
@@ -24,8 +27,12 @@
   :hover{
     background: var(--hover-color);
     transition: var(--transition);
-    background-image: url("/images/patternDots.png");
+    //background-image: url("/images/patternDots.png");
     background-size: 2em;
+
+    &.isInverted-false{
+    background-color: rgba(0,0,0,0.3);
+  }
   }
 
   .active {

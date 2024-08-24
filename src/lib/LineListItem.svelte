@@ -24,7 +24,7 @@
     }}
     class:isActive={$currentLine === line}
   >
-    <LineNumber number={line.number} style="color: white"/>
+    <LineNumber number={line.number}/>
     <span>{line.name}</span>
     <!-- TODO: Add Icon -->
     -

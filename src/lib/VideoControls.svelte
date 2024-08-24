@@ -4,6 +4,7 @@
     videoIsPlaying,
     isImmersive,
     isMuted,
+    isMobile,
   } from "../store";
   import Button from "./Button.svelte";
 </script>
@@ -37,7 +38,7 @@
       {/if}
     </Button>
   {/if}
-  <Button
+    <Button 
     on:click={() => {
       $isImmersive = !$isImmersive;
     }}
@@ -57,4 +58,13 @@
     background: var(--background-color-light);
     border-radius: var(--border-radius-view);
   }
+  @media only screen and (max-width: 600px) {
+  #video-controls{
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+  }
+}
+
 </style>

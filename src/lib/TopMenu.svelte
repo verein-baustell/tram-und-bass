@@ -7,9 +7,9 @@
   import { allLines } from "../store";
   export let aboutContent: string;
   const meuEntries = [
-    { name: "List", component: LineList },
-    { name: "Map", component: Map },
-    { name: "About", component: About },
+    { name: "Liste", component: LineList },
+    { name: "Plan", component: Map },
+    { name: "Info", component: About },
   ];
   let currentComponent = meuEntries[0].component;
   let isOpen = false;

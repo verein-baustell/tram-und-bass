@@ -19,6 +19,7 @@
   .splash {
     pointer-events: none;
     z-index: 1000;
+    display: none;
     height: 100vh;
     width: 100vw;
     margin: 0;
