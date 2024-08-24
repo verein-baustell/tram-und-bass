@@ -2,8 +2,11 @@
   import { onMount } from "svelte";
   import MapInlineSvg from "./MapInlineSvg.svelte";
   import * as d3 from "d3";
-  import { currentLine, currentStation, currentTime } from "../store";
+  import { currentLine, currentStation, currentTime, allLines } from "../store";
   import { hmsToSeconds } from "../utils/timeFormatter";
+  import { changeToLineAtCurrentStation } from "../utils/changeToLineAtCurrentStation";
+  import getLinesFromStationName from "../utils/getLinesFromStationName";
+  import LineList from "./LineList.svelte";
   const INITIAL_WIDTH = 2560;
   const INITIAL_HEIGHT = 2560;
   const EXTENT_PADDING = 400;
@@ -13,6 +16,7 @@
     HTMLElement,
     any
   >;
+  let linesAtSelectedStation: Line[]; // the station that is currently being previewed
   const addClassesToStations = () => {
     const stationsGroupSelection = d3.select("#map-svg #stations");
     console.log({ stationsGroupSelection });
@@ -25,6 +29,15 @@
         console.log("activeStation found:", id);
       }
       return id === currentStationName ? "activeStation" : "station";
+    }).on("click", function () {
+      const stationName = (this as Element)?.getAttribute("id");
+      console.log("station clicked", stationName);
+      if(!stationName) return;
+      linesAtSelectedStation = getLinesFromStationName(
+        stationName,
+        $allLines,
+      ); 
+      console.log({linesAtSelectedStation});
     });
   };
   const removeInlineStyleAttributes = () => {
@@ -104,7 +117,7 @@
   });
   currentTime.subscribe(() => {});
 </script>
-
+{#if linesAtSelectedStation}<LineList lines={linesAtSelectedStation} />{/if}
 <div id="map">
   <svg
     id="map-svg"
@@ -143,6 +156,11 @@
   :global(.station) {
     stroke: var(--foreground-color);
     fill: var(--background-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+   stroke-width: 10px; 
+    }
   }
   :global(.activeStation) {
     fill: green;
