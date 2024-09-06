@@ -8,12 +8,9 @@
   import {
     currentLine,
     isImmersive,
-    isMuted,
-    isMobile,
     videoIsPlaying,
     vimeoVideoObject,
     allLines,
-    currentTime,
   } from "../store";
   import DevTools from "$lib/DevTools.svelte";
   import registerVimeoEventListeners from "../utils/registerVimeoEventListeners";
@@ -65,7 +62,9 @@
   });
 </script>
 
-{#if !showLandingPage}
+{#if showLandingPage}
+  <LandingScreen />
+{:else}
   <div
     id="video-container"
     class={$videoIsPlaying ? "" : "isLoading"}
@@ -81,8 +80,6 @@
     <TopMenu aboutContent={"aboutContent"} />
     <BottomMenu />
   {/if}
-{:else}
-  <LandingScreen />
 {/if}
 
 <style lang="scss">
