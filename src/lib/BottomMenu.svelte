@@ -36,10 +36,7 @@
   {/if}
   <nav style:background-color={$currentLine.color}>
     <div class="numb">
-      <LineNumber
-      number={$currentLine.number}
-      isInverted={true}
-    />
+      <LineNumber number={$currentLine.number} isInverted={true} />
     </div>
     {#each menuEntries as { name, component } (name)}
       <Button
@@ -72,7 +69,7 @@
     right: 0;
   }
 
-  .numb{
+  .numb {
     margin-left: var(--padding-l);
     margin-right: var(--padding-l);
     filter: invert(1);
@@ -85,9 +82,9 @@
   }
 
   @media only screen and (max-width: $mobile-breakpoint) {
-  nav {
-    max-width: calc(100vw - var(--global-padding) - var(--global-padding));
-    flex-wrap: wrap;
+    nav {
+      max-width: calc(100vw - var(--global-padding) - var(--global-padding));
+      flex-wrap: wrap;
+    }
   }
-}
 </style>

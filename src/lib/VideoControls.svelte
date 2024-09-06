@@ -26,17 +26,6 @@
         Play
       {/if}
     </Button>
-    <Button
-      on:click={() => {
-        $vimeoVideoObject.setMuted(!$isMuted);
-      }}
-    >
-      {#if $isMuted}
-        Unmute
-      {:else}
-        Mute
-      {/if}
-    </Button>
   {/if}
     <Button 
     on:click={() => {
