@@ -1,3 +1,3 @@
 <div>
-    LOADING...
+    LOADING..
 </div>
