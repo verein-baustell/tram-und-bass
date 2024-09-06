@@ -58,8 +58,12 @@
     // register on resize
     window.addEventListener("resize", adjustDimensionsOfVideoWrapper);
   });
+
+  const today = new Date()
+  const releaseDate = new Date('2024-11-15T22:00:00')
 </script>
 
+{#if today >= releaseDate}
 <div
   id="video-container"
   class={$videoIsPlaying ? "" : "isLoading"}
@@ -76,6 +80,9 @@
 {#if !$isImmersive}
   <TopMenu aboutContent={"aboutContent"} />
   <BottomMenu />
+{/if}
+{:else}
+<LandingScreen />
 {/if}
 
 <style lang="scss">
