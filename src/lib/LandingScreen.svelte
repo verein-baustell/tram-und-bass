@@ -20,7 +20,7 @@
     transform: translateY(-50%);
   }
 
-  .newsletter{
+  .newsletter {
     width: 40vw;
     margin-left: auto;
     margin-right: auto;
