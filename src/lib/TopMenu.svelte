@@ -51,7 +51,7 @@
     left: 0;
     margin: var(--global-padding);
     nav {
-      display: flex;
+      width: fit-content;
       background: var(--background-color-light);
       border-radius: var(--border-radius-view);
     }

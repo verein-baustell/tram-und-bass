@@ -42,16 +42,6 @@
   	.mono-font{
     	font-family: HoloMono;
   	}
-
-	.view{
-		padding: var(--padding-m);
-		background: var(--background-color);
-		border-radius: var(--border-radius-view);
-		margin-top: var(--padding-m);
-		margin-bottom: var(--padding-m);
-		box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
-		border: var(--padding-s) var(--background-color-light) solid;
-	}
 	/*
 	5. Improve media defaults
 	*/
@@ -80,5 +70,37 @@
 	a {
     text-decoration: none;
     color: inherit;
+	}
+
+	.view{
+		padding: var(--padding-m);
+		background: var(--background-color);
+		border-radius: var(--border-radius-view);
+		margin-top: var(--padding-m);
+		margin-bottom: var(--padding-m);
+		box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+		border: var(--padding-s) var(--background-color-light) solid;
+	}
+
+	.top-view{
+		max-width: 44vw;
+		min-width: 33vw;
+		max-height: calc(100vh - 24em);
+    	overflow: scroll;
+	}
+
+	.bottom-view{
+		max-width: 44vw;
+		min-width: 33vw;
+		max-height: calc(100vh - 24em);
+    	overflow: scroll;
+	}
+
+  	@media only screen and (max-width: 600px) {
+  	.top-view {
+    	min-width: fit-content;
+    	max-width: 100vw;
   }
+}
+	
 </style>

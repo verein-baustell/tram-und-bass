@@ -159,7 +159,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     &:hover {
-   stroke-width: 10px; 
+   stroke-width: 32px; 
     }
   }
   :global(.activeStation) {

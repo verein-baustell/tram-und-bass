@@ -10,6 +10,7 @@
   button {
     background-color: white;
     padding: 0.5em 0.8em;
+    color: black;
     border: none;
     border-radius: var(--border-radius-button);
     cursor: pointer;

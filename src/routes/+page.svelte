@@ -117,7 +117,7 @@
     filter: saturate(1.5);
     transition: filter 1s ease-in-out;
     &.isLoading {
-      filter: blur(24px);
+      filter: blur(0px);
     }
     position: absolute;
     aspect-ratio: 16 / 9;

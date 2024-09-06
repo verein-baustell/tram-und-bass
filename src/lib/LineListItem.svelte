@@ -41,6 +41,7 @@
     // reset button
     background-color: var(--background-color);
     border: none;
+    color: black;
     cursor: pointer;
     display: flex;
     width: 100%;

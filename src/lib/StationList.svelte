@@ -4,7 +4,7 @@
   import Circle from "./Circle.svelte";
 </script>
 
-<div id="station-list" class="view">
+<div id="station-list" class="view bottom-view">
   <ol>
     {#each $currentLine.timeStamps as station}
       <li><Circle isFilled={hmsToSeconds(station.endTime) < $currentTime} />{station.name}</li>
