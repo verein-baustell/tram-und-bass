@@ -25,6 +25,7 @@ const seekVideoAfterLoad = (vimeoObject: Vimeo) => {
 export const timeToSeekAfterVideoLoad = writable<number>(0);
 currentLine.subscribe((value) => {
   if (value && typeof window !== "undefined") {
+    videoIsPlaying.set(false);
     const url = new URL(window.location.href);
     url.searchParams.set("line", value.id);
     goto(url.toString(), { replaceState: true });
