@@ -28,6 +28,10 @@ export default () => {
     console.log("pause", e);
     videoIsPlaying.set(false); // Corrected
   });
+  vimeo.on("ended", (e) => {
+    console.log("ended", e);
+    videoIsPlaying.set(false); // Corrected
+  });
   vimeo.on("volumechange", () => {
     vimeo.getMuted().then((muted) => {
       isMuted.set(muted); // Corrected
