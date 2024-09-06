@@ -1,17 +1,28 @@
-<div class="splash">
+<script lang="ts">
+  export let onClick: () => void;
+
+  function handleKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      onClick();
+    }
+  }
+</script>
+
+<div class="splash" on:click={onClick} on:keydown={handleKeyDown} role="button" tabindex="0">
   <img
     class="logo"
     src="/images/tram_bass_2-15.png"
     width="auto"
     height="auto"
+    alt="Tram and Bass Logo"
   />
   <div class="supporters">
-    <img class="supporter" src="/images/Stadt.png" />
-    <img class="supporter" src="/images/Migros.png" />
-    <img class="supporter" src="/images/ErnstGohner.png" />
-    <img class="supporter" src="/images/Temperatio.png" />
-    <img class="supporter" src="/images/Kanton.png" />
-    <img class="supporter" src="/images/VBZ.png" />
+    <img class="supporter" src="/images/Stadt.png" alt="Stadt Supporter Logo" />
+    <img class="supporter" src="/images/Migros.png" alt="Migros Supporter Logo" />
+    <img class="supporter" src="/images/ErnstGohner.png" alt="Ernst Göhner Supporter Logo" />
+    <img class="supporter" src="/images/Temperatio.png" alt="Temperatio Supporter Logo" />
+    <img class="supporter" src="/images/Kanton.png" alt="Kanton Supporter Logo" />
+    <img class="supporter" src="/images/VBZ.png" alt="VBZ Supporter Logo" />
   </div>
 </div>
 

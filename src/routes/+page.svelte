@@ -21,6 +21,7 @@
   let videoWrapperWidth = "100%";
   let videoWrapperHeight = "100%";
   let isDevMode = false;
+  let showSplashScreen = true;
   // TODO: Want it to maybe pick a random line?
   $currentLine = $allLines[0];
   onMount(() => {
@@ -66,8 +67,9 @@
 ></div>
 <LandingScreen />
 
-{#if !$videoIsPlaying}
-  <SplashScreen />{/if}
+{#if showSplashScreen}
+  <SplashScreen onClick={() => (showSplashScreen = false)} />
+{/if}
 <VideoControls />
 {#if isDevMode}
   <DevTools />{/if}
