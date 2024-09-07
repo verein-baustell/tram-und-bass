@@ -74,7 +74,7 @@
   {#if showSplashScreen}
     <SplashScreen onClick={() => (showSplashScreen = false)} />
   {/if}
-  {#if !$videoIsPlaying}
+  {#if !$videoIsPlaying && !showSplashScreen}
     <LoadingScreen/>
   {/if}
   <VideoControls />

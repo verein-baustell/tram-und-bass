@@ -1549,7 +1549,7 @@
     stroke-width="6"
   />
   <rect
-    id="löwenbrau"
+    id="löwenbräu"
     x="1067.11"
     y="1250.76"
     width="16"

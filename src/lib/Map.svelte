@@ -22,7 +22,7 @@
     console.log({ stationsGroupSelection });
     stationsGroupSelection.selectChildren().attr("class", function () {
       const id = (this as Element)?.getAttribute("id");
-      const currentStationName = $currentStation?.name.toLocaleLowerCase();
+      const currentStationName = $currentStation?.name.replaceAll(" ", "").toLocaleLowerCase();
 
       if (!id) return "station";
       if (id === currentStationName) {
