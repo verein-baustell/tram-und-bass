@@ -15,6 +15,7 @@
   import DevTools from "$lib/DevTools.svelte";
   import registerVimeoEventListeners from "../utils/registerVimeoEventListeners";
   import SplashScreen from "$lib/SplashScreen.svelte";
+  import LoadingScreen from "$lib/LoadingScreen.svelte";
   let videoWrapperWidth = "100%";
   let videoWrapperHeight = "100%";
   let isDevMode = false;
@@ -72,6 +73,9 @@
   ></div>
   {#if showSplashScreen}
     <SplashScreen onClick={() => (showSplashScreen = false)} />
+  {/if}
+  {#if !$videoIsPlaying}
+    <LoadingScreen/>
   {/if}
   <VideoControls />
   {#if isDevMode}
