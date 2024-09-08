@@ -20,25 +20,34 @@
   const addClassesToStations = () => {
     const stationsGroupSelection = d3.select("#map-svg #stations");
     console.log({ stationsGroupSelection });
-    stationsGroupSelection.selectChildren().attr("class", function () {
-      const id = (this as Element)?.getAttribute("id");
-      const currentStationName = $currentStation?.name.replaceAll(" ", "").toLocaleLowerCase();
+    stationsGroupSelection
+      .selectChildren()
+      .attr("class", function () {
+        const id = (this as Element)?.getAttribute("id");
+        const currentStationName = $currentStation?.name
+          .replaceAll(" ", "")
+          .toLocaleLowerCase();
 
-      if (!id) return "station";
-      if (id === currentStationName) {
-        console.log("activeStation found:", id);
-      }
-      return id === currentStationName ? "activeStation" : "station";
-    }).on("click", function () {
-      const stationName = (this as Element)?.getAttribute("id");
-      console.log("station clicked", stationName);
-      if(!stationName) return;
-      linesAtSelectedStation = getLinesFromStationName(
-        stationName,
-        $allLines,
-      ); 
-      console.log({linesAtSelectedStation});
-    });
+        if (!id) return "station";
+        if (id === currentStationName) {
+          console.log("activeStation found:", id);
+        }
+        return id === currentStationName ? "activeStation" : "station";
+      })
+      .on("click", function () {
+        const stationName = (this as Element)?.getAttribute("id");
+        stationsGroupSelection.selectChildren().attr("class", "station");
+        (this as Element).classList.add("activeStation");
+        // remove activeStation class from all other stations
+
+        console.log("station clicked", stationName);
+        if (!stationName) return;
+        linesAtSelectedStation = getLinesFromStationName(
+          stationName,
+          $allLines
+        );
+        console.log({ linesAtSelectedStation });
+      });
   };
   const removeInlineStyleAttributes = () => {
     const stationsGroupSelection = d3.select("#map-svg #stations");
@@ -61,7 +70,8 @@
 
       if (totalLength) {
         const durationOfLine =
-          hmsToSeconds(newLine.timeStamps?.at(-1)?.startTime) + hmsToSeconds(newLine.timeStamps?.at(0)?.endTime) ?? 0;
+          hmsToSeconds(newLine.timeStamps?.at(-1)?.startTime) +
+            hmsToSeconds(newLine.timeStamps?.at(0)?.endTime) ?? 0;
 
         const currentProgressInPercent = $currentTime / durationOfLine;
         const currentProgressInPixels = totalLength * currentProgressInPercent;
@@ -69,9 +79,7 @@
           .attr("stroke-dasharray", totalLength + " " + totalLength)
           .attr("stroke-dashoffset", totalLength - currentProgressInPixels)
           .transition()
-          .duration(
-            +(1000 * durationOfLine ?? 0)
-          )
+          .duration(+(1000 * durationOfLine ?? 0))
           .ease(d3.easeLinear)
           .attr("stroke-dashoffset", 0);
       }
@@ -117,6 +125,7 @@
   });
   currentTime.subscribe(() => {});
 </script>
+
 {#if linesAtSelectedStation}<LineList lines={linesAtSelectedStation} />{/if}
 <div id="map">
   <svg
@@ -137,7 +146,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba($color: #FFFFFF, $alpha: 0.8);
+    background-color: rgba($color: #ffffff, $alpha: 0.8);
     backdrop-filter: blur(40px);
     animation: fadeIn 0.8s ease-in-out;
     @keyframes fadeIn {
@@ -159,11 +168,11 @@
     cursor: pointer;
     transition: all 0.3s ease;
     &:hover {
-   stroke-width: 32px; 
+      stroke-width: 32px;
     }
   }
   :global(.activeStation) {
-    fill: green;
+    stroke-width: 12px;
   }
   :global(.activeLine) {
     :global(path) {
