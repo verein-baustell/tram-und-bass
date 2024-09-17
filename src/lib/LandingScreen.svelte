@@ -1,6 +1,37 @@
+<script>
+  // Set the date we're counting down to
+  var countDownDate = new Date("Nov 15, 2024 20:00:00").getTime();
+
+  var days = 0;
+  var hours = 0;
+  var minutes = 0;
+  var seconds = 0;
+  
+  // Update the count down every 1 second
+  var x = setInterval(function() {
+  
+    // Get today's date and time
+    var now = new Date().getTime();
+  
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+  
+    // Time calculations for days, hours, minutes and seconds
+    days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+  }, 1000);
+  </script>
+
 <div class="splash">
   <div class="container">
-    <img class="logo" src="/images/TnB_logo.svg">
+    <img class="logo" src="/images/TnB_logo.svg" alt="Tram und Bass Logo">
+    <div class="text title countdown">
+      <p id="numbers"> { days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s " }</p>
+    </div>
     <div class="text title release">
       <p>ab 15. November 2024</p>
     </div>
@@ -25,8 +56,8 @@
   <div class="support view">
     <p class="center title">Ganz viel Liebe</p>
     <div class="s-grid">
-      <img class="supporter" src="/images/baustell.svg" alt="Stadt Supporter Logo" />
-      <img class="supporter" src="/images/rtfm.svg" alt="Migros Supporter Logo" />
+      <img class="supporter" src="/images/baustell.svg" alt="Verein Baustell Logo" />
+      <img class="supporter" src="/images/rtfm.svg" alt="Verein RTFM Logo" />
     </div>
   </div>
 
@@ -36,17 +67,16 @@
       <img class="supporter" src="/images/Stadt.png" alt="Stadt Supporter Logo" />
       <img class="supporter" src="/images/Migros.png" alt="Migros Supporter Logo" />
       <img class="supporter" src="/images/ErnstGohner.png" alt="Ernst Göhner Supporter Logo" />
+      <img class="supporter" src="/images/VBZ.png" alt="VBZ Supporter Logo" />
       <img class="supporter" src="/images/Temperatio.png" alt="Temperatio Supporter Logo" />
       <img class="supporter" src="/images/Kanton.png" alt="Kanton Supporter Logo" />
-      <img class="supporter" src="/images/VBZ.png" alt="VBZ Supporter Logo" />
     </div>
   </div>
 
   </div>
-
-  
   <img id="gif" src="/images/IntroShortSimple.gif">
 </div>
+
 
 <style lang="scss">
   .break{
@@ -68,6 +98,7 @@
 
   .release{
     color: black;
+    margin-top: 0.2em;
     background-color: white;
     border-radius: 2em;
     padding-top: 0.2em;
@@ -88,6 +119,17 @@
     padding-right: 1em;
   }
 
+  .countdown{
+    background-color: black;
+    color: white;
+    border-radius: 2em;
+    padding-top: 0.2em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    margin-bottom: 0px;
+    margin-top: 1em !important;
+  }
+
   .title{
     font-family: Rene;
     font-size: 1.2em;
@@ -101,7 +143,6 @@
   }
 
   .text{
-    margin-top: 2em;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
@@ -111,7 +152,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-
   .supporter{
     width: 80%;
     margin-left: auto;
