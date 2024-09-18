@@ -26,8 +26,7 @@
   >
     <LineNumber number={line.number}/>
     <span>{line.name}</span>
-    <!-- TODO: Add Icon -->
-    -
+    <img class="star" src="/images/divider.svg" alt="-"/>
     <span>{line.artistName}</span>
   </button>
 </li>
@@ -50,6 +49,11 @@
     align-items: center;
     gap: 0.5em;
     transition: var(--transition);
+  }
+
+  .star{
+    height: 0.8em;
+    width: 0.8em;
   }
 
   button:hover{
