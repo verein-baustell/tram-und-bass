@@ -4,7 +4,7 @@
   import Circle from "./Circle.svelte";
 </script>
 
-<div id="station-list" class="view bottom-view">
+<div id="station-list" class="view detailed-view">
   <ol>
     {#each $currentLine.timeStamps as station, index}
       <li>
