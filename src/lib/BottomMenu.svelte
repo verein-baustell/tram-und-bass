@@ -35,13 +35,15 @@
     <svelte:component this={currentComponent} />
   {/if}
   <nav style:background-color={$currentLine.color}>
-    <div class="numb">
-      <LineNumber number={$currentLine.number} isInverted={true} />
-    </div>
-    {#each menuEntries as { name, component } (name)}
-      <Button
+    <div class="btm-menu-section">
+      <div class="numb">
+        <LineNumber number={$currentLine.number} isInverted={true} />
+      </div>
+    {#each menuEntries as { name, component }, index (name)}
+      {#if index === 0}
+        <Button
         isActive={currentComponent === component && isOpen}
-        class="isInverted-{isInverted}"
+        class="isInverted-{isInverted} btn-btm-menu"
         on:click={() => {
           if (isOpen && currentComponent === component) {
             isOpen = false;
@@ -56,7 +58,32 @@
       >
         {name}
       </Button>
-    {/each}
+      {/if}
+      {/each}
+    </div>
+    <div class="btm-menu-section">
+      {#each menuEntries as { name, component }, index (name)}
+      {#if index != 0}
+      <Button
+        isActive={currentComponent === component && isOpen}
+        class="isInverted-{isInverted} btn-btm-menu"
+        on:click={() => {
+          if (isOpen && currentComponent === component) {
+            isOpen = false;
+            return;
+          }
+          currentComponent = component;
+          isOpen = true;
+        }}
+        style={currentComponent === component && isOpen
+          ? `color: ${$currentLine.color}`
+          : ``}
+      >
+        {name}
+      </Button>
+      {/if}
+      {/each}
+    </div>
   </nav>
 </div>
 
@@ -76,15 +103,24 @@
   }
   nav {
     display: flex;
+    flex-flow: row nowrap;
     border-radius: var(--border-radius-view);
     align-items: center;
     background-color: var(--background-color-light);
   }
 
-  @media only screen and (max-width: $mobile-breakpoint) {
+  .btm-menu-section {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+  @media only screen and (max-width: 768px) {
     nav {
       max-width: calc(100vw - var(--global-padding) - var(--global-padding));
-      flex-wrap: wrap;
+      flex-flow: wrap;
     }
+    
   }
 </style>

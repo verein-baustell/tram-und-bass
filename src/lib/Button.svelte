@@ -25,6 +25,12 @@
     margin: 0.12em 0.12em 0.12em 0.12em;
   }
 
+  @media only screen and (max-width: 768px) {
+    .btn-btm-menu {
+      width: 100%;
+    }
+  }
+
   :hover{
     background: var(--hover-color);
     transition: var(--transition);

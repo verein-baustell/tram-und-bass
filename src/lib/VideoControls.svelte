@@ -47,7 +47,7 @@
     background: var(--background-color-light);
     border-radius: var(--border-radius-view);
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 768px) {
   #video-controls{
     top: 0;
     right: 0;
