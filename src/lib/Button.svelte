@@ -28,6 +28,9 @@
   @media only screen and (max-width: 768px) {
     .btn-btm-menu {
       width: 100%;
+      &--first {
+        margin: 0.12em 0.12em 0em 0.12em;
+      }
     }
   }
 
@@ -37,9 +40,9 @@
     //background-image: url("/images/patternDots.png");
     background-size: 2em;
 
-    &.isInverted-false{
-    background-color: rgba(0,0,0,0.3);
-  }
+      &.isInverted-false{
+        background-color: rgba(0,0,0,0.3);
+    }
   }
 
   .active {
@@ -51,10 +54,18 @@
       background-color: var(--background-color);
       color: var(--foreground-color);
     }
+    &.isInverted-true {
+      background-color: black;
+      color: var(--foreground-color);
+    }
   }
   .isInverted-false {
-    /* filter: invert(1); */
     background-color: rgba(0,0,0,0.2);
     color: var(--background-color);
+  }
+
+  .isInverted-true {
+    background-color: rgba(0,0,0,0.2);
+    color: black;
   }
 </style>
