@@ -82,25 +82,18 @@
 		border: var(--padding-s) var(--background-color-light) solid;
 	}
 
-	.top-view{
+	.detailed-view {
 		max-width: 44vw;
 		min-width: 33vw;
 		max-height: calc(100vh - 24em);
     	overflow: scroll;
 	}
 
-	.bottom-view{
-		max-width: 44vw;
-		min-width: 33vw;
-		max-height: calc(100vh - 24em);
-    	overflow: scroll;
-	}
-
-  	@media only screen and (max-width: 600px) {
-  	.top-view {
+  	@media only screen and (max-width: 768px) {
+  	.detailed-view {
     	min-width: fit-content;
     	max-width: 100vw;
-  }
+	}
 }
 	
 </style>

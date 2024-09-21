@@ -3,7 +3,7 @@
     export let aboutContent: string;
 
 </script>
-<div class="view top-view">
+<div class="view detailed-view">
     <p>
         <SvelteMarkdown source={aboutContent} /> 
     </p>

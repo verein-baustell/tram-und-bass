@@ -4,7 +4,7 @@
   export let lines: Line[];
   export let keepStationWhenChangingLine = false;
 </script>
-<div class="view top-view">
+<div class="view detailed-view">
   <ul>
     {#each lines as line}
       <LineListItem

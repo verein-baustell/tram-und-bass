@@ -9,19 +9,21 @@
 
 <style scoped lang="scss">
   div {
-    color: black;
     font-family: HoloMono;
     aspect-ratio: 1;
     width: 1.75em;
     height: 1.75em;
     display: grid;
     place-items: center;
-    border: solid 1px var(--foreground-color);
     border-radius: var(--padding-m);
-
-    &.notInverted {
-      border: solid 1px var(--foreground-color);
-      color: var(--foreground-color);
-    }
+    
+  }
+  .inverted {
+    color: white;
+    border: solid 1px white;
+  }
+  .notInverted {
+    color: black;
+    border: solid 1px black;
   }
 </style>

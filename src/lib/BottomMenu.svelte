@@ -16,12 +16,11 @@
     menuEntries = [
       { name: $currentLine.name, component: ChangeLineList },
       { name: "Stationen", component: StationList },
-      { name: $currentLine.artistName, component: Artist },
+      { name: $currentLine.artistName, component: Artist }
     ];
     currentComponent = menuEntries?.[0]?.component;
   }
   let isOpen = true;
-  let isInverted = $currentLine.isInverted;
 </script>
 
 <div
@@ -35,13 +34,15 @@
     <svelte:component this={currentComponent} />
   {/if}
   <nav style:background-color={$currentLine.color}>
-    <div class="numb">
-      <LineNumber number={$currentLine.number} isInverted={true} />
-    </div>
-    {#each menuEntries as { name, component } (name)}
-      <Button
+    <div class="btm-menu-section">
+      <div class="numb">
+        <LineNumber number={$currentLine.number} isInverted={$currentLine.isInverted} />
+      </div>
+    {#each menuEntries as { name, component }, index (name)}
+      {#if index === 0}
+        <Button
         isActive={currentComponent === component && isOpen}
-        class="isInverted-{isInverted}"
+        class="isInverted-{$currentLine.isInverted} btn-btm-menu btn-btm-menu--first"
         on:click={() => {
           if (isOpen && currentComponent === component) {
             isOpen = false;
@@ -56,13 +57,42 @@
       >
         {name}
       </Button>
-    {/each}
+      {/if}
+      {/each}
+    </div>
+    <div class="btm-menu-section">
+      {#each menuEntries as { name, component }, index (name)}
+      {#if index != 0}
+      <Button
+        isActive={currentComponent === component && isOpen}
+        class="isInverted-{$currentLine.isInverted} btn-btm-menu"
+        on:click={() => {
+          if (isOpen && currentComponent === component) {
+            isOpen = false;
+            return;
+          }
+          currentComponent = component;
+          isOpen = true;
+        }}
+        style={currentComponent === component && isOpen
+          ? `color: ${$currentLine.color}`
+          : ``}
+      >
+        {name}
+      </Button>
+      {/if}
+      {/each}
+      <div class="close-btn">
+        <img class="star isInverted-{$currentLine.isInverted}" src="/images/divider.svg" alt="-"/>
+      </div>
+    </div>
   </nav>
 </div>
 
 <style lang="scss" scoped>
-  $mobile-breakpoint: 600px;
   #bottom-menu {
+    display: flex;
+    flex-flow: column wrap;
     margin: var(--global-padding);
     position: fixed;
     bottom: 0;
@@ -76,15 +106,41 @@
   }
   nav {
     display: flex;
+    flex-flow: row nowrap;
+    width: fit-content;
+    align-self: flex-end;
     border-radius: var(--border-radius-view);
     align-items: center;
     background-color: var(--background-color-light);
   }
 
-  @media only screen and (max-width: $mobile-breakpoint) {
+  .btm-menu-section {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+  }
+  .close-btn{
+    display: none;
+  }
+
+  @media only screen and (max-width: 768px) {
     nav {
       max-width: calc(100vw - var(--global-padding) - var(--global-padding));
-      flex-wrap: wrap;
+      flex-flow: wrap;
     }
+    .close-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 6em;
+      height: 1.75em;
+    }
+    .isInverted-false {
+        filter: invert(1);
+      }
+    .isInverted-true {
+        filter: invert(0);
+      }
   }
 </style>
