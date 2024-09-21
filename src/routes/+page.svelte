@@ -16,6 +16,8 @@
   import registerVimeoEventListeners from "../utils/registerVimeoEventListeners";
   import SplashScreen from "$lib/SplashScreen.svelte";
   import LoadingScreen from "$lib/LoadingScreen.svelte";
+  import { attributes as aboutContent } from "../content/about.md";
+  // console.log(aboutContent)
   let videoWrapperWidth = "100%";
   let videoWrapperHeight = "100%";
   let isDevMode = false;
@@ -75,13 +77,13 @@
     <SplashScreen onClick={() => (showSplashScreen = false)} />
   {/if}
   {#if !$videoIsPlaying && !showSplashScreen}
-    <LoadingScreen/>
+    <LoadingScreen />
   {/if}
   <VideoControls />
   {#if isDevMode}
     <DevTools />{/if}
   {#if !$isImmersive}
-    <TopMenu aboutContent={"aboutContent"} />
+    <TopMenu aboutContent={aboutContent?.aboutText ??""} />
     <BottomMenu />
   {/if}
 {/if}
