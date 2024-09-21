@@ -89,7 +89,7 @@
         if (id === currentStationName) {
           console.log("activeStation found:", id);
         }
-        return id === currentStationName ? "activeStation" : "station";
+        return id === currentStationName ? "activeStation station" : "station";
       })
       .on("click", function () {
         const stationName = (this as Element)?.getAttribute("id");
