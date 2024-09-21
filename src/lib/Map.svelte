@@ -17,6 +17,63 @@
     any
   >;
   let linesAtSelectedStation: Line[]; // the station that is currently being previewed
+  const zoomed = (event: any) => {
+    const { transform } = event;
+    event.sourceEvent?.stopImmediatePropagation();
+    d3.select("#map-svg").selectChildren("g").attr("transform", transform);
+  };
+  const zoom = d3
+    .zoom()
+    .filter((event) => {
+      const isTouchScrolling =
+        event?.type === "touchstart" && event?.touches.length === 1;
+
+      return !(!event?.ctrlKey && event?.type === "wheel") && !isTouchScrolling;
+    })
+    .scaleExtent([1, 5])
+    .translateExtent([
+      [0 - EXTENT_PADDING, 0 - EXTENT_PADDING],
+      [INITIAL_WIDTH + EXTENT_PADDING, INITIAL_HEIGHT + EXTENT_PADDING],
+    ])
+    .on("zoom", zoomed);
+  const zoomToElement = (
+    stationElement: d3.Selection<d3.BaseType, any, any, any>
+  ) => {
+    const svg = d3.select("#map-svg");
+    const bbox = (stationElement.node() as SVGGElement).getBBox();
+    const x0 = bbox.x;
+    const y0 = bbox.y;
+    const x1 = bbox.x + bbox.width;
+    const y1 = bbox.y + bbox.height;
+    const scale = 4;
+    console.log({stationElement, x0, y0, x1, y1 });
+    svg
+      .transition()
+      .duration(750)
+      .call(
+        zoom.transform as any,
+        d3.zoomIdentity
+          .translate(INITIAL_WIDTH / 2, INITIAL_HEIGHT / 2)
+          .scale(scale)
+          .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
+      );
+  };
+  const highlightCurrentStation = (newStation: string) => {
+    const stationsGroupSelection = d3.select("#map-svg #stations");
+    stationsGroupSelection
+      .selectChildren(".activeStation")
+      .attr("class", "station");
+    const currentStationName = newStation
+      .replaceAll(" ", "")
+      .toLocaleLowerCase();
+    const activeStationSelection = stationsGroupSelection.selectChild(
+      "#" + currentStationName
+    );
+    if (activeStationSelection.node()) {
+      activeStationSelection.attr("class", "activeStation station");
+      zoomToElement(activeStationSelection );
+    }
+  };
   const addClassesToStations = () => {
     const stationsGroupSelection = d3.select("#map-svg #stations");
     console.log({ stationsGroupSelection });
@@ -36,11 +93,12 @@
       })
       .on("click", function () {
         const stationName = (this as Element)?.getAttribute("id");
-        stationsGroupSelection.selectChildren().attr("class", "station");
+        stationsGroupSelection
+          .selectChildren(".activeStation")
+          .attr("class", "station");
         (this as Element).classList.add("activeStation");
-        // remove activeStation class from all other stations
-
-        console.log("station clicked", stationName);
+        // zoom to station
+        zoomToElement(d3.select(this));
         if (!stationName) return;
         linesAtSelectedStation = getLinesFromStationName(
           stationName,
@@ -48,6 +106,14 @@
         );
         console.log({ linesAtSelectedStation });
       });
+    if (currentStation) {
+      const activeStationSelection =
+        stationsGroupSelection.selectChild(".activeStation");
+      // check if seletion is not empty
+      if (activeStationSelection && activeStationSelection.node()) {
+        zoomToElement(activeStationSelection as any);
+      }
+    }
   };
   const removeInlineStyleAttributes = () => {
     const stationsGroupSelection = d3.select("#map-svg #stations");
@@ -89,36 +155,16 @@
     removeInlineStyleAttributes();
     const mapSvg = d3.select<SVGElement, unknown>("#map-svg");
     // add zoom capabilities
-    const zoomed = (event: any) => {
-      const { transform } = event;
-      event.sourceEvent?.stopImmediatePropagation();
-      d3.select("#map-svg").selectChildren("g").attr("transform", transform);
-    };
-    const zoom = d3
-      .zoom()
-      .filter((event) => {
-        const isTouchScrolling =
-          event?.type === "touchstart" && event?.touches.length === 1;
 
-        return (
-          !(!event?.ctrlKey && event?.type === "wheel") && !isTouchScrolling
-        );
-      })
-      .scaleExtent([1, 5])
-      .translateExtent([
-        [0 - EXTENT_PADDING, 0 - EXTENT_PADDING],
-        [INITIAL_WIDTH + EXTENT_PADDING, INITIAL_HEIGHT + EXTENT_PADDING],
-      ])
-      .on("zoom", zoomed);
     mapSvg.call(zoom as any);
 
     addClassesToStations();
     setActiveLine($currentLine);
   });
 
-  currentStation.subscribe(() => {
+  currentStation.subscribe((newStation) => {
     console.log("currentStation changed");
-    addClassesToStations();
+    newStation?.name && highlightCurrentStation(newStation.name);
   });
   currentLine.subscribe((newLine) => {
     setActiveLine(newLine);
