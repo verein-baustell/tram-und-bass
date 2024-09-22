@@ -3,8 +3,9 @@
 
   export let lines: Line[];
   export let keepStationWhenChangingLine = false;
+  export let viewable = true;
 </script>
-<div class="view detailed-view">
+<div class="{(viewable ? 'view detailed-view': '')}">
   <ul>
     {#each lines as line}
       <LineListItem
