@@ -94,12 +94,28 @@
       font-weight: 400;
       src: url("/fonts/Rene-Regular-Web.woff") format("woff");
     }
+
+    // issue: font not defined in design
+    // @font-face {
+    //   font-family: Holo;
+    //   font-style: normal;
+    //   font-weight: 500;
+    //   src: url("/fonts/NaNHoloNarrow-Regular.woff2") format("woff2");
+    // }
+
+    // issue: font below is correct according to design
     @font-face {
       font-family: Holo;
       font-style: normal;
       font-weight: 500;
-      src: url("/fonts/NaNHoloNarrow-Regular.woff2") format("woff2");
+      src: url("/fonts/NaNHolo-Medium.woff2") format("woff2");
     }
+    // @font-face {
+    //   font-family: Holo;
+    //   font-style: medium;
+    //   font-weight: 600;
+    //   src: url("/fonts/NaNHolo-Medium.woff2") format("woff2");
+    // }
     @font-face {
       font-family: HoloMono;
       font-style: normal;
@@ -118,6 +134,7 @@
     --global-padding: 0.8em;
     --transition: ease-in-out 0.3s;
     --padding-m: 0.24em;
+    --padding-ml: 0.05em 0.5em 0.24em 0.48em;
     --padding-l: 0.48em;
     --mobile-breakpoint: 600px;
     --padding-s: 0.12em;
