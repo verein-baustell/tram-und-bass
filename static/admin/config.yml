@@ -9,6 +9,15 @@ collections:
   - label: "Pages"
     name: "pages"
     files:
+      - name: "about"
+        label: about
+        file: "src/content/about.md"
+        editor:
+          preview: false
+        fields:
+          - label: "About Text"
+            name: "aboutText"
+            widget: "markdown"
       - name: "lines"
         label: "Lines"
         file: "src/content/lines.md"

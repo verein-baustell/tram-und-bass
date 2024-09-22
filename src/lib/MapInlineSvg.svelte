@@ -598,7 +598,7 @@
     stroke-width="6"
   />
   <rect
-    id="zürichberstrasse"
+    id="zürichbergstrasse"
     x="1928"
     y="1452"
     width="16"
@@ -939,7 +939,7 @@
     stroke-width="6"
   />
   <rect
-    id="susenberstrasse"
+    id="susenbergstrasse"
     x="1976"
     y="1404"
     width="16"
@@ -2056,7 +2056,7 @@
     stroke-width="6"
   />
   <rect
-    id="goldbrunnenpplatz"
+    id="goldbrunnenplatz"
     x="740"
     y="1740"
     width="16"
@@ -2239,7 +2239,7 @@
     stroke-width="6"
   />
   <rect
-    id="fellenberstrasse"
+    id="fellenbergstrasse"
     x="404"
     y="1576"
     width="16"
@@ -2794,7 +2794,7 @@
     stroke-width="6"
   />
   <path
-    id="stauffaucher"
+    id="stauffacher"
     d="M1024 1604C1024 1599.58 1020.42 1596 1016 1596C1011.58 1596 1008 1599.58 1008 1604V1652.86C1008 1656.31 1009.37 1659.61 1011.81 1662.05L1025.48 1675.73C1028.65 1678.9 1033.79 1678.9 1036.97 1675.73L1034.84 1673.6L1036.97 1675.73C1040.14 1672.56 1040.14 1667.41 1036.97 1664.24L1026.05 1653.33C1024.74 1652.01 1024 1650.23 1024 1648.38V1604Z"
     fill="white"
     stroke="black"
