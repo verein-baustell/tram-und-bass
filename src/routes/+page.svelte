@@ -76,7 +76,7 @@
   {#if showSplashScreen}
     <SplashScreen onClick={() => (showSplashScreen = false)} />
   {/if}
-  {#if !$videoIsPlaying && !showSplashScreen}
+  {#if !$videoIsPlaying}
     <LoadingScreen />
   {/if}
   <VideoControls />
@@ -143,8 +143,7 @@
     $mobile-breakpoint: 600px;
   }
   #video-container {
-    filter: saturate(1.5);
-    transition: filter 2s ease-in-out;
+    transition: filter 0.5s ease-in-out;
     &.isLoading {
       filter: blur(24px);
     }
