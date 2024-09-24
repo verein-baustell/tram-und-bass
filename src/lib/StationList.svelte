@@ -5,17 +5,28 @@
 </script>
 
 <div id="station-list" class="view detailed-view">
-  <ol>
-    {#each $currentLine.timeStamps as station, index}
-      <li>
-        <Circle noLine={index === $currentLine.timeStamps.length - 1} isFilled={hmsToSeconds(station.endTime) < $currentTime} />
-        {station.name}
-      </li>
-    {/each}
-  </ol>
+  {#if $currentLine.timeStamps}
+    <ol>
+      {#each $currentLine.timeStamps as station, index}
+        <li>
+          <Circle
+            noLine={index === $currentLine.timeStamps.length - 1}
+            isFilled={hmsToSeconds(station.endTime) < $currentTime}
+          />
+          {station.name}
+        </li>
+      {/each}
+    </ol>
+  {:else}
+    <div class="error-message">keine Stationen gefunden :( </div>
+  {/if}
 </div>
 
 <style lang="scss">
+  .error-message {
+    display: grid;
+    place-items: center;
+  }
   #station-list {
     --distance-to-left-edge: 0.5em;
     position: relative;

@@ -16,19 +16,25 @@
 <div id="change-station-list" class="view detailed-view">
   {#if $currentStation == undefined}
     <div class="currentStation-change-raptor--white">
+      {#if $nextStation}
       <span>{$nextStation?.name} in</span> 
       <span class="mono-font clock">{formattedTime}</span>
+      {/if}
     </div>
   {/if}
   {#if $currentStation}
     <div class="currentStation-change-raptor">
-      <span>Umsteigen</span> 
-      <img class="star" src="/images/divider.svg" alt="-"/>
+      <span>Umsteigen</span>
+      <img class="star" src="/images/divider.svg" alt="-" />
       <span>{$currentStation?.name}</span>
     </div>
   {/if}
   {#if $linesAtCurrentStation}
-    <LineList viewable={false} keepStationWhenChangingLine lines={$linesAtCurrentStation} />
+    <LineList
+      viewable={false}
+      keepStationWhenChangingLine
+      lines={$linesAtCurrentStation}
+    />
   {/if}
 </div>
 
@@ -36,7 +42,9 @@
   #change-station-list {
     text-align: left;
   }
-
+.error-message{
+  text-align: center;
+}
   .currentStation-change-raptor {
     display: flex;
     justify-content: center;
@@ -63,14 +71,14 @@
     }
   }
 
-  .star{
+  .star {
     height: 0.8em;
     width: 0.8em;
     filter: invert(1);
     align-self: center;
   }
 
-  .currentStation-change-raptor:hover{
+  .currentStation-change-raptor:hover {
     background-color: var(--hover-color);
     transition: var(--transition);
   }
