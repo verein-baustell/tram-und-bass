@@ -1,15 +1,14 @@
 <script lang="ts">
   import LineListItem from "./LineListItem.svelte";
-
   export let lines: Line[];
-  export let keepStationWhenChangingLine = false;
   export let viewable = true;
+  export let onClick: (lineClicked: Line) => void;
 </script>
 <div class="{(viewable ? 'view detailed-view': '')}">
   <ul>
     {#each lines as line}
       <LineListItem
-        {keepStationWhenChangingLine}
+        {onClick}
         {line}
       />
     {/each}

@@ -1,32 +1,23 @@
 <script lang="ts">
-  import { currentLine, currentStation, vimeoVideoObject } from "../store";
-  import { changeToLineAtCurrentStation } from "../utils/changeToLineAtCurrentStation";
-  import { hmsToSeconds } from "../utils/timeFormatter";
+  import { currentLine } from "../store";
   import LineNumber from "./LineNumber.svelte";
-
-  export let keepStationWhenChangingLine = false;
+  export let onClick: (lineClicked: Line) => void;
   export let line: Line;
 </script>
 
 <li>
   <button
-    on:click={() => {
-      if (keepStationWhenChangingLine) {
-        changeToLineAtCurrentStation(line);
-        return;
-      }
-      $currentLine = line;
-    }}
+    on:click={() => onClick(line)}
     on:keydown={(e) => {
       if (e.key === "Enter") {
-        $currentLine = line;
+        onClick(line);
       }
     }}
     class:isActive={$currentLine === line}
   >
-    <LineNumber number={line.number}/>
+    <LineNumber number={line.number} />
     <span>{line.name}</span>
-    <img class="star" src="/images/divider.svg" alt="-"/>
+    <img class="star" src="/images/divider.svg" alt="-" />
     <span>{line.artistName}</span>
   </button>
 </li>
@@ -51,12 +42,12 @@
     transition: var(--transition);
   }
 
-  .star{
+  .star {
     height: 0.8em;
     width: 0.8em;
   }
 
-  button:hover{
+  button:hover {
     background-color: var(--hover-color);
     transition: var(--transition);
   }

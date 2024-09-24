@@ -5,6 +5,7 @@
     nextStation,
     timeUntilNextStation,
   } from "../store";
+  import { changeToLineAtStation } from "../utils/changeToLineAtCurrentStation";
   import { secondsToHms } from "../utils/timeFormatter";
   import LineList from "./LineList.svelte";
   let formattedTime: string;
@@ -32,7 +33,9 @@
   {#if $linesAtCurrentStation}
     <LineList
       viewable={false}
-      keepStationWhenChangingLine
+      onClick={(lineClicked)=>{
+        $currentStation && changeToLineAtStation(lineClicked, $currentStation.name)
+      }}
       lines={$linesAtCurrentStation}
     />
   {/if}

@@ -4,7 +4,7 @@
   import * as d3 from "d3";
   import { currentLine, currentStation, currentTime, allLines } from "../store";
   import { hmsToSeconds } from "../utils/timeFormatter";
-  import { changeToLineAtCurrentStation } from "../utils/changeToLineAtCurrentStation";
+  import { changeToLineAtStation } from "../utils/changeToLineAtCurrentStation";
   import getLinesFromStationName from "../utils/getLinesFromStationName";
   import LineList from "./LineList.svelte";
   const INITIAL_WIDTH = 2560;
@@ -17,6 +17,7 @@
     any
   >;
   let linesAtSelectedStation: Line[]; // the station that is currently being previewed
+  let selectedStation: string;
   const zoomed = (event: any) => {
     const { transform } = event;
     event.sourceEvent?.stopImmediatePropagation();
@@ -46,7 +47,7 @@
     const x1 = bbox.x + bbox.width;
     const y1 = bbox.y + bbox.height;
     const scale = 4;
-    console.log({stationElement, x0, y0, x1, y1 });
+    console.log({ stationElement, x0, y0, x1, y1 });
     svg
       .transition()
       .duration(750)
@@ -71,7 +72,7 @@
     );
     if (activeStationSelection.node()) {
       activeStationSelection.attr("class", "activeStation station");
-      zoomToElement(activeStationSelection );
+      zoomToElement(activeStationSelection);
     }
   };
   const addClassesToStations = () => {
@@ -104,6 +105,7 @@
           stationName,
           $allLines
         );
+        selectedStation = stationName;
         console.log({ linesAtSelectedStation });
       });
     if (currentStation) {
@@ -136,8 +138,8 @@
 
       if (totalLength) {
         const durationOfLine =
-          hmsToSeconds(newLine.timeStamps?.at(-1)?.startTime) +
-            hmsToSeconds(newLine.timeStamps?.at(0)?.endTime) ?? 0;
+          hmsToSeconds(newLine?.timeStamps?.at(-1)?.startTime) +
+          hmsToSeconds(newLine?.timeStamps?.at(0)?.endTime);
 
         const currentProgressInPercent = $currentTime / durationOfLine;
         const currentProgressInPixels = totalLength * currentProgressInPercent;
@@ -145,7 +147,7 @@
           .attr("stroke-dasharray", totalLength + " " + totalLength)
           .attr("stroke-dashoffset", totalLength - currentProgressInPixels)
           .transition()
-          .duration(+(1000 * durationOfLine ?? 0))
+          .duration(+(1000 * durationOfLine))
           .ease(d3.easeLinear)
           .attr("stroke-dashoffset", 0);
       }
@@ -172,7 +174,12 @@
   currentTime.subscribe(() => {});
 </script>
 
-{#if linesAtSelectedStation}<LineList lines={linesAtSelectedStation} />{/if}
+{#if linesAtSelectedStation}<LineList
+    onClick={(lineClicked) => {
+      changeToLineAtStation(lineClicked, selectedStation);
+    }}
+    lines={linesAtSelectedStation}
+  />{/if}
 <div id="map">
   <svg
     id="map-svg"

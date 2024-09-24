@@ -4,7 +4,7 @@
   import LineList from "./LineList.svelte";
   import Button from "./Button.svelte";
   import { clickoutside } from "@svelte-put/clickoutside";
-  import { allLines } from "../store";
+  import { allLines, currentLine } from "../store";
   export let aboutContent: string;
   const meuEntries = [
     { name: "Linien", component: LineList },
@@ -40,7 +40,7 @@
     {/each}
   </nav>
   {#if isOpen}
-    <svelte:component this={currentComponent} lines={$allLines} {aboutContent} />
+    <svelte:component this={currentComponent} onClick={(clickedLine)=>$currentLine = clickedLine} lines={$allLines} {aboutContent} />
   {/if}
 </div>
 
