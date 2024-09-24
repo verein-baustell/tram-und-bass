@@ -97,21 +97,21 @@
       src: url("/fonts/Rene-Regular-Web.woff") format("woff");
     }
 
-    // issue: font not defined in design
-    // @font-face {
-    //   font-family: Holo;
-    //   font-style: normal;
-    //   font-weight: 500;
-    //   src: url("/fonts/NaNHoloNarrow-Regular.woff2") format("woff2");
-    // }
-
-    // issue: font below is correct according to design
+    // fix: font has changed
     @font-face {
       font-family: Holo;
       font-style: normal;
       font-weight: 500;
-      src: url("/fonts/NaNHolo-Medium.woff2") format("woff2");
+      src: url("/fonts/NaNHoloNarrow-Regular.woff2") format("woff2");
     }
+
+    // fixzed up we don't us this font, code is single source of truth
+    //@font-face {
+    //  font-family: Holo;
+    //  font-style: normal;
+    //  font-weight: 500;
+    //  src: url("/fonts/NaNHolo-Medium.woff2") format("woff2");
+    //}
     // @font-face {
     //   font-family: Holo;
     //   font-style: medium;
