@@ -157,6 +157,6 @@
     height: 100%;
     display: grid;
     place-items: center;
-    z-index: -1;
+    z-index: -200;
   }
 </style>
