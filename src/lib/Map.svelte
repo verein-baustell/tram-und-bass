@@ -7,6 +7,7 @@
   import { changeToLineAtStation } from "../utils/changeToLineAtCurrentStation";
   import getLinesFromStationName from "../utils/getLinesFromStationName";
   import LineList from "./LineList.svelte";
+  type StationsPositions = { [stationId: string]: { x: number; y: number } };
   const INITIAL_WIDTH = 2560;
   const INITIAL_HEIGHT = 2560;
   const EXTENT_PADDING = 400;
@@ -18,6 +19,189 @@
   >;
   let linesAtSelectedStation: Line[]; // the station that is currently being previewed
   let selectedStation: string;
+  let stationPositions = {};
+  let linePaths: any;
+  let totalLength: any;
+  let segments: any = [];
+  let totalAnimationTime = 0;
+
+  // ... Existing functions (zoomed, zoomToElement, highlightCurrentStation, etc.) ...
+
+  function getStationPositions() {
+    const stationsGroupSelection = d3.select<SVGGElement, unknown>(
+      "#map-svg #stations"
+    );
+    const stationPositions: StationsPositions = {};
+
+    stationsGroupSelection.selectChildren().each(function () {
+      const stationElement = d3.select(this);
+      const stationId = stationElement.attr("id");
+      const bbox = (this as SVGGraphicsElement).getBBox();
+      const x = bbox.x + bbox.width / 2;
+      const y = bbox.y + bbox.height / 2;
+
+      stationPositions[stationId] = { x, y };
+    });
+
+    return stationPositions;
+  }
+
+  function getStationLengthsAlongPath(
+    pathElement: SVGPathElement,
+    stationPositions: StationsPositions,
+    stations: {
+      stationName: any;
+      arrivalTime: number;
+      departureTime: number;
+    }[]
+  ) {
+    const totalLength = pathElement.getTotalLength();
+    const stationLengths: {
+      stationName: string;
+      length: number;
+    }[] = [];
+
+    stations.forEach((station) => {
+      const stationId = station.stationName.replaceAll(" ", "").toLowerCase();
+      const pos = stationPositions[stationId];
+      if (pos) {
+        const stationX = pos.x;
+        const stationY = pos.y;
+        let closestLength = 0;
+        let minDistance = Infinity;
+        const samples = 1000;
+        for (let i = 0; i <= samples; i++) {
+          const length = (i / samples) * totalLength;
+          const point = pathElement.getPointAtLength(length);
+          const dx = point.x - stationX;
+          const dy = point.y - stationY;
+          const distance = Math.hypot(dx, dy);
+          if (distance < minDistance) {
+            minDistance = distance;
+            closestLength = length;
+          }
+        }
+        stationLengths.push({
+          stationName: station.stationName,
+          length: closestLength,
+        });
+      } else {
+        console.warn("Station position not found for", stationId);
+      }
+    });
+
+    return stationLengths;
+  }
+
+  function setActiveLine(newLine: Line) {
+    console.log("currentLine changed", "#map-svg #lines #" + newLine.id);
+    const groupSelection = d3.select<SVGGElement, unknown>(
+      "#map-svg #lines #" + newLine.id
+    );
+    groupSelection.attr("class", "activeLine").attr("stroke", newLine.color);
+
+    if (groupSelection) {
+      currentLineGroupSelection = groupSelection;
+
+      // Select the path(s) of the line
+      linePaths = currentLineGroupSelection.selectChild<SVGPathElement>("path");
+
+      // Get the total length
+      const pathElement = linePaths.node();
+      if (!pathElement) {
+        console.error("No path element found for line", newLine.id);
+        return;
+      }
+      totalLength = pathElement.getTotalLength();
+
+      // Get the station positions for the current line
+      const timeStamps = newLine.timeStamps; // Array of { stationName, arrivalTime, departureTime }
+      if (!timeStamps) return;
+      // Process timeStamps to get times in seconds
+      const stations: {
+        stationName: string;
+        arrivalTime: number;
+        departureTime: number;
+        length?: number;
+      }[] = timeStamps.map((ts) => {
+        return {
+          stationName: ts.name,
+          arrivalTime: hmsToSeconds(ts.startTime),
+          departureTime: hmsToSeconds(ts.endTime),
+        };
+      });
+
+      // Get lengths along the path for each station
+      const stationLengths = getStationLengthsAlongPath(
+        pathElement,
+        stationPositions,
+        stations
+      );
+
+      // Add lengths to stations
+      stations.forEach((s) => {
+        const stationLength = stationLengths.find(
+          (sl) => sl.stationName === s.stationName
+        )?.length;
+        s.length = stationLength;
+      });
+
+      // Compute segments
+      segments = [];
+      for (let i = 0; i < stations.length - 1; i++) {
+        const currentStation = stations[i];
+        const nextStation = stations[i + 1];
+
+        const moveDuration =
+          nextStation.arrivalTime - currentStation.departureTime;
+        const stopDuration =
+          nextStation.departureTime - nextStation.arrivalTime;
+        const startLength = currentStation.length;
+        const endLength = nextStation.length;
+
+        segments.push({
+          moveDuration,
+          stopDuration,
+          startLength,
+          endLength,
+        });
+      }
+
+      // Compute total animation time
+      totalAnimationTime = segments.reduce(
+        (sum, segment) => sum + segment.moveDuration + segment.stopDuration,
+        0
+      );
+
+      // Initialize the line path for animation
+      linePaths
+        .attr("stroke-dasharray", totalLength)
+        .attr("stroke-dashoffset", totalLength - stations[0].length);
+    }
+  }
+
+  function getTramPosition(elapsedTime: number) {
+    let accumulatedTime = 0;
+    for (let i = 0; i < segments.length; i++) {
+      const { moveDuration, stopDuration, startLength, endLength } =
+        segments[i];
+      const segmentLength = endLength - startLength;
+
+      // Moving phase
+      if (elapsedTime < accumulatedTime + moveDuration) {
+        const moveProgress = (elapsedTime - accumulatedTime) / moveDuration;
+        return startLength + segmentLength * moveProgress;
+      }
+      accumulatedTime += moveDuration;
+
+      // Stopping phase
+      if (elapsedTime < accumulatedTime + stopDuration) {
+        return endLength; // Tram is stopped at the station
+      }
+      accumulatedTime += stopDuration;
+    }
+    return segments[segments.length - 1].endLength; // Tram has reached the end
+  }
   const zoomed = (event: any) => {
     const { transform } = event;
     event.sourceEvent?.stopImmediatePropagation();
@@ -122,43 +306,15 @@
     stationsGroupSelection.selectChildren().attr("fill", null);
     stationsGroupSelection.selectChildren().attr("stroke", null);
   };
-  const setActiveLine = (newLine: Line) => {
-    console.log("currentLine changed", "#map-svg #lines #" + newLine.id);
-    const groupSelection = d3.select<SVGGElement, unknown>(
-      "#map-svg #lines #" + newLine.id
-    );
-    groupSelection.attr("class", "activeLine").attr("stroke", newLine.color);
-    if (groupSelection) {
-      currentLineGroupSelection = groupSelection;
-      const linePaths =
-        currentLineGroupSelection.selectChild<SVGPathElement>("path");
-      // add animation to line. Make the line animate linear from station to station
-      const totalLength = linePaths.node()?.getTotalLength();
-      console.log({ linePaths, totalLength });
-
-      if (totalLength) {
-        const durationOfLine =
-          hmsToSeconds(newLine?.timeStamps?.at(-1)?.startTime) +
-          hmsToSeconds(newLine?.timeStamps?.at(0)?.endTime);
-
-        const currentProgressInPercent = $currentTime / durationOfLine;
-        const currentProgressInPixels = totalLength * currentProgressInPercent;
-        linePaths
-          .attr("stroke-dasharray", totalLength + " " + totalLength)
-          .attr("stroke-dashoffset", totalLength - currentProgressInPixels)
-          .transition()
-          .duration(+(1000 * durationOfLine))
-          .ease(d3.easeLinear)
-          .attr("stroke-dashoffset", 0);
-      }
-    }
-  };
   onMount(() => {
-    removeInlineStyleAttributes();
-    const mapSvg = d3.select<SVGElement, unknown>("#map-svg");
-    // add zoom capabilities
+    // ... existing code ...
 
-    mapSvg.call(zoom as any);
+    removeInlineStyleAttributes();
+
+    // Get station positions
+    stationPositions = getStationPositions();
+
+    // ... existing code ...
 
     addClassesToStations();
     setActiveLine($currentLine);
@@ -168,18 +324,33 @@
     console.log("currentStation changed");
     newStation?.name && highlightCurrentStation(newStation.name);
   });
+
   currentLine.subscribe((newLine) => {
     setActiveLine(newLine);
   });
-  currentTime.subscribe(() => {});
+
+  currentTime.subscribe((newTime) => {
+    if (!linePaths || segments.length === 0) {
+      return;
+    }
+
+    const elapsedTime = newTime;
+    const tramPosition = getTramPosition(elapsedTime);
+    const dashOffset = totalLength - tramPosition;
+
+    linePaths.attr("stroke-dashoffset", dashOffset);
+  });
 </script>
 
-{#if linesAtSelectedStation}<LineList
+{#if linesAtSelectedStation}
+  <LineList
     onClick={(lineClicked) => {
       changeToLineAtStation(lineClicked, selectedStation);
     }}
     lines={linesAtSelectedStation}
-  />{/if}
+  />
+{/if}
+
 <div id="map">
   <svg
     id="map-svg"
