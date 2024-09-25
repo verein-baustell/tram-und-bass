@@ -1344,7 +1344,7 @@ lines:
     number: 15
     color: "#de2b2b"
     name: Bucheggplatz
-    artistName: DJ Bürcherwurm
+    artistName: Wummertal
     videoUrl: https://player.vimeo.com/video/950805249?h=1f4d17577f
     isInverted: false
   - color: "#de2b2b"
