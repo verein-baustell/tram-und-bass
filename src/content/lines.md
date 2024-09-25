@@ -744,7 +744,7 @@ lines:
     number: 7
     color: "#000000"
     isInverted: false
-    artistName: RTFM
+    artistName: DJ Mozarella
     name: Bahnhof Stettbach
     videoUrl: https://player.vimeo.com/video/950567543?h=8e4eb0457c
   - id: ""
@@ -753,7 +753,7 @@ lines:
     color: "#000000"
     name: Wollishoferplatz
     videoUrl: https://player.vimeo.com/video/950568271?h=72f40f9183
-    artistName: Carlo Cobra
+    artistName: DJ Tatana
     isInverted: false
   - id: ""
     releaseDate: 2024-07-10T16:19:00.000Z
