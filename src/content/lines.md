@@ -6,7 +6,7 @@ lines:
     artistName: Some Juan Differenté
     artistAboutText: About Some Juan Differenté
     videoUrl: https://player.vimeo.com/video/950558411?h=452ef92b18
-    releaseDate: 2024-06-02T18:34:00.000Z
+    releaseDate: 2024-11-15T05:34:00.000Z
     id: ""
     timeStamps:
       - name: Geissweid
