@@ -739,21 +739,203 @@ lines:
         startTime: 25:40
         endTime: 26:01
     isInverted: true
-  - id: ""
-    releaseDate: 2024-07-16T11:58:00.000Z
+  - color: "#000000"
     number: 7
-    color: "#000000"
-    isInverted: false
-    artistName: DJ Mozarella
     name: Bahnhof Stettbach
+    artistName: DJ Mozarella
     videoUrl: https://player.vimeo.com/video/950567543?h=8e4eb0457c
-  - id: ""
     releaseDate: 2024-07-16T11:58:00.000Z
+    id: ""
+    timeStamps:
+      - name: Wollishoferplatz
+        startTime: 00:01
+        endTime: 00:19
+      - name: Butzenstrasse
+        startTime: 01:50
+        endTime: 02:19
+      - name: Morgental
+        startTime: 03:18
+        endTime: 03:41
+      - name: Bhf.Wollishofen Staubstrasse
+        startTime: 05:52
+        endTime: 06:07
+      - name: Billoweg
+        startTime: 06:58
+        endTime: 07:15
+      - name: Brunaustrasse
+        startTime: 08:14
+        endTime: 08:39
+      - name: Museum Rietberg
+        startTime: 09:38
+        endTime: 10:00
+      - name: Bahnhof Enge
+        startTime: 10:54
+        endTime: 11:20
+      - name: Tunnelstrasse
+        startTime: 12:14
+        endTime: 12:33
+      - name: Stockerstrasse
+        startTime: 13:30
+        endTime: 13:56
+      - name: Paradeplatz
+        startTime: 15:10
+        endTime: 15:35
+      - name: Rennweg
+        startTime: 16:44
+        endTime: 17:04
+      - name: Bahnhofstrasse HB
+        startTime: 17:55
+        endTime: 18:11
+      - name: Central
+        startTime: 20:48
+        endTime: 21:24
+      - name: Haldenegg
+        startTime: 22:40
+        endTime: 22:54
+      - name: Sonneggstrasse
+        startTime: 23:41
+        endTime: 23:54
+      - name: Ottikerstrasse
+        startTime: 24:33
+        endTime: 24:47
+      - name: Röslistrasse
+        startTime: 25:45
+        endTime: 26:01
+      - name: Schaffhauserplatz
+        startTime: 27:40
+        endTime: 28:00
+      - name: Guggachstrasse
+        startTime: 29:28
+        endTime: 29:38
+      - name: Milchbuck
+        startTime: 30:35
+        endTime: 31:35
+      - name: Tierspital
+        startTime: 33:12
+        endTime: 33:31
+      - name: Waldgarten
+        startTime: 34:14
+        endTime: 34:30
+      - name: Ueberlandpark
+        startTime: 35:21
+        endTime: 35:34
+      - name: Schwamendingerplatz
+        startTime: 36:46
+        endTime: 37:21
+      - name: Roswiesen
+        startTime: 38:30
+        endTime: 38:55
+      - name: Glattwiesen
+        startTime: 39:36
+        endTime: 39:55
+      - name: Probstei
+        startTime: 40:39
+        endTime: 40:56
+      - name: Mattenhof
+        startTime: 41:41
+        endTime: 41:56
+      - name: Bahnhof Stettbach
+        startTime: 43:01
+        endTime: 43:14
+    isInverted: false
+  - color: "#000000"
     number: 7
-    color: "#000000"
     name: Wollishoferplatz
-    videoUrl: https://player.vimeo.com/video/950568271?h=72f40f9183
     artistName: DJ Tatana
+    videoUrl: https://player.vimeo.com/video/950568271?h=72f40f9183
+    releaseDate: 2024-07-16T11:58:00.000Z
+    id: ""
+    timeStamps:
+      - name: Bahnhof Stettbach
+        startTime: 00:01
+        endTime: 00:46
+      - name: Mattenhof
+        startTime: 01:50
+        endTime: 02:12
+      - name: Probstei
+        startTime: 02:57
+        endTime: 03:14
+      - name: Glattwiesen
+        startTime: 03:55
+        endTime: 04:27
+      - name: Roswiesen
+        startTime: 05:11
+        endTime: 05:35
+      - name: Schwamendingerplatz
+        startTime: 06:45
+        endTime: 07:08
+      - name: Ueberlandpark
+        startTime: 08:20
+        endTime: 08:36
+      - name: Waldgarten
+        startTime: 09:26
+        endTime: 09:39
+      - name: Tierspital
+        startTime: 10:24
+        endTime: 11:21
+      - name: Milchbuck
+        startTime: 12:55
+        endTime: 13:29
+      - name: Guggachstrasse
+        startTime: 14:14
+        endTime: 14:30
+      - name: Schaffhauserplatz
+        startTime: 15:33
+        endTime: 16:16
+      - name: Röslistrasse
+        startTime: 17:21
+        endTime: 17:40
+      - name: Ottikerstrasse
+        startTime: 18:27
+        endTime: 18:53
+      - name: Sonneggstrasse
+        startTime: 19:38
+        endTime: 20:00
+      - name: Haldenegg
+        startTime: 20:45
+        endTime: 21:03
+      - name: Central
+        startTime: 22:16
+        endTime: 23:20
+      - name: Bahnhofstrasse HB
+        startTime: 25:39
+        endTime: 26:20
+      - name: Rennweg
+        startTime: 27:29
+        endTime: 27:56
+      - name: Paradeplatz
+        startTime: 29:13
+        endTime: 29:52
+      - name: Stockerstrasse
+        startTime: 31:00
+        endTime: 31:20
+      - name: Tunnelstrasse
+        startTime: 32:05
+        endTime: 32:34
+      - name: Bahnhof Enge
+        startTime: 33:34
+        endTime: 34:24
+      - name: Museum Rietberg
+        startTime: 35:15
+        endTime: 35:32
+      - name: Brunaustrasse
+        startTime: 36:27
+        endTime: 36:44
+      - name: Billoweg
+        startTime: 37:47
+        endTime: 38:02
+      - name: Bhf.Wollishofen Staubstrasse
+        startTime: 39:04
+        endTime: 39:23
+      - name: Morgental
+        startTime: 41:36
+        endTime: 41:57
+      - name: Butzenstrasse
+        startTime: 42:40
+        endTime: 43:00
+      - name: Wollishoferplatz
+        startTime: 43:57
+        endTime: 44:35
     isInverted: false
   - id: ""
     releaseDate: 2024-07-10T16:19:00.000Z
