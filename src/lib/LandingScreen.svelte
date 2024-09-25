@@ -225,6 +225,7 @@
     top: 0;
     z-index: -1000;
     min-height: 100vh;
+    min-width: 100vw;
     scale: 1.1;
     width: auto;
     height: auto;
