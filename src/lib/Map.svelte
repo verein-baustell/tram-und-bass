@@ -98,7 +98,7 @@
     const groupSelection = d3.select<SVGGElement, unknown>(
       "#map-svg #lines #" + newLine.id
     );
-    groupSelection.attr("class", "activeLine").attr("stroke", newLine.color);
+    groupSelection.attr("class", "activeLine").attr("stroke", newLine.color).raise();
 
     if (groupSelection) {
       currentLineGroupSelection = groupSelection;
@@ -291,7 +291,7 @@
         );
         selectedStation = stationName;
         console.log({ linesAtSelectedStation });
-      });
+      })
     if (currentStation) {
       const activeStationSelection =
         stationsGroupSelection.selectChild(".activeStation");
@@ -307,14 +307,16 @@
     stationsGroupSelection.selectChildren().attr("stroke", null);
   };
   onMount(() => {
-    // ... existing code ...
 
     removeInlineStyleAttributes();
 
     // Get station positions
     stationPositions = getStationPositions();
 
-    // ... existing code ...
+    const mapSvg = d3.select<SVGElement, unknown>("#map-svg");
+    // add zoom capabilities
+
+    mapSvg.call(zoom as any);
 
     addClassesToStations();
     setActiveLine($currentLine);

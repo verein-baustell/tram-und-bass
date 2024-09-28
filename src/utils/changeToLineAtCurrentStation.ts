@@ -10,6 +10,7 @@ import { hmsToSeconds } from "./timeFormatter";
  * @param line The line to change to.
  */
 export const changeToLineAtStation = (line: Line, stationName: string) => {
+  console.log("Changing to line", line,"at station", stationName);
   if (!currentStation) return;
   if (!stationName) {
     console.error("No station name to change to");
