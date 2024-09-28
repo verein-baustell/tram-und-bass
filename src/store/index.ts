@@ -2,6 +2,7 @@ import { derived, get, writable, type Readable } from "svelte/store";
 import { attributes as content } from "../content/lines.md";
 import { hmsToSeconds } from "../utils/timeFormatter";
 import { goto } from "$app/navigation";
+import changeFaviconToLine from "../utils/changeFaviconToLine";
 const lines = content.lines;
 // TODO: Generate ids on save in the CMS
 // add missing ids
@@ -29,7 +30,7 @@ currentLine.subscribe((value) => {
     const url = new URL(window.location.href);
     url.searchParams.set("line", value.id);
     goto(url.toString(), { replaceState: true });
-
+    changeFaviconToLine(value);
     vimeoVideoObject.update((vimeo) => {
       if (vimeo) {
         console.log("⬇️ load video", value.videoUrl);
