@@ -77,7 +77,10 @@
     <SplashScreen onClick={() => (showSplashScreen = false)} />
   {/if}
   {#if !$videoIsPlaying}
-    <LoadingScreen />
+    <LoadingScreen 
+
+    style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
+    />
   {/if}
   <VideoControls />
   {#if isDevMode}

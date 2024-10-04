@@ -1,11 +1,13 @@
-<script>
+<script lang="ts">
   import { scale } from 'svelte/transition';
   import { fade } from 'svelte/transition';
+  export let style: string;
 </script>
 
-<div class="con"> 
+<div class="con" > 
   <div transition:fade={{ delay: 250, duration: 300 }}>
-    <img id="gif" src="/images/IntroShortSimple.gif">
+    
+    <img style={style} id="gif" src="/images/IntroShortSimple.gif" alt="loading animation">
   </div>
 
   <div transition:scale={{ duration: 400, delay: 200, opacity: 0.0, start: 0.2}}>

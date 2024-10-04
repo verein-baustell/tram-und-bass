@@ -2,13 +2,13 @@ import { derived, get, writable, type Readable } from "svelte/store";
 import { attributes as content } from "../content/lines.md";
 import { hmsToSeconds } from "../utils/timeFormatter";
 import { goto } from "$app/navigation";
+import changeFaviconToLine from "../utils/changeFaviconToLine";
 const lines = content.lines;
 // TODO: Generate ids on save in the CMS
 // add missing ids
 lines.forEach((line) => {
   line.id = line.name.toLowerCase().replace(/\s/g, "") + line.number;
 });
-console.log({ lines });
 export const allLines = writable<Line[]>(lines);
 export const currentLine = writable<Line>();
 // update query params when currentLine changes
@@ -29,10 +29,10 @@ currentLine.subscribe((value) => {
     const url = new URL(window.location.href);
     url.searchParams.set("line", value.id);
     goto(url.toString(), { replaceState: true });
-
+    changeFaviconToLine(value);
     vimeoVideoObject.update((vimeo) => {
       if (vimeo) {
-        console.log("⬇️ load video", value.videoUrl);
+        console.log("⬇️ try to load video", value.videoUrl);
         vimeo.loadVideo(value.videoUrl).then(() => {
           console.log("🎥 video loaded");
           console.log({ vimeo });
@@ -46,7 +46,9 @@ currentLine.subscribe((value) => {
             .catch((error) => {
               console.error("🎥 video play error", error);
             });
-        });
+        }).catch((error) => {
+          console.error("🎥 video load error", error)
+          });
       }
       return vimeo;
     });
@@ -83,7 +85,6 @@ export const linesAtCurrentStation = derived(
     if (!$currentStation) return;
     return $allLines.filter((line) => {
       
-     console.log(line)
       return line.timeStamps?.find(
         (timeStamp) =>
           timeStamp.name === $currentStation.name && line.id !== $currentLine.id

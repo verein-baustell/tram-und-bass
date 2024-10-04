@@ -11,18 +11,18 @@
 <div class="splash" on:click={onClick} on:keydown={handleKeyDown} role="button" tabindex="0">
   <img
     class="logo"
-    src="/images/tram_bass_2-15.png"
+    src="/images/logo.svg"
     width="auto"
     height="auto"
     alt="Tram and Bass Logo"
   />
   <div class="supporters">
-    <img class="supporter" src="/images/Stadt.png" alt="Stadt Supporter Logo" />
-    <img class="supporter" src="/images/Migros.png" alt="Migros Supporter Logo" />
-    <img class="supporter" src="/images/ErnstGohner.png" alt="Ernst Göhner Supporter Logo" />
-    <img class="supporter" src="/images/Temperatio.png" alt="Temperatio Supporter Logo" />
-    <img class="supporter" src="/images/Kanton.png" alt="Kanton Supporter Logo" />
-    <img class="supporter" src="/images/VBZ.png" alt="VBZ Supporter Logo" />
+    <img class="supporter" src="/images/uploads/stadt.png" alt="Stadt Supporter Logo" />
+    <img class="supporter" src="/images/uploads/migros.png" alt="Migros Supporter Logo" />
+    <img class="supporter" src="/images/uploads/ernstgohner.png" alt="Ernst Göhner Supporter Logo" />
+    <img class="supporter" src="/images/uploads/temperatio.png" alt="Temperatio Supporter Logo" />
+    <img class="supporter" src="/images/uploads/kanton.png" alt="Kanton Supporter Logo" />
+    <img class="supporter" src="/images/uploads/vbz.png" alt="VBZ Supporter Logo" />
   </div>
 </div>
 

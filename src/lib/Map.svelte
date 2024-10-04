@@ -231,7 +231,6 @@
     const x1 = bbox.x + bbox.width;
     const y1 = bbox.y + bbox.height;
     const scale = 4;
-    console.log({ stationElement, x0, y0, x1, y1 });
     svg
       .transition()
       .duration(750)
@@ -323,7 +322,6 @@
   });
 
   currentStation.subscribe((newStation) => {
-    console.log("currentStation changed");
     newStation?.name && highlightCurrentStation(newStation.name);
   });
 
