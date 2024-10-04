@@ -32,7 +32,7 @@ currentLine.subscribe((value) => {
     changeFaviconToLine(value);
     vimeoVideoObject.update((vimeo) => {
       if (vimeo) {
-        console.log("⬇️ load video", value.videoUrl);
+        console.log("⬇️ try to load video", value.videoUrl);
         vimeo.loadVideo(value.videoUrl).then(() => {
           console.log("🎥 video loaded");
           console.log({ vimeo });
@@ -46,7 +46,9 @@ currentLine.subscribe((value) => {
             .catch((error) => {
               console.error("🎥 video play error", error);
             });
-        });
+        }).catch((error) => {
+          console.error("🎥 video load error", error)
+          });
       }
       return vimeo;
     });
