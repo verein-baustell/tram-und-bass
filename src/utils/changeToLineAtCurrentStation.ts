@@ -15,6 +15,7 @@ export const changeToLineAtStation = (line: Line, stationName: string) => {
     console.error("No station name to change to");
     return;
   }
+  console.log("🚉 change to line:", line.name,"at station:", stationName);
   const timeStampOfCurrentStation = hmsToSeconds(
     line?.timeStamps?.find((timeStamp) =>
       compareStationNames(timeStamp.name, stationName)
