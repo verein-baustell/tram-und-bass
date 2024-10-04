@@ -9,7 +9,6 @@ const lines = content.lines;
 lines.forEach((line) => {
   line.id = line.name.toLowerCase().replace(/\s/g, "") + line.number;
 });
-console.log({ lines });
 export const allLines = writable<Line[]>(lines);
 export const currentLine = writable<Line>();
 // update query params when currentLine changes
@@ -84,7 +83,6 @@ export const linesAtCurrentStation = derived(
     if (!$currentStation) return;
     return $allLines.filter((line) => {
       
-     console.log(line)
       return line.timeStamps?.find(
         (timeStamp) =>
           timeStamp.name === $currentStation.name && line.id !== $currentLine.id
