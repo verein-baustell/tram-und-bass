@@ -452,16 +452,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba($color: #ffffff, $alpha: 0.8);
-    backdrop-filter: blur(40px);
-    opacity: 0.7;
+    background-color: rgba($color: #ffffff, $alpha: 0.2);
+    backdrop-filter: blur(20px);
+    /* opacity: 0.9; */
     animation: fadeIn 0.8s ease-in-out;
     @keyframes fadeIn {
       from {
         backdrop-filter: blur(0px);
       }
       to {
-        backdrop-filter: blur(40px);
+        backdrop-filter: blur(20px);
       }
     }
   }
