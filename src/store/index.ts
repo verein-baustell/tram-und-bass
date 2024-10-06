@@ -64,25 +64,39 @@ currentLine.subscribe((value) => {
   }
 });
 export const previousStation = writable<TimeStamp>();
+function getVimeoVideoId(videoUrl: string): number | null {
+  const regex = /vimeo\.com\/video\/(\d+)/;
+  const match = videoUrl.match(regex);
+  return match ? +match[1] : null;
+}
 /**
  * If we are not at a station, this will be undefined.
  */
 export const currentStation: Readable<TimeStamp | undefined> = derived(
   [currentTime, currentLine, previousStation],
   ([$currentTime, $currentLine, $previousStation], set) => {
-    const newStation = $currentLine.timeStamps?.find(
-      (timeStamp) =>
-        hmsToSeconds(timeStamp.startTime) <= $currentTime &&
-        hmsToSeconds(timeStamp.endTime) >= $currentTime
-    );
-    if (!newStation) {
-      set(undefined);
-      return;
-    }
-    if (newStation !== $previousStation) {
-      previousStation.set(newStation);
-      set(newStation);
-    }
+    vimeoVideoObject &&
+      get(vimeoVideoObject)?.getVideoId()
+        .then((currentVideoId) => {
+          // if the video is not loaded yet, return
+          if (currentVideoId !== getVimeoVideoId($currentLine.videoUrl)) {
+            set(undefined);
+            return;
+          }
+          const newStation = $currentLine.timeStamps?.find(
+            (timeStamp) =>
+              hmsToSeconds(timeStamp.startTime) <= $currentTime &&
+              hmsToSeconds(timeStamp.endTime) >= $currentTime
+          );
+          if (!newStation) {
+            set(undefined);
+            return;
+          }
+          if (newStation !== $previousStation) {
+            previousStation.set(newStation);
+            set(newStation);
+          }
+        });
   }
 );
 /**
