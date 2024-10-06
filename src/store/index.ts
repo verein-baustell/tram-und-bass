@@ -22,8 +22,14 @@ const seekVideoAfterLoad = (vimeoObject: Vimeo) => {
     timeToSeekAfterVideoLoad.set(0);
   }
 };
+let previousLineId: string | null = null;
 export const timeToSeekAfterVideoLoad = writable<number>(0);
 currentLine.subscribe((value) => {
+  if (value?.id === previousLineId) {
+    return; // Exit if the line ID has not changed
+  }
+  // Update the previous line ID
+  previousLineId = value?.id;
   if (value && typeof window !== "undefined") {
     videoIsPlaying.set(false);
     const url = new URL(window.location.href);
@@ -33,21 +39,24 @@ currentLine.subscribe((value) => {
     vimeoVideoObject.update((vimeo) => {
       if (vimeo) {
         console.log("⬇️ try to load video", value.videoUrl);
-        vimeo.loadVideo(value.videoUrl).then(() => {
-          console.log("🎥 video loaded");
-          console.log({ vimeo });
-          seekVideoAfterLoad(vimeo);
-          vimeo
-            .play()
-            .then(() => {
-              seekVideoAfterLoad(vimeo);
-              console.log("🎥 video is playing at 2nd attempt");
-            })
-            .catch((error) => {
-              console.error("🎥 video play error", error);
-            });
-        }).catch((error) => {
-          console.error("🎥 video load error", error)
+        vimeo
+          .loadVideo(value.videoUrl)
+          .then(() => {
+            console.log("🎥 video loaded");
+            console.log({ vimeo });
+            seekVideoAfterLoad(vimeo);
+            vimeo
+              .play()
+              .then(() => {
+                seekVideoAfterLoad(vimeo);
+                console.log("🎥 video is playing at 2nd attempt");
+              })
+              .catch((error) => {
+                console.error("🎥 video play error", error);
+              });
+          })
+          .catch((error) => {
+            console.error("🎥 video load error", error);
           });
       }
       return vimeo;
@@ -66,7 +75,7 @@ export const currentStation: Readable<TimeStamp | undefined> = derived(
         hmsToSeconds(timeStamp.startTime) <= $currentTime &&
         hmsToSeconds(timeStamp.endTime) >= $currentTime
     );
-    if(!newStation) {
+    if (!newStation) {
       set(undefined);
       return;
     }
@@ -84,7 +93,6 @@ export const linesAtCurrentStation = derived(
   ([$currentStation, $currentLine, $allLines]) => {
     if (!$currentStation) return;
     return $allLines.filter((line) => {
-      
       return line.timeStamps?.find(
         (timeStamp) =>
           timeStamp.name === $currentStation.name && line.id !== $currentLine.id

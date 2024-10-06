@@ -1,7 +1,9 @@
+import { get } from "svelte/store";
 import {
   currentStation,
   currentLine,
   timeToSeekAfterVideoLoad,
+  vimeoVideoObject,
 } from "../store";
 import compareStationNames from "./compareStationNames";
 import { hmsToSeconds } from "./timeFormatter";
@@ -10,18 +12,22 @@ import { hmsToSeconds } from "./timeFormatter";
  * @param line The line to change to.
  */
 export const changeToLineAtStation = (line: Line, stationName: string) => {
-  console.log("Changing to line", line,"at station", stationName);
   if (!currentStation) return;
   if (!stationName) {
     console.error("No station name to change to");
     return;
   }
-  console.log("🚉 change to line:", line.name,"at station:", stationName);
+  console.log("🚉 change to line:", line.name, "at station:", stationName);
   const timeStampOfCurrentStation = hmsToSeconds(
     line?.timeStamps?.find((timeStamp) =>
       compareStationNames(timeStamp.name, stationName)
     )?.startTime
   );
+  const isSameLine = get(currentLine).id === line.id;
+  if (isSameLine) {
+    get(vimeoVideoObject).setCurrentTime(timeStampOfCurrentStation);;
+    return;
+  }
   !isNaN(timeStampOfCurrentStation) &&
     timeToSeekAfterVideoLoad.set(timeStampOfCurrentStation);
   currentLine.set(line);
