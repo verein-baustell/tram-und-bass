@@ -1043,6 +1043,9 @@ lines:
       IOKOI, releasing electronic and experimental music.
 
 
+      –
+
+
       I first approached my mix for the tram line 8, which runs past my house, by making a field recording on a Sunday night. With this recording as a basis, it became clear in which tempo the music should be, and which moods should be present in the mix. The tracks were layered on top of each other in several rounds, adding detail, density, and chaos step by step. Melodic fragments echo both the architecture of the city, as well as the characteristics of the places seen through the rear window.
     videoUrl: https://player.vimeo.com/video/950570324?h=ddbc1bdffa
     releaseDate: 2024-07-16T11:58:00.000Z
