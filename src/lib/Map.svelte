@@ -8,6 +8,7 @@
   import getLinesFromStationName from "../utils/getLinesFromStationName";
   import LineList from "./LineList.svelte";
   type StationsPositions = { [stationId: string]: { x: number; y: number } };
+  import compareStationNames from "../utils/compareStationNames";
   const INITIAL_WIDTH = 2560;
   const INITIAL_HEIGHT = 2560;
   const EXTENT_PADDING = 400;
@@ -291,6 +292,42 @@
         selectedStation = stationName;
         console.log({ linesAtSelectedStation });
       })
+      .on("mouseover", function (d, e) {
+        const stationElement = this as Element;
+        const stationName = (this as Element)?.getAttribute("id");
+        if (!stationName) return;
+        const line = $allLines.find((line) =>
+          line.timeStamps?.find((timeStamp) =>
+            compareStationNames(timeStamp.name, stationName)
+          )
+        );
+        const station = line?.timeStamps?.find((timeStamp) =>
+          compareStationNames(timeStamp.name, stationName)
+        );
+        const tooltip = d3.select("#map-tooltip");
+        // position the tooltip right above the station not at mouse position
+        const posX =
+          stationElement.getBoundingClientRect().left +
+          stationElement.getBoundingClientRect().width / 2;
+        const posY =
+          stationElement.getBoundingClientRect().top +
+          stationElement.getBoundingClientRect().height / 2;
+        let innerHtml = "";
+        if (station) {
+          innerHtml = `<div>${station?.name}</div>`;
+        } else {
+          innerHtml = `<div style="color:red; font-weight:bold;">No station found with id: ${stationName}</div>`;
+        }
+        tooltip
+          .style("opacity", 1)
+          .style("left", `${posX}px`)
+          .style("top", `${posY}px`)
+          .html(innerHtml);
+      })
+      .on("mouseout", function () {
+        const tooltip = d3.select("#map-tooltip");
+        tooltip.style("opacity", 0);
+      });
     if (currentStation) {
       const activeStationSelection =
         stationsGroupSelection.selectChild(".activeStation");
@@ -360,6 +397,7 @@
   >
     <MapInlineSvg />
   </svg>
+  <div id="map-tooltip" class="isActive">a</div>
 </div>
 
 <style lang="scss" scoped>
@@ -402,5 +440,16 @@
     :global(path) {
       stroke: inherit; // TODO make this the color of the line
     }
+  }
+  #map-tooltip {
+    position: absolute;
+    pointer-events: none;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius-view);
+    padding: var(--padding-view);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    transform: translate(-50%, calc(-1em - 100%));
+    opacity: 0;
   }
 </style>
