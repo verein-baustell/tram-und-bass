@@ -224,7 +224,7 @@
   >
     <MapInlineSvg />
   </svg>
-  <div id="map-tooltip"></div>
+  <div id="map-tooltip" class="isActive">a</div>
 </div>
 
 <style lang="scss" scoped>
