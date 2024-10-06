@@ -25,7 +25,7 @@
   let totalLength: any;
   let segments: any = [];
   let totalAnimationTime = 0;
-
+  let isPathReversed = false;
   // ... Existing functions (zoomed, zoomToElement, highlightCurrentStation, etc.) ...
 
   function getStationPositions() {
@@ -99,7 +99,10 @@
     const groupSelection = d3.select<SVGGElement, unknown>(
       "#map-svg #lines #" + newLine.id
     );
-    groupSelection.attr("class", "activeLine").attr("stroke", newLine.color).raise();
+    groupSelection
+      .attr("class", "activeLine")
+      .attr("stroke", newLine.color)
+      .raise();
 
     if (groupSelection) {
       currentLineGroupSelection = groupSelection;
@@ -146,27 +149,51 @@
         )?.length;
         s.length = stationLength;
       });
+      isPathReversed =
+        (stations?.[0]?.length ?? 0) >
+        (stations?.[stations.length - 1]?.length ?? 0);
+
+      if (isPathReversed) {
+        // Invert station lengths
+        stations.forEach((s) => {
+          s.length = totalLength - (s?.length ?? 0);
+        });
+      }
 
       // Compute segments
       segments = [];
-      for (let i = 0; i < stations.length - 1; i++) {
+      for (let i = 0; i < stations.length; i++) {
         const currentStation = stations[i];
-        const nextStation = stations[i + 1];
 
-        const moveDuration =
-          nextStation.arrivalTime - currentStation.departureTime;
+        // Process stop duration at current station
         const stopDuration =
-          nextStation.departureTime - nextStation.arrivalTime;
-        const startLength = currentStation.length;
-        const endLength = nextStation.length;
+          currentStation.departureTime - currentStation.arrivalTime;
+        if (stopDuration > 0) {
+          segments.push({
+            moveDuration: 0,
+            stopDuration: stopDuration,
+            startLength: currentStation.length,
+            endLength: currentStation.length,
+          });
+        }
 
-        segments.push({
-          moveDuration,
-          stopDuration,
-          startLength,
-          endLength,
-        });
+        // Process move duration to next station
+        const nextStation = stations[i + 1];
+        if (nextStation) {
+          const moveDuration =
+            nextStation.arrivalTime - currentStation.departureTime;
+          const startLength = currentStation.length;
+          const endLength = nextStation.length;
+
+          segments.push({
+            moveDuration: moveDuration,
+            stopDuration: 0,
+            startLength: startLength,
+            endLength: endLength,
+          });
+        }
       }
+      console.log("segments for", newLine, segments);
 
       // Compute total animation time
       totalAnimationTime = segments.reduce(
@@ -175,9 +202,15 @@
       );
 
       // Initialize the line path for animation
-      linePaths
-        .attr("stroke-dasharray", totalLength)
-        .attr("stroke-dashoffset", totalLength - stations[0].length);
+      if (isPathReversed) {
+        linePaths
+          .attr("stroke-dasharray", totalLength)
+          .attr("stroke-dashoffset", stations[0].length);
+      } else {
+        linePaths
+          .attr("stroke-dasharray", totalLength)
+          .attr("stroke-dashoffset", totalLength - (stations[0]?.length ?? 0));
+      }
     }
   }
 
@@ -188,21 +221,24 @@
         segments[i];
       const segmentLength = endLength - startLength;
 
+      // Stopping phase
+      if (stopDuration > 0 && elapsedTime < accumulatedTime + stopDuration) {
+        // Tram is stopped at the station
+        return startLength;
+      }
+      accumulatedTime += stopDuration;
+
       // Moving phase
-      if (elapsedTime < accumulatedTime + moveDuration) {
+      if (moveDuration > 0 && elapsedTime < accumulatedTime + moveDuration) {
         const moveProgress = (elapsedTime - accumulatedTime) / moveDuration;
         return startLength + segmentLength * moveProgress;
       }
       accumulatedTime += moveDuration;
-
-      // Stopping phase
-      if (elapsedTime < accumulatedTime + stopDuration) {
-        return endLength; // Tram is stopped at the station
-      }
-      accumulatedTime += stopDuration;
     }
-    return segments[segments.length - 1].endLength; // Tram has reached the end
+    // Tram has reached the end
+    return segments[segments.length - 1].endLength;
   }
+
   const zoomed = (event: any) => {
     const { transform } = event;
     event.sourceEvent?.stopImmediatePropagation();
@@ -343,7 +379,6 @@
     stationsGroupSelection.selectChildren().attr("stroke", null);
   };
   onMount(() => {
-
     removeInlineStyleAttributes();
 
     // Get station positions
@@ -373,9 +408,18 @@
 
     const elapsedTime = newTime;
     const tramPosition = getTramPosition(elapsedTime);
-    const dashOffset = totalLength - tramPosition;
+    let dashOffset: number;
+    if (isPathReversed) {
+      dashOffset = tramPosition;
+    } else {
+      dashOffset = totalLength - tramPosition;
+    }
 
-    linePaths.attr("stroke-dashoffset", dashOffset);
+    linePaths
+      .transition()
+      .duration(300)
+      .ease(d3.easeLinear)
+      .attr("stroke-dashoffset", dashOffset);
   });
 </script>
 
@@ -410,6 +454,7 @@
     height: 100%;
     background-color: rgba($color: #ffffff, $alpha: 0.8);
     backdrop-filter: blur(40px);
+    opacity: 0.7;
     animation: fadeIn 0.8s ease-in-out;
     @keyframes fadeIn {
       from {
