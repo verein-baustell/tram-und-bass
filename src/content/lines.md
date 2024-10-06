@@ -10,8 +10,8 @@ lines:
     id: ""
     timeStamps:
       - name: Geissweid
-        startTime: 00:01
-        endTime: 01:12
+        startTime: 00:00
+        endTime: 01:11
       - name: Schlieren, Zentrum Bahnhof
         startTime: 02:07
         endTime: 02:23
@@ -937,18 +937,116 @@ lines:
         startTime: 43:57
         endTime: 44:35
     isInverted: false
-  - id: ""
-    releaseDate: 2024-07-10T16:19:00.000Z
-    name: Hardturm
+  - color: "#b4ca3f"
     number: 8
-    color: "#b4ca3f"
-    isInverted: true
-    artistName: Radiant
+    name: Hardturm
+    artistName: EXGÜSI
+    artistAboutText: >-
+      Since I was 14/15 years old, I have been passionately interested in
+      electronic music. The culture and the shared experience fascinate me, in
+      particular. Despite my small successes and the opportunity to play at
+      various events, I consider my projects primarily as a hobby. It brings me
+      great joy to see how people experience positive emotions through my music
+      and music in general, how they express themselves freely, and enrich the
+      dance floor with love.
+
+
+      Tram line 8 in Zurich has a close connection to Langstrasse, a vibrant and diverse neighborhood. The tram line runs through Langstrasse, which is known for its lively cultural scene and nightlife. Since the roots of the music scene in Langstrasse were mainly influenced by techno and house genres, I have incorporated mostly house elements into my set.
     videoUrl: https://player.vimeo.com/video/950568957?h=0962988f6e
+    releaseDate: 2024-07-10T16:19:00.000Z
+    id: ""
+    timeStamps:
+      - name: Klusplatz
+        startTime: 00:01
+        endTime: 00:32
+      - name: Hölderlinstrasse
+        startTime: 01:38
+        endTime: 01:51
+      - name: Römerhof
+        startTime: 02:46
+        endTime: 03:07
+      - name: Englischviertelstrasse
+        startTime: 03:44
+        endTime: 04:08
+      - name: Kreuzplatz
+        startTime: 05:15
+        endTime: 05:30
+      - name: Bahnhof Stadelhofen
+        startTime: 07:07
+        endTime: 07:31
+      - name: Bellevue
+        startTime: 09:08
+        endTime: 09:31
+      - name: Bürkliplatz
+        startTime: 11:01
+        endTime: 11:24
+      - name: Kantonalbank
+        startTime: 12:29
+        endTime: 12:44
+      - name: Paradeplatz
+        startTime: 13:42
+        endTime: 14:02
+      - name: Stockerstrasse
+        startTime: 15:07
+        endTime: 15:26
+      - name: Bahnhof Selnau
+        startTime: 16:41
+        endTime: 17:00
+      - name: Stauffacher
+        startTime: 17:51
+        endTime: 18:19
+      - name: Helvetiaplatz
+        startTime: 19:15
+        endTime: 19:42
+      - name: Bäckeranlage
+        startTime: 20:44
+        endTime: 21:00
+      - name: Güterbahnhof
+        startTime: 22:29
+        endTime: 22:42
+      - name: Hardplatz
+        startTime: 23:34
+        endTime: 24:01
+      - name: Bahnhof Hardbrücke
+        startTime: 24:59
+        endTime: 25:38
+      - name: Schiffbau
+        startTime: 26:45
+        endTime: 27:00
+      - name: Escher-Wyss-Platz
+        startTime: 27:50
+        endTime: 28:05
+      - name: Förrlibuckstrasse
+        startTime: 29:38
+        endTime: 29:57
+      - name: Fischerweg
+        startTime: 30:39
+        endTime: 30:57
+      - name: Bernoulli-Häuser
+        startTime: 31:30
+        endTime: 31:43
+      - name: Hardturm
+        startTime: 32:52
+        endTime: 33:02
+    isInverted: true
   - color: "#b4ca3f"
     number: 8
     name: Klusplatz
-    artistName: Gott123
+    artistName: Ink!
+    artistAboutText: >-
+      Having explored the Hardcore Continuum since the late 90ies, Ink! is
+      interested in the connections between signal and noise. Feeding from
+      Techno, Rave, Bass and Dub, he stirs up multi-layered sets that are
+      invitations to lose yourself in a sea of sound. Ink! is part of the
+      mini-club Umbo and a founding member of the Rhizom Festival. In 2015, he
+      launched the music label -OUS with long-time affiliates Feldermelder and
+      IOKOI, releasing electronic and experimental music.
+
+
+      –
+
+
+      I first approached my mix for the tram line 8, which runs past my house, by making a field recording on a Sunday night. With this recording as a basis, it became clear in which tempo the music should be, and which moods should be present in the mix. The tracks were layered on top of each other in several rounds, adding detail, density, and chaos step by step. Melodic fragments echo both the architecture of the city, as well as the characteristics of the places seen through the rear window.
     videoUrl: https://player.vimeo.com/video/950570324?h=ddbc1bdffa
     releaseDate: 2024-07-16T11:58:00.000Z
     id: ""
