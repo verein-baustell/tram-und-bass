@@ -24,10 +24,14 @@
   
   }, 1000);
   </script>
-
+<svelte:head>
+  <title>Tram und Bass</title>
+  <meta name="description" content="Tram und Bass - ab 15. November 2024. 30 Artists 30 Tramlinien. Ein Projekt von Verein Baustell und RTFM. ">
+  <meta name="keywords" content="Tram und Bass, Tram, Bass, Zürich, VBZ, 15. November 2024, elektronische Musik">
+</svelte:head>
 <div class="splash">
   <div class="container">
-    <img class="logo" src="/images/TnB_logo.svg" alt="Tram und Bass Logo">
+    <img class="logo" src="/images/TnB_logo.svg" alt="Tram und Bass">
     <div class="text title countdown">
       <p id="numbers"> { days + "d " + hours + "h "
     + minutes + "m " + seconds + "s " }</p>
@@ -101,7 +105,7 @@
   </div>
 
   </div>
-  <img id="gif" src="/images/IntroShortSimple.gif">
+  <img id="gif" src="/images/IntroShortSimple.gif" alt="Hintergrundanimation einer Tramfahrt" loading="lazy" />
 </div>
 
 
