@@ -744,7 +744,7 @@ lines:
     name: Bahnhof Stettbach
     artistName: DJ Mozarella
     videoUrl: https://player.vimeo.com/video/950567543?h=8e4eb0457c
-    releaseDate: 2024-07-16T11:58:00.000Z
+    releaseDate: 2024-10-10T17:21:00.000Z
     id: ""
     timeStamps:
       - name: Wollishoferplatz
