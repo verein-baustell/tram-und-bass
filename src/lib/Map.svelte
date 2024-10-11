@@ -9,6 +9,7 @@
   import LineList from "./LineList.svelte";
   type StationsPositions = { [stationId: string]: { x: number; y: number } };
   import compareStationNames from "../utils/compareStationNames";
+  import stationNameToId from "../utils/stationNameToId";
   const INITIAL_WIDTH = 2560;
   const INITIAL_HEIGHT = 2560;
   const EXTENT_PADDING = 400;
@@ -20,7 +21,7 @@
   >;
   let linesAtSelectedStation: Line[]; // the station that is currently being previewed
   let selectedStation: string;
-  let stationPositions = {};
+  let stationPositions: StationsPositions = {};
   let linePaths: any;
   let totalLength: any;
   let segments: any = [];
@@ -95,7 +96,13 @@
   }
 
   function setActiveLine(newLine: Line) {
-    console.log("currentLine changed", "#map-svg #lines #" + newLine.id);
+    // first reset all lines
+    d3.select("#map-svg #lines")
+      .selectChildren()
+      .selectChildren()
+      .attr("class", null)
+      .attr("stroke", null);
+
     const groupSelection = d3.select<SVGGElement, unknown>(
       "#map-svg #lines #" + newLine.id
     );
@@ -149,16 +156,31 @@
         )?.length;
         s.length = stationLength;
       });
-      isPathReversed =
-        (stations?.[0]?.length ?? 0) >
-        (stations?.[stations.length - 1]?.length ?? 0);
-
-      if (isPathReversed) {
-        // Invert station lengths
-        stations.forEach((s) => {
-          s.length = totalLength - (s?.length ?? 0);
-        });
+      // the path is reversed if the path was drawn from the last station to the first
+      // to check this we compare the position of the first station to the position of the beginning of the path
+      if (stationPositions) {
+        const beginningOfPathPos = pathElement.getPointAtLength(0);
+        const stationId = stationNameToId(stations[0].stationName);
+        if (stationId) {
+          const firstStationPos = stationPositions?.[stationId];
+          if (firstStationPos) {
+            const distance = Math.hypot(
+              beginningOfPathPos.x - firstStationPos.x,
+              beginningOfPathPos.y - firstStationPos.y
+            );
+            isPathReversed = distance > 50;
+          }
+        }
       }
+      // (stations?.[0]?.length ?? 0) >
+      // (stations?.[stations.length - 1]?.length ?? 0);
+
+      // if (isPathReversed) {
+      //   // Invert station lengths
+      //   stations.forEach((s) => {
+      //     s.length = totalLength - (s?.length ?? 0);
+      //   });
+      // }
 
       // Compute segments
       segments = [];
@@ -193,24 +215,21 @@
           });
         }
       }
-      console.log("segments for", newLine, segments);
-
       // Compute total animation time
       totalAnimationTime = segments.reduce(
         (sum, segment) => sum + segment.moveDuration + segment.stopDuration,
         0
       );
-
+      let strokeOffset = 0;
       // Initialize the line path for animation
       if (isPathReversed) {
-        linePaths
-          .attr("stroke-dasharray", totalLength)
-          .attr("stroke-dashoffset", stations[0].length);
+        strokeOffset = totalLength + (stations[0]?.length ?? 0);
       } else {
-        linePaths
-          .attr("stroke-dasharray", totalLength)
-          .attr("stroke-dashoffset", totalLength - (stations[0]?.length ?? 0));
+        strokeOffset = stations[0]?.length ?? 0;
       }
+      linePaths
+        .attr("stroke-dasharray", totalLength)
+        .attr("stroke-dashoffset", strokeOffset);
     }
   }
 
@@ -297,19 +316,13 @@
   };
   const addClassesToStations = () => {
     const stationsGroupSelection = d3.select("#map-svg #stations");
-    console.log({ stationsGroupSelection });
     stationsGroupSelection
       .selectChildren()
       .attr("class", function () {
         const id = (this as Element)?.getAttribute("id");
-        const currentStationName = $currentStation?.name
-          .replaceAll(" ", "")
-          .toLocaleLowerCase();
+        const currentStationName = stationNameToId($currentStation?.name);
 
         if (!id) return "station";
-        if (id === currentStationName) {
-          console.log("activeStation found:", id);
-        }
         return id === currentStationName ? "activeStation station" : "station";
       })
       .on("click", function () {
@@ -326,7 +339,6 @@
           $allLines
         );
         selectedStation = stationName;
-        console.log({ linesAtSelectedStation });
       })
       .on("mouseover", function (d, e) {
         const stationElement = this as Element;
@@ -385,8 +397,8 @@
     stationPositions = getStationPositions();
 
     const mapSvg = d3.select<SVGElement, unknown>("#map-svg");
-    // add zoom capabilities
 
+    // add zoom capabilities
     mapSvg.call(zoom as any);
 
     addClassesToStations();
@@ -410,7 +422,7 @@
     const tramPosition = getTramPosition(elapsedTime);
     let dashOffset: number;
     if (isPathReversed) {
-      dashOffset = tramPosition;
+      dashOffset = -tramPosition;
     } else {
       dashOffset = totalLength - tramPosition;
     }
