@@ -3,6 +3,8 @@
   import LineNumber from "./LineNumber.svelte";
   export let onClick: (lineClicked: Line) => void;
   export let line: Line;
+  const releaseDate = new Date(line.releaseDate);
+  const formattedDate = releaseDate.toLocaleDateString('en-GB').replace(/\//g, '.');
 </script>
 
 <li>
@@ -19,18 +21,37 @@
     <LineNumber number={line.number} />
     <span>{line.name}</span>
     <img class="star" src="/images/divider.svg" alt="-" />
-    <span>{line.isReleased?line.artistName:"coming soon"}</span>
+    <p>{line.isReleased?line.artistName:"coming soon"}</p>
+    <p class="releaseDate">{formattedDate}</p>
   </button>
 </li>
 
 <style lang="scss" scoped>
  
   button {
+    position: relative;
     &:disabled{
-      filter: blur(3px);
       opacity: 0.5;
       cursor: help;
+      img, p {
+        filter: blur(3px);
+      }
+      &:hover {
+        .releaseDate {
+          display: flex;
+          position: absolute;
+          right: 4px;
+          filter: blur(0px);
+          padding: 1px 4px 1px 4px;
+          border: thin solid black;
+          border-radius: 4px;
+        }
+      }
+
     }
+    .releaseDate{
+        display: none;
+      }
     // TODO: Do the colors with variables
     &.isActive {
       filter: invert(1);
