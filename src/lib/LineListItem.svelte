@@ -7,9 +7,10 @@
 
 <li>
   <button
-    on:click={() => onClick(line)}
+    on:click={() => line.isReleased && onClick(line)}
+    disabled={!line.isReleased}
     on:keydown={(e) => {
-      if (e.key === "Enter") {
+      if (e.key === "Enter" && line.isReleased) {
         onClick(line);
       }
     }}
@@ -18,12 +19,18 @@
     <LineNumber number={line.number} />
     <span>{line.name}</span>
     <img class="star" src="/images/divider.svg" alt="-" />
-    <span>{line.artistName}</span>
+    <span>{line.isReleased?line.artistName:"coming soon"}</span>
   </button>
 </li>
 
 <style lang="scss" scoped>
+ 
   button {
+    &:disabled{
+      filter: blur(3px);
+      opacity: 0.5;
+      cursor: help;
+    }
     // TODO: Do the colors with variables
     &.isActive {
       filter: invert(1);

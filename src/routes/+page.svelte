@@ -11,24 +11,43 @@
     videoIsPlaying,
     vimeoVideoObject,
     allLines,
+    devToolsState,
   } from "../store";
   import DevTools from "$lib/DevTools.svelte";
   import registerVimeoEventListeners from "../utils/registerVimeoEventListeners";
   import SplashScreen from "$lib/SplashScreen.svelte";
   import LoadingScreen from "$lib/LoadingScreen.svelte";
   import { attributes as aboutContent } from "../content/about.md";
+  import compareStationNames from "../utils/compareStationNames";
+    import { goto } from "$app/navigation";
   // console.log(aboutContent)
   let videoWrapperWidth = "100%";
   let videoWrapperHeight = "100%";
   let isDevMode = false;
   let showSplashScreen = true;
-  // TODO: Want it to maybe pick a random line?
-  $currentLine = $allLines[0];
+  console.log($devToolsState)
+  const releasedLines = $allLines.filter(line => $devToolsState.showAllUnreleasedLines || line.isReleased)
+  let randomIndex = Math.floor(Math.random() * (releasedLines.length - 1))
+  $currentLine = $allLines[randomIndex];
 
   const today = new Date();
   const releaseDate = new Date("2024-01-01T22:00:00");
   const showLandingPage = today <= releaseDate;
   onMount(() => {
+    const url = new URL(window.location.href);
+    const lineIdFromUrl = url.searchParams.get("line");
+    if (lineIdFromUrl) {
+      const lineFromUrl = $allLines.find((line) =>
+        compareStationNames(line.id, lineIdFromUrl),
+      );
+      if (lineFromUrl && lineFromUrl.isReleased) {
+        $currentLine = lineFromUrl;
+      } else {
+        console.log("line in url not released or not existant");
+        url.searchParams.delete("line");
+        goto(url.toString(), { replaceState: true });
+      }
+    }
     if (showLandingPage) return;
     isDevMode =
       window.location.hostname === "localhost" ||
@@ -73,20 +92,19 @@
     class={$videoIsPlaying ? "" : "isLoading"}
     style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
   ></div>
-  {#if showSplashScreen}
+  {#if showSplashScreen || !$currentLine.isReleased}
     <SplashScreen onClick={() => (showSplashScreen = false)} />
   {/if}
   {#if !$videoIsPlaying}
-    <LoadingScreen 
-
-    style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
+    <LoadingScreen
+      style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
     />
   {/if}
   <VideoControls />
   {#if isDevMode}
     <DevTools />{/if}
   {#if !$isImmersive}
-    <TopMenu aboutContent={aboutContent?.aboutText ??""} />
+    <TopMenu aboutContent={aboutContent?.aboutText ?? ""} />
     <BottomMenu />
   {/if}
 {/if}
@@ -100,7 +118,6 @@
       src: url("/fonts/Rene-Regular-Web.woff") format("woff");
     }
 
-    // fix: font has changed
     @font-face {
       font-family: Holo;
       font-style: normal;
@@ -108,19 +125,6 @@
       src: url("/fonts/NaNHoloNarrow-Regular.woff2") format("woff2");
     }
 
-    // fixzed up we don't us this font, code is single source of truth
-    //@font-face {
-    //  font-family: Holo;
-    //  font-style: normal;
-    //  font-weight: 500;
-    //  src: url("/fonts/NaNHolo-Medium.woff2") format("woff2");
-    //}
-    // @font-face {
-    //   font-family: Holo;
-    //   font-style: medium;
-    //   font-weight: 600;
-    //   src: url("/fonts/NaNHolo-Medium.woff2") format("woff2");
-    // }
     @font-face {
       font-family: HoloMono;
       font-style: normal;

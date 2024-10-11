@@ -4,11 +4,32 @@ import { hmsToSeconds } from "../utils/timeFormatter";
 import { goto } from "$app/navigation";
 import changeFaviconToLine from "../utils/changeFaviconToLine";
 const lines = content.lines;
-// TODO: Generate ids on save in the CMS
-// add missing ids
+
+// dev tools delete for production
+// Define a key to use for local storage
+const localStorageKey = 'devToolsState';
+
+// Check if there's an existing state in local storage
+const storedState = typeof localStorage != "undefined" ? localStorage.getItem(localStorageKey) : "false";
+
+// Define the initial state for the store
+const initialState = storedState
+  ? JSON.parse(storedState)
+  : { showAllUnreleasedLines: false };
+
+// Create a writable store with the initial state
+export const devToolsState = writable<DevToolsState>(initialState);
+
+// Subscribe to the store and save any changes to local storage
+devToolsState.subscribe((value) => {
+  typeof localStorage != "undefined" ? localStorage.setItem(localStorageKey, JSON.stringify(value)) : "false";
+});
+
 lines.forEach((line) => {
   line.id = line.name.toLowerCase().replace(/\s/g, "") + line.number;
+  line.isReleased = new Date(line.releaseDate) < new Date() || get(devToolsState).showAllUnreleasedLines;
 });
+
 export const allLines = writable<Line[]>(lines);
 export const currentLine = writable<Line>();
 // update query params when currentLine changes
@@ -146,3 +167,4 @@ export const timeUntilNextStation = derived(
 );
 export const vimeoVideoObject = writable<Vimeo>();
 vimeoVideoObject.subscribe((vimeo) => {});
+

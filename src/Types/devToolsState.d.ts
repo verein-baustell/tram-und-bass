@@ -1,0 +1,3 @@
+type DevToolsState = {
+    showAllUnreleasedLines: boolean
+}

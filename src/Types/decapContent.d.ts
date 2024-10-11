@@ -3,6 +3,7 @@ type Line = {
   number: number
   id: string
   releaseDate: string
+  isReleased: boolean
   color: string
   isInverted: boolean
   videoUrl: string

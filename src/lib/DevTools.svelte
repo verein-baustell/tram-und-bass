@@ -1,7 +1,9 @@
 <script>
+  import { line } from "d3";
   import {
     currentStation,
     currentTime,
+    devToolsState,
     nextStation,
     timeToSeekAfterVideoLoad,
     timeUntilNextStation,
@@ -21,6 +23,14 @@
   >
     Jump to next station
   </Button>
+  <Button
+    on:click={() => {
+      devToolsState.update((state) => ({
+        ...state,
+        showAllUnreleasedLines: !state.showAllUnreleasedLines,
+      }));
+    }}
+  >{$devToolsState.showAllUnreleasedLines ? "Hide unreleased":"Show unreleased"}</Button>
   <table>
     <tr> <td> currentTime:</td><td> {$currentTime.toFixed(2)}</td></tr>
     <tr> <td> videoIsPlaying:</td><td> {$videoIsPlaying}</td></tr>
