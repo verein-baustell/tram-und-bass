@@ -422,9 +422,10 @@
     const tramPosition = getTramPosition(elapsedTime);
     let dashOffset: number;
     if (isPathReversed) {
-      dashOffset = -tramPosition;
+      // no fucking idea why 4 times the totalLength but it works
+      dashOffset = -tramPosition + 4*totalLength;
     } else {
-      dashOffset = totalLength - tramPosition;
+      dashOffset = -totalLength - tramPosition;
     }
 
     linePaths
