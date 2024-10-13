@@ -1,4 +1,6 @@
 <script>
+    import { BaseNextResponse } from "next/dist/server/base-http";
+
   // Set the date we're counting down to
   var countDownDate = new Date("Nov 15, 2024 20:00:00").getTime();
 
@@ -104,6 +106,19 @@
     </div>
   </div>
 
+  <div class="support view">
+    <p class="center title">Kontakt</p>
+    <p class="center text-center"><b>Verein Tram und Bass </b>
+    <br>
+    Hardgutstrasse 7
+    <br>
+    8048 Zürich
+    <br>
+    info@tramundbass.ch
+    </p>
+  </div>
+  
+
   </div>
   <img id="gif" src="/images/IntroShortSimple.gif" alt="Hintergrundanimation einer Tramfahrt" loading="lazy" />
 </div>
@@ -148,6 +163,11 @@
     margin-bottom: 0.8em;
     padding-left: 1em;
     padding-right: 1em;
+  }
+
+  .text-center{
+    text-align: center;
+    margin-bottom: 1em;
   }
 
   .countdown{
