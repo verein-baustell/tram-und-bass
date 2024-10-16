@@ -1,0 +1,838 @@
+{
+    "Bellevue": {
+        "lat": 47.367271,
+        "lng": 8.5450237
+    },
+    "Bahnhofquai/HB": {
+        "lat": 47.3776103,
+        "lng": 8.5417702
+    },
+    "Wipkingerplatz": {
+        "lat": 47.3926467,
+        "lng": 8.5233842
+    },
+    "Förrlibuckstrasse": {
+        "lat": 47.3923518,
+        "lng": 8.5170726
+    },
+    "Fischerweg": {
+        "lat": 47.3936998,
+        "lng": 8.5121347
+    },
+    "Bernoulli-Häuser": {
+        "lat": 47.3938666,
+        "lng": 8.5084469
+    },
+    "Hardhof": {
+        "lat": 47.3964683,
+        "lng": 8.497348
+    },
+    "Tüffenwies": {
+        "lat": 47.3970701,
+        "lng": 8.4938689
+    },
+    "Grünaustrasse": {
+        "lat": 47.3952221,
+        "lng": 8.4895045
+    },
+    "Albisrieden": {
+        "lat": 47.3742885,
+        "lng": 8.4850725
+    },
+    "Milchbuck": {
+        "lat": 47.398139,
+        "lng": 8.542147
+    },
+    "Rennweg": {
+        "lat": 47.3729556,
+        "lng": 8.5382648
+    },
+    "Messe/Hallenstadion": {
+        "lat": 47.410926,
+        "lng": 8.5510379
+    },
+    "Central": {
+        "lat": 47.3767194,
+        "lng": 8.5435274
+    },
+    "Hirzenbach": {
+        "lat": 47.40316,
+        "lng": 8.5910052
+    },
+    "Altried": {
+        "lat": 47.4054209,
+        "lng": 8.5916763
+    },
+    "Kirche Fluntern": {
+        "lat": 47.3765722,
+        "lng": 8.559785
+    },
+    "Rehalp": {
+        "lat": 47.3509155,
+        "lng": 8.5830172
+    },
+    "Haldenegg": {
+        "lat": 47.3791528,
+        "lng": 8.5449835
+    },
+    "Glattpark": {
+        "lat": 47.4200005,
+        "lng": 8.5573586
+    },
+    "Guggachstrasse": {
+        "lat": 47.3959225,
+        "lng": 8.5403337
+    },
+    "Bahnhofstrasse/HB": {
+        "lat": 47.3759151,
+        "lng": 8.5393345
+    },
+    "Waldgarten": {
+        "lat": 47.403799,
+        "lng": 8.5575213
+    },
+    "Tierspital": {
+        "lat": 47.4018505,
+        "lng": 8.5522073
+    },
+    "Ueberlandpark": {
+        "lat": 47.4061175,
+        "lng": 8.5641694
+    },
+    "Universität Irchel": {
+        "lat": 47.396269,
+        "lng": 8.5445081
+    },
+    "Kinkelstrasse": {
+        "lat": 47.389065,
+        "lng": 8.546298
+    },
+    "Letzistrasse": {
+        "lat": 47.3908767,
+        "lng": 8.545433
+    },
+    "ETH/Universitätsspital": {
+        "lat": 47.377863,
+        "lng": 8.5481709
+    },
+    "Am Ring": {
+        "lat": 47.4022847,
+        "lng": 8.6078923
+    },
+    "Paradeplatz": {
+        "lat": 47.3695673,
+        "lng": 8.5387582
+    },
+    "Sihlquai/HB": {
+        "lat": 47.3797805,
+        "lng": 8.537427
+    },
+    "Zoo": {
+        "lat": 47.3816689,
+        "lng": 8.571624
+    },
+    "Heerenwiesen": {
+        "lat": 47.4049018,
+        "lng": 8.5765304
+    },
+    "Luegisland": {
+        "lat": 47.4060582,
+        "lng": 8.5814812
+    },
+    "Luchswiesen": {
+        "lat": 47.4067483,
+        "lng": 8.5857019
+    },
+    "Klusplatz": {
+        "lat": 47.3640195,
+        "lng": 8.566214
+    },
+    "Auzelg": {
+        "lat": 47.4170733,
+        "lng": 8.5690626
+    },
+    "Lindberghplatz": {
+        "lat": 47.4253725,
+        "lng": 8.560652
+    },
+    "Bahnhof Glattbrugg": {
+        "lat": 47.4304411,
+        "lng": 8.5594602
+    },
+    "Bäuler": {
+        "lat": 47.4350537,
+        "lng": 8.5575536
+    },
+    "Unterriet": {
+        "lat": 47.4381375,
+        "lng": 8.562929
+    },
+    "Bürkliplatz": {
+        "lat": 47.3665839,
+        "lng": 8.5417236
+    },
+    "Werdhölzli": {
+        "lat": 47.3977264,
+        "lng": 8.482058
+    },
+    "Hardturm": {
+        "lat": 47.3947138,
+        "lng": 8.5042811
+    },
+    "Hardplatz": {
+        "lat": 47.3822219,
+        "lng": 8.5154754
+    },
+    "Seebach": {
+        "lat": 47.4217273,
+        "lng": 8.5500207
+    },
+    "Technopark": {
+        "lat": 47.389159,
+        "lng": 8.5150562
+    },
+    "Bahnhof Stadelhofen": {
+        "lat": 47.3661068,
+        "lng": 8.5480888
+    },
+    "Herti": {
+        "lat": 47.4164224,
+        "lng": 8.5792186
+    },
+    "Belair": {
+        "lat": 47.4134408,
+        "lng": 8.5848423
+    },
+    "Glatt (Tram)": {
+        "lat": 47.4091178,
+        "lng": 8.5980797
+    },
+    "Neugut": {
+        "lat": 47.4049404,
+        "lng": 8.6040217
+    },
+    "Sportweg": {
+        "lat": 47.3916922,
+        "lng": 8.5056227
+    },
+    "Ringwiesen": {
+        "lat": 47.3976702,
+        "lng": 8.6043609
+    },
+    "Bahnhof Wallisellen": {
+        "lat": 47.4124954,
+        "lng": 8.5927053
+    },
+    "Bucheggplatz": {
+        "lat": 47.3985237,
+        "lng": 8.5326955
+    },
+    "Bahnhof Stettbach": {
+        "lat": 47.3970739,
+        "lng": 8.5966292
+    },
+    "Aargauerstrasse": {
+        "lat": 47.3921122,
+        "lng": 8.5021905
+    },
+    "Würzgraben": {
+        "lat": 47.3921039,
+        "lng": 8.494542
+    },
+    "Bahnhof Balsberg": {
+        "lat": 47.4416681,
+        "lng": 8.568704
+    },
+    "Hirschwiesenstrasse": {
+        "lat": 47.4003795,
+        "lng": 8.5437037
+    },
+    "Bahnhof Tiefenbrunnen": {
+        "lat": 47.3505894,
+        "lng": 8.5609542
+    },
+    "Glattwiesen": {
+        "lat": 47.4017146,
+        "lng": 8.5815058
+    },
+    "Mattenhof": {
+        "lat": 47.3987977,
+        "lng": 8.5907499
+    },
+    "Schwamendingerplatz": {
+        "lat": 47.4046103,
+        "lng": 8.5718672
+    },
+    "Schiffbau": {
+        "lat": 47.3876253,
+        "lng": 8.5194617
+    },
+    "Toni-Areal": {
+        "lat": 47.3902736,
+        "lng": 8.5104592
+    },
+    "Bahnhof Altstetten Nord": {
+        "lat": 47.3920972,
+        "lng": 8.4904723
+    },
+    "Leutschenbach": {
+        "lat": 47.4148699,
+        "lng": 8.5514577
+    },
+    "Sihlpost/HB": {
+        "lat": 47.376031,
+        "lng": 8.5339807
+    },
+    "Mülligen": {
+        "lat": 47.3960869,
+        "lng": 8.4665319
+    },
+    "Langmauerstrasse": {
+        "lat": 47.3937463,
+        "lng": 8.5449779
+    },
+    "Museum für Gestaltung": {
+        "lat": 47.382073,
+        "lng": 8.535019
+    },
+    "Limmatplatz": {
+        "lat": 47.3845001,
+        "lng": 8.5317699
+    },
+    "Löwenplatz": {
+        "lat": 47.3761078,
+        "lng": 8.5374821
+    },
+    "Quellenstrasse": {
+        "lat": 47.3866102,
+        "lng": 8.528909
+    },
+    "Löwenbräu": {
+        "lat": 47.3883018,
+        "lng": 8.5262309
+    },
+    "Escher-Wyss-Platz": {
+        "lat": 47.390004,
+        "lng": 8.5236162
+    },
+    "Stampfenbachplatz": {
+        "lat": 47.3799031,
+        "lng": 8.5425349
+    },
+    "Rudolf-Brun-Brücke": {
+        "lat": 47.3740956,
+        "lng": 8.5429627
+    },
+    "Sihlstrasse": {
+        "lat": 47.3724234,
+        "lng": 8.534589
+    },
+    "Stauffacher": {
+        "lat": 47.3735521,
+        "lng": 8.5297594
+    },
+    "Bahnhof Wiedikon": {
+        "lat": 47.3711739,
+        "lng": 8.5236276
+    },
+    "Werd": {
+        "lat": 47.3727141,
+        "lng": 8.5270735
+    },
+    "Bezirksgebäude": {
+        "lat": 47.3739878,
+        "lng": 8.5258741
+    },
+    "Kalkbreite/Bhf. Wiedikon": {
+        "lat": 47.3744949,
+        "lng": 8.5212348
+    },
+    "Lochergut": {
+        "lat": 47.3753859,
+        "lng": 8.5177286
+    },
+    "Zypressenstrasse": {
+        "lat": 47.3766124,
+        "lng": 8.5140793
+    },
+    "Albisriederplatz": {
+        "lat": 47.378122,
+        "lng": 8.5105138
+    },
+    "Letzigrund": {
+        "lat": 47.3811043,
+        "lng": 8.5039155
+    },
+    "Freihofstrasse": {
+        "lat": 47.3830175,
+        "lng": 8.4998794
+    },
+    "Kappeli": {
+        "lat": 47.3850905,
+        "lng": 8.4950678
+    },
+    "Grimselstrasse": {
+        "lat": 47.3869119,
+        "lng": 8.4902776
+    },
+    "Lindenplatz": {
+        "lat": 47.3877944,
+        "lng": 8.4863575
+    },
+    "Hubertus": {
+        "lat": 47.3773899,
+        "lng": 8.4992176
+    },
+    "Altes Krematorium": {
+        "lat": 47.3776834,
+        "lng": 8.5071322
+    },
+    "Haldenbach": {
+        "lat": 47.3803664,
+        "lng": 8.5481658
+    },
+    "Winkelriedstrasse": {
+        "lat": 47.3828992,
+        "lng": 8.5481244
+    },
+    "Seilbahn Rigiblick": {
+        "lat": 47.385661,
+        "lng": 8.5484346
+    },
+    "Kantonsschule": {
+        "lat": 47.3725054,
+        "lng": 8.5505276
+    },
+    "Platte": {
+        "lat": 47.3749165,
+        "lng": 8.5524717
+    },
+    "Kunsthaus": {
+        "lat": 47.370202,
+        "lng": 8.5488938
+    },
+    "Neumarkt": {
+        "lat": 47.3726613,
+        "lng": 8.5474461
+    },
+    "Voltastrasse": {
+        "lat": 47.3769394,
+        "lng": 8.5542227
+    },
+    "Toblerplatz": {
+        "lat": 47.37917,
+        "lng": 8.5594929
+    },
+    "Ottikerstrasse": {
+        "lat": 47.385345,
+        "lng": 8.5424563
+    },
+    "Beckenhof": {
+        "lat": 47.3842422,
+        "lng": 8.5401933
+    },
+    "Kronenstrasse": {
+        "lat": 47.3880878,
+        "lng": 8.5392553
+    },
+    "Schaffhauserplatz": {
+        "lat": 47.3915543,
+        "lng": 8.5388373
+    },
+    "Berninaplatz": {
+        "lat": 47.4036566,
+        "lng": 8.5479237
+    },
+    "Salersteig": {
+        "lat": 47.4061111,
+        "lng": 8.548375
+    },
+    "Sternen Oerlikon": {
+        "lat": 47.4102303,
+        "lng": 8.5465837
+    },
+    "Bahnhof Oerlikon Ost": {
+        "lat": 47.4132667,
+        "lng": 8.545976
+    },
+    "Felsenrainstrasse": {
+        "lat": 47.416652,
+        "lng": 8.5452795
+    },
+    "Seebacherplatz": {
+        "lat": 47.4197877,
+        "lng": 8.5482173
+    },
+    "Bad Allenmoos": {
+        "lat": 47.4059744,
+        "lng": 8.537666
+    },
+    "Regensbergbrücke": {
+        "lat": 47.4085161,
+        "lng": 8.5390911
+    },
+    "Laubiweg": {
+        "lat": 47.3951129,
+        "lng": 8.5361848
+    },
+    "Waidfussweg": {
+        "lat": 47.3952183,
+        "lng": 8.5192698
+    },
+    "Eschergutweg": {
+        "lat": 47.3963081,
+        "lng": 8.5136591
+    },
+    "Schwert": {
+        "lat": 47.3996295,
+        "lng": 8.5049852
+    },
+    "Meierhofplatz": {
+        "lat": 47.4016769,
+        "lng": 8.5004317
+    },
+    "Zwielplatz": {
+        "lat": 47.4021624,
+        "lng": 8.4967412
+    },
+    "Wartau": {
+        "lat": 47.4026689,
+        "lng": 8.4920976
+    },
+    "Winzerstrasse": {
+        "lat": 47.4038044,
+        "lng": 8.4861593
+    },
+    "Frankental": {
+        "lat": 47.4056055,
+        "lng": 8.4814503
+    },
+    "Oerlikerhus": {
+        "lat": 47.4175193,
+        "lng": 8.553765
+    },
+    "Roswiesen": {
+        "lat": 47.4030508,
+        "lng": 8.5769141
+    },
+    "Helmhaus": {
+        "lat": 47.3695531,
+        "lng": 8.5434848
+    },
+    "Rathaus": {
+        "lat": 47.3718795,
+        "lng": 8.5428009
+    },
+    "Kantonalbank": {
+        "lat": 47.3680123,
+        "lng": 8.5398956
+    },
+    "Wildbachstrasse": {
+        "lat": 47.353044,
+        "lng": 8.558956
+    },
+    "Fröhlichstrasse": {
+        "lat": 47.3550952,
+        "lng": 8.5570028
+    },
+    "Höschgasse": {
+        "lat": 47.3578785,
+        "lng": 8.5543468
+    },
+    "Kreuzstrasse": {
+        "lat": 47.3633416,
+        "lng": 8.5495694
+    },
+    "Opernhaus": {
+        "lat": 47.3652918,
+        "lng": 8.5477614
+    },
+    "Feldeggstrasse": {
+        "lat": 47.3602646,
+        "lng": 8.5522997
+    },
+    "Kreuzplatz": {
+        "lat": 47.3650888,
+        "lng": 8.5535704
+    },
+    "Römerhof": {
+        "lat": 47.3677195,
+        "lng": 8.5603056
+    },
+    "Hottingerplatz": {
+        "lat": 47.3692817,
+        "lng": 8.5552474
+    },
+    "Hegibachplatz": {
+        "lat": 47.3618445,
+        "lng": 8.5605582
+    },
+    "Signaustrasse": {
+        "lat": 47.3630368,
+        "lng": 8.5578433
+    },
+    "Friedhof Enzenbühl": {
+        "lat": 47.3509901,
+        "lng": 8.5807219
+    },
+    "Balgrist": {
+        "lat": 47.3544024,
+        "lng": 8.5751281
+    },
+    "Burgwies": {
+        "lat": 47.3579243,
+        "lng": 8.5719226
+    },
+    "Wetlistrasse": {
+        "lat": 47.3600721,
+        "lng": 8.5685987
+    },
+    "Hedwigsteig": {
+        "lat": 47.3603884,
+        "lng": 8.5647733
+    },
+    "Rentenanstalt": {
+        "lat": 47.3634429,
+        "lng": 8.5345055
+    },
+    "Stockerstrasse": {
+        "lat": 47.3677169,
+        "lng": 8.5349452
+    },
+    "Bahnhof Enge": {
+        "lat": 47.364003,
+        "lng": 8.5318726
+    },
+    "Bahnhof Selnau": {
+        "lat": 47.3706721,
+        "lng": 8.5318751
+    },
+    "Helvetiaplatz": {
+        "lat": 47.3760541,
+        "lng": 8.5262603
+    },
+    "Güterbahnhof": {
+        "lat": 47.3804839,
+        "lng": 8.5195269
+    },
+    "Saalsporthalle": {
+        "lat": 47.3576761,
+        "lng": 8.5207615
+    },
+    "Laubegg": {
+        "lat": 47.3585989,
+        "lng": 8.5177443
+    },
+    "Sihlcity Nord": {
+        "lat": 47.3599207,
+        "lng": 8.5228083
+    },
+    "Waffenplatzstrasse": {
+        "lat": 47.3609577,
+        "lng": 8.5249083
+    },
+    "Wollishoferplatz": {
+        "lat": 47.338327,
+        "lng": 8.530745
+    },
+    "Morgental": {
+        "lat": 47.343447,
+        "lng": 8.5302743
+    },
+    "Renggerstrasse": {
+        "lat": 47.3448369,
+        "lng": 8.5333574
+    },
+    "Brunaustrasse": {
+        "lat": 47.3562485,
+        "lng": 8.5322369
+    },
+    "Hölderlinstrasse": {
+        "lat": 47.3660059,
+        "lng": 8.562523
+    },
+    "Alte Trotte": {
+        "lat": 47.3977208,
+        "lng": 8.5074376
+    },
+    "Kesslerplatz": {
+        "lat": 47.39652,
+        "lng": 8.4385753
+    },
+    "Albisgütli": {
+        "lat": 47.3519636,
+        "lng": 8.507401
+    },
+    "Brunnenhof": {
+        "lat": 47.4019653,
+        "lng": 8.5349257
+    },
+    "Bäckeranlage": {
+        "lat": 47.3783659,
+        "lng": 8.5229483
+    },
+    "Englischviertelstrasse": {
+        "lat": 47.3664623,
+        "lng": 8.5576177
+    },
+    "Sonneggstrasse": {
+        "lat": 47.3827675,
+        "lng": 8.5434967
+    },
+    "Röslistrasse": {
+        "lat": 47.3885354,
+        "lng": 8.540512
+    },
+    "Bahnhof Oerlikon": {
+        "lat": 47.4115273,
+        "lng": 8.5450177
+    },
+    "Fernsehstudio": {
+        "lat": 47.4181243,
+        "lng": 8.5618692
+    },
+    "Schaufelbergerstrasse": {
+        "lat": 47.3689288,
+        "lng": 8.5022385
+    },
+    "Heuried": {
+        "lat": 47.3694662,
+        "lng": 8.5067296
+    },
+    "Talwiesenstrasse": {
+        "lat": 47.3698366,
+        "lng": 8.5097989
+    },
+    "Goldbrunnenplatz": {
+        "lat": 47.3702765,
+        "lng": 8.513625
+    },
+    "Schmiede Wiedikon": {
+        "lat": 47.369923,
+        "lng": 8.519793
+    },
+    "Bahnhofplatz/HB": {
+        "lat": 47.3773114,
+        "lng": 8.5391199
+    },
+    "Siemens": {
+        "lat": 47.3782729,
+        "lng": 8.4935641
+    },
+    "Fellenbergstrasse": {
+        "lat": 47.37578,
+        "lng": 8.4882539
+    },
+    "Bachmattstrasse": {
+        "lat": 47.3892172,
+        "lng": 8.4826492
+    },
+    "Bändliweg": {
+        "lat": 47.3962865,
+        "lng": 8.4852278
+    },
+    "Tunnelstrasse": {
+        "lat": 47.3664566,
+        "lng": 8.5329684
+    },
+    "Bahnhof Enge/Bederstrasse": {
+        "lat": 47.3645298,
+        "lng": 8.5302408
+    },
+    "Uetlihof": {
+        "lat": 47.3568944,
+        "lng": 8.51409
+    },
+    "Strassenverkehrsamt": {
+        "lat": 47.3531019,
+        "lng": 8.5110749
+    },
+    "Zürichbergstrasse": {
+        "lat": 47.3786796,
+        "lng": 8.5644809
+    },
+    "Susenbergstrasse": {
+        "lat": 47.3784992,
+        "lng": 8.5679655
+    },
+    "Museum Rietberg": {
+        "lat": 47.3608824,
+        "lng": 8.5315824
+    },
+    "Billoweg": {
+        "lat": 47.3514847,
+        "lng": 8.5319462
+    },
+    "Bahnhof Wollishofen/Staubstrasse": {
+        "lat": 47.3468565,
+        "lng": 8.5329137
+    },
+    "Butzenstrasse": {
+        "lat": 47.34075,
+        "lng": 8.5302019
+    },
+    "Probstei": {
+        "lat": 47.400213,
+        "lng": 8.586561
+    },
+    "Triemli": {
+        "lat": 47.3678023,
+        "lng": 8.4953582
+    },
+    "Bahnhof Hardbrücke": {
+        "lat": 47.3849207,
+        "lng": 8.5167221
+    },
+    "Micafil": {
+        "lat": 47.3931184,
+        "lng": 8.4743104
+    },
+    "Gasometerbrücke": {
+        "lat": 47.3976206,
+        "lng": 8.4604721
+    },
+    "Wagonsfabrik": {
+        "lat": 47.3985395,
+        "lng": 8.4539478
+    },
+    "Schlieren Zentrum/Bahnhof": {
+        "lat": 47.3979139,
+        "lng": 8.4482545
+    },
+    "Geissweid": {
+        "lat": 47.3979312,
+        "lng": 8.4448714
+    },
+    "Farbhof": {
+        "lat": 47.3913504,
+        "lng": 8.4785274
+    },
+    "Urdorf Nord": {
+        "lat": 47.3935153,
+        "lng": 8.4178468
+    },
+    "Spital Limmattal": {
+        "lat": 47.3942375,
+        "lng": 8.428339
+    },
+    "Kantiallee": {
+        "lat": 47.3937999,
+        "lng": 8.4236082
+    },
+    "Bahnhof Altstetten": {
+        "lat": 47.3911078,
+        "lng": 8.4879149
+    },
+    "Seidelhof": {
+        "lat": 47.3919462,
+        "lng": 8.4837101
+    },
+    "Reitmen": {
+        "lat": 47.3971507,
+        "lng": 8.4304407
+    },
+    "Birmensdorferstrasse": {
+        "lat": 47.3979545,
+        "lng": 8.4175444
+    }
+}
