@@ -42,7 +42,7 @@
       {#if index === 0}
         <Button
         isActive={currentComponent === component && isOpen}
-        class="isInverted-{$currentLine.isInverted} btn-btm-menu btn-btm-menu--first"
+        class="isInverted-{$currentLine.isInverted} {$currentLine.number === 7 ? "isSeven" : ""} btn-btm-menu btn-btm-menu--first"
         on:click={() => {
           if (isOpen && currentComponent === component) {
             isOpen = false;
@@ -65,7 +65,7 @@
       {#if index != 0}
       <Button
         isActive={currentComponent === component && isOpen}
-        class="isInverted-{$currentLine.isInverted} btn-btm-menu"
+        class="isInverted-{$currentLine.isInverted} {$currentLine.number === 7 ? "isSeven" : ""} btn-btm-menu"
         on:click={() => {
           if (isOpen && currentComponent === component) {
             isOpen = false;

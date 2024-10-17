@@ -43,6 +43,9 @@
       &.isInverted-false{
         background-color: rgba(0,0,0,0.3);
     }
+      &.isSeven {
+        background-color: #545454;
+      }
   }
 
   .active {
@@ -67,5 +70,8 @@
   .isInverted-true {
     background-color: rgba(0,0,0,0.2);
     color: black;
+  }
+  .isSeven {
+    background-color: #222222;
   }
 </style>
