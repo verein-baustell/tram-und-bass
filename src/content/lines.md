@@ -117,7 +117,7 @@ lines:
       felis eu pede mollis pretium. 
 
 
-      <a class="artist-link href="https://www.instagram.com/tramundbass/">Instagram</a>
+      <a class="artist-link" href="https://www.instagram.com/tramundbass/">Instagram</a>
 
 
       <https://tramundbass.bandcamp.com/>
