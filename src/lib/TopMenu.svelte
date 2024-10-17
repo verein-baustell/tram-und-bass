@@ -19,7 +19,6 @@
   id="top-menu"
   use:clickoutside on:clickoutside={() => {
     console.log("click outside the top menu");
-    // isOpen = false;
   }}
 >
   <nav>

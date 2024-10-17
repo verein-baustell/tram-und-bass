@@ -3,6 +3,9 @@
   export let lines: Line[];
   export let viewable = true;
   export let onClick: (lineClicked: Line) => void;
+  import '../style/style.css'
+  console.log(lines);
+  
 </script>
 <div class="{(viewable ? 'view detailed-view': '')}">
   <ul>
@@ -21,10 +24,5 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
-  }
-
-  #line-list{
-    max-height: calc(100vh - 24em);
-    overflow: scroll;
   }
 </style>

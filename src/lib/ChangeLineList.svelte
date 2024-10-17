@@ -45,22 +45,21 @@
   #change-station-list {
     text-align: left;
   }
-.error-message{
-  text-align: center;
-}
+  .error-message{
+    text-align: center;
+  }
   .currentStation-change-raptor {
     display: flex;
     justify-content: center;
     width: fit-content;
     background-color: black;
-    border: none;
     color: white;
     cursor: pointer;
     padding: var(--padding-ml);
     border-radius: var(--border-radius-button);
-    gap: 0.5em;
     transition: var(--transition);
-    font-weight: 600;
+    gap: 0.5em;
+    margin: 0 0 2px 2px;
 
     &--white {
       background-color: white;
