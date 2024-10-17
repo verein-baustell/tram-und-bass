@@ -4,7 +4,16 @@
 </script>
 
 <div class="view detailed-view">
-    <p>
+    <div class="artist-about-cont">
         <SvelteMarkdown source={$currentLine.artistAboutText} /> 
-    </p>
+    </div>
 </div>
+
+<style lang="scss" scoped>
+    .artist-about-cont {
+        display: flex;
+        flex-flow: column wrap;
+        gap: 0.25rem;
+        padding: 0.25rem;
+    }
+</style>
