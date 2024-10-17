@@ -210,7 +210,7 @@ lines:
     name: Klusplatz
     artistName: aMadeUpName
     videoUrl: https://player.vimeo.com/video/950561793?h=2b51bbc0bb
-    releaseDate: 2024-07-23T17:00:00.000Z
+    releaseDate: 2024-12-24T17:00:00.000Z
     id: ""
     timeStamps:
       - name: Albisrieden
