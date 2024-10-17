@@ -837,7 +837,7 @@ lines:
       - name: Bahnhof Stettbach
         startTime: 43:01
         endTime: 43:14
-    isInverted: false
+    isInverted: true
   - color: "#000000"
     number: 7
     name: Wollishoferplatz
