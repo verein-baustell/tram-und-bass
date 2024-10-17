@@ -107,7 +107,20 @@ lines:
     number: 2
     name: Schlieren
     artistName: "1312"
-    artistAboutText: Hey
+    artistAboutText: >-
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+      ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+      dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
+      nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+      Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
+      enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum
+      felis eu pede mollis pretium. 
+
+
+      <https://www.instagram.com/tramundbass/>
+
+
+      <https://tramundbass.bandcamp.com/>[](https://www.instagram.com/tramundbass/)
     videoUrl: https://player.vimeo.com/video/947761973?h=1c135204fe
     releaseDate: 2024-07-15T14:55:00.000Z
     id: ""
