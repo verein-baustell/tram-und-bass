@@ -1,6 +1,4 @@
 <script>
-    import { BaseNextResponse } from "next/dist/server/base-http";
-
   // Set the date we're counting down to
   var countDownDate = new Date("Nov 15, 2024 20:00:00").getTime();
 
