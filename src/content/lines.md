@@ -4,7 +4,20 @@ lines:
     number: 2
     name: Bahnhof Tiefenbrunnen
     artistName: Viola
-    artistAboutText: About Some Juan Differenté
+    artistAboutText: >-
+      Seit sie in Zürich lebt, arbeitet und/oder wohnt sie entlang der Tramlinie
+      2. In den 90er Jahren fanden in ihrer Wohnung im Seefeld, unweit der
+      Haltestelle «Kreuzstrasse», regelmässig Afterpartys statt. Später zog sie
+      in eine WG beim «Lochergut». Eine ihrer Bürogemeinschaften war am
+      «Albisriederplatz» eine andere bei der Haltestelle «Kalkbreite». Die
+      Produktion für diesen Mix entstand in unmittelbarer Nähe der Haltestelle
+      «Schlieren Zentrum/Bahnhof.
+
+
+      Mit der angenehm schleppenden Langsamkeit des Soundtracks gleiten wir von Halt zu Halt. Der Subbass verbindet sich mit der Reibung der Schienen. Durch die Heckscheibe sehen wir, wie die Stadt rückwärts verschwindet, als ziehe sie sich in eine andere Dimension zurück. Mit jedem vorbeiziehenden Tram wächst das Gefühl, wir bewegten uns nicht nur durch die Stadt, sondern auch durch die Zeit. Vergangenheit, Gegenwart und Zukunft scheinen miteinander verflochten und gleichzeitig zu existieren.
+
+
+      [Instagram](https://www.instagram.com/violazimmermann/)
     videoUrl: https://player.vimeo.com/video/950558411?h=452ef92b18
     releaseDate: 2024-11-15T05:34:00.000Z
     id: ""
