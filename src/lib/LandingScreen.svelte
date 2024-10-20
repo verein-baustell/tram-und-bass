@@ -48,6 +48,11 @@
         Instagram
       </button>
     </div>
+    <div class="abc">
+      <button class="center" type="button" onClick="location.href='https://eventfrog.ch/en/p/party/house-techno/tram-und-bass-release-7253437853551507373.html'" formtarget="_blank">
+        Tickets - Release 15.11.2024 im Dynamo
+      </button>
+    </div>
   </div>
   <div class="newsletter view">
     <p class="center title">Newsletter</p>
@@ -154,6 +159,7 @@
 
   .abc{
     width: 100%;
+    margin-top: 0.2em;
     display: flex;
   }
 
@@ -198,7 +204,6 @@
     margin-left: auto;
     margin-right: auto;
   }
-
   .s-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -253,7 +258,7 @@
     scale: 1.1;
     width: auto;
     height: auto;
-    filter: saturate(1.5) blur(16px);
+    filter: saturate(2) blur(16px) brightness(75%);
   }
 
   .newsletter {
