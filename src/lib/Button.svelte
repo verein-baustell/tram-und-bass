@@ -35,7 +35,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 64px;
+        width: 32px;
       }
     }
   }

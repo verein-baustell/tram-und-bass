@@ -145,6 +145,10 @@
   }
 
   @media only screen and (max-width: 768px) {
+    #bottom-menu {
+      left: 0;
+      right: inherit;
+    }
     nav {
       max-width: calc(100vw - var(--global-padding) - var(--global-padding));
       flex-flow: wrap;

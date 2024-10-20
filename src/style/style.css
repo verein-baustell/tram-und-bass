@@ -29,6 +29,14 @@ ul {
     overflow: scroll;
 }
 
+/* todo: put list behind menu on mobile */
+
+@media only screen and (max-width: 768px) {
+    .view{
+       bottom: 0;
+    }
+}
+
 /* has to be here so the markdown is styled */
 .artist-about-cont a {
     border: thin solid black;
