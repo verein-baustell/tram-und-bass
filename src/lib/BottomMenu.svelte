@@ -1,5 +1,8 @@
 <script lang="ts">
-  import { currentLine } from "../store";
+  import { 
+    currentLine,
+    isMenuClosed
+  } from "../store";
   import LineNumber from "./LineNumber.svelte";
   import ChangeLineList from "./ChangeLineList.svelte";
   import StationList from "./StationList.svelte";
@@ -21,6 +24,8 @@
     currentComponent = menuEntries?.[0]?.component;
   }
   let isOpen = true;
+  console.log($isMenuClosed);
+  
 </script>
 
 <div
@@ -44,6 +49,7 @@
         isActive={currentComponent === component && isOpen}
         class="isInverted-{$currentLine.isInverted} {$currentLine.number === 7 ? "isSeven" : ""} btn-btm-menu btn-btm-menu--first"
         on:click={() => {
+          $isMenuClosed = false;
           if (isOpen && currentComponent === component) {
             isOpen = false;
             return;
@@ -60,6 +66,7 @@
       {/if}
       {/each}
     </div>
+    {#if !$isMenuClosed}
     <div class="btm-menu-section">
       {#each menuEntries as { name, component }, index (name)}
       {#if index != 0}
@@ -83,9 +90,22 @@
       {/if}
       {/each}
       <div class="close-btn">
-        <img class="star isInverted-{$currentLine.isInverted}" src="/images/divider.svg" alt="-"/>
-      </div>
+        <Button
+          class="btn-btm-menu--close"
+          style="background-color: {$currentLine.color}"
+          on:click={() => {
+            $isMenuClosed = true;
+          }}
+        >
+          <img 
+            class="star isInverted-{$currentLine.isInverted}" 
+            src="/images/divider.svg" 
+            alt="-"
+           />
+      </Button>
     </div>
+    </div>
+    {/if}
   </nav>
 </div>
 
@@ -131,10 +151,6 @@
     }
     .close-btn {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 6em;
-      height: 1.75em;
     }
     .isInverted-false {
         filter: invert(1);

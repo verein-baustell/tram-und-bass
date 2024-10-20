@@ -45,9 +45,6 @@
   #change-station-list {
     text-align: left;
   }
-  .error-message{
-    text-align: center;
-  }
   .currentStation-change-raptor {
     display: flex;
     justify-content: center;

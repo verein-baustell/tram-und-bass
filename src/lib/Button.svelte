@@ -29,7 +29,13 @@
     .btn-btm-menu {
       width: 100%;
       &--first {
-        margin: 0.12em 0.12em 0em 0.12em;
+        margin: 0.12em;
+      }
+      &--close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 64px;
       }
     }
   }
@@ -49,7 +55,6 @@
   }
 
   .active {
-    /* TODO: replace the colors with variables */
     background-color: var(--foreground-color);
     color: var(--background-color);
 
