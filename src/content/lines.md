@@ -3,7 +3,7 @@ lines:
   - color: "#de2b2b"
     number: 2
     name: Bahnhof Tiefenbrunnen
-    artistName: Some Juan Differenté
+    artistName: Viola
     artistAboutText: About Some Juan Differenté
     videoUrl: https://player.vimeo.com/video/950558411?h=452ef92b18
     releaseDate: 2024-11-15T05:34:00.000Z
@@ -104,20 +104,23 @@ lines:
         endTime: 43:23
     isInverted: false
   - color: "#de2b2b"
-    number: 2
+    number: 1
     name: Schlieren
-    artistName: "1312"
+    artistName: Nuevo Prohibido
     artistAboutText: >-
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-      ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-      dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
-      nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-      Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
-      enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum
-      felis eu pede mollis pretium. 
+      Nuevo Prohibido is a Mexican-Swiss artist active in the electronic music
+      scene, especially in Berlin, Zurich, and now in CDMX. As a DJ, producer,
+      and co-founder of projects like Meta Rave and Rhizomfestival, they also
+      run labels Lustpoderosa and Philoxenia. Inspired by the 90s-00s rave
+      scene, they blend a multitude of genres mostly with a focus on
+      deconstructed club music. They co-curate Meta Rave in Berlin, fostering a
+      queer, multicultural space promoting emerging artists.
 
 
-      [Instagram](https://www.instagram.com/tramundbass/)
+      This mix is an homage to Zurich's Tram Number 2, which I used almost daily. While compiling it, I felt a deep connection to Zurich, where I lived for more than a decade before moving to Berlin and then back to Mexico. Each track holds an emotional tie to the city and my past. Zurich taught me great musical lessons—there's so much talent in that town. I'm happy I spent time there. Sending love to all the lovely music creatures—have a nice ride.
+
+
+      [Instagram](<https://www.instagram.com/nuevoprohibido/ >)
 
 
       [Bandcamp](https://tramundbass.bandcamp.com/)
