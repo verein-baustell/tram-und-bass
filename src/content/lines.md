@@ -117,7 +117,7 @@ lines:
         endTime: 43:23
     isInverted: false
   - color: "#de2b2b"
-    number: 1
+    number: 2
     name: Schlieren
     artistName: Nuevo Prohibido
     artistAboutText: >-
@@ -238,7 +238,7 @@ lines:
   - color: "#589c44"
     number: 3
     name: Klusplatz
-    artistName: aMadeUpName
+    artistName: VERYCOZI
     videoUrl: https://player.vimeo.com/video/950561793?h=2b51bbc0bb
     releaseDate: 2024-12-24T17:00:00.000Z
     id: ""
@@ -310,7 +310,7 @@ lines:
   - color: "#589c44"
     number: 3
     name: Albisrieden
-    artistName: Calm Mothers
+    artistName: Dari Ferrari
     videoUrl: https://player.vimeo.com/video/950560428?h=f9744206bd
     releaseDate: 2024-07-15T15:02:00.000Z
     id: ""
@@ -382,7 +382,20 @@ lines:
   - color: "#473d8c"
     number: 4
     name: Bahnhof Altstetten Nord
-    artistName: Filou
+    artistName: HAUSVRAU
+    artistAboutText: >-
+      HAUSVRAU and her artistic practice are in constant mutation, composing,
+      decomposing and recomposing itself. As she has been around many cultural
+      and physical spaces throughout her life and career, elements from all
+      those lives she lived (and lives now) come to the forefront whenever a
+      work is produced. HAUSVRAU composes her own universe through music that
+      pushes her and others to move and transform.
+
+
+      I heard of Tiefenbrunnen’s fame as the golden coast and how the area was previously a working-class neighborhood. We then pass the classic Opernhaus before heading into the heart of Zürich, Niederdorf and arriving at HB, going from busy city sounds to train sounds. From there on, the line passes by many places where ballroom people gather, road accesses to highways and then the clubs of Hardbrücke. We get artsy at Toni Areal and then industrial as we head to the final stop, Altstetten.
+
+
+      [Instagram](https://www.instagram.com/saint.hausvrau/)
     videoUrl: https://player.vimeo.com/video/950563061?h=9bf1b84be2
     releaseDate: 2024-07-15T15:09:00.000Z
     id: ""
@@ -469,7 +482,8 @@ lines:
   - color: "#473d8c"
     number: 4
     name: Bahnhof Tiefenbrunnen
-    artistName: Baustell
+    artistName: Silver Tears
+    artistAboutText: "[Instagram](https://www.instagram.com/newkyddd3/)"
     videoUrl: https://player.vimeo.com/video/950564216?h=895d1fb002
     releaseDate: 2024-07-15T15:09:00.000Z
     id: ""
@@ -556,7 +570,21 @@ lines:
   - color: "#865a2d"
     number: 5
     name: Laubegg
-    artistName: Andi Amo
+    artistName: atrice
+    artistAboutText: >-
+      The two sound artists behind Atrice draw inspiration from everyday
+      encounters and digital overstimulation. Their work is influenced by
+      acousmatic and electroacoustic music while following an intuitive
+      approach. With degrees in composition, music theory and sound art, they
+      manipulate multiple sound sources through digital sound design to create
+      tactile, sculptural sounds. Their output features varying sonic textures,
+      acoustic gestures and organic transitions through suspended states.
+
+
+      We don't actually have any connection to tram line 5, we usually walk or cycle and at most, if the bike doesn't work, we take the tram. It's not particularly close to home or the studio, so it's only our emergency solution when all else fails. But what we don't understand is why tram 5 is so often not wheelchair-friendly?
+
+
+      [Instagram](https://www.instagram.com/atrice____/)
     videoUrl: https://player.vimeo.com/video/950565372?h=3c31783cab
     releaseDate: 2024-07-16T10:50:00.000Z
     id: ""
@@ -607,7 +635,21 @@ lines:
   - color: "#865a2d"
     number: 5
     name: Kirche Fluntern
-    artistName: Glenn
+    artistName: Lino & N0N
+    artistAboutText: >-
+      Lino & N0N are part of the collective regula. They do music in the
+      forests, in the city, rarely on the countryside and most often in their
+      studio. Searching for the beauty inbetween, collective dreaming for the
+      rare & the common.
+
+
+      Riding trams is strangely communal, although no one knows each other and almost no one speaks. The sounds come from the vehicle itself, a cough, tickets checks, passing cars. the soundscapes is known and yet always different. The line 5 sounds superficially like all the others but the rhythm of the tracks, the sequence of announcements only sound exactly like those of tram 5. If we take it exactly, even every single ride on tram 5 sounds different. But only if we listen. 
+
+
+      [Instagram Lino](https://www.instagram.com/linoasper/?hl=en)
+
+
+      [Instagram Regula](https://www.instagram.com/regula.rec/)
     videoUrl: https://player.vimeo.com/video/947764688?h=181299d19c
     releaseDate: 2024-07-16T11:48:00.000Z
     id: ""
@@ -658,7 +700,21 @@ lines:
   - color: "#cc9f4c"
     number: 6
     name: Zoo
-    artistName: Simba
+    artistName: molekühl
+    artistAboutText: >-
+      molekühl is a Zurich-based vinyl-DJ and musician. She plays a broad
+      variety of genres; her club sets mainly include late 90s techno and
+      trance, but ambient, experimental, halftime and broken beats are also part
+      of her spectrum. Her own music ranges from analogue synth trips to film
+      and dance scores to various collaborations and live improvisations. In her
+      backpack, molekühl carries her experiences as a musicologist, piano player
+      and soundscape composer.
+
+
+      Entstanden ist eine sehr persönliche Collage aus neuen und alten Eigenkompositionen, Field Recordings und einer Echtzeitaufnahme der Tramfahrt. Die „Realität“ (Tram Sounds) vermischt sich mit der auditiven Interpretation meiner eigenen Wahrnehmung der Fahrt, aber auch mit Erinnerungen und Imagination. Zudem sind gewisse Tracks mit bestimmten Orten verbunden und stehen für Stationen in meiner musikalischen Biografie (Konzert Kirche Enge, Soundscape-Kompositionsarbeit Bahnhofstrasse, Studium UZH).
+
+
+      [Instagram](https://www.instagram.com/_molekuehl/)
     videoUrl: https://player.vimeo.com/video/950566927?h=92df0178c5
     releaseDate: 2024-07-16T11:48:00.000Z
     id: ""
@@ -715,7 +771,19 @@ lines:
   - color: "#cc9f4c"
     number: 6
     name: Bahnhof Enge
-    artistName: Dolce Vita
+    artistName: SOFT DATE
+    artistAboutText: >-
+      Soft Date consists of Chahida Rezgueni and Angelo Repetto. In their music,
+      they explore emotions and moods that are transformed into unique spheres
+      of sound. It reflects their perception of life - a reality that is often
+      difficult to put into words. Through the symbiosis of their personalities,
+      they open up hypnotic, liberating worlds of sound full of groove.
+
+
+      Beginning at the zoo, a metaphor for captivity&oppression, reflecting on slavery&the struggle for freedom. Moving to the University of Zurich, we explore knowledge &power, highlighting barriers to access. To Central into Bahnhofstrasse, we confront fast fashion&worker exploitation, raising awareness about the human cost of consumerism. Finally, we invite listeners to relax, find a meditative state amid the absurdity of our fast-paced world. The journey pressing societal issues.
+
+
+      [Instagram](https://www.instagram.com/softdate_music/)
     videoUrl: https://player.vimeo.com/video/950566054?h=9f68eea5d2
     releaseDate: 2024-07-16T11:48:00.000Z
     id: ""
@@ -773,6 +841,20 @@ lines:
     number: 7
     name: Bahnhof Stettbach
     artistName: DJ Mozarella
+    artistAboutText: >-
+      DJ Mozzarella tanzt, bzw. rollt aus der Reihe. Er mischt wild verschiedene
+      Genres und spielt mit dem Dancefloor-Leerungs-Risiko. Aufgewachsen ist er
+      in der Zirkuswelt, doch stellt er seinen Rollschuh gerne in verschiedene
+      Türen und bringt sich für eine offene und lebendige Kulturszene ein.
+      Glücklicherweise trifft er dabei immer wieder die richtigen Leute, zuletzt
+      als er Menschen von RTFM von der „Tram und Bass“ Idee erzählte. Der Verein
+      Baustell war schnell zur Stell, und das Projekt kam in Fahrt.
+
+
+      Kern des Sets sind Songs, die mich lange begleiten und wichtige Gefühle oder Botschaften transportieren, oft in Mundart. Immer wieder platziere ich Referenzen, z. B. in Wollishofen, wo ich meine Jugend verbrachte. Ab der Bahnhofstrasse scheint die Message im Konsumüberfluss verloren zu gehen. Doch auch auditive Banalität spricht für sich. Ich bin nicht unbetroffen von übermässigem TikTok-Konsum und einer Vorliebe für Trashups. Ich hoffe, mein Set macht Mut und Spaß!
+
+
+      [Instagram](https://www.instagram.com/zirkuslino?igsh=MWgzcXVxY2llZGQ1aQ==)
     videoUrl: https://player.vimeo.com/video/950567543?h=8e4eb0457c
     releaseDate: 2024-10-10T19:21:00.000Z
     id: ""
@@ -872,6 +954,7 @@ lines:
     number: 7
     name: Wollishoferplatz
     artistName: DJ Tatana
+    artistAboutText: "[Instagram](https://www.instagram.com/djtatana/)"
     videoUrl: https://player.vimeo.com/video/950568271?h=72f40f9183
     releaseDate: 2024-07-16T11:58:00.000Z
     id: ""
@@ -982,6 +1065,9 @@ lines:
 
 
       Tram line 8 in Zurich has a close connection to Langstrasse, a vibrant and diverse neighborhood. The tram line runs through Langstrasse, which is known for its lively cultural scene and nightlife. Since the roots of the music scene in Langstrasse were mainly influenced by techno and house genres, I have incorporated mostly house elements into my set.
+
+
+      [Instagram](https://www.instagram.com/exguesich/)
     videoUrl: https://player.vimeo.com/video/950568957?h=0962988f6e
     releaseDate: 2024-07-10T16:19:00.000Z
     id: ""
@@ -1073,10 +1159,10 @@ lines:
       IOKOI, releasing electronic and experimental music.
 
 
-      –
-
-
       I first approached my mix for the tram line 8, which runs past my house, by making a field recording on a Sunday night. With this recording as a basis, it became clear in which tempo the music should be, and which moods should be present in the mix. The tracks were layered on top of each other in several rounds, adding detail, density, and chaos step by step. Melodic fragments echo both the architecture of the city, as well as the characteristics of the places seen through the rear window.
+
+
+      Instagram
     videoUrl: https://player.vimeo.com/video/950570324?h=ddbc1bdffa
     releaseDate: 2024-07-16T11:58:00.000Z
     id: ""
@@ -1157,7 +1243,13 @@ lines:
   - color: "#473d8c"
     number: 9
     name: Triemli
-    artistName: Invalid Question
+    artistName: FLËX
+    artistAboutText: >-
+      [Instagram
+      @lebeamlimmat](https://www.instagram.com/lebeamlimmat?igsh=dnY0MnByZzl2MnRj)
+
+
+      [Instagram @baer_ae](https://www.instagram.com/lebeamlimmat?igsh=dnY0MnByZzl2MnRj)
     videoUrl: https://player.vimeo.com/video/950573466?h=7fb8f08ec8
     releaseDate: 2024-07-16T11:58:00.000Z
     id: ""
@@ -1265,50 +1357,88 @@ lines:
         startTime: 46:48
         endTime: 47:26
     isInverted: false
-  - id: ""
-    releaseDate: 2024-07-16T11:58:00.000Z
+  - color: "#473d8c"
     number: 9
     name: Hirzenbach
-    artistName: wie lang kann ein disc-jockey name denn sein?!
-    color: "#473d8c"
+    artistName: Isi!
+    artistAboutText: "[Instagram](https://www.instagram.com/isi_si/)"
     videoUrl: https://player.vimeo.com/video/950571962?h=b4953715b2
-    isInverted: false
-  - id: ""
     releaseDate: 2024-07-16T11:58:00.000Z
-    number: 10
+    id: ""
     isInverted: false
-    artistName: Flugscham
-    name: Fracht
-    color: "#c83086"
+  - color: "#c83086"
+    number: 10
+    name: Flughafen
+    artistName: TVBXS
+    artistAboutText: "[Instagram](https://www.instagram.com/tvbxs_/)"
     videoUrl: https://player.vimeo.com/video/950672105?h=0f80c5bf39
-  - id: ""
     releaseDate: 2024-07-16T11:58:00.000Z
-    name: Bahnhofplatz HB
-    number: 10
+    id: ""
     isInverted: false
-    artistName: Zugstolz
-    color: "#c83086"
+  - color: "#c83086"
+    number: 10
+    name: Bahnhofplatz HB
+    artistName: Xhenisa
+    artistAboutText: >-
+      Xhenisa (24) hört in ihrer Freizeit gerne Musik und bleibt lange wach.
+
+
+      Ich sitze im Tram und schaue aus dem Fenster. Ich habe das Gefühl, als würde etwas fehlen, das ich nie hatte. Ich möchte noch nicht loslassen. Vor kurzem bin ich am Zürich Flughafen angekommen. Ich war am Prishtina Queer Festival in Kosovo. Ich denke an die Menschen, an die Community. Es erfüllt mich, an sie zu denken. Gleichzeitig trage ich so viel Trauer und Wut in mir. Albanische Volksmusik zu mischen bedeutet für mich, etwas zu vermissen, das ich nie hatte und es zu meinem Eigenen zu machen.
+
+
+      [Instagram](https://www.instagram.com/xhenisademiri/)
     videoUrl: https://player.vimeo.com/video/950661521?h=164e96d180
-  - id: ""
     releaseDate: 2024-07-16T11:58:00.000Z
+    id: ""
+    isInverted: false
+  - color: "#589c44"
     number: 11
     name: Rehalp
-    artistName: Bambi
-    color: "#589c44"
+    artistName: Dschinn
+    artistAboutText: >-
+      Dschinns musical journey started in 2016 when he started producing tracks
+      on his computer. Since then his music amassed over 400k on Soundcloud. In
+      order to share trance music with more people, he decided to pick up DJing
+      as well and has since performed in clubs such as Exil, ZW, Elysia and Max
+      to name a few. Specializing in spinning Hardtrance, he's able to
+      seamlessly blend his own productions with those from his peers creating a
+      lively and energetic blend that forces people to go loco.
+
+
+      Growing up in Zürich i often visited my family in Auzelg with the Tram 11. For a brief period of time i lived in Auzelg an had to commute to wollishofen with the Tram 11 to go to School. Nowadays i live in the area where i sometimes need to use the Tram 11 to get home. I have moved there exactly one year ago.
+
+
+      [Instagram](https://www.instagram.com/dschinniii/)
     videoUrl: https://player.vimeo.com/video/950688315?h=444abd1672
-    isInverted: false
-  - id: ""
     releaseDate: 2024-07-16T11:58:00.000Z
-    name: Auzelg
+    id: ""
+    isInverted: false
+  - color: "#589c44"
     number: 11
+    name: Auzelg
+    artistName: Nive
+    artistAboutText: >-
+      As a DJ and driving force behind many projects in Zurich, Nive has
+      repeatedly showcased her distinct sense of contemporary club and music
+      culture. Drawing on her Tamil background and former training in Carnatic
+      music, Nive weaves a unique soundscape in her sets, moving effortlessly
+      between different influences and tempi. Currently she is active at the
+      record label Subject to Restrictions Discs and has co-founded Sooriyan, a
+      platform celebrating South Asian creativity within the music scene.
+
+
+      Tram line 11 has been a constant companion throughout my life. Growing up in Kreis 8 and later living in Kreis 6 during my studies, this tram line was my gateway to everything—school, university, work, friends, and home. I’ve poured the essence of home into this mix, blending nostalgic tunes with a few club tracks that reflect my exploration of the nightlife while growing up in the city of Zurich.
+
+
+      [Instagram](https://www.instagram.com/nevesthika/)
     videoUrl: https://player.vimeo.com/video/950679463?h=03df9a86bb
-    color: "#589c44"
-    artistName: AU
+    releaseDate: 2024-07-16T11:58:00.000Z
+    id: ""
     isInverted: false
   - color: "#a1cfe3"
     number: 12
-    name: Fracht
-    artistName: Ei Wuche Maledive
+    name: Flughafen
+    artistName: Endstation Altes Krematorium
     videoUrl: https://player.vimeo.com/video/950697436?h=67800866e7
     releaseDate: 2024-07-16T11:59:00.000Z
     id: ""
@@ -1371,7 +1501,15 @@ lines:
   - color: "#a1cfe3"
     number: 12
     name: Bahnhof Stettbach
-    artistName: XYZ
+    artistName: Endobliss
+    artistAboutText: >-
+      The name "Endobliss" describes the isolation that can accompany euphoria.
+      By means of intuitive sample archiving, references to formulaic pop and
+      the vulnerability of live performance, Endobliss approaches questions of
+      musical translation and polyvocal storytelling.
+
+
+      There's a chaotic ride waiting inside the bubble of these headphones. One that clashes with Zurich's unbreakable drive for law and order, its neat separation of green grass and gray concrete and its business administration type urban planning. Join me on the overstimulating side and listen, as familiar becomes stranger around you. But most importantly, never make eye contact!!
     videoUrl: https://player.vimeo.com/video/950700571?h=cc9bd2b94d
     releaseDate: 2024-07-16T11:59:00.000Z
     id: ""
@@ -1434,52 +1572,106 @@ lines:
   - color: "#f4d332"
     number: 13
     name: Albisgütli
-    artistName: Fabini
-    artistAboutText: Fabian Frey is an artist, designer and researcher. Fabi works
-      at the intersections of nature, democracy, socioculture and speculative
-      future. In doing so, his search leads him along forms of activation of the
-      more-than-.
+    artistName: Cevincia
+    artistAboutText: >-
+      Am liebsten mag ich, wenn zwischen verschiedene Musik und
+      unterschiedlichen Menschen eine musikalische Reise in ihrer Vielfalt
+      zusammen geführt werden kann.
+
+
+      Die Strecke der Tram Nr. 13 fährt durch Zürich’s, unterschiedlichste Stadtteile und verbindet das urbane mit der Natur. Vom Üetliberg bis hin zur Bahnhofstrasse, entlang der Limmat bis fast nach Oberengstringen, schlendert das Tram durch das städtische Geschehen. Das Musikgenre Jungle widerspiegelt den schnelllebigen Zeitgeist vieler Städte damals wie heute. Die tiefen und dubbigen Reggae Bässe erinnern, an das Zürich der 90er Jahre.
+
+
+      [Instagram](https://www.instagram.com/cevimara/)[](https://www.instagram.com/cevimara/)
     videoUrl: https://player.vimeo.com/video/950707919?h=af30ff979c
     releaseDate: 2024-07-10T16:16:00.000Z
     id: ""
     isInverted: true
-  - id: ""
-    releaseDate: 2024-07-15T14:54:00.000Z
-    videoUrl: https://player.vimeo.com/video/950719687?h=29fa4163a3
-    artistName: DJ BOBO
-    isInverted: true
+  - color: "#f4d332"
     number: 13
     name: Frankental
-    color: "#f4d332"
-  - id: ""
-    releaseDate: 2024-07-16T11:59:00.000Z
+    artistName: maelique
+    artistAboutText: >-
+      Mit 2003 als Jahrgang gehört maelique wohl zur jüngsten Generation der
+      elektronischen Musikszene Zürichs. Als es ihn mit 15 an eine Outdoor
+      verschlug, kam er auf den Geschmack der Musik und war bis zum club-fähigen
+      Alter v.a. an illegalen Raves unterwegs. Aus dem eigenen Freundeskreis
+      wurde ein Party-Kollektiv und plötzlich wurde selber aufgelegt. Inspiriert
+      von lokalen DJs, hat er seine Reise soeben erst angetreten – und dabei
+      eine Vorliebe für houseige Beats und tranceige Basslines entwickelt.
+
+
+      Die Linie 13 war eines der ersten Trams die maelique als Kind regelmässig fuhr. Von der Haltestelle Waidfussweg in Wipkingen sind es noch 200 Meter den Berg hoch bis zu seinem Elternhaus. Als er noch Handball spielte pendelte er wöchentlich mit der 13 direkt bis zur Saalsporthalle. Der Klassiker war natürlich das Tram schon um die Ecke zu hören und für die letzten Meter einen Sprint hinzulegen. Somit ist die Linie 13 für ihn ein Herzstück dieser Stadt – nämlich die Tramlinie seines Vertrauens.
+
+
+      [Instagram](https://www.instagram.com/maeliquito/)
+    videoUrl: https://player.vimeo.com/video/950719687?h=29fa4163a3
+    releaseDate: 2024-07-15T14:54:00.000Z
+    id: ""
+    isInverted: true
+  - color: "#599de0"
     number: 14
-    color: "#599de0"
     name: Triemli
-    artistName: Dj Get Well Soon
+    artistName: Alex Dallas
+    artistAboutText: "[Instagram](https://www.instagram.com/alex.dallas_/)"
     videoUrl: https://player.vimeo.com/video/950742749?h=57745ef270
-    isInverted: false
-  - id: ""
     releaseDate: 2024-07-16T11:59:00.000Z
+    id: ""
+    isInverted: false
+  - color: "#599de0"
     number: 14
-    color: "#599de0"
-    isInverted: false
-    artistName: Cumulonimbus
     name: Seebach
+    artistName: ju dallas
+    artistAboutText: >-
+      Ju Dallas dishes out carefully compiled blends of rhythmic shakers and
+      soulful rarities. Centered around a storytelling approach, her deeply
+      emotional understanding of what can work on a dance floor has amazed many
+      crowds. The young queer artist constantly finding new excursions from her
+      steady lane of uk and latin bass music. In 2024 she not only played an
+      asia tour with gigs in beijing, shanghai and taipei, but is now based in
+      in BCN, starting a new chapter by immersing herself in music fully
+
+
+      Ny dear 14: from taking me "into the city" for the first times shopping without parents, to bringing me home from smoking with the cool kids in wiedikon, while hoping my mom would be asleep already so she didn't comment on those tiny eyes, over to driving me to work for three years with the children in Seebach, I experienced so many moments with, in and waiting for you. Thank you for being part of my züri 14! (but dear ZVV plese be kind, lower ur prices & make ÖV accessible for everyone!)
+
+
+      [Instagram](https://www.instagram.com/judallasju/)
     videoUrl: https://player.vimeo.com/video/950721895?h=02c06df905
-  - id: ""
     releaseDate: 2024-07-16T11:59:00.000Z
+    id: ""
+    isInverted: false
+  - color: "#de2b2b"
     number: 15
-    color: "#de2b2b"
     name: Bucheggplatz
     artistName: Wummertal
+    artistAboutText: >-
+      Wummertal ist ein Zürcher Live Act der elektronischen Musik. Das Duo
+      MadMaxim und Mark Fontane spielen auf einem Hybrid-Setup, bestehend aus
+      analogen Synthesizern und einem digitalen Interface. Alle Kompositionen
+      sind selbst gemacht. Diese Kombination von analog und digital ermöglicht
+      es, die musikalischen und technischen Möglichkeiten beider Welten voll
+      auszuschöpfen. Wummertal schafft damit einen einmaligen Klangcharakter,
+      der sowohl im Tonstudio als auch auf der Tanzfläche überzeugt.
+
+
+      Die Zürcher Tram Linie 15 mag kurz sein, passiert aber einige der wichtigsten Knotenpunkte für den Verkehr. So gibt es immer etwas zu bestaunen, wie zum Beispiel in diesem Video der Moment, in dem ein ETH-Link Bus, der eine Panne hatte, abgeschleppt wird. Aufgrund der Kürze der Strecke und dem vielen Geschehen um das Tram herum hat Wummertal zwei besonders energiereiche Songs aus ihrem Live Set ausgewählt. Die Aufnahme wurde live eingespielt, währenddem das Video eingeblendet wurde.
+
+
+      [Instagram](https://www.instagram.com/wummertal/)
     videoUrl: https://player.vimeo.com/video/950805249?h=1f4d17577f
+    releaseDate: 2024-07-16T11:59:00.000Z
+    id: ""
     isInverted: false
   - color: "#de2b2b"
     number: 15
     name: Stadelhofen
-    artistName: Some Juan Èlse
-    artistAboutText: About Some Juan Èlse
+    artistName: E.S.P.
+    artistAboutText: >-
+      [Instagram
+      @web_web_web_666](https://www.instagram.com/web_web_web_666?igsh=ajU3NzN5bjJuZXYy)
+
+
+      [Instagram @nicola_kazimir](https://www.instagram.com/nicola_kazimir/)
     videoUrl: https://player.vimeo.com/video/950808090?h=55d4d27811
     releaseDate: 2024-06-02T18:26:00.000Z
     id: ""
@@ -1527,8 +1719,19 @@ lines:
   - color: "#8b2062"
     number: 17
     name: Albisgütli
-    artistName: Some Juan
-    artistAboutText: Some Juan
+    artistName: Jenny Cara
+    artistAboutText: >-
+      Jenny Cara’s sets blend cheerful sounds with dynamic UK influences. Based
+      in Zurich, the Swiss DJ began her journey in Lucerne's club scene, where
+      she later became a booker and manager of Club Zukunft. She co-founded
+      eXchange, promoting access for BIPoC FLINTAs in DJing and music
+      production. Her work emphasizes community, history, joy, and
+      accessibility, while still delivering great House beats. Notable
+      performances include Panorama Bar, DeSchool, Robert Johnson, C12, and Club
+      Zukunft.
+
+
+      [Instagram](https://www.instagram.com/jennycara_/)
     videoUrl: https://player.vimeo.com/video/950809685?h=ee311a9fe0
     releaseDate: 2024-06-02T15:52:00.000Z
     id: ""
@@ -1540,8 +1743,8 @@ lines:
   - color: "#8b2062"
     number: 17
     name: Werdhölzli
-    artistName: Some Juan Élse Entire Lee
-    artistAboutText: About Some Juan Élse Entire Lee
+    artistName: Andreas Ramos
+    artistAboutText: "[Instagram](https://www.instagram.com/andreasramos_sihlrec/)"
     videoUrl: https://player.vimeo.com/video/950812961?h=6d0ba88b36
     releaseDate: 2024-06-02T19:43:00.000Z
     id: ""
