@@ -5,6 +5,7 @@
   export let line: Line;
   const releaseDate = new Date(line.releaseDate);
   const formattedDate = releaseDate.toLocaleDateString('en-GB').replace(/\//g, '.');
+  
 </script>
 
 <li>
