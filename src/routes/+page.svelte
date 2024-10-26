@@ -19,15 +19,19 @@
   import LoadingScreen from "$lib/LoadingScreen.svelte";
   import { attributes as aboutContent } from "../content/about.md";
   import compareStationNames from "../utils/compareStationNames";
-    import { goto } from "$app/navigation";
+  import { goto } from "$app/navigation";
   // console.log(aboutContent)
   let videoWrapperWidth = "100%";
   let videoWrapperHeight = "100%";
+  let videoWidth = 0;
+  let videoHeight = 0;
+  let extraWidth = 0;
   let isDevMode = false;
   let showSplashScreen = true;
-  console.log($devToolsState)
-  const releasedLines = $allLines.filter(line => $devToolsState.showAllUnreleasedLines || line.isReleased)
-  let randomIndex = Math.floor(Math.random() * (releasedLines.length - 1))
+  const releasedLines = $allLines.filter(
+    (line) => $devToolsState.showAllUnreleasedLines || line.isReleased
+  );
+  let randomIndex = Math.floor(Math.random() * (releasedLines.length - 1));
   $currentLine = $allLines[randomIndex];
 
   const today = new Date();
@@ -38,7 +42,7 @@
     const lineIdFromUrl = url.searchParams.get("line");
     if (lineIdFromUrl) {
       const lineFromUrl = $allLines.find((line) =>
-        compareStationNames(line.id, lineIdFromUrl),
+        compareStationNames(line.id, lineIdFromUrl)
       );
       if (lineFromUrl && lineFromUrl.isReleased) {
         $currentLine = lineFromUrl;
@@ -73,14 +77,37 @@
       if (window.innerHeight > (window.innerWidth * 9) / 16) {
         videoWrapperWidth = "auto";
         videoWrapperHeight = "100%";
+        videoHeight = window.innerHeight;
+        videoWidth = (16 / 9) * videoHeight;
       } else {
         videoWrapperWidth = "100%";
         videoWrapperHeight = "auto";
+        videoWidth = window.innerWidth;
+        videoHeight = (9 / 16) * videoWidth;
       }
+      extraWidth = videoWidth - window.innerWidth;
     };
     adjustDimensionsOfVideoWrapper();
     // register on resize
     window.addEventListener("resize", adjustDimensionsOfVideoWrapper);
+    // add a event listener for mouse movement to animate the panning of the video by changing the left css property
+    document.addEventListener("mousemove", (e) => {
+      if ($videoIsPlaying) {
+        const videoContainer = document.getElementById("video-container");
+        if (videoContainer) {
+          if (extraWidth > 0) {
+            const percentage = (e.clientX / window.innerWidth) - 0.5; // Range from -0.5 to +0.5
+            const translateX = -percentage * extraWidth;
+            videoContainer.style.setProperty('--translateX', `${translateX}px`);
+          } else {
+            videoContainer.style.setProperty('--translateX', '0px');
+          }
+        }
+      }
+    });
+    return () => {
+      window.removeEventListener("resize", adjustDimensionsOfVideoWrapper);
+    };
   });
 </script>
 
@@ -149,6 +176,9 @@
     --padding-s: 0.12em;
     $mobile-breakpoint: 600px;
   }
+  body{
+    overflow: hidden;
+  }
   #video-container {
     transition: filter 0.5s ease-in-out;
     &.isLoading {
@@ -159,7 +189,7 @@
     pointer-events: none;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) translateX(var(--translateX, 0));
     width: 100%;
     height: 100%;
     display: grid;
