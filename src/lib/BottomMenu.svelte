@@ -23,9 +23,7 @@
     ];
     currentComponent = menuEntries?.[0]?.component;
   }
-  let isOpen = true;
-  console.log($isMenuClosed);
-  
+  let isOpen = false;
 </script>
 
 <div
@@ -52,7 +50,6 @@
           $isMenuClosed = false;
           if (isOpen && currentComponent === component) {
             isOpen = false;
-            return;
           }
           currentComponent = component;
           isOpen = true;
@@ -95,6 +92,7 @@
           style="background-color: {$currentLine.color}"
           on:click={() => {
             $isMenuClosed = true;
+            isOpen = true;
           }}
         >
           <img 

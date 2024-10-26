@@ -18,7 +18,10 @@
 <div
   id="top-menu"
   use:clickoutside on:clickoutside={() => {
-    console.log("click outside the top menu");
+    if (isOpen && currentComponent === Map) {
+      return
+    }
+    isOpen = false;
   }}
 >
   <nav>
@@ -39,9 +42,15 @@
     {/each}
   </nav>
   {#if isOpen}
-    <svelte:component this={currentComponent} 
-    onClick={(clickedLine)=>$currentLine = clickedLine} 
-    lines={$allLines} {aboutContent} />
+    <svelte:component 
+        this={currentComponent} 
+        onClick={(clickedLine) => {
+            $currentLine = clickedLine;
+            isOpen = false;
+        }} 
+        lines={$allLines} 
+        {aboutContent} 
+    />
   {/if}
 </div>
 
