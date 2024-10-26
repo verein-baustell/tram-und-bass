@@ -720,7 +720,7 @@ lines:
     id: ""
     timeStamps:
       - name: Bahnhof Enge
-        startTime: 01:51
+        startTime: 00:00
         endTime: 02:16
       - name: Tunnelstrasse
         startTime: 03:14
