@@ -24,7 +24,12 @@
   let stationPositions: StationsPositions = {};
   let linePaths: any;
   let totalLength: any;
-  let segments: any = [];
+  let segments: {
+    moveDuration: number;
+    stopDuration: number;
+    startLength: number;
+    endLength: number;
+  }[] = [];
   let totalAnimationTime = 0;
   let isPathReversed = false;
   // ... Existing functions (zoomed, zoomToElement, highlightCurrentStation, etc.) ...
@@ -62,7 +67,7 @@
       stationName: string;
       length: number;
     }[] = [];
-
+    const samples = totalLength / 15;
     stations.forEach((station) => {
       const stationId = station.stationName.replaceAll(" ", "").toLowerCase();
       const pos = stationPositions[stationId];
@@ -71,10 +76,12 @@
         const stationY = pos.y;
         let closestLength = 0;
         let minDistance = Infinity;
-        const samples = 1000;
+
         for (let i = 0; i <= samples; i++) {
           const length = (i / samples) * totalLength;
           const point = pathElement.getPointAtLength(length);
+          // add a cicle to the svg at the point
+          // const circle = d3.select("#map-svg > g").append("circle").attr("cx", point.x).attr("cy", point.y).attr("r", 5).attr("fill", "red").attr("class", "debug-circle");
           const dx = point.x - stationX;
           const dy = point.y - stationY;
           const distance = Math.hypot(dx, dy);
@@ -172,15 +179,6 @@
           }
         }
       }
-      // (stations?.[0]?.length ?? 0) >
-      // (stations?.[stations.length - 1]?.length ?? 0);
-
-      // if (isPathReversed) {
-      //   // Invert station lengths
-      //   stations.forEach((s) => {
-      //     s.length = totalLength - (s?.length ?? 0);
-      //   });
-      // }
 
       // Compute segments
       segments = [];
@@ -194,8 +192,8 @@
           segments.push({
             moveDuration: 0,
             stopDuration: stopDuration,
-            startLength: currentStation.length,
-            endLength: currentStation.length,
+            startLength: currentStation.length ?? 0,
+            endLength: currentStation.length ?? 0,
           });
         }
 
@@ -210,14 +208,15 @@
           segments.push({
             moveDuration: moveDuration,
             stopDuration: 0,
-            startLength: startLength,
-            endLength: endLength,
+            startLength: startLength ?? 0,
+            endLength: endLength ?? 0,
           });
         }
       }
       // Compute total animation time
       totalAnimationTime = segments.reduce(
-        (sum, segment) => sum + segment.moveDuration + segment.stopDuration,
+        (sum: number, segment) =>
+          sum + segment.moveDuration + segment.stopDuration,
         0
       );
       let strokeOffset = 0;
@@ -423,7 +422,7 @@
     let dashOffset: number;
     if (isPathReversed) {
       // no fucking idea why 4 times the totalLength but it works
-      dashOffset = -tramPosition + 4*totalLength;
+      dashOffset = -tramPosition + 4 * totalLength;
     } else {
       dashOffset = -totalLength - tramPosition;
     }
