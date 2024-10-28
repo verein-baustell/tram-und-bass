@@ -1586,6 +1586,97 @@ lines:
     videoUrl: https://player.vimeo.com/video/950707919?h=af30ff979c
     releaseDate: 2024-07-10T16:16:00.000Z
     id: ""
+    timeStamps:
+      - name: Frankental
+        startTime: 00:01
+        endTime: 01:56
+      - name: Winzerstrasse
+        startTime: 03:32
+        endTime: 03:52
+      - name: Wartau
+        startTime: 04:44
+        endTime: 05:02
+      - name: Zwielplatz
+        startTime: 05:59
+        endTime: 06:16
+      - name: Meierhofplatz
+        startTime: 07:09
+        endTime: 07:24
+      - name: Schwert
+        startTime: 08:28
+        endTime: 08:52
+      - name: Alte Trotte
+        startTime: 09:47
+        endTime: 10:00
+      - name: Eschergutweg
+        startTime: 11:06
+        endTime: 11:18
+      - name: Waidfussweg
+        startTime: 12:25
+        endTime: 12:47
+      - name: Wipkingerplatz
+        startTime: 14:02
+        endTime: 14:25
+      - name: Escher-Wyss-Platz
+        startTime: 15:49
+        endTime: 16:09
+      - name: Löwenbräu
+        startTime: 16:55
+        endTime: 17:09
+      - name: Quellenstrasse
+        startTime: 17:50
+        endTime: 18:09
+      - name: Limmatplatz
+        startTime: 18:52
+        endTime: 19:16
+      - name: Museum für Gestaltung
+        startTime: 20:05
+        endTime: 20:24
+      - name: Sihlquai HB
+        startTime: 21:02
+        endTime: 21:29
+      - name: Bahnhofquai HB
+        startTime: 24:02
+        endTime: 24:50
+      - name: Bahnhofstrasse HB
+        startTime: 26:12
+        endTime: 26:36
+      - name: Rennweg
+        startTime: 27:45
+        endTime: 28:01
+      - name: Paradeplatz
+        startTime: 29:17
+        endTime: 29:40
+      - name: Stockerstrasse
+        startTime: 31:04
+        endTime: 31:24
+      - name: Tunnelstrasse
+        startTime: 32:11
+        endTime: 32:28
+      - name: Bahnhof Enge Bederstrasse
+        startTime: 33:21
+        endTime: 33:44
+      - name: Waffenplatzstrasse
+        startTime: 34:55
+        endTime: 35:17
+      - name: Sihlcity Nord
+        startTime: 35:57
+        endTime: 36:14
+      - name: Saalsporthalle
+        startTime: 37:12
+        endTime: 37:31
+      - name: Laubegg
+        startTime: 38:12
+        endTime: 38:27
+      - name: Uetlihof
+        startTime: 39:32
+        endTime: 39:54
+      - name: Strassenverkehrsamt
+        startTime: 40:53
+        endTime: 41:09
+      - name: Albisgütli
+        startTime: 42:12
+        endTime: 42:54
     isInverted: true
   - color: "#f4d332"
     number: 13
@@ -1608,6 +1699,97 @@ lines:
     videoUrl: https://player.vimeo.com/video/950719687?h=29fa4163a3
     releaseDate: 2024-07-15T14:54:00.000Z
     id: ""
+    timeStamps:
+      - name: Albisgütli
+        startTime: 00:01
+        endTime: 00:46
+      - name: Strassenverkehrsamt
+        startTime: 02:14
+        endTime: 02:44
+      - name: Uetlihof
+        startTime: 03:52
+        endTime: 04:10
+      - name: Laubegg
+        startTime: 05:18
+        endTime: 05:34
+      - name: Saalsporthalle
+        startTime: 06:16
+        endTime: 06:32
+      - name: Sihlcity Nord
+        startTime: 07:38
+        endTime: 08:07
+      - name: Waffenplatzstrasse
+        startTime: 09:08
+        endTime: 09:29
+      - name: Bahnhof Enge Bederstrasse
+        startTime: 10:22
+        endTime: 10:44
+      - name: Tunnelstrasse
+        startTime: 11:41
+        endTime: 11:50
+      - name: Stockerstrasse
+        startTime: 12:49
+        endTime: 13:07
+      - name: Paradeplatz
+        startTime: 14:13
+        endTime: 15:37
+      - name: Rennweg
+        startTime: 16:49
+        endTime: 17:06
+      - name: Bahnhofstrasse HB
+        startTime: 18:06
+        endTime: 18:32
+      - name: Bahnhofquai HB
+        startTime: 21:45
+        endTime: 22:42
+      - name: Sihlquai HB
+        startTime: 24:34
+        endTime: 24:58
+      - name: Museum für Gestaltung
+        startTime: 25:34
+        endTime: 25:52
+      - name: Limmatplatz
+        startTime: 26:38
+        endTime: 26:58
+      - name: Quellenstrasse
+        startTime: 27:37
+        endTime: 27:52
+      - name: Löwenbräu
+        startTime: 28:28
+        endTime: 28:45
+      - name: Escher-Wyss-Platz
+        startTime: 29:26
+        endTime: 29:43
+      - name: Wipkingerplatz
+        startTime: 31:06
+        endTime: 31:30
+      - name: Waidfussweg
+        startTime: 32:40
+        endTime: 32:54
+      - name: Eschergutweg
+        startTime: 34:04
+        endTime: 34:18
+      - name: Alte Trotte
+        startTime: 35:22
+        endTime: 35:32
+      - name: Schwert
+        startTime: 36:24
+        endTime: 36:40
+      - name: Meierhofplatz
+        startTime: 37:29
+        endTime: 37:43
+      - name: Zwielplatz
+        startTime: 38:47
+        endTime: 39:00
+      - name: Wartau
+        startTime: 39:59
+        endTime: 40:11
+      - name: Winzerstrasse
+        startTime: 41:05
+        endTime: 41:26
+      - name: Frankental
+        startTime: 42:30
+        endTime: 42:38
     isInverted: true
   - color: "#599de0"
     number: 14
