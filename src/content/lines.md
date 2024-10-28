@@ -1617,6 +1617,88 @@ lines:
     videoUrl: https://player.vimeo.com/video/950742749?h=57745ef270
     releaseDate: 2024-07-16T11:59:00.000Z
     id: ""
+    timeStamps:
+      - name: Seebach
+        startTime: 00:01
+        endTime: 00:30
+      - name: Seebacherplatz
+        startTime: 01:30
+        endTime: 01:50
+      - name: Felsenrainstrasse
+        endTime: 03:07
+        startTime: 02:50
+      - name: Bahnhof Oerlikon Ost
+        endTime: 04:29
+        startTime: 04:10
+      - name: Sternen Oerlikon
+        startTime: 06:08
+        endTime: 06:55
+      - name: Salersteig
+        endTime: 08:19
+        startTime: 08:00
+      - name: Berninaplatz
+        startTime: 08:59
+        endTime: 09:22
+      - name: Hirschwiesenstrasse
+        startTime: 10:22
+        endTime: 10:38
+      - name: Milchbuck
+        startTime: 11:33
+        endTime: 12:20
+      - name: Guggachstrasse
+        startTime: 13:20
+        endTime: 13:35
+      - name: Schaffhauserplatz
+        startTime: 14:35
+        endTime: 14:55
+      - name: Kronenstrasse
+        startTime: 15:59
+        endTime: 16:16
+      - name: Beckenhof
+        startTime: 17:42
+        endTime: 18:06
+      - name: Stampfenbachplatz
+        endTime: 19:33
+        startTime: 19:19
+      - name: Bahnhofquai HB
+        startTime: 22:29
+        endTime: 23:19
+      - name: Bahnhofplatz HB
+        startTime: 24:14
+        endTime: 24:36
+      - name: Löwenplatz
+        startTime: 25:31
+        endTime: 25:51
+      - name: Sihlpost HB
+        startTime: 27:09
+        endTime: 27:33
+      - name: Stauffacher
+        endTime: 29:26
+        startTime: 29:01
+      - name: Werd
+        startTime: 30:13
+        endTime: 30:28
+      - name: Bahnhof Wiedikon
+        startTime: 31:19
+        endTime: 32:13
+      - name: Schmiede Wiedikon
+        startTime: 33:18
+        endTime: 33:41
+      - name: Goldbrunnenplatz
+        startTime: 35:34
+        endTime: 35:49
+      - name: Talwiesenstrasse
+        startTime: 36:37
+        endTime: 36:55
+      - name: Heuried
+        startTime: 37:27
+        endTime: 37:39
+      - name: Schaufelbergerstrasse
+        startTime: 38:22
+        endTime: 38:42
+      - name: Triemli
+        startTime: 39:48
+        endTime: 40:17
     isInverted: false
   - color: "#599de0"
     number: 14
@@ -1639,6 +1721,88 @@ lines:
     videoUrl: https://player.vimeo.com/video/950721895?h=02c06df905
     releaseDate: 2024-07-16T11:59:00.000Z
     id: ""
+    timeStamps:
+      - name: Triemli
+        startTime: 00:01
+        endTime: 01:20
+      - name: Schaufelbergerstrasse
+        startTime: 03:03
+        endTime: 03:24
+      - name: Heuried
+        startTime: 04:22
+        endTime: 04:38
+      - name: Talwiesenstrasse
+        startTime: 05:17
+        endTime: 05:42
+      - name: Goldbrunnenplatz
+        startTime: 06:33
+        endTime: 07:07
+      - name: Schmiede Wiedikon
+        startTime: 08:31
+        endTime: 09:40
+      - name: Bahnhof Wiedikon
+        startTime: 10:52
+        endTime: 11:21
+      - name: Werd
+        startTime: 12:20
+        endTime: 12:39
+      - name: Stauffacher
+        startTime: 13:45
+        endTime: 14:11
+      - name: Sihlpost HB
+        startTime: 16:18
+        endTime: 16:46
+      - name: Löwenplatz
+        startTime: 17:55
+        endTime: 18:11
+      - name: Bahnhofplatz HB
+        startTime: 19:26
+        endTime: 19:49
+      - name: Bahnhofquai HB
+        startTime: 21:46
+        endTime: 22:21
+      - name: Stampfenbachplatz
+        startTime: 23:49
+        endTime: 24:18
+      - name: Beckenhof
+        startTime: 25:37
+        endTime: 26:04
+      - name: Kronenstrasse
+        startTime: 27:10
+        endTime: 27:26
+      - name: Schaffhauserplatz
+        startTime: 28:50
+        endTime: 29:09
+      - name: Guggachstrasse
+        startTime: 30:12
+        endTime: 30:32
+      - name: Milchbuck
+        startTime: 31:35
+        endTime: 31:55
+      - name: Hirschwiesenstrasse
+        startTime: 33:06
+        endTime: 33:20
+      - name: Berninaplatz
+        startTime: 34:28
+        endTime: 34:43
+      - name: Salersteig
+        startTime: 35:31
+        endTime: 35:48
+      - name: Sternen Oerlikon
+        startTime: 37:03
+        endTime: 37:33
+      - name: Bahnhof Oerlikon Ost
+        startTime: 39:02
+        endTime: 39:22
+      - name: Felsenrainstrasse
+        startTime: 40:27
+        endTime: 40:46
+      - name: Seebacherplatz
+        startTime: 41:55
+        endTime: 42:11
+      - name: Seebach
+        startTime: 43:42
+        endTime: 44:08
     isInverted: false
   - color: "#de2b2b"
     number: 15
@@ -1661,6 +1825,46 @@ lines:
     videoUrl: https://player.vimeo.com/video/950805249?h=1f4d17577f
     releaseDate: 2024-07-16T11:59:00.000Z
     id: ""
+    timeStamps:
+      - name: Bahnhof Stadelhofen
+        startTime: 00:01
+        endTime: 00:11
+      - name: Bellevue
+        startTime: 01:43
+        endTime: 01:59
+      - name: Helmhaus
+        startTime: 03:12
+        endTime: 03:22
+      - name: Rathaus
+        startTime: 04:22
+        endTime: 04:36
+      - name: Rudolf-Brun-Brücke
+        startTime: 05:26
+        endTime: 05:44
+      - name: Central
+        startTime: 07:02
+        endTime: 07:20
+      - name: Haldenegg
+        startTime: 08:54
+        endTime: 09:06
+      - name: Sonneggstrasse
+        startTime: 09:55
+        endTime: 10:04
+      - name: Ottikerstrasse
+        startTime: 12:01
+        endTime: 12:13
+      - name: Röslistrasse
+        startTime: 14:35
+        endTime: 14:42
+      - name: Schaffhauserplatz
+        startTime: 16:58
+        endTime: 17:11
+      - name: Laubiweg
+        startTime: 18:18
+        endTime: 18:27
+      - name: Bucheggplatz
+        startTime: 20:00
+        endTime: 21:58
     isInverted: false
   - color: "#de2b2b"
     number: 15
@@ -1736,9 +1940,93 @@ lines:
     releaseDate: 2024-06-02T15:52:00.000Z
     id: ""
     timeStamps:
-      - name: Bahnhofstrasse/HB
-        startTime: 11:11
-        endTime: 11:19
+      - name: Werdhölzli
+        startTime: 00:01
+        endTime: 00:20
+      - name: Bändliweg
+        startTime: 01:08
+        endTime: 01:30
+      - name: Grünaustrasse
+        startTime: 02:13
+        endTime: 02:29
+      - name: Tüffenwies
+        startTime: 03:31
+        endTime: 03:50
+      - name: Hardhof
+        startTime: 04:39
+        endTime: 04:53
+      - name: Hardturm
+        startTime: 05:54
+        endTime: 06:11
+      - name: Bernoulli-Häuser
+        startTime: 06:54
+        endTime: 07:09
+      - name: Fischerweg
+        startTime: 07:45
+        endTime: 08:09
+      - name: Förrlibuckstrasse
+        startTime: 08:54
+        endTime: 09:13
+      - name: Escher-Wyss-Platz
+        startTime: 11:27
+        endTime: 12:00
+      - name: Löwenbräu
+        startTime: 12:43
+        endTime: 13:07
+      - name: Quellenstrasse
+        startTime: 13:47
+        endTime: 14:04
+      - name: Limmatplatz
+        startTime: 14:48
+        endTime: 15:12
+      - name: Museum für Gestaltung
+        startTime: 16:04
+        endTime: 16:22
+      - name: Sihlquai HB
+        startTime: 17:00
+        endTime: 17:26
+      - name: Bahnhofquai HB
+        startTime: 22:00
+        endTime: 22:22
+      - name: Bahnhofstrasse HB
+        startTime: 25:04
+        endTime: 25:27
+      - name: Rennweg
+        startTime: 26:38
+        endTime: 26:55
+      - name: Paradeplatz
+        startTime: 28:02
+        endTime: 28:26
+      - name: Stockerstrasse
+        startTime: 29:32
+        endTime: 29:54
+      - name: Tunnelstrasse
+        startTime: 30:39
+        endTime: 30:53
+      - name: Bahnhof Enge Bederstrasse
+        startTime: 31:50
+        endTime: 32:29
+      - name: Waffenplatzstrasse
+        startTime: 33:36
+        endTime: 33:56
+      - name: Sihlcity Nord
+        startTime: 34:38
+        endTime: 34:54
+      - name: Saalsporthalle
+        startTime: 35:55
+        endTime: 36:10
+      - name: Laubegg
+        startTime: 36:47
+        endTime: 37:00
+      - name: Uetlihof
+        startTime: 38:01
+        endTime: 38:18
+      - name: Strassenverkehrsamt
+        startTime: 39:12
+        endTime: 39:31
+      - name: Albisgütli
+        startTime: 40:29
+        endTime: 40:42
     isInverted: false
   - color: "#8b2062"
     number: 17
@@ -1749,8 +2037,92 @@ lines:
     releaseDate: 2024-06-02T19:43:00.000Z
     id: ""
     timeStamps:
-      - name: Bellevue
-        startTime: 11:11
-        endTime: 11:13
+      - name: Albisgütli
+        startTime: 00:01
+        endTime: 00:27
+      - name: Strassenverkehrsamt
+        startTime: 01:51
+        endTime: 03:33
+      - name: Uetlihof
+        startTime: 04:39
+        endTime: 05:01
+      - name: Laubegg
+        startTime: 06:14
+        endTime: 06:28
+      - name: Saalsporthalle
+        startTime: 07:39
+        endTime: 07:58
+      - name: Sihlcity Nord
+        startTime: 08:56
+        endTime: 09:17
+      - name: Waffenplatzstrasse
+        startTime: 10:35
+        endTime: 10:51
+      - name: Bahnhof Enge Bederstrasse
+        startTime: 11:52
+        endTime: 12:15
+      - name: Tunnelstrasse
+        startTime: 13:09
+        endTime: 13:32
+      - name: Stockerstrasse
+        startTime: 14:28
+        endTime: 14:55
+      - name: Paradeplatz
+        startTime: 16:21
+        endTime: 16:47
+      - name: Rennweg
+        startTime: 17:54
+        endTime: 18:24
+      - name: Bahnhofstrasse HB
+        startTime: 19:40
+        endTime: 20:14
+      - name: Bahnhofquai HB
+        startTime: 21:52
+        endTime: 22:22
+      - name: Sihlquai HB
+        startTime: 24:28
+        endTime: 25:03
+      - name: Museum für Gestaltung
+        startTime: 25:44
+        endTime: 26:00
+      - name: Limmatplatz
+        startTime: 26:52
+        endTime: 27:19
+      - name: Quellenstrasse
+        startTime: 28:03
+        endTime: 28:21
+      - name: Löwenbräu
+        startTime: 28:59
+        endTime: 29:16
+      - name: Escher-Wyss-Platz
+        startTime: 29:56
+        endTime: 30:36
+      - name: Förrlibuckstrasse
+        startTime: 32:25
+        endTime: 32:48
+      - name: Fischerweg
+        startTime: 33:35
+        endTime: 33:55
+      - name: Bernoulli-Häuser
+        startTime: 34:34
+        endTime: 34:50
+      - name: Hardturm
+        startTime: 35:38
+        endTime: 35:56
+      - name: Hardhof
+        startTime: 36:54
+        endTime: 37:09
+      - name: Tüffenwies
+        startTime: 38:00
+        endTime: 38:18
+      - name: Grünaustrasse
+        startTime: 39:22
+        endTime: 39:33
+      - name: Bändliweg
+        startTime: 40:33
+        endTime: 40:54
+      - name: Werdhölzli
+        startTime: 42:09
+        endTime: 42:21
     isInverted: false
 ---
