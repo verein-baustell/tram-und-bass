@@ -28,11 +28,9 @@
   let extraWidth = 0;
   let isDevMode = false;
   let showSplashScreen = true;
-  const releasedLines = $allLines.filter(
-    (line) => $devToolsState.showAllUnreleasedLines || line.isReleased
-  );
+  const releasedLines = $allLines.filter((line) => line.isReleased);
   let randomIndex = Math.floor(Math.random() * (releasedLines.length - 1));
-  $currentLine = $allLines[randomIndex];
+  $currentLine = releasedLines[randomIndex];
 
   const today = new Date();
   const releaseDate = new Date("2024-01-01T22:00:00");
@@ -96,11 +94,11 @@
         const videoContainer = document.getElementById("video-container");
         if (videoContainer) {
           if (extraWidth > 0) {
-            const percentage = (e.clientX / window.innerWidth) - 0.5; // Range from -0.5 to +0.5
+            const percentage = e.clientX / window.innerWidth - 0.5; // Range from -0.5 to +0.5
             const translateX = -percentage * extraWidth;
-            videoContainer.style.setProperty('--translateX', `${translateX}px`);
+            videoContainer.style.setProperty("--translateX", `${translateX}px`);
           } else {
-            videoContainer.style.setProperty('--translateX', '0px');
+            videoContainer.style.setProperty("--translateX", "0px");
           }
         }
       }
@@ -176,7 +174,7 @@
     --padding-s: 0.12em;
     $mobile-breakpoint: 600px;
   }
-  body{
+  body {
     overflow: hidden;
   }
   #video-container {
