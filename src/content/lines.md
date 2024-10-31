@@ -1412,6 +1412,106 @@ lines:
     videoUrl: https://player.vimeo.com/video/950688315?h=444abd1672
     releaseDate: 2024-07-16T11:58:00.000Z
     id: ""
+    timeStamps:
+      - name: Auzelg
+        startTime: 00:01
+        endTime: 00:02
+      - name: Fernsehstudio
+        startTime: 01:01
+        endTime: 01:17
+      - name: Glattpark
+        startTime: 02:00
+        endTime: 02:23
+      - name: Oerlikerhus
+        startTime: 03:24
+        endTime: 03:41
+      - name: Leutschenbach
+        startTime: 04:24
+        endTime: 04:55
+      - name: Messe Hallenstadion
+        startTime: 05:48
+        endTime: 06:07
+      - name: Sternen Oerlikon
+        startTime: 07:00
+        endTime: 07:27
+      - name: Bahnhof Oerlikon
+        startTime: 08:38
+        endTime: 08:59
+      - name: Regensbergbrücke
+        startTime: 10:06
+        endTime: 10:24
+      - name: Bad Allenmoos
+        startTime: 11:05
+        endTime: 11:21
+      - name: Bucheggplatz
+        startTime: 13:43
+        endTime: 14:06
+      - name: Laubiweg
+        startTime: 14:59
+        endTime: 15:12
+      - name: Schaffhauserplatz
+        startTime: 16:11
+        endTime: 16:42
+      - name: Kronenstrasse
+        startTime: 17:41
+        endTime: 17:54
+      - name: Beckenhof
+        startTime: 18:56
+        endTime: 19:12
+      - name: Stampfenbachplatz
+        startTime: 20:29
+        endTime: 20:43
+      - name: Bahnhofquai HB
+        startTime: 22:20
+        endTime: 22:56
+      - name: Bahnhofstrasse HB
+        startTime: 24:53
+        endTime: 25:28
+      - name: Rennweg
+        startTime: 26:40
+        endTime: 26:58
+      - name: Paradeplatz
+        startTime: 28:12
+        endTime: 28:37
+      - name: Kantonalbank
+        startTime: 29:14
+        endTime: 29:30
+      - name: Bürkliplatz
+        startTime: 30:58
+        endTime: 31:24
+      - name: Bellevue
+        startTime: 32:33
+        endTime: 32:55
+      - name: Bahnhof Stadelhofen
+        startTime: 34:41
+        endTime: 35:05
+      - name: Kreuzplatz
+        startTime: 36:24
+        endTime: 36:48
+      - name: Signaustrasse
+        startTime: 37:39
+        endTime: 37:49
+      - name: Hegibachplatz
+        startTime: 38:23
+        endTime: 38:41
+      - name: Hedwigsteig
+        startTime: 39:46
+        endTime: 39:59
+      - name: Wetlistrasse
+        startTime: 40:38
+        endTime: 40:52
+      - name: Burgwies
+        startTime: 41:31
+        endTime: 41:48
+      - name: Balgrist
+        startTime: 42:44
+        endTime: 43:00
+      - name: Friedhof Enzenbühl
+        startTime: 44:12
+        endTime: 44:25
+      - name: Rehalp
+        startTime: 45:17
+        endTime: 45:43
     isInverted: false
   - color: "#589c44"
     number: 11
@@ -1434,6 +1534,106 @@ lines:
     videoUrl: https://player.vimeo.com/video/950679463?h=03df9a86bb
     releaseDate: 2024-07-16T11:58:00.000Z
     id: ""
+    timeStamps:
+      - name: Rehalp
+        startTime: 00:01
+        endTime: 00:53
+      - name: Friedhof Enzenbühl
+        startTime: 01:43
+        endTime: 02:01
+      - name: Balgrist
+        startTime: 03:22
+        endTime: 03:45
+      - name: Burgwies
+        startTime: 04:53
+        endTime: 05:12
+      - name: Wetlistrasse
+        startTime: 05:59
+        endTime: 06:10
+      - name: Hedwigsteig
+        startTime: 06:49
+        endTime: 07:06
+      - name: Hegibachplatz
+        startTime: 08:06
+        endTime: 08:30
+      - name: Signaustrasse
+        startTime: 09:20
+        endTime: 09:30
+      - name: Kreuzplatz
+        startTime: 10:20
+        endTime: 10:49
+      - name: Bahnhof Stadelhofen
+        startTime: 12:18
+        endTime: 12:41
+      - name: Bellevue
+        startTime: 13:55
+        endTime: 14:31
+      - name: Bürkliplatz
+        startTime: 15:29
+        endTime: 16:15
+      - name: Kantonalbank
+        startTime: 17:10
+        endTime: 17:40
+      - name: Paradeplatz
+        startTime: 18:24
+        endTime: 18:53
+      - name: Rennweg
+        startTime: 20:01
+        endTime: 20:28
+      - name: Bahnhofstrasse HB
+        startTime: 21:34
+        endTime: 22:01
+      - name: Bahnhofquai HB
+        startTime: 24:02
+        endTime: 25:10
+      - name: Stampfenbachplatz
+        startTime: 26:28
+        endTime: 26:45
+      - name: Beckenhof
+        startTime: 27:54
+        endTime: 28:09
+      - name: Kronenstrasse
+        startTime: 29:06
+        endTime: 29:25
+      - name: Schaffhauserplatz
+        startTime: 30:35
+        endTime: 30:58
+      - name: Laubiweg
+        startTime: 31:45
+        endTime: 31:59
+      - name: Bucheggplatz
+        startTime: 32:56
+        endTime: 33:31
+      - name: Bad Allenmoos
+        startTime: 36:04
+        endTime: 36:15
+      - name: Regensbergbrücke
+        startTime: 36:59
+        endTime: 37:14
+      - name: Bahnhof Oerlikon
+        startTime: 38:31
+        endTime: 38:55
+      - name: Sternen Oerlikon
+        startTime: 40:09
+        endTime: 40:24
+      - name: Messe Hallenstadion
+        startTime: 41:30
+        endTime: 41:47
+      - name: Leutschenbach
+        startTime: 42:45
+        endTime: 43:00
+      - name: Oerlikerhus
+        startTime: 43:40
+        endTime: 43:56
+      - name: Glattpark
+        startTime: 45:00
+        endTime: 45:20
+      - name: Fernsehstudio
+        startTime: 46:02
+        endTime: 46:18
+      - name: Auzelg
+        startTime: 47:40
+        endTime: 48:03
     isInverted: false
   - color: "#a1cfe3"
     number: 12
