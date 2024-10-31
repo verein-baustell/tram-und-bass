@@ -1365,6 +1365,109 @@ lines:
     videoUrl: https://player.vimeo.com/video/950571962?h=b4953715b2
     releaseDate: 2024-07-16T11:58:00.000Z
     id: ""
+    timeStamps:
+      - name: Triemli
+        startTime: 00:01
+        endTime: 00:10
+      - name: Schaufelbergerstrasse
+        startTime: 01:46
+        endTime: 02:04
+      - name: Heuried
+        startTime: 02:55
+        endTime: 03:08
+      - name: Talwiesenstrasse
+        startTime: 03:46
+        endTime: 04:12
+      - name: Goldbrunnenplatz
+        startTime: 05:00
+        endTime: 05:19
+      - name: Schmiede Wiedikon
+        startTime: 06:26
+        endTime: 06:46
+      - name: Bahnhof Wiedikon
+        startTime: 07:51
+        endTime: 08:07
+      - name: Werd
+        startTime: 08:56
+        endTime: 09:12
+      - name: Stauffacher
+        startTime: 10:04
+        endTime: 11:55
+      - name: Sihlstrasse
+        startTime: 13:10
+        endTime: 13:27
+      - name: Paradeplatz
+        startTime: 15:00
+        endTime: 15:21
+      - name: Kantonalbank
+        startTime: 16:03
+        endTime: 16:21
+      - name: Bürkliplatz
+        startTime: 17:09
+        endTime: 17:45
+      - name: Bellevue
+        startTime: 18:52
+        endTime: 20:04
+      - name: Kunsthaus
+        startTime: 21:53
+        endTime: 22:49
+      - name: Kantonsschule
+        startTime: 24:57
+        endTime: 25:19
+      - name: ETH Universitätsspital
+        startTime: 27:16
+        endTime: 27:45
+      - name: Haldenbach
+        startTime: 28:30
+        endTime: 28:56
+      - name: Winkelriedstrasse
+        startTime: 29:45
+        endTime: 30:11
+      - name: Seilbahn Rigiblick
+        startTime: 31:06
+        endTime: 31:26
+      - name: Kinkelstrasse
+        startTime: 32:14
+        endTime: 32:28
+      - name: Letzistrasse
+        startTime: 33:00
+        endTime: 33:17
+      - name: Langmauerstrasse
+        startTime: 33:59
+        endTime: 34:16
+      - name: Universität Irchel
+        startTime: 35:29
+        endTime: 35:53
+      - name: Milchbuck
+        startTime: 37:02
+        endTime: 37:38
+      - name: Tierspital
+        startTime: 39:05
+        endTime: 39:20
+      - name: Waldgarten
+        startTime: 40:05
+        endTime: 40:29
+      - name: Ueberlandpark
+        startTime: 41:24
+        endTime: 41:45
+      - name: Schwamendingerplatz
+        startTime: 42:53
+        endTime: 43:28
+      - name: Heerenwiesen
+        startTime: 44:30
+        endTime: 44:44
+      - name: Luegisland
+        startTime: 45:28
+        endTime: 45:50
+      - name: Luchswiesen
+        startTime: 46:35
+        endTime: 46:51
+      - name: Altried
+        startTime: 47:40
+        endTime: 48:01
+      - name: Hirzenbach
+        startTime: 48:58
+        endTime: 49:13
     isInverted: false
   - color: "#c83086"
     number: 10
