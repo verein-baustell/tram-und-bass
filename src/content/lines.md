@@ -1374,6 +1374,88 @@ lines:
     videoUrl: https://player.vimeo.com/video/950672105?h=0f80c5bf39
     releaseDate: 2024-07-16T11:58:00.000Z
     id: ""
+    timeStamps:
+      - name: Bahnhofplatz HB
+        startTime: 00:01
+        endTime: 00:04
+      - name: Central
+        startTime: 01:32
+        endTime: 01:56
+      - name: Haldenegg
+        startTime: 03:15
+        endTime: 03:31
+      - name: ETH Universitätsspital
+        startTime: 05:00
+        endTime: 05:27
+      - name: Haldenbach
+        startTime: 06:04
+        endTime: 06:26
+      - name: Winkelriedstrasse
+        startTime: 07:05
+        endTime: 07:24
+      - name: Seilbahn Rigiblick
+        startTime: 08:11
+        endTime: 08:32
+      - name: Kinkelstrasse
+        startTime: 09:22
+        endTime: 09:38
+      - name: Letzistrasse
+        startTime: 10:10
+        endTime: 10:25
+      - name: Langmauerstrasse
+        startTime: 11:06
+        endTime: 11:21
+      - name: Universität Irchel
+        startTime: 12:34
+        endTime: 12:54
+      - name: Milchbuck
+        startTime: 13:57
+        endTime: 14:31
+      - name: Hirschwiesenstrasse
+        startTime: 15:32
+        endTime: 15:49
+      - name: Berninaplatz
+        startTime: 16:50
+        endTime: 17:17
+      - name: Salersteig
+        startTime: 18:01
+        endTime: 18:17
+      - name: Sternen Oerlikon
+        startTime: 19:27
+        endTime: 19:49
+      - name: Bahnhof Oerlikon Ost
+        startTime: 21:10
+        endTime: 21:44
+      - name: Leutschenbach
+        startTime: 23:52
+        endTime: 24:10
+      - name: Oerlikerhus
+        startTime: 24:51
+        endTime: 25:11
+      - name: Glattpark
+        startTime: 26:26
+        endTime: 26:55
+      - name: Lindberghplatz
+        startTime: 27:49
+        endTime: 28:09
+      - name: Glattbrugg Bahnhof
+        startTime: 29:15
+        endTime: 29:37
+      - name: Bäuler
+        startTime: 30:59
+        endTime: 31:14
+      - name: Unterriet
+        startTime: 32:11
+        endTime: 32:29
+      - name: Kloten Balsberg Bahnhof
+        startTime: 33:30
+        endTime: 33:44
+      - name: Zürich Flughafen Bahnhof
+        startTime: 35:26
+        endTime: 35:53
+      - name: Fracht
+        startTime: 37:30
+        endTime: 37:42
     isInverted: false
   - color: "#c83086"
     number: 10
@@ -1390,6 +1472,88 @@ lines:
     videoUrl: https://player.vimeo.com/video/950661521?h=164e96d180
     releaseDate: 2024-07-16T11:58:00.000Z
     id: ""
+    timeStamps:
+      - name: Fracht
+        startTime: 00:01
+        endTime: 00:02
+      - name: Zürich Flughafen Bahnhof
+        startTime: 01:21
+        endTime: 02:04
+      - name: Kloten Balsberg Bahnhof
+        startTime: 03:50
+        endTime: 03:58
+      - name: Unterriet
+        startTime: 04:59
+        endTime: 05:17
+      - name: Bäuler
+        startTime: 06:13
+        endTime: 06:31
+      - name: Glattbrugg Bahnhof
+        startTime: 07:38
+        endTime: 07:51
+      - name: Lindberghplatz
+        startTime: 09:01
+        endTime: 09:24
+      - name: Glattpark
+        startTime: 10:15
+        endTime: 10:36
+      - name: Oerlikerhus
+        startTime: 11:28
+        endTime: 11:44
+      - name: Leutschenbach
+        startTime: 12:27
+        endTime: 12:44
+      - name: Bahnhof Oerlikon Ost
+        startTime: 14:08
+        endTime: 14:31
+      - name: Sternen Oerlikon
+        startTime: 15:59
+        endTime: 16:21
+      - name: Salersteig
+        startTime: 17:30
+        endTime: 17:48
+      - name: Berninaplatz
+        startTime: 18:28
+        endTime: 18:45
+      - name: Hirschwiesenstrasse
+        startTime: 19:42
+        endTime: 19:59
+      - name: Milchbuck
+        startTime: 21:13
+        endTime: 21:55
+      - name: Universität Irchel
+        startTime: 22:56
+        endTime: 23:18
+      - name: Langmauerstrasse
+        startTime: 24:11
+        endTime: 24:18
+      - name: Letzistrasse
+        startTime: 25:03
+        endTime: 25:17
+      - name: Kinkelstrasse
+        startTime: 25:49
+        endTime: 26:05
+      - name: Seilbahn Rigiblick
+        startTime: 27:00
+        endTime: 27:29
+      - name: Winkelriedstrasse
+        startTime: 28:21
+        endTime: 29:00
+      - name: Haldenbach
+        startTime: 29:50
+        endTime: 30:13
+      - name: ETH Universitätsspital
+        startTime: 31:30
+        endTime: 32:15
+      - name: Haldenegg
+        startTime: 33:33
+        endTime: 33:52
+      - name: Central
+        startTime: 35:18
+        endTime: 35:34
+      - name: Bahnhofplatz HB
+        startTime: 37:12
+        endTime: 37:24
     isInverted: false
   - color: "#589c44"
     number: 11
