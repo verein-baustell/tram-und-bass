@@ -8,6 +8,7 @@
     timeToSeekAfterVideoLoad,
     timeUntilNextStation,
     videoIsPlaying,
+    videoIsLoading,
     vimeoVideoObject,
   } from "../store";
 
@@ -30,10 +31,14 @@
         showAllUnreleasedLines: !state.showAllUnreleasedLines,
       }));
     }}
-  >{$devToolsState.showAllUnreleasedLines ? "Hide unreleased":"Show unreleased"}</Button>
+    >{$devToolsState.showAllUnreleasedLines
+      ? "Hide unreleased"
+      : "Show unreleased"}</Button
+  >
   <table>
     <tr> <td> currentTime:</td><td> {$currentTime.toFixed(2)}</td></tr>
     <tr> <td> videoIsPlaying:</td><td> {$videoIsPlaying}</td></tr>
+    <tr> <td> videoIsLoading:</td><td> {$videoIsLoading}</td></tr>
     <tr>
       <td> timeToSeekAfterVideoLoad:</td><td>
         {$timeToSeekAfterVideoLoad}</td

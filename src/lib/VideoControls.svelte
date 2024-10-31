@@ -2,6 +2,7 @@
   import {
     vimeoVideoObject,
     videoIsPlaying,
+    videoIsLoading,
     isImmersive,
     isMuted,
     isMobile,
@@ -20,14 +21,16 @@
         }
       }}
     >
-      {#if $videoIsPlaying}
+      {#if $videoIsPlaying && !$videoIsLoading}
         Pause
+      {:else if $videoIsLoading}
+        Loading
       {:else}
         Play
       {/if}
     </Button>
   {/if}
-    <Button 
+  <Button
     on:click={() => {
       $isImmersive = !$isImmersive;
     }}
@@ -48,12 +51,11 @@
     border-radius: var(--border-radius-view);
   }
   @media only screen and (max-width: 768px) {
-  #video-controls{
-    top: 0;
-    right: 0;
-    bottom: auto;
-    left: auto;
+    #video-controls {
+      top: 0;
+      right: 0;
+      bottom: auto;
+      left: auto;
+    }
   }
-}
-
 </style>

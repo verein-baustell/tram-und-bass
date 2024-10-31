@@ -53,6 +53,7 @@ currentLine.subscribe((value) => {
   previousLineId = value?.id;
   if (value && typeof window !== "undefined") {
     videoIsPlaying.set(false);
+    videoIsLoading.set(true);
     const url = new URL(window.location.href);
     url.searchParams.set("line", value.id);
     goto(url.toString(), { replaceState: true });
@@ -146,6 +147,8 @@ export const nextStation = derived(
 );
 
 export const videoIsPlaying = writable<boolean>(false);
+// extra variable if the video is loading
+export const videoIsLoading = writable<boolean>(false);
 export const isImmersive = writable<boolean>(false);
 export const isMenuClosed = writable<boolean>(false);
 export const isMuted = writable<boolean>(false);

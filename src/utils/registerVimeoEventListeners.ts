@@ -3,6 +3,7 @@ import {
   currentTime,
   isMuted,
   videoIsPlaying,
+  videoIsLoading,
   vimeoVideoObject,
 } from "../store";
 export default () => {
@@ -20,6 +21,26 @@ export default () => {
   vimeo.on("timeupdate", function (data) {
     currentTime.set(data.seconds);
   });
+
+  // Track laoding of the video
+  // Detect when the video starts loading (buffering)
+  vimeo.on("bufferstart", (e) => {
+    console.log("loading start", e);
+    videoIsLoading.set(true); 
+  });
+  // Detect when buffering ends (video is ready to play)
+  vimeo.on("bufferend", (e) => {
+    console.log("loading end", e);
+    videoIsLoading.set(false); 
+  });
+  // Detect when loading ends (video is ready to play)
+  // vimeo.on("loaded", (e) => {
+  //   console.log("loaded", e);
+  //   setTimeout(() => {
+  //     videoIsLoading.set(false); // Change the variable after the delay to prevent jumping values
+  //   }, 0);
+  // });
+
   vimeo.on("playing", (e) => {
     console.log("playing", e);
     videoIsPlaying.set(true); // Corrected

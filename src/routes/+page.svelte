@@ -136,6 +136,23 @@
 
 <style lang="scss">
   :root {
+    --background-color: rgb(255, 255, 255);
+    --foreground-color: black;
+    --background-color-light: #eeeeee;
+    --hover-color: #dddddd;
+    --border-radius-button: 0.4em;
+    --border-radius-view: 0.52em;
+    --padding-view: 0.5em 0.8em;
+    --font-size: 1em;
+    --global-padding: 0.8em;
+    --transition: ease-in-out 0.3s;
+    --padding-m: 0.24em;
+    --padding-ml: 0.05em 0.5em 0.24em 0.48em;
+    --padding-l: 0.48em;
+    --mobile-breakpoint: 600px;
+    --padding-s: 0.12em;
+    $mobile-breakpoint: 600px;
+
     @font-face {
       font-family: Rene;
       font-style: normal;
@@ -156,23 +173,6 @@
       font-weight: 500;
       src: url("/fonts/NaNHoloMono-Medium.woff2") format("woff2");
     }
-
-    --background-color: rgb(255, 255, 255);
-    --foreground-color: black;
-    --background-color-light: #eeeeee;
-    --hover-color: #dddddd;
-    --border-radius-button: 0.4em;
-    --border-radius-view: 0.52em;
-    --padding-view: 0.5em 0.8em;
-    --font-size: 1em;
-    --global-padding: 0.8em;
-    --transition: ease-in-out 0.3s;
-    --padding-m: 0.24em;
-    --padding-ml: 0.05em 0.5em 0.24em 0.48em;
-    --padding-l: 0.48em;
-    --mobile-breakpoint: 600px;
-    --padding-s: 0.12em;
-    $mobile-breakpoint: 600px;
   }
   body {
     overflow: hidden;

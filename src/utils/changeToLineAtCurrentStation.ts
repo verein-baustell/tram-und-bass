@@ -4,6 +4,7 @@ import {
   currentLine,
   timeToSeekAfterVideoLoad,
   vimeoVideoObject,
+  videoIsLoading,
 } from "../store";
 import compareStationNames from "./compareStationNames";
 import { hmsToSeconds } from "./timeFormatter";
@@ -25,7 +26,7 @@ export const changeToLineAtStation = (line: Line, stationName: string) => {
   );
   const isSameLine = get(currentLine).id === line.id;
   if (isSameLine) {
-    get(vimeoVideoObject).setCurrentTime(timeStampOfCurrentStation);;
+    get(vimeoVideoObject).setCurrentTime(timeStampOfCurrentStation);
     return;
   }
   !isNaN(timeStampOfCurrentStation) &&
