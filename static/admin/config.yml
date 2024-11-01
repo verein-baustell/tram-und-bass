@@ -18,6 +18,15 @@ collections:
           - label: "About Text"
             name: "aboutText"
             widget: "markdown"
+      - name: "about2"
+        label: about2
+        file: "src/content/about2.md"
+        editor:
+          preview: false
+        fields:
+          - label: "About2 Text"
+            name: "about2Text"
+            widget: "markdown"
       - name: "lines"
         label: "Lines"
         file: "src/content/lines.md"
@@ -110,7 +119,7 @@ collections:
                         "Berninaplatz",
                         "Bernoulli-Häuser",
                         "Bezirksgebäude",
-                        "Bhf.Wollishofen Staubstrasse",
+                        "Bhf. Wollishofen Staubstrasse",
                         "Billoweg",
                         "Bändliweg",
                         "Bürkliplatz",
@@ -207,10 +216,10 @@ collections:
                         "Ottikerstrasse",
                         "Paradeplatz",
                         "Platte",
-                        "Post Wollishofen",
+                        "Renggerstrasse",
                         "Probstei",
                         "Quellenstrasse",
-                        "Radiostudio",
+                        "Brunnenhof",
                         "Rathaus",
                         "Regensbergbrücke",
                         "Rehalp",

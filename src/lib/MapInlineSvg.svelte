@@ -1121,7 +1121,7 @@
     stroke-width="6"
   />
   <rect
-    id="schörlistrasse"
+    id="ueberlandpark"
     x="-3"
     y="3"
     width="16"
@@ -1308,7 +1308,7 @@
     stroke-width="6"
   />
   <rect
-    id="radiostudio"
+    id="brunnenhof"
     x="1300"
     y="920"
     width="16"
@@ -1343,7 +1343,7 @@
     stroke-width="6"
   />
   <rect
-    id="postwollishofen"
+    id="renggerstrasse"
     x="1076"
     y="2328"
     width="16"
@@ -1863,7 +1863,7 @@
     stroke-width="6"
   />
   <rect
-    id="hirschenwiesenstrasse"
+    id="hirschwiesenstrasse"
     x="1494.6"
     y="889.197"
     width="34"
@@ -2395,7 +2395,7 @@
     stroke-width="6"
   />
   <rect
-    id="bhf.wollishofenstaubenstrasse"
+    id="bhf.wollishofenstaubstrasse"
     x="1100"
     y="2304"
     width="16"
@@ -2417,7 +2417,7 @@
     stroke-width="6"
   />
   <rect
-    id="bernullli-häuser"
+    id="bernoulli-häuser"
     x="890.799"
     y="1122.76"
     width="16"
@@ -2787,7 +2787,7 @@
     stroke-width="6"
   />
   <path
-    id="paradeplatz_2"
+    id="bahnhofquaihb"
     d="M1212.12 1456.12L1243.29 1424.95C1243.68 1424.56 1244.32 1424.56 1244.71 1424.95L1263.88 1444.12C1267.26 1447.5 1272.74 1447.5 1276.12 1444.12C1279.5 1440.74 1279.5 1435.26 1276.12 1431.88L1253.19 1408.95C1248.12 1403.87 1239.88 1403.87 1234.81 1408.95L1199.88 1443.88C1196.5 1447.26 1196.5 1452.74 1199.88 1456.12C1203.26 1459.5 1208.74 1459.5 1212.12 1456.12Z"
     fill="white"
     stroke="black"
