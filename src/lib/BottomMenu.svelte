@@ -104,7 +104,7 @@
           >
             <img
               class="star isInverted-{$currentLine.isInverted}"
-              src="/images/divider.svg"
+              src="/images/close.svg"
               alt="-"
             />
           </Button>
