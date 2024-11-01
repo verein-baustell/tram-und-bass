@@ -19,6 +19,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     text-align: center;
+    min-height: 40px;
   }
 
   button:first-child {
