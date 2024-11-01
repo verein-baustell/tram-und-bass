@@ -4,7 +4,7 @@
   import LineList from "./LineList.svelte";
   import Button from "./Button.svelte";
   import { clickoutside } from "@svelte-put/clickoutside";
-  import { allLines, currentLine } from "../store";
+  import { allLines, currentLine, isTopOpen, isBtmOpen } from "../store";
   export let aboutContent: string;
   const meuEntries = [
     { name: "Linien", component: LineList },
@@ -12,41 +12,40 @@
     { name: "Info", component: About },
   ];
   let currentComponent = meuEntries[0].component;
-  let isOpen = false;
 </script>
 
 <div
   id="top-menu"
   use:clickoutside on:clickoutside={() => {
-    if (isOpen && currentComponent === Map) {
+    if ($isTopOpen && currentComponent === Map) {
       return
     }
-    isOpen = false;
+    isTopOpen.set(false)
   }}
 >
   <nav>
     {#each meuEntries as { name, component } (name)}
       <Button
-        isActive={currentComponent === component && isOpen}
+        isActive={currentComponent === component && $isTopOpen}
         on:click={() => {
-          if (isOpen && currentComponent === component) {
-            isOpen = false;
+          if ($isTopOpen && currentComponent === component) {
+            isTopOpen.set(false)
             return;
           }
           currentComponent = component;
-          isOpen = true;
+          isTopOpen.set(true)
         }}
       >
         {name}
       </Button>
     {/each}
   </nav>
-  {#if isOpen}
+  {#if $isTopOpen}
     <svelte:component 
         this={currentComponent} 
         onClick={(clickedLine) => {
             $currentLine = clickedLine;
-            isOpen = false;
+            isTopOpen.set(false)
         }} 
         lines={$allLines} 
         {aboutContent} 

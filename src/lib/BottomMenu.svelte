@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { currentLine, isMenuClosed } from "../store";
+  import { currentLine, isMenuClosed, currentStation, isBtmOpen, isTopOpen } from "../store";
   import LineNumber from "./LineNumber.svelte";
   import ChangeLineList from "./ChangeLineList.svelte";
   import StationList from "./StationList.svelte";
@@ -20,17 +20,24 @@
     ];
     currentComponent = menuEntries?.[0]?.component;
   }
-  let isOpen = false;
+  $: if ($currentStation && !$isBtmOpen && !$isTopOpen) {
+    isBtmOpen.set(true)
+    currentComponent = menuEntries[0]?.component; // Open the first menu entry by default
+  }
+
+  $: if ($currentStation == undefined) {
+    isBtmOpen.set(false)
+  }
 </script>
 
 <div
   id="bottom-menu"
   use:clickoutside
   on:clickoutside={() => {
-    isOpen = false;
+    isBtmOpen.set(false)
   }}
 >
-  {#if isOpen}
+  {#if $isBtmOpen}
     <svelte:component this={currentComponent} />
   {/if}
   <nav style:background-color={$currentLine.color}>
@@ -42,50 +49,44 @@
         />
       </div>
       {#each menuEntries as { name, component }, index (name)}
-        {#if index === 0}
-          <Button
-            isActive={currentComponent === component && isOpen}
-            class="isInverted-{$currentLine.isInverted} {$currentLine.number ===
-            7
-              ? 'isSeven'
-              : ''} btn-btm-menu btn-btm-menu--first"
-            on:click={() => {
-              // $isMenuClosed = false;
-              if (isOpen && currentComponent === component) {
-                isOpen = false;
-                return;
-              }
-              currentComponent = component;
-              isOpen = true;
-            }}
-            style={currentComponent === component && isOpen
-              ? `color: ${$currentLine.color}`
-              : ``}
-          >
-            {name}
-          </Button>
-        {/if}
-      {/each}
+      {#if index === 0}
+        <Button
+          isActive={currentComponent === component && $isBtmOpen}
+          class="isInverted-{$currentLine.isInverted} {$currentLine.number === 7 ? 'isSeven' : ''} btn-btm-menu btn-btm-menu--first"
+          on:click={() => {
+            if ($isBtmOpen && currentComponent === component) {
+              isBtmOpen.set(false)
+              return;
+            }
+            currentComponent = component;
+            isBtmOpen.set(true)
+          }}
+          style={currentComponent === component && $isBtmOpen ? `color: ${$currentLine.color}` : ``}
+        >
+          {name}
+        </Button>
+      {/if}
+    {/each}
     </div>
     {#if !$isMenuClosed}
       <div class="btm-menu-section">
         {#each menuEntries as { name, component }, index (name)}
           {#if index != 0}
             <Button
-              isActive={currentComponent === component && isOpen}
+              isActive={currentComponent === component && $isBtmOpen}
               class="isInverted-{$currentLine.isInverted} {$currentLine.number ===
               7
                 ? 'isSeven'
                 : ''} btn-btm-menu"
               on:click={() => {
-                if (isOpen && currentComponent === component) {
-                  isOpen = false;
+                if ($isBtmOpen && currentComponent === component) {
+                  isBtmOpen.set(false)
                   return;
                 }
                 currentComponent = component;
-                isOpen = true;
+                isBtmOpen.set(true)
               }}
-              style={currentComponent === component && isOpen
+              style={currentComponent === component && $isBtmOpen
                 ? `color: ${$currentLine.color}`
                 : ``}
             >
@@ -99,7 +100,7 @@
             style="background-color: {$currentLine.color}"
             on:click={() => {
               $isMenuClosed = true;
-              isOpen = true;
+              isBtmOpen.set(true)
             }}
           >
             <img
