@@ -31,7 +31,9 @@ export default () => {
   // Detect when buffering ends (video is ready to play)
   vimeo.on("bufferend", (e) => {
     console.log("loading end", e);
-    videoIsLoading.set(false); 
+    setTimeout(() => {
+      videoIsLoading.set(false); // Change the variable after the delay to prevent jumping values
+    }, 500);
   });
   // Detect when loading ends (video is ready to play)
   // vimeo.on("loaded", (e) => {

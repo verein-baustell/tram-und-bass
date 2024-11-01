@@ -4,6 +4,8 @@
     linesAtCurrentStation,
     nextStation,
     timeUntilNextStation,
+    currentLine,
+    videoIsLoading,
   } from "../store";
   import { changeToLineAtStation } from "../utils/changeToLineAtCurrentStation";
   import { secondsToHms } from "../utils/timeFormatter";
@@ -17,9 +19,11 @@
 <div id="change-station-list" class="view detailed-view">
   {#if $currentStation == undefined}
     <div class="currentStation-change-raptor--white">
-      {#if $nextStation}
-      <span>{$nextStation?.name} in</span> 
-      <span class="mono-font clock">{formattedTime}</span>
+      {#if $videoIsLoading}
+        <span>Umsteigen nach {$currentLine?.name}</span>
+      {:else if $nextStation}
+        <span>{$nextStation?.name} in</span>
+        <span class="mono-font clock">{formattedTime}</span>
       {/if}
     </div>
   {/if}
@@ -33,8 +37,9 @@
   {#if $linesAtCurrentStation}
     <LineList
       viewable={false}
-      onClick={(lineClicked)=>{
-        $currentStation && changeToLineAtStation(lineClicked, $currentStation.name)
+      onClick={(lineClicked) => {
+        $currentStation &&
+          changeToLineAtStation(lineClicked, $currentStation.name);
       }}
       lines={$linesAtCurrentStation}
     />
