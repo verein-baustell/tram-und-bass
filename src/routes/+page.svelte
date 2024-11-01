@@ -12,6 +12,7 @@
     vimeoVideoObject,
     allLines,
     devToolsState,
+    isMobile,
   } from "../store";
   import DevTools from "$lib/DevTools.svelte";
   import registerVimeoEventListeners from "../utils/registerVimeoEventListeners";
@@ -83,6 +84,12 @@
         videoWidth = window.innerWidth;
         videoHeight = (9 / 16) * videoWidth;
       }
+      if (window.innerWidth <= 768){
+        isMobile.set(true)
+      }
+      else {
+        isMobile.set(false)
+      }
       extraWidth = videoWidth - window.innerWidth;
     };
     adjustDimensionsOfVideoWrapper();
@@ -109,6 +116,8 @@
   });
 </script>
 
+  
+
 {#if showLandingPage}
   <LandingScreen />
 {:else}
@@ -127,7 +136,8 @@
   {/if}
   <VideoControls />
   {#if isDevMode}
-    <DevTools />{/if}
+    <DevTools />
+  {/if}
   {#if !$isImmersive}
     <TopMenu aboutContent={aboutContent?.aboutText ?? ""} />
     <BottomMenu />
