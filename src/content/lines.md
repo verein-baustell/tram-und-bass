@@ -868,6 +868,9 @@ lines:
       - name: Morgental
         startTime: 03:18
         endTime: 03:41
+      - name: Renggerstrasse
+        startTime: 04:40
+        endTime: 04:45
       - name: Bhf.Wollishofen Staubstrasse
         startTime: 05:52
         endTime: 06:07
@@ -1040,6 +1043,9 @@ lines:
       - name: Bhf.Wollishofen Staubstrasse
         startTime: 39:04
         endTime: 39:23
+      - name: Renggerstrasse
+        startTime: 40:25
+        endTime: 40:38
       - name: Morgental
         startTime: 41:36
         endTime: 41:57
