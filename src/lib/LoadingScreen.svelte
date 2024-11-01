@@ -7,13 +7,13 @@
 <div class="con" > 
   <div transition:fade={{ delay: 250, duration: 300 }}>
     
-    <img style={style} id="gif" src="/images/IntroShortSimple.gif" alt="loading animation">
+    <img style={style} id="gif" src="/images/IntroShortSimpleSmall.gif" alt="loading animation">
   </div>
 
   <div transition:scale={{ duration: 400, delay: 200, opacity: 0.0, start: 0.2}}>
     <img
       class="logo bounce"
-      src="/images/loading.gif"
+      src="/images/loadingSmall.gif"
       width="auto"
       height="auto"
       alt="TnB Loading Animation"
@@ -43,7 +43,7 @@
     scale: 1.1;
     width: auto;
     height: auto;
-    filter: saturate(0.01) brightness(0.4) blur(24px);
+    filter: saturate(0) brightness(0.5) blur(20px);
   }
    .bounce{
         width: 50%;
