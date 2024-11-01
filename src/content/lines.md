@@ -1710,6 +1710,9 @@ lines:
       - name: Bad Allenmoos
         startTime: 11:05
         endTime: 11:21
+      - name: Brunnenhof
+        startTime: 12:30
+        endTime: 12:38
       - name: Bucheggplatz
         startTime: 13:43
         endTime: 14:06
@@ -1871,6 +1874,9 @@ lines:
       - name: Bucheggplatz
         startTime: 32:56
         endTime: 33:31
+      - name: Brunnenhof
+        startTime: 34:50
+        endTime: 35:05
       - name: Bad Allenmoos
         startTime: 36:04
         endTime: 36:15
