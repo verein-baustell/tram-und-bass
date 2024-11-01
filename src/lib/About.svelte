@@ -54,11 +54,11 @@
         </p>
         <div class="unter">
             <a href="https://www.stadt-zuerich.ch/fd/de/index.html"><img class="pic" src="/images/uploads/stadt.png" alt="Stadt Supporter Logo" /></a>
-            <img class="pic" src="/images/uploads/migros.png" alt="Migros Supporter Logo" />
-            <img class="pic" src="/images/uploads/ernstgohner.png" alt="Ernst Göhner Supporter Logo" />
-            <img class="pic" src="/images/uploads/vbz.png" alt="VBZ Supporter Logo" />
-            <img class="pic" src="/images/uploads/temperatio.png" alt="Temperatio Supporter Logo" />
-            <img class="pic" src="/images/uploads/kanton.png" alt="Kanton Supporter Logo" />
+            <a href="https://engagement.migros.ch/de/kulturprozent"><img class="pic" src="/images/uploads/migros.png" alt="Migros Supporter Logo" /></a>
+            <a href="https://www.ernst-goehner-stiftung.ch/index.php/de"><img class="pic" src="/images/uploads/ernstgohner.png" alt="Ernst Göhner Supporter Logo" /></a>
+            <a href="https://www.stadt-zuerich.ch/vbz/de/index.html"><img class="pic" src="/images/uploads/vbz.png" alt="VBZ Supporter Logo" /></a>
+            <a href="https://temperatio.ch/"><img class="pic" src="/images/uploads/temperatio.png" alt="Temperatio Supporter Logo" /></a>
+            <a href="https://www.zh.ch/de/direktion-der-justiz-und-des-innern/fachstelle-kultur.html"><img class="pic" src="/images/uploads/kanton.png" alt="Kanton Supporter Logo" /></a>
        </div>
     </div>
 
@@ -132,5 +132,7 @@
         margin-bottom: 0.2em;
         column-gap: 2em;
         row-gap: 1em;
+        padding-left: 0.6em;
+        padding-right: 0.6em;
     }
 </style>
