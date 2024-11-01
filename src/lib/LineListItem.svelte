@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { currentLine } from "../store";
+  import { currentLine, isMobile, isTopOpen } from "../store";
   import LineNumber from "./LineNumber.svelte";
   export let onClick: (lineClicked: Line) => void;
   export let line: Line;
@@ -22,7 +22,13 @@
     <LineNumber number={line.number} />
     <span>{line.name}</span>
     <img class="star" src="/images/divider.svg" alt="-" />
-    <p>{line.isReleased?line.artistName:"coming soon"}</p>
+    {#if line.artistName === "Endstation Altes Krematorium" && $isMobile === true && $isTopOpen === true}
+      <div style="overflow: hidden">
+        <div class="marquee">{line.isReleased?line.artistName:"coming soon"}</div>
+      </div>
+    {:else}
+      <p>{line.isReleased?line.artistName:"coming soon"}</p>
+    {/if}
     <p class="releaseDate">{formattedDate}</p>
   </button>
 </li>
@@ -48,7 +54,24 @@
           border-radius: 4px;
         }
       }
+    }
+    .marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      animation: marquee 10s ease-in-out infinite;
+    }
 
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+      50% {
+        transform: translateX(-5%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
     }
     .releaseDate{
         display: none;

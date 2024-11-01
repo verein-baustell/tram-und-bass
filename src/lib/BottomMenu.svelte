@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { currentLine, isMenuClosed, currentStation, isBtmOpen, isTopOpen } from "../store";
+  import { currentLine, isMenuClosed, currentStation, isBtmOpen, isTopOpen, isMobile } from "../store";
   import LineNumber from "./LineNumber.svelte";
   import ChangeLineList from "./ChangeLineList.svelte";
   import StationList from "./StationList.svelte";
@@ -90,7 +90,13 @@
                 ? `color: ${$currentLine.color}`
                 : ``}
             >
-              {name}
+              {#if name === "Endstation Altes Krematorium" && $isMobile === true}
+                <div style="overflow: hidden">
+                  <div class="marquee">{name}</div>
+                </div>
+              {:else}
+                {name}
+              {/if}
             </Button>
           {/if}
         {/each}
@@ -149,6 +155,25 @@
   .close-btn {
     display: none;
   }
+
+  .marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      animation: marquee 10s ease-in-out infinite;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+      50% {
+        transform: translateX(-5%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
 
   @media only screen and (max-width: 768px) {
     #bottom-menu {
