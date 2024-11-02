@@ -195,9 +195,6 @@
       src: url("/fonts/NaNHoloMono-Medium.woff2") format("woff2");
     }
   }
-  body {
-    overflow: hidden;
-  }
   #video-container {
     transition: filter 0.5s ease-in-out;
     // &.isLoading {
