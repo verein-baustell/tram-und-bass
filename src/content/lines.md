@@ -1934,7 +1934,7 @@ lines:
       - name: Neugut
         startTime: 05:02
         endTime: 05:16
-      - name: Glatt (Tram)
+      - name: Glatt
         startTime: 06:27
         endTime: 06:47
       - name: Wallisellen Bahnhof
@@ -2032,7 +2032,7 @@ lines:
       - name: Wallisellen Bahnhof
         startTime: 19:05
         endTime: 19:21
-      - name: Glatt (Tram)
+      - name: Glatt
         startTime: 20:19
         endTime: 20:43
       - name: Neugut

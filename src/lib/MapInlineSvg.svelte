@@ -2079,7 +2079,7 @@
     stroke-width="6"
   />
   <rect
-    id="glatt(tram)"
+    id="glatt"
     x="-3"
     y="3"
     width="16"

@@ -319,9 +319,7 @@
     stationsGroupSelection
       .selectChildren(".activeStation")
       .attr("class", "station");
-    const currentStationName = newStation
-      .replaceAll(" ", "")
-      .toLocaleLowerCase();
+    const currentStationName = stationNameToId(newStation); 
     const activeStationSelection = stationsGroupSelection.selectChild(
       "#" + currentStationName
     );
