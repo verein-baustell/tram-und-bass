@@ -20,9 +20,12 @@
   }
   // creaet eventhandler for space to play pause the video
   function handleSpacePress(e: KeyboardEvent) {
-    if (e.code === "Space") {
+    if (e.code === "Space" || e.key === "p" || e.key === "P") {
       e.preventDefault(); // Prevents default spacebar actions like scrolling
       togglePlayPause(); // Trigger togglePlayPause when space is pressed
+    } else if (e.key === "i" || e.key === "I") {
+      e.preventDefault(); // Prevents default spacebar actions like scrolling
+      $isImmersive = !$isImmersive;
     }
   }
   // Attach the event listener when the component mounts
@@ -71,6 +74,7 @@
     on:click={() => {
       $isImmersive = !$isImmersive;
     }}
+    title="Press I to toggle"
   >
     {#if $isImmersive === true}
       {#if $isMobile === true}

@@ -195,14 +195,11 @@
       src: url("/fonts/NaNHoloMono-Medium.woff2") format("woff2");
     }
   }
-  body {
-    overflow: hidden;
-  }
   #video-container {
     transition: filter 0.5s ease-in-out;
-    &.isLoading {
-      // filter: blur(24px);
-    }
+    // &.isLoading {
+    //   filter: blur(24px);
+    // }
     position: absolute;
     aspect-ratio: 16 / 9;
     pointer-events: none;
