@@ -2,7 +2,13 @@
   import { onMount } from "svelte";
   import MapInlineSvg from "./MapInlineSvg.svelte";
   import * as d3 from "d3";
-  import { currentLine, currentStation, currentTime, allLines } from "../store";
+  import {
+    currentLine,
+    currentStation,
+    currentTime,
+    allLines,
+    videoIsLoading,
+  } from "../store";
   import { hmsToSeconds } from "../utils/timeFormatter";
   import { changeToLineAtStation } from "../utils/changeToLineAtCurrentStation";
   import getLinesFromStationName from "../utils/getLinesFromStationName";
@@ -123,7 +129,7 @@
 
       // Select the path(s) of the line
       linePaths = currentLineGroupSelection.selectChild<SVGPathElement>("path");
-
+      linePaths.attr("class", "lineProgress");
       // Get the total length
       const pathElement = linePaths.node();
       if (!pathElement) {
@@ -450,6 +456,7 @@
     viewBox="0 0 2560 2560"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    class={$videoIsLoading ? "isLoading" : ""}
   >
     <MapInlineSvg />
   </svg>
@@ -457,6 +464,26 @@
 </div>
 
 <style lang="scss" scoped>
+  :global(.isLoading) {
+    :global(.activeLine) {
+      :global(.lineProgress) {
+        opacity: 0;
+      }
+      :global(path:not(.lineProgress)) {
+        animation: pulse 0.6s ease-in-out infinite;
+        stroke-dasharray: 50;
+        
+        @keyframes pulse {
+          from {
+            stroke-dashoffset: -50;
+          }
+          to {
+            stroke-dashoffset: 50;
+          }
+        }
+      }
+    }
+  }
   #map {
     z-index: -1;
     position: fixed;
@@ -494,6 +521,10 @@
     stroke-width: 12px;
   }
   :global(.activeLine) {
+    :global(path:not(.lineProgress)) {
+      stroke-dasharray: 0;
+      transition: all 0.6s ease;
+    }
     :global(path) {
       stroke: inherit; // TODO make this the color of the line
     }
