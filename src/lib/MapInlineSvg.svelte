@@ -632,7 +632,7 @@
   />
   <rect
     id="würzgraben"
-    x="744.52"
+    x="749.52"
     y="1169.48"
     width="16"
     height="16"
@@ -873,7 +873,7 @@
   />
   <rect
     id="toni-areal"
-    x="798.28"
+    x="803.28"
     y="1223.24"
     width="16"
     height="16"
@@ -918,7 +918,7 @@
   />
   <rect
     id="technopark"
-    x="846.92"
+    x="851.92"
     y="1271.88"
     width="16"
     height="16"
@@ -987,7 +987,7 @@
   />
   <rect
     id="sportweg"
-    x="780.36"
+    x="785.36"
     y="1205.32"
     width="16"
     height="16"
@@ -2624,17 +2624,7 @@
     stroke="black"
     stroke-width="6"
   />
-  <rect
-    id="bahnhofaltstettennord"
-    x="662.6"
-    y="1087.56"
-    width="16"
-    height="16"
-    rx="8"
-    fill="black"
-    stroke="black"
-    stroke-width="6"
-  />
+  <rect id="bahnhofaltstettennord" x="667.6" y="1087.56" width="16" height="16" rx="8" stroke-width="6" class="station"></rect>
   <rect
     id="badallenmoos"
     x="1376"
@@ -2752,7 +2742,7 @@
   />
   <rect
     id="aargauerstrasse"
-    x="762.44"
+    x="767.44"
     y="1187.4"
     width="16"
     height="16"
