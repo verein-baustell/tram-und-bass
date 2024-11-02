@@ -9,6 +9,7 @@
     currentLine,
     isImmersive,
     videoIsPlaying,
+    videoIsLoading,
     vimeoVideoObject,
     allLines,
     devToolsState,
@@ -133,13 +134,13 @@
 {:else}
   <div
     id="video-container"
-    class={$videoIsPlaying ? "" : "isLoading"}
+    class={$videoIsLoading ? "" : "isLoading"}
     style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
   ></div>
   {#if showSplashScreen || !$currentLine.isReleased}
     <SplashScreen onClick={() => (showSplashScreen = false)} />
   {/if}
-  {#if !$videoIsPlaying}
+  {#if $videoIsLoading}
     <LoadingScreen
       style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
     />
@@ -200,7 +201,7 @@
   #video-container {
     transition: filter 0.5s ease-in-out;
     &.isLoading {
-      filter: blur(24px);
+      // filter: blur(24px);
     }
     position: absolute;
     aspect-ratio: 16 / 9;
