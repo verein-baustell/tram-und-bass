@@ -287,11 +287,22 @@
   ) => {
     const svg = d3.select("#map-svg");
     const bbox = (stationElement.node() as SVGGElement).getBBox();
-    const x0 = bbox.x;
-    const y0 = bbox.y;
-    const x1 = bbox.x + bbox.width;
-    const y1 = bbox.y + bbox.height;
-    const scale = 4;
+    let x0 = bbox.x;
+    let y0 = bbox.y;
+    let x1 = bbox.x + bbox.width;
+    let y1 = bbox.y + bbox.height;
+    const transform = stationElement.attr("transform");
+    if (transform && transform.includes("matrix")) {
+      const matrix = transform.match(/-?\d+/g)?.map(Number); 
+      if (matrix) {
+        const [a, b, c, d, e, f] = matrix
+        x0 = a * bbox.x + c * bbox.y + e;
+        y0 = b * bbox.x + d * bbox.y + f;
+        x1 = a * (bbox.x + bbox.width) + c * (bbox.y + bbox.height) + e;
+        y1 = b * (bbox.x + bbox.width) + d * (bbox.y + bbox.height) + f;
+      }
+    }
+    const scale = 2.5;
     svg
       .transition()
       .duration(750)
@@ -472,7 +483,7 @@
       :global(path:not(.lineProgress)) {
         animation: pulse 0.6s ease-in-out infinite;
         stroke-dasharray: 50;
-        
+
         @keyframes pulse {
           from {
             stroke-dashoffset: -50;
@@ -491,7 +502,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba($color: #ffffff, $alpha: 0.2);
+    background-color: rgba($color: #ffffff, $alpha: 0.8);
     backdrop-filter: blur(20px);
     /* opacity: 0.9; */
     animation: fadeIn 0.8s ease-in-out;
@@ -507,6 +518,9 @@
   #map-svg {
     width: 100%;
     height: 100%;
+  }
+  :global(#water) {
+    fill: rgb(141, 181, 255);
   }
   :global(.station) {
     stroke: var(--foreground-color);
@@ -526,6 +540,7 @@
       transition: all 0.6s ease;
     }
     :global(path) {
+      transition: opacity 0.6s ease;
       stroke: inherit; // TODO make this the color of the line
     }
   }
