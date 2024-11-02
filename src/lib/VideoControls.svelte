@@ -1,5 +1,6 @@
 <script lang="ts">
-    import Player from "@vimeo/player";
+  import Player from "@vimeo/player";
+  import { onMount } from "svelte";
   import {
     vimeoVideoObject,
     videoIsPlaying,
@@ -9,46 +10,60 @@
     isMobile,
   } from "../store";
   import Button from "./Button.svelte";
+  // play pause function
+  function togglePlayPause() {
+    if ($videoIsPlaying) {
+      $vimeoVideoObject.pause();
+    } else {
+      $vimeoVideoObject.play();
+    }
+  }
+  // creaet eventhandler for space to play pause the video
+  function handleSpacePress(e: KeyboardEvent) {
+    if (e.code === "Space") {
+      e.preventDefault(); // Prevents default spacebar actions like scrolling
+      togglePlayPause(); // Trigger togglePlayPause when space is pressed
+    }
+  }
+  // Attach the event listener when the component mounts
+  onMount(() => {
+    window.addEventListener("keydown", handleSpacePress);
+
+    // Clean up when the component is destroyed
+    return () => {
+      window.removeEventListener("keydown", handleSpacePress);
+    };
+  });
 </script>
 
 <div id="video-controls">
   {#if !$isImmersive}
-    <Button
-      on:click={() => {
-        if ($videoIsPlaying) {
-          $vimeoVideoObject.pause();
-        } else {
-          $vimeoVideoObject.play();
-        }
-      }}
-    >
+    <Button on:click={togglePlayPause} title="Press Space to toggle">
       {#if $videoIsPlaying && !$videoIsLoading}
         {#if $isMobile === true}
-          <img class="icon" src="/images/pause.svg" alt="Pause Button"/>
+          <img class="icon" src="/images/pause.svg" alt="Pause Button" />
         {:else}
-        <div>
-          Pause
-          <img class="icon" src="/images/pause.svg" alt="Pause Button"/>
-        </div>
+          <div>
+            Pause
+            <img class="icon" src="/images/pause.svg" alt="Pause Button" />
+          </div>
         {/if}
       {:else if $videoIsLoading}
         {#if $isMobile === true}
-          <img class="icon" src="/images/loading.svg" alt="Loading Button"/>
+          <img class="icon" src="/images/loading.svg" alt="Loading Button" />
         {:else}
           <div>
             Loading
-            <img class="icon" src="/images/loading.svg" alt="Loading Button"/>
-        </div>
+            <img class="icon" src="/images/loading.svg" alt="Loading Button" />
+          </div>
         {/if}
+      {:else if $isMobile === true}
+        <img class="icon" src="/images/play.svg" alt="Play Button" />
       {:else}
-        {#if $isMobile === true}
-          <img class="icon" src="/images/play.svg" alt="Play Button"/>
-        {:else}
-          <div>
-            Play
-            <img class="icon" src="/images/play.svg" alt="Play Button"/>
+        <div>
+          Play
+          <img class="icon" src="/images/play.svg" alt="Play Button" />
         </div>
-        {/if}
       {/if}
     </Button>
   {/if}
@@ -57,25 +72,39 @@
       $isImmersive = !$isImmersive;
     }}
   >
-  {#if $isImmersive === true}
-    {#if $isMobile === true}
-        <img class="icon" src="/images/immersive-close.svg" alt="Immersive Button"/>
+    {#if $isImmersive === true}
+      {#if $isMobile === true}
+        <img
+          class="icon"
+          src="/images/immersive-close.svg"
+          alt="Immersive Button"
+        />
       {:else}
-      <div>
-        Immersive schliessen
-        <img class="icon" src="/images/immersive-close.svg" alt="Immersive Button"/>
-      </div>
-    {/if}
-  {:else}
-    {#if $isMobile === true}
-      <img class="icon" src="/images/immersive-open.svg" alt="Immersive Button"/>
-      {:else}
+        <div>
+          Immersive schliessen
+          <img
+            class="icon"
+            src="/images/immersive-close.svg"
+            alt="Immersive Button"
+          />
+        </div>
+      {/if}
+    {:else if $isMobile === true}
+      <img
+        class="icon"
+        src="/images/immersive-open.svg"
+        alt="Immersive Button"
+      />
+    {:else}
       <div>
         Immersive-Mode
-        <img class="icon" src="/images/immersive-open.svg" alt="Immersive Button"/>
+        <img
+          class="icon"
+          src="/images/immersive-open.svg"
+          alt="Immersive Button"
+        />
       </div>
     {/if}
-  {/if}       
   </Button>
 </div>
 

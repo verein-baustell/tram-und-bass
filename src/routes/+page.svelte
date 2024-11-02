@@ -9,6 +9,7 @@
     currentLine,
     isImmersive,
     videoIsPlaying,
+    videoIsLoading,
     vimeoVideoObject,
     allLines,
     devToolsState,
@@ -84,11 +85,10 @@
         videoWidth = window.innerWidth;
         videoHeight = (9 / 16) * videoWidth;
       }
-      if (window.innerWidth <= 768){
-        isMobile.set(true)
-      }
-      else {
-        isMobile.set(false)
+      if (window.innerWidth <= 768) {
+        isMobile.set(true);
+      } else {
+        isMobile.set(false);
       }
       extraWidth = videoWidth - window.innerWidth;
     };
@@ -116,20 +116,18 @@
   });
 </script>
 
-  
-
 {#if showLandingPage}
   <LandingScreen />
 {:else}
   <div
     id="video-container"
-    class={$videoIsPlaying ? "" : "isLoading"}
+    class={$videoIsLoading ? "" : "isLoading"}
     style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
   ></div>
   {#if showSplashScreen || !$currentLine.isReleased}
     <SplashScreen onClick={() => (showSplashScreen = false)} />
   {/if}
-  {#if !$videoIsPlaying}
+  {#if $videoIsLoading}
     <LoadingScreen
       style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
     />
@@ -190,7 +188,7 @@
   #video-container {
     transition: filter 0.5s ease-in-out;
     &.isLoading {
-      filter: blur(24px);
+      // filter: blur(24px);
     }
     position: absolute;
     aspect-ratio: 16 / 9;
