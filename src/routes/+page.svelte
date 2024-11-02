@@ -93,8 +93,9 @@
       extraWidth = videoWidth - window.innerWidth;
     };
     adjustDimensionsOfVideoWrapper();
-    // register on resize
     window.addEventListener("resize", adjustDimensionsOfVideoWrapper);
+
+    // add a event listener for mouse movement to animate the panning of the video by changing the left css property
     const mousePan = (e: MouseEvent) => {
       if ($videoIsPlaying && $isImmersive) {
         const videoContainer = document.getElementById("video-container");
@@ -110,8 +111,17 @@
         }
       }
     };
-    // add a event listener for mouse movement to animate the panning of the video by changing the left css property
     document.addEventListener("mousemove", mousePan);
+    document.addEventListener("keydown", (e) => {
+      console.log(e);
+    });
+    if ("mediaSession" in navigator) {
+      console.log("navigator.mediaSession is supported");
+      // add event listeners for audio next and previous buttons to jump to the next or previous station
+      navigator.mediaSession.setActionHandler("seekforward", function () {
+        console.log('> User clicked "Next Track" icon.');
+      });
+    }
     return () => {
       window.removeEventListener("resize", adjustDimensionsOfVideoWrapper);
       document.removeEventListener("mousemove", mousePan);
