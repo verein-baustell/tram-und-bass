@@ -95,25 +95,38 @@
     adjustDimensionsOfVideoWrapper();
     // register on resize
     window.addEventListener("resize", adjustDimensionsOfVideoWrapper);
-    // add a event listener for mouse movement to animate the panning of the video by changing the left css property
-    document.addEventListener("mousemove", (e) => {
-      if ($videoIsPlaying) {
+    const mousePan = (e: MouseEvent) => {
+      if ($videoIsPlaying && $isImmersive) {
         const videoContainer = document.getElementById("video-container");
         if (videoContainer) {
           if (extraWidth > 0) {
             const percentage = e.clientX / window.innerWidth - 0.5; // Range from -0.5 to +0.5
             const translateX = -percentage * extraWidth;
+            videoContainer.style.transition = "";
             videoContainer.style.setProperty("--translateX", `${translateX}px`);
           } else {
             videoContainer.style.setProperty("--translateX", "0px");
           }
         }
       }
-    });
+    };
+    // add a event listener for mouse movement to animate the panning of the video by changing the left css property
+    document.addEventListener("mousemove", mousePan);
     return () => {
       window.removeEventListener("resize", adjustDimensionsOfVideoWrapper);
+      document.removeEventListener("mousemove", mousePan);
     };
   });
+  $: {
+    // center video if immersive mode is off
+    if (!$isImmersive && typeof document !== "undefined") {
+      const videoContainer = document.getElementById("video-container");
+      if (videoContainer) {
+        videoContainer.style.transition = "transform 0.5s ease-in-out";
+        videoContainer.style.setProperty("--translateX", "0px");
+      }
+    }
+  }
 </script>
 
 {#if showLandingPage}
