@@ -25,11 +25,14 @@ ul {
 .detailed-view {
     max-height: 480px;
     min-width: 300px;
-    max-width: 500px;
     overflow: scroll;
 }
 
-/* todo: put list behind menu on mobile */
+@media only screen and (max-width: 768px) {
+    .detailed-view{
+        max-height: 380px;
+    }
+}
 
 @media only screen and (max-width: 768px) {
     .view{
@@ -43,3 +46,28 @@ ul {
     border-radius: 3px;
     padding: 0.03em 0.35em 0.1em 0.35em;
 }
+
+.nameContainer {
+    white-space: nowrap;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: marquee 10s ease-in-out infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(-10%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }

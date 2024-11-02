@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import { currentLine, isMobile, isTopOpen } from "../store";
   import LineNumber from "./LineNumber.svelte";
   export let onClick: (lineClicked: Line) => void;
@@ -6,6 +7,22 @@
   const releaseDate = new Date(line.releaseDate);
   const formattedDate = releaseDate.toLocaleDateString('en-GB').replace(/\//g, '.');
   
+  let nameContainer: any;
+  let isOverflowing = false;
+
+  function checkOverflow() {
+    if (nameContainer) {
+      isOverflowing = nameContainer.scrollWidth > nameContainer.clientWidth;
+      console.log(isOverflowing);
+      
+    }
+  }
+  onMount(() => {
+    checkOverflow()
+  });
+
+  $: checkOverflow();
+
 </script>
 
 <li>
@@ -22,13 +39,13 @@
     <LineNumber number={line.number} />
     <span>{line.name}</span>
     <img class="star" src="/images/divider.svg" alt="-" />
-    {#if line.artistName === "Endstation Altes Krematorium" && $isMobile === true && $isTopOpen === true}
-      <div style="overflow: hidden">
-        <div class="marquee">{line.isReleased?line.artistName:"coming soon"}</div>
-      </div>
-    {:else}
-      <p>{line.isReleased?line.artistName:"coming soon"}</p>
-    {/if}
+    <div class="nameContainer" bind:this={nameContainer}>
+      {#if isOverflowing}
+        <div class="marquee">{line.isReleased ? line.artistName : "coming soon"}</div>
+      {:else}
+        <p>{line.isReleased ? line.artistName : "coming soon"}</p>
+      {/if}
+    </div>
     <p class="releaseDate">{formattedDate}</p>
   </button>
 </li>
@@ -55,24 +72,6 @@
         }
       }
     }
-    .marquee {
-      overflow: hidden;
-      white-space: nowrap;
-      box-sizing: border-box;
-      animation: marquee 10s ease-in-out infinite;
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translateX(0%);
-      }
-      50% {
-        transform: translateX(-5%);
-      }
-      100% {
-        transform: translateX(0%);
-      }
-    }
     .releaseDate{
         display: none;
       }
@@ -92,6 +91,9 @@
     align-items: center;
     gap: 0.5em;
     transition: var(--transition);
+    span {
+      white-space: nowrap;
+    }
   }
 
   .star {
