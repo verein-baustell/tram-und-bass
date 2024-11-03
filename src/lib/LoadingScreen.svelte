@@ -1,6 +1,7 @@
 <script lang="ts">
   import { scale } from "svelte/transition";
   import { fade } from "svelte/transition";
+  import { onHome} from "../store"
   export let style: string;
 </script>
 
@@ -13,10 +14,11 @@
       alt="loading animation"
     />
   </div>
-
+  {#if !$onHome}
   <div
     transition:scale={{ duration: 400, delay: 200, opacity: 0.0, start: 0.2 }}
   >
+ 
     <img
       class="logo bounce"
       src="/images/loadingSmall.gif"
@@ -25,6 +27,7 @@
       alt="TnB Loading Animation"
     />
   </div>
+  {/if}
 </div>
 
 <style lang="scss" scoped>

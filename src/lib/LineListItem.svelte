@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { currentLine, isMobile, isTopOpen } from "../store";
+  import { currentLine } from "../store";
   import LineNumber from "./LineNumber.svelte";
   export let onClick: (lineClicked: Line) => void;
   export let line: Line;

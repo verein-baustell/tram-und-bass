@@ -5,6 +5,7 @@
   import VideoControls from "$lib/VideoControls.svelte";
   import BottomMenu from "$lib/BottomMenu.svelte";
   import LandingScreen from "$lib/LandingScreen.svelte";
+  import WelcomeScreen from "$lib/WelcomeScreen.svelte";
   import {
     currentLine,
     isImmersive,
@@ -18,6 +19,7 @@
     timeUntilNextStation,
     previousStation,
     nextStation,
+    onHome
   } from "../store";
   import DevTools from "$lib/DevTools.svelte";
   import registerVimeoEventListeners from "../utils/registerVimeoEventListeners";
@@ -57,6 +59,10 @@
         goto(url.toString(), { replaceState: true });
       }
     }
+    if (url.href === url.origin + "/") {
+      onHome.set(true)
+    }
+    
     if (showLandingPage) return;
     isDevMode =
       window.location.hostname === "localhost" ||
@@ -172,7 +178,7 @@
   {#if showSplashScreen || !$currentLine.isReleased}
     <SplashScreen onClick={() => (showSplashScreen = false)} />
   {/if}
-  {#if $videoIsLoading}
+  {#if $videoIsLoading }
     <LoadingScreen
       style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
     />
@@ -180,6 +186,9 @@
   <VideoControls />
   {#if isDevMode}
     <DevTools />
+  {/if}
+  {#if $onHome}
+  <WelcomeScreen />
   {/if}
   {#if !$isImmersive}
     <TopMenu aboutContent={aboutContent?.aboutText ?? ""} />

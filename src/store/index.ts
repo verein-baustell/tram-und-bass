@@ -41,6 +41,7 @@ export const allLines = writable<Line[]>(lines);
 export const currentLine = writable<Line>();
 // update query params when currentLine changes
 export const currentTime = writable<number>(0);
+export const onHome = writable<boolean>(false);
 const seekVideoAfterLoad = (vimeoObject: Vimeo) => {
   const timeToSeekTo = get(timeToSeekAfterVideoLoad);
   if (timeToSeekTo) {
@@ -52,46 +53,67 @@ const seekVideoAfterLoad = (vimeoObject: Vimeo) => {
 };
 let previousLineId: string | null = null;
 export const timeToSeekAfterVideoLoad = writable<number>(0);
-currentLine.subscribe((value) => {
-  if (value?.id === previousLineId) {
-    return; // Exit if the line ID has not changed
-  }
-  // Update the previous line ID
-  previousLineId = value?.id;
-  if (value && typeof window !== "undefined") {
-    videoIsPlaying.set(false);
-    videoIsLoading.set(true);
-    const url = new URL(window.location.href);
-    url.searchParams.set("line", value.id);
-    goto(url.toString(), { replaceState: true });
-    changeFaviconToLine(value);
-    vimeoVideoObject.update((vimeo) => {
-      if (vimeo) {
-        console.log("⬇️ try to load video", value.videoUrl);
-        vimeo
-          .loadVideo(value.videoUrl)
-          .then(() => {
-            console.log("🎥 video loaded");
-            console.log({ vimeo });
-            seekVideoAfterLoad(vimeo);
+// not sure if this is done very well
+// first check if we are on home if yes don't set current line
+onHome.subscribe((isOnHome) => {
+  if (typeof window === "undefined") return;
+  const url = new URL(window.location.href);
+
+  if (isOnHome && previousLineId != "home") {
+    goto(url.origin, { replaceState: true });
+    previousLineId = "home"
+  } else {
+    currentLine.subscribe((value) => {
+      if (value?.id === previousLineId) {
+        // If we're on the same line as before but onHome is true, update the URL
+        if (isOnHome) {
+          url.searchParams.set("line", value.id);
+          goto(url.toString(), { replaceState: true });
+        }
+        return; // Otherwise, if onHome is false, do nothing
+      }
+      previousLineId = value?.id;
+      if (value && typeof window !== "undefined") {
+        videoIsPlaying.set(false);
+        videoIsLoading.set(true);
+
+        url.searchParams.set("line", value.id);
+        goto(url.toString(), { replaceState: true });
+
+        changeFaviconToLine(value);
+
+        vimeoVideoObject.update((vimeo) => {
+          if (vimeo) {
+            console.log("⬇️ Attempting to load video", value.videoUrl);
+
             vimeo
-              .play()
+              .loadVideo(value.videoUrl)
               .then(() => {
-                seekVideoAfterLoad(vimeo);
-                console.log("🎥 video is playing at 2nd attempt");
+                console.log("🎥 Video loaded successfully");
+                seekVideoAfterLoad(vimeo); // Seek to the desired position after load
+
+                // Attempt to play the video
+                vimeo
+                  .play()
+                  .then(() => {
+                    seekVideoAfterLoad(vimeo);
+                    console.log("🎥 Video is playing at 2nd attempt");
+                  })
+                  .catch((error) => {
+                    console.error("🎥 Video play error", error);
+                  });
               })
               .catch((error) => {
-                console.error("🎥 video play error", error);
+                console.error("🎥 Video load error", error);
               });
-          })
-          .catch((error) => {
-            console.error("🎥 video load error", error);
-          });
+          }
+          return vimeo;
+        });
       }
-      return vimeo;
     });
   }
 });
+
 let lastPreviousStation: TimeStamp | undefined;
 export const previousStation = derived(
   [currentTime, currentLine],
@@ -184,6 +206,7 @@ export const isMenuClosed = writable<boolean>(false);
 export const isMuted = writable<boolean>(false);
 export const isMobile = writable<boolean>(false);
 export const isAtStation = writable<boolean>(false);
+
 export const timeUntilNextStation = derived(
   [currentLine, currentTime, nextStation],
   ([$currentLine, $currentTime, $nextStation]) => {
