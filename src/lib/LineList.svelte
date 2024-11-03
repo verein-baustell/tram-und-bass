@@ -2,12 +2,13 @@
   import LineListItem from "./LineListItem.svelte";
   export let lines: Line[];
   export let viewable = true;
+  export let id: string;
   export let onClick: (lineClicked: Line) => void;
   import '../style/style.css'
   console.log(lines);
   
 </script>
-<div class="{(viewable ? 'view detailed-view': '')}">
+<div id={id} class="{("line-list " + (viewable ? 'view detailed-view': ''))}">
   <ul>
     {#each lines as line}
       <LineListItem

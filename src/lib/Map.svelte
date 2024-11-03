@@ -262,11 +262,46 @@
     // Tram has reached the end
     return segments[segments.length - 1].endLength;
   }
+  const getScreenPositionOfStation = (stationId: string) => {
+    const stationElement = d3
+      .select("#map-svg #stations")
+      .selectChild("#" + stationId)
+      .node() as SVGGraphicsElement;
 
+    if (!stationElement) {
+      console.warn("Station element not found for id", stationId);
+      return;
+    }
+
+    // Get the bounding client rect of the station element
+    const bbox = stationElement.getBoundingClientRect();
+
+    // Calculate the center of the station element
+    const x = bbox.left + bbox.width / 2;
+    const y = bbox.top + bbox.height / 2;
+
+    return { x, y };
+  };
+  const updateLineListPosition = () => {
+    if (!selectedStation) return;
+
+    const position = getScreenPositionOfStation(selectedStation);
+
+    if (!position) return;
+
+    // Position the LineList component
+    const lineListElement = document.getElementById("map-line-list");
+
+    if (!lineListElement) return;
+
+    lineListElement.style.left = `${position.x}px`;
+    lineListElement.style.top = `${position.y}px`;
+  };
   const zoomed = (event: any) => {
     const { transform } = event;
     event.sourceEvent?.stopImmediatePropagation();
     d3.select("#map-svg").selectChildren("g").attr("transform", transform);
+    updateLineListPosition();
   };
   const zoom = d3
     .zoom()
@@ -293,9 +328,9 @@
     let y1 = bbox.y + bbox.height;
     const transform = stationElement.attr("transform");
     if (transform && transform.includes("matrix")) {
-      const matrix = transform.match(/-?\d+/g)?.map(Number); 
+      const matrix = transform.match(/-?\d+/g)?.map(Number);
       if (matrix) {
-        const [a, b, c, d, e, f] = matrix
+        const [a, b, c, d, e, f] = matrix;
         x0 = a * bbox.x + c * bbox.y + e;
         y0 = b * bbox.x + d * bbox.y + f;
         x1 = a * (bbox.x + bbox.width) + c * (bbox.y + bbox.height) + e;
@@ -319,7 +354,7 @@
     stationsGroupSelection
       .selectChildren(".activeStation")
       .attr("class", "station");
-    const currentStationName = stationNameToId(newStation); 
+    const currentStationName = stationNameToId(newStation);
     const activeStationSelection = stationsGroupSelection.selectChild(
       "#" + currentStationName
     );
@@ -353,6 +388,8 @@
           $allLines
         );
         selectedStation = stationName;
+        updateLineListPosition();
+        // position lineList above the station
       })
       .on("mouseover", function (d, e) {
         const stationElement = this as Element;
@@ -452,6 +489,7 @@
 
 {#if linesAtSelectedStation}
   <LineList
+    id="map-line-list"
     onClick={(lineClicked) => {
       changeToLineAtStation(lineClicked, selectedStation);
     }}
@@ -466,13 +504,20 @@
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     class={$videoIsLoading ? "isLoading" : ""}
-  >
-    <MapInlineSvg />
+    ><g>
+      <MapInlineSvg />
+    </g>
   </svg>
   <div id="map-tooltip" class="isActive">a</div>
 </div>
 
 <style lang="scss" scoped>
+  :global(#map-line-list) {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-100% - 2em));
+  }
   :global(.isLoading) {
     :global(.activeLine) {
       :global(.lineProgress) {
@@ -513,6 +558,7 @@
       }
     }
   }
+
   #map-svg {
     width: 100%;
     height: 100%;
