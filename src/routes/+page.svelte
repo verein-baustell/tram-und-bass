@@ -135,9 +135,11 @@
       if (e.key === "I") {
         $isImmersive = !$isImmersive;
       }
-      if (typeof +e.key === "number" && $currentLine.timeStamps) {
-       $vimeoVideoObject.setCurrentTime(hmsToSeconds($currentLine.timeStamps[+e.key].startTime) )
-       console.log(e.key);
+      if (!isNaN(e.key as unknown as number) && $currentLine.timeStamps) {
+        console.log(e.key);
+        $vimeoVideoObject.setCurrentTime(
+          hmsToSeconds($currentLine.timeStamps[+e.key].startTime)
+        );
       }
     };
     document.addEventListener("keydown", keyHandlers);
