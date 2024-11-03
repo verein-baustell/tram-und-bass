@@ -48,7 +48,7 @@
     checkOverflow()
   });
 
-  $: menuEntries, checkOverflow();
+  $: checkOverflow();
 </script>
 <div class="btmMenu--cont">
   <div
@@ -63,7 +63,7 @@
       <svelte:component this={currentComponent} />
     {/if}
     <nav style:background-color={$currentLine.color}>
-      <div class="nav-element nav-element--top">
+      <div class="nav-element nav-element--top {$isMenuClosed ? 'nav-element--nomargin' : ''} ">
         <div class="numb">
           <LineNumber
             number={$currentLine.number}
@@ -161,7 +161,6 @@
     pointer-events: all;
   }
   .nameContainerBtm {
-    // max-width: 180px;
     overflow: hidden
   }
   nav {
@@ -202,6 +201,9 @@
       align-items: center;
       &--top {
         margin-bottom: 0.12em;
+      }
+      &--nomargin{
+        margin-bottom: 0em !important;
       }
     }
     .close {

@@ -101,7 +101,7 @@
       display: flex;
     }
     .btnArtist {
-      max-width: calc(100% - 92px - 24px - 0.24em)
+      max-width: calc(100% - 134px);
     }
     .btnLine {
       width: 100%;
