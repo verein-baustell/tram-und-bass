@@ -32,9 +32,18 @@ ol {
   overflow: scroll;
 }
 
+#bottom-menu .detailed-view {
+  position: absolute;
+  bottom: 44px;
+}
+
 @media only screen and (max-width: 768px) {
   .detailed-view {
     max-height: 380px;
+  }
+  
+  #bottom-menu .detailed-view {
+    bottom: 86px;
   }
 }
 

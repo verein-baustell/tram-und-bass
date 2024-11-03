@@ -29,7 +29,6 @@
   }
   #station-list {
     --distance-to-left-edge: 0.5em;
-    position: relative;
     overflow: scroll;
     background: var(--background-color);
   }
