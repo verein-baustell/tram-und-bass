@@ -41,7 +41,7 @@
     <svelte:component this={currentComponent} />
   {/if}
   <nav style:background-color={$currentLine.color}>
-    <div class="btm-menu-section">
+    <div class="nav-element nav-element--top">
       <div class="numb">
         <LineNumber
           number={$currentLine.number}
@@ -49,60 +49,53 @@
         />
       </div>
       {#each menuEntries as { name, component }, index (name)}
-      {#if index === 0}
-        <Button
+        {#if index === 0}
+          <Button
           isActive={currentComponent === component && $isBtmOpen}
-          class="isInverted-{$currentLine.isInverted} {$currentLine.number === 7 ? 'isSeven' : ''} btn-btm-menu btn-btm-menu--first"
+          class="isInverted-{$currentLine.isInverted} {$currentLine.number === 7 ? 'isSeven' : ''} btnLine"
           on:click={() => {
             if ($isBtmOpen && currentComponent === component) {
               isBtmOpen.set(false)
               return;
             }
+            if ($isMenuClosed) {
+              $isMenuClosed = false
+            }
             currentComponent = component;
             isBtmOpen.set(true)
           }}
-          style={currentComponent === component && $isBtmOpen ? `color: ${$currentLine.color}` : ``}
-        >
-          {name}
-        </Button>
-      {/if}
-    {/each}
+            style={currentComponent === component && $isBtmOpen ? `color: ${$currentLine.color}` : ``}
+          >
+            {name}
+          </Button>
+        {/if}
+      {/each}
     </div>
-    {#if !$isMenuClosed}
-      <div class="btm-menu-section">
-        {#each menuEntries as { name, component }, index (name)}
-          {#if index != 0}
-            <Button
-              isActive={currentComponent === component && $isBtmOpen}
-              class="isInverted-{$currentLine.isInverted} {$currentLine.number ===
-              7
-                ? 'isSeven'
-                : ''} btn-btm-menu"
-              on:click={() => {
-                if ($isBtmOpen && currentComponent === component) {
-                  isBtmOpen.set(false)
-                  return;
-                }
-                currentComponent = component;
-                isBtmOpen.set(true)
-              }}
-              style={currentComponent === component && $isBtmOpen
-                ? `color: ${$currentLine.color}`
-                : ``}
-            >
-              {#if name === "Endstation Altes Krematorium" && $isMobile === true}
-                <div style="overflow: hidden">
-                  <div class="marquee">{name}</div>
-                </div>
-              {:else}
-                {name}
-              {/if}
-            </Button>
-          {/if}
-        {/each}
-        <div class="close-btn">
+    <div class="nav-element nav-element--btm">
+      {#if !$isMenuClosed}
+          {#each menuEntries as { name, component }, index (name)}
+            {#if index != 0}
+              <Button
+                isActive={currentComponent === component && $isBtmOpen}
+                class="isInverted-{$currentLine.isInverted} {$currentLine.number === 7 ? 'isSeven' : ''} {name === "Stationen" ? 'btnStation' : 'btnArtist'}"
+                on:click={() => {
+                  if ($isBtmOpen && currentComponent === component) {
+                    isBtmOpen.set(false)
+                    return;
+                  }
+                  currentComponent = component;
+                  isBtmOpen.set(true)
+                }}
+                style={currentComponent === component && $isBtmOpen
+                  ? `color: ${$currentLine.color}`
+                  : ``}
+              >
+                  {name}
+              </Button>
+            {/if}
+          {/each}
           <Button
-            class="btn-btm-menu--close"
+            class="btnClose"
             style="background-color: {$currentLine.color}"
             on:click={() => {
               $isMenuClosed = true;
@@ -110,14 +103,13 @@
             }}
           >
             <img
-              class="star isInverted-{$currentLine.isInverted}"
+              class="close isInverted-{$currentLine.isInverted}"
               src="/images/close.svg"
               alt="-"
             />
           </Button>
-        </div>
-      </div>
-    {/if}
+      {/if}
+    </div>
   </nav>
 </div>
 
@@ -131,49 +123,32 @@
     right: 0;
   }
 
+  nav {
+    display: flex;
+    flex-flow: row nowrap;
+    border-radius: var(--border-radius-view);
+    background-color: var(--background-color-light);
+    padding: 0.12em;
+  }
+
   .numb {
     margin-left: var(--padding-l);
     margin-right: var(--padding-l);
     filter: invert(1);
   }
-  nav {
+
+  .nav-element {
     display: flex;
     flex-flow: row nowrap;
-    width: fit-content;
-    align-self: flex-end;
-    border-radius: var(--border-radius-view);
+    justify-content: center;
     align-items: center;
-    background-color: var(--background-color-light);
-  }
+    // &--top {
 
-  .btm-menu-section {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .close-btn {
-    display: none;
-  }
+    // }
+    // &--btm {
 
-  .marquee {
-      overflow: hidden;
-      white-space: nowrap;
-      box-sizing: border-box;
-      animation: marquee 10s ease-in-out infinite;
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translateX(0%);
-      }
-      50% {
-        transform: translateX(-5%);
-      }
-      100% {
-        transform: translateX(0%);
-      }
-    }
+    // }
+  }
 
   @media only screen and (max-width: 768px) {
     #bottom-menu {
@@ -181,11 +156,21 @@
       right: inherit;
     }
     nav {
-      max-width: calc(100vw - var(--global-padding) - var(--global-padding));
-      flex-flow: wrap;
+      width: 100%;
+      flex-flow: column wrap;
     }
-    .close-btn {
-      display: flex;
+    .nav-element {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+      &--top {
+        margin-bottom: 0.12em;
+      }
+    }
+    .close {
+      width: 2.5em;
+      height: 2.5em;
     }
     .isInverted-false {
       filter: invert(1);

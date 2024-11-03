@@ -26,21 +26,6 @@
     margin: 0.12em 0.12em 0.12em 0.12em;
   }
 
-  @media only screen and (max-width: 768px) {
-    .btn-btm-menu {
-      width: 100%;
-      &--first {
-        margin: 0.12em;
-      }
-      &--close {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 32px;
-      }
-    }
-  }
-
   :hover{
     background: var(--hover-color);
     transition: var(--transition);
@@ -79,5 +64,41 @@
   }
   .isSeven {
     background-color: #222222;
+  }
+
+  .btnLine {
+    width: 100%;
+    margin: 0em 0.12em 0em 0em !important;
+  }
+
+  .btnStation {
+    width: 92px;
+    margin: 0em 0.12em 0em 0em !important;
+  }
+
+  .btnArtist {
+    width: 100%;
+    margin: 0em 0em 0em 0em !important
+  }
+
+  .btnClose{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0em !important;
+    margin: 0em var(--padding-l) 0em var(--padding-l) !important;
+    // margin-left: var(--padding-l) !important;
+    // margin-right: var(--padding-l) !important;
+  }
+ 
+
+  @media only screen and (max-width: 768px) {
+    .btnClose{
+      display: flex;
+    }
+    .btnLine {
+      width: 100%;
+      margin: 0em 0em 0em 0em !important;
+    }
   }
 </style>
