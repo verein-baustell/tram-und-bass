@@ -10,6 +10,7 @@
     videoIsPlaying,
     videoIsLoading,
     vimeoVideoObject,
+    previousStation,
   } from "../store";
 
   import Button from "./Button.svelte";
@@ -47,6 +48,7 @@
   </table>
   <table>
     <tr> <td> currentStation:</td><td> {$currentStation?.name}</td></tr>
+    <tr> <td> previousStation:</td><td> {$previousStation?.name}</td></tr>
     <tr> <td> nextStation:</td><td> {$nextStation?.name}</td></tr>
     <tr>
       <td> timeUntilNextStation:</td><td>

@@ -7,10 +7,13 @@ const lines = content.lines;
 
 // dev tools delete for production
 // Define a key to use for local storage
-const localStorageKey = 'devToolsState';
+const localStorageKey = "devToolsState";
 
 // Check if there's an existing state in local storage
-const storedState = typeof localStorage != "undefined" ? localStorage.getItem(localStorageKey) : "false";
+const storedState =
+  typeof localStorage != "undefined"
+    ? localStorage.getItem(localStorageKey)
+    : "false";
 
 // Define the initial state for the store
 const initialState = storedState
@@ -22,12 +25,16 @@ export const devToolsState = writable<DevToolsState>(initialState);
 
 // Subscribe to the store and save any changes to local storage
 devToolsState.subscribe((value) => {
-  typeof localStorage != "undefined" ? localStorage.setItem(localStorageKey, JSON.stringify(value)) : "false";
+  typeof localStorage != "undefined"
+    ? localStorage.setItem(localStorageKey, JSON.stringify(value))
+    : "false";
 });
 
 lines.forEach((line) => {
   line.id = line.name.toLowerCase().replace(/\s/g, "") + line.number;
-  line.isReleased = new Date(line.releaseDate) < new Date() || get(devToolsState).showAllUnreleasedLines;
+  line.isReleased =
+    new Date(line.releaseDate) < new Date() ||
+    get(devToolsState).showAllUnreleasedLines;
 });
 
 export const allLines = writable<Line[]>(lines);
@@ -85,20 +92,40 @@ currentLine.subscribe((value) => {
     });
   }
 });
-export const previousStation = writable<TimeStamp>();
+let lastPreviousStation: TimeStamp | undefined;
+export const previousStation = derived(
+  [currentTime, currentLine],
+  ([$currentTime, $currentLine]) => {
+    const newPreviousStation = $currentLine?.timeStamps
+      ?.toReversed()
+      .find(
+        (timeStamp) =>
+          hmsToSeconds(timeStamp.startTime) < $currentTime &&
+          hmsToSeconds(timeStamp.endTime) < $currentTime
+      );
+
+    if (newPreviousStation !== lastPreviousStation) {
+      lastPreviousStation = newPreviousStation;
+      return newPreviousStation;
+    }
+    return lastPreviousStation;
+  }
+);
 function getVimeoVideoId(videoUrl: string): number | null {
   const regex = /vimeo\.com\/video\/(\d+)/;
   const match = videoUrl.match(regex);
   return match ? +match[1] : null;
 }
+const lastCurrentStation = writable<TimeStamp>();
 /**
  * If we are not at a station, this will be undefined.
  */
 export const currentStation: Readable<TimeStamp | undefined> = derived(
-  [currentTime, currentLine, previousStation],
-  ([$currentTime, $currentLine, $previousStation], set) => {
+  [currentTime, currentLine, lastCurrentStation],
+  ([$currentTime, $currentLine, $lastCurrentStation], set) => {
     vimeoVideoObject &&
-      get(vimeoVideoObject)?.getVideoId()
+      get(vimeoVideoObject)
+        ?.getVideoId()
         .then((currentVideoId) => {
           // if the video is not loaded yet, return
           if (currentVideoId !== getVimeoVideoId($currentLine.videoUrl)) {
@@ -114,9 +141,10 @@ export const currentStation: Readable<TimeStamp | undefined> = derived(
             set(undefined);
             return;
           }
-          if (newStation !== $previousStation) {
-            previousStation.set(newStation);
+          if (newStation !== $lastCurrentStation) {
+            console.log("🚉 new station", newStation, $lastCurrentStation);
             set(newStation);
+            lastCurrentStation.set(newStation);
           }
         });
   }
@@ -145,8 +173,9 @@ export const nextStation = derived(
     return nextStation;
   }
 );
-export const isTopOpen = writable<boolean>(false)
-export const isBtmOpen = writable<boolean>(false)
+
+export const isTopOpen = writable<boolean>(false);
+export const isBtmOpen = writable<boolean>(false);
 export const videoIsPlaying = writable<boolean>(false);
 // extra variable if the video is loading
 export const videoIsLoading = writable<boolean>(false);
@@ -172,4 +201,3 @@ export const timeUntilNextStation = derived(
 );
 export const vimeoVideoObject = writable<Vimeo>();
 vimeoVideoObject.subscribe((vimeo) => {});
-

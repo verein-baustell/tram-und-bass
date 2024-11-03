@@ -14,6 +14,10 @@
     allLines,
     devToolsState,
     isMobile,
+    currentTime,
+    timeUntilNextStation,
+    previousStation,
+    nextStation,
   } from "../store";
   import DevTools from "$lib/DevTools.svelte";
   import registerVimeoEventListeners from "../utils/registerVimeoEventListeners";
@@ -22,6 +26,7 @@
   import { attributes as aboutContent } from "../content/about.md";
   import compareStationNames from "../utils/compareStationNames";
   import { goto } from "$app/navigation";
+  import { hmsToSeconds } from "../utils/timeFormatter";
   // console.log(aboutContent)
   let videoWrapperWidth = "100%";
   let videoWrapperHeight = "100%";
@@ -112,19 +117,34 @@
       }
     };
     document.addEventListener("mousemove", mousePan);
-    document.addEventListener("keydown", (e) => {
-      console.log(e);
-    });
-    if ("mediaSession" in navigator) {
-      console.log("navigator.mediaSession is supported");
-      // add event listeners for audio next and previous buttons to jump to the next or previous station
-      navigator.mediaSession.setActionHandler("seekforward", function () {
-        console.log('> User clicked "Next Track" icon.');
-      });
-    }
+    const keyHandlers = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight" && $nextStation) {
+        $vimeoVideoObject.setCurrentTime($currentTime + $timeUntilNextStation);
+      }
+      if (e.key === "ArrowLeft" && $previousStation) {
+        $vimeoVideoObject.setCurrentTime(
+          hmsToSeconds($previousStation.startTime)
+        );
+      }
+      if (e.key === "ArrowUp") {
+        $vimeoVideoObject.setCurrentTime($currentTime - 2);
+      }
+      if (e.key === "ArrowDown") {
+        $vimeoVideoObject.setCurrentTime($currentTime + 2);
+      }
+      if (e.key === "I") {
+        $isImmersive = !$isImmersive;
+      }
+      if (typeof +e.key === "number" && $currentLine.timeStamps) {
+       $vimeoVideoObject.setCurrentTime(hmsToSeconds($currentLine.timeStamps[+e.key].startTime) )
+       console.log(e.key);
+      }
+    };
+    document.addEventListener("keydown", keyHandlers);
     return () => {
       window.removeEventListener("resize", adjustDimensionsOfVideoWrapper);
       document.removeEventListener("mousemove", mousePan);
+      document.removeEventListener("keydown", keyHandlers);
     };
   });
   $: {
