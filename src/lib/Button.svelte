@@ -26,25 +26,9 @@
     margin: 0.12em 0.12em 0.12em 0.12em;
   }
 
-  @media only screen and (max-width: 768px) {
-    .btn-btm-menu {
-      width: 100%;
-      &--first {
-        margin: 0.12em;
-      }
-      &--close {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 32px;
-      }
-    }
-  }
-
   :hover{
     background: var(--hover-color);
     transition: var(--transition);
-    //background-image: url("/images/patternDots.png");
     background-size: 2em;
 
       &.isInverted-false{
@@ -79,5 +63,49 @@
   }
   .isSeven {
     background-color: #222222;
+  }
+
+  .btnLine {
+    width: 100%;
+    margin: 0em 0.12em 0em 0em !important;
+  }
+
+  .btnTiny {
+    width: inherit !important;
+  }
+
+  .btnStation {
+    width: 92px;
+    margin: 0em 0.12em 0em 0em !important;
+  }
+
+  .btnArtist {
+    width: 100%;
+    max-width: 100%;
+    margin: 0em 0em 0em 0em !important;
+    overflow: hidden;
+    text-overflow: clip !important;
+  }
+
+  .btnClose{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0em !important;
+    margin: 0em var(--padding-l) 0em var(--padding-l) !important;
+    width: 24px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .btnClose{
+      display: flex;
+    }
+    .btnArtist {
+      max-width: calc(100% - 134px);
+    }
+    .btnLine {
+      width: 100%;
+      margin: 0em 0em 0em 0em !important;
+    }
   }
 </style>
