@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount, afterUpdate } from "svelte"
   import { currentLine, isMenuClosed, currentStation, isBtmOpen, isTopOpen, isMobile } from "../store";
   import LineNumber from "./LineNumber.svelte";
   import ChangeLineList from "./ChangeLineList.svelte";
@@ -22,107 +23,147 @@
   }
   $: if ($currentStation && !$isBtmOpen && !$isTopOpen) {
     isBtmOpen.set(true)
-    currentComponent = menuEntries[0]?.component; // Open the first menu entry by default
+    currentComponent = menuEntries[0]?.component;
   }
 
   $: if ($currentStation == undefined) {
     isBtmOpen.set(false)
   }
-</script>
+  
+  let nameContainerBtm: any;
+  let isOverflowing = false;
 
-<div
-  id="bottom-menu"
-  use:clickoutside
-  on:clickoutside={() => {
-    isBtmOpen.set(false)
-  }}
->
-  {#if $isBtmOpen}
-    <svelte:component this={currentComponent} />
-  {/if}
-  <nav style:background-color={$currentLine.color}>
-    <div class="nav-element nav-element--top">
-      <div class="numb">
-        <LineNumber
-          number={$currentLine.number}
-          isInverted={$currentLine.isInverted}
-        />
-      </div>
-      {#each menuEntries as { name, component }, index (name)}
-        {#if index === 0}
-          <Button
-          isActive={currentComponent === component && $isBtmOpen}
-          class="isInverted-{$currentLine.isInverted} {$currentLine.number === 7 ? 'isSeven' : ''} btnLine"
-          on:click={() => {
-            if ($isBtmOpen && currentComponent === component) {
-              isBtmOpen.set(false)
-              return;
-            }
-            if ($isMenuClosed) {
-              $isMenuClosed = false
-            }
-            currentComponent = component;
-            isBtmOpen.set(true)
-          }}
-            style={currentComponent === component && $isBtmOpen ? `color: ${$currentLine.color}` : ``}
-          >
-            {name}
-          </Button>
-        {/if}
-      {/each}
-    </div>
-    <div class="nav-element nav-element--btm">
-      {#if !$isMenuClosed}
-          {#each menuEntries as { name, component }, index (name)}
-            {#if index != 0}
-              <Button
-                isActive={currentComponent === component && $isBtmOpen}
-                class="isInverted-{$currentLine.isInverted} {$currentLine.number === 7 ? 'isSeven' : ''} {name === "Stationen" ? 'btnStation' : 'btnArtist'}"
-                on:click={() => {
-                  if ($isBtmOpen && currentComponent === component) {
-                    isBtmOpen.set(false)
-                    return;
-                  }
-                  currentComponent = component;
-                  isBtmOpen.set(true)
-                }}
-                style={currentComponent === component && $isBtmOpen
-                  ? `color: ${$currentLine.color}`
-                  : ``}
-              >
-                  {name}
-              </Button>
-            {/if}
-          {/each}
-          <Button
-            class="btnClose"
-            style="background-color: {$currentLine.color}"
+  function checkOverflow() {
+    if (nameContainerBtm) {
+      isOverflowing = nameContainerBtm.scrollWidth > nameContainerBtm.clientWidth;
+      console.log(nameContainerBtm, isOverflowing);
+    }
+  }
+
+  afterUpdate(() => {
+    checkOverflow();
+  });
+
+  onMount(() => {
+    checkOverflow()
+  });
+
+  $: menuEntries, checkOverflow();
+</script>
+<div class="btmMenu--cont">
+  <div
+    id="bottom-menu"
+    class={$isMenuClosed ? 'putRight' : ''} 
+    use:clickoutside
+    on:clickoutside={() => {
+      isBtmOpen.set(false)
+    }}
+  >
+    {#if $isBtmOpen}
+      <svelte:component this={currentComponent} />
+    {/if}
+    <nav style:background-color={$currentLine.color}>
+      <div class="nav-element nav-element--top">
+        <div class="numb">
+          <LineNumber
+            number={$currentLine.number}
+            isInverted={$currentLine.isInverted}
+          />
+        </div>
+        {#each menuEntries as { name, component }, index (name)}
+          {#if index === 0}
+            <Button
+            isActive={currentComponent === component && $isBtmOpen}
+            class="isInverted-{$currentLine.isInverted} {$currentLine.number === 7 ? 'isSeven' : ''} {$isMenuClosed ? 'btnTiny' : ''} btnLine"
             on:click={() => {
-              $isMenuClosed = true;
+              if ($isBtmOpen && currentComponent === component) {
+                isBtmOpen.set(false)
+                return;
+              }
+              if ($isMenuClosed) {
+                $isMenuClosed = false
+              }
+              currentComponent = component;
               isBtmOpen.set(true)
             }}
-          >
-            <img
-              class="close isInverted-{$currentLine.isInverted}"
-              src="/images/close.svg"
-              alt="-"
-            />
-          </Button>
-      {/if}
-    </div>
-  </nav>
+              style={currentComponent === component && $isBtmOpen ? `color: ${$currentLine.color}` : ``}
+            >
+              {name}
+            </Button>
+          {/if}
+        {/each}
+      </div>
+      <div class="nav-element nav-element--btm">
+        {#if !$isMenuClosed}
+            {#each menuEntries as { name, component }, index (name)}
+              {#if index != 0}
+                <Button
+                  isActive={currentComponent === component && $isBtmOpen}
+                  class="isInverted-{$currentLine.isInverted} {$currentLine.number === 7 ? 'isSeven' : ''} {name === "Stationen" ? 'btnStation' : 'btnArtist'}"
+                  on:click={() => {
+                    if ($isBtmOpen && currentComponent === component) {
+                      isBtmOpen.set(false)
+                      return;
+                    }
+                    currentComponent = component;
+                    isBtmOpen.set(true)
+                  }}
+                  style={currentComponent === component && $isBtmOpen
+                    ? `color: ${$currentLine.color}`
+                    : ``}
+                >
+                <div class="nameContainerBtm" bind:this={nameContainerBtm}>
+                {#if isOverflowing && name != "Stationen"}
+                  <div class="marquee">{name}</div>
+                {:else}
+                  {name}
+                {/if}
+                </div>
+                </Button>
+              {/if}
+            {/each}
+            <Button
+              class="btnClose"
+              style="background-color: {$currentLine.color}"
+              on:click={() => {
+                $isMenuClosed = true;
+                isBtmOpen.set(true)
+              }}
+            >
+              <img
+                class="close isInverted-{$currentLine.isInverted}"
+                src="/images/close.svg"
+                alt="-"
+              />
+            </Button>
+        {/if}
+      </div>
+    </nav>
+  </div>
 </div>
 
 <style lang="scss" scoped>
+  .btmMenu--cont{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
   #bottom-menu {
     display: flex;
     flex-flow: column wrap;
     margin: var(--global-padding);
-    position: fixed;
+    position: absolute;
     bottom: 0;
     right: 0;
+    pointer-events: all;
   }
-
+  .nameContainerBtm {
+    // max-width: 180px;
+    overflow: hidden
+  }
   nav {
     display: flex;
     flex-flow: row nowrap;
@@ -142,35 +183,30 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    // &--top {
-
-    // }
-    // &--btm {
-
-    // }
   }
 
   @media only screen and (max-width: 768px) {
     #bottom-menu {
       left: 0;
-      right: inherit;
+    }
+    .putRight {
+      right: inherit !important;
     }
     nav {
-      width: 100%;
       flex-flow: column wrap;
     }
     .nav-element {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
       &--top {
         margin-bottom: 0.12em;
       }
     }
     .close {
-      width: 2.5em;
-      height: 2.5em;
+      min-width: 24px;
+      min-height: 24px;
     }
     .isInverted-false {
       filter: invert(1);

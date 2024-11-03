@@ -29,7 +29,6 @@
   :hover{
     background: var(--hover-color);
     transition: var(--transition);
-    //background-image: url("/images/patternDots.png");
     background-size: 2em;
 
       &.isInverted-false{
@@ -71,6 +70,10 @@
     margin: 0em 0.12em 0em 0em !important;
   }
 
+  .btnTiny {
+    width: inherit !important;
+  }
+
   .btnStation {
     width: 92px;
     margin: 0em 0.12em 0em 0em !important;
@@ -78,7 +81,10 @@
 
   .btnArtist {
     width: 100%;
-    margin: 0em 0em 0em 0em !important
+    max-width: 100%;
+    margin: 0em 0em 0em 0em !important;
+    overflow: hidden;
+    text-overflow: clip !important;
   }
 
   .btnClose{
@@ -87,14 +93,15 @@
     align-items: center;
     padding: 0em !important;
     margin: 0em var(--padding-l) 0em var(--padding-l) !important;
-    // margin-left: var(--padding-l) !important;
-    // margin-right: var(--padding-l) !important;
+    width: 24px;
   }
- 
 
   @media only screen and (max-width: 768px) {
     .btnClose{
       display: flex;
+    }
+    .btnArtist {
+      max-width: 210px;
     }
     .btnLine {
       width: 100%;

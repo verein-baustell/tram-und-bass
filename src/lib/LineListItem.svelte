@@ -13,8 +13,6 @@
   function checkOverflow() {
     if (nameContainer) {
       isOverflowing = nameContainer.scrollWidth > nameContainer.clientWidth;
-      console.log(isOverflowing);
-      
     }
   }
   onMount(() => {
@@ -27,7 +25,7 @@
 
 <li>
   <button
-    on:click={() => line.isReleased && onClick(line)}
+    on:click={() => line.isReleased && onClick(line) && checkOverflow()}
     disabled={!line.isReleased}
     on:keydown={(e) => {
       if (e.key === "Enter" && line.isReleased) {

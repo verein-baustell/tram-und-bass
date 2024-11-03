@@ -58,7 +58,7 @@ ol {
   overflow: hidden;
 }
 .marquee {
-  overflow: hidden;
+  /* overflow: hidden; */
   white-space: nowrap;
   box-sizing: border-box;
   animation: marquee 10s ease-in-out infinite;
@@ -69,7 +69,7 @@ ol {
     transform: translateX(0%);
   }
   50% {
-    transform: translateX(-10%);
+    transform: translateX(-12%);
   }
   100% {
     transform: translateX(0%);
