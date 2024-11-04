@@ -1,6 +1,6 @@
 import { get } from "svelte/store";
-import { cookieConsent } from "../store"; // Adjust the import path as necessary
-import { setCookie, deleteCookie } from '../utils/cookieUtils'; // Make sure to import your cookie utility functions
+import { cookieConsent } from "../store";
+import { setCookie, deleteCookie } from '../utils/cookieUtils';
 
 export const giveConsent = () => {
     // Get the current consent value

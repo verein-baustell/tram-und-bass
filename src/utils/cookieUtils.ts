@@ -1,5 +1,3 @@
-// src/lib/utils/cookieUtils.ts
-
 /**
  * Sets a cookie with the specified name, value, and expiration days.
  * @param name - The name of the cookie.
