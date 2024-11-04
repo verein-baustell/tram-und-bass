@@ -28,8 +28,8 @@
     <h1>Willkommen bei Tram und Bass</h1>
     {#if !$cookieConsent}
       <div>
-        We use third-party cookies from Vimeo to enhance your experience. By
-        clicking the button below, you agree to their use.
+        Wir verwenden Cookies von Drittanbietern, darunter Vimeo. Durch das
+        Klicken auf den unten stehenden Button stimmen Sie dem zu.
       </div>
     {/if}
     <Button
