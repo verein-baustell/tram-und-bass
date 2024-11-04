@@ -26,7 +26,7 @@
     any
   >;
   let linesAtSelectedStation: Line[]; // the station that is currently being previewed
-  let selectedStation: string;
+  let selectedStation: string | undefined;
   let stationPositions: StationsPositions = {};
   let linePaths: any;
   let totalLength: any;
@@ -38,8 +38,10 @@
   }[] = [];
   let totalAnimationTime = 0;
   let isPathReversed = false;
+  let showLineList = false;
   // ... Existing functions (zoomed, zoomToElement, highlightCurrentStation, etc.) ...
-
+  let stationsGroupSelection = d3.select("#map-svg #stations");
+  ;
   function getStationPositions() {
     const stationsGroupSelection = d3.select<SVGGElement, unknown>(
       "#map-svg #stations"
@@ -278,11 +280,12 @@
 
     // Calculate the center of the station element
     const x = bbox.left + bbox.width / 2;
-    const y = bbox.top 
+    const y = bbox.top;
 
     return { x, y };
   };
   const updateLineListPosition = () => {
+    console.log("updateLineListPosition", selectedStation);
     if (!selectedStation) return;
 
     const position = getScreenPositionOfStation(selectedStation);
@@ -349,11 +352,15 @@
           .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
       );
   };
-  const highlightCurrentStation = (newStation: string) => {
-    const stationsGroupSelection = d3.select("#map-svg #stations");
+  const resetHighlightedStations = () => {
     stationsGroupSelection
       .selectChildren(".activeStation")
       .attr("class", "station");
+  };
+  const highlightCurrentStation = (newStation: string) => {
+    showLineList = true;
+    resetHighlightedStations();
+
     const currentStationName = stationNameToId(newStation);
     const activeStationSelection = stationsGroupSelection.selectChild(
       "#" + currentStationName
@@ -364,7 +371,6 @@
     }
   };
   const addClassesToStations = () => {
-    const stationsGroupSelection = d3.select("#map-svg #stations");
     stationsGroupSelection
       .selectChildren()
       .attr("class", function () {
@@ -375,10 +381,9 @@
         return id === currentStationName ? "activeStation station" : "station";
       })
       .on("click", function () {
+        showLineList = true;
         const stationName = (this as Element)?.getAttribute("id");
-        stationsGroupSelection
-          .selectChildren(".activeStation")
-          .attr("class", "station");
+        resetHighlightedStations();
         (this as Element).classList.add("activeStation");
         // zoom to station
         zoomToElement(d3.select(this));
@@ -437,13 +442,12 @@
     }
   };
   const removeInlineStyleAttributes = () => {
-    const stationsGroupSelection = d3.select("#map-svg #stations");
     stationsGroupSelection.selectChildren().attr("fill", null);
     stationsGroupSelection.selectChildren().attr("stroke", null);
   };
   onMount(() => {
     removeInlineStyleAttributes();
-
+    stationsGroupSelection = d3.select("#map-svg #stations");
     // Get station positions
     stationPositions = getStationPositions();
 
@@ -457,7 +461,9 @@
   });
 
   currentStation.subscribe((newStation) => {
-    newStation?.name && highlightCurrentStation(newStation.name);
+    newStation?.name &&
+      !selectedStation &&
+      highlightCurrentStation(newStation.name);
   });
 
   currentLine.subscribe((newLine) => {
@@ -487,13 +493,19 @@
   });
 </script>
 
-{#if linesAtSelectedStation}
+{#if linesAtSelectedStation && showLineList}
   <LineList
     id="map-line-list"
     onClick={(lineClicked) => {
-      changeToLineAtStation(lineClicked, selectedStation);
+     selectedStation && changeToLineAtStation(lineClicked, selectedStation);
     }}
     lines={linesAtSelectedStation}
+    isClosable
+    onClose={() => {
+      selectedStation = undefined;
+      showLineList = false;
+    }}
+    title={selectedStation}
   />
 {/if}
 
