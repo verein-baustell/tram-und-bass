@@ -278,7 +278,7 @@
 
     // Calculate the center of the station element
     const x = bbox.left + bbox.width / 2;
-    const y = bbox.top + bbox.height / 2;
+    const y = bbox.top 
 
     return { x, y };
   };
@@ -516,7 +516,7 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, calc(-100% - 2em));
+    transform: translate(-50%, calc(-100% - 1em));
   }
   :global(.isLoading) {
     :global(.activeLine) {
