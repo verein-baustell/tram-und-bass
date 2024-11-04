@@ -47,6 +47,7 @@
     border: none;
     color: inherit;
     font-size: 1em;
+    padding: 0 .3em;
     cursor: pointer;
   }
   // reset ul li

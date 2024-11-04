@@ -8,6 +8,7 @@
     currentTime,
     allLines,
     videoIsLoading,
+    isMobile,
   } from "../store";
   import { hmsToSeconds } from "../utils/timeFormatter";
   import { changeToLineAtStation } from "../utils/changeToLineAtCurrentStation";
@@ -350,13 +351,21 @@
       return;
     }
     const scale = 2.5;
+    // translate the svg to the center of the screen on desktop and 320px above bottom for mobile
+    const lineListHeight = document.getElementById("map-line-list")?.clientHeight;
+    const topMenuHeight = document.getElementById("top-menu")?.clientHeight ?? 50;
+    const padding = 20;
+    const minDistToTop = topMenuHeight + padding;
+    // const yTranslate = isMobile && lineListHeight && lineListHeight > (window.innerHeight / 2 - minDistToTop) ? INITIAL_HEIGHT - 320 : INITIAL_HEIGHT / 2;
+    const yTranslate = $isMobile ? INITIAL_HEIGHT - 320 : INITIAL_HEIGHT / 2;
+    console.log("yTranslate", yTranslate, "isMobile", isMobile);
     svg
       .transition()
       .duration(750)
       .call(
         zoom.transform as any,
         d3.zoomIdentity
-          .translate(INITIAL_WIDTH / 2, INITIAL_HEIGHT / 2)
+          .translate(INITIAL_WIDTH / 2, yTranslate)
           .scale(scale)
           .translate(-x, -y)
       );
@@ -396,7 +405,6 @@
         resetHighlightedStations();
         (this as Element).classList.add("activeStation");
         // zoom to station
-        zoomToElement(d3.select(this));
         if (!stationName) return;
         linesAtSelectedStation = getLinesFromStationName(
           stationName,
@@ -404,6 +412,7 @@
         );
         selectedStation = stationName;
         updateLineListPosition();
+        zoomToElement(d3.select(this));
         // position lineList above the station
       })
       .on("mouseover", function (d, e) {
@@ -472,8 +481,8 @@
 
   currentStation.subscribe((newStation) => {
     if (newStation?.name && !selectedStation) {
-      highlightCurrentStation(newStation.name);
       showLineList = true;
+      highlightCurrentStation(newStation.name);
     }
   });
 
@@ -515,6 +524,7 @@
     onClose={() => {
       selectedStation = undefined;
       showLineList = false;
+      resetHighlightedStations()
     }}
     title={selectedStation}
   />
@@ -537,6 +547,7 @@
 <style lang="scss" scoped>
   :global(#map-line-list) {
     position: fixed;
+    z-index: 99999;
     top: 50%;
     left: 50%;
     transform: translate(-50%, calc(-100% - 1em));
@@ -544,6 +555,9 @@
     :global(ul) {
       max-height: 300px;
       overflow: scroll;
+      @media(max-width: 768px) {
+        max-height: 230px;
+      }
     }
   }
   :global(.isLoading) {
