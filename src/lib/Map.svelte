@@ -51,9 +51,17 @@
       const stationElement = d3.select(this);
       const stationId = stationElement.attr("id");
       const bbox = (this as SVGGraphicsElement).getBBox();
-      const x = bbox.x + bbox.width / 2;
-      const y = bbox.y + bbox.height / 2;
-
+      let x = bbox.x + bbox.width / 2;
+      let y = bbox.y + bbox.height / 2;
+      const transform = stationElement.attr("transform");
+      if (transform && transform.includes("matrix")) {
+        const matrix = transform.match(/-?\d+/g)?.map(Number);
+        if (matrix) {
+          const [a, b, c, d, e, f] = matrix;
+          x = a * bbox.x + bbox.width / 2 + c * bbox.y + bbox.height / 2 + e;
+          y = b * bbox.x + bbox.width / 2 + d * bbox.y + bbox.height / 2 + f;
+        }
+      }
       stationPositions[stationId] = { x, y };
     });
 
@@ -324,20 +332,22 @@
   ) => {
     const svg = d3.select("#map-svg");
     const bbox = (stationElement.node() as SVGGElement).getBBox();
-    let x0 = bbox.x;
-    let y0 = bbox.y;
-    let x1 = bbox.x + bbox.width;
-    let y1 = bbox.y + bbox.height;
+    console.log("stationElement", stationElement.node());
+    let x = bbox.x + bbox.width / 2;
+    let y = bbox.y + bbox.height / 2;
+
     const transform = stationElement.attr("transform");
     if (transform && transform.includes("matrix")) {
       const matrix = transform.match(/-?\d+/g)?.map(Number);
       if (matrix) {
         const [a, b, c, d, e, f] = matrix;
-        x0 = a * bbox.x + c * bbox.y + e;
-        y0 = b * bbox.x + d * bbox.y + f;
-        x1 = a * (bbox.x + bbox.width) + c * (bbox.y + bbox.height) + e;
-        y1 = b * (bbox.x + bbox.width) + d * (bbox.y + bbox.height) + f;
+        x = a * bbox.x + bbox.width / 2 + c * bbox.y + bbox.height / 2 + e;
+        y = b * bbox.x + bbox.width / 2 + d * bbox.y + bbox.height / 2 + f;
       }
+    }
+    if (!x && !y) {
+      console.error("No position found for station", stationElement.node());
+      return;
     }
     const scale = 2.5;
     svg
@@ -348,7 +358,7 @@
         d3.zoomIdentity
           .translate(INITIAL_WIDTH / 2, INITIAL_HEIGHT / 2)
           .scale(scale)
-          .translate(-(x0 + x1) / 2, -(y0 + y1) / 2)
+          .translate(-x, -y)
       );
   };
   const resetHighlightedStations = () => {
@@ -366,6 +376,7 @@
     );
     if (activeStationSelection.node()) {
       activeStationSelection.attr("class", "activeStation station");
+      console.log("highlightCurrentStation", activeStationSelection);
       zoomToElement(activeStationSelection);
     }
   };
@@ -460,9 +471,10 @@
   });
 
   currentStation.subscribe((newStation) => {
-    newStation?.name &&
-      !selectedStation &&
+    if (newStation?.name && !selectedStation) {
       highlightCurrentStation(newStation.name);
+      showLineList = true;
+    }
   });
 
   currentLine.subscribe((newLine) => {
