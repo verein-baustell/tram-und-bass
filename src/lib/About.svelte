@@ -35,7 +35,7 @@
         </div>
     </a>
 
-    <a href="https://www.instagram.com/tramundbass">
+    <a href="https://tramundbass.bandcamp.com/">
         <div class="about-container support">
             <p>
                 <span>Support Tram und Bass auf BandCamp</span>

@@ -483,7 +483,20 @@ lines:
     number: 4
     name: Bahnhof Tiefenbrunnen
     artistName: Silver Tears
-    artistAboutText: "[Instagram](https://www.instagram.com/newkyddd3/)"
+    artistAboutText: >-
+      My style of playing is "sugar trap". Which is both a sonic aesthetic and
+      approach; raw and unafraid. My priority is creating mixes which ooze with
+      feminine fluidity and uncompromising energy. I propose a trans-diasporan
+      sound, where nostalgia and vocals guide the mix wherever it goes. I am
+      British by birth to Nigerian parents with a special connection to NYC.
+      Music has been a thread branching aspects of my life experiences together,
+      through my work as an interdisciplinary dance artist.
+
+
+      Taking this ride goes through the centre of Zurich. Often before or after a night out, you would probably enter this tram ride and one point or another. This mix takes you on a one person party through this tram ride. To either take the energy with you before the night out, or if you still have some left after. Near the beginning is a section about water, which foreshadows travelling by the lake closer to the end of the journey.
+
+
+      [Instagram](https://www.instagram.com/newkyddd3/)
     videoUrl: https://player.vimeo.com/video/950564216?h=895d1fb002
     releaseDate: 2024-07-15T15:09:00.000Z
     id: ""
@@ -1367,7 +1380,18 @@ lines:
     number: 9
     name: Hirzenbach
     artistName: Isi!
-    artistAboutText: "[Instagram](https://www.instagram.com/isi_si/)"
+    artistAboutText: >-
+      Isi! is all about emotional high-energy bass-driven dancefloor-activation.
+      Be it as organizer (RHIZOM festival, Summer Camp, Rote Fabrik's Clubbüro)
+      or as selector, Isi! aims to trigger each individual's potential for
+      collective engagement. Her sets have been known to work the crowd until
+      they sweat and shout, making love to the dancefloor.
+
+
+      Just like Nüünitram's snaking line, my mix weaves through heartfelt favorites, rattling basslines, and squealing soundscapes. Some tracks dare to comment on iconic stops: Inner City Life drifts from Stauffacher to the Sihlstrasse; Dirty Cash hits Paradeplatz; Stefan Eicher searches for love at Limmatquai; Pipilotti Rist serenades you with Wicked Game at Heimplatz; Dürrenmatt reads from Der Tunnel while while driving through the burrow and Mani Matter guides the Nüünitram straight to heaven.
+
+
+      [Instagram](https://www.instagram.com/isi_si/)
     videoUrl: https://player.vimeo.com/video/950571962?h=b4953715b2
     releaseDate: 2024-07-16T11:58:00.000Z
     id: ""
