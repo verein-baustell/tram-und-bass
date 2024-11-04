@@ -41,7 +41,6 @@
   let showLineList = false;
   // ... Existing functions (zoomed, zoomToElement, highlightCurrentStation, etc.) ...
   let stationsGroupSelection = d3.select("#map-svg #stations");
-  ;
   function getStationPositions() {
     const stationsGroupSelection = d3.select<SVGGElement, unknown>(
       "#map-svg #stations"
@@ -497,7 +496,7 @@
   <LineList
     id="map-line-list"
     onClick={(lineClicked) => {
-     selectedStation && changeToLineAtStation(lineClicked, selectedStation);
+      selectedStation && changeToLineAtStation(lineClicked, selectedStation);
     }}
     lines={linesAtSelectedStation}
     isClosable
@@ -529,6 +528,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, calc(-100% - 1em));
+    height: min-content;
+    :global(ul) {
+      max-height: 300px;
+      overflow: scroll;
+    }
   }
   :global(.isLoading) {
     :global(.activeLine) {
@@ -536,7 +540,7 @@
         opacity: 0;
       }
       :global(path:not(.lineProgress)) {
-        animation: pulse 0.6s ease-in-out infinite;
+        animation: pulse 0.6s ease-in-out infinite alternate;
         stroke-dasharray: 50;
 
         @keyframes pulse {

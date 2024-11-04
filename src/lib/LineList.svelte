@@ -7,32 +7,37 @@
   export let isClosable = false;
   export let onClose: (() => void) | undefined = undefined;
   export let title: string | undefined = undefined;
-  import '../style/style.css'
+  import "../style/style.css";
 </script>
-<div id={id} class="{("line-list " + (viewable ? 'view detailed-view': ''))}">
+
+<div {id} class={"line-list " + (viewable ? "view detailed-view" : "")}>
   {#if title}
-    <h4>{title}</h4>
+    <h4>
+      {title}{#if isClosable}
+        <button class="close-button" on:click={onClose}>✕</button>
+      {/if}
+    </h4>
   {/if}
-  {#if isClosable}
-    <button class="close-button" on:click={onClose}>X</button>
-  {/if}
+
   <ul>
     {#each lines as line}
-      <LineListItem
-        {onClick}
-        {line}
-      />
+      <LineListItem {onClick} {line} />
     {/each}
   </ul>
 </div>
 
 <style lang="scss" scoped>
-  h4{
+  h4 {
     font-size: 1.5em;
     margin: 0;
+    margin-bottom: 4px;
     font-weight: bold;
     text-align: center;
-
+    top: 0;
+    z-index: 1;
+    background-color: var(--background-color);
+    padding: 0 1.2em;
+    position: relative;
   }
   .close-button {
     position: absolute;
@@ -42,7 +47,6 @@
     border: none;
     color: inherit;
     font-size: 1em;
-    z-index: 1;
     cursor: pointer;
   }
   // reset ul li
