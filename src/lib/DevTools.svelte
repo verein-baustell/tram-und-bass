@@ -11,7 +11,9 @@
     videoIsLoading,
     vimeoVideoObject,
     previousStation,
+    cookieConsent,
   } from "../store";
+  import { giveConsent, revokeConsent } from "../utils/cookieManager";
 
   import Button from "./Button.svelte";
 </script>
@@ -36,10 +38,25 @@
       ? "Hide unreleased"
       : "Show unreleased"}</Button
   >
+  <Button
+    on:click={() => {
+      giveConsent();
+    }}
+  >
+    Give consent
+  </Button>
+  <Button
+    on:click={() => {
+      revokeConsent();
+    }}
+  >
+    Revoke consent
+  </Button>
   <table>
     <tr> <td> currentTime:</td><td> {$currentTime.toFixed(2)}</td></tr>
     <tr> <td> videoIsPlaying:</td><td> {$videoIsPlaying}</td></tr>
     <tr> <td> videoIsLoading:</td><td> {$videoIsLoading}</td></tr>
+    <tr> <td> cookieConsent:</td><td> {$cookieConsent}</td></tr>
     <tr>
       <td> timeToSeekAfterVideoLoad:</td><td>
         {$timeToSeekAfterVideoLoad}</td

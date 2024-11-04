@@ -224,3 +224,10 @@ export const timeUntilNextStation = derived(
 );
 export const vimeoVideoObject = writable<Vimeo>();
 vimeoVideoObject.subscribe((vimeo) => {});
+
+
+// cookie
+import { browser } from '$app/environment';
+// Check if consent has already been given when initializing
+const initialConsent = browser ? document.cookie.includes('cookieConsent=true') : false;
+export const cookieConsent = writable(initialConsent);
