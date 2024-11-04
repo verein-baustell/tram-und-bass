@@ -3,20 +3,22 @@
   import { onMount } from "svelte";
   import Button from "./Button.svelte";
   import { clickoutside } from "@svelte-put/clickoutside";
-  import { 
+  import {
     vimeoVideoObject,
     videoIsPlaying,
     onHome,
-    currentLine
+    currentLine,
+    cookieConsent,
   } from "../store";
+  import { giveConsent } from "../utils/cookieManager";
 
   function togglePlayPause() {
     if ($videoIsPlaying) {
       $vimeoVideoObject.play();
     } else {
       $vimeoVideoObject.pause();
-      currentLine.set($currentLine)
-      onHome.set(false)
+      currentLine.set($currentLine);
+      onHome.set(false);
     }
   }
 </script>
@@ -24,15 +26,18 @@
 <div id="welcome-screen">
   <div class="landing--container">
     <h1>Willkommen bei Tram und Bass</h1>
-    <div>
-      Cookie consent here
-    </div>
-    <Button 
-      on:click={togglePlayPause} 
-      title="Press Space to toggle"
+    {#if !$cookieConsent}
+      <div>
+        We use third-party cookies from Vimeo to enhance your experience. By
+        clicking the button below, you agree to their use.
+      </div>
+    {/if}
+    <Button
+      on:click={() => {
+        togglePlayPause();
+        giveConsent();
+      }}>Einsteigen!</Button
     >
-      Einsteigen!
-    </Button>
   </div>
 </div>
 
