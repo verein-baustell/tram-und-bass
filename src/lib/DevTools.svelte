@@ -16,10 +16,11 @@
   import { giveConsent, revokeConsent } from "../utils/cookieManager";
 
   import Button from "./Button.svelte";
+  let showDevTools = false;
 </script>
 
 <div id="dev-tools">
-  <h2>Dev Tools</h2>
+ {#if showDevTools} <h2>Dev Tools</h2>
   <Button
     on:click={() => {
       $vimeoVideoObject.setCurrentTime($timeUntilNextStation + $currentTime);
@@ -73,6 +74,10 @@
       ></tr
     >
   </table>
+  {/if}
+  <Button on:click={() => (showDevTools = !showDevTools)}>
+    {showDevTools ? "Hide" : "Show"} Dev Tools
+  </Button>
 </div>
 
 <style lang="scss">
