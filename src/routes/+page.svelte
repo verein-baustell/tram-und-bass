@@ -141,8 +141,7 @@
       if (e.key === "I") {
         $isImmersive = !$isImmersive;
       }
-      if (!isNaN(e.key as unknown as number) && $currentLine.timeStamps) {
-        console.log(e.key);
+      if (/^\d$/.test(e.key) && $currentLine.timeStamps) {
         $vimeoVideoObject.setCurrentTime(
           hmsToSeconds($currentLine.timeStamps[+e.key].startTime)
         );
