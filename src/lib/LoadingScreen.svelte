@@ -3,6 +3,7 @@
   import { fade } from "svelte/transition";
   export let style: string;
   import { currentTime, videoIsLoading, videoIsPlaying } from "../store";
+  import ThreeJsComponent from "./ThreeJSComponent.svelte";
 </script>
 
 <div class="con">
@@ -15,6 +16,10 @@
         alt="loading animation"
       />
     </div>
+  {/if}
+
+  {#if $currentTime == 0 && !$videoIsPlaying && !$videoIsLoading}
+    <ThreeJsComponent></ThreeJsComponent>
   {/if}
 
   {#if $videoIsLoading}
