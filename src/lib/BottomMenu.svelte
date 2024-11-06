@@ -216,12 +216,14 @@
     }
     nav {
       flex-flow: column wrap;
+      max-width: calc(100% - 0.08em)
     }
     .nav-element {
       display: flex;
       flex-flow: row nowrap;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
+      width: 100%;
       &--top {
         margin-bottom: 0.12em;
       }
