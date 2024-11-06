@@ -2,7 +2,7 @@
   import LineListItem from "./LineListItem.svelte";
   export let lines: Line[];
   export let viewable = true;
-  export let id: string;
+  export let id: string | undefined = undefined;
   export let onClick: (lineClicked: Line) => void;
   export let isClosable = false;
   export let onClose: (() => void) | undefined = undefined;
@@ -47,7 +47,7 @@
     border: none;
     color: inherit;
     font-size: 1em;
-    padding: 0 .3em;
+    padding: 0 0.3em;
     cursor: pointer;
   }
   // reset ul li

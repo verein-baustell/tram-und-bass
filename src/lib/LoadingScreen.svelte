@@ -1,32 +1,34 @@
 <script lang="ts">
   import { scale } from "svelte/transition";
   import { fade } from "svelte/transition";
-  import { onHome} from "../store"
   export let style: string;
+  import { currentTime, videoIsLoading, videoIsPlaying } from "../store";
 </script>
 
 <div class="con">
-  <div transition:fade={{ delay: 250, duration: 300 }}>
-    <img
-      {style}
-      id="gif"
-      src="/images/IntroShortSimpleSmall.gif"
-      alt="loading animation"
-    />
-  </div>
-  {#if !$onHome}
-  <div
-    transition:scale={{ duration: 400, delay: 200, opacity: 0.0, start: 0.2 }}
-  >
- 
-    <img
-      class="logo bounce"
-      src="/images/loadingSmall.gif"
-      width="auto"
-      height="auto"
-      alt="TnB Loading Animation"
-    />
-  </div>
+  {#if ($currentTime == 0 && !$videoIsPlaying) || $videoIsLoading}
+    <div transition:fade={{ delay: 250, duration: 300 }}>
+      <img
+        {style}
+        id="gif"
+        src="/images/IntroShortSimpleSmall.gif"
+        alt="loading animation"
+      />
+    </div>
+  {/if}
+
+  {#if $videoIsLoading}
+    <div
+      transition:scale={{ duration: 400, delay: 200, opacity: 0.0, start: 0.2 }}
+    >
+      <img
+        class="logo bounce"
+        src="/images/loadingSmall.gif"
+        width="auto"
+        height="auto"
+        alt="TnB Loading Animation"
+      />
+    </div>
   {/if}
 </div>
 

@@ -19,7 +19,7 @@
     timeUntilNextStation,
     previousStation,
     nextStation,
-    onHome
+    cookieConsent,
   } from "../store";
   import DevTools from "$lib/DevTools.svelte";
   import registerVimeoEventListeners from "../utils/registerVimeoEventListeners";
@@ -39,12 +39,34 @@
   let showSplashScreen = true;
   const releasedLines = $allLines.filter((line) => line.isReleased);
   let randomIndex = Math.floor(Math.random() * (releasedLines.length - 1));
-  $currentLine = releasedLines[randomIndex];
 
-  const today = new Date();
-  const releaseDate = new Date("2024-01-01T22:00:00");
-  const showLandingPage = today <= releaseDate;
-  onMount(() => {
+  const initVideo = () => {
+    readLineFromPath();
+    $vimeoVideoObject = new Vimeo("video-container", {
+      url: $currentLine?.videoUrl,
+      controls: false,
+      autopause: false,
+      loop: true,
+    });
+    registerVimeoEventListeners();
+  };
+
+  $: if ($cookieConsent) {
+    initVideo();
+  }
+
+  // Set `initialized` to true after `cookieConsent` is set
+  import { browser } from "$app/environment";
+  let initialized = false;
+  if (browser) {
+    cookieConsent.subscribe(() => {
+      initialized = true;
+    });
+  }
+
+  const readLineFromPath = () => {
+    // leave line parameter in url if no cookie is set
+    if (!$cookieConsent) return;
     const url = new URL(window.location.href);
     const lineIdFromUrl = url.searchParams.get("line");
     if (lineIdFromUrl) {
@@ -52,17 +74,24 @@
         compareStationNames(line.id, lineIdFromUrl)
       );
       if (lineFromUrl && lineFromUrl.isReleased) {
+        // set the line
         $currentLine = lineFromUrl;
       } else {
         console.log("line in url not released or not existant");
         url.searchParams.delete("line");
         goto(url.toString(), { replaceState: true });
       }
+    } else {
+      $currentLine = releasedLines[randomIndex];
     }
-    if (url.href === url.origin + "/") {
-      onHome.set(true)
-    }
-    
+  };
+
+  const today = new Date();
+  const releaseDate = new Date("2024-01-01T22:00:00");
+  const showLandingPage = today <= releaseDate;
+  onMount(() => {
+    readLineFromPath();
+
     if (showLandingPage) return;
     isDevMode =
       window.location.hostname === "localhost" ||
@@ -77,13 +106,7 @@
       isDevMode = false;
       localStorage.setItem("devMode", "false");
     };
-    $vimeoVideoObject = new Vimeo("video-container", {
-      url: $currentLine.videoUrl,
-      controls: false,
-      autopause: false,
-      loop: true,
-    });
-    registerVimeoEventListeners();
+    // Reactive statement to run the initVideo function when cookieConsent becomes true
     const adjustDimensionsOfVideoWrapper = () => {
       if (window.innerHeight > (window.innerWidth * 9) / 16) {
         videoWrapperWidth = "auto";
@@ -141,7 +164,7 @@
       if (e.key === "I") {
         $isImmersive = !$isImmersive;
       }
-      if (/^\d$/.test(e.key) && $currentLine.timeStamps) {
+      if (/^\d$/.test(e.key) && $currentLine?.timeStamps) {
         $vimeoVideoObject.setCurrentTime(
           hmsToSeconds($currentLine.timeStamps[+e.key].startTime)
         );
@@ -174,20 +197,18 @@
     class={$videoIsLoading ? "" : "isLoading"}
     style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
   ></div>
-  {#if showSplashScreen || !$currentLine.isReleased}
+  {#if showSplashScreen || !$currentLine?.isReleased}
     <SplashScreen onClick={() => (showSplashScreen = false)} />
   {/if}
-  {#if $videoIsLoading }
-    <LoadingScreen
-      style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
-    />
-  {/if}
+  <LoadingScreen
+    style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
+  />
   <VideoControls />
   {#if isDevMode}
     <DevTools />
   {/if}
-  {#if $onHome}
-  <WelcomeScreen />
+  {#if initialized && !$cookieConsent}
+    <WelcomeScreen />
   {/if}
   {#if !$isImmersive}
     <TopMenu aboutContent={aboutContent?.aboutText ?? ""} />

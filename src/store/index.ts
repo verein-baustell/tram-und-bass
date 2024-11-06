@@ -30,6 +30,12 @@ devToolsState.subscribe((value) => {
     : "false";
 });
 
+// Load Cookie
+import { browser } from '$app/environment';
+// Check if consent has already been given when initializing
+const initialConsent = browser ? document.cookie.includes('cookieConsent=true') : false;
+export const cookieConsent = writable(initialConsent);
+
 lines.forEach((line) => {
   line.id = line.name.toLowerCase().replace(/\s/g, "") + line.number;
   line.isReleased =
@@ -38,10 +44,9 @@ lines.forEach((line) => {
 });
 
 export const allLines = writable<Line[]>(lines);
-export const currentLine = writable<Line>();
+export const currentLine = writable<Line | undefined>();
 // update query params when currentLine changes
 export const currentTime = writable<number>(0);
-export const onHome = writable<boolean>(false);
 const seekVideoAfterLoad = (vimeoObject: Vimeo) => {
   const timeToSeekTo = get(timeToSeekAfterVideoLoad);
   if (timeToSeekTo) {
@@ -53,63 +58,47 @@ const seekVideoAfterLoad = (vimeoObject: Vimeo) => {
 };
 let previousLineId: string | null = null;
 export const timeToSeekAfterVideoLoad = writable<number>(0);
-// not sure if this is done very well
-// first check if we are on home if yes don't set current line
-onHome.subscribe((isOnHome) => {
-  if (typeof window === "undefined") return;
-  const url = new URL(window.location.href);
+currentLine.subscribe((value) => {
+  if (value?.id === previousLineId) {
+    return; // Exit if the line ID has not changed
+  }
+  previousLineId = value?.id ?? null;
+  if (value && typeof window !== "undefined") {
+    videoIsPlaying.set(false);
 
-  if (isOnHome && previousLineId != "home") {
-    goto(url.origin, { replaceState: true });
-    previousLineId = "home"
-  } else {
-    currentLine.subscribe((value) => {
-      if (value?.id === previousLineId) {
-        // If we're on the same line as before but onHome is true, update the URL
-        if (isOnHome) {
-          url.searchParams.set("line", value.id);
-          goto(url.toString(), { replaceState: true });
-        }
-        return; // Otherwise, if onHome is false, do nothing
-      }
-      previousLineId = value?.id;
-      if (value && typeof window !== "undefined") {
-        videoIsPlaying.set(false);
+    const url = new URL(window.location.href);
+    url.searchParams.set("line", value.id);
+    goto(url.toString(), { replaceState: true });
+
+    changeFaviconToLine(value);
+
+    vimeoVideoObject.update((vimeo) => {
+      if (vimeo) {
+        console.log("⬇️ Attempting to load video", value.videoUrl);
         videoIsLoading.set(true);
 
-        url.searchParams.set("line", value.id);
-        goto(url.toString(), { replaceState: true });
+        vimeo
+          .loadVideo(value.videoUrl)
+          .then(() => {
+            console.log("🎥 Video loaded successfully");
+            seekVideoAfterLoad(vimeo); // Seek to the desired position after load
 
-        changeFaviconToLine(value);
-
-        vimeoVideoObject.update((vimeo) => {
-          if (vimeo) {
-            console.log("⬇️ Attempting to load video", value.videoUrl);
-
+            // Attempt to play the video
             vimeo
-              .loadVideo(value.videoUrl)
+              .play()
               .then(() => {
-                console.log("🎥 Video loaded successfully");
-                seekVideoAfterLoad(vimeo); // Seek to the desired position after load
-
-                // Attempt to play the video
-                vimeo
-                  .play()
-                  .then(() => {
-                    seekVideoAfterLoad(vimeo);
-                    console.log("🎥 Video is playing at 2nd attempt");
-                  })
-                  .catch((error) => {
-                    console.error("🎥 Video play error", error);
-                  });
+                seekVideoAfterLoad(vimeo);
+                console.log("🎥 Video is playing at 2nd attempt");
               })
               .catch((error) => {
-                console.error("🎥 Video load error", error);
+                console.error("🎥 Video play error", error);
               });
-          }
-          return vimeo;
-        });
+          })
+          .catch((error) => {
+            console.error("🎥 Video load error", error);
+          });
       }
+      return vimeo;
     });
   }
 });
@@ -224,10 +213,3 @@ export const timeUntilNextStation = derived(
 );
 export const vimeoVideoObject = writable<Vimeo>();
 vimeoVideoObject.subscribe((vimeo) => {});
-
-
-// cookie
-import { browser } from '$app/environment';
-// Check if consent has already been given when initializing
-const initialConsent = browser ? document.cookie.includes('cookieConsent=true') : false;
-export const cookieConsent = writable(initialConsent);

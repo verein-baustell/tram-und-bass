@@ -1,26 +1,34 @@
 <script lang="ts">
   import LineList from "./LineList.svelte";
+  import { tick } from "svelte";
   import { onMount } from "svelte";
   import Button from "./Button.svelte";
   import { clickoutside } from "@svelte-put/clickoutside";
   import {
     vimeoVideoObject,
     videoIsPlaying,
-    onHome,
     currentLine,
     cookieConsent,
   } from "../store";
   import { giveConsent } from "../utils/cookieManager";
 
-  function togglePlayPause() {
-    if ($videoIsPlaying) {
-      $vimeoVideoObject.play();
-    } else {
-      $vimeoVideoObject.pause();
-      currentLine.set($currentLine);
-      onHome.set(false);
+  // Wait for $vimeoVideoObject to be defined
+  async function waitForVimeoVideoObject() {
+    while (!$vimeoVideoObject) {
+      console.log($vimeoVideoObject);
+      await tick(); // Wait for the next DOM update
     }
   }
+
+  // Handle the button click, wait for $vimeoVideoObject if necessary
+  const handleButtonClick = async () => {
+    giveConsent(); // Give cookie consent
+
+    // Wait for the Vimeo object to be defined
+    await waitForVimeoVideoObject();
+
+    $vimeoVideoObject.play();
+  };
 </script>
 
 <div id="welcome-screen">
@@ -32,12 +40,7 @@
         Klicken auf den unten stehenden Button stimmen Sie dem zu.
       </div>
     {/if}
-    <Button
-      on:click={() => {
-        togglePlayPause();
-        giveConsent();
-      }}>Einsteigen!</Button
-    >
+    <Button on:click={handleButtonClick}>Einsteigen!</Button>
   </div>
 </div>
 

@@ -13,6 +13,7 @@
     previousStation,
     cookieConsent,
   } from "../store";
+  // import isHome from "../store/isHome";
   import { giveConsent, revokeConsent } from "../utils/cookieManager";
 
   import Button from "./Button.svelte";
@@ -20,60 +21,62 @@
 </script>
 
 <div id="dev-tools">
- {#if showDevTools} <h2>Dev Tools</h2>
-  <Button
-    on:click={() => {
-      $vimeoVideoObject.setCurrentTime($timeUntilNextStation + $currentTime);
-    }}
-  >
-    Jump to next station
-  </Button>
-  <Button
-    on:click={() => {
-      devToolsState.update((state) => ({
-        ...state,
-        showAllUnreleasedLines: !state.showAllUnreleasedLines,
-      }));
-    }}
-    >{$devToolsState.showAllUnreleasedLines
-      ? "Hide unreleased"
-      : "Show unreleased"}</Button
-  >
-  <Button
-    on:click={() => {
-      giveConsent();
-    }}
-  >
-    Give consent
-  </Button>
-  <Button
-    on:click={() => {
-      revokeConsent();
-    }}
-  >
-    Revoke consent
-  </Button>
-  <table>
-    <tr> <td> currentTime:</td><td> {$currentTime.toFixed(2)}</td></tr>
-    <tr> <td> videoIsPlaying:</td><td> {$videoIsPlaying}</td></tr>
-    <tr> <td> videoIsLoading:</td><td> {$videoIsLoading}</td></tr>
-    <tr> <td> cookieConsent:</td><td> {$cookieConsent}</td></tr>
-    <tr>
-      <td> timeToSeekAfterVideoLoad:</td><td>
-        {$timeToSeekAfterVideoLoad}</td
-      ><td></td></tr
+  {#if showDevTools}
+    <h2>Dev Tools</h2>
+    <Button
+      on:click={() => {
+        $vimeoVideoObject.setCurrentTime($timeUntilNextStation + $currentTime);
+      }}
     >
-  </table>
-  <table>
-    <tr> <td> currentStation:</td><td> {$currentStation?.name}</td></tr>
-    <tr> <td> previousStation:</td><td> {$previousStation?.name}</td></tr>
-    <tr> <td> nextStation:</td><td> {$nextStation?.name}</td></tr>
-    <tr>
-      <td> timeUntilNextStation:</td><td>
-        {$timeUntilNextStation.toFixed(2)}</td
-      ></tr
+      Jump to next station
+    </Button>
+    <Button
+      on:click={() => {
+        devToolsState.update((state) => ({
+          ...state,
+          showAllUnreleasedLines: !state.showAllUnreleasedLines,
+        }));
+      }}
+      >{$devToolsState.showAllUnreleasedLines
+        ? "Hide unreleased"
+        : "Show unreleased"}</Button
     >
-  </table>
+    <Button
+      on:click={() => {
+        giveConsent();
+      }}
+    >
+      Give consent
+    </Button>
+    <Button
+      on:click={() => {
+        revokeConsent();
+      }}
+    >
+      Revoke consent
+    </Button>
+    <table>
+      <tr> <td> currentTime:</td><td> {$currentTime.toFixed(2)}</td></tr>
+      <!-- <tr> <td> isHome:</td><td> {$isHome}</td></tr> -->
+      <tr> <td> videoIsPlaying:</td><td> {$videoIsPlaying}</td></tr>
+      <tr> <td> videoIsLoading:</td><td> {$videoIsLoading}</td></tr>
+      <tr> <td> cookieConsent:</td><td> {$cookieConsent}</td></tr>
+      <tr>
+        <td> timeToSeekAfterVideoLoad:</td><td>
+          {$timeToSeekAfterVideoLoad}</td
+        ><td></td></tr
+      >
+    </table>
+    <table>
+      <tr> <td> currentStation:</td><td> {$currentStation?.name}</td></tr>
+      <tr> <td> previousStation:</td><td> {$previousStation?.name}</td></tr>
+      <tr> <td> nextStation:</td><td> {$nextStation?.name}</td></tr>
+      <tr>
+        <td> timeUntilNextStation:</td><td>
+          {$timeUntilNextStation.toFixed(2)}</td
+        ></tr
+      >
+    </table>
   {/if}
   <Button on:click={() => (showDevTools = !showDevTools)}>
     {showDevTools ? "Hide" : "Show"} Dev Tools

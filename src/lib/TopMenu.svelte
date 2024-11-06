@@ -4,54 +4,63 @@
   import LineList from "./LineList.svelte";
   import Button from "./Button.svelte";
   import { clickoutside } from "@svelte-put/clickoutside";
-  import { allLines, currentLine, isTopOpen, isBtmOpen } from "../store";
+  import {
+    allLines,
+    currentLine,
+    isTopOpen,
+    isBtmOpen,
+    cookieConsent,
+  } from "../store";
   export let aboutContent: string;
-  const meuEntries = [
+  const menuEntries = [
     { name: "Linien", component: LineList },
     { name: "Netz", component: Map },
     { name: "Info", component: About },
   ];
-  let currentComponent = meuEntries[0].component;
+  let currentComponent = menuEntries[0].component;
 </script>
 
-<div
-  id="top-menu"
-  use:clickoutside on:clickoutside={() => {
-    if ($isTopOpen && currentComponent === Map) {
-      return
-    }
-    isTopOpen.set(false)
-  }}
->
-  <nav>
-    {#each meuEntries as { name, component } (name)}
-      <Button
-        isActive={currentComponent === component && $isTopOpen}
-        on:click={() => {
-          if ($isTopOpen && currentComponent === component) {
-            isTopOpen.set(false)
-            return;
-          }
-          currentComponent = component;
-          isTopOpen.set(true)
-        }}
-      >
-        {name}
-      </Button>
-    {/each}
-  </nav>
-  {#if $isTopOpen}
-    <svelte:component 
-        this={currentComponent} 
+{#if $currentLine}
+  <div
+    id="top-menu"
+    use:clickoutside
+    on:clickoutside={() => {
+      if ($isTopOpen && currentComponent === Map) {
+        return;
+      }
+      isTopOpen.set(false);
+    }}
+  >
+    <nav>
+      {#each menuEntries as { name, component } (name)}
+        <Button
+          isActive={currentComponent === component && $isTopOpen}
+          on:click={() => {
+            if ($isTopOpen && currentComponent === component) {
+              isTopOpen.set(false);
+              return;
+            }
+            currentComponent = component;
+            isTopOpen.set(true);
+          }}
+        >
+          {name}
+        </Button>
+      {/each}
+    </nav>
+    {#if $isTopOpen}
+      <svelte:component
+        this={currentComponent}
         onClick={(clickedLine) => {
-            $currentLine = clickedLine;
-            isTopOpen.set(false)
-        }} 
-        lines={$allLines} 
-        {aboutContent} 
-    />
-  {/if}
-</div>
+          currentLine.set(clickedLine);
+          isTopOpen.set(false);
+        }}
+        lines={$allLines}
+        {aboutContent}
+      />
+    {/if}
+  </div>
+{/if}
 
 <style lang="scss" scoped>
   #top-menu {
