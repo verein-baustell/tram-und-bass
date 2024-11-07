@@ -9,6 +9,7 @@
     videoIsPlaying,
     currentLine,
     cookieConsent,
+    videoIsLoading,
   } from "../store";
   import { giveConsent } from "../utils/cookieManager";
 
@@ -23,6 +24,7 @@
   // Handle the button click, wait for $vimeoVideoObject if necessary
   const handleButtonClick = async () => {
     giveConsent(); // Give cookie consent
+    videoIsLoading.set(true);
 
     // Wait for the Vimeo object to be defined
     await waitForVimeoVideoObject();

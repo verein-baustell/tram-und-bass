@@ -16,18 +16,23 @@
       0.1,
       1000
     );
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+    const renderer = new THREE.WebGLRenderer({
+      canvas,
+      antialias: true,
+      alpha: true,
+    });
+    renderer.setPixelRatio(window.devicePixelRatio); // Set device pixel ratio for sharper rendering
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(0x000000, 0); // Transparent background
 
-    camera.position.z = 0.5; // Position the camera
+    camera.position.z = 1; // Position the camera
 
     // Add stronger lighting for a brighter model
-    const ambientLight = new THREE.AmbientLight(0x404040, 1); // Soft ambient light
+    const ambientLight = new THREE.AmbientLight(0xffffff, 10); // Soft ambient light
     scene.add(ambientLight);
 
     // Add a stronger directional light
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 10); // Brighter white light
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 2); // Brighter white light
     directionalLight.position.set(5, 5, 5).normalize();
     scene.add(directionalLight);
 
@@ -40,7 +45,7 @@
     scene.add(spotLight.target);
 
     // Add a spotlight for emphasis on the model (optional)
-    const spotLight2 = new THREE.SpotLight(0xffffff, 10);
+    const spotLight2 = new THREE.SpotLight(0xffffff, 5);
     spotLight2.position.set(-3, -2, 2);
     spotLight2.target.position.set(0, 0, 0);
     spotLight2.angle = Math.PI / 6;
@@ -60,10 +65,10 @@
         model.traverse((child: THREE.Object3D) => {
           if (child instanceof THREE.Mesh) {
             const material = child.material as THREE.MeshStandardMaterial;
-            material.metalness = 0.5; // Fully metallic
-            material.roughness = 0.2; // Smooth surface
+            material.metalness = 0.3; // Fully metallic
+            material.roughness = 0.4; // Smooth surface
             // material.emissive = new THREE.Color(0xff0000); // Emissive glow (optional)
-            material.emissiveIntensity = 0.5; // Optional emissive intensity
+            material.emissiveIntensity = 0.8; // Optional emissive intensity
             material.needsUpdate = true;
           }
         });
@@ -113,6 +118,8 @@
 
     window.addEventListener("click", onClick);
 
+    const targetRotation = new THREE.Vector3();
+
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
@@ -122,16 +129,16 @@
         const vector = new THREE.Vector3(-mouse.x, -mouse.y, -0.5); // Set the Z value to adjust the depth
         vector.unproject(camera); // Convert to world space
 
-        const dir = vector.sub(camera.position).normalize(); // Direction from camera to the mouse position
-        const distance = camera.position.distanceTo(vector);
-        const speed = 0.05; // Rotation speed
+        const direction = vector.sub(camera.position).normalize();
 
-        // Update the model's rotation
-        model.lookAt(vector); // Look at the mouse position in world space
+        // Calculate the target rotation in terms of Euler angles
+        targetRotation.x = Math.atan2(direction.y, Math.abs(direction.z));
+        targetRotation.y = Math.atan2(-direction.x, Math.abs(direction.z));
 
-        // Optionally, you can rotate the model gradually to make the transition smoother
-        model.rotation.x += dir.x * speed;
-        model.rotation.y += dir.y * speed;
+        // Interpolate the model’s rotation towards the target rotation
+        const lerpFactor = 0.05; // Adjust for smoother/slower rotation
+        model.rotation.x += (targetRotation.x - model.rotation.x) * lerpFactor;
+        model.rotation.y += (targetRotation.y - model.rotation.y) * lerpFactor;
       }
 
       renderer.render(scene, camera);
