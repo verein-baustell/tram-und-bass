@@ -1,9 +1,12 @@
 <script lang="ts">
     import SvelteMarkdown from "svelte-markdown";
-    import { currentLine } from "../store";
+    import { 
+        currentLine,
+        isWider
+     } from "../store";
 </script>
 
-<div class="view detailed-view">
+<div class="view detailed-view {!$isWider ? 'detailed-view--right': ''}">
     <div class="artist-about-cont">
         <SvelteMarkdown source={$currentLine.artistAboutText} /> 
     </div>

@@ -6,7 +6,7 @@
     currentStation,
     isBtmOpen,
     isTopOpen,
-    isMobile,
+    isWider
   } from "../store";
   import LineNumber from "./LineNumber.svelte";
   import ChangeLineList from "./ChangeLineList.svelte";
@@ -40,20 +40,32 @@
   let nameContainerBtm: any;
   let isOverflowing = false;
 
+  function checkMenuWidth() {
+    let menu = document.getElementById("bottom-menu")
+    if (menu && menu.clientWidth > 300) {
+      isWider.set(true);
+      console.log("isWider:", isWider);
+    } else {
+      isWider.set(false);
+      console.log("isWider:", isWider);
+    }
+  }
+
   function checkOverflow() {
     if (nameContainerBtm) {
       isOverflowing =
         nameContainerBtm.scrollWidth > nameContainerBtm.clientWidth;
-      // console.log(nameContainerBtm, isOverflowing);
     }
   }
 
   afterUpdate(() => {
     checkOverflow();
+    checkMenuWidth();
   });
 
   onMount(() => {
     checkOverflow();
+    checkMenuWidth();
   });
 
   $: checkOverflow();

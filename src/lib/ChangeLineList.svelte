@@ -6,6 +6,7 @@
     timeUntilNextStation,
     currentLine,
     videoIsLoading,
+    isWider
   } from "../store";
   import { changeToLineAtStation } from "../utils/changeToLineAtCurrentStation";
   import { secondsToHms } from "../utils/timeFormatter";
@@ -16,7 +17,7 @@
   }
 </script>
 
-<div id="change-station-list" class="view detailed-view">
+<div id="change-station-list" class="view detailed-view {!$isWider ? 'detailed-view--right': ''}">
   {#if $currentStation == undefined}
     <div class="currentStation-change-raptor--white">
       {#if $videoIsLoading}

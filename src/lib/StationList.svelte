@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { currentLine, currentTime } from "../store";
+  import { currentLine, currentTime, isWider } from "../store";
   import { hmsToSeconds } from "../utils/timeFormatter";
   import Circle from "./Circle.svelte";
 </script>
 
-<div id="station-list" class="view detailed-view">
+<div id="station-list" class="view detailed-view {!$isWider ? 'detailed-view--right': ''}">
   {#if $currentLine.timeStamps}
     <ol>
       {#each $currentLine.timeStamps as station, index}
