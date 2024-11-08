@@ -2037,8 +2037,17 @@ lines:
     number: 12
     name: Flughafen
     artistName: Endstation Altes Krematorium
+    artistAboutText: >-
+      Endstation Altes Krematorium was born from the ashes of Savage Grounds.
+      The project focuses on the exploration of bizarre and disturbing
+      atmospheres with the use of threatening oscillators, caustic rhythms and
+      shrill, obscure vocals. The soundscape is similar to what one might find
+      in hell. It consists of Daniele Cosmo and Florin Büchel.
+
+
+      Composed live and improvised directly on the machines used for this piece, the music reflects on the greyness and eclipsing hopelessness of the suburban agglomeration depicted in the video. Sparse housing, giant isolated commercial buildings, devouring concrete blocks, bridges and tunnels. And the ever-present shopping centres. Yet, it all stands so still, so calm, like death. Beauty.
     videoUrl: https://player.vimeo.com/video/950697436?h=67800866e7
-    releaseDate: 2024-07-16T11:59:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Stettbach
