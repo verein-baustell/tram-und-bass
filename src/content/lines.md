@@ -415,7 +415,7 @@ lines:
       I heard of Tiefenbrunnen’s fame as the golden coast and how the area was previously a working-class neighborhood. We then pass the classic Opernhaus before heading into the heart of Zürich, Niederdorf and arriving at HB, going from busy city sounds to train sounds. From there on, the line passes by many places where ballroom people gather, road accesses to highways and then the clubs of Hardbrücke. We get artsy at Toni Areal and then industrial as we head to the final stop, Altstetten.
 
 
-      [Instagram](https://www.instagram.com/saint.hausvrau/)
+      [Instagram @saint.hausvrau](https://www.instagram.com/saint.hausvrau/)
 
 
       [Soundcloud](https://soundcloud.com/hausvrau)
@@ -522,7 +522,7 @@ lines:
       Taking this ride goes through the centre of Zurich. Often before or after a night out, you would probably enter this tram ride and one point or another. This mix takes you on a one person party through this tram ride. To either take the energy with you before the night out, or if you still have some left after. Near the beginning is a section about water, which foreshadows travelling by the lake closer to the end of the journey.
 
 
-      [Instagram](https://www.instagram.com/newkyddd3/)
+      [Instagram @newkyddd3](https://www.instagram.com/newkyddd3/)
     videoUrl: https://player.vimeo.com/video/950564216?h=895d1fb002
     releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
@@ -623,7 +623,7 @@ lines:
       We don't actually have any connection to tram line 5, we usually walk or cycle and at most, if the bike doesn't work, we take the tram. It's not particularly close to home or the studio, so it's only our emergency solution when all else fails. But what we don't understand is why tram 5 is so often not wheelchair-friendly?
 
 
-      [Instagram](https://www.instagram.com/atrice____/)
+      [Instagram @atrice____](https://www.instagram.com/atrice____/)
 
 
       [Soundcloud](https://soundcloud.com/atricemiras)
@@ -691,10 +691,10 @@ lines:
       Riding trams is strangely communal, although no one knows each other and almost no one speaks. The sounds come from the vehicle itself, a cough, tickets checks, passing cars. the soundscapes is known and yet always different. The line 5 sounds superficially like all the others but the rhythm of the tracks, the sequence of announcements only sound exactly like those of tram 5. If we take it exactly, even every single ride on tram 5 sounds different. But only if we listen. 
 
 
-      [Instagram Lino](https://www.instagram.com/linoasper/)
+      [Instagram @linoasper](https://www.instagram.com/linoasper/)
 
 
-      [Instagram Regula](https://www.instagram.com/regula.rec/)
+      [Instagram @regula.rec](https://www.instagram.com/regula.rec/)
 
 
       [Soundcloud](https://on.soundcloud.com/sVuaokesQtSbsPBo6)
@@ -765,7 +765,7 @@ lines:
       Entstanden ist eine sehr persönliche Collage aus neuen und alten Eigenkompositionen, Field Recordings und einer Echtzeitaufnahme der Tramfahrt. Die „Realität“ (Tram Sounds) vermischt sich mit der auditiven Interpretation meiner eigenen Wahrnehmung der Fahrt, aber auch mit Erinnerungen und Imagination. Zudem sind gewisse Tracks mit bestimmten Orten verbunden und stehen für Stationen in meiner musikalischen Biografie (Konzert Kirche Enge, Soundscape-Kompositionsarbeit Bahnhofstrasse, Studium UZH).
 
 
-      [Instagram](https://www.instagram.com/_molekuehl/)
+      [Instagram @_molekuehl](https://www.instagram.com/_molekuehl/)
 
 
       [Soundcloud](https://soundcloud.com/mirjmusic)
@@ -840,7 +840,7 @@ lines:
       Beginning at the zoo, a metaphor for captivity&oppression, reflecting on slavery&the struggle for freedom. Moving to the University of Zurich, we explore knowledge &power, highlighting barriers to access. To Central into Bahnhofstrasse, we confront fast fashion&worker exploitation, raising awareness about the human cost of consumerism. Finally, we invite listeners to relax, find a meditative state amid the absurdity of our fast-paced world. The journey pressing societal issues.
 
 
-      [Instagram](https://www.instagram.com/softdate_music/)
+      [Instagram @softdate_music](https://www.instagram.com/softdate_music/)
 
 
       [Soundcloud](https://soundcloud.com/softdate)
@@ -917,9 +917,9 @@ lines:
       Kern des Sets sind Songs, die mich lange begleiten und wichtige Gefühle oder Botschaften transportieren, oft in Mundart. Immer wieder platziere ich Referenzen, z. B. in Wollishofen, wo ich meine Jugend verbrachte. Ab der Bahnhofstrasse scheint die Message im Konsumüberfluss verloren zu gehen. Doch auch auditive Banalität spricht für sich. Ich bin nicht unbetroffen von übermässigem TikTok-Konsum und einer Vorliebe für Trashups. Ich hoffe, mein Set macht Mut und Spaß!
 
 
-      [Instagram](https://www.instagram.com/zirkuslino?igsh=MWgzcXVxY2llZGQ1aQ==)
+      [Instagram @zirkuslino](https://www.instagram.com/zirkuslino/)
     videoUrl: https://player.vimeo.com/video/950567543?h=8e4eb0457c
-    releaseDate: 2024-10-10T19:21:00.000Z
+    releaseDate: 2025-01-01T21:21:00.000Z
     id: ""
     timeStamps:
       - name: Wollishoferplatz
@@ -1020,9 +1020,9 @@ lines:
     number: 7
     name: Wollishoferplatz
     artistName: DJ Tatana
-    artistAboutText: "[Instagram](https://www.instagram.com/djtatana/)"
+    artistAboutText: "[Instagram @djtatana](https://www.instagram.com/djtatana/)"
     videoUrl: https://player.vimeo.com/video/950568271?h=72f40f9183
-    releaseDate: 2024-07-16T11:58:00.000Z
+    releaseDate: 2024-11-26T05:59:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Stettbach
@@ -1136,9 +1136,15 @@ lines:
       Tram line 8 in Zurich has a close connection to Langstrasse, a vibrant and diverse neighborhood. The tram line runs through Langstrasse, which is known for its lively cultural scene and nightlife. Since the roots of the music scene in Langstrasse were mainly influenced by techno and house genres, I have incorporated mostly house elements into my set.
 
 
-      [Instagram](https://www.instagram.com/exguesich/)
+      [Instagram @exguesich](https://www.instagram.com/exguesich/)
+
+
+      [Soundcloud](https://soundcloud.com/exguesi)
+
+
+      [Bandcamp](https://bandcamp.com/exguesi)
     videoUrl: https://player.vimeo.com/video/950568957?h=0962988f6e
-    releaseDate: 2024-07-10T16:19:00.000Z
+    releaseDate: 2024-11-19T05:12:00.000Z
     id: ""
     timeStamps:
       - name: Klusplatz
@@ -1231,9 +1237,15 @@ lines:
       I first approached my mix for the tram line 8, which runs past my house, by making a field recording on a Sunday night. With this recording as a basis, it became clear in which tempo the music should be, and which moods should be present in the mix. The tracks were layered on top of each other in several rounds, adding detail, density, and chaos step by step. Melodic fragments echo both the architecture of the city, as well as the characteristics of the places seen through the rear window.
 
 
-      Instagram
+      \[Instagram @ink.panique](www.instagram.com/ink.panique)
+
+
+      \[Soundcloud](www.soundcloud.com/ink_panique)
+
+
+      \[Bandcamp](https://ousooo.bandcamp.com)
     videoUrl: https://player.vimeo.com/video/950570324?h=ddbc1bdffa
-    releaseDate: 2024-07-16T11:58:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Hardturm
