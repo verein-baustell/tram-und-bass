@@ -1332,7 +1332,7 @@ lines:
 
       [Instagram @baer_ae](https://www.instagram.com/lebeamlimmat?igsh=dnY0MnByZzl2MnRj)
     videoUrl: https://player.vimeo.com/video/950573466?h=7fb8f08ec8
-    releaseDate: 2024-07-16T11:58:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Hirzenbach
@@ -1453,9 +1453,15 @@ lines:
       Just like Nüünitram's snaking line, my mix weaves through heartfelt favorites, rattling basslines, and squealing soundscapes. Some tracks dare to comment on iconic stops: Inner City Life drifts from Stauffacher to the Sihlstrasse; Dirty Cash hits Paradeplatz; Stefan Eicher searches for love at Limmatquai; Pipilotti Rist serenades you with Wicked Game at Heimplatz; Dürrenmatt reads from Der Tunnel while while driving through the burrow and Mani Matter guides the Nüünitram straight to heaven.
 
 
-      [Instagram](https://www.instagram.com/isi_si/)
+      [Instagram @isi_si](https://www.instagram.com/isi_si/)
+
+
+      [Soundcloud](https://soundcloud.com/isi-si)
+
+
+      [Bandcamp](https://bandcamp.com/isisi)
     videoUrl: https://player.vimeo.com/video/950571962?h=b4953715b2
-    releaseDate: 2024-07-16T11:58:00.000Z
+    releaseDate: 2024-11-27T06:30:00.000Z
     id: ""
     timeStamps:
       - name: Triemli
