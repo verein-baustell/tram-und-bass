@@ -766,8 +766,14 @@ lines:
 
 
       [Instagram](https://www.instagram.com/_molekuehl/)
+
+
+      [Soundcloud](https://soundcloud.com/mirjmusic)
+
+
+      [Bandcamp](https://kashevtapes.bandcamp.com/track/moleku-hl-progression)
     videoUrl: https://player.vimeo.com/video/950566927?h=92df0178c5
-    releaseDate: 2024-07-16T11:48:00.000Z
+    releaseDate: 2024-12-04T05:34:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Enge
@@ -835,8 +841,14 @@ lines:
 
 
       [Instagram](https://www.instagram.com/softdate_music/)
+
+
+      [Soundcloud](https://soundcloud.com/softdate)
+
+
+      [Bandcamp](https://softdate.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/950566054?h=9f68eea5d2
-    releaseDate: 2024-07-16T11:48:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Zoo
