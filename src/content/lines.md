@@ -239,6 +239,23 @@ lines:
     number: 3
     name: Klusplatz
     artistName: VERYCOZI
+    artistAboutText: >-
+      VERYCOZI Zürich Based Local DJ ist your dear Host, Bookerin, Labelchefin
+      und so vieles mehr in der Zürcher Musikwelt. Neue Musik zu finden und denn
+      Leuten auf dem Dancefloor zu präsentieren ist ihr goal . Genre? Ganz
+      ehrlich – ein ziemliches Durcheinander - verspielte und einzigartige sets
+      in dem Sie Ihr Musikgeschmack unter beweis stellt. Von cozy Riddims ,
+      Dancehall über Afrobeats, Edits und Hiphop ein sehr gutes Händchen für
+      Perlen von beinahe überall, gemeinsame Sache für die Culture!
+
+
+      Ich mag die ganze Strecke der Tramlinie 3, die begleitet mich durch meine ganze Kind-Jugendzeit.
+
+
+      [Instagram @onmondaybrunch](https://www.instagram.com/onmondaybrunch/)
+
+
+      [Soundcloud](https://soundcloud.com/verycozi)
     videoUrl: https://player.vimeo.com/video/950561793?h=2b51bbc0bb
     releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
