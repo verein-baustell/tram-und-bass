@@ -1571,9 +1571,24 @@ lines:
     number: 10
     name: Flughafen
     artistName: TVBXS
-    artistAboutText: "[Instagram](https://www.instagram.com/tvbxs_/)"
+    artistAboutText: >-
+      TVBXS is a provider, a warrior, and an angel, carving out space for those
+      who don't have enough of it while claiming their own, armed with the
+      gentle sword of sound and the transformative power of music. To them,
+      DJing is a restorative practice and an invitation into their vulnerable,
+      messy, and silly world, where emotions are channeled into a language
+      beyond words.[](https://www.instagram.com/tvbxs_/)
+
+
+      To me, tram line 10 is like an old buddy—a reliable constant that, in recent meaningful years, has connected me to friends, work, and adventures. I encourage you, dear traveler, to indulge in a moment of realness. Masks off, headphones on. It’s just you, the music, and the view. Enjoy the ride, and thank you for traveling with me! <3
+
+
+      [Instagram @tvbxs_](https://www.instagram.com/tvbxs_/)
+
+
+      [Soundcloud](https://soundcloud.com/tvbxs1)
     videoUrl: https://player.vimeo.com/video/950672105?h=0f80c5bf39
-    releaseDate: 2024-07-16T11:58:00.000Z
+    releaseDate: 2024-12-05T05:00:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhofplatz HB
