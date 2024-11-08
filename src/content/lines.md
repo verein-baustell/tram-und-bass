@@ -416,8 +416,14 @@ lines:
 
 
       [Instagram](https://www.instagram.com/saint.hausvrau/)
+
+
+      [Soundcloud](https://soundcloud.com/hausvrau)
+
+
+      [Bandcamp](https://hausvrau.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/950563061?h=9bf1b84be2
-    releaseDate: 2024-07-15T15:09:00.000Z
+    releaseDate: 2024-12-03T05:25:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Tiefenbrunnen
@@ -518,7 +524,7 @@ lines:
 
       [Instagram](https://www.instagram.com/newkyddd3/)
     videoUrl: https://player.vimeo.com/video/950564216?h=895d1fb002
-    releaseDate: 2024-07-15T15:09:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Altstetten Nord
@@ -618,6 +624,12 @@ lines:
 
 
       [Instagram](https://www.instagram.com/atrice____/)
+
+
+      [Soundcloud](https://soundcloud.com/atricemiras)
+
+
+      [Bandcamp](https://atrice.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/950565372?h=3c31783cab
     releaseDate: 2024-07-16T10:50:00.000Z
     id: ""
@@ -679,12 +691,18 @@ lines:
       Riding trams is strangely communal, although no one knows each other and almost no one speaks. The sounds come from the vehicle itself, a cough, tickets checks, passing cars. the soundscapes is known and yet always different. The line 5 sounds superficially like all the others but the rhythm of the tracks, the sequence of announcements only sound exactly like those of tram 5. If we take it exactly, even every single ride on tram 5 sounds different. But only if we listen. 
 
 
-      [Instagram Lino](https://www.instagram.com/linoasper/?hl=en)
+      [Instagram Lino](https://www.instagram.com/linoasper/)
 
 
       [Instagram Regula](https://www.instagram.com/regula.rec/)
+
+
+      [Soundcloud](https://on.soundcloud.com/sVuaokesQtSbsPBo6)
+
+
+      [Bandcamp](https://regula.bandcamp.com/album/rr-ep-vol-1)
     videoUrl: https://player.vimeo.com/video/947764688?h=181299d19c
-    releaseDate: 2024-07-16T11:48:00.000Z
+    releaseDate: 2024-11-25T06:06:00.000Z
     id: ""
     timeStamps:
       - name: Laubegg
