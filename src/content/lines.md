@@ -133,10 +133,13 @@ lines:
       This mix is an homage to Zurich's Tram Number 2, which I used almost daily. While compiling it, I felt a deep connection to Zurich, where I lived for more than a decade before moving to Berlin and then back to Mexico. Each track holds an emotional tie to the city and my past. Zurich taught me great musical lessons—there's so much talent in that town. I'm happy I spent time there. Sending love to all the lovely music creatures—have a nice ride.
 
 
-      [Instagram](<https://www.instagram.com/nuevoprohibido/ >)
+      [Instagram @nuevoprohibido](<https://www.instagram.com/nuevoprohibido/ >)
 
 
-      [Bandcamp](https://tramundbass.bandcamp.com/)
+      [Soundcloud](https://soundcloud.com/neuverboten)
+
+
+      [Bandcamp](https://tramundbass.bandcamp.com/)[](https://tramundbass.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/947761973?h=1c135204fe
     releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
