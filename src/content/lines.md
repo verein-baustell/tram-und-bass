@@ -2641,9 +2641,15 @@ lines:
       Die Zürcher Tram Linie 15 mag kurz sein, passiert aber einige der wichtigsten Knotenpunkte für den Verkehr. So gibt es immer etwas zu bestaunen, wie zum Beispiel in diesem Video der Moment, in dem ein ETH-Link Bus, der eine Panne hatte, abgeschleppt wird. Aufgrund der Kürze der Strecke und dem vielen Geschehen um das Tram herum hat Wummertal zwei besonders energiereiche Songs aus ihrem Live Set ausgewählt. Die Aufnahme wurde live eingespielt, währenddem das Video eingeblendet wurde.
 
 
-      [Instagram](https://www.instagram.com/wummertal/)
+      [Instagram @wummertal](https://www.instagram.com/wummertal/)
+
+
+      [Soundcloud](https://soundcloud.com/wummertal)
+
+
+      [Bandcamp](https://wummertal.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/950805249?h=1f4d17577f
-    releaseDate: 2024-07-16T11:59:00.000Z
+    releaseDate: 2024-11-29T05:40:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Stadelhofen
@@ -2691,13 +2697,30 @@ lines:
     name: Stadelhofen
     artistName: E.S.P.
     artistAboutText: >-
-      [Instagram
-      @web_web_web_666](https://www.instagram.com/web_web_web_666?igsh=ajU3NzN5bjJuZXYy)
+      Elektronische Sequenz Proleten inhabit various roles—as DJs, producers,
+      space-owners, record label managers, and event organizers. For the duo,
+      these roles are not fixed; they flow and interact dynamically, functioning
+      either as an integrated whole or as distinct entities. Their artistic and
+      sonic productions are rooted in themes like the institutionalization of
+      techno, copyright, dividualism, and the human perception of repetitive
+      rhythms, combined with aesthetic elements from B-movie horror.
+
+
+      The tramline we got is incidental - we have 0 relations to it; number 13 was the one that carried the weight of nostalgia. That’s the line where stories of the past haunt the present, shaping a sense of context yet never quite fully articulated.
+
+
+      [Instagram @web_web_web_666](https://www.instagram.com/web_web_web_666)
 
 
       [Instagram @nicola_kazimir](https://www.instagram.com/nicola_kazimir/)
+
+
+      [Soundcloud](https://soundcloud.com/lespoints)
+
+
+      [Bandcamp](https://lespoints.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/950808090?h=55d4d27811
-    releaseDate: 2024-06-02T18:26:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Bucheggplatz
@@ -2755,9 +2778,15 @@ lines:
       Zukunft.
 
 
-      [Instagram](https://www.instagram.com/jennycara_/)
+      The first tram line I used after moving to Zurich was Line 17, and it became a sign of a new chapter in my life. This mix is a collection of tracks I listen to in my free time, beyond the DJ booth. Just like a tram journey, these tracks take you through different moods and places, offering a blend of familiar comfort and new discoveries, much like my own experience of settling into a new city.
+
+
+      [Instagram @jennycara_](https://www.instagram.com/jennycara_/)
+
+
+      [Soundcloud](https://soundcloud.com/jennycara)
     videoUrl: https://player.vimeo.com/video/950809685?h=ee311a9fe0
-    releaseDate: 2024-06-02T15:52:00.000Z
+    releaseDate: 2024-11-22T05:09:00.000Z
     id: ""
     timeStamps:
       - name: Werdhölzli
