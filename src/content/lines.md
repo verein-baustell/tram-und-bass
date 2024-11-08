@@ -2117,8 +2117,14 @@ lines:
 
 
       There's a chaotic ride waiting inside the bubble of these headphones. One that clashes with Zurich's unbreakable drive for law and order, its neat separation of green grass and gray concrete and its business administration type urban planning. Join me on the overstimulating side and listen, as familiar becomes stranger around you. But most importantly, never make eye contact!!
+
+
+      \[Soundcloud](https://soundcloud.com/endobliss)
+
+
+      \[Bandcamp](https://endlessbazaar.bandcamp.com/track/endobliss-golden-era-glitch)
     videoUrl: https://player.vimeo.com/video/950700571?h=cc9bd2b94d
-    releaseDate: 2024-07-16T11:59:00.000Z
+    releaseDate: 2024-11-18T05:45:00.000Z
     id: ""
     timeStamps:
       - name: Fracht
