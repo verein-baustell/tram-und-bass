@@ -1685,8 +1685,11 @@ lines:
 
 
       [Instagram](https://www.instagram.com/xhenisademiri/)
+
+
+      [Soundcloud](https://on.soundcloud.com/wvwrjzVADQGETm3k9)
     videoUrl: https://player.vimeo.com/video/950661521?h=164e96d180
-    releaseDate: 2024-07-16T11:58:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Fracht
@@ -1788,9 +1791,15 @@ lines:
       Growing up in Zürich i often visited my family in Auzelg with the Tram 11. For a brief period of time i lived in Auzelg an had to commute to wollishofen with the Tram 11 to go to School. Nowadays i live in the area where i sometimes need to use the Tram 11 to get home. I have moved there exactly one year ago.
 
 
-      [Instagram](https://www.instagram.com/dschinniii/)
+      [Instagram @dschinniii](https://www.instagram.com/dschinniii/)
+
+
+      [Soundcloud](https://on.soundcloud.com/kB9y3xPaEKeheVKc9)
+
+
+      [Bandcamp](https://dschinn.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/950688315?h=444abd1672
-    releaseDate: 2024-07-16T11:58:00.000Z
+    releaseDate: 2024-11-20T05:07:00.000Z
     id: ""
     timeStamps:
       - name: Auzelg
@@ -1913,9 +1922,12 @@ lines:
       Tram line 11 has been a constant companion throughout my life. Growing up in Kreis 8 and later living in Kreis 6 during my studies, this tram line was my gateway to everything—school, university, work, friends, and home. I’ve poured the essence of home into this mix, blending nostalgic tunes with a few club tracks that reflect my exploration of the nightlife while growing up in the city of Zurich.
 
 
-      [Instagram](https://www.instagram.com/nevesthika/)
+      [Instagram @nevesthika](https://www.instagram.com/nevesthika/)
+
+
+      [Soundcloud](https://soundcloud.com/nivenive)
     videoUrl: https://player.vimeo.com/video/950679463?h=03df9a86bb
-    releaseDate: 2024-07-16T11:58:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Rehalp
