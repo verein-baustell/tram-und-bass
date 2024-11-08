@@ -2417,9 +2417,22 @@ lines:
     number: 14
     name: Triemli
     artistName: Alex Dallas
-    artistAboutText: "[Instagram](https://www.instagram.com/alex.dallas_/)"
+    artistAboutText: >-
+      Alex Dallas ist eine Schlüsselfigur der Zürcher Clubszene und hat mit
+      seinen Labels Straight Ahead Recordings und Drumpoet Community wichtige
+      Impulse für die elektronische Musik gesetzt. Als Gründer des Clubs Zukunft
+      und Teilhaber der legendären Dachkantine, sowie der Clubs Cabaret und
+      Kauz, prägte er die lokale Nightlife-Kultur. Seine DJ-Sets, geprägt von
+      tiefen Grooves und musikalischem Feinsinn, ziehen seit Jahren
+      anspruchsvolle House- und Techno-Liebhaber in ihren Bann. 
+
+
+      Die Tramlinie 14 führt vom Triemli nach Seebach und spiegelt die Vielfalt Zürichs auf eindrucksvolle Weise wider – mal urban, dann wieder malerisch wie eine Postkarte, fast kitschig schön. Seit 17 Jahren lebe ich mit meiner Familie irgendwo in der Mitte dieser Strecke. Am häufigsten nutze ich sie von der Guggachstrasse zum Hauptbahnhof, gelegentlich auch für Spaziergänge am Uetliberg. Für mich ist die 14er eine cinematische Reise durch Zürich – wie der sphärische Soundtrack, den ich für die „Tram und Bass“-Reihe produziert habe. Abseits meiner Club-Sets wollte ich bewusst Ruhe und Tiefe schaffen, um das morgendliche Pendeln entspannter zu gestalten.
+
+
+      [Instagram @alex.dallas_](https://www.instagram.com/alex.dallas_/)
     videoUrl: https://player.vimeo.com/video/950742749?h=57745ef270
-    releaseDate: 2024-07-16T11:59:00.000Z
+    releaseDate: 2024-12-06T05:07:00.000Z
     id: ""
     timeStamps:
       - name: Seebach
@@ -2521,9 +2534,12 @@ lines:
       Ny dear 14: from taking me "into the city" for the first times shopping without parents, to bringing me home from smoking with the cool kids in wiedikon, while hoping my mom would be asleep already so she didn't comment on those tiny eyes, over to driving me to work for three years with the children in Seebach, I experienced so many moments with, in and waiting for you. Thank you for being part of my züri 14! (but dear ZVV plese be kind, lower ur prices & make ÖV accessible for everyone!)
 
 
-      [Instagram](https://www.instagram.com/judallasju/)
+      [Instagram @judallasju](https://www.instagram.com/judallasju/)
+
+
+      [Soundcloud](www.soundcloud.com/judallasju)
     videoUrl: https://player.vimeo.com/video/950721895?h=02c06df905
-    releaseDate: 2024-07-16T11:59:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Triemli
