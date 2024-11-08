@@ -38,12 +38,11 @@
     <a href="https://tramundbass.bandcamp.com/">
         <div class="about-container support">
             <p>
-                <span>Support Tram und Bass auf BandCamp</span>
+                <span>Support Tram und Bass auf Bandcamp</span>
             </p>
             <div class="products">
-                <img class="pic" src="/images/product1.webp" alt="Instagram" />
-                <img class="pic" src="/images/product2.webp" alt="Instagram" />
-                <img class="pic" src="/images/product3.webp" alt="Instagram" />
+                <img class="pic" src="/images/product1.webp" alt="Bandcamp" />
+                <img class="pic" src="/images/product2.webp" alt="Bandcamp" />
              </div>
         </div>
     </a>
