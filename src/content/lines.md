@@ -2186,7 +2186,7 @@ lines:
     number: 13
     name: Albisgütli
     artistName: Cevincia
-    artistAboutText: >-
+    artistAboutText: >
       Am liebsten mag ich, wenn zwischen verschiedene Musik und
       unterschiedlichen Menschen eine musikalische Reise in ihrer Vielfalt
       zusammen geführt werden kann.
@@ -2195,9 +2195,15 @@ lines:
       Die Strecke der Tram Nr. 13 fährt durch Zürich’s, unterschiedlichste Stadtteile und verbindet das urbane mit der Natur. Vom Üetliberg bis hin zur Bahnhofstrasse, entlang der Limmat bis fast nach Oberengstringen, schlendert das Tram durch das städtische Geschehen. Das Musikgenre Jungle widerspiegelt den schnelllebigen Zeitgeist vieler Städte damals wie heute. Die tiefen und dubbigen Reggae Bässe erinnern, an das Zürich der 90er Jahre.
 
 
-      [Instagram](https://www.instagram.com/cevimara/)[](https://www.instagram.com/cevimara/)
+      [Instagram @cevimara](https://www.instagram.com/cevimara/)
+
+
+      [Soundcloud](https://soundcloud.com/cevin-2)
+
+
+      [Bandcamp](https://bandcamp.com/vincia)
     videoUrl: https://player.vimeo.com/video/950707919?h=af30ff979c
-    releaseDate: 2024-07-10T16:16:00.000Z
+    releaseDate: 2024-11-28T05:17:00.000Z
     id: ""
     timeStamps:
       - name: Frankental
@@ -2308,9 +2314,12 @@ lines:
       Die Linie 13 war eines der ersten Trams die maelique als Kind regelmässig fuhr. Von der Haltestelle Waidfussweg in Wipkingen sind es noch 200 Meter den Berg hoch bis zu seinem Elternhaus. Als er noch Handball spielte pendelte er wöchentlich mit der 13 direkt bis zur Saalsporthalle. Der Klassiker war natürlich das Tram schon um die Ecke zu hören und für die letzten Meter einen Sprint hinzulegen. Somit ist die Linie 13 für ihn ein Herzstück dieser Stadt – nämlich die Tramlinie seines Vertrauens.
 
 
-      [Instagram](https://www.instagram.com/maeliquito/)
+      [Instagram @maeliquito](https://www.instagram.com/maeliquito/)
+
+
+      [Soundcloud](https://soundcloud.com/user-352431009)
     videoUrl: https://player.vimeo.com/video/950719687?h=29fa4163a3
-    releaseDate: 2024-07-15T14:54:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Albisgütli
