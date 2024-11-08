@@ -631,7 +631,7 @@ lines:
 
       [Bandcamp](https://atrice.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/950565372?h=3c31783cab
-    releaseDate: 2024-07-16T10:50:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Kirche Fluntern
