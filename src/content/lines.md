@@ -19,7 +19,7 @@ lines:
 
       [Instagram @violazimmermann](<https://www.instagram.com/violazimmermann/ >)
     videoUrl: https://player.vimeo.com/video/950558411?h=452ef92b18
-    releaseDate: 2024-11-18T04:59:00.000Z
+    releaseDate: 2024-10-18T04:59:00.000Z
     id: ""
     timeStamps:
       - name: Geissweid
@@ -138,7 +138,7 @@ lines:
 
       [Bandcamp](https://tramundbass.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/947761973?h=1c135204fe
-    releaseDate: 2024-07-15T14:55:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Tiefenbrunnen
@@ -240,7 +240,7 @@ lines:
     name: Klusplatz
     artistName: VERYCOZI
     videoUrl: https://player.vimeo.com/video/950561793?h=2b51bbc0bb
-    releaseDate: 2024-12-24T17:00:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Albisrieden
@@ -312,7 +312,7 @@ lines:
     name: Albisrieden
     artistName: Dari Ferrari
     videoUrl: https://player.vimeo.com/video/950560428?h=f9744206bd
-    releaseDate: 2024-07-15T15:02:00.000Z
+    releaseDate: 2024-12-02T05:24:00.000Z
     id: ""
     timeStamps:
       - name: Klusplatz
