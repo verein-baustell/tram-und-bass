@@ -14,7 +14,13 @@
   {#if title}
     <h4>
       {title}{#if isClosable}
-        <button class="close-button" on:click={onClose}>✕</button>
+        <button class="close-button" on:click={onClose}>
+          <img
+                class="close"
+                src="/images/close.svg"
+                alt="-"
+              />
+        </button>
       {/if}
     </h4>
   {/if}
@@ -49,6 +55,13 @@
     font-size: 1em;
     padding: 0 0.3em;
     cursor: pointer;
+    display: flex;
+    height: 2em;
+  }
+
+  .close{
+    height: 1em;
+    width: 1em;
   }
   // reset ul li
   ul {
