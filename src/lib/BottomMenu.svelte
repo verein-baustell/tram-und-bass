@@ -14,6 +14,7 @@
   import Artist from "./Artist.svelte";
   import Button from "./Button.svelte";
   import { clickoutside } from "@svelte-put/clickoutside";
+  import checkOverflow from "../utils/checkOverflow";
   type ComponentType =
     | typeof ChangeLineList
     | typeof StationList
@@ -37,8 +38,8 @@
     isBtmOpen.set(false);
   }
 
-  let nameContainerBtm: any;
-  let isOverflowing = false;
+  let nameContainerBtm: HTMLElement | undefined = undefined;
+  let isOverflowing = checkOverflow(nameContainerBtm); 
 
   function checkMenuWidth() {
     let menu = document.getElementById("bottom-menu")
@@ -51,24 +52,17 @@
     }
   }
 
-  function checkOverflow() {
-    if (nameContainerBtm) {
-      isOverflowing =
-        nameContainerBtm.scrollWidth > nameContainerBtm.clientWidth;
-    }
-  }
 
   afterUpdate(() => {
-    checkOverflow();
+    isOverflowing = checkOverflow(nameContainerBtm);
     checkMenuWidth();
   });
 
   onMount(() => {
-    checkOverflow();
+    isOverflowing = checkOverflow(nameContainerBtm);
     checkMenuWidth();
   });
 
-  $: checkOverflow();
 </script>
 
 {#if $currentLine}
