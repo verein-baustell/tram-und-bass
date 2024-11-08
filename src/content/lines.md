@@ -17,9 +17,9 @@ lines:
       Mit der angenehm schleppenden Langsamkeit des Soundtracks gleiten wir von Halt zu Halt. Der Subbass verbindet sich mit der Reibung der Schienen. Durch die Heckscheibe sehen wir, wie die Stadt rückwärts verschwindet, als ziehe sie sich in eine andere Dimension zurück. Mit jedem vorbeiziehenden Tram wächst das Gefühl, wir bewegten uns nicht nur durch die Stadt, sondern auch durch die Zeit. Vergangenheit, Gegenwart und Zukunft scheinen miteinander verflochten und gleichzeitig zu existieren.
 
 
-      [Instagram](https://www.instagram.com/violazimmermann/)
+      [Instagram @violazimmermann](<https://www.instagram.com/violazimmermann/ >)
     videoUrl: https://player.vimeo.com/video/950558411?h=452ef92b18
-    releaseDate: 2024-11-15T05:34:00.000Z
+    releaseDate: 2024-11-18T04:59:00.000Z
     id: ""
     timeStamps:
       - name: Geissweid
