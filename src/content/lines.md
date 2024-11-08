@@ -2881,9 +2881,29 @@ lines:
     number: 17
     name: Werdhölzli
     artistName: Andreas Ramos
-    artistAboutText: "[Instagram](https://www.instagram.com/andreasramos_sihlrec/)"
+    artistAboutText: >-
+      Andreas Ramos ist ein visionärer DJ mit einer Karriere, die sich über ein
+      Jahrzehnt erstreckt. Andreas hat sich als Meister seines einzigartigen
+      Sounds etabliert, der ihn von gewöhnlichen DJs abhebt. Seine Fähigkeit,
+      eine ausgelassene Atmosphäre auf der Tanzfläche zu schaffen, hat ihm eine
+      treue Anhängerschaft von Liebhaber*innen elektronischer Musik eingebracht.
+      Andreas ist auch der Gründer von Sihl Records, einem renommierten
+      Plattenladen und Musiklabel in Zürich. Sihl Records hat sich zu einem
+      pulsierenden Zentrum für elektronische Musik entwickelt. Beeinflusst von
+      der dynamischen Bewegung von House und Techno, bietet der Laden eine
+      sorgfältig Auswahl an Vinyl-Schallplatten. Für Andreas Ramos geht es um
+      Qualität und die Überzeugung, dass Musik die Fähigkeit hat, Menschen
+      zusammenzubringen. Seine spannende Reise bringt ihn nun auch zu uns aufs
+      Erdbeerfeld und es ist uns ein Vergnügen, durch seine pulsierende Welt von
+      elektronischen Klängen zu tanzen.
+
+
+      Tram Nr. 17 ist für mich wie die kleine Schwester vom Tram Nr. 13. Beide enden beim Werdhölzli. Beim Wort Werdhölzli bekomme ich jedes mal einen Back-Flash an die Zeiten wo sich Letten, GZ Wollishofen und Autobahnbrücke Schlieren die Sonntage im Sommer geteilt haben um am jehweiligen Ort abwechselnd einen Sonntag Outdoor Afterhour Raver zu veranstalten. Somit ist man jedes dritte Wochenende im Sommer jeweils mit dem Tram 17 oder Tram 13 zum Werdhölzli gefahren und ab der Endstation danach der Limmat entlang bis zur Autobahnbrücke Schlieren zur Sonntags Veranstaltung, draussen im Freien an der Schönen Limmat, gelaufen. Mehr Sommer ging nicht! Danke für die schöne Erinnerung an diese Zeiten und FTP, dass dies heutzutage nicht mehr möglich ist, wegen diversen Überregulierungen in jedem Rave-Bereich. Das war Kulturbetrieb auf eine schöne sommerliche Art und Kultur ist für unsere Zwinglistadt mehr als wichtig. Aus diesem Grund habe ich auch bei Tram & Bass mitgemacht, da dies genau so eine schöne Kulturförderung für diese schöne Stadt ist. Somit schliesst sich ein schöner Kreis für mich. „Macht doch Sinn, oder nöd?“[](https://www.instagram.com/andreasramos_sihlrec/)
+
+
+      [Instagram @andreasramos_sihlrec](https://www.instagram.com/andreasramos_sihlrec/)
     videoUrl: https://player.vimeo.com/video/950812961?h=6d0ba88b36
-    releaseDate: 2024-06-02T19:43:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Albisgütli
