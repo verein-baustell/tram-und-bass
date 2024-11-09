@@ -16,6 +16,7 @@
     lastState,
   } from "../store";
   import { giveConsent, revokeConsent } from "../utils/cookieManager";
+  import { changeToLineAtTime } from "../utils/changeToLineAtCurrentTime";
 
   import Button from "./Button.svelte";
   let showDevTools = false;
@@ -55,6 +56,13 @@
       }}
     >
       Revoke consent
+    </Button>
+    <Button
+      on:click={() => {
+        changeToLineAtTime($lastState.line, $lastState.time);
+      }}
+    >
+      change to state
     </Button>
     <table>
       <tr> <td> currentTime:</td><td> {$currentTime.toFixed(2)}</td></tr>

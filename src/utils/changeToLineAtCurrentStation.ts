@@ -24,7 +24,7 @@ export const changeToLineAtStation = (line: Line, stationName: string) => {
       compareStationNames(timeStamp.name, stationName)
     )?.startTime
   );
-  const isSameLine = get(currentLine).id === line.id;
+  const isSameLine = get(currentLine)?.id === line.id;
   if (isSameLine) {
     get(vimeoVideoObject).setCurrentTime(timeStampOfCurrentStation);
     return;

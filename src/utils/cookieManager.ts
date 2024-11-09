@@ -43,11 +43,13 @@ export const setState = () => {
     // Listen for the beforeunload event to set the cookie before reload/close
     window.addEventListener('beforeunload', () => {
         const line = get(currentLine)
-        if (line) {
-            setCookie('line', line.id, 2);
-        }
         const time = get(currentTime);
-        setCookie('time', time.toString(), 2);
+        if(time != 0) {
+            if (line) {
+                setCookie('line', line.id, 2);
+            }
+            setCookie('time', time.toString(), 2);
+        }
     });
 };
 
