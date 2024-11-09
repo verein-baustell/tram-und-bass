@@ -28,21 +28,19 @@ ol {
 
 .detailed-view {
   max-height: 480px;
-  min-width: fit-content;
   overflow: scroll;
-}
-
-.about-view {
-  min-width: 100%;
 }
 
 #bottom-menu .detailed-view {
   position: absolute;
   bottom: 44px;
+  width: 480px;
+  right: 0;
 }
 
 #top-menu .detailed-view {
   position: absolute;
+  width: 400px; 
   top: 44px;
 }
 
@@ -60,9 +58,14 @@ ol {
   .detailed-view--right {
     right: inherit;
   }
+
+  #top-menu .detailed-view {
+    width: 100%;
+  }
   
   #bottom-menu .detailed-view {
     bottom: 86px;
+    width: 100%;
   }
 }
 .artist-about-cont a {
