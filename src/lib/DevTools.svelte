@@ -14,6 +14,7 @@
     previousStation,
     cookieConsent,
     lastState,
+    isBtmOpen,
   } from "../store";
   import { giveConsent, revokeConsent } from "../utils/cookieManager";
   import { changeToLineAtTime } from "../utils/changeToLineAtCurrentTime";
@@ -70,6 +71,7 @@
       <tr> <td> videoIsPlaying:</td><td> {$videoIsPlaying}</td></tr>
       <tr> <td> videoIsLoading:</td><td> {$videoIsLoading}</td></tr>
       <tr> <td> cookieConsent:</td><td> {$cookieConsent}</td></tr>
+      <tr> <td> is Bottom open:</td><td> {$isBtmOpen}</td></tr>
       <tr>
         <td> timeToSeekAfterVideoLoad:</td><td>
           {$timeToSeekAfterVideoLoad}</td

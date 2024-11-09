@@ -8,7 +8,7 @@
   export let onClose: (() => void) | undefined = undefined;
   export let title: string | undefined = undefined;
   import "../style/style.css";
-  import { lastState, lastStateRecovered } from "../store";
+  import { lastState, lastStateRecovered, isBtmOpen } from "../store";
   import { changeToLineAtTime } from "../utils/changeToLineAtCurrentTime";
 
   const goToLastState = () => {
@@ -28,7 +28,7 @@
     </h4>
   {/if}
 
-  {#if $lastState.line && !$lastStateRecovered}
+  {#if $lastState.line && !$lastStateRecovered && !$isBtmOpen}
     <ul>
       <button
         style="margin: 5px; width: calc(100% - 10px);"
