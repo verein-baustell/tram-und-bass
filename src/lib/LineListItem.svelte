@@ -12,17 +12,20 @@
 
   let nameContainer: HTMLElement | undefined = undefined;
   let isOverflowing = false;
-  let overflowRatio = 1; // default ratio if no overflow
+  let overflowRatio = 1;
 
   onMount(() => {
-    const overflowData = checkOverflow(nameContainer);
-    isOverflowing = overflowData.isOverflowing;
-    overflowRatio = overflowData.overflowRatio;
-    console.log(isOverflowing, overflowRatio);
-  });
+    const updateOverflow = () => {
+      const overflowData = checkOverflow(nameContainer);
+      isOverflowing = overflowData.isOverflowing;
+      overflowRatio = overflowData.overflowRatio;
+      console.log(isOverflowing, overflowRatio);
+    };
 
-  
-  
+    updateOverflow();
+
+    window.addEventListener('resize', updateOverflow);
+  });
 </script>
 
 <li>

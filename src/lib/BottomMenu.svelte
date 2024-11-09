@@ -61,10 +61,16 @@
   });
 
   onMount(() => {
-    const overflowData = checkOverflow(nameContainerBtm);
-    isOverflowing = overflowData.isOverflowing;
-    overflowRatio = overflowData.overflowRatio;
-    checkMenuWidth();
+    const updateOverflow = () => {
+      const overflowData = checkOverflow(nameContainerBtm);
+      isOverflowing = overflowData.isOverflowing;
+      overflowRatio = overflowData.overflowRatio;
+      console.log(isOverflowing, overflowRatio);
+    };
+
+    updateOverflow();
+
+    window.addEventListener('resize', updateOverflow);
   });
 </script>
 
