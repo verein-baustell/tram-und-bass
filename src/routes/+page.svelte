@@ -57,6 +57,7 @@
 
   // Set `initialized` to true after `cookieConsent` is set
   import { browser } from "$app/environment";
+  import { getState, setState } from "../utils/cookieManager";
   let initialized = false;
   if (browser) {
     cookieConsent.subscribe(() => {
@@ -90,6 +91,8 @@
   const releaseDate = new Date("2024-01-01T22:00:00");
   const showLandingPage = today <= releaseDate;
   onMount(() => {
+    getState();
+    setState();
     readLineFromPath();
 
     if (showLandingPage) return;

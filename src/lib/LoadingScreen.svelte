@@ -56,7 +56,7 @@
     position: fixed;
     top: 0;
     min-height: 100vh;
-    scale: 1.1;
+    scale: 1.4;
     width: auto;
     height: auto;
     filter: saturate(0) brightness(0.5) blur(20px);

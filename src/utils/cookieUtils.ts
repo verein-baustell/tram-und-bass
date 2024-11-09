@@ -5,8 +5,10 @@
  * @param days - The number of days until the cookie expires.
  */
 export function setCookie(name: string, value: string, days: number): void {
-    const expires = new Date(Date.now() + days * 864e5).toUTCString(); // Calculate expiration date
-    document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
+    if (typeof document !== 'undefined') {  // Check if `document` exists
+        const expires = new Date(Date.now() + days * 864e5).toUTCString(); // Calculate expiration date
+        document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
+    }
 }
 
 /**
@@ -15,10 +17,12 @@ export function setCookie(name: string, value: string, days: number): void {
  * @returns The value of the cookie, or null if it doesn't exist.
  */
 export function getCookie(name: string): string | null {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) {
-        return decodeURIComponent(parts.pop()?.split(';').shift() || '');
+    if (typeof document !== 'undefined') {  // Check if `document` exists
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) {
+            return decodeURIComponent(parts.pop()?.split(';').shift() || '');
+        }
     }
     return null;
 }
@@ -28,5 +32,7 @@ export function getCookie(name: string): string | null {
  * @param name - The name of the cookie to delete.
  */
 export function deleteCookie(name: string): void {
-    document.cookie = `${name}=; max-age=0; path=/`; // Set max-age to 0 to delete the cookie
+    if (typeof document !== 'undefined') {  // Check if `document` exists
+        document.cookie = `${name}=; max-age=0; path=/`; // Set max-age to 0 to delete the cookie
+    }
 }

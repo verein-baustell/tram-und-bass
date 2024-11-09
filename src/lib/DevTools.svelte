@@ -1,6 +1,7 @@
 <script>
   import { line } from "d3";
   import {
+    currentLine,
     currentStation,
     currentTime,
     devToolsState,
@@ -12,8 +13,8 @@
     vimeoVideoObject,
     previousStation,
     cookieConsent,
+    lastState,
   } from "../store";
-  // import isHome from "../store/isHome";
   import { giveConsent, revokeConsent } from "../utils/cookieManager";
 
   import Button from "./Button.svelte";
@@ -69,6 +70,11 @@
     </table>
     <table>
       <tr> <td> currentStation:</td><td> {$currentStation?.name}</td></tr>
+      <tr>
+        <td> lastState:</td><td>
+          {$lastState.line?.id}, {$lastState?.time}</td
+        ></tr
+      >
       <tr> <td> previousStation:</td><td> {$previousStation?.name}</td></tr>
       <tr> <td> nextStation:</td><td> {$nextStation?.name}</td></tr>
       <tr>

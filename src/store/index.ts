@@ -213,3 +213,6 @@ export const timeUntilNextStation = derived(
 );
 export const vimeoVideoObject = writable<Vimeo>();
 vimeoVideoObject.subscribe((vimeo) => {});
+
+// Define the lastState store with `line` as `Line`, `time` as `number`, and `cookieAge` as `number`
+export const lastState = writable<{ line: Line | undefined; time: number; }>({ line: undefined, time: 0 });
