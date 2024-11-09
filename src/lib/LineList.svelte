@@ -30,7 +30,7 @@
     </h4>
   {/if}
 
-  {#if $lastState.line && !$lastStateRecovered && !$isBtmOpen}
+  {#if $lastState.line && !$lastStateRecovered && !$isBtmOpen && hasRecoveryButton}
     <ul>
       <button
         class:isInverted={$lastState.line.isInverted}
