@@ -2,7 +2,7 @@
   import * as THREE from "three";
   import { onMount } from "svelte";
   import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-  import { vimeoVideoObject } from "../store";
+  import { vimeoVideoObject, isMobile } from "../store";
 
   let canvas: HTMLCanvasElement; // Reference to the canvas element
   let model: THREE.Group | null = null; // To hold the loaded model
@@ -125,20 +125,34 @@
       requestAnimationFrame(animate);
 
       if (model) {
-        // Update the model rotation to look at the mouse position
-        const vector = new THREE.Vector3(-mouse.x, -mouse.y, -0.5); // Set the Z value to adjust the depth
-        vector.unproject(camera); // Convert to world space
+        if ($isMobile) {
+          // Create an oscillating animation for rotation and scale on mobile
+          const time = Date.now(); // Time factor to control speed
+          model.rotation.y = Math.sin(time * 0.001) * 0.5; // Oscillate rotation on the Y axis
+          model.rotation.x = Math.sin(time * 0.005) * 0.1; // Slight oscillation on X axis
+          model.scale.set(
+            1 + Math.sin(time * 0.001) * 0.05,
+            1 + Math.sin(time * 0.001) * 0.05,
+            1 + Math.sin(time * 0.001) * 0.05
+          ); // Oscillate scale
+        } else {
+          // Update the model rotation to look at the mouse position
+          const vector = new THREE.Vector3(-mouse.x, -mouse.y, -0.5); // Set the Z value to adjust the depth
+          vector.unproject(camera); // Convert to world space
 
-        const direction = vector.sub(camera.position).normalize();
+          const direction = vector.sub(camera.position).normalize();
 
-        // Calculate the target rotation in terms of Euler angles
-        targetRotation.x = Math.atan2(direction.y, Math.abs(direction.z));
-        targetRotation.y = Math.atan2(-direction.x, Math.abs(direction.z));
+          // Calculate the target rotation in terms of Euler angles
+          targetRotation.x = Math.atan2(direction.y, Math.abs(direction.z));
+          targetRotation.y = Math.atan2(-direction.x, Math.abs(direction.z));
 
-        // Interpolate the model’s rotation towards the target rotation
-        const lerpFactor = 0.05; // Adjust for smoother/slower rotation
-        model.rotation.x += (targetRotation.x - model.rotation.x) * lerpFactor;
-        model.rotation.y += (targetRotation.y - model.rotation.y) * lerpFactor;
+          // Interpolate the model’s rotation towards the target rotation
+          const lerpFactor = 0.05; // Adjust for smoother/slower rotation
+          model.rotation.x +=
+            (targetRotation.x - model.rotation.x) * lerpFactor;
+          model.rotation.y +=
+            (targetRotation.y - model.rotation.y) * lerpFactor;
+        }
       }
 
       renderer.render(scene, camera);
