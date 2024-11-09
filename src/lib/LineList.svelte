@@ -8,6 +8,13 @@
   export let onClose: (() => void) | undefined = undefined;
   export let title: string | undefined = undefined;
   import "../style/style.css";
+  import { lastState, lastStateRecovered } from "../store";
+  import { changeToLineAtTime } from "../utils/changeToLineAtCurrentTime";
+
+  const goToLastState = () => {
+    lastStateRecovered.set(true);
+    changeToLineAtTime($lastState.line, $lastState.time);
+  };
 </script>
 
 <div {id} class={"line-list " + (viewable ? "view detailed-view" : "")}>
@@ -15,14 +22,21 @@
     <h4>
       {title}{#if isClosable}
         <button class="close-button" on:click={onClose}>
-          <img
-                class="close"
-                src="/images/close.svg"
-                alt="-"
-              />
+          <img class="close" src="/images/close.svg" alt="-" />
         </button>
       {/if}
     </h4>
+  {/if}
+
+  {#if $lastState.line && !$lastStateRecovered}
+    <ul>
+      <button
+        style="margin: 5px; width: calc(100% - 10px);"
+        on:click={() => {
+          goToLastState();
+        }}>Wieder einsteigen in die Tram {$lastState.line?.number}</button
+      >
+    </ul>
   {/if}
 
   <ul>
@@ -59,7 +73,7 @@
     height: 2em;
   }
 
-  .close{
+  .close {
     height: 1em;
     width: 1em;
   }

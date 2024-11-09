@@ -217,3 +217,4 @@ vimeoVideoObject.subscribe((vimeo) => {});
 
 // Define the lastState store with `line` as `Line`, `time` as `number`, and `cookieAge` as `number`
 export const lastState = writable<{ line: Line | undefined; time: number; }>({ line: undefined, time: 0 });
+export const lastStateRecovered = writable<boolean>(false);

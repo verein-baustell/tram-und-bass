@@ -12,10 +12,13 @@ import { hmsToSeconds } from "./timeFormatter";
  * @param line The line to change to.
  */
 export const changeToLineAtTime = (line: Line | undefined, newTime: number) => {
-  if (!currentStation || line == undefined) return;
+  if (line == undefined) return;
   const isSameLine = get(currentLine)?.id === line.id;
   if (isSameLine) {
-    get(vimeoVideoObject).setCurrentTime(newTime);
+    console.log('same line')
+    const vimeo = get(vimeoVideoObject)
+    vimeo.setCurrentTime(newTime);
+    vimeo.play();
     return;
   }
   else (newTime) &&
