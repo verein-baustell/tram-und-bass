@@ -31,10 +31,12 @@
   {#if $lastState.line && !$lastStateRecovered && !$isBtmOpen}
     <ul>
       <button
-        style="margin: 5px; width: calc(100% - 10px);"
+        class:isInverted={$lastState.line.isInverted}
+        class="recovery"
+        style="background-color: {$lastState.line.color};"
         on:click={() => {
           goToLastState();
-        }}>Wieder einsteigen in die Tram {$lastState.line?.number}</button
+        }}>Wieder in die Tram {$lastState.line?.number} einsteigen</button
       >
     </ul>
   {/if}
@@ -82,5 +84,23 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
+  }
+
+  .isInverted {
+    color: black !important;
+  }
+  button.recovery {
+    position: relative;
+    background-color: var(--background-color);
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    padding: var(--padding-m);
+    border-radius: var(--border-radius-button);
+    align-items: center;
+    gap: 0.5em;
+    transition: var(--transition);
+    line-height: 1.75em;
   }
 </style>
