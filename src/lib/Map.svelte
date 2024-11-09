@@ -478,7 +478,7 @@
     mapSvg.call(zoom as any);
 
     addClassesToStations();
-    setActiveLine($currentLine);
+    $currentLine && setActiveLine($currentLine);
   });
 
   currentStation.subscribe((newStation) => {
@@ -489,7 +489,7 @@
   });
 
   currentLine.subscribe((newLine) => {
-    setActiveLine(newLine);
+    newLine && setActiveLine(newLine);
   });
 
   currentTime.subscribe((newTime) => {
