@@ -73,7 +73,7 @@
   }
   #station-list {
     --distance-to-left-edge: 0.5em;
-    --circle-size: 12px;
+    --circle-size: 10px;
     overflow-y: scroll;
     overflow-x: hidden;
     background: var(--background-color);
@@ -81,7 +81,7 @@
   :global(li.active) {
     font-weight: bold;
     :global(.circle) {
-      outline: 2px solid currentColor;
+      outline: 1px solid currentColor;
     }
   }
   ol {
@@ -100,10 +100,12 @@
       height: 32px;
       cursor: pointer;
       color: inherit;
-      &:hover {
-        font-weight: bold;
-        :global(.circle) {
-          scale: 1.5;
+      @media (hover: hover) {
+        &:hover {
+          font-weight: bold;
+          :global(.circle) {
+            scale: 1.5;
+          }
         }
       }
     }
