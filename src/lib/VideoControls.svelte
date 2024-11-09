@@ -55,13 +55,13 @@
           {/if}
         {:else if $videoIsLoading}
           {#if $isMobile === true}
-            <img class="icon" src="/images/loading.svg" alt="Loading Button" />
+            <img class="icon" src="/images/loading-icon.gif" alt="Loading Button" />
           {:else}
             <div>
               Loading
               <img
-                class="icon"
-                src="/images/loading.svg"
+                class="icon gif"
+                src="/images/loading-icon.gif"
                 alt="Loading Button"
               />
             </div>
@@ -107,7 +107,7 @@
         />
       {:else}
         <div>
-          Immersive-Mode
+          Immersive
           <img
             class="icon"
             src="/images/immersive-open.svg"
@@ -139,6 +139,9 @@
     gap: 8px;
   }
 
+  .gif{
+    mix-blend-mode: darken;
+  }
   .icon {
     padding-top: 2px;
     height: 1em;

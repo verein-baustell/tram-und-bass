@@ -2,25 +2,20 @@
   import { onMount } from "svelte";
   import { currentLine } from "../store";
   import LineNumber from "./LineNumber.svelte";
+  import checkOverflow from "../utils/checkOverflow";
   export let onClick: (lineClicked: Line) => void;
   export let line: Line;
   const releaseDate = new Date(line.releaseDate);
-  const formattedDate = releaseDate.toLocaleDateString('en-GB').replace(/\//g, '.');
-  
-  let nameContainer: any;
+  const formattedDate = releaseDate
+    .toLocaleDateString("en-GB")
+    .replace(/\//g, ".");
+
+  let nameContainer: HTMLElement | undefined = undefined;
   let isOverflowing = false;
 
-  function checkOverflow() {
-    if (nameContainer) {
-      isOverflowing = nameContainer.scrollWidth > nameContainer.clientWidth;
-    }
-  }
   onMount(() => {
-    checkOverflow()
+    isOverflowing = checkOverflow(nameContainer);
   });
-
-  $: checkOverflow();
-
 </script>
 
 <li>
@@ -39,7 +34,9 @@
     <img class="star" src="/images/divider.svg" alt="-" />
     <div class="nameContainer" bind:this={nameContainer}>
       {#if isOverflowing}
-        <div class="marquee">{line.isReleased ? line.artistName : "coming soon"}</div>
+        <div class="marquee">
+          {line.isReleased ? line.artistName : "coming soon"}
+        </div>
       {:else}
         <p>{line.isReleased ? line.artistName : "coming soon"}</p>
       {/if}
@@ -49,13 +46,13 @@
 </li>
 
 <style lang="scss" scoped>
- 
   button {
     position: relative;
-    &:disabled{
+    &:disabled {
       opacity: 0.5;
       cursor: help;
-      img, p {
+      img,
+      p {
         filter: blur(3px);
       }
       &:hover {
@@ -70,9 +67,9 @@
         }
       }
     }
-    .releaseDate{
-        display: none;
-      }
+    .releaseDate {
+      display: none;
+    }
     // TODO: Do the colors with variables
     &.isActive {
       filter: invert(1);

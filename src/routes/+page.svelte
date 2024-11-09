@@ -42,8 +42,12 @@
 
   const initVideo = () => {
     readLineFromPath();
+    if (!$currentLine) {
+      console.log("no current line");
+      return;
+    }
     $vimeoVideoObject = new Vimeo("video-container", {
-      url: $currentLine?.videoUrl,
+      url: $currentLine.videoUrl,
       controls: false,
       autopause: false,
       loop: true,
@@ -84,6 +88,7 @@
       }
     } else {
       $currentLine = releasedLines[randomIndex];
+      
     }
   };
 

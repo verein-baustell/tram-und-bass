@@ -17,9 +17,9 @@ lines:
       Mit der angenehm schleppenden Langsamkeit des Soundtracks gleiten wir von Halt zu Halt. Der Subbass verbindet sich mit der Reibung der Schienen. Durch die Heckscheibe sehen wir, wie die Stadt rückwärts verschwindet, als ziehe sie sich in eine andere Dimension zurück. Mit jedem vorbeiziehenden Tram wächst das Gefühl, wir bewegten uns nicht nur durch die Stadt, sondern auch durch die Zeit. Vergangenheit, Gegenwart und Zukunft scheinen miteinander verflochten und gleichzeitig zu existieren.
 
 
-      [Instagram](https://www.instagram.com/violazimmermann/)
+      [Instagram @violazimmermann](<https://www.instagram.com/violazimmermann/ >)
     videoUrl: https://player.vimeo.com/video/950558411?h=452ef92b18
-    releaseDate: 2024-11-15T05:34:00.000Z
+    releaseDate: 2024-11-18T06:59:00.000Z
     id: ""
     timeStamps:
       - name: Geissweid
@@ -133,12 +133,15 @@ lines:
       This mix is an homage to Zurich's Tram Number 2, which I used almost daily. While compiling it, I felt a deep connection to Zurich, where I lived for more than a decade before moving to Berlin and then back to Mexico. Each track holds an emotional tie to the city and my past. Zurich taught me great musical lessons—there's so much talent in that town. I'm happy I spent time there. Sending love to all the lovely music creatures—have a nice ride.
 
 
-      [Instagram](<https://www.instagram.com/nuevoprohibido/ >)
+      [Instagram @nuevoprohibido](https://www.instagram.com/nuevoprohibido/)
 
 
-      [Bandcamp](https://tramundbass.bandcamp.com/)
+      [Soundcloud](https://soundcloud.com/neuverboten)
+
+
+      [Bandcamp](https://nuevoprohibido.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/947761973?h=1c135204fe
-    releaseDate: 2024-07-15T14:55:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Tiefenbrunnen
@@ -239,8 +242,25 @@ lines:
     number: 3
     name: Klusplatz
     artistName: VERYCOZI
+    artistAboutText: >-
+      VERYCOZI Zürich Based Local DJ ist your dear Host, Bookerin, Labelchefin
+      und so vieles mehr in der Zürcher Musikwelt. Neue Musik zu finden und denn
+      Leuten auf dem Dancefloor zu präsentieren ist ihr goal . Genre? Ganz
+      ehrlich – ein ziemliches Durcheinander - verspielte und einzigartige sets
+      in dem Sie Ihr Musikgeschmack unter beweis stellt. Von cozy Riddims ,
+      Dancehall über Afrobeats, Edits und Hiphop ein sehr gutes Händchen für
+      Perlen von beinahe überall, gemeinsame Sache für die Culture!
+
+
+      Ich mag die ganze Strecke der Tramlinie 3, die begleitet mich durch meine ganze Kind-Jugendzeit.
+
+
+      [Instagram @onmondaybrunch](https://www.instagram.com/onmondaybrunch/)
+
+
+      [Soundcloud](https://soundcloud.com/verycozi)
     videoUrl: https://player.vimeo.com/video/950561793?h=2b51bbc0bb
-    releaseDate: 2024-12-24T17:00:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Albisrieden
@@ -312,7 +332,7 @@ lines:
     name: Albisrieden
     artistName: Dari Ferrari
     videoUrl: https://player.vimeo.com/video/950560428?h=f9744206bd
-    releaseDate: 2024-07-15T15:02:00.000Z
+    releaseDate: 2024-12-02T05:24:00.000Z
     id: ""
     timeStamps:
       - name: Klusplatz
@@ -395,9 +415,15 @@ lines:
       I heard of Tiefenbrunnen’s fame as the golden coast and how the area was previously a working-class neighborhood. We then pass the classic Opernhaus before heading into the heart of Zürich, Niederdorf and arriving at HB, going from busy city sounds to train sounds. From there on, the line passes by many places where ballroom people gather, road accesses to highways and then the clubs of Hardbrücke. We get artsy at Toni Areal and then industrial as we head to the final stop, Altstetten.
 
 
-      [Instagram](https://www.instagram.com/saint.hausvrau/)
+      [Instagram @saint.hausvrau](https://www.instagram.com/saint.hausvrau/)
+
+
+      [Soundcloud](https://soundcloud.com/hausvrau)
+
+
+      [Bandcamp](https://hausvrau.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/950563061?h=9bf1b84be2
-    releaseDate: 2024-07-15T15:09:00.000Z
+    releaseDate: 2024-12-03T05:25:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Tiefenbrunnen
@@ -496,9 +522,9 @@ lines:
       Taking this ride goes through the centre of Zurich. Often before or after a night out, you would probably enter this tram ride and one point or another. This mix takes you on a one person party through this tram ride. To either take the energy with you before the night out, or if you still have some left after. Near the beginning is a section about water, which foreshadows travelling by the lake closer to the end of the journey.
 
 
-      [Instagram](https://www.instagram.com/newkyddd3/)
+      [Instagram @newkyddd3](https://www.instagram.com/newkyddd3/)
     videoUrl: https://player.vimeo.com/video/950564216?h=895d1fb002
-    releaseDate: 2024-07-15T15:09:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Altstetten Nord
@@ -597,9 +623,15 @@ lines:
       We don't actually have any connection to tram line 5, we usually walk or cycle and at most, if the bike doesn't work, we take the tram. It's not particularly close to home or the studio, so it's only our emergency solution when all else fails. But what we don't understand is why tram 5 is so often not wheelchair-friendly?
 
 
-      [Instagram](https://www.instagram.com/atrice____/)
+      [Instagram @atrice____](https://www.instagram.com/atrice____/)
+
+
+      [Soundcloud](https://soundcloud.com/atricemiras)
+
+
+      [Bandcamp](https://atrice.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/950565372?h=3c31783cab
-    releaseDate: 2024-07-16T10:50:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Kirche Fluntern
@@ -659,12 +691,18 @@ lines:
       Riding trams is strangely communal, although no one knows each other and almost no one speaks. The sounds come from the vehicle itself, a cough, tickets checks, passing cars. the soundscapes is known and yet always different. The line 5 sounds superficially like all the others but the rhythm of the tracks, the sequence of announcements only sound exactly like those of tram 5. If we take it exactly, even every single ride on tram 5 sounds different. But only if we listen. 
 
 
-      [Instagram Lino](https://www.instagram.com/linoasper/?hl=en)
+      [Instagram @linoasper](https://www.instagram.com/linoasper/)
 
 
-      [Instagram Regula](https://www.instagram.com/regula.rec/)
+      [Instagram @regula.rec](https://www.instagram.com/regula.rec/)
+
+
+      [Soundcloud](https://on.soundcloud.com/sVuaokesQtSbsPBo6)
+
+
+      [Bandcamp](https://regula.bandcamp.com/album/rr-ep-vol-1)
     videoUrl: https://player.vimeo.com/video/947764688?h=181299d19c
-    releaseDate: 2024-07-16T11:48:00.000Z
+    releaseDate: 2024-11-25T06:06:00.000Z
     id: ""
     timeStamps:
       - name: Laubegg
@@ -727,9 +765,15 @@ lines:
       Entstanden ist eine sehr persönliche Collage aus neuen und alten Eigenkompositionen, Field Recordings und einer Echtzeitaufnahme der Tramfahrt. Die „Realität“ (Tram Sounds) vermischt sich mit der auditiven Interpretation meiner eigenen Wahrnehmung der Fahrt, aber auch mit Erinnerungen und Imagination. Zudem sind gewisse Tracks mit bestimmten Orten verbunden und stehen für Stationen in meiner musikalischen Biografie (Konzert Kirche Enge, Soundscape-Kompositionsarbeit Bahnhofstrasse, Studium UZH).
 
 
-      [Instagram](https://www.instagram.com/_molekuehl/)
+      [Instagram @_molekuehl](https://www.instagram.com/_molekuehl/)
+
+
+      [Soundcloud](https://soundcloud.com/mirjmusic)
+
+
+      [Bandcamp](https://kashevtapes.bandcamp.com/track/moleku-hl-progression)
     videoUrl: https://player.vimeo.com/video/950566927?h=92df0178c5
-    releaseDate: 2024-07-16T11:48:00.000Z
+    releaseDate: 2024-12-04T05:34:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Enge
@@ -796,9 +840,15 @@ lines:
       Beginning at the zoo, a metaphor for captivity&oppression, reflecting on slavery&the struggle for freedom. Moving to the University of Zurich, we explore knowledge &power, highlighting barriers to access. To Central into Bahnhofstrasse, we confront fast fashion&worker exploitation, raising awareness about the human cost of consumerism. Finally, we invite listeners to relax, find a meditative state amid the absurdity of our fast-paced world. The journey pressing societal issues.
 
 
-      [Instagram](https://www.instagram.com/softdate_music/)
+      [Instagram @softdate_music](https://www.instagram.com/softdate_music/)
+
+
+      [Soundcloud](https://soundcloud.com/softdate)
+
+
+      [Bandcamp](https://softdate.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/950566054?h=9f68eea5d2
-    releaseDate: 2024-07-16T11:48:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Zoo
@@ -867,9 +917,9 @@ lines:
       Kern des Sets sind Songs, die mich lange begleiten und wichtige Gefühle oder Botschaften transportieren, oft in Mundart. Immer wieder platziere ich Referenzen, z. B. in Wollishofen, wo ich meine Jugend verbrachte. Ab der Bahnhofstrasse scheint die Message im Konsumüberfluss verloren zu gehen. Doch auch auditive Banalität spricht für sich. Ich bin nicht unbetroffen von übermässigem TikTok-Konsum und einer Vorliebe für Trashups. Ich hoffe, mein Set macht Mut und Spaß!
 
 
-      [Instagram](https://www.instagram.com/zirkuslino?igsh=MWgzcXVxY2llZGQ1aQ==)
+      [Instagram @zirkuslino](https://www.instagram.com/zirkuslino/)
     videoUrl: https://player.vimeo.com/video/950567543?h=8e4eb0457c
-    releaseDate: 2024-10-10T19:21:00.000Z
+    releaseDate: 2025-01-01T21:21:00.000Z
     id: ""
     timeStamps:
       - name: Wollishoferplatz
@@ -970,9 +1020,9 @@ lines:
     number: 7
     name: Wollishoferplatz
     artistName: DJ Tatana
-    artistAboutText: "[Instagram](https://www.instagram.com/djtatana/)"
+    artistAboutText: "[Instagram @djtatana](https://www.instagram.com/djtatana/)"
     videoUrl: https://player.vimeo.com/video/950568271?h=72f40f9183
-    releaseDate: 2024-07-16T11:58:00.000Z
+    releaseDate: 2024-11-26T05:59:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Stettbach
@@ -1086,9 +1136,15 @@ lines:
       Tram line 8 in Zurich has a close connection to Langstrasse, a vibrant and diverse neighborhood. The tram line runs through Langstrasse, which is known for its lively cultural scene and nightlife. Since the roots of the music scene in Langstrasse were mainly influenced by techno and house genres, I have incorporated mostly house elements into my set.
 
 
-      [Instagram](https://www.instagram.com/exguesich/)
+      [Instagram @exguesich](https://www.instagram.com/exguesich/)
+
+
+      [Soundcloud](https://soundcloud.com/exguesi)
+
+
+      [Bandcamp](https://bandcamp.com/exguesi)
     videoUrl: https://player.vimeo.com/video/950568957?h=0962988f6e
-    releaseDate: 2024-07-10T16:19:00.000Z
+    releaseDate: 2024-11-19T05:12:00.000Z
     id: ""
     timeStamps:
       - name: Klusplatz
@@ -1181,9 +1237,15 @@ lines:
       I first approached my mix for the tram line 8, which runs past my house, by making a field recording on a Sunday night. With this recording as a basis, it became clear in which tempo the music should be, and which moods should be present in the mix. The tracks were layered on top of each other in several rounds, adding detail, density, and chaos step by step. Melodic fragments echo both the architecture of the city, as well as the characteristics of the places seen through the rear window.
 
 
-      Instagram
+      \[Instagram @ink.panique](www.instagram.com/ink.panique)
+
+
+      \[Soundcloud](www.soundcloud.com/ink_panique)
+
+
+      \[Bandcamp](https://ousooo.bandcamp.com)
     videoUrl: https://player.vimeo.com/video/950570324?h=ddbc1bdffa
-    releaseDate: 2024-07-16T11:58:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Hardturm
@@ -1270,7 +1332,7 @@ lines:
 
       [Instagram @baer_ae](https://www.instagram.com/lebeamlimmat?igsh=dnY0MnByZzl2MnRj)
     videoUrl: https://player.vimeo.com/video/950573466?h=7fb8f08ec8
-    releaseDate: 2024-07-16T11:58:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Hirzenbach
@@ -1391,9 +1453,15 @@ lines:
       Just like Nüünitram's snaking line, my mix weaves through heartfelt favorites, rattling basslines, and squealing soundscapes. Some tracks dare to comment on iconic stops: Inner City Life drifts from Stauffacher to the Sihlstrasse; Dirty Cash hits Paradeplatz; Stefan Eicher searches for love at Limmatquai; Pipilotti Rist serenades you with Wicked Game at Heimplatz; Dürrenmatt reads from Der Tunnel while while driving through the burrow and Mani Matter guides the Nüünitram straight to heaven.
 
 
-      [Instagram](https://www.instagram.com/isi_si/)
+      [Instagram @isi_si](https://www.instagram.com/isi_si/)
+
+
+      [Soundcloud](https://soundcloud.com/isi-si)
+
+
+      [Bandcamp](https://bandcamp.com/isisi)
     videoUrl: https://player.vimeo.com/video/950571962?h=b4953715b2
-    releaseDate: 2024-07-16T11:58:00.000Z
+    releaseDate: 2024-11-27T06:30:00.000Z
     id: ""
     timeStamps:
       - name: Triemli
@@ -1503,9 +1571,24 @@ lines:
     number: 10
     name: Flughafen
     artistName: TVBXS
-    artistAboutText: "[Instagram](https://www.instagram.com/tvbxs_/)"
+    artistAboutText: >-
+      TVBXS is a provider, a warrior, and an angel, carving out space for those
+      who don't have enough of it while claiming their own, armed with the
+      gentle sword of sound and the transformative power of music. To them,
+      DJing is a restorative practice and an invitation into their vulnerable,
+      messy, and silly world, where emotions are channeled into a language
+      beyond words.[](https://www.instagram.com/tvbxs_/)
+
+
+      To me, tram line 10 is like an old buddy—a reliable constant that, in recent meaningful years, has connected me to friends, work, and adventures. I encourage you, dear traveler, to indulge in a moment of realness. Masks off, headphones on. It’s just you, the music, and the view. Enjoy the ride, and thank you for traveling with me! <3
+
+
+      [Instagram @tvbxs_](https://www.instagram.com/tvbxs_/)
+
+
+      [Soundcloud](https://soundcloud.com/tvbxs1)
     videoUrl: https://player.vimeo.com/video/950672105?h=0f80c5bf39
-    releaseDate: 2024-07-16T11:58:00.000Z
+    releaseDate: 2024-12-05T05:00:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhofplatz HB
@@ -1602,8 +1685,11 @@ lines:
 
 
       [Instagram](https://www.instagram.com/xhenisademiri/)
+
+
+      [Soundcloud](https://on.soundcloud.com/wvwrjzVADQGETm3k9)
     videoUrl: https://player.vimeo.com/video/950661521?h=164e96d180
-    releaseDate: 2024-07-16T11:58:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Fracht
@@ -1705,9 +1791,15 @@ lines:
       Growing up in Zürich i often visited my family in Auzelg with the Tram 11. For a brief period of time i lived in Auzelg an had to commute to wollishofen with the Tram 11 to go to School. Nowadays i live in the area where i sometimes need to use the Tram 11 to get home. I have moved there exactly one year ago.
 
 
-      [Instagram](https://www.instagram.com/dschinniii/)
+      [Instagram @dschinniii](https://www.instagram.com/dschinniii/)
+
+
+      [Soundcloud](https://on.soundcloud.com/kB9y3xPaEKeheVKc9)
+
+
+      [Bandcamp](https://dschinn.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/950688315?h=444abd1672
-    releaseDate: 2024-07-16T11:58:00.000Z
+    releaseDate: 2024-11-20T05:07:00.000Z
     id: ""
     timeStamps:
       - name: Auzelg
@@ -1830,9 +1922,12 @@ lines:
       Tram line 11 has been a constant companion throughout my life. Growing up in Kreis 8 and later living in Kreis 6 during my studies, this tram line was my gateway to everything—school, university, work, friends, and home. I’ve poured the essence of home into this mix, blending nostalgic tunes with a few club tracks that reflect my exploration of the nightlife while growing up in the city of Zurich.
 
 
-      [Instagram](https://www.instagram.com/nevesthika/)
+      [Instagram @nevesthika](https://www.instagram.com/nevesthika/)
+
+
+      [Soundcloud](https://soundcloud.com/nivenive)
     videoUrl: https://player.vimeo.com/video/950679463?h=03df9a86bb
-    releaseDate: 2024-07-16T11:58:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Rehalp
@@ -1942,8 +2037,17 @@ lines:
     number: 12
     name: Flughafen
     artistName: Endstation Altes Krematorium
+    artistAboutText: >-
+      Endstation Altes Krematorium was born from the ashes of Savage Grounds.
+      The project focuses on the exploration of bizarre and disturbing
+      atmospheres with the use of threatening oscillators, caustic rhythms and
+      shrill, obscure vocals. The soundscape is similar to what one might find
+      in hell. It consists of Daniele Cosmo and Florin Büchel.
+
+
+      Composed live and improvised directly on the machines used for this piece, the music reflects on the greyness and eclipsing hopelessness of the suburban agglomeration depicted in the video. Sparse housing, giant isolated commercial buildings, devouring concrete blocks, bridges and tunnels. And the ever-present shopping centres. Yet, it all stands so still, so calm, like death. Beauty.
     videoUrl: https://player.vimeo.com/video/950697436?h=67800866e7
-    releaseDate: 2024-07-16T11:59:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Stettbach
@@ -2013,8 +2117,14 @@ lines:
 
 
       There's a chaotic ride waiting inside the bubble of these headphones. One that clashes with Zurich's unbreakable drive for law and order, its neat separation of green grass and gray concrete and its business administration type urban planning. Join me on the overstimulating side and listen, as familiar becomes stranger around you. But most importantly, never make eye contact!!
+
+
+      \[Soundcloud](https://soundcloud.com/endobliss)
+
+
+      \[Bandcamp](https://endlessbazaar.bandcamp.com/track/endobliss-golden-era-glitch)
     videoUrl: https://player.vimeo.com/video/950700571?h=cc9bd2b94d
-    releaseDate: 2024-07-16T11:59:00.000Z
+    releaseDate: 2024-11-18T05:45:00.000Z
     id: ""
     timeStamps:
       - name: Fracht
@@ -2076,7 +2186,7 @@ lines:
     number: 13
     name: Albisgütli
     artistName: Cevincia
-    artistAboutText: >-
+    artistAboutText: >
       Am liebsten mag ich, wenn zwischen verschiedene Musik und
       unterschiedlichen Menschen eine musikalische Reise in ihrer Vielfalt
       zusammen geführt werden kann.
@@ -2085,9 +2195,15 @@ lines:
       Die Strecke der Tram Nr. 13 fährt durch Zürich’s, unterschiedlichste Stadtteile und verbindet das urbane mit der Natur. Vom Üetliberg bis hin zur Bahnhofstrasse, entlang der Limmat bis fast nach Oberengstringen, schlendert das Tram durch das städtische Geschehen. Das Musikgenre Jungle widerspiegelt den schnelllebigen Zeitgeist vieler Städte damals wie heute. Die tiefen und dubbigen Reggae Bässe erinnern, an das Zürich der 90er Jahre.
 
 
-      [Instagram](https://www.instagram.com/cevimara/)[](https://www.instagram.com/cevimara/)
+      [Instagram @cevimara](https://www.instagram.com/cevimara/)
+
+
+      [Soundcloud](https://soundcloud.com/cevin-2)
+
+
+      [Bandcamp](https://bandcamp.com/vincia)
     videoUrl: https://player.vimeo.com/video/950707919?h=af30ff979c
-    releaseDate: 2024-07-10T16:16:00.000Z
+    releaseDate: 2024-11-28T05:17:00.000Z
     id: ""
     timeStamps:
       - name: Frankental
@@ -2198,9 +2314,12 @@ lines:
       Die Linie 13 war eines der ersten Trams die maelique als Kind regelmässig fuhr. Von der Haltestelle Waidfussweg in Wipkingen sind es noch 200 Meter den Berg hoch bis zu seinem Elternhaus. Als er noch Handball spielte pendelte er wöchentlich mit der 13 direkt bis zur Saalsporthalle. Der Klassiker war natürlich das Tram schon um die Ecke zu hören und für die letzten Meter einen Sprint hinzulegen. Somit ist die Linie 13 für ihn ein Herzstück dieser Stadt – nämlich die Tramlinie seines Vertrauens.
 
 
-      [Instagram](https://www.instagram.com/maeliquito/)
+      [Instagram @maeliquito](https://www.instagram.com/maeliquito/)
+
+
+      [Soundcloud](https://soundcloud.com/user-352431009)
     videoUrl: https://player.vimeo.com/video/950719687?h=29fa4163a3
-    releaseDate: 2024-07-15T14:54:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Albisgütli
@@ -2298,9 +2417,22 @@ lines:
     number: 14
     name: Triemli
     artistName: Alex Dallas
-    artistAboutText: "[Instagram](https://www.instagram.com/alex.dallas_/)"
+    artistAboutText: >-
+      Alex Dallas ist eine Schlüsselfigur der Zürcher Clubszene und hat mit
+      seinen Labels Straight Ahead Recordings und Drumpoet Community wichtige
+      Impulse für die elektronische Musik gesetzt. Als Gründer des Clubs Zukunft
+      und Teilhaber der legendären Dachkantine, sowie der Clubs Cabaret und
+      Kauz, prägte er die lokale Nightlife-Kultur. Seine DJ-Sets, geprägt von
+      tiefen Grooves und musikalischem Feinsinn, ziehen seit Jahren
+      anspruchsvolle House- und Techno-Liebhaber in ihren Bann. 
+
+
+      Die Tramlinie 14 führt vom Triemli nach Seebach und spiegelt die Vielfalt Zürichs auf eindrucksvolle Weise wider – mal urban, dann wieder malerisch wie eine Postkarte, fast kitschig schön. Seit 17 Jahren lebe ich mit meiner Familie irgendwo in der Mitte dieser Strecke. Am häufigsten nutze ich sie von der Guggachstrasse zum Hauptbahnhof, gelegentlich auch für Spaziergänge am Uetliberg. Für mich ist die 14er eine cinematische Reise durch Zürich – wie der sphärische Soundtrack, den ich für die „Tram und Bass“-Reihe produziert habe. Abseits meiner Club-Sets wollte ich bewusst Ruhe und Tiefe schaffen, um das morgendliche Pendeln entspannter zu gestalten.
+
+
+      [Instagram @alex.dallas_](https://www.instagram.com/alex.dallas_/)
     videoUrl: https://player.vimeo.com/video/950742749?h=57745ef270
-    releaseDate: 2024-07-16T11:59:00.000Z
+    releaseDate: 2024-12-06T05:07:00.000Z
     id: ""
     timeStamps:
       - name: Seebach
@@ -2402,9 +2534,12 @@ lines:
       Ny dear 14: from taking me "into the city" for the first times shopping without parents, to bringing me home from smoking with the cool kids in wiedikon, while hoping my mom would be asleep already so she didn't comment on those tiny eyes, over to driving me to work for three years with the children in Seebach, I experienced so many moments with, in and waiting for you. Thank you for being part of my züri 14! (but dear ZVV plese be kind, lower ur prices & make ÖV accessible for everyone!)
 
 
-      [Instagram](https://www.instagram.com/judallasju/)
+      [Instagram @judallasju](https://www.instagram.com/judallasju/)
+
+
+      [Soundcloud](www.soundcloud.com/judallasju)
     videoUrl: https://player.vimeo.com/video/950721895?h=02c06df905
-    releaseDate: 2024-07-16T11:59:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Triemli
@@ -2506,9 +2641,15 @@ lines:
       Die Zürcher Tram Linie 15 mag kurz sein, passiert aber einige der wichtigsten Knotenpunkte für den Verkehr. So gibt es immer etwas zu bestaunen, wie zum Beispiel in diesem Video der Moment, in dem ein ETH-Link Bus, der eine Panne hatte, abgeschleppt wird. Aufgrund der Kürze der Strecke und dem vielen Geschehen um das Tram herum hat Wummertal zwei besonders energiereiche Songs aus ihrem Live Set ausgewählt. Die Aufnahme wurde live eingespielt, währenddem das Video eingeblendet wurde.
 
 
-      [Instagram](https://www.instagram.com/wummertal/)
+      [Instagram @wummertal](https://www.instagram.com/wummertal/)
+
+
+      [Soundcloud](https://soundcloud.com/wummertal)
+
+
+      [Bandcamp](https://wummertal.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/950805249?h=1f4d17577f
-    releaseDate: 2024-07-16T11:59:00.000Z
+    releaseDate: 2024-11-29T05:40:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Stadelhofen
@@ -2556,13 +2697,30 @@ lines:
     name: Stadelhofen
     artistName: E.S.P.
     artistAboutText: >-
-      [Instagram
-      @web_web_web_666](https://www.instagram.com/web_web_web_666?igsh=ajU3NzN5bjJuZXYy)
+      Elektronische Sequenz Proleten inhabit various roles—as DJs, producers,
+      space-owners, record label managers, and event organizers. For the duo,
+      these roles are not fixed; they flow and interact dynamically, functioning
+      either as an integrated whole or as distinct entities. Their artistic and
+      sonic productions are rooted in themes like the institutionalization of
+      techno, copyright, dividualism, and the human perception of repetitive
+      rhythms, combined with aesthetic elements from B-movie horror.
+
+
+      The tramline we got is incidental - we have 0 relations to it; number 13 was the one that carried the weight of nostalgia. That’s the line where stories of the past haunt the present, shaping a sense of context yet never quite fully articulated.
+
+
+      [Instagram @web_web_web_666](https://www.instagram.com/web_web_web_666)
 
 
       [Instagram @nicola_kazimir](https://www.instagram.com/nicola_kazimir/)
+
+
+      [Soundcloud](https://soundcloud.com/lespoints)
+
+
+      [Bandcamp](https://lespoints.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/950808090?h=55d4d27811
-    releaseDate: 2024-06-02T18:26:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Bucheggplatz
@@ -2620,9 +2778,15 @@ lines:
       Zukunft.
 
 
-      [Instagram](https://www.instagram.com/jennycara_/)
+      The first tram line I used after moving to Zurich was Line 17, and it became a sign of a new chapter in my life. This mix is a collection of tracks I listen to in my free time, beyond the DJ booth. Just like a tram journey, these tracks take you through different moods and places, offering a blend of familiar comfort and new discoveries, much like my own experience of settling into a new city.
+
+
+      [Instagram @jennycara_](https://www.instagram.com/jennycara_/)
+
+
+      [Soundcloud](https://soundcloud.com/jennycara)
     videoUrl: https://player.vimeo.com/video/950809685?h=ee311a9fe0
-    releaseDate: 2024-06-02T15:52:00.000Z
+    releaseDate: 2024-11-22T05:09:00.000Z
     id: ""
     timeStamps:
       - name: Werdhölzli
@@ -2717,9 +2881,29 @@ lines:
     number: 17
     name: Werdhölzli
     artistName: Andreas Ramos
-    artistAboutText: "[Instagram](https://www.instagram.com/andreasramos_sihlrec/)"
+    artistAboutText: >-
+      Andreas Ramos ist ein visionärer DJ mit einer Karriere, die sich über ein
+      Jahrzehnt erstreckt. Andreas hat sich als Meister seines einzigartigen
+      Sounds etabliert, der ihn von gewöhnlichen DJs abhebt. Seine Fähigkeit,
+      eine ausgelassene Atmosphäre auf der Tanzfläche zu schaffen, hat ihm eine
+      treue Anhängerschaft von Liebhaber*innen elektronischer Musik eingebracht.
+      Andreas ist auch der Gründer von Sihl Records, einem renommierten
+      Plattenladen und Musiklabel in Zürich. Sihl Records hat sich zu einem
+      pulsierenden Zentrum für elektronische Musik entwickelt. Beeinflusst von
+      der dynamischen Bewegung von House und Techno, bietet der Laden eine
+      sorgfältig Auswahl an Vinyl-Schallplatten. Für Andreas Ramos geht es um
+      Qualität und die Überzeugung, dass Musik die Fähigkeit hat, Menschen
+      zusammenzubringen. Seine spannende Reise bringt ihn nun auch zu uns aufs
+      Erdbeerfeld und es ist uns ein Vergnügen, durch seine pulsierende Welt von
+      elektronischen Klängen zu tanzen.
+
+
+      Tram Nr. 17 ist für mich wie die kleine Schwester vom Tram Nr. 13. Beide enden beim Werdhölzli. Beim Wort Werdhölzli bekomme ich jedes mal einen Back-Flash an die Zeiten wo sich Letten, GZ Wollishofen und Autobahnbrücke Schlieren die Sonntage im Sommer geteilt haben um am jehweiligen Ort abwechselnd einen Sonntag Outdoor Afterhour Raver zu veranstalten. Somit ist man jedes dritte Wochenende im Sommer jeweils mit dem Tram 17 oder Tram 13 zum Werdhölzli gefahren und ab der Endstation danach der Limmat entlang bis zur Autobahnbrücke Schlieren zur Sonntags Veranstaltung, draussen im Freien an der Schönen Limmat, gelaufen. Mehr Sommer ging nicht! Danke für die schöne Erinnerung an diese Zeiten und FTP, dass dies heutzutage nicht mehr möglich ist, wegen diversen Überregulierungen in jedem Rave-Bereich. Das war Kulturbetrieb auf eine schöne sommerliche Art und Kultur ist für unsere Zwinglistadt mehr als wichtig. Aus diesem Grund habe ich auch bei Tram & Bass mitgemacht, da dies genau so eine schöne Kulturförderung für diese schöne Stadt ist. Somit schliesst sich ein schöner Kreis für mich. „Macht doch Sinn, oder nöd?“[](https://www.instagram.com/andreasramos_sihlrec/)
+
+
+      [Instagram @andreasramos_sihlrec](https://www.instagram.com/andreasramos_sihlrec/)
     videoUrl: https://player.vimeo.com/video/950812961?h=6d0ba88b36
-    releaseDate: 2024-06-02T19:43:00.000Z
+    releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Albisgütli

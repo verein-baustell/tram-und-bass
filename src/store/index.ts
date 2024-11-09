@@ -188,6 +188,7 @@ export const nextStation = derived(
 export const isTopOpen = writable<boolean>(false);
 export const isBtmOpen = writable<boolean>(false);
 export const videoIsPlaying = writable<boolean>(false);
+export const isWider = writable<boolean>(false);
 // extra variable if the video is loading
 export const videoIsLoading = writable<boolean>(false);
 export const isImmersive = writable<boolean>(false);

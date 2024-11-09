@@ -37,22 +37,27 @@ ol {
   bottom: 44px;
 }
 
+.detailed-view--right {
+  right: 0;
+}
+
 @media only screen and (max-width: 768px) {
   .detailed-view {
     max-height: 380px;
+  }
+
+  .detailed-view--right {
+    right: inherit;
   }
   
   #bottom-menu .detailed-view {
     bottom: 86px;
   }
-}
 
-@media only screen and (max-width: 768px) {
   .view {
     bottom: 0;
   }
 }
-
 /* has to be here so the markdown is styled */
 .artist-about-cont a {
   border: thin solid black;
