@@ -11,6 +11,8 @@
   import { lastState, lastStateRecovered, isBtmOpen } from "../store";
   import { changeToLineAtTime } from "../utils/changeToLineAtCurrentTime";
 
+  export let hasRecoveryButton: boolean = true;
+
   const goToLastState = () => {
     lastStateRecovered.set(true);
     changeToLineAtTime($lastState.line, $lastState.time);

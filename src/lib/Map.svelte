@@ -352,8 +352,10 @@
     }
     const scale = 2.5;
     // translate the svg to the center of the screen on desktop and 320px above bottom for mobile
-    const lineListHeight = document.getElementById("map-line-list")?.clientHeight;
-    const topMenuHeight = document.getElementById("top-menu")?.clientHeight ?? 50;
+    const lineListHeight =
+      document.getElementById("map-line-list")?.clientHeight;
+    const topMenuHeight =
+      document.getElementById("top-menu")?.clientHeight ?? 50;
     const padding = 20;
     const minDistToTop = topMenuHeight + padding;
     // const yTranslate = isMobile && lineListHeight && lineListHeight > (window.innerHeight / 2 - minDistToTop) ? INITIAL_HEIGHT - 320 : INITIAL_HEIGHT / 2;
@@ -517,6 +519,7 @@
 
 {#if linesAtSelectedStation && showLineList}
   <LineList
+    hasRecoveryButton={false}
     id="map-line-list"
     onClick={(lineClicked) => {
       selectedStation && changeToLineAtStation(lineClicked, selectedStation);
@@ -526,7 +529,7 @@
     onClose={() => {
       selectedStation = undefined;
       showLineList = false;
-      resetHighlightedStations()
+      resetHighlightedStations();
     }}
     title={selectedStation}
   />
@@ -557,7 +560,7 @@
     :global(ul) {
       max-height: 300px;
       overflow: scroll;
-      @media(max-width: 768px) {
+      @media (max-width: 768px) {
         max-height: 230px;
       }
     }
