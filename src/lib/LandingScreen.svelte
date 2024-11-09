@@ -1,5 +1,5 @@
 <div class="splash">
-  <img class="logo" src="/images/logo.svg" alt="Tram und Bass"/>
+  <img class="logo" src="/images/TnB_wordmark_orange.svg" alt="Tram und Bass"/>
   <div class="links">
     <a
       href="https://www.instagram.com/tramundbass/"
