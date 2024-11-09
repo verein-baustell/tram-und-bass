@@ -2,7 +2,12 @@
   import { scale } from "svelte/transition";
   import { fade } from "svelte/transition";
   export let style: string;
-  import { currentTime, videoIsLoading, videoIsPlaying } from "../store";
+  import {
+    currentTime,
+    videoIsLoading,
+    videoIsPlaying,
+    cookieConsent,
+  } from "../store";
   import ThreeJsComponent from "./ThreeJSComponent.svelte";
 </script>
 
@@ -18,7 +23,7 @@
     </div>
   {/if}
 
-  {#if $currentTime == 0 && !$videoIsPlaying && !$videoIsLoading}
+  {#if $currentTime == 0 && !$videoIsPlaying && !$videoIsLoading && $cookieConsent}
     <ThreeJsComponent></ThreeJsComponent>
   {/if}
 

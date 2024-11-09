@@ -12,6 +12,7 @@
     videoIsLoading,
   } from "../store";
   import { giveConsent } from "../utils/cookieManager";
+  export let line: Line;
 
   // Wait for $vimeoVideoObject to be defined
   async function waitForVimeoVideoObject() {
@@ -39,10 +40,15 @@
     {#if !$cookieConsent}
       <div>
         Wir verwenden Cookies von Drittanbietern, darunter Vimeo. Durch das
-        Klicken auf den unten stehenden Button stimmen Sie dem zu.
+        Klicken auf den unten stehenden Button stimmst du dem zu.
       </div>
     {/if}
-    <Button on:click={handleButtonClick}>Einsteigen!</Button>
+    <button
+      class:isInverted={line.isInverted}
+      class="start"
+      style="background: {line.color};"
+      on:click={handleButtonClick}>Gut Festhalten!</button
+    >
   </div>
 </div>
 
@@ -53,6 +59,7 @@
     height: 100%;
   }
   .landing--container {
+    padding: 10px;
     position: absolute;
     display: flex;
     flex-flow: column wrap;
@@ -62,9 +69,38 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 30%;
-    height: 300px;
+    width: calc(100% - 20px);
+    max-width: 500px;
+    height: auto;
     background-color: white;
     border-radius: var(--border-radius-view);
+  }
+
+  .isInverted {
+    color: black !important;
+  }
+  button.start {
+    position: relative;
+    background-color: var(--background-color);
+    border: none;
+    color: white;
+    cursor: pointer;
+    // width: 100%;
+    padding: var(--padding-m);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+    border-radius: var(--border-radius-button);
+    align-items: center;
+    gap: 0.5em;
+    transition: var(--transition);
+    line-height: 1.75em;
+  }
+
+  /* Media query for screens smaller than 600px */
+  @media (max-width: 500px) {
+    button.start {
+      width: 100%;
+    }
   }
 </style>

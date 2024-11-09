@@ -40,6 +40,7 @@
   let showSplashScreen = true;
   const releasedLines = $allLines.filter((line) => line.isReleased);
   let randomIndex = Math.floor(Math.random() * (releasedLines.length - 1));
+  let tempLine = releasedLines[randomIndex];
 
   const initVideo = () => {
     readLineFromPath();
@@ -72,7 +73,6 @@
 
   const readLineFromPath = () => {
     // leave line parameter in url if no cookie is set
-    if (!$cookieConsent) return;
     const url = new URL(window.location.href);
     const lineIdFromUrl = url.searchParams.get("line");
     if (lineIdFromUrl) {
@@ -81,14 +81,24 @@
       );
       if (lineFromUrl && lineFromUrl.isReleased) {
         // set the line
-        $currentLine = lineFromUrl;
+        tempLine = lineFromUrl;
+        if (!$cookieConsent) {
+          tempLine = lineFromUrl;
+          return;
+        } else {
+          $currentLine = lineFromUrl;
+        }
       } else {
         console.log("line in url not released or not existant");
         url.searchParams.delete("line");
         goto(url.toString(), { replaceState: true });
       }
     } else {
-      $currentLine = releasedLines[randomIndex];
+      if (!$cookieConsent) {
+        return;
+      } else {
+        $currentLine = tempLine;
+      }
     }
   };
 
@@ -216,7 +226,7 @@
     <DevTools />
   {/if}
   {#if initialized && !$cookieConsent}
-    <WelcomeScreen />
+    <WelcomeScreen line={tempLine} />
   {/if}
   {#if !$isImmersive}
     <TopMenu aboutContent={aboutContent?.aboutText ?? ""} />
