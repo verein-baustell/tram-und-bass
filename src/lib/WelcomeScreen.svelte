@@ -46,28 +46,15 @@
           Klicken auf den unten stehenden Button stimmst du dem zu.
         </p>
         <div class="line--cont" style="background-color: {line.color};">
-          {#if line.number == 7}
             <div class="numb">
               <LineNumber number={line.number} isInverted={!line.isInverted} />
             </div>
             <Button
-              class="isCookieBtn isInverted-{line.isInverted}"
-              style="background-color: #222222;"
+              class="{line?.number === 7 ? 'isSeven': ''} isInverted-{line.isInverted}"
               isActive={false}
               on:click={handleButtonClick}
               >Zustimmen und gut Festhalten!
             </Button>
-          {:else}
-            <div class="numb">
-              <LineNumber number={line.number} isInverted={line.isInverted} />
-            </div>
-            <Button
-              class="isCookieBtn isInverted-{!line.isInverted}"
-              isActive={false}
-              on:click={handleButtonClick}
-              >Zustimmen und gut Festhalten!
-            </Button>
-          {/if}
         </div>
       </div>
     {/if}
