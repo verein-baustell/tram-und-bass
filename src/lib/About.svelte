@@ -2,7 +2,7 @@
     import SvelteMarkdown from "svelte-markdown";
     export let aboutContent: string;
 </script>
-<div class="view detailed-view">
+<div class="view detailed-view about-view">
 
     <!--
     <p>
@@ -76,6 +76,9 @@
 
 
 <style lang="scss" scoped>
+    .about-view {
+        width: 100%;
+    }
     .about-container {
         background-color: #eeeeee;
         border-radius: 0.5em;

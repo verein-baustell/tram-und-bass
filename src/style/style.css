@@ -28,13 +28,22 @@ ol {
 
 .detailed-view {
   max-height: 480px;
-  min-width: 300px;
+  min-width: fit-content;
   overflow: scroll;
+}
+
+.about-view {
+  min-width: 100%;
 }
 
 #bottom-menu .detailed-view {
   position: absolute;
   bottom: 44px;
+}
+
+#top-menu .detailed-view {
+  position: absolute;
+  top: 44px;
 }
 
 .detailed-view--right {
@@ -44,6 +53,8 @@ ol {
 @media only screen and (max-width: 768px) {
   .detailed-view {
     max-height: 380px;
+    width: 100%;
+    min-width: 100%;
   }
 
   .detailed-view--right {
@@ -53,12 +64,7 @@ ol {
   #bottom-menu .detailed-view {
     bottom: 86px;
   }
-
-  .view {
-    bottom: 0;
-  }
 }
-/* has to be here so the markdown is styled */
 .artist-about-cont a {
   border: thin solid black;
   border-radius: 3px;
@@ -71,21 +77,21 @@ ol {
   max-width: 100%;
   overflow: hidden;
 }
+
 .marquee {
-  /* overflow: hidden; */
   white-space: nowrap;
   box-sizing: border-box;
-  animation: marquee 10s ease-in-out infinite;
+  animation: marquee var(--animation-duration, 10s) linear infinite;
 }
 
 @keyframes marquee {
   0% {
-    transform: translateX(0%);
+    transform: translateX(1%);
   }
   50% {
-    transform: translateX(-12%);
+    transform: translateX(var(--translate-x, -100%));
   }
   100% {
-    transform: translateX(0%);
+    transform: translateX(1%);
   }
 }

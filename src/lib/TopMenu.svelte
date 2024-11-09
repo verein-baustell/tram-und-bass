@@ -21,6 +21,7 @@
 </script>
 
 {#if $currentLine}
+<div class="topMenu--cont">
   <div
     id="top-menu"
     use:clickoutside
@@ -46,32 +47,47 @@
         >
           {name}
         </Button>
-      {/each}
-    </nav>
-    {#if $isTopOpen}
-      <svelte:component
-        this={currentComponent}
-        onClick={(clickedLine) => {
-          currentLine.set(clickedLine);
-          isTopOpen.set(false);
-        }}
-        lines={$allLines}
-        {aboutContent}
-      />
-    {/if}
-  </div>
+        {/each}
+        {#if $isTopOpen}
+          <svelte:component
+            this={currentComponent}
+            onClick={(clickedLine) => {
+              currentLine.set(clickedLine);
+              isTopOpen.set(false);
+            }}
+            lines={$allLines}
+            {aboutContent}
+          />
+        {/if}
+      </nav>
+    </div>
+</div>
 {/if}
 
 <style lang="scss" scoped>
-  #top-menu {
-    position: fixed;
+  .topMenu--cont {
+    position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  #top-menu {
+    display: flex;
+    flex-flow: column wrap;
     margin: var(--global-padding);
-    nav {
-      width: fit-content;
-      background: var(--background-color-light);
-      border-radius: var(--border-radius-view);
-    }
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: all;
+    width: calc(100% - 1.6em);
+  }
+  nav {
+    display: flex;
+    width: fit-content;
+    flex-flow: row nowrap;
+    border-radius: var(--border-radius-view);
+    background-color: var(--background-color-light);
   }
 </style>
