@@ -25,23 +25,10 @@ export const revokeConsent = () => {
     }
 };
 
-/**
- * Ensures that a cookie is set before the window is reloaded or closed.
- */
-export function setCookieBeforeUnload(name: string, value: string, days: number): void {
-    if (typeof window !== 'undefined') {
-        console.log('set cookie before unload')
-        // Listen for the beforeunload event to set the cookie before reload/close
-        window.addEventListener('beforeunload', () => {
-            setCookie(name, value, days);
-        });
-    }
-}
-
 // Set curret state of the player
 export const setState = () => {
-    // Listen for the beforeunload event to set the cookie before reload/close
-    window.addEventListener('beforeunload', () => {
+
+    const init_state = () => {
         const line = get(currentLine)
         const time = get(currentTime);
         if(time != 0) {
@@ -49,6 +36,24 @@ export const setState = () => {
                 setCookie('line', line.id, 2);
             }
             setCookie('time', time.toString(), 2);
+        }
+    }
+
+    // Depending on the environment different eventListener are necessary
+    // Listen for the beforeunload event to set the cookie before reload/close
+    window.addEventListener('beforeunload', () => {
+        setTimeout(() => {
+            init_state();
+        }, 100);  // Delay for 100ms
+    });
+    // Use the unload event to ensure cookies are set before the page is unloaded
+    window.addEventListener('unload', () => {
+        init_state();
+    });
+    // Manually Triggering the Cookie Update
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') {
+            init_state();
         }
     });
 };
