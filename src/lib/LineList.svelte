@@ -36,7 +36,7 @@
         style="background-color: {$lastState.line.color};"
         on:click={() => {
           goToLastState();
-        }}>Wieder in die Tram {$lastState.line?.number} einsteigen</button
+        }}>Wieder in das Tram {$lastState.line?.number} einsteigen</button
       >
     </ul>
   {/if}
