@@ -197,7 +197,6 @@
   }
 </script>
 
-{$lastState.line?.name}
 {#if showLandingPage}
   <LandingScreen />
 {:else}
