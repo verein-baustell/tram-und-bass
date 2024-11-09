@@ -12,8 +12,8 @@
     border: solid 1px currentColor;
     background-color: var(--background-color);
     border-radius: 100%;
-    width: 0.5em;
-    height: 0.5em;
+    width: var(--circle-size);
+    height: var(--circle-size);
     position: relative;
     z-index: 1;
     transition: all 0.3s ease-in-out;

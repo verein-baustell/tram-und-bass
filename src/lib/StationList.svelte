@@ -61,7 +61,7 @@
     height: calc(100% - 2em);
     width: 1px;
     position: absolute;
-    left: 0.75em;
+    left: calc(var(--distance-to-left-edge) + var(--circle-size) * 0.5);
     transform: translate(-50%, 0);
     top: 1em;
     bottom: 1em;
@@ -73,6 +73,7 @@
   }
   #station-list {
     --distance-to-left-edge: 0.5em;
+    --circle-size: 12px;
     overflow-y: scroll;
     overflow-x: hidden;
     background: var(--background-color);
@@ -80,7 +81,7 @@
   :global(li.active) {
     font-weight: bold;
     :global(.circle) {
-      outline: 2px solid var(--foreground-color);
+      outline: 2px solid currentColor;
     }
   }
   ol {
@@ -98,6 +99,7 @@
       gap: 0.5em;
       height: 32px;
       cursor: pointer;
+      color: inherit;
       &:hover {
         font-weight: bold;
         :global(.circle) {
