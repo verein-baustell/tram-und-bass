@@ -6,7 +6,7 @@
     currentStation,
     isBtmOpen,
     isTopOpen,
-    isWider
+    isWider,
   } from "../store";
   import LineNumber from "./LineNumber.svelte";
   import ChangeLineList from "./ChangeLineList.svelte";
@@ -29,7 +29,7 @@
     ];
     currentComponent = menuEntries?.[0]?.component;
   }
-  $: if ($currentStation && !$isBtmOpen && !$isTopOpen) {
+  $: if ($currentStation && !$isBtmOpen && !$isTopOpen && !$isMenuClosed) {
     isBtmOpen.set(true);
     currentComponent = menuEntries[0]?.component;
   }
@@ -39,10 +39,10 @@
   }
 
   let nameContainerBtm: HTMLElement | undefined = undefined;
-  let isOverflowing = checkOverflow(nameContainerBtm); 
+  let isOverflowing = checkOverflow(nameContainerBtm);
 
   function checkMenuWidth() {
-    let menu = document.getElementById("bottom-menu")
+    let menu = document.getElementById("bottom-menu");
     if (menu && menu.clientWidth > 300) {
       isWider.set(true);
       console.log("isWider:", isWider);
@@ -51,7 +51,6 @@
       console.log("isWider:", isWider);
     }
   }
-
 
   afterUpdate(() => {
     isOverflowing = checkOverflow(nameContainerBtm);
@@ -62,7 +61,6 @@
     isOverflowing = checkOverflow(nameContainerBtm);
     checkMenuWidth();
   });
-
 </script>
 
 {#if $currentLine}
@@ -222,7 +220,7 @@
     }
     nav {
       flex-flow: column wrap;
-      max-width: calc(100% - 0.08em)
+      max-width: calc(100% - 0.08em);
     }
     .nav-element {
       display: flex;
