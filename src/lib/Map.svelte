@@ -415,8 +415,8 @@
         zoomToElement(d3.select(this));
         // position lineList above the station
       })
-      .on("mouseover", function (d, e: any) {
-        const isTouch = e.type === "touchstart";
+      .on("mouseover", function (event) {
+        const isTouch = event?.sourceEvent?.type === "touchstart";
         if (isTouch) return;
         const stationElement = this as Element;
         const stationName = (this as Element)?.getAttribute("id");

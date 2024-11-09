@@ -65,7 +65,7 @@
     transform: translate(-50%, 0);
     top: 1em;
     bottom: 1em;
-    background: var(--foreground-color);
+    background: currentColor;
   }
   .line-fill {
     width: 2px;
