@@ -39,11 +39,12 @@
   }
 
   let nameContainerBtm: HTMLElement | undefined = undefined;
-  let isOverflowing = checkOverflow(nameContainerBtm);
+  let isOverflowing = false
+  let overflowRatio = 1; // default ratio if no overflow
 
   function checkMenuWidth() {
-    let menu = document.getElementById("bottom-menu");
-    if (menu && menu.clientWidth > 300) {
+    let menu = document.getElementById("bottom-menu")
+    if (menu && menu.clientWidth > 320) {
       isWider.set(true);
       console.log("isWider:", isWider);
     } else {
@@ -53,12 +54,16 @@
   }
 
   afterUpdate(() => {
-    isOverflowing = checkOverflow(nameContainerBtm);
+    const overflowData = checkOverflow(nameContainerBtm);
+    isOverflowing = overflowData.isOverflowing;
+    overflowRatio = overflowData.overflowRatio;
     checkMenuWidth();
   });
 
   onMount(() => {
-    isOverflowing = checkOverflow(nameContainerBtm);
+    const overflowData = checkOverflow(nameContainerBtm);
+    isOverflowing = overflowData.isOverflowing;
+    overflowRatio = overflowData.overflowRatio;
     checkMenuWidth();
   });
 </script>
@@ -140,7 +145,12 @@
                 >
                   <div class="nameContainerBtm" bind:this={nameContainerBtm}>
                     {#if isOverflowing && name != "Stationen"}
-                      <div class="marquee">{name}</div>
+                      <div 
+                        class="marquee"
+                        style="--animation-duration: {5 + (overflowRatio / 50)}s; --translate-x: {-10 - (overflowRatio)}px;"
+                      >
+                        {name}
+                      </div>
                     {:else}
                       {name}
                     {/if}

@@ -12,10 +12,17 @@
 
   let nameContainer: HTMLElement | undefined = undefined;
   let isOverflowing = false;
+  let overflowRatio = 1; // default ratio if no overflow
 
   onMount(() => {
-    isOverflowing = checkOverflow(nameContainer);
+    const overflowData = checkOverflow(nameContainer);
+    isOverflowing = overflowData.isOverflowing;
+    overflowRatio = overflowData.overflowRatio;
+    console.log(isOverflowing, overflowRatio);
   });
+
+  
+  
 </script>
 
 <li>
@@ -34,7 +41,10 @@
     <img class="star" src="/images/divider.svg" alt="-" />
     <div class="nameContainer" bind:this={nameContainer}>
       {#if isOverflowing}
-        <div class="marquee">
+        <div 
+        class="marquee"
+        style="--animation-duration: {5 + (overflowRatio / 50)}s; --translate-x: {-10 - (overflowRatio)}px;"
+        >
           {line.isReleased ? line.artistName : "coming soon"}
         </div>
       {:else}
