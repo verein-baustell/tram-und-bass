@@ -30,7 +30,6 @@
 
   {#if $lastState.line && !$lastStateRecovered && !$isBtmOpen}
     <ul>
-      {$lastState.line.number}
       <button
         style="margin: 5px; width: calc(100% - 10px);"
         on:click={() => {

@@ -20,6 +20,7 @@
     previousStation,
     nextStation,
     cookieConsent,
+    lastState,
   } from "../store";
   import DevTools from "$lib/DevTools.svelte";
   import registerVimeoEventListeners from "../utils/registerVimeoEventListeners";
@@ -88,7 +89,6 @@
       }
     } else {
       $currentLine = releasedLines[randomIndex];
-      
     }
   };
 
@@ -197,6 +197,7 @@
   }
 </script>
 
+{$lastState.line?.name}
 {#if showLandingPage}
   <LandingScreen />
 {:else}
