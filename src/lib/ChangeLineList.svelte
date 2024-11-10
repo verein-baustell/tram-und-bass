@@ -56,6 +56,7 @@
 <style lang="scss">
   #change-station-list {
     text-align: left;
+    overflow: hidden;
   }
   .currentStation-change-raptor {
     display: flex;
