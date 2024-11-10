@@ -295,7 +295,6 @@
     return { x, y };
   };
   const updateLineListPosition = () => {
-    console.log("updateLineListPosition", selectedStationId);
     if (!selectedStationId) return;
 
     const position = getScreenPositionOfStation(selectedStationId);
@@ -335,7 +334,6 @@
   ) => {
     const svg = d3.select("#map-svg");
     const bbox = (stationElement.node() as SVGGElement).getBBox();
-    console.log("stationElement", stationElement.node());
     let x = bbox.x + bbox.width / 2;
     let y = bbox.y + bbox.height / 2;
 
@@ -362,7 +360,6 @@
     const minDistToTop = topMenuHeight + padding;
     // const yTranslate = isMobile && lineListHeight && lineListHeight > (window.innerHeight / 2 - minDistToTop) ? INITIAL_HEIGHT - 320 : INITIAL_HEIGHT / 2;
     const yTranslate = $isMobile ? INITIAL_HEIGHT - 320 : INITIAL_HEIGHT / 2;
-    console.log("yTranslate", yTranslate, "isMobile", isMobile);
     svg
       .transition()
       .duration(750)
@@ -389,7 +386,6 @@
     );
     if (activeStationSelection.node()) {
       activeStationSelection.attr("class", "activeStation station");
-      console.log("highlightCurrentStation", activeStationSelection);
       zoomToElement(activeStationSelection);
     }
   };
