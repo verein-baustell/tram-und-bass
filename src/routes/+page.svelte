@@ -30,7 +30,6 @@
   import compareStationNames from "../utils/compareStationNames";
   import { goto } from "$app/navigation";
   import { hmsToSeconds } from "../utils/timeFormatter";
-  // console.log(aboutContent)
   let videoWrapperWidth = "100%";
   let videoWrapperHeight = "100%";
   let videoWidth = 0;
