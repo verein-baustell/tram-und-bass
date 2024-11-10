@@ -49,6 +49,10 @@
 </div>
 
 <style lang="scss" scoped>
+  .line-list {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
   h4 {
     font-size: 1.5em;
     margin: 0;
