@@ -66,19 +66,22 @@
       change to state
     </Button>
     <table>
-      <tr> <td> currentTime:</td><td> {$currentTime.toFixed(2)}</td></tr>
-      <!-- <tr> <td> isHome:</td><td> {$isHome}</td></tr> -->
-      <tr> <td> videoIsPlaying:</td><td> {$videoIsPlaying}</td></tr>
-      <tr> <td> videoIsLoading:</td><td> {$videoIsLoading}</td></tr>
-      <tr> <td> cookieConsent:</td><td> {$cookieConsent}</td></tr>
-      <tr> <td> is Bottom open:</td><td> {$isBtmOpen}</td></tr>
+      <tbody>
+        <tr> <td> currentTime:</td><td> {$currentTime.toFixed(2)}</td></tr>
+        <!-- <tr> <td> isHome:</td><td> {$isHome}</td></tr> -->
+        <tr> <td> videoIsPlaying:</td><td> {$videoIsPlaying}</td></tr>
+        <tr> <td> videoIsLoading:</td><td> {$videoIsLoading}</td></tr>
+        <tr> <td> cookieConsent:</td><td> {$cookieConsent}</td></tr>
+        <tr> <td> is Bottom open:</td><td> {$isBtmOpen}</td></tr>
       <tr>
         <td> timeToSeekAfterVideoLoad:</td><td>
           {$timeToSeekAfterVideoLoad}</td
         ><td></td></tr
       >
+    </tbody>
     </table>
     <table>
+      <tbody>
       <tr> <td> currentStation:</td><td> {$currentStation?.name}</td></tr>
       <tr>
         <td> lastState:</td><td>
@@ -92,6 +95,7 @@
           {$timeUntilNextStation.toFixed(2)}</td
         ></tr
       >
+      </tbody>
     </table>
   {/if}
   <Button on:click={() => (showDevTools = !showDevTools)}>
