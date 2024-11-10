@@ -6,7 +6,8 @@
     timeUntilNextStation,
     currentLine,
     videoIsLoading,
-    isWider
+    isWider,
+    currentTime,
   } from "../store";
   import { changeToLineAtStation } from "../utils/changeToLineAtCurrentStation";
   import { secondsToHms } from "../utils/timeFormatter";
@@ -17,11 +18,16 @@
   }
 </script>
 
-<div id="change-station-list" class="view detailed-view {!$isWider ? 'detailed-view--right': ''}">
+<div
+  id="change-station-list"
+  class="view detailed-view {!$isWider ? 'detailed-view--right' : ''}"
+>
   {#if $currentStation == undefined}
     <div class="currentStation-change-raptor--white">
       {#if $videoIsLoading}
         <span>Umsteigen nach {$currentLine?.name}</span>
+      {:else if $currentTime == 0.0}
+        <span>Bitte festhalten, gleich gehts los!</span>
       {:else if $nextStation}
         <span>{$nextStation?.name} in</span>
         <span class="mono-font clock">{formattedTime}</span>

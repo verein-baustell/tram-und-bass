@@ -39,11 +39,11 @@
   }
 
   let nameContainerBtm: HTMLElement | undefined = undefined;
-  let isOverflowing = false
+  let isOverflowing = false;
   let overflowRatio = 1; // default ratio if no overflow
 
   function checkMenuWidth() {
-    let menu = document.getElementById("bottom-menu")
+    let menu = document.getElementById("bottom-menu");
     if (menu && menu.clientWidth > 320) {
       isWider.set(true);
       console.log("isWider:", isWider);
@@ -70,7 +70,7 @@
 
     updateOverflow();
 
-    window.addEventListener('resize', updateOverflow);
+    window.addEventListener("resize", updateOverflow);
   });
 </script>
 
@@ -106,7 +106,7 @@
                 class="isInverted-{$currentLine?.isInverted} {$currentLine?.number ===
                 7
                   ? 'isSeven'
-                  : ''} {$isMenuClosed ? 'btnTiny' : ''} btnLine"
+                  : ''} {$isMenuClosed ? 'btnTiny--margin' : 'btnLine'}"
                 on:click={() => {
                   if ($isBtmOpen && currentComponent === component) {
                     isBtmOpen.set(false);
@@ -151,9 +151,11 @@
                 >
                   <div class="nameContainerBtm" bind:this={nameContainerBtm}>
                     {#if isOverflowing && name != "Stationen"}
-                      <div 
+                      <div
                         class="marquee"
-                        style="--animation-duration: {5 + (overflowRatio / 50)}s; --translate-x: {-10 - (overflowRatio)}px;"
+                        style="--animation-duration: {5 +
+                          overflowRatio / 50}s; --translate-x: {-10 -
+                          overflowRatio}px;"
                       >
                         {name}
                       </div>
@@ -225,6 +227,9 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+  }
+  .nav-element--nomargin .btnTiny {
+    margin-right: 1.5px;
   }
 
   @media only screen and (max-width: 768px) {

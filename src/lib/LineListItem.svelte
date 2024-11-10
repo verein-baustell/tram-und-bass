@@ -24,7 +24,7 @@
 
     updateOverflow();
 
-    window.addEventListener('resize', updateOverflow);
+    window.addEventListener("resize", updateOverflow);
   });
 </script>
 
@@ -44,9 +44,10 @@
     <img class="star" src="/images/divider.svg" alt="-" />
     <div class="nameContainer" bind:this={nameContainer}>
       {#if isOverflowing}
-        <div 
-        class="marquee"
-        style="--animation-duration: {5 + (overflowRatio / 50)}s; --translate-x: {-10 - (overflowRatio)}px;"
+        <div
+          class="marquee"
+          style="--animation-duration: {5 +
+            overflowRatio / 50}s; --translate-x: {-10 - overflowRatio}px;"
         >
           {line.isReleased ? line.artistName : "coming soon"}
         </div>
@@ -64,9 +65,13 @@
     &:disabled {
       opacity: 0.5;
       cursor: help;
-      img,
+      img {
+        filter: blur(3px);
+        padding-left: 2px;
+      }
       p {
         filter: blur(3px);
+        padding: 2px 4px;
       }
       &:hover {
         .releaseDate {

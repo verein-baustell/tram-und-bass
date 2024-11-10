@@ -11,6 +11,8 @@
   import { lastState, lastStateRecovered, isBtmOpen } from "../store";
   import { changeToLineAtTime } from "../utils/changeToLineAtCurrentTime";
 
+  export let hasRecoveryButton: boolean = true;
+
   const goToLastState = () => {
     lastStateRecovered.set(true);
     changeToLineAtTime($lastState.line, $lastState.time);
@@ -28,7 +30,7 @@
     </h4>
   {/if}
 
-  {#if $lastState.line && !$lastStateRecovered && !$isBtmOpen}
+  {#if $lastState.line && !$lastStateRecovered && !$isBtmOpen && hasRecoveryButton}
     <ul>
       <button
         class:isInverted={$lastState.line.isInverted}
