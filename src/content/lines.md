@@ -25,7 +25,7 @@ lines:
       - name: Geissweid
         startTime: 00:00
         endTime: 01:11
-      - name: Schlieren, Zentrum Bahnhof
+      - name: Schlieren Zentrum Bahnhof
         startTime: 02:07
         endTime: 02:23
       - name: Wagonsfabrik
@@ -231,7 +231,7 @@ lines:
       - name: Wagonsfabrik
         startTime: 37:15
         endTime: 37:28
-      - name: Schlieren, Zentrum Bahnhof
+      - name: Schlieren Zentrum Bahnhof
         startTime: 38:21
         endTime: 38:34
       - name: Geissweid
@@ -934,7 +934,7 @@ lines:
       - name: Renggerstrasse
         startTime: 04:40
         endTime: 04:45
-      - name: Bhf.Wollishofen Staubstrasse
+      - name: Bhf. Wollishofen Staubstrasse
         startTime: 05:52
         endTime: 06:07
       - name: Billoweg
@@ -1103,7 +1103,7 @@ lines:
       - name: Billoweg
         startTime: 37:47
         endTime: 38:02
-      - name: Bhf.Wollishofen Staubstrasse
+      - name: Bhf. Wollishofen Staubstrasse
         startTime: 39:04
         endTime: 39:23
       - name: Renggerstrasse

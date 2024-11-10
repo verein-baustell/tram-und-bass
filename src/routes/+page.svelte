@@ -41,10 +41,9 @@
   const releasedLines = $allLines.filter((line) => line.isReleased);
   let randomIndex = Math.floor(Math.random() * (releasedLines.length - 1));
   let tempLine = releasedLines[randomIndex];
-
   const initVideo = () => {
     readLineFromPath();
-    if (!$currentLine) {
+    if (!$currentLine || !$currentLine.videoUrl) {
       console.log("no current line");
       return;
     }

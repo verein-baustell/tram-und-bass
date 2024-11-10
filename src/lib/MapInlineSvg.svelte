@@ -620,7 +620,7 @@
     stroke-width="6"
   />
   <rect
-    id="schlieren,zentrumbahnhof"
+    id="schlierenzentrumbahnhof"
     x="276"
     y="900"
     width="16"
@@ -2391,7 +2391,7 @@
     stroke-width="6"
   />
   <rect
-    id="bhf.wollishofenstaubstrasse"
+    id="bhfwollishofenstaubstrasse"
     x="1100"
     y="2304"
     width="16"

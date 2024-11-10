@@ -3,4 +3,8 @@
  * @param stationName a station name
  */
 export default (stationName?: string) =>
-  stationName?.replaceAll(" ", "").toLocaleLowerCase();
+  stationName
+    ?.replaceAll(" ", "")
+    .replaceAll(",", "")
+    .replaceAll(".", "")
+    .toLocaleLowerCase();
