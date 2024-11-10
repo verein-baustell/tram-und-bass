@@ -2,6 +2,7 @@
 
 body {
   overflow: hidden;
+  overscroll-behavior: none;
 }
 
 ul {
@@ -28,7 +29,8 @@ ol {
 
 .detailed-view {
   max-height: 480px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 #bottom-menu .detailed-view {
@@ -98,3 +100,4 @@ ol {
     transform: translateX(1%);
   }
 }
+

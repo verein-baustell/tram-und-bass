@@ -78,6 +78,7 @@
 <style lang="scss" scoped>
     .about-view {
         width: 100%;
+		overflow-x: hidden;
     }
     .about-container {
         background-color: #eeeeee;

@@ -557,9 +557,11 @@
     left: 50%;
     transform: translate(-50%, calc(-100% - 1em));
     height: min-content;
+    overflow: hidden;
     :global(ul) {
       max-height: 300px;
-      overflow: scroll;
+      overflow-y: scroll;
+      overflow-x: hidden;
       @media (max-width: 768px) {
         max-height: 230px;
       }

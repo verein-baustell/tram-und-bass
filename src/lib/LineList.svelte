@@ -90,6 +90,8 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   .isInverted {
