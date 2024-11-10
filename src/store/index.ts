@@ -138,6 +138,10 @@ export const currentStation: Readable<TimeStamp | undefined> = derived(
       get(vimeoVideoObject)
         ?.getVideoId()
         .then((currentVideoId) => {
+          if (!$currentLine) {
+            set(undefined);
+            return;
+          }
           // if the video is not loaded yet, return
           if (currentVideoId !== getVimeoVideoId($currentLine.videoUrl)) {
             set(undefined);
@@ -166,7 +170,7 @@ export const currentStation: Readable<TimeStamp | undefined> = derived(
 export const linesAtCurrentStation = derived(
   [currentStation, currentLine, allLines],
   ([$currentStation, $currentLine, $allLines]) => {
-    if (!$currentStation) return;
+    if (!$currentStation || !$currentLine) return;
     return $allLines.filter((line) => {
       return line.timeStamps?.find(
         (timeStamp) =>
@@ -200,7 +204,7 @@ export const isAtStation = writable<boolean>(false);
 export const timeUntilNextStation = derived(
   [currentLine, currentTime, nextStation],
   ([$currentLine, $currentTime, $nextStation]) => {
-    if ($nextStation) {
+    if ($nextStation && $currentLine) {
       const nextStartTimeString = $currentLine.timeStamps?.find(
         (timeStamp) => timeStamp.name === $nextStation.name
       )?.startTime;
