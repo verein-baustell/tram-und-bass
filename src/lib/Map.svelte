@@ -1,22 +1,23 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import MapInlineSvg from "./MapInlineSvg.svelte";
   import * as d3 from "d3";
+  import { onMount } from "svelte";
   import {
+    allLines,
     currentLine,
     currentStation,
     currentTime,
-    allLines,
-    videoIsLoading,
     isMobile,
+    videoIsLoading,
   } from "../store";
-  import { hmsToSeconds } from "../utils/timeFormatter";
   import { changeToLineAtStation } from "../utils/changeToLineAtCurrentStation";
   import getLinesFromStationName from "../utils/getLinesFromStationName";
-  import LineList from "./LineList.svelte";
-  type StationsPositions = { [stationId: string]: { x: number; y: number } };
-  import compareStationNames from "../utils/compareStationNames";
+  import getStationFromId from "../utils/getStationFromId";
   import stationNameToId from "../utils/stationNameToId";
+  import { hmsToSeconds } from "../utils/timeFormatter";
+  import LineList from "./LineList.svelte";
+  import MapInlineSvg from "./MapInlineSvg.svelte";
+  type StationsPositions = { [stationId: string]: { x: number; y: number } };
+
   const INITIAL_WIDTH = 2560;
   const INITIAL_HEIGHT = 2560;
   const EXTENT_PADDING = 400;
@@ -27,7 +28,8 @@
     any
   >;
   let linesAtSelectedStation: Line[]; // the station that is currently being previewed
-  let selectedStation: string | undefined;
+  let selectedStationId: string | undefined;
+  let selectedStationName: string | undefined | null;
   let stationPositions: StationsPositions = {};
   let linePaths: any;
   let totalLength: any;
@@ -293,10 +295,10 @@
     return { x, y };
   };
   const updateLineListPosition = () => {
-    console.log("updateLineListPosition", selectedStation);
-    if (!selectedStation) return;
+    console.log("updateLineListPosition", selectedStationId);
+    if (!selectedStationId) return;
 
-    const position = getScreenPositionOfStation(selectedStation);
+    const position = getScreenPositionOfStation(selectedStationId);
 
     if (!position) return;
 
@@ -401,6 +403,12 @@
         if (!id) return "station";
         return id === currentStationName ? "activeStation station" : "station";
       })
+      .attr("data-station-name", function () {
+        const id = (this as Element)?.getAttribute("id");
+        if (!id) return "";
+        const station = getStationFromId(id, $allLines);
+        return station?.name ?? "";
+      })
       .on("click", function () {
         showLineList = true;
         const stationName = (this as Element)?.getAttribute("id");
@@ -412,7 +420,10 @@
           stationName,
           $allLines
         );
-        selectedStation = stationName;
+        selectedStationId = stationName;
+        selectedStationName = (this as Element)?.getAttribute(
+          "data-station-name"
+        );
         updateLineListPosition();
         zoomToElement(d3.select(this));
         // position lineList above the station
@@ -421,16 +432,10 @@
         const isTouch = event?.sourceEvent?.type === "touchstart";
         if (isTouch) return;
         const stationElement = this as Element;
-        const stationName = (this as Element)?.getAttribute("id");
+        const stationName = (this as Element)?.getAttribute(
+          "data-station-name"
+        );
         if (!stationName) return;
-        const line = $allLines.find((line) =>
-          line.timeStamps?.find((timeStamp) =>
-            compareStationNames(timeStamp.name, stationName)
-          )
-        );
-        const station = line?.timeStamps?.find((timeStamp) =>
-          compareStationNames(timeStamp.name, stationName)
-        );
         const tooltip = d3.select("#map-tooltip");
         // position the tooltip right above the station not at mouse position
         const posX =
@@ -440,10 +445,10 @@
           stationElement.getBoundingClientRect().top +
           stationElement.getBoundingClientRect().height / 2;
         let innerHtml = "";
-        if (station) {
-          innerHtml = `<div>${station?.name}</div>`;
+        if (stationName) {
+          innerHtml = `<div>${stationName}</div>`;
         } else {
-          innerHtml = `<div style="color:red; font-weight:bold;">No station found with id: ${stationName}</div>`;
+          innerHtml = `<div style="color:red; font-weight:bold;">No station found with id: ${(this as Element).getAttribute("id")}</div>`;
         }
         tooltip
           .style("opacity", 1)
@@ -484,7 +489,7 @@
   });
 
   currentStation.subscribe((newStation) => {
-    if (newStation?.name && !selectedStation) {
+    if (newStation?.name && !selectedStationId) {
       showLineList = true;
       highlightCurrentStation(newStation.name);
     }
@@ -522,16 +527,17 @@
     hasRecoveryButton={false}
     id="map-line-list"
     onClick={(lineClicked) => {
-      selectedStation && changeToLineAtStation(lineClicked, selectedStation);
+      selectedStationId &&
+        changeToLineAtStation(lineClicked, selectedStationId);
     }}
     lines={linesAtSelectedStation}
     isClosable
     onClose={() => {
-      selectedStation = undefined;
+      selectedStationId = undefined;
       showLineList = false;
       resetHighlightedStations();
     }}
-    title={selectedStation}
+    title={selectedStationName}
   />
 {/if}
 

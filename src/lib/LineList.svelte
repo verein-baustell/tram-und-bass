@@ -6,7 +6,7 @@
   export let onClick: (lineClicked: Line) => void;
   export let isClosable = false;
   export let onClose: (() => void) | undefined = undefined;
-  export let title: string | undefined = undefined;
+  export let title: string | undefined | null = undefined;
   import "../style/style.css";
   import { lastState, lastStateRecovered, isBtmOpen } from "../store";
   import { changeToLineAtTime } from "../utils/changeToLineAtCurrentTime";
