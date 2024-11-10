@@ -70,7 +70,7 @@ lines:
       - name: Lochergut
         startTime: 18:32
         endTime: 19:03
-      - name: Zürich, Kalkbreite Bhf.Wiedikon
+      - name: Kalkbreite
         startTime: 19:51
         endTime: 21:04
       - name: Bezirksgebäude
@@ -186,7 +186,7 @@ lines:
       - name: Bezirksgebäude
         startTime: 19:39
         endTime: 19:55
-      - name: Zürich, Kalkbreite Bhf.Wiedikon
+      - name: Kalkbreite
         startTime: 20:47
         endTime: 21:09
       - name: Lochergut
@@ -287,7 +287,7 @@ lines:
       - name: Lochergut
         startTime: 13:36
         endTime: 14:08
-      - name: Zürich, Kalkbreite Bhf.Wiedikon
+      - name: Kalkbreite
         startTime: 15:00
         endTime: 16:22
       - name: Bezirksgebäude
@@ -371,7 +371,7 @@ lines:
       - name: Bezirksgebäude
         startTime: 21:20
         endTime: 21:41
-      - name: Zürich, Kalkbreite Bhf.Wiedikon
+      - name: Kalkbreite
         startTime: 22:38
         endTime: 22:56
       - name: Lochergut

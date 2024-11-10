@@ -155,7 +155,7 @@
 <g id="stations">
 <rect id="zypressenstrasse" x="770.799" y="1546.76" width="16" height="34" rx="8" transform="rotate(45 770.799 1546.76)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="zwielplatz" x="868" y="812" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
-<rect id="zürich,kalkbreitebhf.wiedikon" x="900" y="1596" width="16" height="32" rx="8" fill="white" stroke="black" stroke-width="6"/>
+<rect id="kalkbreite" x="900" y="1596" width="16" height="32" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="zürichberstrasse" x="1928" y="1452" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="zoo" x="2028" y="1352" width="16" height="16" rx="8" fill="black" stroke="black" stroke-width="6"/>
 <rect id="schlieren,zentrumbahnhof" x="276" y="900" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>

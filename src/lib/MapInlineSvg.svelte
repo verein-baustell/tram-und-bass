@@ -587,7 +587,7 @@
     stroke-width="6"
   />
   <rect
-    id="zürich,kalkbreitebhf.wiedikon"
+    id="kalkbreite"
     x="900"
     y="1596"
     width="16"
