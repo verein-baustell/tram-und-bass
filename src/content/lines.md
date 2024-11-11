@@ -930,7 +930,7 @@ lines:
   - color: "#000000"
     number: 7
     name: Bahnhof Stettbach
-    artistName: DJ Mozarella
+    artistName: DJ Mozzarella
     artistAboutText: >-
       DJ Mozzarella tanzt, bzw. rollt aus der Reihe. Er mischt wild verschiedene
       Genres und spielt mit dem Dancefloor-Leerungs-Risiko. Aufgewachsen ist er
