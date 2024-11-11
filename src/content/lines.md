@@ -331,6 +331,33 @@ lines:
     number: 3
     name: Albisrieden
     artistName: Dari Ferrari
+    artistAboutText: >-
+      Dari Ferrari liebt alles was schnell, rot und laut ist. Da er generell
+      Autos dumm findet (vor allem in der Stadt) ist nicht von einem
+      italienischem Sportauto die Rede, sondern von elektronischer Musik.
+      Genauer liebt er alles was über 130BPM schnell ist und so viele
+      Breaksamples wie möglich beinhaltet. Alles unter 130BPM übernimmt sein
+      Alter Ego Dariush, welcher selbst Musik produziert, die auch etwas sanfter
+      sein kann. Seinen musikalischen Zugang fand er in der Ostschweiz mit dem
+      Shelter 12 Kollektiv. Damals in einem ranzigen Keller/Studio der St.
+      Galler Innenstadt und heute über den Dächern der Zürcher Langstrasse (tönt
+      fancyer als es ist). Nicht nur ein Set hat er für TnB produziert, sondern
+      auch als Teil der Vereine "Baustell" und "Tram und Bass" die
+      Webapplikation mitgecoded. 
+
+
+
+
+      Neben meinem Fahrrad ist das 3er Tram das Einzige was mich von der Arbeit (Stauffacher) direkt nach Hause (Albisrieden) bringen kann. Wenn ich meine Station verpasst habe, bin ich nicht allzu hässig da ich dann im wunderschönen Albisriederdörfli lande. Einer meiner Lieblingsorte in Zürich. Als Challenge setze ich mir die Vorgabe meine Übergänge zwischen Tracks jeweils dann zu machen, wenn sich das Tram in einer Haltestelle befindet. Somit steigen dort nicht nur Menschen um sondern auch Lieder.
+
+
+      [Instagram @dardariiii](https://www.instagram.com/dardariiii/)
+
+
+      [Spotify](https://open.spotify.com/intl-de/artist/3C4HKKPCdlK3Sn9ik1WDkP)
+
+
+      [SoundCloud](https://soundcloud.com/dariush-mehdiaraghi)
     videoUrl: https://player.vimeo.com/video/950560428?h=f9744206bd
     releaseDate: 2024-12-02T05:24:00.000Z
     id: ""
