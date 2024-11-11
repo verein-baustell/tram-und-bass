@@ -4,12 +4,12 @@
   import LineList from "./LineList.svelte";
   import Button from "./Button.svelte";
   import { clickoutside } from "@svelte-put/clickoutside";
+  import { setState, getState } from "../utils/cookieManager";
   import {
     allLines,
     currentLine,
     isTopOpen,
-    isBtmOpen,
-    cookieConsent,
+    lastStateRecovered,
   } from "../store";
   export let aboutContent: string;
   const menuEntries = [
@@ -21,37 +21,40 @@
 </script>
 
 {#if $currentLine}
-<div class="topMenu--cont">
-  <div
-    id="top-menu"
-    use:clickoutside
-    on:clickoutside={() => {
-      if ($isTopOpen && currentComponent === Map) {
-        return;
-      }
-      isTopOpen.set(false);
-    }}
-  >
-    <nav>
-      {#each menuEntries as { name, component } (name)}
-        <Button
-          isActive={currentComponent === component && $isTopOpen}
-          on:click={() => {
-            if ($isTopOpen && currentComponent === component) {
-              isTopOpen.set(false);
-              return;
-            }
-            currentComponent = component;
-            isTopOpen.set(true);
-          }}
-        >
-          {name}
-        </Button>
+  <div class="topMenu--cont">
+    <div
+      id="top-menu"
+      use:clickoutside
+      on:clickoutside={() => {
+        if ($isTopOpen && currentComponent === Map) {
+          return;
+        }
+        isTopOpen.set(false);
+      }}
+    >
+      <nav>
+        {#each menuEntries as { name, component } (name)}
+          <Button
+            isActive={currentComponent === component && $isTopOpen}
+            on:click={() => {
+              if ($isTopOpen && currentComponent === component) {
+                isTopOpen.set(false);
+                return;
+              }
+              currentComponent = component;
+              isTopOpen.set(true);
+            }}
+          >
+            {name}
+          </Button>
         {/each}
         {#if $isTopOpen}
           <svelte:component
             this={currentComponent}
             onClick={(clickedLine) => {
+              setState(true);
+              getState();
+              lastStateRecovered.set(false);
               currentLine.set(clickedLine);
               isTopOpen.set(false);
             }}
@@ -61,7 +64,7 @@
         {/if}
       </nav>
     </div>
-</div>
+  </div>
 {/if}
 
 <style lang="scss" scoped>

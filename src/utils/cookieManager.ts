@@ -26,7 +26,7 @@ export const revokeConsent = () => {
 };
 
 // Set curret state of the player
-export const setState = () => {
+export const setState = (mode: boolean = false) => {
 
     const init_state = () => {
         const line = get(currentLine)
@@ -37,6 +37,11 @@ export const setState = () => {
             }
             setCookie('time', time.toString(), 2);
         }
+    }
+
+    if (mode == true) {
+        init_state();
+        return;
     }
 
     // Depending on the environment different eventListener are necessary
@@ -63,8 +68,6 @@ export const getState = () => {
     const currentTime = new Date().getTime();
     const lastLineCookie = getCookie('line');
     const lastTime = getCookie('time');
-
-
     let lastLine;
     if (lastLineCookie) {
         const lines = get(allLines);
@@ -72,7 +75,6 @@ export const getState = () => {
             compareStationNames(line.id, lastLineCookie)
           );
     }
-
     lastState.set({
         line: lastLine ? lastLine : undefined,
         time: lastTime ? Number(lastTime) : 0,
