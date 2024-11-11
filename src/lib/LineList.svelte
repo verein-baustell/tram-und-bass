@@ -60,10 +60,10 @@
     border: none;
     color: inherit;
     font-size: 1em;
-    padding: 0 0.3em;
     cursor: pointer;
-    display: flex;
-    height: 2em;
+    display: grid;
+    place-items: center;
+    height: 1.5em;
   }
 
   .clock {
