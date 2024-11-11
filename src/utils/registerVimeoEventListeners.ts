@@ -5,6 +5,8 @@ import {
   videoIsPlaying,
   videoIsLoading,
   vimeoVideoObject,
+  allLines,
+  currentLine
 } from "../store";
 export default () => {
   const vimeo = get(vimeoVideoObject);
@@ -53,7 +55,10 @@ export default () => {
   });
   vimeo.on("ended", (e) => {
     console.log("ended", e);
-    videoIsPlaying.set(false); // Corrected
+    const releasedLines = get(allLines).filter((line) => line.isReleased);
+    let randomIndex = Math.floor(Math.random() * (releasedLines.length - 1));
+    currentLine.set(releasedLines[randomIndex]);
+    // videoIsPlaying.set(false); // Corrected
   });
   vimeo.on("volumechange", () => {
     vimeo.getMuted().then((muted) => {

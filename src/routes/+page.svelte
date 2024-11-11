@@ -50,7 +50,7 @@
       url: $currentLine.videoUrl,
       controls: false,
       autopause: false,
-      loop: true,
+      loop: false,
     });
     registerVimeoEventListeners();
   };
