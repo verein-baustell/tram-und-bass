@@ -64,6 +64,8 @@
     display: grid;
     place-items: center;
     height: 1.5em;
+    padding: 0;
+    padding-right: 0.3em;
   }
 
   .clock {
