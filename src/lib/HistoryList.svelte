@@ -78,6 +78,7 @@
     border-radius: var(--border-radius-view);
     padding: 0.1em;
     margin-bottom: 5px;
+    overflow: hidden;
   }
   .controlls {
     background-color: white;
