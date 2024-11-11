@@ -1,11 +1,7 @@
 <script lang="ts">
-  import LineList from "./LineList.svelte";
-  import { tick } from "svelte";
-  import { currentLine } from "../store";
-  import { onMount } from "svelte";
+  import { tick, onMount } from "svelte";
   import Button from "./Button.svelte";
   import LineNumber from "./LineNumber.svelte";
-  import { clickoutside } from "@svelte-put/clickoutside";
   import { vimeoVideoObject, cookieConsent, videoIsLoading } from "../store";
   import { giveConsent } from "../utils/cookieManager";
   export let line: Line;
@@ -28,6 +24,37 @@
 
     $vimeoVideoObject.play();
   };
+
+  // Function to set initial opacity for ".view" elements
+  const setInitialOpacity = () => {
+    const views = document.querySelectorAll<HTMLDivElement>('.view');
+    views.forEach((view, index) => {
+      if (index !== 0) {
+        view.style.opacity = '0.1';
+      }
+    });
+  };
+
+  // Function to handle scroll event
+  const handleScroll = () => {
+    const views = document.querySelectorAll<HTMLDivElement>('.view');
+    views.forEach(view => {
+      view.style.opacity = '1';
+      view.style.transition = '1s'
+    });
+    // Remove the scroll event listener after triggering
+    const welcomeScreen = document.getElementById('welcome-screen');
+    welcomeScreen?.removeEventListener('scroll', handleScroll);
+  };
+
+  // Set up initial opacity and scroll listener on mount
+  onMount(() => {
+    setInitialOpacity();
+    
+    // Add scroll event listener to the #welcome-screen div
+    const welcomeScreen = document.getElementById('welcome-screen');
+    welcomeScreen?.addEventListener('scroll', handleScroll);
+  });
 </script>
 
 <div id="welcome-screen">
@@ -42,8 +69,9 @@
       <div class="view view--flex">
         <p class="titles">Cookies</p>
         <p>
-          Wir verwenden Cookies von Drittanbietern, darunter Vimeo. Durch das
-          Klicken auf den unten stehenden Button stimmst du dem zu.
+          Wir verwenden Cookies von Drittanbietern, darunter Vimeo.
+          Diese Cookies sind notwendig für die Funktionalität der Seite.
+          Durch das Klicken auf den Button stimmst du den Cookies zu und steigst auch gleich in ein Tram ein!
         </p>
         <div class="line--cont" style="background-color: {line.color};">
             <div class="numb">
@@ -53,7 +81,7 @@
               class="{line?.number === 7 ? 'isSeven': ''} isInverted-{line.isInverted}"
               isActive={false}
               on:click={handleButtonClick}
-              >Zustimmen und gut Festhalten!
+              >Zustimmen und gut festhalten!
             </Button>
         </div>
       </div>
@@ -70,11 +98,10 @@
     </div>
 
     <div class="view">
-      <p class="titles">Ganz viel Liebe</p>
-      <div class="logo--cont">
-        <img src="/images/baustell.svg" alt="Verein Baustell Logo" />
-        <img src="/images/rtfm.svg" alt="Verein RTFM Logo" />
-      </div>
+      <p class="titles">Info</p>
+      <p>Tram und Bass lädt dich ein, verträumt aus dem Tram in die Stadt hinauszuschauen und dabei 30 einzigartige Musikfahrten zu hören. Auf der Musikplattform wird die Vielfalt elektronischer Musik aus Zürich audiovisuell präsentiert und für alle zugänglich gemacht.
+        Musik, genauso wie Tramfahren, ist ein grosser Bestandteil des Zürcher Soziallebens. Sie verbindet und bringt Menschen zusammen. Während elektronische Musik immer mehr Platz im Internet findet, verliert sie ihren Platz im öffentlichen Raum. Die vielen musikalischen Nischen bilden soziale Subkulturen, welche wiederum als Nährboden für die Diversität der Zürcher Kultur dienen.
+        In den Tramfahrten zeigen wir nicht nur Techno, sondern die ganze Bandbreite elektronischer Musik von lokaler und internationaler Ausstrahlung. Die Vielfalt der musikalischen Subkultur prägt nicht nur die Nacht, sondern auch den Tag. Also steig ein, wir wünschen viel Spass beim Entdecken.</p>
     </div>
 
     <div class="view">
@@ -100,7 +127,7 @@
     width: 100%;
     height: 100%;
     overflow: scroll;
-    -ms-overflow-style: none; /* IE and Edge */
+    -ms-overflow-style: none;
     scrollbar-width: none;
   }
 
@@ -121,7 +148,7 @@
   }
 
   .logo {
-    padding-top: 4em;
+    padding-top: 6em;
   }
 
   .landing--container .view {
@@ -134,6 +161,7 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    margin: 2em 0em 2em 0em
   }
 
   .line--cont {
@@ -142,10 +170,9 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    // background-color: #ff6213;
     border-radius: var(--border-radius-view);
     padding: 0.12em;
-    margin-top: 0.6em;
+    margin: 1em 0em 1em 0em;
     animation: pulse 4s ease-in-out infinite;
   }
 
