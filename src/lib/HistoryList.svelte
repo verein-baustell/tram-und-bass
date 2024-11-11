@@ -6,7 +6,7 @@
   import { slide } from "svelte/transition"; // Import the slide transition
   import { fade } from "svelte/transition"; // Import the fade transition
 
-  let showHistory = true; // Controls the visibility of the history list
+  let showHistory = false; // Controls the visibility of the history list
 
   // Function to toggle history visibility
   function toggleHistory() {
