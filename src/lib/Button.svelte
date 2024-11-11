@@ -64,9 +64,6 @@
   .isSeven {
     background-color: #222222;
   }
-  .isCookieBtn {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
 
   .btnLine {
     width: 100%;

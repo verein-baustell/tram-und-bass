@@ -10,6 +10,8 @@
   import "../style/style.css";
   import { lastState, lastStateRecovered, isBtmOpen } from "../store";
   import { changeToLineAtTime } from "../utils/changeToLineAtCurrentTime";
+  import LineNumber from "./LineNumber.svelte";
+  import Button from "./Button.svelte";
 
   export let hasRecoveryButton: boolean = true;
 
@@ -17,6 +19,14 @@
     lastStateRecovered.set(true);
     changeToLineAtTime($lastState.line, $lastState.time);
   };
+  
+  function formatTime(seconds: number): string {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60); // Use Math.floor to remove decimals
+    return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+  }
+
+  let formattedTime = formatTime($lastState.time);
 </script>
 
 <div {id} class={"line-list " + (viewable ? "view detailed-view" : "")}>
@@ -29,18 +39,17 @@
       {/if}
     </h4>
   {/if}
-
+  
   {#if $lastState.line && !$lastStateRecovered && !$isBtmOpen && hasRecoveryButton}
-    <ul>
-      <button
-        class:isInverted={$lastState.line.isInverted}
-        class="recovery"
-        style="background-color: {$lastState.line.color};"
-        on:click={() => {
-          goToLastState();
-        }}>Wieder in das Tram {$lastState.line?.number} einsteigen</button
-      >
-    </ul>
+    <p>Wieder einsteigen </p>
+    <Button
+      style="height: 1.75em; margin-bottom: 0.8em"
+      class="recovery isInverted-{$lastState.line?.isInverted} {$lastState.line?.number === 7 ? 'isSeven' : ''}"
+      on:click={() => {
+        goToLastState();
+      }}>
+      {$lastState.line?.name} at <span class="mono-font clock">{formattedTime}</span>
+    </Button>
   {/if}
 
   <ul>
@@ -81,6 +90,17 @@
     height: 2em;
   }
 
+  .clock {
+    border: thin solid white;
+    border-radius: 3px;
+    padding: 0.03em 0.35em 0.1em 0.35em;
+  }
+
+  .numb {
+    margin-left: var(--padding-l);
+    margin-right: var(--padding-l);
+  }
+
   .close {
     height: 1em;
     width: 1em;
@@ -109,5 +129,12 @@
     gap: 0.5em;
     transition: var(--transition);
     line-height: 1.75em;
+  }
+  .nav-element {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-view);
   }
 </style>
