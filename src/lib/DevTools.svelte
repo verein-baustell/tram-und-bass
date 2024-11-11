@@ -13,11 +13,12 @@
     vimeoVideoObject,
     previousStation,
     cookieConsent,
-    lastState,
     isBtmOpen,
+    history,
   } from "../store";
   import { giveConsent, revokeConsent } from "../utils/cookieManager";
   import { changeToLineAtTime } from "../utils/changeToLineAtCurrentTime";
+  import { recoverState } from "../utils/stateManager";
 
   import Button from "./Button.svelte";
   let showDevTools = false;
@@ -60,10 +61,11 @@
     </Button>
     <Button
       on:click={() => {
-        changeToLineAtTime($lastState.line, $lastState.time);
+        const state = recoverState();
+        if (state) changeToLineAtTime(state.line, state.time);
       }}
     >
-      change to state
+      recover state
     </Button>
     <table>
       <tbody>
@@ -72,29 +74,30 @@
         <tr> <td> videoIsPlaying:</td><td> {$videoIsPlaying}</td></tr>
         <tr> <td> videoIsLoading:</td><td> {$videoIsLoading}</td></tr>
         <tr> <td> cookieConsent:</td><td> {$cookieConsent}</td></tr>
-        <tr> <td> is Bottom open:</td><td> {$isBtmOpen}</td></tr>
-      <tr>
-        <td> timeToSeekAfterVideoLoad:</td><td>
-          {$timeToSeekAfterVideoLoad}</td
-        ><td></td></tr
-      >
-    </tbody>
+        <tr>
+          <td> timeToSeekAfterVideoLoad:</td><td>
+            {$timeToSeekAfterVideoLoad}</td
+          ><td></td></tr
+        >
+      </tbody>
     </table>
     <table>
       <tbody>
-      <tr> <td> currentStation:</td><td> {$currentStation?.name}</td></tr>
-      <tr>
-        <td> lastState:</td><td>
-          {$lastState.line?.id}, {$lastState?.time}</td
-        ></tr
-      >
-      <tr> <td> previousStation:</td><td> {$previousStation?.name}</td></tr>
-      <tr> <td> nextStation:</td><td> {$nextStation?.name}</td></tr>
-      <tr>
-        <td> timeUntilNextStation:</td><td>
-          {$timeUntilNextStation.toFixed(2)}</td
-        ></tr
-      >
+        <tr> <td> currentStation:</td><td> {$currentStation?.name}</td></tr>
+        <tr>
+          <td> History:</td><td>
+            {#each $history as state, index}
+              <p>{state.line?.id}, {state.time}</p>
+            {/each}</td
+          ></tr
+        >
+        <tr> <td> previousStation:</td><td> {$previousStation?.name}</td></tr>
+        <tr> <td> nextStation:</td><td> {$nextStation?.name}</td></tr>
+        <tr>
+          <td> timeUntilNextStation:</td><td>
+            {$timeUntilNextStation.toFixed(2)}</td
+          ></tr
+        >
       </tbody>
     </table>
   {/if}

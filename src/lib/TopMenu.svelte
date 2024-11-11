@@ -4,13 +4,8 @@
   import LineList from "./LineList.svelte";
   import Button from "./Button.svelte";
   import { clickoutside } from "@svelte-put/clickoutside";
-  import { setState, getState } from "../utils/cookieManager";
-  import {
-    allLines,
-    currentLine,
-    isTopOpen,
-    lastStateRecovered,
-  } from "../store";
+  import { allLines, currentLine, currentTime, isTopOpen } from "../store";
+  import { addState } from "../utils/stateManager";
   export let aboutContent: string;
   const menuEntries = [
     { name: "Linien", component: LineList },
@@ -52,9 +47,7 @@
           <svelte:component
             this={currentComponent}
             onClick={(clickedLine) => {
-              setState(true);
-              getState();
-              lastStateRecovered.set(false);
+              addState();
               currentLine.set(clickedLine);
               isTopOpen.set(false);
             }}

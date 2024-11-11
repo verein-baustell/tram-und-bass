@@ -219,6 +219,26 @@ export const timeUntilNextStation = derived(
 export const vimeoVideoObject = writable<Vimeo>();
 vimeoVideoObject.subscribe((vimeo) => {});
 
-// Define the lastState store with `line` as `Line`, `time` as `number`, and `cookieAge` as `number`
-export const lastState = writable<{ line: Line | undefined; time: number; }>({ line: undefined, time: 0 });
-export const lastStateRecovered = writable<boolean>(false);
+// history variables
+const historyKey = "history";
+
+// Check if there's an existing state in local storage
+const storedHistory =
+  typeof localStorage != "undefined"
+    ? localStorage.getItem(historyKey)
+    : "[]";
+
+// Define the initial state for the store
+const initialHistory = storedHistory
+  ? JSON.parse(storedHistory)
+  : [];
+
+// Create a writable store with the initial state
+export const history = writable<State[]>(initialHistory)
+
+// Subscribe to the store and save any changes to local storage
+history.subscribe((value) => {
+  typeof localStorage != "undefined"
+    ? localStorage.setItem(historyKey, JSON.stringify(value))
+    : "[]";
+});

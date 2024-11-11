@@ -6,6 +6,8 @@
   import BottomMenu from "$lib/BottomMenu.svelte";
   import LandingScreen from "$lib/LandingScreen.svelte";
   import WelcomeScreen from "$lib/WelcomeScreen.svelte";
+  import { initFinalState, recoverState } from "../utils/stateManager";
+  import { changeToLineAtTime } from "../utils/changeToLineAtCurrentTime";
   import {
     currentLine,
     isImmersive,
@@ -20,7 +22,6 @@
     previousStation,
     nextStation,
     cookieConsent,
-    lastState,
   } from "../store";
   import DevTools from "$lib/DevTools.svelte";
   import registerVimeoEventListeners from "../utils/registerVimeoEventListeners";
@@ -61,7 +62,6 @@
 
   // Set `initialized` to true after `cookieConsent` is set
   import { browser } from "$app/environment";
-  import { getState, setState } from "../utils/cookieManager";
   let initialized = false;
   if (browser) {
     cookieConsent.subscribe(() => {
@@ -104,8 +104,7 @@
   const releaseDate = new Date("2024-01-01T22:00:00");
   const showLandingPage = today <= releaseDate;
   onMount(() => {
-    getState();
-    setState();
+    initFinalState();
     readLineFromPath();
 
     if (showLandingPage) return;
@@ -179,6 +178,10 @@
       }
       if (e.key === "I") {
         $isImmersive = !$isImmersive;
+      }
+      if (e.key === "Z" || e.key === "z") {
+        const state = recoverState(0);
+        if (state) changeToLineAtTime(state.line, state.time);
       }
       if (/^\d$/.test(e.key) && $currentLine?.timeStamps) {
         $vimeoVideoObject.setCurrentTime(

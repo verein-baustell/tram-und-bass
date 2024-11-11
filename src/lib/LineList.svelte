@@ -8,25 +8,9 @@
   export let onClose: (() => void) | undefined = undefined;
   export let title: string | undefined | null = undefined;
   import "../style/style.css";
-  import { lastState, lastStateRecovered, isBtmOpen } from "../store";
-  import { changeToLineAtTime } from "../utils/changeToLineAtCurrentTime";
-  import LineNumber from "./LineNumber.svelte";
-  import Button from "./Button.svelte";
-
+  import { history, isBtmOpen } from "../store";
+  import HistoryList from "./HistoryList.svelte";
   export let hasRecoveryButton: boolean = true;
-
-  const goToLastState = () => {
-    lastStateRecovered.set(true);
-    changeToLineAtTime($lastState.line, $lastState.time);
-  };
-  
-  function formatTime(seconds: number): string {
-    const minutes = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60); // Use Math.floor to remove decimals
-    return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-  }
-
-  let formattedTime = formatTime($lastState.time);
 </script>
 
 <div {id} class={"line-list " + (viewable ? "view detailed-view" : "")}>
@@ -39,17 +23,9 @@
       {/if}
     </h4>
   {/if}
-  
-  {#if $lastState.line && !$lastStateRecovered && !$isBtmOpen && hasRecoveryButton}
-    <p>Wieder einsteigen </p>
-    <Button
-      style="height: 1.75em; margin-bottom: 0.8em"
-      class="recovery isInverted-{$lastState.line?.isInverted} {$lastState.line?.number === 7 ? 'isSeven' : ''}"
-      on:click={() => {
-        goToLastState();
-      }}>
-      {$lastState.line?.name} at <span class="mono-font clock">{formattedTime}</span>
-    </Button>
+
+  {#if $history.length > 0 && !$isBtmOpen && hasRecoveryButton}
+    <HistoryList></HistoryList>
   {/if}
 
   <ul>
@@ -111,30 +87,5 @@
     padding: 0;
     margin: 0;
     overflow: hidden;
-  }
-
-  .isInverted {
-    color: black !important;
-  }
-  button.recovery {
-    position: relative;
-    background-color: var(--background-color);
-    border: none;
-    color: white;
-    cursor: pointer;
-    width: 100%;
-    padding: var(--padding-m);
-    border-radius: var(--border-radius-button);
-    align-items: center;
-    gap: 0.5em;
-    transition: var(--transition);
-    line-height: 1.75em;
-  }
-  .nav-element {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    border-radius: var(--border-radius-view);
   }
 </style>

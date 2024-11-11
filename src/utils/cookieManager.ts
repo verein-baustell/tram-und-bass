@@ -1,7 +1,7 @@
-import { get } from "svelte/store";
-import { cookieConsent, currentLine, currentTime, lastState, allLines } from "../store";
-import { setCookie, deleteCookie, getCookie } from '../utils/cookieUtils';
-import compareStationNames from "../utils/compareStationNames";
+import { get, writable } from "svelte/store";
+import { cookieConsent, currentLine, currentTime } from "../store";
+import { setCookie, deleteCookie } from '../utils/cookieUtils';
+import { addState } from "./stateManager";
 
 export const giveConsent = () => {
     // Get the current consent value
@@ -23,60 +23,4 @@ export const revokeConsent = () => {
         deleteCookie('cookieConsent'); // Remove the cookie
         cookieConsent.set(false); // Update the store to reflect no consent
     }
-};
-
-// Set curret state of the player
-export const setState = (mode: boolean = false) => {
-
-    const init_state = () => {
-        const line = get(currentLine)
-        const time = get(currentTime);
-        if(time != 0) {
-            if (line) {
-                setCookie('line', line.id, 2);
-            }
-            setCookie('time', time.toString(), 2);
-        }
-    }
-
-    if (mode == true) {
-        init_state();
-        return;
-    }
-
-    // Depending on the environment different eventListener are necessary
-    // Listen for the beforeunload event to set the cookie before reload/close
-    window.addEventListener('beforeunload', () => {
-        setTimeout(() => {
-            init_state();
-        }, 100);  // Delay for 100ms
-    });
-    // Use the unload event to ensure cookies are set before the page is unloaded
-    window.addEventListener('unload', () => {
-        init_state();
-    });
-    // Manually Triggering the Cookie Update
-    document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'hidden') {
-            init_state();
-        }
-    });
-};
-
-// Function to set state and calculate cookie age
-export const getState = () => {
-    const currentTime = new Date().getTime();
-    const lastLineCookie = getCookie('line');
-    const lastTime = getCookie('time');
-    let lastLine;
-    if (lastLineCookie) {
-        const lines = get(allLines);
-        lastLine = lines.find((line) =>
-            compareStationNames(line.id, lastLineCookie)
-          );
-    }
-    lastState.set({
-        line: lastLine ? lastLine : undefined,
-        time: lastTime ? Number(lastTime) : 0,
-    });
 };
