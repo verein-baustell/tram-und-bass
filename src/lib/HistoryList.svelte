@@ -75,6 +75,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    height: 20px;
   }
   .buttons {
     display: flex;
@@ -88,7 +89,7 @@
   }
   .icon {
     width: 14px;
-    padding-top: 0px;
+    padding-top: 1px;
     margin-left: 5px;
   }
   p {
