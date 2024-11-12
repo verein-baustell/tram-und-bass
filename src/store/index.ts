@@ -92,6 +92,9 @@ currentLine.subscribe((value) => {
               })
               .catch((error) => {
                 console.error("🎥 Video play error", error);
+                videoIsLoading.set(false);
+                videoIsPlaying.set(false);
+                currentTime.set(0);
               });
           })
           .catch((error) => {
