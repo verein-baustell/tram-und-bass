@@ -17,7 +17,7 @@
 <div class="history">
   <div class="header">
     <button on:click={toggleHistory} class="buttons">
-      <p>Zeitplan</p>
+      <p>Fahrten Verlauf</p>
       <div class="controlls">
         <img
           src={showHistory ? "/images/close.svg" : "/images/open.svg"}
@@ -88,10 +88,11 @@
   }
   .icon {
     width: 14px;
-    padding-top: 3px;
+    padding-top: 0px;
     margin-left: 5px;
   }
   p {
     color: black;
+    line-height: 17px;
   }
 </style>
