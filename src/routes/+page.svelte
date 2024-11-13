@@ -153,7 +153,7 @@
     // add a event listener for mouse movement to animate the panning of the video by changing the left css property
     const mousePan = (e: MouseEvent) => {
       if ($videoIsPlaying && $isImmersive) {
-        const videoContainer = document.getElementById("video-container");
+        const videoContainer = document.querySelector<HTMLElement>(".activeVideo")
         if (videoContainer) {
           if (extraWidth > 0) {
             const percentage = e.clientX / window.innerWidth - 0.5; // Range from -0.5 to +0.5
@@ -205,7 +205,9 @@
   $: {
     // center video if immersive mode is off
     if (!$isImmersive && typeof document !== "undefined") {
-      const videoContainer = document.getElementById("video-container");
+      const videoContainer = document.querySelector<HTMLElement>(".activeVideo");
+      console.log(videoContainer);
+      
       if (videoContainer) {
         videoContainer.style.transition = "transform 0.5s ease-in-out";
         videoContainer.style.setProperty("--translateX", "0px");
@@ -217,19 +219,14 @@
 {#if showLandingPage}
   <LandingScreen />
 {:else}
-  <div
-    id="video-container"
-    class={$videoIsLoading ? "" : "isLoading"}
-    style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
-  >
-    {#each $allLines as line}
-      <div
-        class="video-container"
-        id={`video-${line.id}`}
-        style="display: none;"
-      ></div>
-    {/each}
-  </div>
+ 
+  {#each $allLines as line}
+    <div
+      class="video-container"
+      id={`video-${line.id}`}
+      style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
+    ></div>
+  {/each}
   {#if showSplashScreen || !$currentLine?.isReleased}
     <SplashScreen onClick={() => (showSplashScreen = false)} />
   {/if}
@@ -291,9 +288,7 @@
   }
   .video-container {
     transition: filter 0.5s ease-in-out;
-    // &.isLoading {
-    //   filter: blur(24px);
-    // }
+    display: none;
     position: absolute;
     aspect-ratio: 16 / 9;
     pointer-events: none;
@@ -302,8 +297,11 @@
     transform: translate(-50%, -50%) translateX(var(--translateX, 0));
     width: 100%;
     height: 100%;
-    display: grid;
     place-items: center;
     z-index: -200;
+
+  }
+  :global(.activeVideo) {
+    display: grid !important;
   }
 </style>

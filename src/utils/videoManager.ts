@@ -55,7 +55,7 @@ export async function changeVideo(line: Line) {
     if (currentVideoId) {
       const currentIframe = document.querySelector(`#video-${currentVideoId}`);
       if (currentIframe instanceof HTMLElement) {
-        currentIframe.style.display = 'none';
+        currentIframe.classList.remove("activeVideo")
       }
     }
     await currentVideo.pause();
@@ -64,7 +64,7 @@ export async function changeVideo(line: Line) {
   // Show the new video's iframe
   const newIframe = document.querySelector(`#video-${line.id}`);
   if (newIframe instanceof HTMLElement) {
-    newIframe.style.display = 'block';
+    newIframe.classList.add("activeVideo")
   }
 
   // Update the vimeoVideoObject store and switch event listeners
