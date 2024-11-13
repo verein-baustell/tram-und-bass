@@ -25,7 +25,6 @@
     vimeoVideoObjectList,
   } from "../store";
   import DevTools from "$lib/DevTools.svelte";
-  import registerVimeoEventListeners from "../utils/registerVimeoEventListeners";
   import SplashScreen from "$lib/SplashScreen.svelte";
   import LoadingScreen from "$lib/LoadingScreen.svelte";
   import { attributes as aboutContent } from "../content/about.md";
@@ -42,42 +41,24 @@
   const releasedLines = $allLines.filter((line) => line.isReleased);
   let randomIndex = Math.floor(Math.random() * (releasedLines.length - 1));
   let tempLine = releasedLines[randomIndex];
+
   const initVideo = async () => {
-    readLineFromPath();
-    if (!$currentLine || !$currentLine.videoUrl) {
-      console.log("no current line");
-      return;
+    try {
+      // Add small delay to ensure DOM elements are rendered
+      await new Promise((resolve) => setTimeout(resolve, 0));
+
+      // Initialize video manager first
+      await initVideoManager();
+
+      // Then read and set the line
+      readLineFromPath();
+      if (!$currentLine || !$currentLine.videoUrl) {
+        console.log("no current line");
+        return;
+      }
+    } catch (error) {
+      console.error("Error initializing video:", error);
     }
-
-    // Add small delay to ensure DOM elements are rendered
-    await new Promise((resolve) => setTimeout(resolve, 0));
-
-    $vimeoVideoObjectList = $allLines
-      .map((line) => {
-        const element = document.getElementById(`video-${line.id}`);
-        if (!element) {
-          console.warn(`Element video-${line.id} not found`);
-          return null;
-        }
-
-        return {
-          id: line.id,
-          player: new Vimeo(element, {
-            url: line.videoUrl,
-            controls: false,
-            autopause: false,
-            loop: false,
-          }),
-        };
-      })
-      .filter(Boolean); // Remove null entries
-
-    console.log(
-      "Video IDs:",
-      $vimeoVideoObjectList.map((v) => v.id).join(", ")
-    );
-    console.log("Vimeo players:", $vimeoVideoObjectList);
-    registerVimeoEventListeners();
   };
 
   $: if ($cookieConsent) {
@@ -86,6 +67,7 @@
 
   // Set `initialized` to true after `cookieConsent` is set
   import { browser } from "$app/environment";
+  import { initVideoManager } from "../utils/videoManager";
   let initialized = false;
   if (browser) {
     cookieConsent.subscribe(() => {
@@ -265,9 +247,6 @@
     <TopMenu aboutContent={aboutContent?.aboutText ?? ""} />
     <BottomMenu />
   {/if}
-  {#each $allLines as line}
-    <div id={`video-${line.id}`} style="display: none;"></div>
-  {/each}
 {/if}
 
 <style lang="scss">

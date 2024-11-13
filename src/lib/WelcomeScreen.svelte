@@ -7,53 +7,48 @@
   export let line: Line;
 
   // Wait for $vimeoVideoObject to be defined
-  async function waitForVimeoVideoObject() {
-    while (!$vimeoVideoObject) {
-      console.log($vimeoVideoObject);
-      await tick(); // Wait for the next DOM update
-    }
-  }
+  // async function waitForVimeoVideoObject() {
+  //   while (!$vimeoVideoObject) {
+  //     console.log($vimeoVideoObject);
+  //     await tick(); // Wait for the next DOM update
+  //   }
+  // }
 
   // Handle the button click, wait for $vimeoVideoObject if necessary
   const handleButtonClick = async () => {
     giveConsent(); // Give cookie consent
     videoIsLoading.set(true);
-
-    // Wait for the Vimeo object to be defined
-    await waitForVimeoVideoObject();
-
-    $vimeoVideoObject.play();
   };
 
   // Function to set initial opacity for ".view" elements
   const setInitialOpacity = () => {
-    const views = document.querySelectorAll<HTMLDivElement>('.view');
+    const views = document.querySelectorAll<HTMLDivElement>(".view");
     views.forEach((view, index) => {
       if (index !== 0) {
-        view.style.opacity = '0.1';
+        view.style.opacity = "0.1";
       }
     });
   };
 
   // Function to handle scroll event
   const handleScroll = () => {
-    const views = document.querySelectorAll<HTMLDivElement>('.view');
-    views.forEach(view => {
-      view.style.opacity = '1';
-      view.style.transition = '1s'
+    const views = document.querySelectorAll<HTMLDivElement>(".view");
+    views.forEach((view) => {
+      view.style.opacity = "1";
+      view.style.transition = "1s";
     });
     // Remove the scroll event listener after triggering
-    const welcomeScreen = document.getElementById('welcome-screen');
-    welcomeScreen?.removeEventListener('scroll', handleScroll);
+    const welcomeScreen = document.getElementById("welcome-screen");
+    welcomeScreen?.removeEventListener("scroll", handleScroll);
   };
 
   // Set up initial opacity and scroll listener on mount
   onMount(() => {
     setInitialOpacity();
-    
+
     // Add scroll event listener to the #welcome-screen div
-    const welcomeScreen = document.getElementById('welcome-screen');
-    welcomeScreen?.addEventListener('scroll', handleScroll);
+    const welcomeScreen = document.getElementById("welcome-screen");
+    welcomeScreen?.addEventListener("scroll", handleScroll);
   });
 </script>
 
@@ -69,20 +64,23 @@
       <div class="view view--flex">
         <p class="titles">Cookies</p>
         <p>
-          Wir verwenden Cookies von Drittanbietern, darunter Vimeo.
-          Diese Cookies sind notwendig für die Funktionalität der Seite.
-          Durch das Klicken auf den Button stimmst du den Cookies zu und steigst auch gleich in ein Tram ein!
+          Wir verwenden Cookies von Drittanbietern, darunter Vimeo. Diese
+          Cookies sind notwendig für die Funktionalität der Seite. Durch das
+          Klicken auf den Button stimmst du den Cookies zu und steigst auch
+          gleich in ein Tram ein!
         </p>
         <div class="line--cont" style="background-color: {line.color};">
-            <div class="numb">
-              <LineNumber number={line.number} isInverted={!line.isInverted} />
-            </div>
-            <Button
-              class="{line?.number === 7 ? 'isSeven': ''} isInverted-{line.isInverted}"
-              isActive={false}
-              on:click={handleButtonClick}
-              >Zustimmen und gut festhalten!
-            </Button>
+          <div class="numb">
+            <LineNumber number={line.number} isInverted={!line.isInverted} />
+          </div>
+          <Button
+            class="{line?.number === 7
+              ? 'isSeven'
+              : ''} isInverted-{line.isInverted}"
+            isActive={false}
+            on:click={handleButtonClick}
+            >Zustimmen und gut festhalten!
+          </Button>
         </div>
       </div>
     {/if}
@@ -99,9 +97,22 @@
 
     <div class="view">
       <p class="titles">Info</p>
-      <p>Tram und Bass lädt dich ein, verträumt aus dem Tram in die Stadt hinauszuschauen und dabei 30 einzigartige Musikfahrten zu hören. Auf der Musikplattform wird die Vielfalt elektronischer Musik aus Zürich audiovisuell präsentiert und für alle zugänglich gemacht.
-        Musik, genauso wie Tramfahren, ist ein grosser Bestandteil des Zürcher Soziallebens. Sie verbindet und bringt Menschen zusammen. Während elektronische Musik immer mehr Platz im Internet findet, verliert sie ihren Platz im öffentlichen Raum. Die vielen musikalischen Nischen bilden soziale Subkulturen, welche wiederum als Nährboden für die Diversität der Zürcher Kultur dienen.
-        In den Tramfahrten zeigen wir nicht nur Techno, sondern die ganze Bandbreite elektronischer Musik von lokaler und internationaler Ausstrahlung. Die Vielfalt der musikalischen Subkultur prägt nicht nur die Nacht, sondern auch den Tag. Also steig ein, wir wünschen viel Spass beim Entdecken.</p>
+      <p>
+        Tram und Bass lädt dich ein, verträumt aus dem Tram in die Stadt
+        hinauszuschauen und dabei 30 einzigartige Musikfahrten zu hören. Auf der
+        Musikplattform wird die Vielfalt elektronischer Musik aus Zürich
+        audiovisuell präsentiert und für alle zugänglich gemacht. Musik, genauso
+        wie Tramfahren, ist ein grosser Bestandteil des Zürcher Soziallebens.
+        Sie verbindet und bringt Menschen zusammen. Während elektronische Musik
+        immer mehr Platz im Internet findet, verliert sie ihren Platz im
+        öffentlichen Raum. Die vielen musikalischen Nischen bilden soziale
+        Subkulturen, welche wiederum als Nährboden für die Diversität der
+        Zürcher Kultur dienen. In den Tramfahrten zeigen wir nicht nur Techno,
+        sondern die ganze Bandbreite elektronischer Musik von lokaler und
+        internationaler Ausstrahlung. Die Vielfalt der musikalischen Subkultur
+        prägt nicht nur die Nacht, sondern auch den Tag. Also steig ein, wir
+        wünschen viel Spass beim Entdecken.
+      </p>
     </div>
 
     <div class="view">
@@ -161,7 +172,7 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    margin: 2em 0em 2em 0em
+    margin: 2em 0em 2em 0em;
   }
 
   .line--cont {

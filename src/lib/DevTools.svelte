@@ -61,7 +61,7 @@
     </Button>
     <Button
       on:click={() => {
-        const state = recoverState();
+        const state = recoverState(0);
         if (state) changeToLineAtTime(state.line, state.time);
       }}
     >
