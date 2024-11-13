@@ -30,6 +30,10 @@ devToolsState.subscribe((value) => {
     : "false";
 });
 
+// Create a store for the list of Vimeo players
+export const vimeoVideoObjectList = writable<{id: string, player: Vimeo}[]>([]);
+
+
 // Load Cookie
 import { browser } from '$app/environment';
 // Check if consent has already been given when initializing
@@ -72,37 +76,42 @@ currentLine.subscribe((value) => {
 
     changeFaviconToLine(value);
 
-    vimeoVideoObject.update((vimeo) => {
-      if (vimeo) {
-        console.log("⬇️ Attempting to load video", value.videoUrl);
-        videoIsLoading.set(true);
-
-        vimeo
-          .loadVideo(value.videoUrl)
-          .then(() => {
-            console.log("🎥 Video loaded successfully");
-            seekVideoAfterLoad(vimeo); // Seek to the desired position after load
-
-            // Attempt to play the video
-            vimeo
-              .play()
-              .then(() => {
-                seekVideoAfterLoad(vimeo);
-                console.log("🎥 Video is playing at 2nd attempt");
-              })
-              .catch((error) => {
-                console.error("🎥 Video play error", error);
-                videoIsLoading.set(false);
-                videoIsPlaying.set(false);
-                currentTime.set(0);
-              });
-          })
-          .catch((error) => {
-            console.error("🎥 Video load error", error);
-          });
+    // Find the Vimeo player for this line
+    const vimeoPlayer = get(vimeoVideoObjectList).find(v => v.id === value.id)?.player;
+    
+    if (vimeoPlayer) {
+      // Hide old video player if it exists
+      const oldPlayer = get(vimeoVideoObject);
+      if (oldPlayer) {
+        oldPlayer.pause();
+        const oldElement = document.getElementById(`video-${previousLineId}`);
+        if (oldElement) oldElement.style.display = 'none';
       }
-      return vimeo;
-    });
+
+      // Show and set new video player
+      const newElement = document.getElementById(`video-${value.id}`);
+      if (newElement) newElement.style.display = 'flex';
+      
+      vimeoVideoObject.set(vimeoPlayer);
+      vimeoPlayer.play();
+      console.log("⬇️ Found video player for line", value.id);
+      videoIsLoading.set(true);
+
+      vimeoPlayer
+        .play()
+        .then(() => {
+          seekVideoAfterLoad(vimeoPlayer);
+          console.log("🎥 Video is playing");
+        })
+        .catch((error) => {
+          console.error("🎥 Video play error", error);
+          videoIsLoading.set(false);
+          videoIsPlaying.set(false);
+          currentTime.set(0);
+        });
+    } else {
+      console.error("Could not find video player for line", value.id);
+    }
   }
 });
 

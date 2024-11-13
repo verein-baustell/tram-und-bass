@@ -4,65 +4,63 @@ import {
   isMuted,
   videoIsPlaying,
   videoIsLoading,
-  vimeoVideoObject,
   allLines,
-  currentLine
+  currentLine,
+  vimeoVideoObjectList
 } from "../store";
+
 export default () => {
-  const vimeo = get(vimeoVideoObject);
-  vimeo.ready().then(() => {
-    const iframe: HTMLIFrameElement | null = document.querySelector(
-      "#video-container iframe"
-    );
-    if (iframe) {
-      iframe.style.minWidth = "100%";
-      iframe.style.minHeight = "100%";
-    }
-  });
+  const videoObjects = get(vimeoVideoObjectList);
 
-  vimeo.on("timeupdate", function (data) {
-    currentTime.set(data.seconds);
-  });
+  videoObjects.forEach(({id, player}) => {
+    player.ready().then(() => {
+      const iframe = document.querySelector<HTMLElement>(
+        `#video-${id} iframe`
+      );
+      if (iframe) {
+        iframe.style.minWidth = "100%";
+        iframe.style.minHeight = "100%";
+      }
+    });
 
-  // Track laoding of the video
-  // Detect when the video starts loading (buffering)
-  vimeo.on("bufferstart", (e) => {
-    console.log("loading start", e);
-    videoIsLoading.set(true); 
-  });
-  // Detect when buffering ends (video is ready to play)
-  vimeo.on("bufferend", (e) => {
-    console.log("loading end", e);
-    setTimeout(() => {
-      videoIsLoading.set(false); // Change the variable after the delay to prevent jumping values
-    }, 500);
-  });
-  // Detect when loading ends (video is ready to play)
-  // vimeo.on("loaded", (e) => {
-  //   console.log("loaded", e);
-  //   setTimeout(() => {
-  //     videoIsLoading.set(false); // Change the variable after the delay to prevent jumping values
-  //   }, 0);
-  // });
+    player.on("timeupdate", function (data) {
+      currentTime.set(data.seconds);
+    });
 
-  vimeo.on("playing", (e) => {
-    console.log("playing", e);
-    videoIsPlaying.set(true); // Corrected
-  });
-  vimeo.on("pause", (e) => {
-    console.log("pause", e);
-    videoIsPlaying.set(false); // Corrected
-  });
-  vimeo.on("ended", (e) => {
-    console.log("ended", e);
-    const releasedLines = get(allLines).filter((line) => line.isReleased);
-    let randomIndex = Math.floor(Math.random() * (releasedLines.length - 1));
-    currentLine.set(releasedLines[randomIndex]);
-    // videoIsPlaying.set(false); // Corrected
-  });
-  vimeo.on("volumechange", () => {
-    vimeo.getMuted().then((muted) => {
-      isMuted.set(muted); // Corrected
+    // Track loading of the video
+    player.on("bufferstart", (e) => {
+      console.log("loading start", e);
+      videoIsLoading.set(true);
+    });
+
+    player.on("bufferend", (e) => {
+      console.log("loading end", e);
+      setTimeout(() => {
+        videoIsLoading.set(false);
+      }, 500);
+    });
+
+    player.on("playing", (e) => {
+      console.log("playing", e);
+      videoIsPlaying.set(true);
+    });
+
+    player.on("pause", (e) => {
+      console.log("pause", e);
+      videoIsPlaying.set(false);
+    });
+
+    player.on("ended", (e) => {
+      console.log("ended", e);
+      const releasedLines = get(allLines).filter((line) => line.isReleased);
+      let randomIndex = Math.floor(Math.random() * (releasedLines.length - 1));
+      currentLine.set(releasedLines[randomIndex]);
+    });
+
+    player.on("volumechange", () => {
+      player.getMuted().then((muted) => {
+        isMuted.set(muted);
+      });
     });
   });
 };

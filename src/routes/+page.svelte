@@ -22,6 +22,7 @@
     previousStation,
     nextStation,
     cookieConsent,
+    vimeoVideoObjectList,
   } from "../store";
   import DevTools from "$lib/DevTools.svelte";
   import registerVimeoEventListeners from "../utils/registerVimeoEventListeners";
@@ -41,18 +42,41 @@
   const releasedLines = $allLines.filter((line) => line.isReleased);
   let randomIndex = Math.floor(Math.random() * (releasedLines.length - 1));
   let tempLine = releasedLines[randomIndex];
-  const initVideo = () => {
+  const initVideo = async () => {
     readLineFromPath();
     if (!$currentLine || !$currentLine.videoUrl) {
       console.log("no current line");
       return;
     }
-    $vimeoVideoObject = new Vimeo("video-container", {
-      url: $currentLine.videoUrl,
-      controls: false,
-      autopause: false,
-      loop: false,
-    });
+
+    // Add small delay to ensure DOM elements are rendered
+    await new Promise((resolve) => setTimeout(resolve, 0));
+
+    $vimeoVideoObjectList = $allLines
+      .map((line) => {
+        const element = document.getElementById(`video-${line.id}`);
+        if (!element) {
+          console.warn(`Element video-${line.id} not found`);
+          return null;
+        }
+
+        return {
+          id: line.id,
+          player: new Vimeo(element, {
+            url: line.videoUrl,
+            controls: false,
+            autopause: false,
+            loop: false,
+          }),
+        };
+      })
+      .filter(Boolean); // Remove null entries
+
+    console.log(
+      "Video IDs:",
+      $vimeoVideoObjectList.map((v) => v.id).join(", ")
+    );
+    console.log("Vimeo players:", $vimeoVideoObjectList);
     registerVimeoEventListeners();
   };
 
@@ -215,7 +239,15 @@
     id="video-container"
     class={$videoIsLoading ? "" : "isLoading"}
     style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
-  ></div>
+  >
+    {#each $allLines as line}
+      <div
+        class="video-container"
+        id={`video-${line.id}`}
+        style="display: none;"
+      ></div>
+    {/each}
+  </div>
   {#if showSplashScreen || !$currentLine?.isReleased}
     <SplashScreen onClick={() => (showSplashScreen = false)} />
   {/if}
@@ -233,6 +265,9 @@
     <TopMenu aboutContent={aboutContent?.aboutText ?? ""} />
     <BottomMenu />
   {/if}
+  {#each $allLines as line}
+    <div id={`video-${line.id}`} style="display: none;"></div>
+  {/each}
 {/if}
 
 <style lang="scss">
@@ -275,7 +310,7 @@
       src: url("/fonts/NaNHoloMono-Medium.woff2") format("woff2");
     }
   }
-  #video-container {
+  .video-container {
     transition: filter 0.5s ease-in-out;
     // &.isLoading {
     //   filter: blur(24px);
