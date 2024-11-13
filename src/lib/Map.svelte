@@ -317,7 +317,7 @@
   };
   const zoom = d3
     .zoom()
-    .filter((event: d3.D3ZoomEvent<any, any>) => {
+    .filter((event: any) => {
       return !(!event?.ctrlKey && event?.type === "wheel") 
     })
     .scaleExtent([1, 5])
