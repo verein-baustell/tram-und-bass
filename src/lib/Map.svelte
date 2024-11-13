@@ -49,10 +49,11 @@
       "#map-svg #stations"
     );
     const stationPositions: StationsPositions = {};
-    stationsGroupSelection.selectChildren().each(function (this: SVGGraphicsElement) {
+
+    stationsGroupSelection.selectChildren().each(function () {
       const stationElement = d3.select(this);
       const stationId = stationElement.attr("id");
-      const bbox = this.getBBox();
+      const bbox = (this as SVGGraphicsElement).getBBox();
       let x = bbox.x + bbox.width / 2;
       let y = bbox.y + bbox.height / 2;
       const transform = stationElement.attr("transform");
@@ -388,24 +389,24 @@
   const addClassesToStations = () => {
     stationsGroupSelection
       .selectChildren()
-      .attr("class", function (this: Element) {
-        const id = this.getAttribute("id");
+      .attr("class", function () {
+        const id = (this as Element)?.getAttribute("id");
         const currentStationName = stationNameToId($currentStation?.name);
 
         if (!id) return "station";
         return id === currentStationName ? "activeStation station" : "station";
       })
-      .attr("data-station-name", function (this: Element) {
-        const id = this?.getAttribute("id");
+      .attr("data-station-name", function () {
+        const id = (this as Element)?.getAttribute("id");
         if (!id) return "";
         const station = getStationFromId(id, $allLines);
         return station?.name ?? "";
       })
-      .on("click", function (this: Element) {
+      .on("click", function () {
         showLineList = true;
-        const stationName = this.getAttribute("id");
+        const stationName = (this as Element)?.getAttribute("id");
         resetHighlightedStations();
-        this.classList.add("activeStation");
+        (this as Element).classList.add("activeStation");
         // zoom to station
         if (!stationName) return;
         linesAtSelectedStation = getLinesFromStationName(
@@ -413,18 +414,18 @@
           $allLines
         );
         selectedStationId = stationName;
-        selectedStationName = this.getAttribute(
+        selectedStationName = (this as Element)?.getAttribute(
           "data-station-name"
         );
         updateLineListPosition();
         zoomToElement(d3.select(this));
         // position lineList above the station
       })
-      .on("mouseover", function (this: Element, event: d3.D3Event) {
+      .on("mouseover", function (event) {
         const isTouch = event?.sourceEvent?.type === "touchstart";
         if (isTouch) return;
-        const stationElement = this;
-        const stationName = stationElement.getAttribute(
+        const stationElement = this as Element;
+        const stationName = (this as Element)?.getAttribute(
           "data-station-name"
         );
         if (!stationName) return;
