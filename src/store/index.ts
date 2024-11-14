@@ -66,10 +66,13 @@ const seekVideoAfterLoad = async (vimeoObject: Vimeo) => {
     }
   }
 };
-let isFirstChange = true;
 let previousLineId: string | null = null;
+let executionCount = 0;
 export const timeToSeekAfterVideoLoad = writable<number>(0);
 currentLine.subscribe((value) => {
+  executionCount++;
+  console.log(`🔄 Current line subscription executed ${executionCount} times`);
+
   if (value?.id === previousLineId) {
     return; // Exit if the line ID has not changed
   }
@@ -90,9 +93,8 @@ currentLine.subscribe((value) => {
       if (vimeoPlayer) {
         console.log("🎥 seeking video after load");
         await seekVideoAfterLoad(vimeoPlayer);
-
-        // Only play if it's not the first change
-        if (!isFirstChange) {
+        
+        if (executionCount > 2) {
           vimeoPlayer
             .play()
             .then(() => {
@@ -109,8 +111,6 @@ currentLine.subscribe((value) => {
       }
     });
   }
-  
-  isFirstChange = false;
 });
 
 let lastPreviousStation: TimeStamp | undefined;
