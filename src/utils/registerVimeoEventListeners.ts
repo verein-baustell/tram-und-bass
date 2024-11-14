@@ -12,18 +12,19 @@ import {
 export function initVideoIframes(): Promise<void> {
   const videoObjects = get(vimeoVideoObjectList);
   
-  // Create an array of promises for each video's loading
   const loadingPromises = videoObjects.map(({id, player}) => {
     return new Promise<void>((resolve) => {
       player.ready().then(() => {
-        // Set up iframe styles
         const iframe = document.querySelector<HTMLElement>(`#video-${id} iframe`);
         if (iframe) {
           iframe.style.minWidth = "100%";
           iframe.style.minHeight = "100%";
+          
+          const currentAllow = iframe.getAttribute('allow') || '';
+          const newAllow = currentAllow.replace('autoplay;', '');
+          iframe.setAttribute('allow', newAllow);
         }
         
-        // Listen for the loaded event
         player.on('loaded', () => {
           resolve();
         });
@@ -31,9 +32,7 @@ export function initVideoIframes(): Promise<void> {
     });
   });
 
-  // Return a promise that resolves when all videos are loaded
   return Promise.all(loadingPromises).then(() => {
-    
     console.log('All videos loaded successfully');
   });
 }

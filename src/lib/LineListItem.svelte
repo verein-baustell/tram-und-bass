@@ -19,7 +19,7 @@
       const overflowData = checkOverflow(nameContainer);
       isOverflowing = overflowData.isOverflowing;
       overflowRatio = overflowData.overflowRatio;
-      console.log(isOverflowing, overflowRatio);
+      // console.log(isOverflowing, overflowRatio);
     };
 
     updateOverflow();

@@ -22,6 +22,7 @@ export async function initVideoManager() {
             controls: false,
             autopause: false,
             loop: false,
+            autoplay: false,
           }),
         };
       })

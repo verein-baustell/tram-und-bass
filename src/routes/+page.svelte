@@ -44,6 +44,7 @@
 
   const initVideo = async () => {
     try {
+      videoIsLoading.set(true);
       // Add small delay to ensure DOM elements are rendered
       await new Promise((resolve) => setTimeout(resolve, 0));
 
@@ -56,8 +57,10 @@
         console.log("no current line");
         return;
       }
+      videoIsLoading.set(false);
     } catch (error) {
       console.error("Error initializing video:", error);
+      videoIsLoading.set(false);
     }
   };
 
@@ -111,8 +114,9 @@
   const showLandingPage = today <= releaseDate;
   onMount(() => {
     initFinalState();
-    // readLineFromPath();
-
+    if (!$cookieConsent) {
+      readLineFromPath();
+    }
     if (showLandingPage) return;
     isDevMode =
       window.location.hostname === "localhost" ||

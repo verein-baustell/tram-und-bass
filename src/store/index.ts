@@ -52,15 +52,21 @@ export const allLines = writable<Line[]>(lines);
 export const currentLine = writable<Line | undefined>();
 // update query params when currentLine changes
 export const currentTime = writable<number>(0);
-const seekVideoAfterLoad = (vimeoObject: Vimeo) => {
+const seekVideoAfterLoad = async (vimeoObject: Vimeo) => {
   const timeToSeekTo = get(timeToSeekAfterVideoLoad);
   if (timeToSeekTo) {
-    vimeoObject.setCurrentTime(timeToSeekTo).then(() => {
+    try {
+      // Wait for video to be loaded
+      await vimeoObject.ready();
+      await vimeoObject.setCurrentTime(timeToSeekTo);
       console.log("🎥 video seeked to", timeToSeekTo);
-    });
-    timeToSeekAfterVideoLoad.set(0);
+      timeToSeekAfterVideoLoad.set(0);
+    } catch (error) {
+      console.error("🎥 Error seeking video:", error);
+    }
   }
 };
+let isFirstChange = true;
 let previousLineId: string | null = null;
 export const timeToSeekAfterVideoLoad = writable<number>(0);
 currentLine.subscribe((value) => {
@@ -79,30 +85,32 @@ currentLine.subscribe((value) => {
     changeFaviconToLine(value);
 
     // Use the async changeVideo function
-    changeVideo(value).then(() => {
-      // Get the new player and handle video loading
+    changeVideo(value).then(async () => {
       const vimeoPlayer = get(vimeoVideoObject);
       if (vimeoPlayer) {
-        // console.log("⬇️ Found video player for line", value.id);
-        // videoIsLoading.set(true);
         console.log("🎥 seeking video after load");
-        seekVideoAfterLoad(vimeoPlayer);
+        await seekVideoAfterLoad(vimeoPlayer);
 
-        vimeoPlayer
-          .play()
-          .then(() => {
-            console.log("🎥 Video is playing");
-            videoIsLoading.set(false);
-          })
-          .catch((error) => {
-            console.error("🎥 Video play error", error);
-            videoIsLoading.set(false);
-            videoIsPlaying.set(false);
-            currentTime.set(0);
-          });
+        // Only play if it's not the first change
+        if (!isFirstChange) {
+          vimeoPlayer
+            .play()
+            .then(() => {
+              console.log("🎥 Video is playing");
+              videoIsLoading.set(false);
+            })
+            .catch((error) => {
+              console.error("🎥 Video play error", error);
+              videoIsLoading.set(false);
+              videoIsPlaying.set(false);
+              currentTime.set(0);
+            });
+        }
       }
     });
   }
+  
+  isFirstChange = false;
 });
 
 let lastPreviousStation: TimeStamp | undefined;
