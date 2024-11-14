@@ -317,11 +317,8 @@
   };
   const zoom = d3
     .zoom()
-    .filter((event) => {
-      const isTouchScrolling =
-        event?.type === "touchstart" && event?.touches.length === 1;
-
-      return !(!event?.ctrlKey && event?.type === "wheel") && !isTouchScrolling;
+    .filter((event: any) => {
+      return !(!event?.ctrlKey && event?.type === "wheel") 
     })
     .scaleExtent([1, 5])
     .translateExtent([

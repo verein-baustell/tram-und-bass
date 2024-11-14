@@ -1353,8 +1353,19 @@ lines:
     name: Triemli
     artistName: FLËX
     artistAboutText: >-
-      [Instagram
-      @lebeamlimmat](https://www.instagram.com/lebeamlimmat?igsh=dnY0MnByZzl2MnRj)
+      FLËX is a DJ duo who've been crafting sonic journeys together since 2014.
+      With a knack for mixing everything from ambient soundscapes to intricate
+      breakbeats and downtempo grooves, their sets are a trip through the more
+      cerebral side of electronic music. They've kept crowds captivated with
+      their seamless transitions and unexpected twists. But these days, they
+      find the most joy in spinning smooth, uplifting house music for lovely
+      people who just want to dance, vibe, and soak in the good energy.
+
+
+      The lights come on, and the glaring glow of the neon tubes in the club pulls you back from an enchanted utopia into reality. With a gentle ringing in your ears, you blend into the stream of people on the tram, accompanied by both old and new acquaintances, returning to the everyday hustle. Some choose well-deserved rest, while others try to keep the night alive. A set that aims to capture this fleeting moment picks up the pace again, ushering in the next night.
+
+
+      [Instagram @lebeamlimmat](https://www.instagram.com/lebeamlimmat?igsh=dnY0MnByZzl2MnRj)
 
 
       [Instagram @baer_ae](https://www.instagram.com/lebeamlimmat?igsh=dnY0MnByZzl2MnRj)
