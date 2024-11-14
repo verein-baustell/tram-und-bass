@@ -23,7 +23,7 @@
   $currentLine = $allLines[0];
 
   const today = new Date();
-  const releaseDate = new Date("2024-11-15T22:00:00");
+  const releaseDate = new Date("2024-11-17T06:00:00");
   const showLandingPage = today <= releaseDate;
   onMount(() => {
     if (showLandingPage) return;
