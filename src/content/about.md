@@ -19,24 +19,4 @@ aboutText: >-
 
 
   Das Projekt Tram und Bass wurde mit viel Liebe von den Vereinen Baustell und RTFM initiiert und umgesetzt. Dabei wurden wir finanziell unterstützt von Finanzdepartement der Stadt Zürich, Migros Kulturprozent, Ernst Göhner Stiftung, Stiftung Temperatio und Kanton Zürich Kulturstiftung | Swisslos. Die Verkehrsbetriebe Zürich und alle Musiker*innen halfen auch kräftig mit.
-
-
-
-
-  ![Logo Finanzdepartement der Stadt Zürich](/images/uploads/stadt.png "Finanzdepartement Stadt Zürich")
-
-
-  ![Logo Migros Kulturprozent](/images/uploads/migros.png "Migros Kulturprozent")
-
-
-  ![Logo Ernst Göhner Stiftung](/images/uploads/ernstgohner.png "Ernst Göhner Stiftung")
-
-
-  ![Logo Temperatio](/images/uploads/temperatio.png "Temperatio")
-
-
-  ![Logo Kanton Zürich Kulturförderung und Swisslos](/images/uploads/kanton.png "Kanton Zürich Kulturförderung")
-
-
-  ![Logo VBZ ](/images/uploads/vbz.png "VBZ")
 ---

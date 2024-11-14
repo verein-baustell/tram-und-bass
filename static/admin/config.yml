@@ -27,6 +27,46 @@ collections:
           - label: "Insta Title"
             name: "instagramText"
             widget: "markdown"
+            - label: "Featured Image 1"
+            name: "insta1"
+            widget: "image"
+            choose_url: true
+            default: "/uploads/insta1.webp"
+            media_library:
+              config:
+                multiple: false
+          - label: "Featured Image 2"
+            name: "insta2"
+            widget: "image"
+            choose_url: true
+            default: "/uploads/insta1.webp"
+            media_library:
+              config:
+                multiple: false
+          - label: "Featured Image 3"
+            name: "insta3"
+            widget: "image"
+            choose_url: true
+            default: "/uploads/insta1.webp"
+            media_library:
+              config:
+                multiple: false
+                - label: "Featured Image 4"
+            name: "insta4"
+            widget: "image"
+            choose_url: true
+            default: "/uploads/insta1.webp"
+            media_library:
+              config:
+                multiple: false
+          - label: "Featured Image 5"
+            name: "insta5"
+            widget: "image"
+            choose_url: true
+            default: "/uploads/insta1.webp"
+            media_library:
+              config:
+                multiple: false
       - name: "bandcamp"
         label: bandcamp
         file: "src/content/bandcamp.md"
@@ -36,14 +76,30 @@ collections:
           - label: "Bandcamp Title"
             name: "bandcampText"
             widget: "markdown"
-          - label: "Featured Image"
-            name: "thumbnail"
+          - label: "Featured Image 1"
+            name: "bandcamp1"
             widget: "image"
             choose_url: true
             default: "/uploads/insta1.webp"
             media_library:
               config:
-                multiple: true
+                multiple: false
+          - label: "Featured Image 2"
+            name: "bandcamp2"
+            widget: "image"
+            choose_url: true
+            default: "/uploads/insta1.webp"
+            media_library:
+              config:
+                multiple: false
+          - label: "Featured Image 3"
+            name: "bandcamp3"
+            widget: "image"
+            choose_url: true
+            default: "/uploads/insta1.webp"
+            media_library:
+              config:
+                multiple: false
       - name: "impressum"
         label: impressum
         file: "src/content/impressum.md"
