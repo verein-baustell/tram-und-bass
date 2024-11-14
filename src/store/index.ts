@@ -83,14 +83,16 @@ currentLine.subscribe((value) => {
       // Get the new player and handle video loading
       const vimeoPlayer = get(vimeoVideoObject);
       if (vimeoPlayer) {
-        console.log("⬇️ Found video player for line", value.id);
-        videoIsLoading.set(true);
+        // console.log("⬇️ Found video player for line", value.id);
+        // videoIsLoading.set(true);
+        console.log("🎥 seeking video after load");
+        seekVideoAfterLoad(vimeoPlayer);
 
         vimeoPlayer
           .play()
           .then(() => {
-            seekVideoAfterLoad(vimeoPlayer);
             console.log("🎥 Video is playing");
+            videoIsLoading.set(false);
           })
           .catch((error) => {
             console.error("🎥 Video play error", error);

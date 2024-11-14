@@ -38,60 +38,58 @@ export function initVideoIframes(): Promise<void> {
   });
 }
 
-export function registerEventListeners(player: Vimeo) {
-  player.on("timeupdate", function (data) {
-    currentTime.set(data.seconds);
-  });
-
-  player.on("bufferstart", (e) => {
-    console.log("loading start", e);
-    videoIsLoading.set(true);
-  });
-
-  player.on("bufferend", (e) => {
-    console.log("loading end", e);
-    setTimeout(() => {
-      videoIsLoading.set(false);
-    }, 500);
-  });
-
-  player.on("playing", (e) => {
-    console.log("playing", e);
-    videoIsPlaying.set(true);
-  });
-
-  player.on("pause", (e) => {
-    console.log("pause", e);
-    videoIsPlaying.set(false);
-  });
-
-  player.on("ended", (e) => {
-    console.log("ended", e);
-    const releasedLines = get(allLines).filter((line) => line.isReleased);
-    let randomIndex = Math.floor(Math.random() * (releasedLines.length - 1));
-    currentLine.set(releasedLines[randomIndex]);
-  });
-
-  player.on("volumechange", () => {
-    player.getMuted().then((muted) => {
-      isMuted.set(muted);
-    });
-  });
+export async function unregisterEventListeners(player: Vimeo) {
+  await Promise.all([
+    player.off('timeupdate'),
+    player.off('bufferstart'),
+    player.off('bufferend'),
+    player.off('playing'),
+    player.off('pause'),
+    player.off('ended'),
+    player.off('volumechange')
+  ]);
 }
 
-export function unregisterEventListeners(player: Vimeo) {
-  player.off('timeupdate');
-  player.off('bufferstart');
-  player.off('bufferend');
-  player.off('playing');
-  player.off('pause');
-  player.off('ended');
-  player.off('volumechange');
+export async function registerEventListeners(player: Vimeo) {
+  await Promise.all([
+    player.on("timeupdate", function (data) {
+      currentTime.set(data.seconds);
+    }),
+    player.on("bufferstart", (e) => {
+      console.log("loading start", e);
+      videoIsLoading.set(true);
+    }),
+    player.on("bufferend", (e) => {
+      console.log("loading end", e);
+      setTimeout(() => {
+        videoIsLoading.set(false);
+      }, 500);
+    }),
+    player.on("playing", (e) => {
+      console.log("playing", e);
+      videoIsPlaying.set(true);
+    }),
+    player.on("pause", (e) => {
+      console.log("pause", e);
+      videoIsPlaying.set(false);
+    }),
+    player.on("ended", (e) => {
+      console.log("ended", e);
+      const releasedLines = get(allLines).filter((line) => line.isReleased);
+      let randomIndex = Math.floor(Math.random() * (releasedLines.length - 1));
+      currentLine.set(releasedLines[randomIndex]);
+    }),
+    player.on("volumechange", () => {
+      player.getMuted().then((muted) => {
+        isMuted.set(muted);
+      });
+    })
+  ]);
 }
 
-export function switchVideoEventListeners(oldPlayer: Vimeo | null, newPlayer: Vimeo) {
+export async function switchVideoEventListeners(oldPlayer: Vimeo | null, newPlayer: Vimeo) {
   if (oldPlayer) {
-    unregisterEventListeners(oldPlayer);
+    await unregisterEventListeners(oldPlayer);
   }
-  registerEventListeners(newPlayer);
+  await registerEventListeners(newPlayer);
 }

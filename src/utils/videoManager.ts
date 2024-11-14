@@ -7,6 +7,7 @@ export async function initVideoManager() {
   const lines = get(allLines);
   vimeoVideoObjectList.set(
     lines
+      .filter((line: Line) => new Date(line.releaseDate) < new Date())
       .map((line: Line) => {
         const element = document.getElementById(`video-${line.id}`);
         if (!element) {
@@ -69,8 +70,9 @@ export async function changeVideo(line: Line) {
 
   // Update the vimeoVideoObject store and switch event listeners
   vimeoVideoObject.set(videoObject.player);
-  switchVideoEventListeners(currentVideo, videoObject.player);
+  await switchVideoEventListeners(currentVideo, videoObject.player);
   
-  await videoObject.player.play();
+  // Wait for the video to be ready
+  await videoObject.player.ready();
   videoIsLoading.set(false);
 }
