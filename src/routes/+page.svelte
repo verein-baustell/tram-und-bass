@@ -111,7 +111,7 @@
   const showLandingPage = today <= releaseDate;
   onMount(() => {
     initFinalState();
-    readLineFromPath();
+    // readLineFromPath();
 
     if (showLandingPage) return;
     isDevMode =
@@ -153,7 +153,8 @@
     // add a event listener for mouse movement to animate the panning of the video by changing the left css property
     const mousePan = (e: MouseEvent) => {
       if ($videoIsPlaying && $isImmersive) {
-        const videoContainer = document.querySelector<HTMLElement>(".activeVideo")
+        const videoContainer =
+          document.querySelector<HTMLElement>(".activeVideo");
         if (videoContainer) {
           if (extraWidth > 0) {
             const percentage = e.clientX / window.innerWidth - 0.5; // Range from -0.5 to +0.5
@@ -205,9 +206,10 @@
   $: {
     // center video if immersive mode is off
     if (!$isImmersive && typeof document !== "undefined") {
-      const videoContainer = document.querySelector<HTMLElement>(".activeVideo");
-      console.log(videoContainer);
-      
+      const videoContainer =
+        document.querySelector<HTMLElement>(".activeVideo");
+      // console.log(videoContainer);
+
       if (videoContainer) {
         videoContainer.style.transition = "transform 0.5s ease-in-out";
         videoContainer.style.setProperty("--translateX", "0px");
@@ -219,7 +221,6 @@
 {#if showLandingPage}
   <LandingScreen />
 {:else}
- 
   {#each $allLines as line}
     <div
       class="video-container"
@@ -299,7 +300,6 @@
     height: 100%;
     place-items: center;
     z-index: -200;
-
   }
   :global(.activeVideo) {
     display: grid !important;

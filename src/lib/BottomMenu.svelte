@@ -46,10 +46,10 @@
     let menu = document.getElementById("bottom-menu");
     if (menu && menu.clientWidth > 320) {
       isWider.set(true);
-      console.log("isWider:", isWider);
+      // console.log("isWider:", isWider);
     } else {
       isWider.set(false);
-      console.log("isWider:", isWider);
+      // console.log("isWider:", isWider);
     }
   }
 
@@ -65,7 +65,7 @@
       const overflowData = checkOverflow(nameContainerBtm);
       isOverflowing = overflowData.isOverflowing;
       overflowRatio = overflowData.overflowRatio;
-      console.log(isOverflowing, overflowRatio);
+      // console.log(isOverflowing, overflowRatio);
     };
 
     updateOverflow();
