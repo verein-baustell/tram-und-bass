@@ -12,4 +12,6 @@ bandcampText: >-
 
 
   ![Bandcamp Preview 3](/images/uploads/ernstgohner.png "Bild mit Link zu Bandcamp")
+thumbnail:
+  - /images/uploads/insta2.webp
 ---
