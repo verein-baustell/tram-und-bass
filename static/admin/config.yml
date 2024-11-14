@@ -36,6 +36,14 @@ collections:
           - label: "Bandcamp Title"
             name: "bandcampText"
             widget: "markdown"
+          - label: "Featured Image"
+            name: "thumbnail"
+            widget: "image"
+            choose_url: true
+            default: "/uploads/insta1.webp"
+            media_library:
+              config:
+                multiple: true
       - name: "impressum"
         label: impressum
         file: "src/content/impressum.md"
