@@ -17,7 +17,8 @@ export const changeToLineAtTime = (line: Line | undefined, newTime: number) => {
     vimeo.play();
     return;
   }
-  else (newTime) &&
+  else {
     timeToSeekAfterVideoLoad.set(newTime);
-  currentLine.set(line);
+    currentLine.set(line);
+  }
 };

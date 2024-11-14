@@ -52,33 +52,23 @@ export const allLines = writable<Line[]>(lines);
 export const currentLine = writable<Line | undefined>();
 // update query params when currentLine changes
 export const currentTime = writable<number>(0);
-const seekVideoAfterLoad = async (vimeoObject: Vimeo) => {
-  const timeToSeekTo = get(timeToSeekAfterVideoLoad);
-  if (timeToSeekTo) {
-    try {
-      // Wait for video to be loaded
-      await vimeoObject.ready();
-      await vimeoObject.setCurrentTime(timeToSeekTo);
-      console.log("🎥 video seeked to", timeToSeekTo);
-      timeToSeekAfterVideoLoad.set(0);
-    } catch (error) {
-      console.error("🎥 Error seeking video:", error);
-    }
-  }
-};
+
 let previousLineId: string | null = null;
 let executionCount = 0;
 export const timeToSeekAfterVideoLoad = writable<number>(0);
 currentLine.subscribe((value) => {
   executionCount++;
   console.log(`🔄 Current line subscription executed ${executionCount} times`);
+  console.log("🔄 Current line value:", value);
 
-  if (value?.id === previousLineId) {
+  if (!value) return; // Exit early if value is undefined
+
+  if (value.id === previousLineId) {
     return; // Exit if the line ID has not changed
   }
-  previousLineId = value?.id ?? null;
+  previousLineId = value.id ?? null;
   
-  if (value && typeof window !== "undefined") {
+  if (typeof window !== "undefined") {
     videoIsPlaying.set(false);
 
     // Update URL and favicon
@@ -88,28 +78,12 @@ currentLine.subscribe((value) => {
     changeFaviconToLine(value);
 
     // Use the async changeVideo function
-    changeVideo(value).then(async () => {
-      const vimeoPlayer = get(vimeoVideoObject);
-      if (vimeoPlayer) {
-        console.log("🎥 seeking video after load");
-        await seekVideoAfterLoad(vimeoPlayer);
-        
-        if (executionCount > 2) {
-          vimeoPlayer
-            .play()
-            .then(() => {
-              console.log("🎥 Video is playing");
-              videoIsLoading.set(false);
-            })
-            .catch((error) => {
-              console.error("🎥 Video play error", error);
-              videoIsLoading.set(false);
-              videoIsPlaying.set(false);
-              currentTime.set(0);
-            });
-        }
-      }
-    });
+    
+    const vimeoPlayer = get(vimeoVideoObject);
+    if (vimeoPlayer) {
+      console.log("🎥 seeking video after load");
+    
+    }
   }
 });
 

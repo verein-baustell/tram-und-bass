@@ -113,14 +113,14 @@
   const releaseDate = new Date("2024-01-01T22:00:00");
   const showLandingPage = today <= releaseDate;
   onMount(() => {
+    isDevMode =
+      window.location.hostname === "localhost" ||
+      localStorage.getItem("devMode") === "true";
     initFinalState();
     if (!$cookieConsent) {
       readLineFromPath();
     }
     if (showLandingPage) return;
-    isDevMode =
-      window.location.hostname === "localhost" ||
-      localStorage.getItem("devMode") === "true";
     // @ts-ignore
     window.devMode = () => {
       isDevMode = true;
@@ -225,7 +225,7 @@
 {#if showLandingPage}
   <LandingScreen />
 {:else}
-  {#each $allLines as line}
+  {#each $allLines.filter((line) => line.isReleased) as line}
     <div
       class="video-container"
       id={`video-${line.id}`}

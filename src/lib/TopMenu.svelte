@@ -4,7 +4,14 @@
   import LineList from "./LineList.svelte";
   import Button from "./Button.svelte";
   import { clickoutside } from "@svelte-put/clickoutside";
-  import { allLines, currentLine, currentTime, isTopOpen } from "../store";
+  import { changeVideo } from "../utils/videoManager";
+  import {
+    allLines,
+    currentLine,
+    currentTime,
+    isTopOpen,
+    vimeoVideoObject,
+  } from "../store";
   import { addState } from "../utils/stateManager";
   export let aboutContent: string;
   const menuEntries = [
@@ -46,8 +53,10 @@
         {#if $isTopOpen}
           <svelte:component
             this={currentComponent}
-            onClick={(clickedLine) => {
+            onClick={async (clickedLine) => {
               addState();
+              await changeVideo(clickedLine);
+              $vimeoVideoObject.play();
               currentLine.set(clickedLine);
               isTopOpen.set(false);
             }}
