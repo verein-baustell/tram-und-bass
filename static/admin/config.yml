@@ -18,14 +18,32 @@ collections:
           - label: "About Text"
             name: "aboutText"
             widget: "markdown"
-      - name: "about2"
-        label: about2
-        file: "src/content/about2.md"
+      - name: "insta"
+        label: insta
+        file: "src/content/insta.md"
         editor:
           preview: false
         fields:
-          - label: "About2 Text"
-            name: "about2Text"
+          - label: "Insta Title"
+            name: "instagramText"
+            widget: "markdown"
+      - name: "bandcamp"
+        label: bandcamp
+        file: "src/content/bandcamp.md"
+        editor:
+          preview: false
+        fields:
+          - label: "Bandcamp Title"
+            name: "bandcampText"
+            widget: "markdown"
+      - name: "impressum"
+        label: impressum
+        file: "src/content/impressum.md"
+        editor:
+          preview: false
+        fields:
+          - label: "Impressum Title"
+            name: "impressumText"
             widget: "markdown"
       - name: "lines"
         label: "Lines"
