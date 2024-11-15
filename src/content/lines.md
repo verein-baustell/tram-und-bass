@@ -23,7 +23,7 @@ lines:
     id: ""
     timeStamps:
       - name: Geissweid
-        startTime: 00:00
+        startTime: 00:01
         endTime: 01:11
       - name: Schlieren Zentrum Bahnhof
         startTime: 02:07

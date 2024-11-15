@@ -31,6 +31,7 @@
   import compareStationNames from "../utils/compareStationNames";
   import { goto } from "$app/navigation";
   import { hmsToSeconds } from "../utils/timeFormatter";
+  import consoleInit from "../utils/consoleInit";
   let videoWrapperWidth = "100%";
   let videoWrapperHeight = "100%";
   let videoWidth = 0;
@@ -104,6 +105,7 @@
   const releaseDate = new Date("2024-01-01T22:00:00");
   const showLandingPage = today <= releaseDate;
   onMount(() => {
+    // consoleInit();
     initFinalState();
     readLineFromPath();
 
