@@ -25,7 +25,7 @@
   {/if}
 
   {#if $history.length > 0 && !$isBtmOpen && hasRecoveryButton}
-    <HistoryList></HistoryList>
+    <!-- <HistoryList></HistoryList> -->
   {/if}
 
   <ul>

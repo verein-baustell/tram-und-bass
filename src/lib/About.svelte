@@ -3,21 +3,9 @@
     export let aboutContent: string;
 </script>
 <div class="view detailed-view about-view">
-
-    <!--
-    <p>
-        <SvelteMarkdown source={aboutContent} /> 
-    </p>
-
--->
     <div class="about-container text">
         <p>
-        <span>Tram und Bass lädt dich ein, verträumt aus dem Tram in die Stadt hinauszuschauen und dabei 30 einzigartige Musikfahrten zu hören. Auf der Musikplattform wird die Vielfalt elektronischer Musik aus Zürich audiovisuell präsentiert und für alle zugänglich gemacht.
-        </span>
-        <span>Musik, genauso wie Tramfahren, ist ein grosser Bestandteil des Zürcher Soziallebens. Sie verbindet und bringt Menschen zusammen. Während elektronische Musik immer mehr Platz im Internet findet, verliert sie ihren Platz im öffentlichen Raum. Die vielen musikalischen Nischen bilden soziale Subkulturen, welche wiederum als Nährboden für die Diversität der Zürcher Kultur dienen.
-        </span>
-        <span>In den Tramfahrten zeigen wir nicht nur Techno, sondern die ganze Bandbreite elektronischer Musik von lokaler und internationaler Ausstrahlung. Die Vielfalt der musikalischen Subkultur prägt nicht nur die Nacht, sondern auch den Tag. Also steig ein, wir wünschen viel Spass beim Entdecken.
-        </span>
+            <SvelteMarkdown source={aboutContent} /> 
         </p>
     </div>
     <a href="https://www.instagram.com/tramundbass">
