@@ -5,7 +5,7 @@
   const releaseDate = new Date("2024-11-16T02:00:00");
   const showLandingPage = today <= releaseDate;
 
-  var countDownDate = new Date("Nov 17, 2024 05:30:00").getTime();
+  var countDownDate = new Date("Nov 18, 2024 05:30:00").getTime();
   var countDownDateParty = new Date("Nov 15, 2024 18:00:00").getTime();
 
   var days = 0;
@@ -177,7 +177,7 @@
               <p class="name default">Bahnhof Tiefenbrunnen</p>
               <p class="name hover">Viola</p>
 
-              <p class="time">17.11.2024</p>
+              <p class="time">18.11.2024</p>
             </div>
             <div class="schedule-item">
               <p>8</p>
@@ -186,7 +186,7 @@
               <p class="name default">Hardturm</p>
               <p class="name hover">EXGÜSI</p>
 
-              <p class="time">18.11.2024</p>
+              <p class="time">19.11.2024</p>
             </div>
             <div class="schedule-item">
               <p>11</p>
@@ -195,7 +195,7 @@
               <p class="name default">Rehalp</p>
               <p class="name hover">Dschinn</p>
 
-              <p class="time">19.11.2024</p>
+              <p class="time">20.11.2024</p>
             </div>
             <div class="schedule-item">
               <p>12</p>
@@ -204,7 +204,7 @@
               <p class="name default">Bahnhof Stettbach</p>
               <p class="name hover">Endobliss</p>
 
-              <p class="time">20.11.2024</p>
+              <p class="time">21.11.2024</p>
             </div>
             <div class="schedule-item">
               <p>17</p>
@@ -213,7 +213,7 @@
               <p class="name default">Albisgütli</p>
               <p class="name hover">Jenny Cara</p>
 
-              <p class="time">21.11.2024</p>
+              <p class="time">22.11.2024</p>
             </div>
 
           </div>
