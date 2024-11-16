@@ -8,6 +8,7 @@ import {
   currentLine,
   vimeoVideoObjectList
 } from "../store";
+import { changeVideo } from "./videoManager";
 
 export function initVideoIframes(): Promise<void> {
   const videoObjects = get(vimeoVideoObjectList);
@@ -33,7 +34,7 @@ export function initVideoIframes(): Promise<void> {
   });
 
   return Promise.all(loadingPromises).then(() => {
-    console.log('All videos loaded successfully');
+    // console.log('All videos loaded successfully');
   });
 }
 
@@ -76,7 +77,7 @@ export async function registerEventListeners(player: Vimeo) {
       console.log("ended", e);
       const releasedLines = get(allLines).filter((line) => line.isReleased);
       let randomIndex = Math.floor(Math.random() * (releasedLines.length - 1));
-      currentLine.set(releasedLines[randomIndex]);
+      changeVideo(releasedLines[randomIndex]);
     }),
     player.on("volumechange", () => {
       player.getMuted().then((muted) => {

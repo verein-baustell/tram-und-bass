@@ -3,6 +3,7 @@
   import { onMount } from "svelte";
   import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
   import { vimeoVideoObject, isMobile } from "../store";
+  import { scale } from "svelte/transition";
 
   let canvas: HTMLCanvasElement; // Reference to the canvas element
   let model: THREE.Group | null = null; // To hold the loaded model
@@ -109,7 +110,7 @@
         const intersects = raycaster.intersectObject(model, true); // Check all descendant objects
 
         if (intersects.length > 0) {
-          console.log("Model clicked:", intersects[0]);
+          // console.log("Model clicked:", intersects[0]);
           // Handle the click event here (e.g., trigger animations, etc.)
           $vimeoVideoObject.play();
         }
@@ -177,7 +178,10 @@
   });
 </script>
 
-<canvas bind:this={canvas}></canvas>
+<canvas
+  in:scale={{ duration: 400, delay: 500, opacity: 0.0, start: 0.2 }}
+  bind:this={canvas}
+></canvas>
 
 <style>
   /* Make the canvas fullscreen and overlay */

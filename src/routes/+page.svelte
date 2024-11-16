@@ -32,6 +32,7 @@
   import { goto } from "$app/navigation";
   import { hmsToSeconds } from "../utils/timeFormatter";
   import consoleInit from "../utils/consoleInit";
+  import { changeVideo } from "../utils/videoManager";
   let videoWrapperWidth = "100%";
   let videoWrapperHeight = "100%";
   let videoWidth = 0;
@@ -55,7 +56,7 @@
       // Then read and set the line
       readLineFromPath();
       if (!$currentLine || !$currentLine.videoUrl) {
-        console.log("no current line");
+        // console.log("no current line");
         return;
       }
       videoIsLoading.set(false);
@@ -66,7 +67,10 @@
   };
 
   $: if ($cookieConsent) {
-    initVideo();
+    (async () => {
+      await initVideo();
+      readLineFromPath();
+    })();
   }
 
   // Set `initialized` to true after `cookieConsent` is set
@@ -94,7 +98,7 @@
           tempLine = lineFromUrl;
           return;
         } else {
-          $currentLine = lineFromUrl;
+          changeVideo(lineFromUrl, false);
         }
       } else {
         console.log("line in url not released or not existant");
@@ -105,7 +109,7 @@
       if (!$cookieConsent) {
         return;
       } else {
-        $currentLine = tempLine;
+        changeVideo(tempLine, false);
       }
     }
   };
@@ -116,7 +120,9 @@
   onMount(() => {
     consoleInit();
     initFinalState();
-    readLineFromPath();
+    if (!$cookieConsent) {
+      readLineFromPath();
+    }
 
     if (showLandingPage) return;
     isDevMode =

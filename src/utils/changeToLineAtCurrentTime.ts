@@ -4,6 +4,7 @@ import {
   timeToSeekAfterVideoLoad,
   vimeoVideoObject
 } from "../store";
+import { changeVideo } from "./videoManager";
 /**
  * Change the current line at a station. This will change the currentTime of the new video after it is loaded to be at the specified station.
  * @param line The line to change to.
@@ -19,6 +20,6 @@ export const changeToLineAtTime = (line: Line | undefined, newTime: number) => {
   }
   else {
     timeToSeekAfterVideoLoad.set(newTime);
-    currentLine.set(line);
+    changeVideo(line);
   }
 };

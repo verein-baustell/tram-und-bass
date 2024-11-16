@@ -57,7 +57,6 @@
               addState();
               await changeVideo(clickedLine);
               $vimeoVideoObject.play();
-              currentLine.set(clickedLine);
               isTopOpen.set(false);
             }}
             lines={$allLines}

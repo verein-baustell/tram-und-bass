@@ -1,7 +1,9 @@
 import { get } from 'svelte/store';
-import { vimeoVideoObjectList, allLines, vimeoVideoObject, videoIsLoading, devToolsState, timeToSeekAfterVideoLoad, videoIsPlaying, currentTime } from '../store';
+import { vimeoVideoObjectList, allLines, vimeoVideoObject, videoIsLoading, devToolsState, timeToSeekAfterVideoLoad, videoIsPlaying, currentTime, currentLine } from '../store';
 import Vimeo from '@vimeo/player';
 import { switchVideoEventListeners, initVideoIframes } from './registerVimeoEventListeners';
+import { goto } from '$app/navigation';
+import changeFaviconToLine from "../utils/changeFaviconToLine";
 
 export async function initVideoManager() {
   const lines = get(allLines);
@@ -43,10 +45,13 @@ export async function initVideoManager() {
   } catch (error) {
     console.error('Error loading videos:', error);
   }
-  videoIsLoading.set(false);
+  // videoIsLoading.set(false);
 }
 
-export async function changeVideo(line: Line) {
+let previousLineId: string | null = null;
+export async function changeVideo(line: Line, isPlay: boolean = true) {
+  videoIsPlaying.set(false);
+  videoIsLoading.set(true);
   if (!line) {
     console.error('No line provided to changeVideo');
     videoIsLoading.set(false);
@@ -59,7 +64,19 @@ export async function changeVideo(line: Line) {
     return;
   }
 
-  videoIsLoading.set(true);
+  if (line.id === previousLineId) {
+    return; // Exit if the line ID has not changed
+  }
+  previousLineId = line.id ?? null;
+  // console.log("🎥 changing video to", line.id);
+  currentLine.set(line);
+
+  // Update URL and favicon
+  const url = new URL(window.location.href);
+  url.searchParams.set("line", line.id);
+  goto(url.toString(), { replaceState: true });
+  changeFaviconToLine(line);
+
   const videoObjects = get(vimeoVideoObjectList);
   const videoObject = videoObjects.find(obj => obj.id === line.id);
   
@@ -83,12 +100,6 @@ export async function changeVideo(line: Line) {
     await currentVideo.pause();
   }
 
-  // Show the new video's iframe
-  const newIframe = document.querySelector(`#video-${line.id}`);
-  if (newIframe instanceof HTMLElement) {
-    newIframe.classList.add("activeVideo")
-  }
-
   // Update the vimeoVideoObject store and switch event listeners
   vimeoVideoObject.set(videoObject.player);
   await switchVideoEventListeners(currentVideo, videoObject.player);
@@ -96,14 +107,15 @@ export async function changeVideo(line: Line) {
   // Wait for the video to be ready
   await videoObject.player.ready();
   const seekVideoAfterLoad = async (vimeoObject: Vimeo) => {
+    // console.log("🎥 seeking video after load", get(timeToSeekAfterVideoLoad));
     const timeToSeekTo = get(timeToSeekAfterVideoLoad) + 0.1;
     if (timeToSeekTo !== undefined && timeToSeekTo !== null) {
       try {
-        console.log("🎥 timeToSeekTo hello", timeToSeekTo);
+        // console.log("🎥 timeToSeekTo hello", timeToSeekTo);
         // Wait for video to be loaded
         // await vimeoObject.ready();
         await vimeoObject.setCurrentTime(timeToSeekTo);
-        console.log("🎥 video seeked to", timeToSeekTo);
+        // console.log("🎥 video seeked to", timeToSeekTo);
         timeToSeekAfterVideoLoad.set(0);
       } catch (error) {
         console.error("🎥 Error seeking video:", error);
@@ -111,20 +123,27 @@ export async function changeVideo(line: Line) {
     }
   };
   seekVideoAfterLoad(videoObject.player).then(() => {
-   
-      console.log("🎥 playing video NOT! heheh");
+    // console.log("🎥 playing video NOT! heheh");
+    if (isPlay) {
       videoObject.player
         .play()
         .then(() => {
-          console.log("🎥 Video is playing");
-          videoIsLoading.set(false);
+          // console.log("🎥 Video is playing");
+          videoIsPlaying.set(true);
         })
         .catch((error) => {
           console.error("🎥 Video play error", error);
-          videoIsLoading.set(false);
-          videoIsPlaying.set(false);
-          currentTime.set(0);
         });
+    }
   });
-  videoIsLoading.set(false);
+
+  // Show the new video's iframe
+  const newIframe = document.querySelector(`#video-${line.id}`);
+  if (newIframe instanceof HTMLElement) {
+    newIframe.classList.add("activeVideo")
+  }
+
+  setTimeout(() => {
+    videoIsLoading.set(false);
+  }, 1000);
 }

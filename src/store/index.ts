@@ -1,9 +1,6 @@
 import { derived, get, writable, type Readable } from "svelte/store";
 import { attributes as content } from "../content/lines.md";
 import { hmsToSeconds } from "../utils/timeFormatter";
-import { goto } from "$app/navigation";
-import changeFaviconToLine from "../utils/changeFaviconToLine";
-import { changeVideo } from '../utils/videoManager';
 const lines = content.lines;
 
 // dev tools delete for production
@@ -53,39 +50,7 @@ export const currentLine = writable<Line | undefined>();
 // update query params when currentLine changes
 export const currentTime = writable<number>(0);
 
-let previousLineId: string | null = null;
-let executionCount = 0;
 export const timeToSeekAfterVideoLoad = writable<number>(0);
-currentLine.subscribe((value) => {
-  executionCount++;
-  console.log(`🔄 Current line subscription executed ${executionCount} times`);
-  console.log("🔄 Current line value:", value);
-
-  if (!value) return; // Exit early if value is undefined
-
-  if (value.id === previousLineId) {
-    return; // Exit if the line ID has not changed
-  }
-  previousLineId = value.id ?? null;
-  
-  if (typeof window !== "undefined") {
-    videoIsPlaying.set(false);
-
-    // Update URL and favicon
-    const url = new URL(window.location.href);
-    url.searchParams.set("line", value.id);
-    goto(url.toString(), { replaceState: true });
-    changeFaviconToLine(value);
-
-    // Use the async changeVideo function
-    
-    const vimeoPlayer = get(vimeoVideoObject);
-    if (vimeoPlayer) {
-      console.log("🎥 seeking video after load");
-    
-    }
-  }
-});
 
 let lastPreviousStation: TimeStamp | undefined;
 export const previousStation = derived(
@@ -141,7 +106,7 @@ export const currentStation: Readable<TimeStamp | undefined> = derived(
             return;
           }
           if (newStation !== $lastCurrentStation) {
-            console.log("🚉 new station", newStation, $lastCurrentStation);
+            // console.log("🚉 new station", newStation, $lastCurrentStation);
             set(newStation);
             lastCurrentStation.set(newStation);
           }

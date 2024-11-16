@@ -13,7 +13,7 @@
 
 <div class="con">
   {#if ($currentTime == 0 && !$videoIsPlaying) || $videoIsLoading}
-    <div transition:fade={{ delay: 250, duration: 300 }}>
+    <div out:fade={{ delay: 250, duration: 300 }}>
       <img
         {style}
         id="gif"
