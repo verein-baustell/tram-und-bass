@@ -105,7 +105,7 @@ export const currentStation: Readable<TimeStamp | undefined> = derived(
             set(undefined);
             return;
           }
-          if (newStation !== $lastCurrentStation) {
+          if (newStation) {
             // console.log("🚉 new station", newStation, $lastCurrentStation);
             set(newStation);
             lastCurrentStation.set(newStation);
