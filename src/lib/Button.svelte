@@ -19,25 +19,27 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     text-align: center;
+    min-height: 40px;
   }
 
   button:first-child {
     margin: 0.12em 0.12em 0.12em 0.12em;
   }
 
-  :hover{
+  :hover {
     background: var(--hover-color);
     transition: var(--transition);
-    //background-image: url("/images/patternDots.png");
     background-size: 2em;
 
-    &.isInverted-false{
-    background-color: rgba(0,0,0,0.3);
-  }
+    &.isInverted-false {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    &.isSeven {
+      background-color: #545454;
+    }
   }
 
   .active {
-    /* TODO: replace the colors with variables */
     background-color: var(--foreground-color);
     color: var(--background-color);
 
@@ -45,10 +47,68 @@
       background-color: var(--background-color);
       color: var(--foreground-color);
     }
+    &.isInverted-true {
+      background-color: black;
+      color: var(--foreground-color);
+    }
   }
   .isInverted-false {
-    /* filter: invert(1); */
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     color: var(--background-color);
+  }
+
+  .isInverted-true {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: black;
+  }
+  .isSeven {
+    background-color: #222222;
+  }
+
+  .btnLine {
+    width: 100%;
+    margin: 0em 0.12em 0em 0em !important;
+  }
+
+  .btnTiny {
+    width: inherit !important;
+    &--margin {
+      margin: 0 1.5px 0 0;
+    }
+  }
+
+  .btnStation {
+    width: 92px;
+    margin: 0em 0.12em 0em 0em !important;
+  }
+
+  .btnArtist {
+    width: 100%;
+    max-width: 100%;
+    margin: 0em 0.03em 0em 0em !important;
+    overflow: hidden;
+    text-overflow: clip !important;
+  }
+
+  .btnClose {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0em !important;
+    margin: 0em var(--padding-l) 0em var(--padding-l) !important;
+    width: 24px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .btnClose {
+      display: flex;
+    }
+    .btnArtist {
+      max-width: calc(100% - 130px);
+    }
+    .btnLine {
+      width: 100%;
+      margin: 0em 0em 0em 0em !important;
+    }
   }
 </style>

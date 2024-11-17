@@ -1,45 +1,113 @@
 <script lang="ts">
-  import { currentLine, currentTime } from "../store";
+  import {
+    currentLine,
+    currentStation,
+    isWider,
+    previousStation,
+    vimeoVideoObject,
+  } from "../store";
   import { hmsToSeconds } from "../utils/timeFormatter";
   import Circle from "./Circle.svelte";
+
+  $: stationProgressIndex = $currentLine?.timeStamps?.findIndex(
+    (station) =>
+      station.name === ($currentStation?.name ?? $previousStation?.name)
+  );
 </script>
 
-<div id="station-list" class="view bottom-view">
-  <ol>
-    {#each $currentLine.timeStamps as station}
-      <li><Circle isFilled={hmsToSeconds(station.endTime) < $currentTime} />{station.name}</li>
-    {/each}
-  </ol>
-  <div id="stations-line"></div>
+<div
+  id="station-list"
+  class="view detailed-view {!$isWider ? 'detailed-view--right' : ''}"
+>
+  {#if $currentLine?.timeStamps}
+    <ol>
+      <div class="progress-line" />
+      <div
+        class="progress-line line-fill"
+        style={`height: ${(stationProgressIndex ?? 0) * 32}px`}
+      />
+      {#each $currentLine.timeStamps as station, index}
+        <li
+          class={$currentStation && $currentStation.name === station.name
+            ? "active"
+            : ""}
+        >
+          <button
+            on:click={() =>
+              $vimeoVideoObject.setCurrentTime(hmsToSeconds(station.startTime))}
+          >
+            <Circle
+              isFilled={stationProgressIndex !== undefined &&
+                !($currentStation?.name === station.name) &&
+                index <= stationProgressIndex}
+            />
+            {station.name}
+          </button>
+        </li>
+      {/each}
+    </ol>
+  {:else}
+    <div class="error-message">keine Stationen gefunden :(</div>
+  {/if}
 </div>
 
-<style lang="scss">
+<style lang="scss" scoped>
+  .error-message {
+    display: grid;
+    place-items: center;
+  }
+
+  .progress-line {
+    height: calc(100% - 2em);
+    width: 1px;
+    position: absolute;
+    left: calc(var(--distance-to-left-edge) + var(--circle-size) * 0.5);
+    transform: translate(-50%, 0);
+    top: 1em;
+    bottom: 1em;
+    background: currentColor;
+  }
+  .line-fill {
+    width: 2px;
+    transition: height 0.3s ease-in-out;
+  }
   #station-list {
     --distance-to-left-edge: 0.5em;
-    position: relative;
-    max-height: calc(100vh - 24em);
-    overflow: scroll;
-    #stations-line {
-      position: absolute;
-      top: 0;
-      left: calc(var(--distance-to-left-edge) + 0.25em);
-      width: 1px;
-      height: 100%;
-      background: var(--foreground-color);
-      transform: translate(-50%, 0);
-    }
+    --circle-size: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
     background: var(--background-color);
-    ol {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
+  }
+  :global(li.active) {
+    font-weight: bold;
+    :global(.circle) {
+      outline: 1px solid currentColor;
     }
-    li {
-      padding: 0em var(--distance-to-left-edge);
-      border-radius: 0.5em;
+  }
+  ol {
+    position: relative;
+  }
+  li {
+    padding: 0em var(--distance-to-left-edge);
+    button {
+      // reset button styles
+      border: none;
+      background: none;
+      padding: 0;
       display: flex;
       align-items: center;
       gap: 0.5em;
+      height: 32px;
+      cursor: pointer;
+      color: inherit;
+      @media (hover: hover) {
+        &:hover {
+          font-weight: bold;
+          :global(.circle) {
+            scale: 1.5;
+          }
+        }
+      }
     }
   }
 </style>

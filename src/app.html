@@ -3,9 +3,7 @@
 
 <head>
 	<meta charset="utf-8" />
-	<link rel="apple-touch-icon" sizes="180x180" href="%sveltekit.assets%/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="%sveltekit.assets%/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="%sveltekit.assets%/favicons/favicon-16x16.png">
+	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	%sveltekit.head%
 </head>
@@ -39,20 +37,51 @@
 	4. Improve text rendering
 	*/
 
-	html {
-		overflow: hidden;
-		scrollbar-width: 0px;
-	}
-
 	body {
-		overflow: hidden;
-		scrollbar-width: 0px;
 		line-height: 1.5;
 		font-size: 16px;
 		background-color: black;
 		-webkit-font-smoothing: antialiased;
 		margin: 0px;
 		font-family: Holo, Helvetica Neue, Helvetica, Arial, sans-serif;
+		--scrollbar-color-thumb: hsla(0, 0%, 50%, 0.2);
+		--scrollbar-color-track: transparent;
+		--scrollbar-width: 2px;
+		--scrollbar-width-legacy: 5px;
+		/* Modern browsers with `scrollbar-*` support */
+		@supports (scrollbar-width: auto) {
+
+			scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
+			scrollbar-width: var(--scrollbar-width);
+
+		}
+
+		/* Legacy browsers with `::-webkit-scrollbar-*` support */
+		@supports selector(::-webkit-scrollbar) {
+			::-webkit-scrollbar {
+				width: var(--scrollbar-width-legacy);
+				height: var(--scrollbar-width-legacy);
+				position: absolute;
+				
+			}
+
+			::-webkit-scrollbar-thumb {
+				background: var(--scrollbar-color-thumb);
+				border-radius: 100vw;
+				background-clip: padding-box;
+			}
+
+			::-webkit-scrollbar-track {
+				margin: .25em 0;
+				background: transparent;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 300px) {
+		body {
+			font-size: 14px;
+		}
 	}
 
 	.mono-font {
@@ -105,35 +134,5 @@
 	a {
 		text-decoration: none;
 		color: inherit;
-	}
-
-	.view {
-		padding: var(--padding-m);
-		background: var(--background-color);
-		border-radius: var(--border-radius-view);
-		margin-top: var(--padding-m);
-		margin-bottom: var(--padding-m);
-		border: var(--padding-s) var(--background-color-light) solid;
-	}
-
-	.top-view {
-		max-width: 44vw;
-		min-width: 33vw;
-		max-height: calc(100vh - 24em);
-		overflow: scroll;
-	}
-
-	.bottom-view {
-		max-width: 44vw;
-		min-width: 33vw;
-		max-height: calc(100vh - 24em);
-		overflow: scroll;
-	}
-
-	@media only screen and (max-width: 600px) {
-		.top-view {
-			min-width: fit-content;
-			max-width: 100vw;
-		}
 	}
 </style>

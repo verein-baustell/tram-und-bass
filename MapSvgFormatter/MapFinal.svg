@@ -285,7 +285,7 @@
 <rect id="grimselstrasse" x="512" y="1300" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="goldbrunnenpplatz" x="740" y="1740" width="16" height="32" rx="8" fill="white" stroke="black" stroke-width="6"/>
 <rect id="glattwiesen" x="-3" y="3" width="16" height="16" rx="8" transform="matrix(1 0 0 -1 2027 911)" fill="white" stroke="black" stroke-width="6"/>
-<rect id="glatt(tram)" x="-3" y="3" width="16" height="16" rx="8" transform="matrix(1 0 0 -1 2303 755)" fill="white" stroke="black" stroke-width="6"/>
+<rect id="glatt" x="-3" y="3" width="16" height="16" rx="8" transform="matrix(1 0 0 -1 2303 755)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="glattbruggbahnhof" x="1839.76" y="271.902" width="34" height="16" rx="8" transform="rotate(-45 1839.76 271.902)" fill="white" stroke="black" stroke-width="6"/>
 <rect id="geissweid" x="204" y="900" width="16" height="16" rx="8" fill="black" stroke="black" stroke-width="6"/>
 <rect id="gasometerbr&#195;&#188;cke" x="316" y="972" width="16" height="16" rx="8" fill="white" stroke="black" stroke-width="6"/>

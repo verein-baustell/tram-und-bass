@@ -1,0 +1,98 @@
+{
+    "Bahnhofquai/HB": {
+        "lat": 47.3776103,
+        "lng": 8.5417702
+    },
+    "Messe/Hallenstadion": {
+        "lat": 47.410926,
+        "lng": 8.5510379
+    },
+    "Bahnhofstrasse/HB": {
+        "lat": 47.3759151,
+        "lng": 8.5393345
+    },
+    "ETH/Universitätsspital": {
+        "lat": 47.377863,
+        "lng": 8.5481709
+    },
+    "Sihlquai/HB": {
+        "lat": 47.3797805,
+        "lng": 8.537427
+    },
+    "Bahnhof Glattbrugg": {
+        "lat": 47.4304411,
+        "lng": 8.5594602
+    },
+    "Bahnhof Wallisellen": {
+        "lat": 47.4124954,
+        "lng": 8.5927053
+    },
+    "Bahnhof Balsberg": {
+        "lat": 47.4416681,
+        "lng": 8.568704
+    },
+    "Sihlpost/HB": {
+        "lat": 47.376031,
+        "lng": 8.5339807
+    },
+    "Kalkbreite/Bhf. Wiedikon": {
+        "lat": 47.3744949,
+        "lng": 8.5212348
+    },
+    "Renggerstrasse": {
+        "lat": 47.3448369,
+        "lng": 8.5333574
+    },
+    "Kesslerplatz": {
+        "lat": 47.39652,
+        "lng": 8.4385753
+    },
+    "Brunnenhof": {
+        "lat": 47.4019653,
+        "lng": 8.5349257
+    },
+    "Bahnhofplatz/HB": {
+        "lat": 47.3773114,
+        "lng": 8.5391199
+    },
+    "Bahnhof Enge/Bederstrasse": {
+        "lat": 47.3645298,
+        "lng": 8.5302408
+    },
+    "Bahnhof Wollishofen/Staubstrasse": {
+        "lat": 47.3468565,
+        "lng": 8.5329137
+    },
+    "Schlieren Zentrum/Bahnhof": {
+        "lat": 47.3979139,
+        "lng": 8.4482545
+    },
+    "Urdorf Nord": {
+        "lat": 47.3935153,
+        "lng": 8.4178468
+    },
+    "Spital Limmattal": {
+        "lat": 47.3942375,
+        "lng": 8.428339
+    },
+    "Kantiallee": {
+        "lat": 47.3937999,
+        "lng": 8.4236082
+    },
+    "Bahnhof Altstetten": {
+        "lat": 47.3911078,
+        "lng": 8.4879149
+    },
+    "Seidelhof": {
+        "lat": 47.3919462,
+        "lng": 8.4837101
+    },
+    "Reitmen": {
+        "lat": 47.3971507,
+        "lng": 8.4304407
+    },
+    "Birmensdorferstrasse": {
+        "lat": 47.3979545,
+        "lng": 8.4175444
+    }
+}
