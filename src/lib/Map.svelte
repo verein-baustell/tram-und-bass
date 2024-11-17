@@ -374,7 +374,6 @@
       .attr("class", "station");
   };
   const highlightCurrentStation = (newStation: string) => {
-    showLineList = true;
     resetHighlightedStations();
 
     const currentStationName = stationNameToId(newStation);
@@ -483,7 +482,6 @@
 
   currentStation.subscribe((newStation) => {
     if (newStation?.name && !selectedStationId) {
-      showLineList = true;
       highlightCurrentStation(newStation.name);
     }
   });
