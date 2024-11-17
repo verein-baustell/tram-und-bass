@@ -4,7 +4,7 @@
   import LineNumber from "./LineNumber.svelte";
   import { vimeoVideoObject, cookieConsent, videoIsLoading } from "../store";
   import { giveConsent } from "../utils/cookieManager";
-  export let line: Line;
+  export let line: Line | undefined;
 
   // Wait for $vimeoVideoObject to be defined
   async function waitForVimeoVideoObject() {
@@ -65,7 +65,7 @@
       alt="Tram und Bass"
     />
 
-    {#if !$cookieConsent}
+    {#if !$cookieConsent && line}
       <div class="view view--flex">
         <p class="titles">Cookies</p>
         <p>
