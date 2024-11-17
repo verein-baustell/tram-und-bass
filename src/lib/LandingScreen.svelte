@@ -73,12 +73,12 @@
   <div class="links view">
     <p class="center title">Links</p>
     <div class="abc">
-      <button class="center" type="button" onClick="location.href='https://www.instagram.com/tramundbass/'" formtarget="_blank">
+      <button class="center" type="button" formtarget="_blank">
         Instagram
       </button>
     </div>
     <div class="abc">
-      <button class="center" type="button" onClick="location.href='https://eventfrog.ch/en/p/party/house-techno/tram-und-bass-release-7253437853551507373.html'" formtarget="_blank">
+      <button class="center" type="button"  formtarget="_blank">
         Tickets - Release 15.11.2024 im Dynamo
       </button>
     </div>

@@ -12,7 +12,7 @@
     vimeoVideoObject,
     allLines,
   } from "../store";
-  import DevTools from "$lib/DevTools.svelte";
+  // import DevTools from "$lib/DevTools.svelte";
   import registerVimeoEventListeners from "../utils/registerVimeoEventListeners";
   import SplashScreen from "$lib/SplashScreen.svelte";
   let videoWrapperWidth = "100%";
@@ -23,7 +23,7 @@
   $currentLine = $allLines[0];
 
   const today = new Date();
-  const releaseDate = new Date("2024-11-17T06:00:00");
+  const releaseDate = new Date("2024-11-18T06:00:00");
   const showLandingPage = today <= releaseDate;
   onMount(() => {
     if (showLandingPage) return;
@@ -74,8 +74,6 @@
     <SplashScreen onClick={() => (showSplashScreen = false)} />
   {/if}
   <VideoControls />
-  {#if isDevMode}
-    <DevTools />{/if}
   {#if !$isImmersive}
     <TopMenu aboutContent={"aboutContent"} />
     <BottomMenu />
