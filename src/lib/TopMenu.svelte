@@ -55,9 +55,9 @@
             this={currentComponent}
             onClick={async (clickedLine) => {
               addState();
-              await changeVideo(clickedLine);
-              $vimeoVideoObject.play();
               isTopOpen.set(false);
+              await changeVideo(clickedLine);
+              console.log("🎥 changed video");
             }}
             lines={$allLines}
             {aboutContent}

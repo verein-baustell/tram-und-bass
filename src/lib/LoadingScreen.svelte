@@ -29,7 +29,7 @@
 
   {#if $videoIsLoading}
     <div
-      transition:scale={{ duration: 400, delay: 200, opacity: 0.0, start: 0.2 }}
+      transition:scale={{ duration: 400, delay: 500, opacity: 0.0, start: 0.2 }}
     >
       <img
         class="logo bounce"

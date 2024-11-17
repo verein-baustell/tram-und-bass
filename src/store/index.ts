@@ -191,3 +191,5 @@ history.subscribe((value) => {
     ? localStorage.setItem(historyKey, JSON.stringify(value))
     : "[]";
 });
+
+export const changeVideoInProgress = writable<boolean>(false);

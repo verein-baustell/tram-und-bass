@@ -1,5 +1,5 @@
 import { get } from 'svelte/store';
-import { vimeoVideoObjectList, allLines, vimeoVideoObject, videoIsLoading, devToolsState, timeToSeekAfterVideoLoad, videoIsPlaying, currentTime, currentLine } from '../store';
+import { vimeoVideoObjectList, allLines, vimeoVideoObject, videoIsLoading, devToolsState, timeToSeekAfterVideoLoad, videoIsPlaying, currentTime, currentLine, changeVideoInProgress } from '../store';
 import Vimeo from '@vimeo/player';
 import { switchVideoEventListeners, initVideoIframes } from './registerVimeoEventListeners';
 import { goto } from '$app/navigation';
@@ -50,100 +50,106 @@ export async function initVideoManager() {
 
 let previousLineId: string | null = null;
 export async function changeVideo(line: Line, isPlay: boolean = true) {
-  videoIsPlaying.set(false);
-  videoIsLoading.set(true);
-  if (!line) {
-    console.error('No line provided to changeVideo');
-    videoIsLoading.set(false);
-    return;
-  }
+  try {
+    videoIsPlaying.set(false);
+    videoIsLoading.set(true);
+    changeVideoInProgress.set(true);
+    
+    if (!line) {
+      throw new Error('No line provided to changeVideo');
+    }
 
-  if (!line.isReleased || !line.videoUrl) {
-    console.warn(`Cannot change to video for line ${line.id}: ${!line.isReleased ? 'not released' : 'no video URL'}`);
-    videoIsLoading.set(false);
-    return;
-  }
+    if (!line.isReleased || !line.videoUrl) {
+      throw new Error(`Cannot change to video for line ${line.id}: ${!line.isReleased ? 'not released' : 'no video URL'}`);
+    }
 
-  if (line.id === previousLineId) {
-    return; // Exit if the line ID has not changed
-  }
-  previousLineId = line.id ?? null;
-  // console.log("🎥 changing video to", line.id);
-  currentLine.set(line);
+    if (line.id === previousLineId) {
+      videoIsLoading.set(false);
+      changeVideoInProgress.set(false);
+      return;
+    }
+    
+    previousLineId = line.id ?? null;
+    currentLine.set(line);
 
-  // Update URL and favicon
-  const url = new URL(window.location.href);
-  url.searchParams.set("line", line.id);
-  goto(url.toString(), { replaceState: true });
-  changeFaviconToLine(line);
+    // Update URL and favicon
+    const url = new URL(window.location.href);
+    url.searchParams.set("line", line.id);
+    goto(url.toString(), { replaceState: true });
+    changeFaviconToLine(line);
 
-  const videoObjects = get(vimeoVideoObjectList);
-  const videoObject = videoObjects.find(obj => obj.id === line.id);
-  
-  if (!videoObject) {
-    console.error(`No video object found for line ${line.id}. Available videos: ${videoObjects.map(v => v.id).join(', ')}`);
-    videoIsLoading.set(false);
-    return;
-  }
+    const videoObjects = get(vimeoVideoObjectList);
+    const videoObject = videoObjects.find(obj => obj.id === line.id);
+    
+    if (!videoObject) {
+      throw new Error(`No video object found for line ${line.id}`);
+    }
 
-  // Get current video object from store
-  const currentVideo = get(vimeoVideoObject);
-  if (currentVideo) {
-    // Hide the current video's iframe using its ID from the store
-    const currentVideoId = videoObjects.find(obj => obj.player === currentVideo)?.id;
-    if (currentVideoId) {
-      const currentIframe = document.querySelector(`#video-${currentVideoId}`);
-      if (currentIframe instanceof HTMLElement) {
-        currentIframe.classList.remove("activeVideo")
+    // Get current video object from store
+    const currentVideo = get(vimeoVideoObject);
+    if (currentVideo) {
+      try {
+        const currentVideoId = videoObjects.find(obj => obj.player === currentVideo)?.id;
+        if (currentVideoId) {
+          const currentIframe = document.querySelector(`#video-${currentVideoId}`);
+          if (currentIframe instanceof HTMLElement) {
+            currentIframe.classList.remove("activeVideo");
+          }
+        }
+        await currentVideo.pause();
+        await new Promise(resolve => setTimeout(resolve, 100)); // Small delay after pause
+      } catch (error) {
+        console.warn('Error while pausing current video:', error);
       }
     }
-    await currentVideo.pause();
-  }
 
-  // Update the vimeoVideoObject store and switch event listeners
-  vimeoVideoObject.set(videoObject.player);
-  await switchVideoEventListeners(currentVideo, videoObject.player);
-  
-  // Wait for the video to be ready
-  await videoObject.player.ready();
-  const seekVideoAfterLoad = async (vimeoObject: Vimeo) => {
-    // console.log("🎥 seeking video after load", get(timeToSeekAfterVideoLoad));
+    // Update the vimeoVideoObject store and switch event listeners
+    vimeoVideoObject.set(videoObject.player);
+    await videoObject.player.ready(); // Ensure new player is ready
+    await switchVideoEventListeners(currentVideo, videoObject.player);
+
+    // Play the video if requested
+    if (isPlay) {
+      await videoObject.player.setMuted(true);
+      await videoObject.player.play().catch(console.warn);
+    }
+
+    await seekVideoAfterLoad(videoObject.player);
+    
+    // Show the new video's iframe
+    const newIframe = document.querySelector(`#video-${line.id}`);
+    if (newIframe instanceof HTMLElement) {
+      newIframe.classList.add("activeVideo");
+    }
+    
+    videoObject.player.setMuted(false);
+  } catch (error) {
+    console.error('Error during video change:', error);
+  } finally {
+    videoIsLoading.set(false);
+    changeVideoInProgress.set(false);
+  }
+}
+
+const seekVideoAfterLoad = async (vimeoObject: Vimeo) => {
+  try {
+    await vimeoObject.ready();
+    // Add a delay to ensure player is fully initialized
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
     const timeToSeekTo = get(timeToSeekAfterVideoLoad) + 0.1;
     if (timeToSeekTo !== undefined && timeToSeekTo !== null) {
-      try {
-        // console.log("🎥 timeToSeekTo hello", timeToSeekTo);
-        // Wait for video to be loaded
-        // await vimeoObject.ready();
-        await vimeoObject.setCurrentTime(timeToSeekTo);
-        // console.log("🎥 video seeked to", timeToSeekTo);
-        timeToSeekAfterVideoLoad.set(0);
-      } catch (error) {
-        console.error("🎥 Error seeking video:", error);
-      }
+      await Promise.race([
+        vimeoObject.setCurrentTime(timeToSeekTo),
+        new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Seek timeout')), 5000)
+        )
+      ]);
+      timeToSeekAfterVideoLoad.set(0);
     }
-  };
-  seekVideoAfterLoad(videoObject.player).then(() => {
-    // console.log("🎥 playing video NOT! heheh");
-    if (isPlay) {
-      videoObject.player
-        .play()
-        .then(() => {
-          // console.log("🎥 Video is playing");
-          videoIsPlaying.set(true);
-        })
-        .catch((error) => {
-          console.error("🎥 Video play error", error);
-        });
-    }
-  });
-
-  // Show the new video's iframe
-  const newIframe = document.querySelector(`#video-${line.id}`);
-  if (newIframe instanceof HTMLElement) {
-    newIframe.classList.add("activeVideo")
+    return true;
+  } catch (error) {
+    console.error("🎥 Error seeking video:", error);
+    return false;
   }
-
-  setTimeout(() => {
-    videoIsLoading.set(false);
-  }, 1000);
-}
+};

@@ -6,7 +6,8 @@ import {
   videoIsLoading,
   allLines,
   currentLine,
-  vimeoVideoObjectList
+  vimeoVideoObjectList,
+  changeVideoInProgress
 } from "../store";
 import { changeVideo } from "./videoManager";
 
@@ -26,9 +27,12 @@ export function initVideoIframes(): Promise<void> {
           iframe.setAttribute('allow', newAllow);
         }
         
-        player.on('loaded', () => {
+        const handleLoaded = () => {
+          player.off('loaded', handleLoaded);
           resolve();
-        });
+        };
+        
+        player.on('loaded', handleLoaded);
       });
     });
   });
@@ -60,10 +64,12 @@ export async function registerEventListeners(player: Vimeo) {
       videoIsLoading.set(true);
     }),
     player.on("bufferend", (e) => {
-      console.log("loading end", e);
-      setTimeout(() => {
-        videoIsLoading.set(false);
-      }, 500);
+      if (!get(changeVideoInProgress)) {
+        console.log("loading end", e);
+        setTimeout(() => {
+          videoIsLoading.set(false);
+        }, 500);
+      }
     }),
     player.on("playing", (e) => {
       console.log("playing", e);
