@@ -109,7 +109,6 @@
         const intersects = raycaster.intersectObject(model, true); // Check all descendant objects
 
         if (intersects.length > 0) {
-          console.log("Model clicked:", intersects[0]);
           // Handle the click event here (e.g., trigger animations, etc.)
           $vimeoVideoObject.play();
         }

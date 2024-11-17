@@ -9,7 +9,6 @@
   // Wait for $vimeoVideoObject to be defined
   async function waitForVimeoVideoObject() {
     while (!$vimeoVideoObject) {
-      console.log($vimeoVideoObject);
       await tick(); // Wait for the next DOM update
     }
   }
