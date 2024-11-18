@@ -7,6 +7,7 @@
     isBtmOpen,
     isTopOpen,
     isWider,
+    changeVideoInProgress,
   } from "../store";
   import LineNumber from "./LineNumber.svelte";
   import ChangeLineList from "./ChangeLineList.svelte";
@@ -81,7 +82,7 @@
         isBtmOpen.set(false);
       }}
     >
-      {#if $isBtmOpen}
+      {#if $isBtmOpen && !$changeVideoInProgress}
         <svelte:component this={currentComponent} />
       {/if}
       <nav style:background-color={$currentLine?.color}>
