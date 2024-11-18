@@ -57,7 +57,7 @@
               addState();
               isTopOpen.set(false);
               await changeVideo(clickedLine);
-              console.log("🎥 changed video");
+              // console.log("🎥 changed video");
             }}
             lines={$allLines}
             {aboutContent}

@@ -108,7 +108,7 @@ export const currentStation: Readable<TimeStamp | undefined> = derived(
             return;
           }
           if (newStation !== $lastCurrentStation && !$changeVideoInProgress) {
-            console.log("🚉 setting new station", newStation, $lastCurrentStation);
+            // console.log("🚉 setting new station", newStation, $lastCurrentStation);
             set(newStation);
             lastCurrentStation.set(newStation);
           }

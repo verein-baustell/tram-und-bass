@@ -30,6 +30,7 @@ export async function initVideoManager() {
               autopause: false,
               loop: false,
               autoplay: false,
+              // qualityRequest: '360p'
             }),
           };
         } catch (error) {
