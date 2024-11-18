@@ -47,6 +47,7 @@ lines.forEach((line) => {
 
 export const allLines = writable<Line[]>(lines);
 export const currentLine = writable<Line | undefined>();
+
 // update query params when currentLine changes
 export const currentTime = writable<number>(0);
 
@@ -77,12 +78,13 @@ function getVimeoVideoId(videoUrl: string): number | null {
   return match ? +match[1] : null;
 }
 const lastCurrentStation = writable<TimeStamp>();
+export const changeVideoInProgress = writable<boolean>(false);
 /**
  * If we are not at a station, this will be undefined.
  */
 export const currentStation: Readable<TimeStamp | undefined> = derived(
-  [currentTime, currentLine, lastCurrentStation],
-  ([$currentTime, $currentLine, $lastCurrentStation], set) => {
+  [currentTime, currentLine, lastCurrentStation, changeVideoInProgress],
+  ([$currentTime, $currentLine, $lastCurrentStation, $changeVideoInProgress], set) => {
     vimeoVideoObject &&
       get(vimeoVideoObject)
         ?.getVideoId()
@@ -105,8 +107,8 @@ export const currentStation: Readable<TimeStamp | undefined> = derived(
             set(undefined);
             return;
           }
-          if (newStation) {
-            // console.log("🚉 new station", newStation, $lastCurrentStation);
+          if (newStation !== $lastCurrentStation && !$changeVideoInProgress) {
+            console.log("🚉 setting new station", newStation, $lastCurrentStation);
             set(newStation);
             lastCurrentStation.set(newStation);
           }
@@ -191,5 +193,3 @@ history.subscribe((value) => {
     ? localStorage.setItem(historyKey, JSON.stringify(value))
     : "[]";
 });
-
-export const changeVideoInProgress = writable<boolean>(false);
