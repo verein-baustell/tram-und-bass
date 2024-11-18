@@ -66,10 +66,13 @@
     }
   };
 
-  $: if ($cookieConsent) {
+  $: if (initialized) {
     (async () => {
-      await initVideo();
-      readLineFromPath();
+      if ($cookieConsent) {
+        await initVideo();
+      } else {
+        readLineFromPath();
+      }
     })();
   }
 
@@ -84,7 +87,6 @@
   }
 
   const readLineFromPath = () => {
-    // leave line parameter in url if no cookie is set
     const url = new URL(window.location.href);
     const lineIdFromUrl = url.searchParams.get("line");
     if (lineIdFromUrl) {
@@ -92,23 +94,23 @@
         compareStationNames(line.id, lineIdFromUrl)
       );
       if (lineFromUrl && lineFromUrl.isReleased) {
-        // set the line
         tempLine = lineFromUrl;
-        if (!$cookieConsent) {
-          tempLine = lineFromUrl;
-          return;
-        } else {
+        if ($cookieConsent) {
           changeVideo(lineFromUrl, false);
         }
       } else {
-        console.log("line in url not released or not existant");
-        url.searchParams.delete("line");
+        console.log(
+          "Line in URL not released or non-existent, falling back to random line"
+        );
+        // Set URL to random line
+        url.searchParams.set("line", tempLine.id);
         goto(url.toString(), { replaceState: true });
+        if ($cookieConsent) {
+          changeVideo(tempLine, false);
+        }
       }
     } else {
-      if (!$cookieConsent) {
-        return;
-      } else {
+      if ($cookieConsent) {
         changeVideo(tempLine, false);
       }
     }
@@ -120,19 +122,13 @@
   onMount(() => {
     consoleInit();
     initFinalState();
-    if (!$cookieConsent) {
-      readLineFromPath();
-    }
 
     if (showLandingPage) return;
+
     isDevMode =
       window.location.hostname === "localhost" ||
       localStorage.getItem("devMode") === "true";
-    initFinalState();
-    if (!$cookieConsent) {
-      readLineFromPath();
-    }
-    if (showLandingPage) return;
+
     // @ts-ignore
     window.devMode = () => {
       isDevMode = true;
