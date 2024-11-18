@@ -19,7 +19,7 @@ lines:
 
       [Instagram @violazimmermann](<https://www.instagram.com/violazimmermann/ >)
     videoUrl: https://player.vimeo.com/video/950558411?h=452ef92b18
-    releaseDate: 2024-11-18T04:59:00.000Z
+    releaseDate: 2024-11-18T03:59:00.000Z
     id: ""
     timeStamps:
       - name: Geissweid
