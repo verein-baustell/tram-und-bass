@@ -214,9 +214,6 @@
   <meta name="description" content="Tram und Bass - 30 Artists 30 Tramlinien. ">
   <meta name="keywords" content="Tram und Bass, Tram, Bass, Zürich, VBZ, elektronische Musik">
 </svelte:head>
-{#if showLandingPage}
-  <LandingScreen />
-{:else}
   <div
     id="video-container"
     class={$videoIsLoading ? "" : "isLoading"}
@@ -239,7 +236,6 @@
     <TopMenu aboutContent={aboutContent?.aboutText ?? ""} />
     <BottomMenu />
   {/if}
-{/if}
 
 <style lang="scss">
   :root {
