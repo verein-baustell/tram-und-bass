@@ -30,7 +30,6 @@ export default () => {
   vimeo.on("bufferstart", (e) => {
     console.log("loading start", e);
     videoIsLoading.set(true);
-    isPlayButtonOn.set(false);
   });
   // Detect when buffering ends (video is ready to play)
   vimeo.on("bufferend", (e) => {
