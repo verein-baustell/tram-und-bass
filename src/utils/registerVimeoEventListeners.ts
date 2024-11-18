@@ -28,12 +28,10 @@ export default () => {
   // Track laoding of the video
   // Detect when the video starts loading (buffering)
   vimeo.on("bufferstart", (e) => {
-    console.log("loading start", e);
-    videoIsLoading.set(true);
+    videoIsLoading.set(true); 
   });
   // Detect when buffering ends (video is ready to play)
   vimeo.on("bufferend", (e) => {
-    console.log("loading end", e);
     setTimeout(() => {
       videoIsLoading.set(false); // Change the variable after the delay to prevent jumping values
     }, 500);
@@ -47,16 +45,13 @@ export default () => {
   // });
 
   vimeo.on("playing", (e) => {
-    console.log("playing", e);
     videoIsPlaying.set(true); // Corrected
     isPlayButtonOn.set(false);
   });
   vimeo.on("pause", (e) => {
-    console.log("pause", e);
     videoIsPlaying.set(false); // Corrected
   });
   vimeo.on("ended", (e) => {
-    console.log("ended", e);
     const releasedLines = get(allLines).filter((line) => line.isReleased);
     let randomIndex = Math.floor(Math.random() * (releasedLines.length - 1));
     currentLine.set(releasedLines[randomIndex]);
