@@ -2617,7 +2617,16 @@
     stroke="black"
     stroke-width="6"
   />
-  <rect id="bahnhofaltstettennord" x="667.6" y="1087.56" width="16" height="16" rx="8" stroke-width="6" class="station"></rect>
+  <rect
+    id="bahnhofaltstettennord"
+    x="667.6"
+    y="1087.56"
+    width="16"
+    height="16"
+    rx="8"
+    stroke-width="6"
+    class="station"
+  ></rect>
   <rect
     id="badallenmoos"
     x="1376"
@@ -2706,6 +2715,18 @@
     height="34"
     rx="8"
     transform="rotate(45 738.799 1514.76)"
+    fill="white"
+    stroke="black"
+    stroke-width="6"
+  />
+  <rect
+    id="sihlstrasse"
+    x="1148"
+    y="1701"
+    width="16"
+    height="34"
+    rx="8"
+    transform="rotate(45 1148 1700)"
     fill="white"
     stroke="black"
     stroke-width="6"

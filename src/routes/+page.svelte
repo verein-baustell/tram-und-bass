@@ -234,33 +234,40 @@
   }
 </script>
 
-{#if showLandingPage}
-  <LandingScreen />
-{:else}
-  {#each $allLines.filter((line) => line.isReleased) as line}
-    <div
-      class="video-container"
-      id={`video-${line.id}`}
-      style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
-    ></div>
-  {/each}
-  {#if showSplashScreen || !$currentLine?.isReleased}
-    <SplashScreen onClick={() => (showSplashScreen = false)} />
-  {/if}
-  <LoadingScreen
-    style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
+<svelte:head>
+  <title>Tram und Bass</title>
+  <meta
+    name="description"
+    content="Tram und Bass - 30 Artists 30 Tramlinien. "
   />
-  <VideoControls />
-  {#if isDevMode}
-    <DevTools />
-  {/if}
-  {#if initialized && !$cookieConsent}
-    <WelcomeScreen line={tempLine} />
-  {/if}
-  {#if !$isImmersive}
-    <TopMenu aboutContent={aboutContent?.aboutText ?? ""} />
-    <BottomMenu />
-  {/if}
+  <meta
+    name="keywords"
+    content="Tram und Bass, Tram, Bass, Zürich, VBZ, elektronische Musik"
+  />
+</svelte:head>
+{#each $allLines.filter((line) => line.isReleased) as line}
+  <div
+    class="video-container"
+    id={`video-${line.id}`}
+    style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
+  ></div>
+{/each}
+{#if showSplashScreen || !$currentLine?.isReleased}
+  <SplashScreen onClick={() => (showSplashScreen = false)} />
+{/if}
+<LoadingScreen
+  style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
+/>
+<VideoControls />
+{#if isDevMode}
+  <DevTools />
+{/if}
+{#if initialized && !$cookieConsent}
+  <WelcomeScreen line={tempLine} />
+{/if}
+{#if !$isImmersive}
+  <TopMenu aboutContent={aboutContent?.aboutText ?? ""} />
+  <BottomMenu />
 {/if}
 
 <style lang="scss">

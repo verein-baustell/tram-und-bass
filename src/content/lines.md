@@ -19,7 +19,7 @@ lines:
 
       [Instagram @violazimmermann](<https://www.instagram.com/violazimmermann/ >)
     videoUrl: https://player.vimeo.com/video/950558411?h=452ef92b18
-    releaseDate: 2024-10-18T04:59:00.000Z
+    releaseDate: 2024-11-18T03:59:00.000Z
     id: ""
     timeStamps:
       - name: Geissweid
@@ -2162,7 +2162,7 @@ lines:
 
       \[Bandcamp](https://endlessbazaar.bandcamp.com/track/endobliss-golden-era-glitch)
     videoUrl: https://player.vimeo.com/video/950700571?h=cc9bd2b94d
-    releaseDate: 2024-11-18T05:45:00.000Z
+    releaseDate: 2024-11-21T05:45:00.000Z
     id: ""
     timeStamps:
       - name: Fracht
