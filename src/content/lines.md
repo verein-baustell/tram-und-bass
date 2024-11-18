@@ -19,7 +19,7 @@ lines:
 
       [Instagram @violazimmermann](<https://www.instagram.com/violazimmermann/ >)
     videoUrl: https://player.vimeo.com/video/950558411?h=452ef92b18
-    releaseDate: 2024-11-18T04:59:00.000Z
+    releaseDate: 2023-11-18T04:59:00.000Z
     id: ""
     timeStamps:
       - name: Geissweid
@@ -141,7 +141,7 @@ lines:
 
       [Bandcamp](https://nuevoprohibido.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/947761973?h=1c135204fe
-    releaseDate: 2025-01-01T00:00:00.000Z
+    releaseDate: 2023-01-01T00:00:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Tiefenbrunnen
