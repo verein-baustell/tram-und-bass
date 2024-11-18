@@ -13,7 +13,7 @@
 </script>
 
 <div class="con">
-  {#if ($currentTime == 0 && !$videoIsPlaying) || $videoIsLoading}
+  {#if ($currentTime == 0 && !$videoIsPlaying) || $videoIsLoading || $isPlayButtonOn}
     <div transition:fade={{ delay: 250, duration: 300 }}>
       <img
         {style}
