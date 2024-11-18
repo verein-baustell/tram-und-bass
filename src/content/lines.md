@@ -334,10 +334,10 @@ lines:
     artistAboutText: >-
       Dari Ferrari liebt alles was schnell, rot und laut ist. Da er generell
       Autos dumm findet (vor allem in der Stadt) ist nicht von einem
-      italienischem Sportauto die Rede, sondern von elektronischer Musik.
+      italienischen Sportauto die Rede, sondern von elektronischer Musik.
       Genauer liebt er alles was über 130BPM schnell ist und so viele
       Breaksamples wie möglich beinhaltet. Alles unter 130BPM übernimmt sein
-      Alter Ego Dariush, welcher selbst Musik produziert, die auch etwas sanfter
+      Alter Ego Dariush, welcher Musik produziert, die auch etwas sanfter
       sein kann. Seinen musikalischen Zugang fand er in der Ostschweiz mit dem
       Shelter 12 Kollektiv. Damals in einem ranzigen Keller/Studio der St.
       Galler Innenstadt und heute über den Dächern der Zürcher Langstrasse (tönt
