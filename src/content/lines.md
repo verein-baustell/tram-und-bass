@@ -2162,7 +2162,7 @@ lines:
 
       \[Bandcamp](https://endlessbazaar.bandcamp.com/track/endobliss-golden-era-glitch)
     videoUrl: https://player.vimeo.com/video/950700571?h=cc9bd2b94d
-    releaseDate: 2024-11-18T05:45:00.000Z
+    releaseDate: 2026-01-01T06:45:00.000Z
     id: ""
     timeStamps:
       - name: Fracht
