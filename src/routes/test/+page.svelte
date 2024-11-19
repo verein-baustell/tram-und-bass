@@ -20,7 +20,7 @@
           })
       );
     }
-    console.log(vimeoVideoObjectList);
+    // console.log(vimeoVideoObjectList);
   });
 
   function playVideo(index: number) {
