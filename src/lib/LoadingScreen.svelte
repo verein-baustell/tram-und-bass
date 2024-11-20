@@ -7,12 +7,13 @@
     videoIsLoading,
     videoIsPlaying,
     cookieConsent,
+    isPlayButtonOn,
   } from "../store";
   import ThreeJsComponent from "./ThreeJSComponent.svelte";
 </script>
 
 <div class="con">
-  {#if ($currentTime == 0 && !$videoIsPlaying) || $videoIsLoading}
+  {#if ($currentTime == 0 && !$videoIsPlaying) || $videoIsLoading || $isPlayButtonOn}
     <div transition:fade={{ delay: 250, duration: 300 }}>
       <img
         {style}
@@ -23,7 +24,7 @@
     </div>
   {/if}
 
-  {#if $currentTime == 0 && !$videoIsPlaying && !$videoIsLoading && $cookieConsent}
+  {#if ($currentTime == 0 && !$videoIsPlaying && !$videoIsLoading && $cookieConsent) || $isPlayButtonOn}
     <ThreeJsComponent></ThreeJsComponent>
   {/if}
 

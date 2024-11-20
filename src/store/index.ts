@@ -58,6 +58,7 @@ const seekVideoAfterLoad = (vimeoObject: Vimeo) => {
 };
 let previousLineId: string | null = null;
 export const timeToSeekAfterVideoLoad = writable<number>(0);
+export const isPlayButtonOn = writable<boolean>(false);
 currentLine.subscribe((value) => {
   if (value?.id === previousLineId) {
     return; // Exit if the line ID has not changed
@@ -94,7 +95,7 @@ currentLine.subscribe((value) => {
                 console.error("🎥 Video play error", error);
                 videoIsLoading.set(false);
                 videoIsPlaying.set(false);
-                currentTime.set(0);
+                isPlayButtonOn.set(true);
               });
           })
           .catch((error) => {

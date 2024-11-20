@@ -4,7 +4,13 @@
   import LineList from "./LineList.svelte";
   import Button from "./Button.svelte";
   import { clickoutside } from "@svelte-put/clickoutside";
-  import { allLines, currentLine, currentTime, isTopOpen } from "../store";
+  import {
+    allLines,
+    currentLine,
+    currentTime,
+    isTopOpen,
+    isPlayButtonOn,
+  } from "../store";
   import { addState } from "../utils/stateManager";
   export let aboutContent: string;
   const menuEntries = [
@@ -50,6 +56,7 @@
               addState();
               currentLine.set(clickedLine);
               isTopOpen.set(false);
+              isPlayButtonOn.set(false);
             }}
             lines={$allLines}
             {aboutContent}

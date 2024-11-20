@@ -6,7 +6,8 @@ import {
   videoIsLoading,
   vimeoVideoObject,
   allLines,
-  currentLine
+  currentLine,
+  isPlayButtonOn,
 } from "../store";
 export default () => {
   const vimeo = get(vimeoVideoObject);
@@ -45,6 +46,7 @@ export default () => {
 
   vimeo.on("playing", (e) => {
     videoIsPlaying.set(true); // Corrected
+    isPlayButtonOn.set(false);
   });
   vimeo.on("pause", (e) => {
     videoIsPlaying.set(false); // Corrected
