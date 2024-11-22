@@ -179,7 +179,9 @@
         }
       }
     };
-    document.addEventListener("mousemove", mousePan);
+    if(!$isMobile){
+      document.addEventListener("mousemove", mousePan);
+    }
     const keyHandlers = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight" && $nextStation) {
         $vimeoVideoObject.setCurrentTime($currentTime + $timeUntilNextStation);
