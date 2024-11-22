@@ -5,81 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
   <title>Content Manager</title>
-  <!-- Load Identity Widget first -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Include the script that builds the page and powers Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
-    // Wait for DOM content to be loaded
-    document.addEventListener('DOMContentLoaded', function() {
-      window.CMS_MANUAL_INIT = true;
+    // Set manual init flag
+    window.CMS_MANUAL_INIT = true;
+    
+    const domain = window.location.hostname;
+    
+    // Function to determine branch name based on domain patterns
+    const getBranchName = (domain) => {
+      // Production domains
+      const productionDomains = [
+        'production--tramundbass.netlify.app',
+        'tramundbass.netlify.app',
+        'tramundbass.ch',
+        'www.tramundbass.ch'
+      ];
       
-      const domain = window.location.hostname;
+      // Main branch domains
+      const mainBranchDomains = [
+        'main.tramundbass.ch',
+        'main--tramundbass.netlify.app'
+      ];
       
-      // Function to determine branch name based on domain patterns
-      const getBranchName = (domain) => {
-        // Production domains
-        const productionDomains = [
-          'production--tramundbass.netlify.app',
-          'tramundbass.netlify.app',
-          'tramundbass.ch',
-          'www.tramundbass.ch'
-        ];
-        
-        // Main branch domains
-        const mainBranchDomains = [
-          'main.tramundbass.ch',
-          'main--tramundbass.netlify.app'
-        ];
-        
-        // Check for production domains
-        if (productionDomains.includes(domain)) {
-          return 'production';
-        }
-        
-        // Check for main branch domains
-        if (mainBranchDomains.includes(domain)) {
-          return 'main';
-        }
-        
-        // Check for other branch domains
-        const branchMatch = domain.match(/^(.+)--tramundbass\.netlify\.app$/);
-        if (branchMatch) {
-          return branchMatch[1];
-        }
-        
-        // Default to main if no match is found
+      // Check for production domains
+      if (productionDomains.includes(domain)) {
+        return 'production';
+      }
+      
+      // Check for main branch domains
+      if (mainBranchDomains.includes(domain)) {
         return 'main';
-      };
+      }
+      
+      // Check for other branch domains
+      const branchMatch = domain.match(/^(.+)--tramundbass\.netlify\.app$/);
+      if (branchMatch) {
+        return branchMatch[1];
+      }
+      
+      // Default to main if no match is found
+      return 'main';
+    };
 
-      // Get the branch name based on the current domain
-      const branchName = getBranchName(domain);
-      console.log("init decap ", { branchName });
+    // Get the branch name based on the current domain
+    const branchName = getBranchName(domain);
+    console.log("init decap ", { branchName });
 
-      // Initialize CMS when everything is ready
-      window.initCMS = () => {
-        const { CMS, initCMS: init } = window;
-        
-        init({
+    // Wait for CMS to be available
+    const initCmsWhenReady = () => {
+      if (window.CMS) {
+        window.CMS.init({
           backend: {
             name: "github",
             branch: branchName,
             repo: "verein-baustell/tram-und-bass",
           },
         });
-      };
-
-      // Ensure CMS is loaded before initializing
-      if (window.CMS) {
-        window.initCMS();
       } else {
-        window.addEventListener('load', () => {
-          window.initCMS();
-        });
+        console.log("Waiting for CMS to load...");
+        setTimeout(initCmsWhenReady, 100);
       }
-    });
+    };
+
+    // Start initialization process when DOM is ready
+    document.addEventListener('DOMContentLoaded', initCmsWhenReady);
   </script>
 </body>
 </html>
