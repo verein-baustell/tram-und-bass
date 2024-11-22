@@ -11,6 +11,59 @@
 <body>
   <!-- Include the script that builds the page and powers Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    window.CMS_MANUAL_INIT = true
+    const { CMS, initCMS: init } = window
+    const domain = window.location.hostname;
+
+    // Function to determine branch name based on domain patterns
+    const getBranchName = (domain) => {
+      // Production domains
+      const productionDomains = [
+        'production--tramundbass.netlify.app',
+        'tramundbass.netlify.app',
+        'tramundbass.ch',
+        'www.tramundbass.ch'
+      ];
+
+      // Main branch domains
+      const mainBranchDomains = [
+        'main.tramundbass.ch',
+        'main--tramundbass.netlify.app'
+      ];
+
+      // Check for production domains
+      if (productionDomains.includes(domain)) {
+        return 'production';
+      }
+
+      // Check for main branch domains
+      if (mainBranchDomains.includes(domain)) {
+        return 'main';
+      }
+
+      // Check for other branch domains
+      const branchMatch = domain.match(/^(.+)--tramundbass\.netlify\.app$/);
+      if (branchMatch) {
+        return branchMatch[1];
+      }
+
+      // Default to main if no match is found
+      return 'main';
+    };
+
+    // Get the branch name based on the current domain
+    const branchName = getBranchName(domain);
+    console.log("init decap ", { branchName });
+    // Initialize Decap CMS with the determined branch
+    init({
+      backend: {
+        name: "github",
+        branch: branchName,
+        repo: "verein-baustell/tram-und-bass",
+      },
+    });
+  </script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </body>
 
