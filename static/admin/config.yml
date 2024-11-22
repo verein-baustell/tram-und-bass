@@ -1,6 +1,7 @@
 backend:
   name: git-gateway
-  branch: main
+  # this will be replaced by the scripts/setBranchInCMSConfig.js
+  branch: CURRENT_BRANCH
 local_backend: true
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
@@ -350,8 +351,8 @@ collections:
                         "Zürichbergstrasse",
                         "Kalkbreite",
                         "Zwielplatz",
-                        "Zypressenstrasse"
-                      ] 
+                        "Zypressenstrasse",
+                      ]
                   - label: "Start Time"
                     name: "startTime"
                     widget: "string"
