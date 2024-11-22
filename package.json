@@ -20,6 +20,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "prebuild": "bun scripts/setBranchInCMSConfig.js",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
