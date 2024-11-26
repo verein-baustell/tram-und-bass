@@ -337,8 +337,8 @@ lines:
       italienischen Sportauto die Rede, sondern von elektronischer Musik.
       Genauer liebt er alles was über 130BPM schnell ist und so viele
       Breaksamples wie möglich beinhaltet. Alles unter 130BPM übernimmt sein
-      Alter Ego Dariush, welcher Musik produziert, die auch etwas sanfter
-      sein kann. Seinen musikalischen Zugang fand er in der Ostschweiz mit dem
+      Alter Ego Dariush, welcher Musik produziert, die auch etwas sanfter sein
+      kann. Seinen musikalischen Zugang fand er in der Ostschweiz mit dem
       Shelter 12 Kollektiv. Damals in einem ranzigen Keller/Studio der St.
       Galler Innenstadt und heute über den Dächern der Zürcher Langstrasse (tönt
       fancyer als es ist). Nicht nur ein Set hat er für TnB produziert, sondern
@@ -1048,7 +1048,20 @@ lines:
     number: 7
     name: Wollishoferplatz
     artistName: DJ Tatana
-    artistAboutText: "[Instagram @djtatana](https://www.instagram.com/djtatana/)"
+    artistAboutText: >-
+      DJ Tatana, eine der prägenden Figuren der Schweizer Elektronikmusikszene,
+      erinnert sich lebhaft an die Anfänge ihrer Karriere und die Rolle, die der
+      legendäre Club Oxa dabei spielte. In den frühen Jahren legte Tatana Sets
+      auf, die nicht nur die Tanzflächen füllten, sondern auch die Herzen der
+      Besucher. Trance hatte eine magische Wirkung auf das Publikum. Die Musik
+      ging tief und schuf eine Verbindung, die über das bloße Hören hinausging.
+      Es war eine Zeit, in der alle zusammen eine musikalische Reise antraten.
+
+
+      Jeden Sonntagabend machte sich Tatana auf den Weg von Wollishofen nach Oerlikon, stets begleitet von der Vorfreude auf eine Nacht voller Musik. Die Reise mit der Tramlinie 7 war für sie mehr als nur eine Fahrt; es war eine Reise in eine Welt, in der sie frei war, ihre Kunst auszudrücken und zu experimentieren. Die Fahrten waren auch Momente der Vorbereitung und Reflexion. Sie stimmten Tatana auf die Nacht ein und waren ein Ritual, das sie bis heute in Ehren haltet. Durch die Tramlinie 7 und die Nächte im Oxa wurde Tatana nicht nur zu einer besseren Künstlerin, sondern auch zu einer Botschafterin der Trance-Musik, die bis heute Menschen weltweit inspiriert.[](https://www.instagram.com/djtatana/)
+
+
+      [Instagram @djtatana](https://www.instagram.com/djtatana/)
     videoUrl: https://player.vimeo.com/video/950568271?h=72f40f9183
     releaseDate: 2024-11-26T05:59:00.000Z
     id: ""
