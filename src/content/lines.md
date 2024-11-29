@@ -2181,10 +2181,10 @@ lines:
     timeStamps:
       - name: Fracht
         startTime: 00:01
-        endTime: 00:44
+        endTime: 00:48
       - name: Zürich Flughafen Bahnhof
-        startTime: 02:07
-        endTime: 02:54
+        startTime: 02:11
+        endTime: 02:58
       - name: Kloten Balsberg Bahnhof
         startTime: 04:44
         endTime: 05:02
