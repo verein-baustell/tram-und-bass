@@ -2198,38 +2198,38 @@ lines:
         startTime: 08:49
         endTime: 09:10
       - name: Lindberghplatz
-        startTime: 10:15
-        endTime: 10:33
+        startTime: 10:19
+        endTime: 10:37
       - name: Glattpark
-        startTime: 12:00
-        endTime: 12:24
+        startTime: 12:04
+        endTime: 12:28
       - name: Fernsehstudio
-        startTime: 13:07
-        endTime: 13:30
+        startTime: 13:11
+        endTime: 13:34
       - name: Auzelg
-        startTime: 14:39
-        endTime: 14:55
+        startTime: 14:43
+        endTime: 14:59
       - name: Herti
-        startTime: 16:13
-        endTime: 16:29
+        startTime: 16:17
+        endTime: 16:33
       - name: Belair
-        startTime: 17:52
-        endTime: 18:04
+        startTime: 17:56
+        endTime: 18:10
       - name: Wallisellen Bahnhof
-        startTime: 19:05
-        endTime: 19:21
+        startTime: 19:09
+        endTime: 19:25
       - name: Glatt
-        startTime: 20:19
-        endTime: 20:43
+        startTime: 20:23
+        endTime: 20:47
       - name: Neugut
-        startTime: 21:54
-        endTime: 22:20
+        startTime: 21:58
+        endTime: 22:24
       - name: Am Ring
-        startTime: 23:29
-        endTime: 23:46
+        startTime: 23:33
+        endTime: 23:50
       - name: Ringwiesen
-        startTime: 24:55
-        endTime: 25:13
+        startTime: 24:59
+        endTime: 25:17
       - name: Bahnhof Stettbach
         startTime: 27:30
         endTime: 27:37
