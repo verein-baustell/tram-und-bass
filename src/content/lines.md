@@ -2186,17 +2186,17 @@ lines:
         startTime: 02:11
         endTime: 02:58
       - name: Kloten Balsberg Bahnhof
-        startTime: 04:44
-        endTime: 05:02
+        startTime: 04:48
+        endTime: 05:06
       - name: Unterriet
-        startTime: 06:03
-        endTime: 06:23
+        startTime: 06:07
+        endTime: 06:27
       - name: Bäuler
-        startTime: 07:17
-        endTime: 07:36
+        startTime: 07:21
+        endTime: 07:40
       - name: Glattbrugg Bahnhof
-        startTime: 08:45
-        endTime: 09:06
+        startTime: 08:49
+        endTime: 09:10
       - name: Lindberghplatz
         startTime: 10:15
         endTime: 10:33
