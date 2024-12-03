@@ -233,10 +233,13 @@
       document.addEventListener('gesturestart', function (e) {
           e.preventDefault();
       });
-    
-      document.addEventListener('touchmove', function (e) {
-          e.preventDefault()
+      document.addEventListener('touchmove', (e: TouchEvent) => {
+      if ((e.target as HTMLElement)?.closest('.view')) {
+          return; // Allow default behavior
+      }
+      e.preventDefault();
       }, { passive: false });
+     
     }
   }
   const meta = {
