@@ -179,7 +179,7 @@
         }
       }
     };
-    if(!$isMobile){
+    if (!$isMobile) {
       document.addEventListener("mousemove", mousePan);
     }
     const keyHandlers = (e: KeyboardEvent) => {
@@ -239,18 +239,35 @@
       }, { passive: false });
     }
   }
+  const meta = {
+    title: "Tram und Bass",
+    description: "Tram und Bass - 30 Artists 30 Tramlinien.",
+    image: "/images/uploads/tnb_og.png",
+    domain: "tramundbass.ch",
+  };
 </script>
 
 <svelte:head>
-  <title>Tram und Bass</title>
-  <meta
-    name="description"
-    content="Tram und Bass - 30 Artists 30 Tramlinien. "
-  />
+  <title>{meta.title}</title>
+  <meta name="description" content={meta.description} />
   <meta
     name="keywords"
     content="Tram und Bass, Tram, Bass, Zürich, VBZ, elektronische Musik"
   />
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content={"https://" + meta.domain} />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={meta.title} />
+  <meta property="og:description" content={meta.description} />
+  <meta property="og:image" content={meta.image} />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:domain" content={meta.domain} />
+  <meta property="twitter:url" content={"https://" + meta.domain} />
+  <meta name="twitter:title" content={meta.title} />
+  <meta name="twitter:description" content={meta.description} />
+  <meta name="twitter:image" content={meta.image} />
 </svelte:head>
 {#each $allLines.filter((line) => line.isReleased) as line}
   <div

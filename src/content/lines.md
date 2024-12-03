@@ -337,8 +337,8 @@ lines:
       italienischen Sportauto die Rede, sondern von elektronischer Musik.
       Genauer liebt er alles was über 130BPM schnell ist und so viele
       Breaksamples wie möglich beinhaltet. Alles unter 130BPM übernimmt sein
-      Alter Ego Dariush, welcher Musik produziert, die auch etwas sanfter
-      sein kann. Seinen musikalischen Zugang fand er in der Ostschweiz mit dem
+      Alter Ego Dariush, welcher Musik produziert, die auch etwas sanfter sein
+      kann. Seinen musikalischen Zugang fand er in der Ostschweiz mit dem
       Shelter 12 Kollektiv. Damals in einem ranzigen Keller/Studio der St.
       Galler Innenstadt und heute über den Dächern der Zürcher Langstrasse (tönt
       fancyer als es ist). Nicht nur ein Set hat er für TnB produziert, sondern
@@ -1048,7 +1048,20 @@ lines:
     number: 7
     name: Wollishoferplatz
     artistName: DJ Tatana
-    artistAboutText: "[Instagram @djtatana](https://www.instagram.com/djtatana/)"
+    artistAboutText: >-
+      DJ Tatana, eine der prägenden Figuren der Schweizer Elektronikmusikszene,
+      erinnert sich lebhaft an die Anfänge ihrer Karriere und die Rolle, die der
+      legendäre Club Oxa dabei spielte. In den frühen Jahren legte Tatana Sets
+      auf, die nicht nur die Tanzflächen füllten, sondern auch die Herzen der
+      Besucher. Trance hatte eine magische Wirkung auf das Publikum. Die Musik
+      ging tief und schuf eine Verbindung, die über das bloße Hören hinausging.
+      Es war eine Zeit, in der alle zusammen eine musikalische Reise antraten.
+
+
+      Jeden Sonntagabend machte sich Tatana auf den Weg von Wollishofen nach Oerlikon, stets begleitet von der Vorfreude auf eine Nacht voller Musik. Die Reise mit der Tramlinie 7 war für sie mehr als nur eine Fahrt; es war eine Reise in eine Welt, in der sie frei war, ihre Kunst auszudrücken und zu experimentieren. Die Fahrten waren auch Momente der Vorbereitung und Reflexion. Sie stimmten Tatana auf die Nacht ein und waren ein Ritual, das sie bis heute in Ehren haltet. Durch die Tramlinie 7 und die Nächte im Oxa wurde Tatana nicht nur zu einer besseren Künstlerin, sondern auch zu einer Botschafterin der Trance-Musik, die bis heute Menschen weltweit inspiriert.[](https://www.instagram.com/djtatana/)
+
+
+      [Instagram @djtatana](https://www.instagram.com/djtatana/)
     videoUrl: https://player.vimeo.com/video/950568271?h=72f40f9183
     releaseDate: 2024-11-26T05:59:00.000Z
     id: ""
@@ -2168,55 +2181,55 @@ lines:
     timeStamps:
       - name: Fracht
         startTime: 00:01
-        endTime: 00:44
+        endTime: 00:48
       - name: Zürich Flughafen Bahnhof
-        startTime: 02:07
-        endTime: 02:54
+        startTime: 02:11
+        endTime: 02:58
       - name: Kloten Balsberg Bahnhof
-        startTime: 04:44
-        endTime: 05:02
+        startTime: 04:48
+        endTime: 05:06
       - name: Unterriet
-        startTime: 06:03
-        endTime: 06:23
+        startTime: 06:07
+        endTime: 06:27
       - name: Bäuler
-        startTime: 07:17
-        endTime: 07:36
+        startTime: 07:21
+        endTime: 07:40
       - name: Glattbrugg Bahnhof
-        startTime: 08:45
-        endTime: 09:06
+        startTime: 08:49
+        endTime: 09:10
       - name: Lindberghplatz
-        startTime: 10:15
-        endTime: 10:33
+        startTime: 10:19
+        endTime: 10:37
       - name: Glattpark
-        startTime: 12:00
-        endTime: 12:24
+        startTime: 12:04
+        endTime: 12:28
       - name: Fernsehstudio
-        startTime: 13:07
-        endTime: 13:30
+        startTime: 13:11
+        endTime: 13:34
       - name: Auzelg
-        startTime: 14:39
-        endTime: 14:55
+        startTime: 14:43
+        endTime: 14:59
       - name: Herti
-        startTime: 16:13
-        endTime: 16:29
+        startTime: 16:17
+        endTime: 16:33
       - name: Belair
-        startTime: 17:52
-        endTime: 18:04
+        startTime: 17:56
+        endTime: 18:10
       - name: Wallisellen Bahnhof
-        startTime: 19:05
-        endTime: 19:21
+        startTime: 19:09
+        endTime: 19:25
       - name: Glatt
-        startTime: 20:19
-        endTime: 20:43
+        startTime: 20:23
+        endTime: 20:47
       - name: Neugut
-        startTime: 21:54
-        endTime: 22:20
+        startTime: 21:58
+        endTime: 22:24
       - name: Am Ring
-        startTime: 23:29
-        endTime: 23:46
+        startTime: 23:33
+        endTime: 23:50
       - name: Ringwiesen
-        startTime: 24:55
-        endTime: 25:13
+        startTime: 24:59
+        endTime: 25:17
       - name: Bahnhof Stettbach
         startTime: 27:30
         endTime: 27:37
