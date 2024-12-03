@@ -229,6 +229,15 @@
         videoContainer.style.setProperty("--translateX", "0px");
       }
     }
+    if (typeof document !== "undefined") {
+      document.addEventListener('gesturestart', function (e) {
+          e.preventDefault();
+      });
+    
+      document.addEventListener('touchmove', function (e) {
+          e.preventDefault()
+      }, { passive: false });
+    }
   }
 </script>
 
