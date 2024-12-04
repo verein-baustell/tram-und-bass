@@ -239,7 +239,6 @@
       }
       e.preventDefault();
       }, { passive: false });
-     
     }
   }
   const meta = {
