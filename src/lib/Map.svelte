@@ -552,7 +552,7 @@
     z-index: 99999;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, calc(-100% - 1em));
+    transform: translate(-50%, calc(-100% - 1.5em));
     height: min-content;
     overflow: hidden;
     :global(ul) {
