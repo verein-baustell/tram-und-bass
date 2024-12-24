@@ -421,8 +421,7 @@
         // position lineList above the station
       })
       .on("mouseover", function (event) {
-        const isTouch = event?.sourceEvent?.type === "touchstart";
-        if (isTouch) return;
+        if ($isMobile) return;
         const stationElement = this as Element;
         const stationName = (this as Element)?.getAttribute(
           "data-station-name"
