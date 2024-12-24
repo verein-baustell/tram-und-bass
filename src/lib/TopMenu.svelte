@@ -80,7 +80,8 @@
   #top-menu {
     display: flex;
     flex-flow: column wrap;
-    margin: var(--global-padding);
+    padding-inline: var(--global-padding);
+    margin-block: var(--global-padding);
     position: absolute;
     top: 0;
     left: 0;
