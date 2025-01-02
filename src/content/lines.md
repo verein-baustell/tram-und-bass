@@ -141,7 +141,7 @@ lines:
 
       [Bandcamp](https://nuevoprohibido.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/947761973?h=1c135204fe
-    releaseDate: 2025-01-01T00:00:00.000Z
+    releaseDate: 2025-01-20T01:00:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Tiefenbrunnen
@@ -260,7 +260,7 @@ lines:
 
       [Soundcloud](https://soundcloud.com/verycozi)
     videoUrl: https://player.vimeo.com/video/950561793?h=2b51bbc0bb
-    releaseDate: 2025-01-01T00:00:00.000Z
+    releaseDate: 2025-01-13T01:00:00.000Z
     id: ""
     timeStamps:
       - name: Albisrieden
@@ -552,7 +552,7 @@ lines:
 
       [Instagram @newkyddd3](https://www.instagram.com/newkyddd3/)
     videoUrl: https://player.vimeo.com/video/950564216?h=895d1fb002
-    releaseDate: 2025-01-01T00:00:00.000Z
+    releaseDate: 2025-01-06T01:00:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Altstetten Nord
@@ -659,7 +659,7 @@ lines:
 
       [Bandcamp](https://atrice.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/950565372?h=3c31783cab
-    releaseDate: 2025-01-01T00:00:00.000Z
+    releaseDate: 2025-01-07T01:00:00.000Z
     id: ""
     timeStamps:
       - name: Kirche Fluntern
@@ -876,7 +876,7 @@ lines:
 
       [Bandcamp](https://softdate.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/950566054?h=9f68eea5d2
-    releaseDate: 2025-01-01T00:00:00.000Z
+    releaseDate: 2025-01-21T01:00:00.000Z
     id: ""
     timeStamps:
       - name: Zoo
@@ -947,7 +947,7 @@ lines:
 
       [Instagram @zirkuslino](https://www.instagram.com/zirkuslino/)
     videoUrl: https://player.vimeo.com/video/950567543?h=8e4eb0457c
-    releaseDate: 2025-01-01T00:00:00.000Z
+    releaseDate: 2025-01-08T01:00:00.000Z
     id: ""
     timeStamps:
       - name: Wollishoferplatz
@@ -1286,7 +1286,7 @@ lines:
 
       \[Bandcamp](https://ousooo.bandcamp.com)
     videoUrl: https://player.vimeo.com/video/950570324?h=ddbc1bdffa
-    releaseDate: 2025-01-01T00:00:00.000Z
+    releaseDate: 2025-01-22T01:00:00.000Z
     id: ""
     timeStamps:
       - name: Hardturm
@@ -1384,7 +1384,7 @@ lines:
 
       [Instagram @baer_ae](https://www.instagram.com/lebeamlimmat?igsh=dnY0MnByZzl2MnRj)
     videoUrl: https://player.vimeo.com/video/950573466?h=7fb8f08ec8
-    releaseDate: 2025-01-01T00:00:00.000Z
+    releaseDate: 2025-01-23T01:00:00.000Z
     id: ""
     timeStamps:
       - name: Hirzenbach
@@ -1741,7 +1741,7 @@ lines:
 
       [Soundcloud](https://on.soundcloud.com/wvwrjzVADQGETm3k9)
     videoUrl: https://player.vimeo.com/video/950661521?h=164e96d180
-    releaseDate: 2025-01-01T00:00:00.000Z
+    releaseDate: 2025-01-14T01:00:00.000Z
     id: ""
     timeStamps:
       - name: Fracht
@@ -1979,7 +1979,7 @@ lines:
 
       [Soundcloud](https://soundcloud.com/nivenive)
     videoUrl: https://player.vimeo.com/video/950679463?h=03df9a86bb
-    releaseDate: 2025-01-01T00:00:00.000Z
+    releaseDate: 2025-01-09T01:00:00.000Z
     id: ""
     timeStamps:
       - name: Rehalp
@@ -2099,7 +2099,7 @@ lines:
 
       Composed live and improvised directly on the machines used for this piece, the music reflects on the greyness and eclipsing hopelessness of the suburban agglomeration depicted in the video. Sparse housing, giant isolated commercial buildings, devouring concrete blocks, bridges and tunnels. And the ever-present shopping centres. Yet, it all stands so still, so calm, like death. Beauty.
     videoUrl: https://player.vimeo.com/video/950697436?h=67800866e7
-    releaseDate: 2025-01-01T00:00:00.000Z
+    releaseDate: 2025-01-10T01:00:00.000Z
     id: ""
     timeStamps:
       - name: Bahnhof Stettbach
@@ -2371,7 +2371,7 @@ lines:
 
       [Soundcloud](https://soundcloud.com/user-352431009)
     videoUrl: https://player.vimeo.com/video/950719687?h=29fa4163a3
-    releaseDate: 2025-01-01T00:00:00.000Z
+    releaseDate: 2025-01-15T01:00:00.000Z
     id: ""
     timeStamps:
       - name: Albisgütli
@@ -2591,7 +2591,7 @@ lines:
 
       [Soundcloud](www.soundcloud.com/judallasju)
     videoUrl: https://player.vimeo.com/video/950721895?h=02c06df905
-    releaseDate: 2025-01-01T00:00:00.000Z
+    releaseDate: 2025-01-24T01:00:00.000Z
     id: ""
     timeStamps:
       - name: Triemli
@@ -2772,7 +2772,7 @@ lines:
 
       [Bandcamp](https://lespoints.bandcamp.com/)
     videoUrl: https://player.vimeo.com/video/950808090?h=55d4d27811
-    releaseDate: 2025-01-01T00:00:00.000Z
+    releaseDate: 2025-01-16T01:00:00.000Z
     id: ""
     timeStamps:
       - name: Bucheggplatz
@@ -2955,7 +2955,7 @@ lines:
 
       [Instagram @andreasramos_sihlrec](https://www.instagram.com/andreasramos_sihlrec/)
     videoUrl: https://player.vimeo.com/video/950812961?h=6d0ba88b36
-    releaseDate: 2025-01-01T00:00:00.000Z
+    releaseDate: 2025-01-17T01:00:00.000Z
     id: ""
     timeStamps:
       - name: Albisgütli
