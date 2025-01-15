@@ -6,6 +6,7 @@
   export let onLocationFound: (
     newStationName?: StationWithCoords["name"]
   ) => void;
+  let permission: PermissionStatus;
   const getNearestStation = (
     lat: number,
     lng: number
@@ -33,6 +34,9 @@
       onLocationFound(nearestStation?.name);
     });
   };
+  navigator.permissions.query({ name: "geolocation" }).then((newPermission) => {
+    permission = newPermission;
+  });
 </script>
 
 {#if $isMenuMinimized}
@@ -41,7 +45,7 @@
     on:click={() => {
       locateUser();
     }}
-  >
+  >{permission?.state}
     <svg
       width="1em"
       height="1em"
