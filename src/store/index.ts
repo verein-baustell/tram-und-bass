@@ -147,7 +147,7 @@ export const isWider = writable<boolean>(false);
 // extra variable if the video is loading
 export const videoIsLoading = writable<boolean>(false);
 export const isImmersive = writable<boolean>(false);
-export const isMenuClosed = writable<boolean>(false);
+export const isMenuMinimized = writable<boolean>(false);
 export const isMuted = writable<boolean>(false);
 export const isMobile = writable<boolean>(false);
 export const isAtStation = writable<boolean>(false);

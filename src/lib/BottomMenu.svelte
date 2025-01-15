@@ -2,7 +2,7 @@
   import { onMount, afterUpdate } from "svelte";
   import {
     currentLine,
-    isMenuClosed,
+    isMenuMinimized,
     currentStation,
     isBtmOpen,
     isTopOpen,
@@ -30,7 +30,7 @@
     ];
     currentComponent = menuEntries?.[0]?.component;
   }
-  $: if ($currentStation && !$isBtmOpen && !$isTopOpen && !$isMenuClosed) {
+  $: if ($currentStation && !$isBtmOpen && !$isTopOpen && !$isMenuMinimized) {
     isBtmOpen.set(true);
     currentComponent = menuEntries[0]?.component;
   }
@@ -76,7 +76,7 @@
   <div class="btmMenu--cont">
     <div
       id="bottom-menu"
-      class={$isMenuClosed ? "putRight" : ""}
+      class={$isMenuMinimized ? "putRight" : ""}
       use:clickoutside
       on:clickoutside={() => {
         isBtmOpen.set(false);
@@ -87,7 +87,7 @@
       {/if}
       <nav style:background-color={$currentLine?.color}>
         <div
-          class="nav-element nav-element--top {$isMenuClosed
+          class="nav-element nav-element--top {$isMenuMinimized
             ? 'nav-element--nomargin'
             : ''} "
         >
@@ -104,14 +104,14 @@
                 class="isInverted-{$currentLine?.isInverted} {$currentLine?.number ===
                 7
                   ? 'isSeven'
-                  : ''} {$isMenuClosed ? 'btnTiny--margin' : 'btnLine'}"
+                  : ''} {$isMenuMinimized ? 'btnTiny--margin' : 'btnLine'}"
                 on:click={() => {
                   if ($isBtmOpen && currentComponent === component) {
                     isBtmOpen.set(false);
                     return;
                   }
-                  if ($isMenuClosed) {
-                    $isMenuClosed = false;
+                  if ($isMenuMinimized) {
+                    $isMenuMinimized = false;
                   }
                   currentComponent = component;
                   isBtmOpen.set(true);
@@ -126,7 +126,7 @@
           {/each}
         </div>
         <div class="nav-element nav-element--btm">
-          {#if !$isMenuClosed}
+          {#if !$isMenuMinimized}
             {#each menuEntries as { name, component }, index (name)}
               {#if index != 0}
                 <Button
@@ -168,7 +168,7 @@
               class="btnClose"
               style="background-color: {$currentLine?.color}"
               on:click={() => {
-                $isMenuClosed = true;
+                $isMenuMinimized = true;
                 isBtmOpen.set(true);
               }}
             >

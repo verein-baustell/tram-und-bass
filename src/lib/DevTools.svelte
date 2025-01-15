@@ -26,7 +26,7 @@
 
 <div id="dev-tools">
   {#if showDevTools}
-    <h2>Dev Tools</h2>
+    <h2>DT</h2>
     <Button
       on:click={() => {
         $vimeoVideoObject.setCurrentTime($timeUntilNextStation + $currentTime);
@@ -104,7 +104,7 @@
     </table>
   {/if}
   <Button on:click={() => (showDevTools = !showDevTools)}>
-    {showDevTools ? "Hide" : "Show"} Dev Tools
+    {showDevTools ? "Hide" : "show"} DT
   </Button>
 </div>
 
