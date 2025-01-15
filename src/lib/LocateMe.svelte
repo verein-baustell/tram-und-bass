@@ -6,7 +6,7 @@
   export let onLocationFound: (
     newStationName?: StationWithCoords["name"]
   ) => void;
-  let permission: PermissionStatus;
+  let showErrorMessage = false;
   const getNearestStation = (
     lat: number,
     lng: number
@@ -24,19 +24,27 @@
     }
     return nearestStation;
   };
-
+  let timeoutId: number
   const locateUser = () => {
     // use navigator.geolocation.getCurrentPosition
-    navigator.geolocation.getCurrentPosition((position) => {
-      const lat = position.coords.latitude;
-      const lng = position.coords.longitude;
-      const nearestStation = getNearestStation(lat, lng);
-      onLocationFound(nearestStation?.name);
-    });
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+        const nearestStation = getNearestStation(lat, lng);
+        onLocationFound(nearestStation?.name);
+      },
+      (error) => {
+        console.error(error);
+        showErrorMessage = true;
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+          showErrorMessage = false;
+        }, 4000);
+      },
+      { enableHighAccuracy: true }
+    );
   };
-  navigator.permissions.query({ name: "geolocation" }).then((newPermission) => {
-    permission = newPermission;
-  });
 </script>
 
 {#if $isMenuMinimized}
@@ -45,7 +53,7 @@
     on:click={() => {
       locateUser();
     }}
-  >{permission?.state}
+  >
     <svg
       width="1em"
       height="1em"
@@ -60,6 +68,12 @@
       <circle cx="6" cy="27" r="6" fill="black" />
     </svg>
   </Button>
+{/if}
+
+{#if showErrorMessage}
+  <modal id="locate-me-error-modal" >
+    <p>Bitte erlaube die <b>Ortungsdienste</b> für diesen Browser.</p>
+  </modal>
 {/if}
 
 <style lang="scss">
@@ -77,4 +91,28 @@
       display: none;
     }
   }
+  #locate-me-error-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: white;
+    padding: 1em;
+    border-radius: var(--border-radius-view);
+    border: 1px solid var(--background-color-light);
+    animation: fadeOut 1s 3s ease-in-out;
+    animation-fill-mode: forwards;
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+      to {
+        opacity: 0;
+        filter: blur(10px);
+      }
+    }
+  }
 </style>
+
