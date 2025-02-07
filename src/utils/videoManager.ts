@@ -89,16 +89,16 @@ export async function changeVideo(line: Line, isPlay: boolean = true) {
                         videoLoadCounter++;
                         // Attempt to play the video after third load
                         if (videoLoadCounter >= 2) {
-                            // vimeo
-                            //     .play()
-                            //     .then(() => {
-                            //         console.log(
-                            //             "🎥 Video is playing after 3rd load"
-                            //         );
-                            //     })
-                            //     .catch((error) => {
-                            //         console.error("🎥 Video play error", error);
-                            //     });
+                            vimeo
+                                .play()
+                                .then(() => {
+                                    console.log(
+                                        "🎥 Video is playing after 3rd load"
+                                    );
+                                })
+                                .catch((error) => {
+                                    console.error("🎥 Video play error", error);
+                                });
                         }
                     })
                     .catch((error) => {
