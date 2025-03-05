@@ -6,6 +6,8 @@
     currentLine,
     currentStation,
     currentTime,
+    isBtmOpen,
+    isMenuMinimized,
     isMobile,
     videoIsLoading,
   } from "../store";
@@ -16,6 +18,7 @@
   import { hmsToSeconds } from "../utils/timeFormatter";
   import LineList from "./LineList.svelte";
   import MapInlineSvg from "./MapInlineSvg.svelte";
+  import LocateMe from "./LocateMe.svelte";
   type StationsPositions = { [stationId: string]: { x: number; y: number } };
 
   const INITIAL_WIDTH = 2560;
@@ -385,6 +388,25 @@
       zoomToElement(activeStationSelection);
     }
   };
+  const activateStation = (el: SVGElement) => {
+        const stationName = el.getAttribute("id");
+        showLineList = true;
+        resetHighlightedStations();
+        el.classList.add("activeStation");
+        // zoom to station
+        if (!stationName) return;
+        linesAtSelectedStation = getLinesFromStationName(
+          stationName,
+          $allLines
+        );
+        selectedStationId = stationName;
+        selectedStationName = el.getAttribute(
+          "data-station-name"
+        );
+        updateLineListPosition();
+        zoomToElement(d3.select(el as any));
+        // position lineList above the station
+  }
   const addClassesToStations = () => {
     stationsGroupSelection
       .selectChildren()
@@ -402,23 +424,7 @@
         return station?.name ?? "";
       })
       .on("click", function () {
-        showLineList = true;
-        const stationName = (this as Element)?.getAttribute("id");
-        resetHighlightedStations();
-        (this as Element).classList.add("activeStation");
-        // zoom to station
-        if (!stationName) return;
-        linesAtSelectedStation = getLinesFromStationName(
-          stationName,
-          $allLines
-        );
-        selectedStationId = stationName;
-        selectedStationName = (this as Element)?.getAttribute(
-          "data-station-name"
-        );
-        updateLineListPosition();
-        zoomToElement(d3.select(this));
-        // position lineList above the station
+        activateStation(this as SVGElement);
       })
       .on("mouseover", function (event) {
         if ($isMobile) return;
@@ -477,6 +483,8 @@
 
     addClassesToStations();
     $currentLine && setActiveLine($currentLine);
+    // minimize the bottom menu to make place for the locate me button
+    isMenuMinimized.set(true);
   });
 
   currentStation.subscribe((newStation) => {
@@ -510,6 +518,14 @@
       .ease(d3.easeLinear)
       .attr("stroke-dashoffset", dashOffset);
   });
+
+  const locateMe = (newStationName?: string) => {
+    console.log("locate me", newStationName);
+    const stationId = stationNameToId(newStationName);
+    if (newStationName) {
+      activateStation(d3.select(`#${stationId}`).node() as SVGElement);
+    }
+  };
 </script>
 
 {#if linesAtSelectedStation && showLineList}
@@ -543,6 +559,7 @@
     </g>
   </svg>
   <div id="map-tooltip" class="isActive">a</div>
+  <LocateMe onLocationFound={locateMe} />
 </div>
 
 <style lang="scss" scoped>
