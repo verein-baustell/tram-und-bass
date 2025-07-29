@@ -1,7 +1,7 @@
 ---
 cities:
   - name: Zürich
-    slug: zürich
+    slug: zurich
     legal: >-
       Rechte gehören uns.
     description: >-
