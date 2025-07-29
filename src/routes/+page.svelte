@@ -61,33 +61,26 @@
         });
     }
 
+    $: {
+        if ($cookieConsent) {
+            $currentLine = tempLine;
+        }
+    }
     const readLineFromPath = () => {
-        // leave line parameter in url if no cookie is set
         const url = new URL(window.location.href);
         const lineIdFromUrl = url.searchParams.get("line");
+
         if (lineIdFromUrl) {
             const lineFromUrl = $allLines.find((line) =>
                 compareStationNames(line.id, lineIdFromUrl)
             );
+
             if (lineFromUrl && lineFromUrl.isReleased) {
-                // set the line
                 tempLine = lineFromUrl;
-                if (!$cookieConsent) {
-                    tempLine = lineFromUrl;
-                    return;
-                } else {
-                    $currentLine = lineFromUrl;
-                }
             } else {
-                console.log("line in url not released or not existant");
+                console.log("Line in URL not released or not existent");
                 url.searchParams.delete("line");
                 goto(url.toString(), { replaceState: true });
-            }
-        } else {
-            if (!$cookieConsent) {
-                return;
-            } else {
-                $currentLine = tempLine;
             }
         }
     };

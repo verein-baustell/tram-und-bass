@@ -84,9 +84,9 @@ currentLine.subscribe((value) => {
 
                 // Wait for the video to be ready
                 muxPlayer.addEventListener(
-                    "loadedmetadata",
+                    "canplay",
                     () => {
-                        console.log("🎥 Video loaded successfully");
+                        console.log("🎥 Video can play now");
                         seekVideoAfterLoad(muxPlayer); // Seek to the desired position after load
 
                         // Attempt to play the video
@@ -94,13 +94,13 @@ currentLine.subscribe((value) => {
                             .play()
                             .then(() => {
                                 seekVideoAfterLoad(muxPlayer);
-                                console.log(
-                                    "🎥 Video is playing at 2nd attempt"
-                                );
+                                videoIsPlaying.set(true);
+                                console.log("🎥 Video is playing");
                             })
                             .catch((error: any) => {
                                 console.error("🎥 Video play error", error);
                                 videoIsLoading.set(false);
+                                videoIsPlaying.set(false);
                             });
                     },
                     { once: true }

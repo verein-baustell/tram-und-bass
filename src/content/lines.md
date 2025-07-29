@@ -140,7 +140,7 @@ lines:
 
 
       [Bandcamp](https://nuevoprohibido.bandcamp.com/)
-    videoUrl: https://stream.mux.com/yhlBYCNsyeVfgOBXEPOSSovQqzoy2vbUya402Wfau5bc.m3u8
+    videoUrl: https://stream.mux.com/OfjbQ3esQifgboENTs4oDXslCP5sSnst.m3u8
     releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
