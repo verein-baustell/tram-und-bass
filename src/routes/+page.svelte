@@ -275,7 +275,7 @@
                 autoplay={false}
                 loop={false}
                 muted={true}
-                style="width: 100%; height: 100%;"
+                style="width: 100%; height: 100%; --controls: none;"
                 metadata-video-title={$currentLine?.name || ""}
                 metadata-video-id={$currentLine?.id || ""}
                 on:loadedmetadata={onPlayerReady}
