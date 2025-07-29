@@ -1,37 +1,36 @@
 {
-  "name": "tramundbass",
-  "version": "0.0.1",
-  "devDependencies": {
-    "@sveltejs/adapter-auto": "^3.3.1",
-    "@sveltejs/kit": "^2.8.0",
-    "@sveltejs/vite-plugin-svelte": "^4.0.0",
-    "@types/d3": "^7.4.3",
-    "@types/three": "^0.169.0",
-    "@types/vimeo__player": "^2.18.3",
-    "sass": "^1.80.6",
-    "svelte": "^5.1.13",
-    "svelte-check": "^4.0.6",
-    "tslib": "^2.8.1",
-    "typescript": "^5.6.3",
-    "vite": "^5.4.10",
-    "vite-plugin-markdown": "^2.2.0"
-  },
-  "private": true,
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "prebuild": "bun scripts/setBranchInCMSConfig.js",
-    "preview": "vite preview",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "tunnel": "ssh -R 80:localhost:3000 serveo.net"
-  },
-  "type": "module",
-  "dependencies": {
-    "@svelte-put/clickoutside": "^4.0.0",
-    "@vimeo/player": "^2.24.0",
-    "d3": "^7.9.0",
-    "svelte-markdown": "^0.4.1",
-    "three": "^0.170.0"
-  }
+    "name": "tramundbass",
+    "version": "0.0.1",
+    "devDependencies": {
+        "@sveltejs/adapter-auto": "^3.3.1",
+        "@sveltejs/kit": "^2.8.0",
+        "@sveltejs/vite-plugin-svelte": "^4.0.0",
+        "@types/d3": "^7.4.3",
+        "@types/three": "^0.169.0",
+        "sass": "^1.80.6",
+        "svelte": "^5.1.13",
+        "svelte-check": "^4.0.6",
+        "tslib": "^2.8.1",
+        "typescript": "^5.6.3",
+        "vite": "^5.4.10",
+        "vite-plugin-markdown": "^2.2.0"
+    },
+    "private": true,
+    "scripts": {
+        "dev": "vite dev",
+        "build": "vite build",
+        "prebuild": "bun scripts/setBranchInCMSConfig.js",
+        "preview": "vite preview",
+        "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+        "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+        "tunnel": "ssh -R 80:localhost:3000 serveo.net"
+    },
+    "type": "module",
+    "dependencies": {
+        "@mux/mux-player": "^1.4.0",
+        "@svelte-put/clickoutside": "^4.0.0",
+        "d3": "^7.9.0",
+        "svelte-markdown": "^0.4.1",
+        "three": "^0.170.0"
+    }
 }

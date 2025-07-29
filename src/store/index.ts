@@ -49,12 +49,11 @@ export const allLines = writable<Line[]>(lines);
 export const currentLine = writable<Line | undefined>();
 // update query params when currentLine changes
 export const currentTime = writable<number>(0);
-const seekVideoAfterLoad = (vimeoObject: Vimeo) => {
+const seekVideoAfterLoad = (muxPlayer: any) => {
     const timeToSeekTo = get(timeToSeekAfterVideoLoad);
     if (timeToSeekTo) {
-        vimeoObject.setCurrentTime(timeToSeekTo).then(() => {
-            console.log("🎥 video seeked to", timeToSeekTo);
-        });
+        muxPlayer.currentTime = timeToSeekTo;
+        console.log("🎥 video seeked to", timeToSeekTo);
         timeToSeekAfterVideoLoad.set(0);
     }
 };
@@ -75,65 +74,75 @@ currentLine.subscribe((value) => {
 
         changeFaviconToLine(value);
 
-        vimeoVideoObject.update((vimeo) => {
-            if (vimeo) {
+        muxVideoObject.update((muxPlayer) => {
+            if (muxPlayer) {
                 console.log("⬇️ Attempting to load video", value.videoUrl);
                 videoIsLoading.set(true);
 
-                vimeo
-                    .loadVideo(value.videoUrl)
-                    .then(() => {
+                // Set the new video URL
+                muxPlayer.src = value.videoUrl;
+
+                // Wait for the video to be ready
+                muxPlayer.addEventListener(
+                    "loadedmetadata",
+                    () => {
                         console.log("🎥 Video loaded successfully");
-                        seekVideoAfterLoad(vimeo); // Seek to the desired position after load
+                        seekVideoAfterLoad(muxPlayer); // Seek to the desired position after load
 
                         // Attempt to play the video
-                        vimeo
+                        muxPlayer
                             .play()
                             .then(() => {
-                                seekVideoAfterLoad(vimeo);
+                                seekVideoAfterLoad(muxPlayer);
                                 console.log(
                                     "🎥 Video is playing at 2nd attempt"
                                 );
                             })
-                            .catch((error) => {
+                            .catch((error: any) => {
                                 console.error("🎥 Video play error", error);
                                 videoIsLoading.set(false);
-                                videoIsPlaying.set(false);
-                                isPlayButtonOn.set(true);
                             });
-                    })
-                    .catch((error) => {
-                        console.error("🎥 Video load error", error);
-                    });
+                    },
+                    { once: true }
+                );
+
+                return muxPlayer;
             }
-            return vimeo;
+            return muxPlayer;
         });
     }
 });
 
-let lastPreviousStation: TimeStamp | undefined;
 export const previousStation = derived(
     [currentTime, currentLine],
     ([$currentTime, $currentLine]) => {
-        const newPreviousStation = $currentLine?.timeStamps
-            ?.toReversed()
+        const previousStation = $currentLine?.timeStamps
+            ?.slice()
+            .reverse()
             .find(
-                (timeStamp) =>
-                    hmsToSeconds(timeStamp.startTime) < $currentTime &&
-                    hmsToSeconds(timeStamp.endTime) < $currentTime
+                (timeStamp) => hmsToSeconds(timeStamp.startTime) < $currentTime
             );
+        return previousStation;
+    }
+);
 
-        if (newPreviousStation !== lastPreviousStation) {
-            lastPreviousStation = newPreviousStation;
-            return newPreviousStation;
-        }
+export const lastPreviousStation = derived(
+    [currentTime, currentLine],
+    ([$currentTime, $currentLine]) => {
+        const lastPreviousStation = $currentLine?.timeStamps
+            ?.slice()
+            .reverse()
+            .find(
+                (timeStamp) => hmsToSeconds(timeStamp.endTime) < $currentTime
+            );
         return lastPreviousStation;
     }
 );
-function getVimeoVideoId(videoUrl: string): number | null {
-    const regex = /vimeo\.com\/video\/(\d+)/;
+function getMuxVideoId(videoUrl: string): string | null {
+    // Extract video ID from Mux URL format
+    const regex = /\/video\/([a-zA-Z0-9]+)/;
     const match = videoUrl.match(regex);
-    return match ? +match[1] : null;
+    return match ? match[1] : null;
 }
 const lastCurrentStation = writable<TimeStamp>();
 /**
@@ -142,41 +151,38 @@ const lastCurrentStation = writable<TimeStamp>();
 export const currentStation: Readable<TimeStamp | undefined> = derived(
     [currentTime, currentLine, lastCurrentStation],
     ([$currentTime, $currentLine, $lastCurrentStation], set) => {
-        vimeoVideoObject &&
-            get(vimeoVideoObject)
-                ?.getVideoId()
-                .then((currentVideoId) => {
-                    if (!$currentLine) {
-                        set(undefined);
-                        return;
-                    }
-                    // if the video is not loaded yet, return
-                    if (
-                        currentVideoId !==
-                        getVimeoVideoId($currentLine.videoUrl)
-                    ) {
-                        set(undefined);
-                        return;
-                    }
-                    const newStation = $currentLine.timeStamps?.find(
-                        (timeStamp) =>
-                            hmsToSeconds(timeStamp.startTime) <= $currentTime &&
-                            hmsToSeconds(timeStamp.endTime) >= $currentTime
-                    );
-                    if (!newStation) {
-                        set(undefined);
-                        return;
-                    }
-                    if (newStation !== $lastCurrentStation) {
-                        console.log(
-                            "🚉 new station",
-                            newStation,
-                            $lastCurrentStation
-                        );
-                        set(newStation);
-                        lastCurrentStation.set(newStation);
-                    }
-                });
+        muxVideoObject && get(muxVideoObject)
+            ? (() => {
+                  const muxPlayer = get(muxVideoObject);
+                  if (!$currentLine) {
+                      set(undefined);
+                      return;
+                  }
+                  // if the video is not loaded yet, return
+                  if (muxPlayer.src !== $currentLine.videoUrl) {
+                      set(undefined);
+                      return;
+                  }
+                  const newStation = $currentLine.timeStamps?.find(
+                      (timeStamp) =>
+                          hmsToSeconds(timeStamp.startTime) <= $currentTime &&
+                          hmsToSeconds(timeStamp.endTime) >= $currentTime
+                  );
+                  if (!newStation) {
+                      set(undefined);
+                      return;
+                  }
+                  if (newStation !== $lastCurrentStation) {
+                      console.log(
+                          "🚉 new station",
+                          newStation,
+                          $lastCurrentStation
+                      );
+                      set(newStation);
+                      lastCurrentStation.set(newStation);
+                  }
+              })()
+            : null;
     }
 );
 /**
@@ -232,8 +238,13 @@ export const timeUntilNextStation = derived(
         return 0;
     }
 );
-export const vimeoVideoObject = writable<Vimeo>();
-vimeoVideoObject.subscribe((vimeo) => {});
+export const muxVideoObject = writable<any>();
+muxVideoObject.subscribe((muxPlayer) => {
+    console.log(
+        "muxVideoObject updated:",
+        muxPlayer ? "Player available" : "Player undefined"
+    );
+});
 
 // history variables
 const historyKey = "history";

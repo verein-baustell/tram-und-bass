@@ -1,10 +1,9 @@
 import { get } from "svelte/store";
 import {
-    currentStation,
     currentLine,
+    currentStation,
+    muxVideoObject,
     timeToSeekAfterVideoLoad,
-    vimeoVideoObject,
-    videoIsLoading,
 } from "../store";
 import compareStationNames from "./compareStationNames";
 import { hmsToSeconds } from "./timeFormatter";
@@ -26,7 +25,7 @@ export const changeToLineAtStation = (line: Line, stationName: string) => {
     );
     const isSameLine = get(currentLine)?.id === line.id;
     if (isSameLine) {
-        get(vimeoVideoObject).setCurrentTime(timeStampOfCurrentStation);
+        get(muxVideoObject).currentTime = timeStampOfCurrentStation;
         return;
     }
     !isNaN(timeStampOfCurrentStation) &&

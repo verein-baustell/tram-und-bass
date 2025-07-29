@@ -18,7 +18,7 @@ lines:
 
 
       [Instagram @violazimmermann](<https://www.instagram.com/violazimmermann/ >)
-    videoUrl: https://player.vimeo.com/video/950558411?h=452ef92b18
+    videoUrl: https://stream.mux.com/yhlBYCNsyeVfgOBXEPOSSovQqzoy2vbUya402Wfau5bc.m3u8
     releaseDate: 2024-11-18T03:59:00.000Z
     id: ""
     timeStamps:
@@ -140,7 +140,7 @@ lines:
 
 
       [Bandcamp](https://nuevoprohibido.bandcamp.com/)
-    videoUrl: https://player.vimeo.com/video/947761973?h=1c135204fe
+    videoUrl: https://stream.mux.com/yhlBYCNsyeVfgOBXEPOSSovQqzoy2vbUya402Wfau5bc.m3u8
     releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
@@ -259,7 +259,7 @@ lines:
 
 
       [Soundcloud](https://soundcloud.com/verycozi)
-    videoUrl: https://player.vimeo.com/video/950561793?h=2b51bbc0bb
+    videoUrl: https://stream.mux.com/yhlBYCNsyeVfgOBXEPOSSovQqzoy2vbUya402Wfau5bc.m3u8
     releaseDate: 2025-01-01T00:00:00.000Z
     id: ""
     timeStamps:
@@ -359,7 +359,7 @@ lines:
 
 
       [GitHub](https://github.com/Dariush-Mehdiaraghi)
-    videoUrl: https://player.vimeo.com/video/950560428?h=f9744206bd
+    videoUrl: https://stream.mux.com/yhlBYCNsyeVfgOBXEPOSSovQqzoy2vbUya402Wfau5bc.m3u8
     releaseDate: 2024-12-02T05:24:00.000Z
     id: ""
     timeStamps:
@@ -450,7 +450,7 @@ lines:
 
 
       [Bandcamp](https://hausvrau.bandcamp.com/)
-    videoUrl: https://player.vimeo.com/video/950563061?h=9bf1b84be2
+    videoUrl: https://stream.mux.com/yhlBYCNsyeVfgOBXEPOSSovQqzoy2vbUya402Wfau5bc.m3u8
     releaseDate: 2024-12-03T05:25:00.000Z
     id: ""
     timeStamps:

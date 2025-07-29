@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Vimeo from "@vimeo/player";
+    import "@mux/mux-player";
     import { onMount } from "svelte";
     import TopMenu from "$lib/TopMenu.svelte";
     import VideoControls from "$lib/VideoControls.svelte";
@@ -13,7 +13,7 @@
         isImmersive,
         videoIsPlaying,
         videoIsLoading,
-        vimeoVideoObject,
+        muxVideoObject,
         allLines,
         devToolsState,
         isMobile,
@@ -24,7 +24,7 @@
         cookieConsent,
     } from "../store";
     import DevTools from "$lib/DevTools.svelte";
-    import registerVimeoEventListeners from "../utils/registerVimeoEventListeners";
+    import registerMuxEventListeners from "../utils/registerMuxEventListeners";
     import SplashScreen from "$lib/SplashScreen.svelte";
     import LoadingScreen from "$lib/LoadingScreen.svelte";
     import { attributes as aboutContent } from "../content/about.md";
@@ -32,6 +32,7 @@
     import { goto } from "$app/navigation";
     import { hmsToSeconds } from "../utils/timeFormatter";
     import consoleInit from "../utils/consoleInit";
+
     let videoWrapperWidth = "100%";
     let videoWrapperHeight = "100%";
     let videoWidth = 0;
@@ -42,23 +43,13 @@
     const releasedLines = $allLines.filter((line) => line.isReleased);
     let randomIndex = Math.floor(Math.random() * (releasedLines.length - 1));
     let tempLine = releasedLines[randomIndex];
-    const initVideo = () => {
-        readLineFromPath();
-        if (!$currentLine || !$currentLine.videoUrl) {
-            console.log("no current line");
-            return;
-        }
-        $vimeoVideoObject = new Vimeo("video-container", {
-            url: $currentLine.videoUrl,
-            controls: false,
-            autopause: false,
-            loop: false,
-        });
-        registerVimeoEventListeners();
-    };
 
-    $: if ($cookieConsent) {
-        initVideo();
+    function onPlayerReady(event: any) {
+        if (event.target) {
+            console.log("Player is ready");
+            $muxVideoObject = event.target;
+            registerMuxEventListeners();
+        }
     }
 
     // Set `initialized` to true after `cookieConsent` is set
@@ -104,6 +95,7 @@
     const today = new Date();
     const releaseDate = new Date("2024-01-01T22:00:00");
     const showLandingPage = today <= releaseDate;
+
     onMount(() => {
         consoleInit();
         initFinalState();
@@ -170,32 +162,36 @@
             document.addEventListener("mousemove", mousePan);
         }
         const keyHandlers = (e: KeyboardEvent) => {
-            if (e.key === "ArrowRight" && $nextStation) {
-                $vimeoVideoObject.setCurrentTime(
-                    $currentTime + $timeUntilNextStation
+            if (e.key === "ArrowRight" && $nextStation && $muxVideoObject) {
+                $muxVideoObject.currentTime =
+                    $currentTime + $timeUntilNextStation;
+            }
+            if (e.key === "ArrowLeft" && $previousStation && $muxVideoObject) {
+                $muxVideoObject.currentTime = hmsToSeconds(
+                    $previousStation.startTime
                 );
             }
-            if (e.key === "ArrowLeft" && $previousStation) {
-                $vimeoVideoObject.setCurrentTime(
-                    hmsToSeconds($previousStation.startTime)
-                );
+            if (e.key === "ArrowUp" && $muxVideoObject) {
+                $muxVideoObject.currentTime = $currentTime - 2;
             }
-            if (e.key === "ArrowUp") {
-                $vimeoVideoObject.setCurrentTime($currentTime - 2);
-            }
-            if (e.key === "ArrowDown") {
-                $vimeoVideoObject.setCurrentTime($currentTime + 2);
+            if (e.key === "ArrowDown" && $muxVideoObject) {
+                $muxVideoObject.currentTime = $currentTime + 2;
             }
             if (e.key === "I") {
                 $isImmersive = !$isImmersive;
             }
             if (e.key === "Z" || e.key === "z") {
                 const state = recoverState(0);
-                if (state) changeToLineAtTime(state.line, state.time);
+                if (state && state.line)
+                    changeToLineAtTime(state.line, state.time);
             }
-            if (/^\d$/.test(e.key) && $currentLine?.timeStamps) {
-                $vimeoVideoObject.setCurrentTime(
-                    hmsToSeconds($currentLine.timeStamps[+e.key].startTime)
+            if (
+                /^\d$/.test(e.key) &&
+                $currentLine?.timeStamps &&
+                $muxVideoObject
+            ) {
+                $muxVideoObject.currentTime = hmsToSeconds(
+                    $currentLine.timeStamps[+e.key].startTime
                 );
             }
         };
@@ -271,7 +267,21 @@
         id="video-container"
         class={$videoIsLoading ? "" : "isLoading"}
         style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
-    ></div>
+    >
+        {#if $currentLine?.videoUrl}
+            <mux-player
+                src={$currentLine.videoUrl}
+                controls={false}
+                autoplay={false}
+                loop={false}
+                muted={true}
+                style="width: 100%; height: 100%;"
+                metadata-video-title={$currentLine?.name || ""}
+                metadata-video-id={$currentLine?.id || ""}
+                on:loadedmetadata={onPlayerReady}
+            ></mux-player>
+        {/if}
+    </div>
     {#if showSplashScreen || !$currentLine?.isReleased}
         <SplashScreen onClick={() => (showSplashScreen = false)} />
     {/if}

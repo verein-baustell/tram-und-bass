@@ -2,28 +2,28 @@
     import { tick, onMount } from "svelte";
     import Button from "./Button.svelte";
     import LineNumber from "./LineNumber.svelte";
-    import { vimeoVideoObject, cookieConsent, videoIsLoading } from "../store";
+    import { muxVideoObject, cookieConsent, videoIsLoading } from "../store";
     import { giveConsent } from "../utils/cookieManager";
     export let line: Line | undefined;
 
-    // Wait for $vimeoVideoObject to be defined
-    async function waitForVimeoVideoObject() {
-        while (!$vimeoVideoObject) {
-            console.log($vimeoVideoObject);
-            await tick(); // Wait for the next DOM update
+    // Wait for $muxVideoObject to be defined
+    async function waitForMuxVideoObject() {
+        while (!$muxVideoObject) {
+            console.log($muxVideoObject);
+            await new Promise((resolve) => setTimeout(resolve, 100));
         }
     }
 
-    // Handle the button click, wait for $vimeoVideoObject if necessary
-    const handleButtonClick = async () => {
+    // Handle the button click, wait for $muxVideoObject if necessary
+    async function handlePlayClick() {
         giveConsent(); // Give cookie consent
         videoIsLoading.set(true);
 
-        // Wait for the Vimeo object to be defined
-        await waitForVimeoVideoObject();
+        // Wait for the Mux object to be defined
+        await waitForMuxVideoObject();
 
-        $vimeoVideoObject.play();
-    };
+        $muxVideoObject.play();
+    }
 
     // Function to set initial opacity for ".view" elements
     const setInitialOpacity = () => {
@@ -69,7 +69,7 @@
             <div class="view view--flex">
                 <p class="titles">Cookies</p>
                 <p>
-                    Wir verwenden Cookies von Drittanbietern, darunter Vimeo.
+                    Wir verwenden Cookies von Drittanbietern, darunter Mux.
                     Diese Cookies sind notwendig für die Funktionalität der
                     Seite. Durch das Klicken auf den Button stimmst du den
                     Cookies zu und steigst auch gleich in ein Tram ein!
@@ -86,7 +86,7 @@
                             ? 'isSeven'
                             : ''} isInverted-{line.isInverted}"
                         isActive={false}
-                        on:click={handleButtonClick}
+                        on:click={handlePlayClick}
                         >Zustimmen und gut festhalten!
                     </Button>
                 </div>
