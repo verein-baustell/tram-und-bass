@@ -1,9 +1,12 @@
 import { derived, get, writable, type Readable } from "svelte/store";
-import { attributes as content } from "../content/lines.md";
+import { attributes as content } from "../content/cities.md";
 import { hmsToSeconds } from "../utils/timeFormatter";
 import { goto } from "$app/navigation";
 import changeFaviconToLine from "../utils/changeFaviconToLine";
-const lines = content.lines;
+
+// For now, default to the first city (Zürich). Later you can add city selection logic
+const currentCity = content?.cities?.[0];
+const lines: Line[] = currentCity?.lines || [];
 
 // dev tools delete for production
 // Define a key to use for local storage
@@ -38,7 +41,7 @@ const initialConsent = browser
     : false;
 export const cookieConsent = writable(initialConsent);
 
-lines.forEach((line) => {
+lines.forEach((line: Line) => {
     line.id = line.name.toLowerCase().replace(/\s/g, "") + line.number;
     line.isReleased =
         new Date(line.releaseDate) < new Date() ||

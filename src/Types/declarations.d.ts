@@ -19,3 +19,14 @@ declare module ".*/content/lines.md" {
   };
   export { attributes };
 }
+declare module ".*/content/cities.md" {
+  const attributes: {
+    cities: {
+      name: string;
+      slug: string;
+      description: string;
+      lines: Line[];
+    }[];
+  };
+  export { attributes };
+}

@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   # this will be replaced by the scripts/setBranchInCMSConfig.js
-  branch: CURRENT_BRANCH
+  branch: mux-player
 local_backend: true
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
@@ -89,65 +89,87 @@ collections:
           - label: "Impressum Title"
             name: "impressumText"
             widget: "markdown"
-      - name: "lines"
-        label: "Lines"
-        file: "src/content/lines.md"
+      - name: "cities"
+        label: "Cities & Lines"
+        file: "src/content/cities.md"
         editor:
           preview: false
         fields:
-          - label: "Line"
-            name: "lines"
+          - label: "Cities"
+            name: "cities"
             widget: "list"
-            summary: "{{fields.number}} {{fields.name}} {{fields.artistName}}"
+            summary: "{{fields.name}} ({{fields.lines.length}} lines)"
             fields:
-              - label: "Name"
+              - label: "City Name"
                 name: "name"
                 widget: "string"
                 required: true
-              - label: "Release Date"
-                name: "releaseDate"
-                widget: "datetime"
-                required: true
-              - label: "number"
-                name: "number"
-                widget: "number"
-                value_type: "int"
-                required: true
-              - label: "ID"
-                name: "id"
-                widget: "hidden"
-                default: ""
-              - label: "Color"
-                name: "color"
-                widget: "color"
-                required: true
-              - label: "Inverted Color"
-                name: "isInverted"
-                widget: "boolean"
-                required: true
-              - label: "Video URL"
-                name: "videoUrl"
+              - label: "City Slug"
+                name: "slug"
                 widget: "string"
                 required: true
-              - label: "Artist Name"
-                name: "artistName"
-                widget: "string"
-                required: true
-              - label: "Artist About Text"
-                name: "artistAboutText"
+                hint: "URL-friendly version of city name (e.g., 'zurich', 'berlin')"
+              - label: "Legal"
+                name: "legal"
                 widget: "markdown"
                 required: false
-              - label: "Timestamps"
-                name: "timeStamps"
+              - label: "Description"
+                name: "description"
+                widget: "markdown"
+                required: true
+              - label: "Lines"
+                name: "lines"
                 widget: "list"
-                summary: "{{fields.name}}"
+                summary: "{{fields.number}} {{fields.name}} {{fields.artistName}}"
                 fields:
-                  - label: "Station"
+                  - label: "Name"
                     name: "name"
-                    widget: "select"
+                    widget: "string"
                     required: true
-                    options:
-                      [
+                  - label: "Release Date"
+                    name: "releaseDate"
+                    widget: "datetime"
+                    required: true
+                  - label: "number"
+                    name: "number"
+                    widget: "number"
+                    value_type: "int"
+                    required: true
+                  - label: "ID"
+                    name: "id"
+                    widget: "hidden"
+                    default: ""
+                  - label: "Color"
+                    name: "color"
+                    widget: "color"
+                    required: true
+                  - label: "Inverted Color"
+                    name: "isInverted"
+                    widget: "boolean"
+                    required: true
+                  - label: "Video URL"
+                    name: "videoUrl"
+                    widget: "string"
+                    required: true
+                  - label: "Artist Name"
+                    name: "artistName"
+                    widget: "string"
+                    required: true
+                  - label: "Artist About Text"
+                    name: "artistAboutText"
+                    widget: "markdown"
+                    required: false
+                  - label: "Timestamps"
+                    name: "timeStamps"
+                    widget: "list"
+                    summary: "{{fields.name}}"
+                    fields:
+                      - label: "Station"
+                        name: "name"
+                        widget: "string"
+                        required: true
+                        hint: "Enter the station name for this city"
+                        options: [
                         "Aargauerstrasse",
                         "Albisgütli",
                         "Albisrieden",
@@ -352,16 +374,17 @@ collections:
                         "Kalkbreite",
                         "Zwielplatz",
                         "Zypressenstrasse",
+                        # ------ Zürich END ------
                       ]
-                  - label: "Start Time"
-                    name: "startTime"
-                    widget: "string"
-                    pattern:
-                      ["^[0-5][0-9]:[0-5][0-9]$", "Gültige Zeitangabe in mm:ss"]
-                    required: true
-                  - label: "End Time"
-                    name: "endTime"
-                    widget: "string"
-                    pattern:
-                      ["^[0-5][0-9]:[0-5][0-9]$", "Gültige Zeitangabe in mm:ss"]
-                    required: true
+                      - label: "Start Time"
+                        name: "startTime"
+                        widget: "string"
+                        pattern:
+                          ["^[0-5][0-9]:[0-5][0-9]$", "Gültige Zeitangabe in mm:ss"]
+                        required: true
+                      - label: "End Time"
+                        name: "endTime"
+                        widget: "string"
+                        pattern:
+                          ["^[0-5][0-9]:[0-5][0-9]$", "Gültige Zeitangabe in mm:ss"]
+                        required: true
