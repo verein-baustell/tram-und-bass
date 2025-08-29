@@ -6,15 +6,6 @@ local_backend: true
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 
-search: true
-
-# Global editor configuration for performance
-editor:
-  preview: false
-
-# Display URL for better UX
-display_url: https://localhost:5173
-
 collections:
   - label: "Pages"
     name: "pages"
