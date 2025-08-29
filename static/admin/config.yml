@@ -99,6 +99,8 @@ collections:
             name: "cities"
             widget: "list"
             summary: "{{fields.name}} ({{fields.lines.length}} lines)"
+            collapsed: true
+            minimize_collapsed: true
             fields:
               - label: "City Name"
                 name: "name"
@@ -121,6 +123,8 @@ collections:
                 name: "lines"
                 widget: "list"
                 summary: "{{fields.number}} {{fields.name}} {{fields.artistName}}"
+                collapsed: true
+                minimize_collapsed: true
                 fields:
                   - label: "Name"
                     name: "name"
