@@ -394,7 +394,7 @@
         resetHighlightedStations();
         el.classList.add("activeStation");
         // zoom to station
-        if (!stationName) return;
+        if (!stationName || !$allLines) return;
         linesAtSelectedStation = getLinesFromStationName(
           stationName,
           $allLines
@@ -419,7 +419,7 @@
       })
       .attr("data-station-name", function () {
         const id = (this as Element)?.getAttribute("id");
-        if (!id) return "";
+        if (!id || !$allLines) return "";
         const station = getStationFromId(id, $allLines);
         return station?.name ?? "";
       })
