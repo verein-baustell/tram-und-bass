@@ -30,6 +30,7 @@
     import { recoverState } from "../utils/stateManager";
 
     import Button from "./Button.svelte";
+    import { goto } from "$app/navigation";
     let showDevTools = false;
 </script>
 
@@ -76,6 +77,14 @@
             }}
         >
             recover state
+        </Button>
+        <Button
+            on:click={() => {
+                const state = recoverState(0);
+                goto("/");
+            }}
+        >
+            Go to home
         </Button>
         <table>
             <tbody>

@@ -23,7 +23,7 @@ cities:
 
 
           [Instagram @violazimmermann](<https://www.instagram.com/violazimmermann/ >)
-        videoUrl: https://stream.mux.com/yhlBYCNsyeVfgOBXEPOSSovQqzoy2vbUya402Wfau5bc.m3u8
+        videoUrl: a4nOgmxGWg6gULfcBbAa00gXyfcwPnAFldF8RdsNyk8M
         releaseDate: 2024-11-18T03:59:00.000Z
         id: ""
         timeStamps:
@@ -146,7 +146,7 @@ cities:
 
 
           [Bandcamp](https://nuevoprohibido.bandcamp.com/)
-        videoUrl: https://stream.mux.com/OfjbQ3esQifgboENTs4oDXslCP5sSnst.m3u8
+        videoUrl: Syr7caWsM3WVfXG400C1HnOQtp3pBn000200LUrsWYIVw4A
         releaseDate: 2025-01-01T00:00:00.000Z
         id: ""
         timeStamps:
@@ -266,7 +266,7 @@ cities:
 
 
           [Soundcloud](https://soundcloud.com/verycozi)
-        videoUrl: https://stream.mux.com/yhlBYCNsyeVfgOBXEPOSSovQqzoy2vbUya402Wfau5bc.m3u8
+        videoUrl: P01xhhWMizSp01nIQF6WNTj4igh801vck7QyS65j48sseQ
         releaseDate: 2025-01-01T00:00:00.000Z
         id: ""
         timeStamps:
@@ -366,7 +366,7 @@ cities:
 
 
           [GitHub](https://github.com/Dariush-Mehdiaraghi)
-        videoUrl: https://stream.mux.com/yhlBYCNsyeVfgOBXEPOSSovQqzoy2vbUya402Wfau5bc.m3u8
+        videoUrl: wrxz5GzHoOwtgDO95epWmkt6302kRwvk4KyMQl2NKeiU
         releaseDate: 2024-12-02T05:24:00.000Z
         id: ""
         timeStamps:
@@ -3073,4 +3073,244 @@ cities:
   - name: Chemnitz
     slug: chemnitz
     description: TnB goes Chemnitz
+    lines:
+    - color: "#de2b2b"
+      number: 2
+      name: Bahnhof Tiefenbrunnen
+      artistName: Viola
+      artistAboutText: >-
+        Seit sie in Zürich lebt, arbeitet und/oder wohnt sie entlang der
+        Tramlinie 2. In den 90er Jahren fanden in ihrer Wohnung im Seefeld,
+        unweit der Haltestelle «Kreuzstrasse», regelmässig Afterpartys statt.
+        Später zog sie in eine WG beim «Lochergut». Eine ihrer
+        Bürogemeinschaften war am «Albisriederplatz» eine andere bei der
+        Haltestelle «Kalkbreite». Die Produktion für diesen Mix entstand in
+        unmittelbarer Nähe der Haltestelle «Schlieren Zentrum/Bahnhof.
+
+
+        Mit der angenehm schleppenden Langsamkeit des Soundtracks gleiten wir von Halt zu Halt. Der Subbass verbindet sich mit der Reibung der Schienen. Durch die Heckscheibe sehen wir, wie die Stadt rückwärts verschwindet, als ziehe sie sich in eine andere Dimension zurück. Mit jedem vorbeiziehenden Tram wächst das Gefühl, wir bewegten uns nicht nur durch die Stadt, sondern auch durch die Zeit. Vergangenheit, Gegenwart und Zukunft scheinen miteinander verflochten und gleichzeitig zu existieren.
+
+
+        [Instagram @violazimmermann](<https://www.instagram.com/violazimmermann/ >)
+      videoUrl: dE02GfTAlJD4RcqNAlgiS2m00LqbdFqlBm
+      releaseDate: 2024-11-18T03:59:00.000Z
+      id: ""
+      timeStamps:
+        - name: Geissweid
+          startTime: 00:01
+          endTime: 01:11
+        - name: Schlieren Zentrum Bahnhof
+          startTime: 02:07
+          endTime: 02:23
+        - name: Wagonsfabrik
+          startTime: 03:15
+          endTime: 03:28
+        - name: Gasometerbrücke
+          startTime: 04:19
+          endTime: 04:33
+        - name: Mülligen
+          startTime: 05:24
+          endTime: 05:35
+        - name: Micafil
+          startTime: 06:42
+          endTime: 06:56
+        - name: Farbhof
+          startTime: 07:45
+          endTime: 08:04
+        - name: Bachmattstrasse
+          startTime: 08:53
+          endTime: 09:08
+        - name: Lindenplatz
+          startTime: 09:52
+          endTime: 10:19
+        - name: Grimselstrasse
+          startTime: 11:03
+          endTime: 11:28
+        - name: Kappeli
+          startTime: 12:32
+          endTime: 12:50
+        - name: Freihofstrasse
+          startTime: 13:45
+          endTime: 14:03
+        - name: Letzigrund
+          startTime: 14:53
+          endTime: 15:13
+        - name: Albisriederplatz
+          startTime: 16:25
+          endTime: 16:43
+        - name: Zypressenstrasse
+          startTime: 17:34
+          endTime: 17:50
+        - name: Lochergut
+          startTime: 18:32
+          endTime: 19:03
+        - name: Kalkbreite
+          startTime: 19:51
+          endTime: 21:04
+        - name: Bezirksgebäude
+          startTime: 22:04
+          endTime: 22:21
+        - name: Stauffacher
+          startTime: 23:33
+          endTime: 24:18
+        - name: Sihlstrasse
+          startTime: 25:44
+          endTime: 26:15
+        - name: Paradeplatz
+          startTime: 28:17
+          endTime: 28:38
+        - name: Kantonalbank
+          startTime: 29:23
+          endTime: 29:49
+        - name: Bürkliplatz
+          startTime: 31:36
+          endTime: 31:58
+        - name: Bellevue
+          startTime: 33:11
+          endTime: 33:31
+        - name: Opernhaus
+          startTime: 35:07
+          endTime: 35:37
+        - name: Kreuzstrasse
+          startTime: 36:17
+          endTime: 36:34
+        - name: Feldeggstrasse
+          startTime: 37:24
+          endTime: 37:40
+        - name: Höschgasse
+          startTime: 38:38
+          endTime: 38:56
+        - name: Fröhlichstrasse
+          startTime: 39:57
+          endTime: 40:15
+        - name: Wildbachstrasse
+          startTime: 40:58
+          endTime: 41:17
+        - name: Bahnhof Tiefenbrunnen
+          startTime: 42:27
+          endTime: 43:23
+      isInverted: false
+    - color: "#de2b2b"
+      number: 2
+      name: Schlieren
+      artistName: Nuevo Prohibido
+      artistAboutText: >-
+        Nuevo Prohibido is a Mexican-Swiss artist active in the electronic
+        music scene, especially in Berlin, Zurich, and now in CDMX. As a DJ,
+        producer, and co-founder of projects like Meta Rave and
+        Rhizomfestival, they also run labels Lustpoderosa and Philoxenia.
+        Inspired by the 90s-00s rave scene, they blend a multitude of genres
+        mostly with a focus on deconstructed club music. They co-curate Meta
+        Rave in Berlin, fostering a queer, multicultural space promoting
+        emerging artists.
+
+
+        This mix is an homage to Zurich's Tram Number 2, which I used almost daily. While compiling it, I felt a deep connection to Zurich, where I lived for more than a decade before moving to Berlin and then back to Mexico. Each track holds an emotional tie to the city and my past. Zurich taught me great musical lessons—there's so much talent in that town. I'm happy I spent time there. Sending love to all the lovely music creatures—have a nice ride.
+
+
+        [Instagram @nuevoprohibido](https://www.instagram.com/nuevoprohibido/)
+
+
+        [Soundcloud](https://soundcloud.com/neuverboten)
+
+
+        [Bandcamp](https://nuevoprohibido.bandcamp.com/)
+      videoUrl: oVubG7ZQO3vr8i0102qaQN6D5ovBN402wf02
+      releaseDate: 2025-01-01T00:00:00.000Z
+      id: ""
+      timeStamps:
+        - name: Bahnhof Tiefenbrunnen
+          startTime: 00:01
+          endTime: 00:12
+        - name: Wildbachstrasse
+          startTime: 01:27
+          endTime: 01:43
+        - name: Fröhlichstrasse
+          startTime: 02:33
+          endTime: 02:47
+        - name: Höschgasse
+          startTime: 03:40
+          endTime: 03:58
+        - name: Feldeggstrasse
+          startTime: 04:37
+          endTime: 04:56
+        - name: Kreuzstrasse
+          startTime: 05:52
+          endTime: 06:12
+        - name: Opernhaus
+          startTime: 07:03
+          endTime: 07:52
+        - name: Bellevue
+          startTime: 09:26
+          endTime: 09:58
+        - name: Bürkliplatz
+          startTime: 12:27
+          endTime: 13:08
+        - name: Kantonalbank
+          startTime: 14:08
+          endTime: 14:22
+        - name: Paradeplatz
+          startTime: 15:06
+          endTime: 15:42
+        - name: Sihlstrasse
+          startTime: 16:59
+          endTime: 17:17
+        - name: Stauffacher
+          startTime: 18:22
+          endTime: 18:46
+        - name: Bezirksgebäude
+          startTime: 19:39
+          endTime: 19:55
+        - name: Kalkbreite
+          startTime: 20:47
+          endTime: 21:09
+        - name: Lochergut
+          startTime: 21:56
+          endTime: 22:25
+        - name: Zypressenstrasse
+          startTime: 23:11
+          endTime: 23:38
+        - name: Albisriederplatz
+          startTime: 24:28
+          endTime: 24:50
+        - name: Letzigrund
+          startTime: 26:01
+          endTime: 26:15
+        - name: Freihofstrasse
+          startTime: 27:02
+          endTime: 27:30
+        - name: Kappeli
+          startTime: 28:19
+          endTime: 28:45
+        - name: Grimselstrasse
+          startTime: 29:41
+          endTime: 30:02
+        - name: Lindenplatz
+          startTime: 30:49
+          endTime: 31:11
+        - name: Bachmattstrasse
+          startTime: 31:49
+          endTime: 32:02
+        - name: Farbhof
+          startTime: 32:48
+          endTime: 33:08
+        - name: Micafil
+          startTime: 33:53
+          endTime: 34:05
+        - name: Mülligen
+          startTime: 35:08
+          endTime: 35:21
+        - name: Gasometerbrücke
+          startTime: 36:12
+          endTime: 36:27
+        - name: Wagonsfabrik
+          startTime: 37:15
+          endTime: 37:28
+        - name: Schlieren Zentrum Bahnhof
+          startTime: 38:21
+          endTime: 38:34
+        - name: Geissweid
+          startTime: 39:29
+          endTime: 40:08
+      isInverted: false
 ---

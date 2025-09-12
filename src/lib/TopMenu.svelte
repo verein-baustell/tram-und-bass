@@ -2,6 +2,7 @@
     import Map from "./Map.svelte";
     import About from "./About.svelte";
     import LineList from "./LineList.svelte";
+    import CityList from "./CityList.svelte";
     import Button from "./Button.svelte";
     import { clickoutside } from "@svelte-put/clickoutside";
     import {
@@ -10,10 +11,18 @@
         currentTime,
         isTopOpen,
         isPlayButtonOn,
+        currentCitySlug,
     } from "../store";
     import { addState } from "../utils/stateManager";
     export let aboutContent: string;
     const menuEntries = [
+        {
+            name: $currentCitySlug
+                ? $currentCitySlug.charAt(0).toUpperCase() +
+                  $currentCitySlug.slice(1)
+                : "Stadt",
+            component: CityList,
+        },
         { name: "Linien", component: LineList },
         { name: "Netz", component: Map },
         { name: "Info", component: About },
