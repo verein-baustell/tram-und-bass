@@ -3,15 +3,26 @@ import { plugin as markdown } from "vite-plugin-markdown";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  plugins: [markdown(), sveltekit()],
-  server: {
-    port: 3000,
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        api: "modern"
-      },
+    plugins: [markdown(), sveltekit()],
+    server: {
+        port: 3000,
     },
-  },
+    css: {
+        preprocessorOptions: {
+            scss: {
+                api: "modern",
+            },
+        },
+    },
+    resolve: {
+        dedupe: ["three", "three-globe"],
+    },
+    optimizeDeps: {
+        include: ["three", "globe.gl"],
+    },
+    build: {
+        commonjsOptions: {
+            include: [/node_modules/],
+        },
+    },
 });
