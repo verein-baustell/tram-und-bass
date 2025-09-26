@@ -19,7 +19,6 @@
         align-items: center;
         min-height: 100vh;
         padding: 2rem;
-        font-family: "Arial", sans-serif;
     }
 
     .title {

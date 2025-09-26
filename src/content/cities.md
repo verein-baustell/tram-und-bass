@@ -3076,7 +3076,7 @@ cities:
     lines:
     - color: "#de2b2b"
       number: 2
-      name: Bahnhof Tiefenbrunnen
+      name: Kerowitz
       artistName: Viola
       artistAboutText: >-
         Seit sie in Zürich lebt, arbeitet und/oder wohnt sie entlang der
@@ -3192,7 +3192,7 @@ cities:
       isInverted: false
     - color: "#de2b2b"
       number: 2
-      name: Schlieren
+      name: Wollbringen
       artistName: Nuevo Prohibido
       artistAboutText: >-
         Nuevo Prohibido is a Mexican-Swiss artist active in the electronic

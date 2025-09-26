@@ -1,6 +1,4 @@
 <script lang="ts">
-    import LineListItem from "./LineListItem.svelte";
-    export let lines: Line[];
     export let viewable = true;
     export let id: string | undefined = undefined;
     export let onClick: (lineClicked: Line) => void;
@@ -8,30 +6,31 @@
     export let onClose: (() => void) | undefined = undefined;
     export let title: string | undefined | null = undefined;
     import "../style/style.css";
-    import { history, isBtmOpen } from "../store";
-    import HistoryList from "./HistoryList.svelte";
-    export let hasRecoveryButton: boolean = true;
+    import {
+        history,
+        isBtmOpen,
+        currentCitySlug,
+        currentCityName,
+        isTopOpen,
+    } from "../store";
+    import { attributes as citiesContent } from "../content/cities.md";
+
+    // Extract cities from the content
+    const cities = citiesContent.cities || [];
 </script>
 
 <div {id} class={"line-list " + (viewable ? "view detailed-view" : "")}>
-    {#if title}
-        <h4>
-            {title}{#if isClosable}
-                <button class="close-button" on:click={onClose}>
-                    <img class="close" src="/images/close.svg" alt="-" />
-                </button>
-            {/if}
-        </h4>
-    {/if}
-
-    {#if $history.length > 0 && !$isBtmOpen && hasRecoveryButton}
-        <!-- <HistoryList></HistoryList> -->
-    {/if}
-
     <ul>
-        {#each ["Zurich", "Chemnitz"] as city}
+        {#each cities as city}
             <li>
-                <a href={`/${city.toLowerCase()}`}>{city}</a>
+                <button
+                    class:isActive={$currentCitySlug === city.slug}
+                    on:click={() => {
+                        isTopOpen.set(false);
+                    }}
+                >
+                    <a href={`/${city.slug}`}>{city.name}</a>
+                </button>
             </li>
         {/each}
     </ul>
@@ -42,54 +41,71 @@
         overflow-y: scroll;
         overflow-x: hidden;
     }
-    h4 {
-        font-size: 1.5em;
-        margin: 0;
-        margin-bottom: 4px;
-        font-weight: bold;
-        text-align: center;
-        top: 0;
-        z-index: 1;
-        background-color: var(--background-color);
-        padding: 0 1.2em;
-        position: relative;
-    }
-    .close-button {
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-color: transparent;
-        border: none;
-        color: inherit;
-        font-size: 1em;
-        cursor: pointer;
-        display: grid;
-        place-items: center;
-        height: 1.5em;
-        padding: 0;
-        padding-right: 0.3em;
-    }
-
-    .clock {
-        border: thin solid white;
-        border-radius: 3px;
-        padding: 0.03em 0.35em 0.1em 0.35em;
-    }
-
-    .numb {
-        margin-left: var(--padding-l);
-        margin-right: var(--padding-l);
-    }
-
-    .close {
-        height: 1em;
-        width: 1em;
-    }
     // reset ul li
     ul {
         list-style-type: none;
         padding: 0;
         margin: 0;
         overflow: hidden;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        height: 28px;
+        padding-left: 6px;
+    }
+
+    button {
+        position: relative;
+        &:disabled {
+            opacity: 0.5;
+            cursor: help;
+            img {
+                filter: blur(3px);
+                padding-left: 2px;
+            }
+            p {
+                filter: blur(3px);
+                padding: 2px 4px;
+            }
+            &:hover {
+                .releaseDate {
+                    display: flex;
+                    position: absolute;
+                    right: 4px;
+                    filter: blur(0px);
+                    padding: 1px 4px 1px 4px;
+                    border: thin solid black;
+                    border-radius: 4px;
+                }
+            }
+        }
+        .releaseDate {
+            display: none;
+        }
+        // TODO: Do the colors with variables
+        &.isActive {
+            filter: invert(1);
+        }
+        // reset button
+        background-color: var(--background-color);
+        border: none;
+        color: black;
+        cursor: pointer;
+        display: flex;
+        width: 100%;
+        padding: var(--padding-m);
+        border-radius: var(--border-radius-button);
+        align-items: center;
+        gap: 0.5em;
+        transition: var(--transition);
+        span {
+            white-space: nowrap;
+        }
+    }
+    button:hover {
+        background-color: var(--hover-color);
+        transition: var(--transition);
     }
 </style>

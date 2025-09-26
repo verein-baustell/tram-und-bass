@@ -28,7 +28,9 @@
     import SplashScreen from "$lib/SplashScreen.svelte";
     import LoadingScreen from "$lib/LoadingScreen.svelte";
     import { attributes as aboutContent } from "../../content/about.md";
+    import { attributes as citiesContent } from "../../content/cities.md";
     import compareStationNames from "../../utils/compareStationNames";
+    import { getCityFromSlug } from "../../utils/getCityNameFromSlug";
     import { goto } from "$app/navigation";
     import { hmsToSeconds } from "../../utils/timeFormatter";
     import consoleInit from "../../utils/consoleInit";
@@ -41,8 +43,34 @@
     // DevTools and cookie consent are now handled globally in the layout
     let showSplashScreen = true;
 
-    $currentCitySlug = $page.params.city;
-    console.log("currentCitySlug", $currentCitySlug);
+    // Observe and validate city slug
+    $effect(() => {
+        const slugFromUrl = $page.params.city;
+        console.log("currentCitySlug from URL", slugFromUrl);
+
+        // Validate city slug using utility function
+        const validCity = getCityFromSlug(slugFromUrl);
+
+        if (validCity) {
+            // Valid city slug - update the store
+            $currentCitySlug = slugFromUrl;
+            console.log(
+                "Valid city slug:",
+                slugFromUrl,
+                "City name:",
+                validCity.name
+            );
+            readLineFromPath();
+        } else {
+            // Invalid city slug - redirect to default city (zurich)
+            console.log(
+                "Invalid city slug:",
+                slugFromUrl,
+                "redirecting to zurich"
+            );
+            goto("/", { replaceState: true });
+        }
+    });
 
     const releasedLines = $allLines?.filter((line) => line.isReleased);
     let randomIndex = Math.floor(
@@ -81,18 +109,27 @@
         const lineIdFromUrl = url.searchParams.get("line");
         console.log("read line from path", lineIdFromUrl);
 
+        const releasedLines = $allLines?.filter((line) => line.isReleased);
+        let randomIndex = Math.floor(
+            Math.random() * (releasedLines?.length ?? 0)
+        );
+        let tempLine = releasedLines?.[randomIndex];
+
         if (lineIdFromUrl) {
             const lineFromUrl = $allLines?.find((line) =>
                 compareStationNames(line.id, lineIdFromUrl)
             );
 
             if (lineFromUrl && lineFromUrl.isReleased) {
-                tempLine = lineFromUrl;
+                currentLine.set(lineFromUrl);
             } else {
                 console.log("Line in URL not released or not existent");
                 url.searchParams.delete("line");
-                goto(url.toString(), { replaceState: true });
+                // goto(url.toString(), { replaceState: true });
+                currentLine.set(tempLine);
             }
+        } else {
+            currentLine.set(tempLine);
         }
     };
 
@@ -272,7 +309,7 @@
     <div
         id="video-container"
         class={$videoIsLoading ? "" : "isLoading"}
-        style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
+        style={`height: ${videoWrapperHeight};`}
     >
         {#if $currentLine?.videoUrl}
             <mux-player
@@ -281,7 +318,7 @@
                 autoplay={false}
                 loop={false}
                 muted={true}
-                style="width: 100%; height: 100%; --controls: none;"
+                style="height: 100%; --controls: none;"
                 metadata-video-title={$currentLine?.name || ""}
                 metadata-video-id={$currentLine?.id || ""}
                 on:loadedmetadata={onPlayerReady}
@@ -353,7 +390,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) translateX(var(--translateX, 0));
-        width: 100%;
+        // width: 100%;
         height: 100%;
         display: grid;
         place-items: center;

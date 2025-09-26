@@ -3,6 +3,10 @@ import { attributes as content } from "../content/cities.md";
 import { hmsToSeconds } from "../utils/timeFormatter";
 import { goto } from "$app/navigation";
 import changeFaviconToLine from "../utils/changeFaviconToLine";
+import {
+    getCityNameFromSlug,
+    getCityFromSlug,
+} from "../utils/getCityNameFromSlug";
 
 // dev tools delete for production
 // Define a key to use for local storage
@@ -39,7 +43,17 @@ export const cookieConsent = writable(initialConsent);
 export const currentCitySlug = writable<string | undefined>();
 export const allLines = writable<Line[] | undefined>();
 
+// Derived stores for city information
+export const currentCityName = derived(currentCitySlug, ($currentCitySlug) =>
+    getCityNameFromSlug($currentCitySlug)
+);
+
+export const currentCity = derived(currentCitySlug, ($currentCitySlug) =>
+    getCityFromSlug($currentCitySlug)
+);
+
 currentCitySlug.subscribe((newCitySlug) => {
+    console.log("currentCitySlug", newCitySlug);
     if (newCitySlug) {
         // Find the city using the correct type assertion to include all City properties
         const city = (content.cities as City[]).find(

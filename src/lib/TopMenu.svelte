@@ -12,22 +12,23 @@
         isTopOpen,
         isPlayButtonOn,
         currentCitySlug,
+        currentCityName,
     } from "../store";
     import { addState } from "../utils/stateManager";
     export let aboutContent: string;
-    const menuEntries = [
+
+    // Make menuEntries reactive to city name changes
+    $: menuEntries = [
         {
-            name: $currentCitySlug
-                ? $currentCitySlug.charAt(0).toUpperCase() +
-                  $currentCitySlug.slice(1)
-                : "Stadt",
+            name: $currentCityName || "Städte",
             component: CityList,
         },
         { name: "Linien", component: LineList },
         { name: "Netz", component: Map },
         { name: "Info", component: About },
     ];
-    let currentComponent = menuEntries[0].component;
+
+    let currentComponent = CityList; // Default to CityList component
 </script>
 
 {#if $currentLine}
