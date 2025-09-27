@@ -1,29 +1,8 @@
 <script lang="ts">
-    import { tick, onMount } from "svelte";
+    import { onMount } from "svelte";
     import Button from "./Button.svelte";
-    import LineNumber from "./LineNumber.svelte";
-    import { muxVideoObject, cookieConsent, videoIsLoading } from "../store";
-    import { giveConsent } from "../utils/cookieManager";
+    import ConsentBanner from "./ConsentBanner.svelte";
     export let line: Line | undefined;
-
-    // Wait for $muxVideoObject to be defined
-    async function waitForMuxVideoObject() {
-        while (!$muxVideoObject) {
-            console.log($muxVideoObject);
-            await new Promise((resolve) => setTimeout(resolve, 100));
-        }
-    }
-
-    // Handle the button click, wait for $muxVideoObject if necessary
-    async function handlePlayClick() {
-        giveConsent(); // Give cookie consent
-        videoIsLoading.set(true);
-
-        // Wait for the Mux object to be defined
-        await waitForMuxVideoObject();
-
-        $muxVideoObject.play();
-    }
 
     // Function to set initial opacity for ".view" elements
     const setInitialOpacity = () => {
@@ -65,33 +44,9 @@
             alt="Tram und Bass"
         />
 
-        {#if !$cookieConsent && line}
-            <div class="view view--flex">
-                <p class="titles">Cookies</p>
-                <p>
-                    Wir verwenden Cookies von Drittanbietern, darunter Mux.
-                    Diese Cookies sind notwendig für die Funktionalität der
-                    Seite. Durch das Klicken auf den Button stimmst du den
-                    Cookies zu und steigst auch gleich in ein Tram ein!
-                </p>
-                <div class="line--cont" style="background-color: {line.color};">
-                    <div class="numb">
-                        <LineNumber
-                            number={line.number}
-                            isInverted={!line.isInverted}
-                        />
-                    </div>
-                    <Button
-                        class="{line?.number === 7
-                            ? 'isSeven'
-                            : ''} isInverted-{line.isInverted}"
-                        isActive={false}
-                        on:click={handlePlayClick}
-                        >Zustimmen und gut festhalten!
-                    </Button>
-                </div>
-            </div>
-        {/if}
+        <div class="view">
+            <ConsentBanner {line} />
+        </div>
 
         <div class="view">
             <p class="titles">Links</p>
@@ -176,41 +131,6 @@
         padding: 1em;
     }
 
-    .view--flex {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-        margin: 2em 0em 2em 0em;
-    }
-
-    .line--cont {
-        display: flex;
-        width: fit-content;
-        flex-flow: row nowrap;
-        justify-content: center;
-        align-items: center;
-        border-radius: var(--border-radius-view);
-        padding: 0.12em;
-        margin: 1em 0em 1em 0em;
-        animation: pulse 4s ease-in-out infinite;
-    }
-
-    .numb {
-        margin-left: var(--padding-l);
-        margin-right: var(--padding-l);
-    }
-
-    .logo--cont {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .logo--cont img {
-        width: 80%;
-        margin: 2em auto;
-    }
-
     .view .text {
         text-align: center;
     }
@@ -218,18 +138,6 @@
     .titles {
         font-family: Rene;
         margin-bottom: 0.6em;
-    }
-
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.05);
-        }
-        100% {
-            transform: scale(1);
-        }
     }
 
     @media only screen and (max-width: 768px) {

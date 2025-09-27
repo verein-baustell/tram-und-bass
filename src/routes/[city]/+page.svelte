@@ -87,16 +87,9 @@
         }
     }
 
-    // Set `currentLine` when consent is granted (layout handles the UI)
+    // Set `currentLine` when consent is granted (layout handles the UI and consent checking)
     import { browser } from "$app/environment";
     import { page } from "$app/stores";
-    if (browser) {
-        cookieConsent.subscribe((value) => {
-            if (value) {
-                $currentLine = tempLine;
-            }
-        });
-    }
 
     // Keep a server-safe mirror of `isImmersive` for SSR/templating
     let isImmersiveValue = get(isImmersive);
@@ -340,45 +333,6 @@
 {/if}
 
 <style lang="scss">
-    :root {
-        --background-color: rgb(255, 255, 255);
-        --foreground-color: black;
-        --background-color-light: #eeeeee;
-        --hover-color: #dddddd;
-        --border-radius-button: 0.4em;
-        --border-radius-view: 0.52em;
-        --padding-view: 0.5em 0.8em;
-        --font-size: 1em;
-        --global-padding: 0.8em;
-        --transition: ease-in-out 0.3s;
-        --padding-m: 0.24em;
-        --padding-ml: 0.05em 0.5em 0.24em 0.48em;
-        --padding-l: 0.48em;
-        --mobile-breakpoint: 600px;
-        --padding-s: 0.12em;
-        $mobile-breakpoint: 600px;
-
-        @font-face {
-            font-family: Rene;
-            font-style: normal;
-            font-weight: 400;
-            src: url("/fonts/Rene-Regular-Web.woff") format("woff");
-        }
-
-        @font-face {
-            font-family: Holo;
-            font-style: normal;
-            font-weight: 500;
-            src: url("/fonts/NaNHoloNarrow-Regular.woff2") format("woff2");
-        }
-
-        @font-face {
-            font-family: HoloMono;
-            font-style: normal;
-            font-weight: 500;
-            src: url("/fonts/NaNHoloMono-Medium.woff2") format("woff2");
-        }
-    }
     #video-container {
         transition: filter 0.5s ease-in-out;
         // &.isLoading {

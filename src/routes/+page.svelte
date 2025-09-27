@@ -1,5 +1,18 @@
 <script>
     import Globe from "$lib/Globe.svelte";
+    import { cookieConsent } from "../store";
+    import WelcomeScreen from "$lib/WelcomeScreen.svelte";
+    import ConsentBanner from "$lib/ConsentBanner.svelte";
+
+    let noConsent = false;
+
+    $: cookieConsent.subscribe((value) => {
+        if (!value) {
+            noConsent = true;
+        } else {
+            noConsent = false;
+        }
+    });
 </script>
 
 <main class="main-container">
@@ -9,15 +22,19 @@
         class="title-logo"
     />
 
-    <div class="globe-section">
-        <Globe
-            initialLat={50}
-            initialLng={20}
-            initialAltitude={0.7}
-            enableAutoRotate={true}
-            autoRotateSpeed={0.1}
-        />
-    </div>
+    {#if noConsent}
+        <ConsentBanner />
+    {:else}
+        <div class="globe-section">
+            <Globe
+                initialLat={50}
+                initialLng={20}
+                initialAltitude={0.7}
+                enableAutoRotate={true}
+                autoRotateSpeed={0.1}
+            />
+        </div>
+    {/if}
 </main>
 
 <style>

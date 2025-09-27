@@ -1,103 +1,102 @@
 /* global css */
 
 body {
-  overflow: hidden;
-  overscroll-behavior: none;
+    overflow: hidden;
+    overscroll-behavior: none;
 }
 
 ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 ol {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 .view {
-  padding: var(--padding-m);
-  background: var(--background-color);
-  border-radius: var(--border-radius-view);
-  margin-top: var(--padding-m);
-  margin-bottom: var(--padding-m);
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
-  border: var(--padding-s) var(--background-color-light) solid;
+    padding: var(--padding-m);
+    background: var(--background-color);
+    border-radius: var(--border-radius-view);
+    margin-top: var(--padding-m);
+    margin-bottom: var(--padding-m);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+    border: var(--padding-s) var(--background-color-light) solid;
 }
 
 .detailed-view {
-  max-height: 480px;
-  overflow-y: scroll;
-  overflow-x: hidden;
+    max-height: 480px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #bottom-menu .detailed-view {
-  position: absolute;
-  bottom: 44px;
-  width: 480px;
-  right: 0;
+    position: absolute;
+    bottom: 44px;
+    width: 480px;
+    right: 0;
 }
 
 #top-menu .detailed-view {
-  position: absolute;
-  width: 400px; 
-  top: 44px;
+    position: absolute;
+    width: 400px;
+    top: 44px;
 }
 
 .detailed-view--right {
-  right: 0;
+    right: 0;
 }
 
 @media only screen and (max-width: 768px) {
-  .detailed-view {
-    max-height: 380px;
-    width: 100%;
-    min-width: 100%;
-  }
+    .detailed-view {
+        max-height: 380px;
+        width: 100%;
+        min-width: 100%;
+    }
 
-  .detailed-view--right {
-    right: inherit;
-  }
+    .detailed-view--right {
+        right: inherit;
+    }
 
-  #top-menu .detailed-view {
-    width: 100%;
-  }
-  
-  #bottom-menu .detailed-view {
-    bottom: 86px;
-    width: 100%;
-  }
+    #top-menu .detailed-view {
+        width: 100%;
+    }
+
+    #bottom-menu .detailed-view {
+        bottom: 86px;
+        width: 100%;
+    }
 }
 .artist-about-cont a {
-  border: thin solid black;
-  border-radius: 3px;
-  padding: 0.03em 0.35em 0.1em 0.35em;
+    border: thin solid black;
+    border-radius: 3px;
+    padding: 0.03em 0.35em 0.1em 0.35em;
 }
 
 .nameContainer {
-  white-space: nowrap;
-  box-sizing: border-box;
-  max-width: 100%;
-  overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .marquee {
-  white-space: nowrap;
-  box-sizing: border-box;
-  animation: marquee var(--animation-duration, 10s) linear infinite;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: marquee var(--animation-duration, 10s) linear infinite;
 }
 
 @keyframes marquee {
-  0% {
-    transform: translateX(1%);
-  }
-  50% {
-    transform: translateX(var(--translate-x, -100%));
-  }
-  100% {
-    transform: translateX(1%);
-  }
+    0% {
+        transform: translateX(1%);
+    }
+    50% {
+        transform: translateX(var(--translate-x, -100%));
+    }
+    100% {
+        transform: translateX(1%);
+    }
 }
-
