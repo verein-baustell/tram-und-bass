@@ -121,7 +121,7 @@
                 .pointLat("lat")
                 .pointLng("lng")
                 .pointColor("color")
-                .pointAltitude(0.02)
+                .pointAltitude(0.011)
                 .pointRadius("size")
                 .pointResolution(100)
                 .pointLabel(() => null)

@@ -3,13 +3,17 @@
 </script>
 
 <main class="main-container">
-    <h1 class="title">Tram & Bass International</h1>
+    <img
+        src="/images/TnB_wordmark_orange.svg"
+        alt="Tram & Bass International"
+        class="title-logo"
+    />
 
     <div class="globe-section">
         <Globe
             initialLat={50}
             initialLng={20}
-            initialAltitude={2}
+            initialAltitude={0.7}
             enableAutoRotate={true}
             autoRotateSpeed={0.1}
         />
@@ -23,13 +27,11 @@
         align-items: center;
     }
 
-    .title {
-        font-size: 3rem;
-        font-weight: bold;
-        color: white;
-        text-align: center;
-        letter-spacing: 2px;
+    .title-logo {
+        height: auto;
+        width: 90vw;
         z-index: 1;
         position: absolute;
+        top: 40px;
     }
 </style>
