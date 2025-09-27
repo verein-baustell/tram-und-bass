@@ -18,7 +18,8 @@ export default defineConfig({
         dedupe: ["three", "three-globe"],
     },
     optimizeDeps: {
-        include: ["three", "globe.gl"],
+        include: ["globe.gl"],
+        exclude: ["three"],
     },
     build: {
         commonjsOptions: {

@@ -37,9 +37,14 @@
     // Function to handle mouse move for tooltip positioning
     function handleMouseMove(event: MouseEvent) {
         if (tooltip && tooltipVisible) {
-            // Position tooltip near mouse cursor
-            tooltip.style.left = `${event.clientX + 15}px`;
-            tooltip.style.top = `${event.clientY - 15}px`;
+            // Get tooltip dimensions
+            const tooltipRect = tooltip.getBoundingClientRect();
+            const tooltipWidth = tooltipRect.width || 200; // fallback width
+            const tooltipHeight = tooltipRect.height || 100; // fallback height
+
+            // Center horizontally on mouse and position above mouse
+            tooltip.style.left = `${event.clientX - tooltipWidth / 2}px`;
+            tooltip.style.top = `${event.clientY - tooltipHeight - 5}px`; // 5px gap above mouse
         }
     }
 
@@ -48,22 +53,28 @@
         if (!browser) return;
 
         // Dynamic import to avoid SSR issues
-        import("globe.gl").then(({ default: Globe }) => {
+        import("globe.gl").then(async (globeModule) => {
+            const Globe = globeModule.default;
+            // Access Three.js through globe.gl's internal instance
+            const THREE = await import("three");
             // Initialize the globe
-            globe = new Globe(container)
+            globe = new Globe(container, { animateIn: true })
                 .globeImageUrl(
-                    "//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
-                )
-                .bumpImageUrl(
-                    "//unpkg.com/three-globe/example/img/earth-topology.png"
-                )
+                    "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGRkZGRkYiLz48L3N2Zz4="
+                ) // White texture
+                .bumpImageUrl("") // Remove bump map
                 .width(container.offsetWidth)
+                .height(container.offsetHeight)
                 .showAtmosphere(false)
-                .pointOfView({
-                    lat: initialLat,
-                    lng: initialLng,
-                    altitude: initialAltitude,
-                });
+                .backgroundColor("#000000")
+                .pointOfView(
+                    {
+                        lat: initialLat,
+                        lng: initialLng,
+                        altitude: initialAltitude,
+                    },
+                    0
+                ); // Set transition duration to 0 for immediate positioning
 
             // Add some sample data points for cities
             const cities = [
@@ -72,7 +83,7 @@
                     lng: 8.5417,
                     name: "Zürich",
                     size: 0.5,
-                    color: "#FFFFFF",
+                    color: "#F54927",
                     url: "/zurich",
                 },
                 {
@@ -80,44 +91,81 @@
                     lng: 12.9214,
                     name: "Chemnitz",
                     size: 0.5,
-                    color: "#FFFFFF",
+                    color: "#21BD0F",
                     url: "/chemnitz",
                 },
             ];
 
+            // Load countries GeoJSON data
+            let countries: any = null;
+
+            try {
+                const response = await fetch(
+                    "/data/Countries GeoJSON from radiating futures.geojson"
+                );
+                const countriesData = await response.json();
+                countries = countriesData.features.filter(
+                    (d: any) => d.properties.ISO_A2 !== "AQ"
+                );
+            } catch (error) {
+                console.warn("Failed to load countries data:", error);
+                // Fallback to empty array if loading fails
+                countries = [];
+            }
+
             // Add city markers
             globe
+                .lights([new THREE.AmbientLight(0xffffff, 10)])
+                .backgroundColor("#000000")
                 .pointsData(cities)
                 .pointLat("lat")
                 .pointLng("lng")
                 .pointColor("color")
-                .pointAltitude(0.01)
+                .pointAltitude(0.02)
                 .pointRadius("size")
                 .pointResolution(100)
+                .pointLabel(() => null)
                 .onPointHover((point: any) => {
+                    console.log(
+                        "Point hover:",
+                        point,
+                        "isHovering:",
+                        isHovering
+                    ); // Debug log
                     // Change cursor to pointer when hovering over cities
                     if (point) {
+                        console.log(
+                            "Hovering over point, setting isHovering to true"
+                        );
                         container.style.cursor = "pointer";
                         isHovering = true;
 
                         // Stop auto-rotation on hover
                         if (globe.controls()) {
+                            console.log("Stopping auto-rotate on point hover");
                             globe.controls().autoRotate = false;
                         }
 
                         // Show tooltip on point hover
                         if (point.name) {
+                            console.log("Showing tooltip for:", point.name); // Debug log
                             tooltipData = point;
                             tooltipVisible = true;
                             updateTooltipPosition();
                         }
                     } else {
+                        console.log(
+                            "Not hovering over point, setting isHovering to false"
+                        );
                         container.style.cursor = "default";
                         isHovering = false;
                         tooltipVisible = false;
 
                         // Resume auto-rotation when not hovering
                         if (globe.controls() && enableAutoRotate) {
+                            console.log(
+                                "Resuming auto-rotate after point hover ends"
+                            );
                             globe.controls().autoRotate = true;
                         }
                     }
@@ -129,47 +177,43 @@
                     }
                 });
 
-            // Add city labels with proper UTF-8 support
+            // Add latitude and longitude lines
+            const gridPaths = [];
+
+            // Add latitude lines (every 10 degrees from -80 to 80)
+            for (let lat = -80; lat <= 80; lat += 20) {
+                const latPath = [];
+                for (let lng = 0; lng <= 360; lng += 5) {
+                    latPath.push([lat, lng]);
+                }
+                gridPaths.push(latPath);
+            }
+
+            // Add longitude lines (every 10 degrees from -180 to 180, but only between -80 and 80 lat)
+            for (let lng = -180; lng <= 180; lng += 20) {
+                const lngPath = [];
+                for (let lat = -80; lat <= 80; lat += 5) {
+                    lngPath.push([lat, lng]);
+                }
+                gridPaths.push(lngPath);
+            }
+
             globe
-                .labelsData(cities)
-                .labelLat("lat")
-                .labelLng("lng")
-                .labelText("name")
-                .labelSize(1.5)
-                .labelDotRadius(0.6)
-                .labelColor(() => "#ffffff")
-                .labelAltitude(0.02)
-                .labelResolution(3)
-                .labelTypeFace("Arial, Helvetica, sans-serif")
-                .onLabelHover((label: any, prevLabel: any) => {
-                    // Show tooltip on hover
-                    if (label && label.name) {
-                        isHovering = true;
+                .pathTransitionDuration(0)
+                .pathsData(gridPaths)
+                .pathColor(() => "#000000")
+                .pathStroke(2);
 
-                        // Stop auto-rotation on hover
-                        if (globe.controls()) {
-                            globe.controls().autoRotate = false;
-                        }
-
-                        tooltipData = label;
-                        tooltipVisible = true;
-                        updateTooltipPosition();
-                    } else {
-                        isHovering = false;
-                        tooltipVisible = false;
-
-                        // Resume auto-rotation when not hovering
-                        if (globe.controls() && enableAutoRotate) {
-                            globe.controls().autoRotate = true;
-                        }
-                    }
-                })
-                .onLabelClick((label: any) => {
-                    // Navigate to the city page when a label is clicked
-                    if (label && label.url) {
-                        goto(label.url);
-                    }
-                });
+            // Add country polygons for black continent outlines
+            if (countries && countries.length > 0) {
+                globe
+                    .polygonsData(countries)
+                    .polygonAltitude(0.01)
+                    .polygonsTransitionDuration(0)
+                    .polygonCapColor(() => "#000000") // Black continents
+                    .polygonSideColor(() => "#000000") // Black sides
+                    .polygonStrokeColor(() => "#000000"); // Black outline
+            }
 
             // Handle window resize
             handleResize = () => {
@@ -181,24 +225,14 @@
             window.addEventListener("resize", handleResize);
             container.addEventListener("mousemove", handleMouseMove);
 
-            // Add container hover handlers for rotation control
-            container.addEventListener("mouseenter", () => {
-                if (globe.controls() && enableAutoRotate) {
-                    globe.controls().autoRotate = false;
-                }
-            });
-
-            container.addEventListener("mouseleave", () => {
-                if (globe.controls() && enableAutoRotate && !isHovering) {
-                    globe.controls().autoRotate = true;
-                }
-            });
-
             // Configure auto-rotate if enabled
             if (enableAutoRotate) {
                 globe.controls().autoRotate = true;
                 globe.controls().autoRotateSpeed = autoRotateSpeed;
             }
+
+            // Disable zoom
+            globe.controls().enableZoom = false;
 
             // Set loading to false once globe is initialized
             isLoading = false;
@@ -252,18 +286,6 @@
         <div class="tooltip-content">
             <div class="tooltip-header">
                 <h3 class="tooltip-title">{tooltipData.name}</h3>
-                <div class="tooltip-icon">📍</div>
-            </div>
-            <div class="tooltip-body">
-                <p class="tooltip-description">Click to explore this city</p>
-                <div class="tooltip-actions">
-                    <button
-                        class="tooltip-button"
-                        on:click={() => goto(tooltipData.url)}
-                    >
-                        Explore {tooltipData.name}
-                    </button>
-                </div>
             </div>
         </div>
     </div>
@@ -274,13 +296,14 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         overflow: hidden;
+        background-color: #000000;
     }
 
     :global(.globe-container canvas) {
-        border-radius: 15px;
+        background-color: #000000 !important;
     }
 
     .tooltip {
@@ -292,16 +315,14 @@
         border-radius: 8px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         border: 1px solid rgba(255, 255, 255, 0.3);
-        max-width: 280px;
-        min-width: 200px;
-        transform: translateX(100px) translateY(-50%);
+        transform: translateX(100px) translateY(-0%);
         opacity: 0;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         overflow: hidden;
     }
 
     .tooltip.expanded {
-        transform: translateX(0) translateY(-50%);
+        transform: translateX(0) translateY(-10px);
         opacity: 1;
     }
 
@@ -313,9 +334,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 12px;
-        padding-bottom: 8px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .tooltip-title {
@@ -324,61 +342,6 @@
         font-weight: 700;
         color: #ffffff;
         letter-spacing: 0.5px;
-    }
-
-    .tooltip-icon {
-        font-size: 20px;
-        opacity: 0.8;
-    }
-
-    .tooltip-body {
-        animation: slideIn 0.3s ease-out 0.1s both;
-    }
-
-    .tooltip-description {
-        margin: 0 0 16px 0;
-        font-size: 14px;
-        color: #cccccc;
-        line-height: 1.4;
-    }
-
-    .tooltip-actions {
-        display: flex;
-        justify-content: center;
-    }
-
-    .tooltip-button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-    }
-
-    .tooltip-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-    }
-
-    .tooltip-button:active {
-        transform: translateY(0);
-    }
-
-    /* Arrow pointing down */
-    .tooltip::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        border: 8px solid transparent;
-        border-top-color: rgba(0, 0, 0, 0.95);
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     }
 
     @keyframes slideIn {
