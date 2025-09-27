@@ -19,7 +19,7 @@
     const cities = citiesContent.cities || [];
 </script>
 
-<div {id} class={"line-list " + (viewable ? "view detailed-view" : "")}>
+<div {id} class={"city-list " + (viewable ? "view detailed-view" : "")}>
     <ul>
         {#each cities as city}
             <li>
@@ -37,9 +37,8 @@
 </div>
 
 <style lang="scss" scoped>
-    .line-list {
-        overflow-y: scroll;
-        overflow-x: hidden;
+    .city-list {
+        width: auto !important;
     }
     // reset ul li
     ul {
@@ -53,7 +52,7 @@
         text-decoration: none;
         color: inherit;
         height: 28px;
-        padding-left: 6px;
+        padding: 0px 20px;
     }
 
     button {
@@ -98,6 +97,7 @@
         padding: var(--padding-m);
         border-radius: var(--border-radius-button);
         align-items: center;
+        justify-content: center;
         gap: 0.5em;
         transition: var(--transition);
         span {
