@@ -58,11 +58,12 @@
         justify-content: center;
         align-items: center;
         padding: 2em;
+        width: 100vw;
+        max-width: 500px;
         z-index: 10000;
     }
 
     .consent-banner-content {
-        max-width: 500px;
         width: 100%;
         padding: 1em;
         border-radius: 0.52em;

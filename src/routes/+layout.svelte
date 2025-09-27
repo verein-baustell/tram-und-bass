@@ -64,7 +64,7 @@
     });
 </script>
 
-{#if !isCityRoute || hasConsent}
+{#if initialized && (!isCityRoute || hasConsent)}
     <slot />
 {/if}
 
