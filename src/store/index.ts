@@ -6,6 +6,7 @@ import changeFaviconToLine from "../utils/changeFaviconToLine";
 import {
     getCityNameFromSlug,
     getCityFromSlug,
+    getCityShortNameFromSlug,
 } from "../utils/getCityNameFromSlug";
 
 // dev tools delete for production
@@ -46,6 +47,10 @@ export const allLines = writable<Line[] | undefined>();
 // Derived stores for city information
 export const currentCityName = derived(currentCitySlug, ($currentCitySlug) =>
     getCityNameFromSlug($currentCitySlug)
+);
+export const currentCityShortName = derived(
+    currentCitySlug,
+    ($currentCitySlug) => getCityShortNameFromSlug($currentCitySlug)
 );
 
 export const currentCity = derived(currentCitySlug, ($currentCitySlug) =>

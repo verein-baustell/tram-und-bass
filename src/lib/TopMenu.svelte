@@ -13,14 +13,18 @@
         isPlayButtonOn,
         currentCitySlug,
         currentCityName,
+        currentCityShortName,
+        isMobile,
     } from "../store";
     import { addState } from "../utils/stateManager";
     export let aboutContent: string;
 
-    // Make menuEntries reactive to city name changes
+    // Make menuEntries reactive to city name changes and mobile state
     $: menuEntries = [
         {
-            name: $currentCityName || "Städte",
+            name: $isMobile
+                ? $currentCityShortName || "Städte"
+                : $currentCityName || "Städte",
             component: CityList,
         },
         { name: "Linien", component: LineList },

@@ -1,6 +1,7 @@
 ---
 cities:
   - name: Zürich
+    shortName: ZH
     slug: zurich
     legal: Rechte gehören uns.
     description: Rechte gehören uns.
@@ -3071,6 +3072,7 @@ cities:
             endTime: 42:21
         isInverted: false
   - name: Chemnitz
+    shortName: CN
     slug: chemnitz
     description: TnB goes Chemnitz
     lines:
