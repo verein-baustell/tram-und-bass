@@ -17,8 +17,21 @@
     let tooltipVisible = false;
     let tooltipData: any = null;
     let isHovering = false;
+    let mobilePopupVisible = false;
+    let mobilePopupData: any = null;
 
     let handleResize: (() => void) | null = null;
+
+    // Check if device is mobile/touch
+    function isMobileDevice() {
+        return "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    }
+
+    // Function to close mobile popup
+    function closeMobilePopup() {
+        mobilePopupVisible = false;
+        mobilePopupData = null;
+    }
 
     // Function to update tooltip position
     function updateTooltipPosition() {
@@ -126,54 +139,65 @@
                 .pointResolution(100)
                 .pointLabel(() => null)
                 .onPointHover((point: any) => {
-                    console.log(
-                        "Point hover:",
-                        point,
-                        "isHovering:",
-                        isHovering
-                    ); // Debug log
-                    // Change cursor to pointer when hovering over cities
-                    if (point) {
+                    // Only show tooltip on desktop devices
+                    if (!isMobileDevice()) {
                         console.log(
-                            "Hovering over point, setting isHovering to true"
-                        );
-                        container.style.cursor = "pointer";
-                        isHovering = true;
-
-                        // Stop auto-rotation on hover
-                        if (globe.controls()) {
-                            console.log("Stopping auto-rotate on point hover");
-                            globe.controls().autoRotate = false;
-                        }
-
-                        // Show tooltip on point hover
-                        if (point.name) {
-                            console.log("Showing tooltip for:", point.name); // Debug log
-                            tooltipData = point;
-                            tooltipVisible = true;
-                            updateTooltipPosition();
-                        }
-                    } else {
-                        console.log(
-                            "Not hovering over point, setting isHovering to false"
-                        );
-                        container.style.cursor = "default";
-                        isHovering = false;
-                        tooltipVisible = false;
-
-                        // Resume auto-rotation when not hovering
-                        if (globe.controls() && enableAutoRotate) {
+                            "Point hover:",
+                            point,
+                            "isHovering:",
+                            isHovering
+                        ); // Debug log
+                        // Change cursor to pointer when hovering over cities
+                        if (point) {
                             console.log(
-                                "Resuming auto-rotate after point hover ends"
+                                "Hovering over point, setting isHovering to true"
                             );
-                            globe.controls().autoRotate = true;
+                            container.style.cursor = "pointer";
+                            isHovering = true;
+
+                            // Stop auto-rotation on hover
+                            if (globe.controls()) {
+                                console.log(
+                                    "Stopping auto-rotate on point hover"
+                                );
+                                globe.controls().autoRotate = false;
+                            }
+
+                            // Show tooltip on point hover
+                            if (point.name) {
+                                console.log("Showing tooltip for:", point.name); // Debug log
+                                tooltipData = point;
+                                tooltipVisible = true;
+                                updateTooltipPosition();
+                            }
+                        } else {
+                            console.log(
+                                "Not hovering over point, setting isHovering to false"
+                            );
+                            container.style.cursor = "default";
+                            isHovering = false;
+                            tooltipVisible = false;
+
+                            // Resume auto-rotation when not hovering
+                            if (globe.controls() && enableAutoRotate) {
+                                console.log(
+                                    "Resuming auto-rotate after point hover ends"
+                                );
+                                globe.controls().autoRotate = true;
+                            }
                         }
                     }
                 })
                 .onPointClick((point: any) => {
-                    // Navigate to the city page when a city is clicked
                     if (point && point.url) {
-                        goto(point.url);
+                        if (isMobileDevice()) {
+                            // Mobile: show popup
+                            mobilePopupData = point;
+                            mobilePopupVisible = true;
+                        } else {
+                            // Desktop: direct navigation
+                            goto(point.url);
+                        }
                     }
                 });
 
@@ -291,6 +315,26 @@
     </div>
 {/if}
 
+<!-- Mobile Popup -->
+{#if mobilePopupVisible && mobilePopupData}
+    <div class="mobile-popup-overlay" on:click={closeMobilePopup}>
+        <div class="mobile-popup" on:click|stopPropagation>
+            <button class="mobile-popup-close" on:click={closeMobilePopup}>
+                ×
+            </button>
+            <div class="mobile-popup-content">
+                <h2 class="mobile-popup-title">{mobilePopupData.name}</h2>
+                <button
+                    class="mobile-popup-button"
+                    on:click={() => goto(mobilePopupData.url)}
+                >
+                    Einsteigen
+                </button>
+            </div>
+        </div>
+    </div>
+{/if}
+
 <style>
     .globe-container {
         position: absolute;
@@ -342,6 +386,78 @@
         font-weight: 700;
         color: #ffffff;
         letter-spacing: 0.5px;
+    }
+
+    /* Mobile Popup Styles */
+    .mobile-popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .mobile-popup {
+        background: #000000;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        max-width: 400px;
+        width: 100%;
+        position: relative;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    .mobile-popup-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background-color 0.2s ease;
+    }
+
+    .mobile-popup-close:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-popup-content {
+        padding: 24px;
+        text-align: center;
+    }
+
+    .mobile-popup-title {
+        margin: 0 0 12px 0;
+        font-size: 24px;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 0.5px;
+    }
+
+    .mobile-popup-button {
+        background: #ff5e1f;
+        color: white;
+        border: none;
+        padding: 14px 28px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        width: 100%;
     }
 
     @keyframes slideIn {

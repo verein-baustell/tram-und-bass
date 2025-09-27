@@ -30,6 +30,7 @@
     .title-logo {
         height: auto;
         width: 90vw;
+        max-width: 800px;
         z-index: 1;
         position: absolute;
         top: 40px;
