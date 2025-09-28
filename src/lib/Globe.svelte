@@ -96,7 +96,7 @@
                     lng: 8.5417,
                     name: "Zürich",
                     size: 0.5,
-                    color: "#F54927",
+                    color: "#AD46FF",
                     url: "/zurich",
                 },
                 {
@@ -104,7 +104,7 @@
                     lng: 12.9214,
                     name: "Chemnitz",
                     size: 0.5,
-                    color: "#21BD0F",
+                    color: "#AD46FF",
                     url: "/chemnitz",
                 },
             ];

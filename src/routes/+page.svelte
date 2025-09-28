@@ -29,7 +29,7 @@
             <Globe
                 initialLat={50}
                 initialLng={20}
-                initialAltitude={0.7}
+                initialAltitude={1}
                 enableAutoRotate={true}
                 autoRotateSpeed={0.1}
             />
