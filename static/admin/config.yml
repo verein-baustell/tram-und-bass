@@ -226,11 +226,15 @@ collections:
                                     widget: "relation"
                                     collection: "stations"
                                     file: "stations"
-                                    search_fields: ["cities.stations.name"]
-                                    value_field: "cities.stations.name"
-                                    display_fields: ["cities.stations.name"]
+                                    search_fields: ["cities.*.stations.*.name"]
+                                    value_field: "cities.*.stations.*.name"
+                                    display_fields:
+                                        [
+                                            "cities.*.stations.*.name",
+                                            "cities.*.name",
+                                        ]
                                     required: true
-                                    hint: "Select a station from the stations collection"
+                                    hint: "Select a station from the stations collection (powered by Sveltia CMS)"
                                   - label: "Start Time"
                                     name: "startTime"
                                     widget: "string"
