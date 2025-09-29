@@ -10,29 +10,21 @@ collections:
     - label: "Stations"
       name: "stations"
       files:
-          - name: "zurich_stations"
-            label: "Zurich Stations"
-            file: "src/data/zurich_stations.json"
+          - name: "stationNamesWithCoords"
+            label: "Station Names with Coordinates"
+            file: "src/data/stationNamesWithCoords.json"
             editor:
                 preview: false
             fields:
-                - label: "Station Name"
-                  name: "name"
-                  widget: "string"
-                  required: true
-                - label: "Station ID"
-                  name: "id"
-                  widget: "string"
-                  required: true
-                - label: "City"
-                  name: "city"
-                  widget: "string"
-                  default: "zurich"
-                  required: true
-                - label: "Coordinates"
-                  name: "coordinates"
-                  widget: "object"
+                - label: "Stations"
+                  name: "stations"
+                  widget: "list"
+                  summary: "{{fields.name}}"
                   fields:
+                      - label: "Station Name"
+                        name: "name"
+                        widget: "string"
+                        required: true
                       - label: "Latitude"
                         name: "lat"
                         widget: "number"
@@ -159,36 +151,6 @@ collections:
                         name: "description"
                         widget: "markdown"
                         required: true
-                      - label: "Stations"
-                        name: "stations"
-                        widget: "list"
-                        summary: "{{fields.name}}"
-                        collapsed: true
-                        minimize_collapsed: true
-                        fields:
-                            - label: "Station Name"
-                              name: "name"
-                              widget: "string"
-                              required: true
-                            - label: "Station ID"
-                              name: "id"
-                              widget: "string"
-                              required: true
-                              hint: "Unique identifier for the station"
-                            - label: "Coordinates"
-                              name: "coordinates"
-                              widget: "object"
-                              fields:
-                                  - label: "Latitude"
-                                    name: "lat"
-                                    widget: "number"
-                                    value_type: "float"
-                                    required: true
-                                  - label: "Longitude"
-                                    name: "lng"
-                                    widget: "number"
-                                    value_type: "float"
-                                    required: true
                       - label: "Lines"
                         name: "lines"
                         widget: "list"
@@ -239,15 +201,15 @@ collections:
                               summary: "{{fields.name}}"
                               fields:
                                   - label: "Station"
-                                    name: "station"
+                                    name: "name"
                                     widget: "relation"
                                     collection: "stations"
-                                    file: "zurich_stations"
+                                    file: "stationNamesWithCoords"
                                     value_field: "name"
                                     display_fields: ["name"]
                                     search_fields: ["name"]
                                     required: true
-                                    hint: "Select a station from the managed station list"
+                                    hint: "Select a station from the available stations list"
                                   - label: "Start Time"
                                     name: "startTime"
                                     widget: "string"
