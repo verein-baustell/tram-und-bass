@@ -10,31 +10,52 @@ collections:
     - label: "Stations"
       name: "stations"
       files:
-          - name: "stationNamesWithCoords"
-            label: "Station Names with Coordinates"
-            file: "src/data/stationNamesWithCoords.json"
+          - name: "stations"
+            label: "All Stations"
+            file: "src/data/stations.md"
             editor:
                 preview: false
             fields:
-                - label: "Stations"
-                  name: "stations"
+                - label: "Cities"
+                  name: "cities"
                   widget: "list"
-                  summary: "{{fields.name}}"
+                  summary: "{{fields.name}} ({{fields.stations.length}} stations)"
+                  collapsed: true
+                  minimize_collapsed: true
                   fields:
-                      - label: "Station Name"
+                      - label: "City Name"
                         name: "name"
                         widget: "string"
                         required: true
-                      - label: "Latitude"
-                        name: "lat"
-                        widget: "number"
-                        value_type: "float"
+                        hint: "Name of the city (e.g., Zurich, Berlin)"
+                      - label: "City Slug"
+                        name: "slug"
+                        widget: "string"
                         required: true
-                      - label: "Longitude"
-                        name: "lng"
-                        widget: "number"
-                        value_type: "float"
-                        required: true
+                        hint: "URL-friendly version of city name (e.g., 'zurich', 'berlin')"
+                      - label: "Stations"
+                        name: "stations"
+                        widget: "list"
+                        summary: "{{fields.name}}"
+                        fields:
+                            - label: "Station Name"
+                              name: "name"
+                              widget: "string"
+                              required: true
+                            - label: "Latitude"
+                              name: "lat"
+                              widget: "number"
+                              value_type: "float"
+                              required: true
+                            - label: "Longitude"
+                              name: "lng"
+                              widget: "number"
+                              value_type: "float"
+                              required: true
+                            - label: "Description"
+                              name: "description"
+                              widget: "text"
+                              required: false
     - label: "Pages"
       name: "pages"
       files:
@@ -204,12 +225,12 @@ collections:
                                     name: "name"
                                     widget: "relation"
                                     collection: "stations"
-                                    file: "stationNamesWithCoords"
-                                    value_field: "name"
-                                    display_fields: ["name"]
-                                    search_fields: ["name"]
+                                    file: "stations"
+                                    search_fields: ["cities.stations.name"]
+                                    value_field: "cities.stations.name"
+                                    display_fields: ["cities.stations.name"]
                                     required: true
-                                    hint: "Select a station from the available stations list"
+                                    hint: "Select a station from the stations collection"
                                   - label: "Start Time"
                                     name: "startTime"
                                     widget: "string"
