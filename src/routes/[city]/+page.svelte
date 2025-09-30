@@ -79,11 +79,16 @@
     let tempLine = releasedLines?.[randomIndex];
     console.log("tempLine", tempLine);
 
+    let videoIsReady = false;
     function onPlayerReady(event: any) {
         if (event.target) {
             console.log("Player is ready");
             muxVideoObject.set(event.target);
-            registerMuxEventListeners();
+            // only register the event listeners once
+            if (!videoIsReady) {
+                videoIsReady = true;
+                registerMuxEventListeners();
+            }
         }
     }
 

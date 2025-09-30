@@ -15,6 +15,7 @@
         currentCityName,
         currentCityShortName,
         isMobile,
+        videoIsLoading,
     } from "../store";
     import { addState } from "../utils/stateManager";
     export let aboutContent: string;
@@ -68,9 +69,12 @@
                         this={currentComponent}
                         onClick={(clickedLine) => {
                             addState();
-                            currentLine.set(clickedLine);
+                            videoIsLoading.set(true);
                             isTopOpen.set(false);
                             isPlayButtonOn.set(false);
+                            setTimeout(() => {
+                                currentLine.set(clickedLine);
+                            }, 500);
                         }}
                         lines={$allLines}
                         {aboutContent}

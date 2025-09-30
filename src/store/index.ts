@@ -176,7 +176,7 @@ function getMuxVideoId(videoUrl: string): string | null {
     const match = videoUrl.match(regex);
     return match ? match[1] : null;
 }
-const lastCurrentStation = writable<TimeStamp>();
+const lastCurrentStation = writable<TimeStamp | undefined>();
 /**
  * If we are not at a station, this will be undefined.
  */
@@ -188,11 +188,13 @@ export const currentStation: Readable<TimeStamp | undefined> = derived(
                   const muxPlayer = get(muxVideoObject);
                   if (!$currentLine) {
                       set(undefined);
+                      console.log("🚉 no current line");
                       return;
                   }
                   // if the video is not loaded yet, return
                   if (muxPlayer.playbackId !== $currentLine.videoUrl) {
                       set(undefined);
+                      console.log("🚉 video not loaded");
                       return;
                   }
                   const newStation = $currentLine.timeStamps?.find(
@@ -202,6 +204,7 @@ export const currentStation: Readable<TimeStamp | undefined> = derived(
                   );
                   if (!newStation) {
                       set(undefined);
+                      console.log("🚉 no current station");
                       return;
                   }
                   if (newStation !== $lastCurrentStation) {
@@ -213,6 +216,7 @@ export const currentStation: Readable<TimeStamp | undefined> = derived(
                       set(newStation);
                       lastCurrentStation.set(newStation);
                   }
+                  console.log("🚉 last current station", $lastCurrentStation);
               })()
             : null;
     }
@@ -276,6 +280,9 @@ muxVideoObject.subscribe((muxPlayer) => {
         "muxVideoObject updated:",
         muxPlayer ? "Player available" : "Player undefined"
     );
+    if (muxPlayer) {
+        lastCurrentStation.set(undefined);
+    }
 });
 
 // history variables

@@ -24,6 +24,7 @@
         devToolsState,
         history,
         cookieConsent,
+        currentCitySlug,
     } from "../store";
     import { giveConsent, revokeConsent } from "../utils/cookieManager";
     import { changeToLineAtTime } from "../utils/changeToLineAtCurrentTime";
@@ -99,6 +100,7 @@
                 <tr> <td> cookieConsent:</td><td> {$cookieConsent}</td></tr>
                 <tr> <td> muxVideoObject:</td><td> {$muxVideoObject}</td></tr>
                 <tr> <td> currentLine:</td><td> {$currentLine?.id}</td></tr>
+                <tr> <td> currentCity:</td><td> {$currentCitySlug}</td></tr>
                 <tr>
                     <td> timeToSeekAfterVideoLoad:</td><td>
                         {$timeToSeekAfterVideoLoad}</td

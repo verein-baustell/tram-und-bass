@@ -60,4 +60,15 @@ export default () => {
     muxPlayer.addEventListener("volumechange", () => {
         isMuted.set(muxPlayer.muted);
     });
+
+    // Track when the video starts seeking to a new time
+    muxPlayer.addEventListener("seeking", () => {
+        console.log("Video is seeking");
+        videoIsLoading.set(true);
+    });
+
+    // Track when the video finishes seeking
+    muxPlayer.addEventListener("seeked", () => {
+        console.log("Video seek completed");
+    });
 };
