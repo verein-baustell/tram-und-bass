@@ -24,7 +24,7 @@ cities:
 
 
           [Instagram @violazimmermann](<https://www.instagram.com/violazimmermann/ >)
-        videoUrl: a4nOgmxGWg6gULfcBbAa00gXyfcwPnAFldF8RdsNyk8M
+        videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
         releaseDate: 2024-11-18T03:59:00.000Z
         id: ""
         timeStamps:
@@ -459,7 +459,7 @@ cities:
 
 
           [Bandcamp](https://hausvrau.bandcamp.com/)
-        videoUrl: https://stream.mux.com/yhlBYCNsyeVfgOBXEPOSSovQqzoy2vbUya402Wfau5bc.m3u8
+        videoUrl: gNYezzLdgyxEAwepK5Vo7P02AuR7W2821LjEHBIHBaA00
         releaseDate: 2024-12-03T05:25:00.000Z
         id: ""
         timeStamps:
@@ -561,7 +561,7 @@ cities:
 
 
           [Instagram @newkyddd3](https://www.instagram.com/newkyddd3/)
-        videoUrl: https://player.vimeo.com/video/950564216?h=895d1fb002
+        videoUrl: D01njqfM9ojELAbwfTPyZRco61PFNInBdww37qUyX1Yw
         releaseDate: 2025-01-01T00:00:00.000Z
         id: ""
         timeStamps:
@@ -669,7 +669,7 @@ cities:
 
 
           [Bandcamp](https://atrice.bandcamp.com/)
-        videoUrl: https://player.vimeo.com/video/950565372?h=3c31783cab
+        videoUrl: OF8qzDZn4ImeF01gGxA3YgBRxDgeJIdEcXJlW9QN6elI
         releaseDate: 2025-01-01T00:00:00.000Z
         id: ""
         timeStamps:
@@ -740,7 +740,7 @@ cities:
 
 
           [Bandcamp](https://regula.bandcamp.com/album/rr-ep-vol-1)
-        videoUrl: https://player.vimeo.com/video/947764688?h=181299d19c
+        videoUrl: BDIITxDF3Ksmxpi8jjvxGk5ARd7Ncx4Apef62I8lLF4
         releaseDate: 2024-11-25T06:06:00.000Z
         id: ""
         timeStamps:
@@ -811,7 +811,7 @@ cities:
 
 
           [Bandcamp](https://kashevtapes.bandcamp.com/track/moleku-hl-progression)
-        videoUrl: https://player.vimeo.com/video/950566927?h=92df0178c5
+        videoUrl: 02KIOYfHM3UmEQnzWgbN9Jlph9S01S9NMQFhBAL9dv3gI
         releaseDate: 2024-12-04T05:34:00.000Z
         id: ""
         timeStamps:
@@ -887,7 +887,7 @@ cities:
 
 
           [Bandcamp](https://softdate.bandcamp.com/)
-        videoUrl: https://player.vimeo.com/video/950566054?h=9f68eea5d2
+        videoUrl: 00i00BMnPcQy9PZR8zF5Q5DYg1CRGXUz02uPvm00ltZk01XY
         releaseDate: 2025-01-01T00:00:00.000Z
         id: ""
         timeStamps:
@@ -959,7 +959,7 @@ cities:
 
 
           [Instagram @zirkuslino](https://www.instagram.com/zirkuslino/)
-        videoUrl: https://player.vimeo.com/video/950567543?h=8e4eb0457c
+        videoUrl: z00TsahzUdfoFcXzCzQ9xq01vQmC8aOvZr7w7caDnD00Xk
         releaseDate: 2025-01-01T00:00:00.000Z
         id: ""
         timeStamps:
@@ -1076,7 +1076,7 @@ cities:
 
 
           [Instagram @djtatana](https://www.instagram.com/djtatana/)
-        videoUrl: https://player.vimeo.com/video/950568271?h=72f40f9183
+        videoUrl: YoEGi00PUz29JiNEFe1UBRyZF4QyLjZwNkCaZfB8gSWI
         releaseDate: 2024-11-26T05:59:00.000Z
         id: ""
         timeStamps:
@@ -1198,7 +1198,7 @@ cities:
 
 
           [Bandcamp](https://bandcamp.com/exguesi)
-        videoUrl: https://player.vimeo.com/video/950568957?h=0962988f6e
+        videoUrl: Hf7Vsc7harmxnXoCPyKtupDy2cV3FWrQ37A4VLR6iw00
         releaseDate: 2024-11-19T05:12:00.000Z
         id: ""
         timeStamps:
@@ -1299,7 +1299,7 @@ cities:
 
 
           \[Bandcamp](https://ousooo.bandcamp.com)
-        videoUrl: https://player.vimeo.com/video/950570324?h=ddbc1bdffa
+        videoUrl: 00UekMawegb7ReLeFW01yAeEklMocDIhX2v500i1s2GWCA
         releaseDate: 2025-01-01T00:00:00.000Z
         id: ""
         timeStamps:
@@ -1398,7 +1398,7 @@ cities:
 
 
           [Instagram @baer_ae](https://www.instagram.com/lebeamlimmat?igsh=dnY0MnByZzl2MnRj)
-        videoUrl: https://player.vimeo.com/video/950573466?h=7fb8f08ec8
+        videoUrl: s16hPSsUAgjQUYFrzXdE2au1AyEF00JHbTyDy9Draxa4
         releaseDate: 2025-01-01T00:00:00.000Z
         id: ""
         timeStamps:
@@ -1528,7 +1528,7 @@ cities:
 
 
           [Bandcamp](https://bandcamp.com/isisi)
-        videoUrl: https://player.vimeo.com/video/950571962?h=b4953715b2
+        videoUrl: itzUcl3TBG2FjoiBtF7LttsVX9pSlaluOSvLaRu6Dvc
         releaseDate: 2024-11-27T06:30:00.000Z
         id: ""
         timeStamps:
@@ -1655,7 +1655,7 @@ cities:
 
 
           [Soundcloud](https://soundcloud.com/tvbxs1)
-        videoUrl: https://player.vimeo.com/video/950672105?h=0f80c5bf39
+        videoUrl: oMiUcyeDV00dFMM7m1ernEtRaanpetyg8dgAUliBFaFU
         releaseDate: 2024-12-05T05:00:00.000Z
         id: ""
         timeStamps:
@@ -1756,7 +1756,7 @@ cities:
 
 
           [Soundcloud](https://on.soundcloud.com/wvwrjzVADQGETm3k9)
-        videoUrl: https://player.vimeo.com/video/950661521?h=164e96d180
+        videoUrl: zhTTkbWkFFi01IeIrj7kL8Jsuyg00QqOJTydmmjpZ2B00s
         releaseDate: 2025-01-01T00:00:00.000Z
         id: ""
         timeStamps:
@@ -1867,7 +1867,7 @@ cities:
 
 
           [Bandcamp](https://dschinn.bandcamp.com/)
-        videoUrl: https://player.vimeo.com/video/950688315?h=444abd1672
+        videoUrl: 96ybvWKD1zMpHriVPamudKYH5EJAqgqKW02LZQFw9PJg
         releaseDate: 2024-11-20T05:07:00.000Z
         id: ""
         timeStamps:
@@ -1996,7 +1996,7 @@ cities:
 
 
           [Soundcloud](https://soundcloud.com/nivenive)
-        videoUrl: https://player.vimeo.com/video/950679463?h=03df9a86bb
+        videoUrl: 00lqmsgnNNaLm2GSX02duuA013kWvjwmpda2x001Wqm7aC8
         releaseDate: 2025-01-01T00:00:00.000Z
         id: ""
         timeStamps:
@@ -2117,7 +2117,7 @@ cities:
 
 
           Composed live and improvised directly on the machines used for this piece, the music reflects on the greyness and eclipsing hopelessness of the suburban agglomeration depicted in the video. Sparse housing, giant isolated commercial buildings, devouring concrete blocks, bridges and tunnels. And the ever-present shopping centres. Yet, it all stands so still, so calm, like death. Beauty.
-        videoUrl: https://player.vimeo.com/video/950697436?h=67800866e7
+        videoUrl: S74Eaq8F7k51Xl2P400NNrZwfHrfFSp3pux3RpSsNlNw
         releaseDate: 2025-01-01T00:00:00.000Z
         id: ""
         timeStamps:
@@ -2195,7 +2195,7 @@ cities:
 
 
           \[Bandcamp](https://endlessbazaar.bandcamp.com/track/endobliss-golden-era-glitch)
-        videoUrl: https://player.vimeo.com/video/950700571?h=cc9bd2b94d
+        videoUrl: ARFENf802JXxsR00N6bQpPTNVyw9smV2vof7Ia6EVcZ7Q
         releaseDate: 2024-11-21T05:45:00.000Z
         id: ""
         timeStamps:
@@ -2274,7 +2274,7 @@ cities:
 
 
           [Bandcamp](https://bandcamp.com/vincia)
-        videoUrl: https://player.vimeo.com/video/950707919?h=af30ff979c
+        videoUrl: WSw9uzft00rLLvkxV3oFo2IJJdXKzxHJWqG7rbjpLgak
         releaseDate: 2024-11-28T05:17:00.000Z
         id: ""
         timeStamps:
@@ -2391,7 +2391,7 @@ cities:
 
 
           [Soundcloud](https://soundcloud.com/user-352431009)
-        videoUrl: https://player.vimeo.com/video/950719687?h=29fa4163a3
+        videoUrl: ek3od02zqg3CVhRPQTx7VaK014RttCeeLgWu1Xjuieygg
         releaseDate: 2025-01-01T00:00:00.000Z
         id: ""
         timeStamps:
@@ -2504,7 +2504,7 @@ cities:
 
 
           [Instagram @alex.dallas_](https://www.instagram.com/alex.dallas_/)
-        videoUrl: https://player.vimeo.com/video/950742749?h=57745ef270
+        videoUrl: mZPBU7yXdksiUp6hqukqE1vGfF9AeUsZxdnKQ5PAc01w
         releaseDate: 2024-12-06T05:07:00.000Z
         id: ""
         timeStamps:
@@ -2612,7 +2612,7 @@ cities:
 
 
           [Soundcloud](www.soundcloud.com/judallasju)
-        videoUrl: https://player.vimeo.com/video/950721895?h=02c06df905
+        videoUrl: II02d4r4dqIDlGdlg4uXvYHXX802UrnpUYZckFSs6zRhw
         releaseDate: 2025-01-01T00:00:00.000Z
         id: ""
         timeStamps:
@@ -2723,7 +2723,7 @@ cities:
 
 
           [Bandcamp](https://wummertal.bandcamp.com/)
-        videoUrl: https://player.vimeo.com/video/950805249?h=1f4d17577f
+        videoUrl: NZrC700Y6eVkHgQUS8hWoht021Y4r026bG0075TFo02GPnKI
         releaseDate: 2024-11-29T05:40:00.000Z
         id: ""
         timeStamps:
@@ -2795,7 +2795,7 @@ cities:
 
 
           [Bandcamp](https://lespoints.bandcamp.com/)
-        videoUrl: https://player.vimeo.com/video/950808090?h=55d4d27811
+        videoUrl: CbySZ1KIWxzfMzyA3mAK3hAJPLnd1ipjtRyST4vznuo
         releaseDate: 2025-01-01T00:00:00.000Z
         id: ""
         timeStamps:
@@ -2861,7 +2861,7 @@ cities:
 
 
           [Soundcloud](https://soundcloud.com/jennycara)
-        videoUrl: https://player.vimeo.com/video/950809685?h=ee311a9fe0
+        videoUrl: MbgAL0201fUvIE4JhZQ02bFjsBfY8a6yr01PK9CQhvEwZ6M
         releaseDate: 2024-11-22T05:09:00.000Z
         id: ""
         timeStamps:
@@ -2979,7 +2979,7 @@ cities:
 
 
           [Instagram @andreasramos_sihlrec](https://www.instagram.com/andreasramos_sihlrec/)
-        videoUrl: https://player.vimeo.com/video/950812961?h=6d0ba88b36
+        videoUrl: 2RCdmU41e6ZJ8QbV5gArTSvFgzDm6u8ELtMGANtLtzc
         releaseDate: 2025-01-01T00:00:00.000Z
         id: ""
         timeStamps:
