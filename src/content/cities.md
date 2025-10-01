@@ -3071,6 +3071,7 @@ cities:
             startTime: 42:09
             endTime: 42:21
         isInverted: false
+    released: true
   - name: Chemnitz
     shortName: CHZ
     slug: chemnitz
@@ -3315,4 +3316,5 @@ cities:
             startTime: 39:29
             endTime: 40:08
         isInverted: false
+    released: false
 ---
