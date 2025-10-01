@@ -1,7 +1,7 @@
 backend:
     name: git-gateway
     # this will be replaced by the scripts/setBranchInCMSConfig.js
-    branch: mux-player
+    branch: main
 local_backend: true
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
