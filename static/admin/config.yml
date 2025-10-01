@@ -123,13 +123,15 @@ collections:
                         hint: "Whether the city is released"
                       - label: "Lat"
                         name: "lat"
-                        widget: "float"
+                        widget: "number"
+                        value_type: "float"
                         required: true
                         default: 0
                         hint: "Latitude of the city"
                       - label: "Lng"
                         name: "lng"
-                        widget: "float"
+                        widget: "number"
+                        value_type: "float"
                         required: true
                         default: 0
                         hint: "Longitude of the city"
