@@ -71,7 +71,10 @@
             // Access Three.js through globe.gl's internal instance
             const THREE = await import("three");
             // Initialize the globe
-            globe = new Globe(container, { animateIn: true })
+            globe = new Globe(container, {
+                animateIn: true,
+                waitForGlobeReady: true,
+            })
                 .globeImageUrl(
                     "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNGRkZGRkYiLz48L3N2Zz4="
                 ) // White texture
@@ -97,6 +100,7 @@
                     name: "Zürich",
                     size: 0.5,
                     color: "#AD46FF",
+                    released: true,
                     url: "/zurich",
                 },
                 {
@@ -104,6 +108,7 @@
                     lng: 12.9214,
                     name: "Chemnitz",
                     size: 0.5,
+                    released: false,
                     color: "#AD46FF",
                     url: "/chemnitz",
                 },
@@ -196,7 +201,9 @@
                             mobilePopupVisible = true;
                         } else {
                             // Desktop: direct navigation
-                            goto(point.url);
+                            if (point.released) {
+                                goto(point.url);
+                            }
                         }
                     }
                 });
@@ -309,7 +316,13 @@
     <div class="tooltip" bind:this={tooltip} class:expanded={tooltipVisible}>
         <div class="tooltip-content">
             <div class="tooltip-header">
-                <h3 class="tooltip-title">{tooltipData.name}</h3>
+                {#if tooltipData.released}
+                    <h3 class="tooltip-title">{tooltipData.name}</h3>
+                {:else}
+                    <h3 class="tooltip-title">
+                        {tooltipData.name} - Coming Soon
+                    </h3>
+                {/if}
             </div>
         </div>
     </div>
@@ -324,12 +337,18 @@
             </button>
             <div class="mobile-popup-content">
                 <h2 class="mobile-popup-title">{mobilePopupData.name}</h2>
-                <button
-                    class="mobile-popup-button"
-                    on:click={() => goto(mobilePopupData.url)}
-                >
-                    Einsteigen
-                </button>
+                {#if mobilePopupData.released}
+                    <button
+                        class="mobile-popup-button"
+                        on:click={() => goto(mobilePopupData.url)}
+                    >
+                        Einsteigen
+                    </button>
+                {:else}
+                    <button class="mobile-popup-button" disabled>
+                        Coming Soon
+                    </button>
+                {/if}
             </div>
         </div>
     </div>
@@ -458,6 +477,10 @@
         cursor: pointer;
         transition: all 0.2s ease;
         width: 100%;
+    }
+    .mobile-popup-button:disabled {
+        background: #555555;
+        cursor: not-allowed;
     }
 
     @keyframes slideIn {

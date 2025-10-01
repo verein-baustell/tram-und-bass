@@ -1,7 +1,6 @@
 <script>
     import Globe from "$lib/Globe.svelte";
     import { cookieConsent } from "../store";
-    import WelcomeScreen from "$lib/WelcomeScreen.svelte";
     import ConsentBanner from "$lib/ConsentBanner.svelte";
 
     let noConsent = false;
