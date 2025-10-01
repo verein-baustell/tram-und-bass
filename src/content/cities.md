@@ -2,7 +2,7 @@
 cities:
   - color: "#ad46ff"
     lng: 8.5417
-    shortName: ZRHU
+    shortName: ZRH
     name: Zürich
     slug: zurich
     legal: Rechte gehören uns.
