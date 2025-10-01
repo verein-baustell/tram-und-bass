@@ -76,7 +76,7 @@
                 released: city.released,
                 url: `/${city.slug}`,
                 size: 0.5,
-                color: "#AD46FF",
+                color: city.color,
             });
         });
 

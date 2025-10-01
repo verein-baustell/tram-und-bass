@@ -4,6 +4,7 @@ type City = {
     released: boolean;
     lat: number;
     lng: number;
+    color: string;
     legal: string;
     description: string;
     lines: Line[];
