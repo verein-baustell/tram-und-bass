@@ -1,367 +1,404 @@
 backend:
-  name: git-gateway
-  # this will be replaced by the scripts/setBranchInCMSConfig.js
-  branch: CURRENT_BRANCH
+    name: git-gateway
+    # this will be replaced by the scripts/setBranchInCMSConfig.js
+    branch: mux-player
 local_backend: true
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  - label: "Pages"
-    name: "pages"
-    files:
-      - name: "about"
-        label: about
-        file: "src/content/about.md"
-        editor:
-          preview: false
-        fields:
-          - label: "About Text"
-            name: "aboutText"
-            widget: "markdown"
-      - name: "insta"
-        label: insta
-        file: "src/content/insta.md"
-        editor:
-          preview: false
-        fields:
-          - label: "Insta Title"
-            name: "instagramText"
-            widget: "markdown"
-          - label: "Featured Image 1"
-            name: "insta1"
-            widget: "image"
-            choose_url: true
-            default: "/uploads/insta1.webp"
-            media_library:
-              config:
-                multiple: true
-          - label: "Featured Image 2"
-            name: "insta2"
-            widget: "image"
-            choose_url: true
-            default: "/uploads/insta1.webp"
-          - label: "Featured Image 3"
-            name: "insta3"
-            widget: "image"
-            choose_url: true
-            default: "/uploads/insta1.webp"
-          - label: "Featured Image 4"
-            name: "insta4"
-            widget: "image"
-            choose_url: true
-            default: "/uploads/insta1.webp"
-          - label: "Featured Image 5"
-            name: "insta5"
-            widget: "image"
-            choose_url: true
-            default: "/uploads/insta1.webp"
-      - name: "bandcamp"
-        label: bandcamp
-        file: "src/content/bandcamp.md"
-        editor:
-          preview: false
-        fields:
-          - label: "Bandcamp Title"
-            name: "bandcampText"
-            widget: "markdown"
-          - label: "Featured Image 1"
-            name: "bandcamp1"
-            widget: "image"
-            choose_url: true
-            default: "/uploads/insta1.webp"
-          - label: "Featured Image 2"
-            name: "bandcamp2"
-            widget: "image"
-            choose_url: true
-            default: "/uploads/insta1.webp"
-          - label: "Featured Image 3"
-            name: "bandcamp3"
-            widget: "image"
-            choose_url: true
-            default: "/uploads/insta1.webp"
-      - name: "impressum"
-        label: impressum
-        file: "src/content/impressum.md"
-        editor:
-          preview: false
-        fields:
-          - label: "Impressum Title"
-            name: "impressumText"
-            widget: "markdown"
-      - name: "lines"
-        label: "Lines"
-        file: "src/content/lines.md"
-        editor:
-          preview: false
-        fields:
-          - label: "Line"
-            name: "lines"
-            widget: "list"
-            summary: "{{fields.number}} {{fields.name}} {{fields.artistName}}"
+    - label: "Pages"
+      name: "pages"
+      files:
+          - name: "about"
+            label: about
+            file: "src/content/about.md"
+            editor:
+                preview: false
             fields:
-              - label: "Name"
-                name: "name"
-                widget: "string"
-                required: true
-              - label: "Release Date"
-                name: "releaseDate"
-                widget: "datetime"
-                required: true
-              - label: "number"
-                name: "number"
-                widget: "number"
-                value_type: "int"
-                required: true
-              - label: "ID"
-                name: "id"
-                widget: "hidden"
-                default: ""
-              - label: "Color"
-                name: "color"
-                widget: "color"
-                required: true
-              - label: "Inverted Color"
-                name: "isInverted"
-                widget: "boolean"
-                required: true
-              - label: "Video URL"
-                name: "videoUrl"
-                widget: "string"
-                required: true
-              - label: "Artist Name"
-                name: "artistName"
-                widget: "string"
-                required: true
-              - label: "Artist About Text"
-                name: "artistAboutText"
-                widget: "markdown"
-                required: false
-              - label: "Timestamps"
-                name: "timeStamps"
-                widget: "list"
-                summary: "{{fields.name}}"
-                fields:
-                  - label: "Station"
-                    name: "name"
-                    widget: "select"
-                    required: true
-                    options:
-                      [
-                        "Aargauerstrasse",
-                        "Albisgütli",
-                        "Albisrieden",
-                        "Albisriederplatz",
-                        "Altes Krematorium",
-                        "Alte Trotte",
-                        "Altried",
-                        "Am Ring",
-                        "Auzelg",
-                        "Bachmattstrasse",
-                        "Bad Allenmoos",
-                        "Bahnhof Altstetten Nord",
-                        "Bahnhof Enge",
-                        "Bahnhof Enge Bederstrasse",
-                        "Bahnhof Hardbrücke",
-                        "Bahnhof Oerlikon",
-                        "Bahnhof Oerlikon Ost",
-                        "Bahnhofplatz HB",
-                        "Bahnhofquai HB",
-                        "Bahnhof Selnau",
-                        "Bahnhof Stadelhofen",
-                        "Bahnhof Stettbach",
-                        "Bahnhofstrasse HB",
-                        "Bahnhof Tiefenbrunnen",
-                        "Bahnhof Wiedikon",
-                        "Balgrist",
-                        "Bäckeranlage",
-                        "Beckenhof",
-                        "Belair",
-                        "Bellevue",
-                        "Berninaplatz",
-                        "Bernoulli-Häuser",
-                        "Bezirksgebäude",
-                        "Bhf. Wollishofen Staubstrasse",
-                        "Billoweg",
-                        "Bändliweg",
-                        "Bürkliplatz",
-                        "Brunaustrasse",
-                        "Bucheggplatz",
-                        "Bäuler",
-                        "Burgwies",
-                        "Butzenstrasse",
-                        "Central",
-                        "Englischviertelstrasse",
-                        "Eschergutweg",
-                        "Escher-Wyss-Platz",
-                        "ETH Universitätsspital",
-                        "Farbhof",
-                        "Feldeggstrasse",
-                        "Fellenbergstrasse",
-                        "Felsenrainstrasse",
-                        "Fernsehstudio",
-                        "Fischerweg",
-                        "Zürich Flughafen Bahnhof",
-                        "Fracht",
-                        "Frankental",
-                        "Freihofstrasse",
-                        "Fröhlichstrasse",
-                        "Friedhof Enzenbühl",
-                        "Förrlibuckstrasse",
-                        "Gasometerbrücke",
-                        "Geissweid",
-                        "Glattbrugg Bahnhof",
-                        "Glattpark",
-                        "Glatt",
-                        "Glattwiesen",
-                        "Goldbrunnenplatz",
-                        "Grimselstrasse",
-                        "Grünaustrasse",
-                        "Güterbahnhof",
-                        "Guggachstrasse",
-                        "Haldenbach",
-                        "Haldenegg",
-                        "Hardhof",
-                        "Hardplatz",
-                        "Hardturm",
-                        "Hedwigsteig",
-                        "Heerenwiesen",
-                        "Hegibachplatz",
-                        "Helmhaus",
-                        "Helvetiaplatz",
-                        "Herti",
-                        "Heuried",
-                        "Hirschwiesenstrasse",
-                        "Hirzenbach",
-                        "Hölderlinstrasse",
-                        "Hottingerplatz",
-                        "Höschgasse",
-                        "Hubertus",
-                        "Kantonalbank",
-                        "Kantonsschule",
-                        "Kappeli",
-                        "Kinkelstrasse",
-                        "Kirche Fluntern",
-                        "Kloten Balsberg Bahnhof",
-                        "Klusplatz",
-                        "Kreuzplatz",
-                        "Kreuzstrasse",
-                        "Kronenstrasse",
-                        "Kunsthaus",
-                        "Langmauerstrasse",
-                        "Laubegg",
-                        "Laubiweg",
-                        "Letzigrund",
-                        "Letzistrasse",
-                        "Leutschenbach",
-                        "Limmatplatz",
-                        "Lindberghplatz",
-                        "Lindenplatz",
-                        "Lochergut",
-                        "Luchswiesen",
-                        "Luegisland",
-                        "Löwenbräu",
-                        "Löwenplatz",
-                        "Mattenhof",
-                        "Meierhofplatz",
-                        "Messe Hallenstadion",
-                        "Micafil",
-                        "Milchbuck",
-                        "Mülligen",
-                        "Morgental",
-                        "Museum für Gestaltung",
-                        "Museum Rietberg",
-                        "Neugut",
-                        "Neumarkt",
-                        "Oerlikerhus",
-                        "Opernhaus",
-                        "Ottikerstrasse",
-                        "Paradeplatz",
-                        "Platte",
-                        "Renggerstrasse",
-                        "Probstei",
-                        "Quellenstrasse",
-                        "Brunnenhof",
-                        "Rathaus",
-                        "Regensbergbrücke",
-                        "Rehalp",
-                        "Rennweg",
-                        "Rentenanstalt",
-                        "Ringwiesen",
-                        "Römerhof",
-                        "Roswiesen",
-                        "Röslistrasse",
-                        "Rudolf-Brun-Brücke",
-                        "Saalsporthalle",
-                        "Salersteig",
-                        "Schaffhauserplatz",
-                        "Schaufelbergerstrasse",
-                        "Schiffbau",
-                        "Schmiede Wiedikon",
-                        "Schörlistrasse",
-                        "Schwamendingerplatz",
-                        "Schwert",
-                        "Seebach",
-                        "Seebacherplatz",
-                        "Seilbahn Rigiblick",
-                        "Siemens",
-                        "Signaustrasse",
-                        "Sihlcity Nord",
-                        "Sihlpost HB",
-                        "Sihlquai HB",
-                        "Sihlstrasse",
-                        "Sonneggstrasse",
-                        "Sportweg",
-                        "Stampfenbachplatz",
-                        "Stauffacher",
-                        "Sternen Oerlikon",
-                        "Stockerstrasse",
-                        "Strassenverkehrsamt",
-                        "Susenbergstrasse",
-                        "Talwiesenstrasse",
-                        "Technopark",
-                        "Tüffenwies",
-                        "Tierspital",
-                        "Toblerplatz",
-                        "Toni-Areal",
-                        "Triemli",
-                        "Tunnelstrasse",
-                        "Uetlihof",
-                        "Ueberlandpark",
-                        "Universität Irchel",
-                        "Unterriet",
-                        "Voltastrasse",
-                        "Waffenplatzstrasse",
-                        "Wagonsfabrik",
-                        "Waidfussweg",
-                        "Waldgarten",
-                        "Wallisellen Bahnhof",
-                        "Wartau",
-                        "Werd",
-                        "Werdhölzli",
-                        "Wetlistrasse",
-                        "Wildbachstrasse",
-                        "Winkelriedstrasse",
-                        "Winzerstrasse",
-                        "Wipkingerplatz",
-                        "Wollishoferplatz",
-                        "Würzgraben",
-                        "Schlieren Zentrum Bahnhof",
-                        "Zoo",
-                        "Zürichbergstrasse",
-                        "Kalkbreite",
-                        "Zwielplatz",
-                        "Zypressenstrasse",
-                      ]
-                  - label: "Start Time"
-                    name: "startTime"
-                    widget: "string"
-                    pattern:
-                      ["^[0-5][0-9]:[0-5][0-9]$", "Gültige Zeitangabe in mm:ss"]
-                    required: true
-                  - label: "End Time"
-                    name: "endTime"
-                    widget: "string"
-                    pattern:
-                      ["^[0-5][0-9]:[0-5][0-9]$", "Gültige Zeitangabe in mm:ss"]
-                    required: true
+                - label: "About Text"
+                  name: "aboutText"
+                  widget: "markdown"
+          - name: "insta"
+            label: insta
+            file: "src/content/insta.md"
+            editor:
+                preview: false
+            fields:
+                - label: "Insta Title"
+                  name: "instagramText"
+                  widget: "markdown"
+                - label: "Featured Image 1"
+                  name: "insta1"
+                  widget: "image"
+                  choose_url: true
+                  default: "/uploads/insta1.webp"
+                  media_library:
+                      config:
+                          multiple: true
+                - label: "Featured Image 2"
+                  name: "insta2"
+                  widget: "image"
+                  choose_url: true
+                  default: "/uploads/insta1.webp"
+                - label: "Featured Image 3"
+                  name: "insta3"
+                  widget: "image"
+                  choose_url: true
+                  default: "/uploads/insta1.webp"
+                - label: "Featured Image 4"
+                  name: "insta4"
+                  widget: "image"
+                  choose_url: true
+                  default: "/uploads/insta1.webp"
+                - label: "Featured Image 5"
+                  name: "insta5"
+                  widget: "image"
+                  choose_url: true
+                  default: "/uploads/insta1.webp"
+          - name: "bandcamp"
+            label: bandcamp
+            file: "src/content/bandcamp.md"
+            editor:
+                preview: false
+            fields:
+                - label: "Bandcamp Title"
+                  name: "bandcampText"
+                  widget: "markdown"
+                - label: "Featured Image 1"
+                  name: "bandcamp1"
+                  widget: "image"
+                  choose_url: true
+                  default: "/uploads/insta1.webp"
+                - label: "Featured Image 2"
+                  name: "bandcamp2"
+                  widget: "image"
+                  choose_url: true
+                  default: "/uploads/insta1.webp"
+                - label: "Featured Image 3"
+                  name: "bandcamp3"
+                  widget: "image"
+                  choose_url: true
+                  default: "/uploads/insta1.webp"
+          - name: "impressum"
+            label: impressum
+            file: "src/content/impressum.md"
+            editor:
+                preview: false
+            fields:
+                - label: "Impressum Title"
+                  name: "impressumText"
+                  widget: "markdown"
+          - name: "cities"
+            label: "Cities & Lines"
+            file: "src/content/cities.md"
+            editor:
+                preview: false
+            fields:
+                - label: "Cities"
+                  name: "cities"
+                  widget: "list"
+                  summary: "{{fields.name}} ({{fields.lines.length}} lines)"
+                  collapsed: true
+                  minimize_collapsed: true
+                  fields:
+                      - label: "City Name"
+                        name: "name"
+                        widget: "string"
+                        required: true
+                      - label: "City Short Name"
+                        name: "shortName"
+                        widget: "string"
+                        required: true
+                      - label: "City Slug"
+                        name: "slug"
+                        widget: "string"
+                        required: true
+                        hint: "URL-friendly version of city name (e.g., 'zurich', 'berlin')"
+                      - label: "Legal"
+                        name: "legal"
+                        widget: "markdown"
+                        required: false
+                      - label: "Description"
+                        name: "description"
+                        widget: "markdown"
+                        required: true
+                      - label: "Lines"
+                        name: "lines"
+                        widget: "list"
+                        summary: "{{fields.number}} {{fields.name}} {{fields.artistName}}"
+                        collapsed: true
+                        minimize_collapsed: true
+                        fields:
+                            - label: "Name"
+                              name: "name"
+                              widget: "string"
+                              required: true
+                            - label: "Release Date"
+                              name: "releaseDate"
+                              widget: "datetime"
+                              required: true
+                            - label: "number"
+                              name: "number"
+                              widget: "number"
+                              value_type: "int"
+                              required: true
+                            - label: "ID"
+                              name: "id"
+                              widget: "hidden"
+                              default: ""
+                            - label: "Color"
+                              name: "color"
+                              widget: "color"
+                              required: true
+                            - label: "Inverted Color"
+                              name: "isInverted"
+                              widget: "boolean"
+                              required: true
+                            - label: "Video URL"
+                              name: "videoUrl"
+                              widget: "string"
+                              required: true
+                            - label: "Artist Name"
+                              name: "artistName"
+                              widget: "string"
+                              required: true
+                            - label: "Artist About Text"
+                              name: "artistAboutText"
+                              widget: "markdown"
+                              required: false
+                            - label: "Timestamps"
+                              name: "timeStamps"
+                              widget: "list"
+                              summary: "{{fields.name}}"
+                              fields:
+                                  - label: "Station"
+                                    name: "name"
+                                    widget: "select"
+                                    required: true
+                                    hint: "Enter the station name for this city"
+                                    options:
+                                        [
+                                            "Aargauerstrasse",
+                                            "Albisgütli",
+                                            "Albisrieden",
+                                            "Albisriederplatz",
+                                            "Altes Krematorium",
+                                            "Alte Trotte",
+                                            "Altried",
+                                            "Am Ring",
+                                            "Auzelg",
+                                            "Bachmattstrasse",
+                                            "Bad Allenmoos",
+                                            "Bahnhof Altstetten Nord",
+                                            "Bahnhof Enge",
+                                            "Bahnhof Enge Bederstrasse",
+                                            "Bahnhof Hardbrücke",
+                                            "Bahnhof Oerlikon",
+                                            "Bahnhof Oerlikon Ost",
+                                            "Bahnhofplatz HB",
+                                            "Bahnhofquai HB",
+                                            "Bahnhof Selnau",
+                                            "Bahnhof Stadelhofen",
+                                            "Bahnhof Stettbach",
+                                            "Bahnhofstrasse HB",
+                                            "Bahnhof Tiefenbrunnen",
+                                            "Bahnhof Wiedikon",
+                                            "Balgrist",
+                                            "Bäckeranlage",
+                                            "Beckenhof",
+                                            "Belair",
+                                            "Bellevue",
+                                            "Berninaplatz",
+                                            "Bernoulli-Häuser",
+                                            "Bezirksgebäude",
+                                            "Bhf. Wollishofen Staubstrasse",
+                                            "Billoweg",
+                                            "Bändliweg",
+                                            "Bürkliplatz",
+                                            "Brunaustrasse",
+                                            "Bucheggplatz",
+                                            "Bäuler",
+                                            "Burgwies",
+                                            "Butzenstrasse",
+                                            "Central",
+                                            "Englischviertelstrasse",
+                                            "Eschergutweg",
+                                            "Escher-Wyss-Platz",
+                                            "ETH Universitätsspital",
+                                            "Farbhof",
+                                            "Feldeggstrasse",
+                                            "Fellenbergstrasse",
+                                            "Felsenrainstrasse",
+                                            "Fernsehstudio",
+                                            "Fischerweg",
+                                            "Zürich Flughafen Bahnhof",
+                                            "Fracht",
+                                            "Frankental",
+                                            "Freihofstrasse",
+                                            "Fröhlichstrasse",
+                                            "Friedhof Enzenbühl",
+                                            "Förrlibuckstrasse",
+                                            "Gasometerbrücke",
+                                            "Geissweid",
+                                            "Glattbrugg Bahnhof",
+                                            "Glattpark",
+                                            "Glatt",
+                                            "Glattwiesen",
+                                            "Goldbrunnenplatz",
+                                            "Grimselstrasse",
+                                            "Grünaustrasse",
+                                            "Güterbahnhof",
+                                            "Guggachstrasse",
+                                            "Haldenbach",
+                                            "Haldenegg",
+                                            "Hardhof",
+                                            "Hardplatz",
+                                            "Hardturm",
+                                            "Hedwigsteig",
+                                            "Heerenwiesen",
+                                            "Hegibachplatz",
+                                            "Helmhaus",
+                                            "Helvetiaplatz",
+                                            "Herti",
+                                            "Heuried",
+                                            "Hirschwiesenstrasse",
+                                            "Hirzenbach",
+                                            "Hölderlinstrasse",
+                                            "Hottingerplatz",
+                                            "Höschgasse",
+                                            "Hubertus",
+                                            "Kantonalbank",
+                                            "Kantonsschule",
+                                            "Kappeli",
+                                            "Kinkelstrasse",
+                                            "Kirche Fluntern",
+                                            "Kloten Balsberg Bahnhof",
+                                            "Klusplatz",
+                                            "Kreuzplatz",
+                                            "Kreuzstrasse",
+                                            "Kronenstrasse",
+                                            "Kunsthaus",
+                                            "Langmauerstrasse",
+                                            "Laubegg",
+                                            "Laubiweg",
+                                            "Letzigrund",
+                                            "Letzistrasse",
+                                            "Leutschenbach",
+                                            "Limmatplatz",
+                                            "Lindberghplatz",
+                                            "Lindenplatz",
+                                            "Lochergut",
+                                            "Luchswiesen",
+                                            "Luegisland",
+                                            "Löwenbräu",
+                                            "Löwenplatz",
+                                            "Mattenhof",
+                                            "Meierhofplatz",
+                                            "Messe Hallenstadion",
+                                            "Micafil",
+                                            "Milchbuck",
+                                            "Mülligen",
+                                            "Morgental",
+                                            "Museum für Gestaltung",
+                                            "Museum Rietberg",
+                                            "Neugut",
+                                            "Neumarkt",
+                                            "Oerlikerhus",
+                                            "Opernhaus",
+                                            "Ottikerstrasse",
+                                            "Paradeplatz",
+                                            "Platte",
+                                            "Renggerstrasse",
+                                            "Probstei",
+                                            "Quellenstrasse",
+                                            "Brunnenhof",
+                                            "Rathaus",
+                                            "Regensbergbrücke",
+                                            "Rehalp",
+                                            "Rennweg",
+                                            "Rentenanstalt",
+                                            "Ringwiesen",
+                                            "Römerhof",
+                                            "Roswiesen",
+                                            "Röslistrasse",
+                                            "Rudolf-Brun-Brücke",
+                                            "Saalsporthalle",
+                                            "Salersteig",
+                                            "Schaffhauserplatz",
+                                            "Schaufelbergerstrasse",
+                                            "Schiffbau",
+                                            "Schmiede Wiedikon",
+                                            "Schörlistrasse",
+                                            "Schwamendingerplatz",
+                                            "Schwert",
+                                            "Seebach",
+                                            "Seebacherplatz",
+                                            "Seilbahn Rigiblick",
+                                            "Siemens",
+                                            "Signaustrasse",
+                                            "Sihlcity Nord",
+                                            "Sihlpost HB",
+                                            "Sihlquai HB",
+                                            "Sihlstrasse",
+                                            "Sonneggstrasse",
+                                            "Sportweg",
+                                            "Stampfenbachplatz",
+                                            "Stauffacher",
+                                            "Sternen Oerlikon",
+                                            "Stockerstrasse",
+                                            "Strassenverkehrsamt",
+                                            "Susenbergstrasse",
+                                            "Talwiesenstrasse",
+                                            "Technopark",
+                                            "Tüffenwies",
+                                            "Tierspital",
+                                            "Toblerplatz",
+                                            "Toni-Areal",
+                                            "Triemli",
+                                            "Tunnelstrasse",
+                                            "Uetlihof",
+                                            "Ueberlandpark",
+                                            "Universität Irchel",
+                                            "Unterriet",
+                                            "Voltastrasse",
+                                            "Waffenplatzstrasse",
+                                            "Wagonsfabrik",
+                                            "Waidfussweg",
+                                            "Waldgarten",
+                                            "Wallisellen Bahnhof",
+                                            "Wartau",
+                                            "Werd",
+                                            "Werdhölzli",
+                                            "Wetlistrasse",
+                                            "Wildbachstrasse",
+                                            "Winkelriedstrasse",
+                                            "Winzerstrasse",
+                                            "Wipkingerplatz",
+                                            "Wollishoferplatz",
+                                            "Würzgraben",
+                                            "Schlieren Zentrum Bahnhof",
+                                            "Zoo",
+                                            "Zürichbergstrasse",
+                                            "Kalkbreite",
+                                            "Zwielplatz",
+                                            "Zypressenstrasse",
+                                        ]
+                                  - label: "Start Time"
+                                    name: "startTime"
+                                    widget: "string"
+                                    pattern:
+                                        [
+                                            "^[0-5][0-9]:[0-5][0-9]$",
+                                            "Gültige Zeitangabe in mm:ss",
+                                        ]
+                                    required: true
+                                  - label: "End Time"
+                                    name: "endTime"
+                                    widget: "string"
+                                    pattern:
+                                        [
+                                            "^[0-5][0-9]:[0-5][0-9]$",
+                                            "Gültige Zeitangabe in mm:ss",
+                                        ]
+                                    required: true

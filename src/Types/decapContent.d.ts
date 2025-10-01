@@ -1,3 +1,11 @@
+type City = {
+    name: string
+    slug: string
+    legal: string
+    description: string
+    lines: Line[]
+}
+
 type Line = {
   name: string
   number: number
