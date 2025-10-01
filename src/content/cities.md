@@ -3,6 +3,7 @@ cities:
   - name: Zürich
     shortName: ZRH
     slug: zurich
+    released: true
     legal: Rechte gehören uns.
     description: Rechte gehören uns.
     lines:
@@ -3074,6 +3075,7 @@ cities:
   - name: Chemnitz
     shortName: CHZ
     slug: chemnitz
+    released: false
     description: TnB goes Chemnitz
     lines:
       - color: "#de2b2b"
