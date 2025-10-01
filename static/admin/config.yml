@@ -135,6 +135,12 @@ collections:
                         required: true
                         default: 0
                         hint: "Longitude of the city"
+                      - label: "Color"
+                        name: "color"
+                        widget: "color"
+                        required: true
+                        default: "#AD46FF"
+                        hint: "Color of the city"
                       - label: "Legal"
                         name: "legal"
                         widget: "markdown"
