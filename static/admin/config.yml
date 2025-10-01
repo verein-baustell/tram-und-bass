@@ -121,14 +121,14 @@ collections:
                         required: true
                         default: false
                         hint: "Whether the city is released"
-                      - label: "Lat"
+                      - label: "Latitude"
                         name: "lat"
                         widget: "number"
                         value_type: "float"
                         required: true
                         default: 0
                         hint: "Latitude of the city"
-                      - label: "Lng"
+                      - label: "Longitude"
                         name: "lng"
                         widget: "number"
                         value_type: "float"
