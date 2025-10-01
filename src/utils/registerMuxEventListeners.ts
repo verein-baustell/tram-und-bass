@@ -4,6 +4,7 @@ import {
     isMuted,
     videoIsPlaying,
     videoIsLoading,
+    videoIsSeeking,
     muxVideoObject,
     allLines,
     currentLine,
@@ -65,10 +66,12 @@ export default () => {
     muxPlayer.addEventListener("seeking", () => {
         console.log("Video is seeking");
         videoIsLoading.set(true);
+        videoIsSeeking.set(true);
     });
 
     // Track when the video finishes seeking
     muxPlayer.addEventListener("seeked", () => {
         console.log("Video seek completed");
+        videoIsSeeking.set(false);
     });
 };

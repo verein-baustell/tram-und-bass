@@ -188,13 +188,13 @@ export const currentStation: Readable<TimeStamp | undefined> = derived(
                   const muxPlayer = get(muxVideoObject);
                   if (!$currentLine) {
                       set(undefined);
-                      console.log("🚉 no current line");
+                      //   console.log("🚉 no current line");
                       return;
                   }
                   // if the video is not loaded yet, return
                   if (muxPlayer.playbackId !== $currentLine.videoUrl) {
                       set(undefined);
-                      console.log("🚉 video not loaded");
+                      //   console.log("🚉 video not loaded");
                       return;
                   }
                   const newStation = $currentLine.timeStamps?.find(
@@ -204,7 +204,7 @@ export const currentStation: Readable<TimeStamp | undefined> = derived(
                   );
                   if (!newStation) {
                       set(undefined);
-                      console.log("🚉 no current station");
+                      //   console.log("🚉 no current station");
                       return;
                   }
                   if (newStation !== $lastCurrentStation) {
@@ -216,7 +216,7 @@ export const currentStation: Readable<TimeStamp | undefined> = derived(
                       set(newStation);
                       lastCurrentStation.set(newStation);
                   }
-                  console.log("🚉 last current station", $lastCurrentStation);
+                  //   console.log("🚉 last current station", $lastCurrentStation);
               })()
             : null;
     }
@@ -253,6 +253,7 @@ export const videoIsPlaying = writable<boolean>(false);
 export const isWider = writable<boolean>(false);
 // extra variable if the video is loading
 export const videoIsLoading = writable<boolean>(false);
+export const videoIsSeeking = writable<boolean>(false);
 export const isImmersive = writable<boolean>(false);
 export const isMenuMinimized = writable<boolean>(false);
 export const isMuted = writable<boolean>(false);
