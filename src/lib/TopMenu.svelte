@@ -69,7 +69,9 @@
                         this={currentComponent}
                         onClick={(clickedLine) => {
                             addState();
-                            videoIsLoading.set(true);
+                            if (clickedLine.name !== $currentLine?.name) {
+                                videoIsLoading.set(true);
+                            }
                             isTopOpen.set(false);
                             isPlayButtonOn.set(false);
                             setTimeout(() => {

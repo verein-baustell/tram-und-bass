@@ -25,11 +25,20 @@
             <li>
                 <button
                     class:isActive={$currentCitySlug === city.slug}
+                    disabled={!city.released}
                     on:click={() => {
                         isTopOpen.set(false);
                     }}
                 >
-                    <a href={`/${city.slug}`}>{city.name}</a>
+                    {#if city.released}
+                        {#if city.slug !== $currentCitySlug}
+                            <a href={`/${city.slug}`}>{city.name}</a>
+                        {:else}
+                            <a href="#">{city.name}</a>
+                        {/if}
+                    {:else}
+                        <a href="#">{city.name} - Coming Soon</a>
+                    {/if}
                 </button>
             </li>
         {/each}
@@ -53,6 +62,7 @@
         color: inherit;
         height: 28px;
         padding: 0px 20px;
+        cursor: inherit;
     }
 
     button {

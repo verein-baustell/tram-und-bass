@@ -115,6 +115,12 @@ collections:
                         widget: "string"
                         required: true
                         hint: "URL-friendly version of city name (e.g., 'zurich', 'berlin')"
+                      - label: "Released"
+                        name: "released"
+                        widget: "boolean"
+                        required: true
+                        default: false
+                        hint: "Whether the city is released"
                       - label: "Legal"
                         name: "legal"
                         widget: "markdown"
