@@ -1,6 +1,6 @@
 ---
 cities:
-  - color: "#46ff5d"
+  - color: "#ad46ff"
     lng: 8.5417
     shortName: ZRH
     name: Zürich
