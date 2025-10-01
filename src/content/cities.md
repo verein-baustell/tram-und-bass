@@ -4,6 +4,8 @@ cities:
     shortName: ZRH
     slug: zurich
     released: true
+    lat: 47.3769
+    lng: 8.5417
     legal: Rechte gehören uns.
     description: Rechte gehören uns.
     lines:
@@ -3076,6 +3078,8 @@ cities:
     shortName: CHZ
     slug: chemnitz
     released: false
+    lat: 50.8278
+    lng: 12.9214
     description: TnB goes Chemnitz
     lines:
       - color: "#de2b2b"

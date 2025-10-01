@@ -2,6 +2,7 @@
     import { onMount, onDestroy } from "svelte";
     import { browser } from "$app/environment";
     import { goto } from "$app/navigation";
+    import { attributes as citiesContent } from "../content/cities.md";
 
     // Props for initial camera position
     export let initialLat: number = 20; // Default: centered on Europe/Africa
@@ -65,6 +66,20 @@
         // Only run on client side
         if (!browser) return;
 
+        const cities = [];
+
+        citiesContent.cities.forEach((city) => {
+            cities.push({
+                lat: city.lat,
+                lng: city.lng,
+                name: city.name,
+                released: city.released,
+                url: `/${city.slug}`,
+                size: 0.5,
+                color: "#AD46FF",
+            });
+        });
+
         // Dynamic import to avoid SSR issues
         import("globe.gl").then(async (globeModule) => {
             const Globe = globeModule.default;
@@ -93,26 +108,26 @@
                 ); // Set transition duration to 0 for immediate positioning
 
             // Add some sample data points for cities
-            const cities = [
-                {
-                    lat: 47.3769,
-                    lng: 8.5417,
-                    name: "Zürich",
-                    size: 0.5,
-                    color: "#AD46FF",
-                    released: true,
-                    url: "/zurich",
-                },
-                {
-                    lat: 50.8278,
-                    lng: 12.9214,
-                    name: "Chemnitz",
-                    size: 0.5,
-                    released: false,
-                    color: "#AD46FF",
-                    url: "/chemnitz",
-                },
-            ];
+            // const cities = [
+            //     {
+            //         lat: 47.3769,
+            //         lng: 8.5417,
+            //         name: "Zürich",
+            //         size: 0.5,
+            //         color: "#AD46FF",
+            //         released: true,
+            //         url: "/zurich",
+            //     },
+            //     {
+            //         lat: 50.8278,
+            //         lng: 12.9214,
+            //         name: "Chemnitz",
+            //         size: 0.5,
+            //         released: false,
+            //         color: "#AD46FF",
+            //         url: "/chemnitz",
+            //     },
+            // ];
 
             // Load countries GeoJSON data
             let countries: any = null;

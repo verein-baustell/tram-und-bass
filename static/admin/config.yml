@@ -121,6 +121,18 @@ collections:
                         required: true
                         default: false
                         hint: "Whether the city is released"
+                      - label: "Lat"
+                        name: "lat"
+                        widget: "number"
+                        required: true
+                        default: 0
+                        hint: "Latitude of the city"
+                      - label: "Lng"
+                        name: "lng"
+                        widget: "number"
+                        required: true
+                        default: 0
+                        hint: "Longitude of the city"
                       - label: "Legal"
                         name: "legal"
                         widget: "markdown"
