@@ -1,7 +1,7 @@
 backend:
     name: git-gateway
     # this will be replaced by the scripts/setBranchInCMSConfig.js
-    branch: mux-player
+    branch: main
 local_backend: true
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
@@ -121,6 +121,26 @@ collections:
                         required: true
                         default: false
                         hint: "Whether the city is released"
+                      - label: "Latitude"
+                        name: "lat"
+                        widget: "number"
+                        value_type: "float"
+                        required: true
+                        default: 0
+                        hint: "Latitude of the city"
+                      - label: "Longitude"
+                        name: "lng"
+                        widget: "number"
+                        value_type: "float"
+                        required: true
+                        default: 0
+                        hint: "Longitude of the city"
+                      - label: "Color"
+                        name: "color"
+                        widget: "color"
+                        required: true
+                        default: "#AD46FF"
+                        hint: "Color of the city"
                       - label: "Legal"
                         name: "legal"
                         widget: "markdown"
