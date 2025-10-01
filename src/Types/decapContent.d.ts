@@ -2,6 +2,8 @@ type City = {
     name: string;
     slug: string;
     released: boolean;
+    lat: number;
+    lng: number;
     legal: string;
     description: string;
     lines: Line[];
