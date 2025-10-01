@@ -2,6 +2,7 @@
     import Map from "./Map.svelte";
     import About from "./About.svelte";
     import LineList from "./LineList.svelte";
+    import CityList from "./CityList.svelte";
     import Button from "./Button.svelte";
     import { clickoutside } from "@svelte-put/clickoutside";
     import {
@@ -10,15 +11,29 @@
         currentTime,
         isTopOpen,
         isPlayButtonOn,
+        currentCitySlug,
+        currentCityName,
+        currentCityShortName,
+        isMobile,
+        videoIsLoading,
     } from "../store";
     import { addState } from "../utils/stateManager";
     export let aboutContent: string;
-    const menuEntries = [
+
+    // Make menuEntries reactive to city name changes and mobile state
+    $: menuEntries = [
+        {
+            name: $isMobile
+                ? $currentCityShortName || "Städte"
+                : $currentCityName || "Städte",
+            component: CityList,
+        },
         { name: "Linien", component: LineList },
         { name: "Netz", component: Map },
         { name: "Info", component: About },
     ];
-    let currentComponent = menuEntries[0].component;
+
+    let currentComponent = CityList; // Default to CityList component
 </script>
 
 {#if $currentLine}
@@ -54,9 +69,12 @@
                         this={currentComponent}
                         onClick={(clickedLine) => {
                             addState();
-                            currentLine.set(clickedLine);
+                            videoIsLoading.set(true);
                             isTopOpen.set(false);
                             isPlayButtonOn.set(false);
+                            setTimeout(() => {
+                                currentLine.set(clickedLine);
+                            }, 500);
                         }}
                         lines={$allLines}
                         {aboutContent}
