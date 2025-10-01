@@ -1,13 +1,14 @@
 ---
 cities:
-  - name: Zürich
-    shortName: ZRH
-    slug: zurich
-    released: true
-    lat: 47.3769
+  - color: "#ad46ff"
     lng: 8.5417
+    shortName: ZRH
+    name: Zürich
+    slug: zurich
     legal: Rechte gehören uns.
     description: Rechte gehören uns.
+    released: true
+    lat: 47.3769
     lines:
       - color: "#de2b2b"
         number: 2
@@ -3074,13 +3075,14 @@ cities:
             startTime: 42:09
             endTime: 42:21
         isInverted: false
-  - name: Chemnitz
+  - color: "#ad46ff"
+    lng: 12.9214
     shortName: CHZ
+    name: Chemnitz
     slug: chemnitz
+    description: TnB goes Chemnitz
     released: false
     lat: 50.8278
-    lng: 12.9214
-    description: TnB goes Chemnitz
     lines:
       - color: "#de2b2b"
         number: 2
