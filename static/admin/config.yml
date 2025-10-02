@@ -145,6 +145,7 @@ collections:
                         name: "stations"
                         widget: "list"
                         summary: "{{fields.name}}"
+                        label_singular: "Station"
                         collapsed: true
                         minimize_collapsed: true
                         fields:
@@ -174,6 +175,7 @@ collections:
                         name: "lines"
                         widget: "list"
                         summary: "{{fields.number}} {{fields.name}} {{fields.artistName}}"
+                        label_singular: "Line"
                         collapsed: true
                         minimize_collapsed: true
                         fields:
@@ -218,6 +220,7 @@ collections:
                               name: "timeStamps"
                               widget: "list"
                               summary: "{{fields.name}}"
+                              label_singular: "Timestamp"
                               fields:
                                   - label: "Station"
                                     name: "name"
