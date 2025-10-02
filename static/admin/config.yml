@@ -141,6 +141,27 @@ collections:
                         required: true
                         default: "#AD46FF"
                         hint: "Color of the city"
+                      - label: "Station List"
+                        name: "stationList"
+                        widget: "list"
+                        summary: "{{fields.name}}"
+                        collapsed: true
+                        minimize_collapsed: true
+                        fields:
+                            - label: "Name"
+                              name: "name"
+                              widget: "string"
+                              required: true
+                            - label: "Latitude"
+                              name: "lat"
+                              widget: "number"
+                              value_type: "float"
+                              required: true
+                            - label: "Longitude"
+                              name: "lng"
+                              widget: "number"
+                              value_type: "float"
+                              required: true
                       - label: "Legal"
                         name: "legal"
                         widget: "markdown"
