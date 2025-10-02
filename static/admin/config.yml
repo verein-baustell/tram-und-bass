@@ -99,8 +99,6 @@ collections:
                   name: "cities"
                   widget: "list"
                   summary: "{{fields.name}}"
-                  collapsed: true
-                  minimize_collapsed: true
                   fields:
                       - label: "City Name"
                         name: "name"
