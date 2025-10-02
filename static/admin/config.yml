@@ -98,7 +98,7 @@ collections:
                 - label: "Cities"
                   name: "cities"
                   widget: "list"
-                  summary: "{{fields.name}} ({{fields.lines.length}} lines)"
+                  summary: "{{fields.name}}"
                   collapsed: true
                   minimize_collapsed: true
                   fields:
