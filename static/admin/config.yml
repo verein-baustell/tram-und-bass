@@ -169,11 +169,6 @@ collections:
                         name: "description"
                         widget: "markdown"
                         required: true
-                      - label: "Map SVG"
-                        name: "map"
-                        widget: "text"
-                        required: false
-                        hint: "SVG content for the city map. Leave empty to use default map components."
                       - label: "Lines"
                         name: "lines"
                         widget: "list"

@@ -31,7 +31,6 @@ declare module ".*/content/cities.md" {
             description: string;
             released: boolean;
             lat: number;
-            map?: string;
             stations: {
                 name: string;
                 lat: number;

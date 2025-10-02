@@ -11,7 +11,6 @@
         isMobile,
         videoIsLoading,
         currentCitySlug,
-        currentCity,
     } from "../store";
     import { changeToLineAtStation } from "../utils/changeToLineAtCurrentStation";
     import getLinesFromStationName from "../utils/getLinesFromStationName";
@@ -21,7 +20,6 @@
     import LineList from "./LineList.svelte";
     import MapInlineSvgZurich from "./MapInlineSvgZurich.svelte";
     import MapInlineSvgChemnitz from "./MapInlineSvgChemnitz.svelte";
-    import MapInlineSVG from "./MapInlineSVG.svelte";
     import LocateMe from "./LocateMe.svelte";
     type StationsPositions = { [stationId: string]: { x: number; y: number } };
 
@@ -604,9 +602,7 @@
         xmlns="http://www.w3.org/2000/svg"
         class={$videoIsLoading ? "isLoading" : ""}
         ><g>
-            {#if $currentCity?.map}
-                <MapInlineSVG mapData={$currentCity.map} />
-            {:else if $currentCitySlug === "zurich"}
+            {#if $currentCitySlug === "zurich"}
                 <MapInlineSvgZurich />
             {:else if $currentCitySlug === "chemnitz"}
                 <MapInlineSvgChemnitz />

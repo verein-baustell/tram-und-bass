@@ -8,7 +8,6 @@ type City = {
     legal: string;
     description: string;
     lines: Line[];
-    map?: string; // SVG content as string
 };
 
 type Line = {
