@@ -9,6 +9,10 @@ cities:
     description: Rechte gehören uns.
     released: true
     lat: 47.3769
+    stations:
+      - name: Aargauerstrasse
+        lat: 47.3921122
+        lng: 8.5021905
     lines:
       - color: "#de2b2b"
         number: 2
