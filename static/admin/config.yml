@@ -141,8 +141,8 @@ collections:
                         required: true
                         default: "#AD46FF"
                         hint: "Color of the city"
-                      - label: "Station List"
-                        name: "stationList"
+                      - label: "Stations"
+                        name: "stations"
                         widget: "list"
                         summary: "{{fields.name}}"
                         collapsed: true
