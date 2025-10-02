@@ -1,6 +1,6 @@
 <script lang="ts">
     import * as d3 from "d3";
-    import { onMount } from "svelte";
+    import { onMount, onDestroy } from "svelte";
     import {
         allLines,
         currentLine,
@@ -521,8 +521,17 @@
 
         addClassesToStations();
         $currentLine && setActiveLine($currentLine);
+
         // minimize the bottom menu to make place for the locate me button
-        isMenuMinimized.set(true);
+        if ($isMobile) {
+            isMenuMinimized.set(true);
+        }
+    });
+
+    onDestroy(() => {
+        if ($isMobile) {
+            isMenuMinimized.set(false);
+        }
     });
 
     currentStation.subscribe((newStation) => {
