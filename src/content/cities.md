@@ -3696,6 +3696,10 @@ cities:
     description: TnB goes Chemnitz
     released: false
     lat: 50.8278
+    stations:
+      - name: Chemnitz Test Station
+        lat: 50.8357
+        lng: 12.92922
     lines:
       - color: "#de2b2b"
         number: 2
