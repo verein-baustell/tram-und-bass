@@ -69,24 +69,15 @@ function updateConfigFile(stationNames) {
     try {
         let configContent = fs.readFileSync(configPath, "utf8");
 
-        // Find the options array and replace its content
-        const optionsPattern = /(\s+options:\s*)\[[\s\S]*?(\s+\])/;
-
-        const match = configContent.match(optionsPattern);
-        if (!match) {
-            console.error("Could not find the options array in config.yml");
-            process.exit(1);
-        }
-
         // Create the new options array content as inline array
         const optionsContent = `[${stationNames
             .map((name) => `"${name}"`)
             .join(", ")}]`;
 
-        // Replace the entire options array content (omit the original closing bracket)
+        // Replace [STATION_NAMES] placeholder with actual station names
         const newConfigContent = configContent.replace(
-            optionsPattern,
-            `$1${optionsContent}`
+            "[STATION_NAMES]",
+            optionsContent
         );
 
         // Write the updated content back to the file

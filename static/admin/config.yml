@@ -203,10 +203,7 @@ collections:
                                     widget: "select"
                                     required: true
                                     hint: "Enter the station name for this city"
-                                    options:
-                                        [
-                                            "Station names will be placed here automatically",
-                                        ]
+                                    options: [STATION_NAMES]
                                   - label: "Start Time"
                                     name: "startTime"
                                     widget: "string"
