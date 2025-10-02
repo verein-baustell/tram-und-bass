@@ -61,7 +61,7 @@
             stations = [];
         }
 
-        console.log("stations", stations[0]);
+        // console.log("stations", stations[0]);
     });
 </script>
 

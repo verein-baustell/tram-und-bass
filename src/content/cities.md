@@ -3697,12 +3697,9 @@ cities:
     released: false
     lat: 50.8278
     stations:
-      - name: Chemnitz Test Station
-        lat: 50.8357
-        lng: 12.92922
-      - name: CNZ Test Station 2
-        lat: 50
-        lng: 12
+      - name: Moritzhof
+        lat: 50.8295542
+        lng: 12.9200106
     lines:
       - color: "#de2b2b"
         number: 2
