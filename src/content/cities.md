@@ -13,6 +13,615 @@ cities:
       - name: Aargauerstrasse
         lat: 47.3921122
         lng: 8.5021905
+      - name: Albisgütli
+        lat: 47.3519636
+        lng: 8.507401
+      - name: Albisrieden
+        lat: 47.3742885
+        lng: 8.4850725
+      - name: Albisriederplatz
+        lat: 47.378122
+        lng: 8.5105138
+      - name: Altes Krematorium
+        lat: 47.3776834
+        lng: 8.5071322
+      - name: Alte Trotte
+        lat: 47.3977208
+        lng: 8.5074376
+      - name: Altried
+        lat: 47.4054209
+        lng: 8.5916763
+      - name: Am Ring
+        lat: 47.4022847
+        lng: 8.6078923
+      - name: Auzelg
+        lat: 47.4170733
+        lng: 8.5690626
+      - name: Bachmattstrasse
+        lat: 47.3892172
+        lng: 8.4826492
+      - name: Bad Allenmoos
+        lat: 47.4059744
+        lng: 8.537666
+      - name: Bahnhof Altstetten Nord
+        lat: 47.3920972
+        lng: 8.4904723
+      - name: Bahnhof Enge
+        lat: 47.364003
+        lng: 8.5318726
+      - name: Bahnhof Enge Bederstrasse
+        lat: 47.3645298
+        lng: 8.5302408
+      - name: Bahnhof Hardbrücke
+        lat: 47.3849207
+        lng: 8.5167221
+      - name: Bahnhof Oerlikon
+        lat: 47.4115273
+        lng: 8.5450177
+      - name: Bahnhof Oerlikon Ost
+        lat: 47.4132667
+        lng: 8.545976
+      - name: Bahnhofplatz HB
+        lat: 47.3773114
+        lng: 8.5391199
+      - name: Bahnhofquai HB
+        lat: 47.3776129
+        lng: 8.5417736
+      - name: Bahnhof Selnau
+        lat: 47.3706721
+        lng: 8.5318751
+      - name: Bahnhof Stadelhofen
+        lat: 47.3661068
+        lng: 8.5480888
+      - name: Bahnhof Stettbach
+        lat: 47.3970739
+        lng: 8.5966292
+      - name: Bahnhofstrasse HB
+        lat: 47.3759151
+        lng: 8.5393345
+      - name: Bahnhof Tiefenbrunnen
+        lat: 47.3505894
+        lng: 8.5609542
+      - name: Bahnhof Wiedikon
+        lat: 47.3711739
+        lng: 8.5236276
+      - name: Balgrist
+        lat: 47.3544024
+        lng: 8.5751281
+      - name: Bäckeranlage
+        lat: 47.3783659
+        lng: 8.5229483
+      - name: Beckenhof
+        lat: 47.3842422
+        lng: 8.5401933
+      - name: Belair
+        lat: 47.4134408
+        lng: 8.5848423
+      - name: Bellevue
+        lat: 47.367271
+        lng: 8.5450237
+      - name: Berninaplatz
+        lat: 47.4036566
+        lng: 8.5479237
+      - name: Bernoulli-Häuser
+        lat: 47.3938666
+        lng: 8.5084469
+      - name: Bezirksgebäude
+        lat: 47.3739878
+        lng: 8.5258741
+      - name: Bhf. Wollishofen Staubstrasse
+        lat: 47.3468565
+        lng: 8.5329137
+      - name: Billoweg
+        lat: 47.3514847
+        lng: 8.5319462
+      - name: Bändliweg
+        lat: 47.3962865
+        lng: 8.4852278
+      - name: Bürkliplatz
+        lat: 47.3665839
+        lng: 8.5417236
+      - name: Brunaustrasse
+        lat: 47.3562485
+        lng: 8.5322369
+      - name: Bucheggplatz
+        lat: 47.3985237
+        lng: 8.5326955
+      - name: Bäuler
+        lat: 47.4350537
+        lng: 8.5575536
+      - name: Burgwies
+        lat: 47.3579243
+        lng: 8.5719226
+      - name: Butzenstrasse
+        lat: 47.34075
+        lng: 8.5302019
+      - name: Central
+        lat: 47.3767194
+        lng: 8.5435274
+      - name: Englischviertelstrasse
+        lat: 47.3664623
+        lng: 8.5576177
+      - name: Eschergutweg
+        lat: 47.3963081
+        lng: 8.5136591
+      - name: Escher-Wyss-Platz
+        lat: 47.390004
+        lng: 8.5236162
+      - name: ETH Universitätsspital
+        lat: 47.377863
+        lng: 8.5481709
+      - name: Farbhof
+        lat: 47.3913504
+        lng: 8.4785274
+      - name: Feldeggstrasse
+        lat: 47.3602646
+        lng: 8.5522997
+      - name: Fellenbergstrasse
+        lat: 47.37578
+        lng: 8.4882539
+      - name: Felsenrainstrasse
+        lat: 47.416652
+        lng: 8.5452795
+      - name: Fernsehstudio
+        lat: 47.4181243
+        lng: 8.5618692
+      - name: Fischerweg
+        lat: 47.3936998
+        lng: 8.5121347
+      - name: Fracht
+        lat: 47.452186815270345
+        lng: 8.571740119223477
+      - name: Frankental
+        lat: 47.4056055
+        lng: 8.4814503
+      - name: Freihofstrasse
+        lat: 47.3830175
+        lng: 8.4998794
+      - name: Fröhlichstrasse
+        lat: 47.3550952
+        lng: 8.5570028
+      - name: Friedhof Enzenbühl
+        lat: 47.3509901
+        lng: 8.5807219
+      - name: Förrlibuckstrasse
+        lat: 47.3923518
+        lng: 8.5170726
+      - name: Gasometerbrücke
+        lat: 47.3976206
+        lng: 8.4604721
+      - name: Geissweid
+        lat: 47.3979312
+        lng: 8.4448714
+      - name: Glattbrugg Bahnhof
+        lat: 47.4304411
+        lng: 8.5594602
+      - name: Glattpark
+        lat: 47.4200005
+        lng: 8.5573586
+      - name: Glatt
+        lat: 47.4091178
+        lng: 8.5980797
+      - name: Glattwiesen
+        lat: 47.4017146
+        lng: 8.5815058
+      - name: Goldbrunnenplatz
+        lat: 47.3702765
+        lng: 8.513625
+      - name: Grimselstrasse
+        lat: 47.3869119
+        lng: 8.4902776
+      - name: Grünaustrasse
+        lat: 47.3952221
+        lng: 8.4895045
+      - name: Güterbahnhof
+        lat: 47.3804839
+        lng: 8.5195269
+      - name: Guggachstrasse
+        lat: 47.3959225
+        lng: 8.5403337
+      - name: Haldenbach
+        lat: 47.3803664
+        lng: 8.5481658
+      - name: Haldenegg
+        lat: 47.3791528
+        lng: 8.5449835
+      - name: Hardhof
+        lat: 47.3964683
+        lng: 8.497348
+      - name: Hardplatz
+        lat: 47.3822219
+        lng: 8.5154754
+      - name: Hardturm
+        lat: 47.3947138
+        lng: 8.5042811
+      - name: Hedwigsteig
+        lat: 47.3603884
+        lng: 8.5647733
+      - name: Heerenwiesen
+        lat: 47.4049018
+        lng: 8.5765304
+      - name: Hegibachplatz
+        lat: 47.3618445
+        lng: 8.5605582
+      - name: Helmhaus
+        lat: 47.3695531
+        lng: 8.5434848
+      - name: Helvetiaplatz
+        lat: 47.3760541
+        lng: 8.5262603
+      - name: Herti
+        lat: 47.4164224
+        lng: 8.5792186
+      - name: Heuried
+        lat: 47.3694662
+        lng: 8.5067296
+      - name: Hirschwiesenstrasse
+        lat: 47.4003795
+        lng: 8.5437037
+      - name: Hirzenbach
+        lat: 47.40316
+        lng: 8.5910052
+      - name: Hölderlinstrasse
+        lat: 47.3660059
+        lng: 8.562523
+      - name: Hottingerplatz
+        lat: 47.3692817
+        lng: 8.5552474
+      - name: Höschgasse
+        lat: 47.3578785
+        lng: 8.5543468
+      - name: Hubertus
+        lat: 47.3773899
+        lng: 8.4992176
+      - name: Kantonalbank
+        lat: 47.3680123
+        lng: 8.5398956
+      - name: Kantonsschule
+        lat: 47.3725054
+        lng: 8.5505276
+      - name: Kappeli
+        lat: 47.3850905
+        lng: 8.4950678
+      - name: Kinkelstrasse
+        lat: 47.389065
+        lng: 8.546298
+      - name: Kirche Fluntern
+        lat: 47.3765722
+        lng: 8.559785
+      - name: Kloten Balsberg Bahnhof
+        lat: 47.4416681
+        lng: 8.568704
+      - name: Klusplatz
+        lat: 47.3640195
+        lng: 8.566214
+      - name: Kreuzplatz
+        lat: 47.3650888
+        lng: 8.5535704
+      - name: Kreuzstrasse
+        lat: 47.3633416
+        lng: 8.5495694
+      - name: Kronenstrasse
+        lat: 47.3880878
+        lng: 8.5392553
+      - name: Kunsthaus
+        lat: 47.370202
+        lng: 8.5488938
+      - name: Langmauerstrasse
+        lat: 47.3937463
+        lng: 8.5449779
+      - name: Laubegg
+        lat: 47.3585989
+        lng: 8.5177443
+      - name: Laubiweg
+        lat: 47.3951129
+        lng: 8.5361848
+      - name: Letzigrund
+        lat: 47.3811043
+        lng: 8.5039155
+      - name: Letzistrasse
+        lat: 47.3908767
+        lng: 8.545433
+      - name: Leutschenbach
+        lat: 47.4148699
+        lng: 8.5514577
+      - name: Limmatplatz
+        lat: 47.3845001
+        lng: 8.5317699
+      - name: Lindberghplatz
+        lat: 47.4253725
+        lng: 8.560652
+      - name: Lindenplatz
+        lat: 47.3877944
+        lng: 8.4863575
+      - name: Lochergut
+        lat: 47.3753859
+        lng: 8.5177286
+      - name: Luchswiesen
+        lat: 47.4067483
+        lng: 8.5857019
+      - name: Luegisland
+        lat: 47.4060582
+        lng: 8.5814812
+      - name: Löwenbräu
+        lat: 47.3883018
+        lng: 8.5262309
+      - name: Löwenplatz
+        lat: 47.3761078
+        lng: 8.5374821
+      - name: Mattenhof
+        lat: 47.3987977
+        lng: 8.5907499
+      - name: Meierhofplatz
+        lat: 47.4016769
+        lng: 8.5004317
+      - name: Messe Hallenstadion
+        lat: 47.410926
+        lng: 8.5510379
+      - name: Micafil
+        lat: 47.3931184
+        lng: 8.4743104
+      - name: Milchbuck
+        lat: 47.398139
+        lng: 8.542147
+      - name: Mülligen
+        lat: 47.3960869
+        lng: 8.4665319
+      - name: Morgental
+        lat: 47.343447
+        lng: 8.5302743
+      - name: Museum für Gestaltung
+        lat: 47.382073
+        lng: 8.535019
+      - name: Museum Rietberg
+        lat: 47.3608824
+        lng: 8.5315824
+      - name: Neugut
+        lat: 47.4049404
+        lng: 8.6040217
+      - name: Neumarkt
+        lat: 47.3726613
+        lng: 8.5474461
+      - name: Oerlikerhus
+        lat: 47.4175193
+        lng: 8.553765
+      - name: Opernhaus
+        lat: 47.3652918
+        lng: 8.5477614
+      - name: Ottikerstrasse
+        lat: 47.385345
+        lng: 8.5424563
+      - name: Paradeplatz
+        lat: 47.3695673
+        lng: 8.5387582
+      - name: Platte
+        lat: 47.3749165
+        lng: 8.5524717
+      - name: Renggerstrasse
+        lat: 47.3448369
+        lng: 8.5333574
+      - name: Probstei
+        lat: 47.400213
+        lng: 8.586561
+      - name: Quellenstrasse
+        lat: 47.3866102
+        lng: 8.528909
+      - name: Brunnenhof
+        lat: 47.4019653
+        lng: 8.5349257
+      - name: Rathaus
+        lat: 47.3718795
+        lng: 8.5428009
+      - name: Regensbergbrücke
+        lat: 47.4085161
+        lng: 8.5390911
+      - name: Rehalp
+        lat: 47.3509155
+        lng: 8.5830172
+      - name: Rennweg
+        lat: 47.3729556
+        lng: 8.5382656
+      - name: Rentenanstalt
+        lat: 47.3634429
+        lng: 8.5345055
+      - name: Ringwiesen
+        lat: 47.3976702
+        lng: 8.6043609
+      - name: Römerhof
+        lat: 47.3677195
+        lng: 8.5603056
+      - name: Roswiesen
+        lat: 47.4030508
+        lng: 8.5769141
+      - name: Röslistrasse
+        lat: 47.3885354
+        lng: 8.540512
+      - name: Rudolf-Brun-Brücke
+        lat: 47.3740956
+        lng: 8.5429627
+      - name: Saalsporthalle
+        lat: 47.3576761
+        lng: 8.5207615
+      - name: Salersteig
+        lat: 47.4061111
+        lng: 8.548375
+      - name: Schaffhauserplatz
+        lat: 47.3915543
+        lng: 8.5388373
+      - name: Schaufelbergerstrasse
+        lat: 47.3689288
+        lng: 8.5022385
+      - name: Schiffbau
+        lat: 47.3876253
+        lng: 8.5194617
+      - name: Schmiede Wiedikon
+        lat: 47.369923
+        lng: 8.519793
+      - name: Schörlistrasse
+        lat: 47.4003795
+        lng: 8.5437037
+      - name: Schwamendingerplatz
+        lat: 47.4046103
+        lng: 8.5718672
+      - name: Schwert
+        lat: 47.3996295
+        lng: 8.5049852
+      - name: Seebach
+        lat: 47.4217273
+        lng: 8.5500207
+      - name: Seebacherplatz
+        lat: 47.4197877
+        lng: 8.5482173
+      - name: Seilbahn Rigiblick
+        lat: 47.3856617
+        lng: 8.548435
+      - name: Siemens
+        lat: 47.3782729
+        lng: 8.4935641
+      - name: Signaustrasse
+        lat: 47.3630368
+        lng: 8.5578433
+      - name: Sihlcity Nord
+        lat: 47.3599207
+        lng: 8.5228083
+      - name: Sihlpost HB
+        lat: 47.376031
+        lng: 8.5339807
+      - name: Sihlquai HB
+        lat: 47.3797805
+        lng: 8.537427
+      - name: Sihlstrasse
+        lat: 47.3724234
+        lng: 8.534589
+      - name: Sonneggstrasse
+        lat: 47.3827675
+        lng: 8.5434967
+      - name: Sportweg
+        lat: 47.3916922
+        lng: 8.5056227
+      - name: Stampfenbachplatz
+        lat: 47.3799031
+        lng: 8.5425349
+      - name: Stauffacher
+        lat: 47.3735521
+        lng: 8.5297594
+      - name: Sternen Oerlikon
+        lat: 47.4102303
+        lng: 8.5465837
+      - name: Stockerstrasse
+        lat: 47.3677169
+        lng: 8.5349452
+      - name: Strassenverkehrsamt
+        lat: 47.3531019
+        lng: 8.5110749
+      - name: Susenbergstrasse
+        lat: 47.3784962
+        lng: 8.5679652
+      - name: Talwiesenstrasse
+        lat: 47.3698366
+        lng: 8.5097989
+      - name: Technopark
+        lat: 47.389159
+        lng: 8.5150562
+      - name: Tüffenwies
+        lat: 47.3970701
+        lng: 8.4938689
+      - name: Tierspital
+        lat: 47.4018505
+        lng: 8.5522073
+      - name: Toblerplatz
+        lat: 47.3791721
+        lng: 8.559512
+      - name: Toni-Areal
+        lat: 47.3902736
+        lng: 8.5104592
+      - name: Triemli
+        lat: 47.3678023
+        lng: 8.4953582
+      - name: Tunnelstrasse
+        lat: 47.3664566
+        lng: 8.5329684
+      - name: Uetlihof
+        lat: 47.3568944
+        lng: 8.51409
+      - name: Ueberlandpark
+        lat: 47.4061175
+        lng: 8.5641694
+      - name: Universität Irchel
+        lat: 47.396269
+        lng: 8.5445081
+      - name: Unterriet
+        lat: 47.4381375
+        lng: 8.562929
+      - name: Voltastrasse
+        lat: 47.3769394
+        lng: 8.5542227
+      - name: Waffenplatzstrasse
+        lat: 47.3609577
+        lng: 8.5249083
+      - name: Wagonsfabrik
+        lat: 47.3985395
+        lng: 8.4539478
+      - name: Waidfussweg
+        lat: 47.3952183
+        lng: 8.5192698
+      - name: Waldgarten
+        lat: 47.403799
+        lng: 8.5575213
+      - name: Wallisellen Bahnhof
+        lat: 47.4124954
+        lng: 8.5927053
+      - name: Wartau
+        lat: 47.4026689
+        lng: 8.4920976
+      - name: Werd
+        lat: 47.3727141
+        lng: 8.5270735
+      - name: Werdhölzli
+        lat: 47.3977264
+        lng: 8.482058
+      - name: Wetlistrasse
+        lat: 47.3600721
+        lng: 8.5685987
+      - name: Wildbachstrasse
+        lat: 47.353044
+        lng: 8.558956
+      - name: Winkelriedstrasse
+        lat: 47.3828992
+        lng: 8.5481244
+      - name: Winzerstrasse
+        lat: 47.4038044
+        lng: 8.4861593
+      - name: Wipkingerplatz
+        lat: 47.3926467
+        lng: 8.5233842
+      - name: Wollishoferplatz
+        lat: 47.338327
+        lng: 8.530745
+      - name: Würzgraben
+        lat: 47.3921039
+        lng: 8.494542
+      - name: Schlieren Zentrum Bahnhof
+        lat: 47.3979139
+        lng: 8.4482545
+      - name: Zoo
+        lat: 47.3816689
+        lng: 8.571624
+      - name: Zürichbergstrasse
+        lat: 47.3786796
+        lng: 8.5644809
+      - name: Zürich Flughafen Bahnhof
+        lat: 47.45042550023551
+        lng: 8.563915432276625
+      - name: Kalkbreite
+        lat: 47.3744949
+        lng: 8.5212348
+      - name: Zwielplatz
+        lat: 47.4021624
+        lng: 8.4967412
+      - name: Zypressenstrasse
+        lat: 47.3766124
+        lng: 8.5140793
     lines:
       - color: "#de2b2b"
         number: 2
