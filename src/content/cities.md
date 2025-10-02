@@ -3700,6 +3700,9 @@ cities:
       - name: Chemnitz Test Station
         lat: 50.8357
         lng: 12.92922
+      - name: CNZ Test Station 2
+        lat: 50
+        lng: 12
     lines:
       - color: "#de2b2b"
         number: 2
