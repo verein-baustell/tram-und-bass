@@ -1,15 +1,16 @@
 <script lang="ts">
-    import stationsZurich from "../data/stationsZurich.json";
-    import stationsChemnitz from "../data/stationsChemnitz.json";
+    import { attributes as citiesContent } from "../content/cities.md";
     import { isMenuMinimized, currentCitySlug } from "../store";
     import { onMount } from "svelte";
     import Button from "./Button.svelte";
     type StationWithCoords = { name: string; lat: number; lng: number };
-    let stations: StationWithCoords[] = [];
-    export let onLocationFound: (
-        newStationName?: StationWithCoords["name"]
-    ) => void;
-    let showErrorMessage = false;
+    let stations = $state<StationWithCoords[]>([]);
+    let {
+        onLocationFound,
+    }: {
+        onLocationFound: (newStationName?: StationWithCoords["name"]) => void;
+    } = $props();
+    let showErrorMessage = $state(false);
     const getNearestStation = (
         lat: number,
         lng: number
@@ -27,7 +28,7 @@
         }
         return nearestStation;
     };
-    let timeoutId: number;
+    let timeoutId: ReturnType<typeof setTimeout>;
     const locateUser = () => {
         // use navigator.geolocation.getCurrentPosition
         navigator.geolocation.getCurrentPosition(
@@ -49,9 +50,18 @@
         );
     };
     onMount(() => {
-        stations =
-            $currentCitySlug === "zurich" ? stationsZurich : stationsChemnitz;
-        console.log("stations", stations);
+        const cities = citiesContent.cities || [];
+        const currentCity = cities.find(
+            (city) => city.slug === $currentCitySlug
+        );
+
+        if (currentCity && currentCity.stations) {
+            stations = currentCity.stations;
+        } else {
+            stations = [];
+        }
+
+        console.log("stations", stations[0]);
     });
 </script>
 
