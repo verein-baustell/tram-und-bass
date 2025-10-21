@@ -6543,24 +6543,189 @@ cities:
     released: false
     lat: 50.8278
     stations:
-      - name: Gablenz
-        lat: 50.8295542
-        lng: 12.9200106
-      - name: Hauptbahnhof
-        lat: 50.8295542
-        lng: 12.9200106
-      - name: Hutholz
-        lat: 50.8295542
-        lng: 12.9200106
-      - name: Moritzhof
-        lat: 50.8295542
-        lng: 12.9200106
-      - name: Stadlerplatz
-        lat: 50.8295542
-        lng: 12.9200106
+      - name: Schönau
+        lat: 50.8204499703012
+        lng: 12.875995245179507
+      - name: Guerickestraße/Messe Chemnitz
+        lat: 50.82165390641024
+        lng: 12.881244865293848
+      - name: Am Feldschlößchen
+        lat: 50.82250254966468
+        lng: 12.88674873364438
+      - name: Kappler Drehe
+        lat: 50.82380157326945
+        lng: 12.896498521208246
+      - name: Industriemuseum
+        lat: 50.82504219662523
+        lng: 12.901730362741333
+      - name: Marianne-Brandt-Straße
+        lat: 50.826230732757125
+        lng: 12.906130622435143
+      - name: Reichsstraße
+        lat: 50.827617404968485
+        lng: 12.911895190581362
+      - name: Falkeplatz/Museum Gunzenhauser
+        lat: 50.82965609670518
+        lng: 12.916274626132907
+      - name: Zentralhaltestelle
+        lat: 50.831861070609996
+        lng: 12.923043346945084
+      - name: Roter Turm
+        lat: 50.83455063615019
+        lng: 12.923094929382732
+      - name: Brückenstraße/Freie Presse
+        lat: 50.83461699822922
+        lng: 12.924861317608425
+      - name: Bernsdorf
+        lat: 50.81045888383881
+        lng: 12.951256319444717
+      - lat: 50.814890486349746
+        lng: 12.944913968798957
+        name: Augsburger Straße
+      - name: Wartburgstraße
+        lat: 50.81733398872866
+        lng: 12.939937357105288
+      - name: Gutenbergstraße
+        lat: 50.82027603971474
+        lng: 12.934719343083382
+      - name: Lutherstraße
+        lat: 50.82290554458748
+        lng: 12.930273056300493
+      - name: Bernsbachplatz
+        lat: 50.82526257462736
+        lng: 12.926661278899502
+      - name: Annenstraße
+        lat: 50.82822248122269
+        lng: 12.924212165647784
+      - name: Stefan-Heym-Platz
+        lat: 50.833173529664435
+        lng: 12.925061068691376
       - name: Technopark
-        lat: 50.8295542
-        lng: 12.9200106
+        lat: 50.811504199070036
+        lng: 12.92461220161836
+      - name: TU Campus
+        lat: 50.81384667904933
+        lng: 12.930733619927476
+      - name: Rosenbergstraße
+        lat: 50.81774602549267
+        lng: 12.92941394497286
+      - name: Stadlerplatz
+        lat: 50.821060229377345
+        lng: 12.927220466264842
+      - name: Theaterplatz
+        lat: 50.83754422159451
+        lng: 12.925933665991668
+      - name: Omnibusbahnhof
+        lat: 50.840710364919566
+        lng: 12.927891419130102
+      - name: Hauptbahnhof
+        lat: 50.839852292428766
+        lng: 12.929579768954804
+      - name: Hutholz
+        lat: 50.783295836415576
+        lng: 12.87672302317271
+      - name: Ernst-Wabra-Straße
+        lat: 50.78567337290908
+        lng: 12.879097847337226
+      - name: Johann-Richter-Straße
+        lat: 50.792002536872644
+        lng: 12.879488300237592
+      - name: Morgenleite
+        lat: 50.795235199551925
+        lng: 12.88224787051844
+      - name: Heiterer Blick
+        lat: 50.80059139500659
+        lng: 12.884333402110318
+      - name: Südring
+        lat: 50.803862923174364
+        lng: 12.887029948771934
+      - name: Dr.-Salvador-Allende-Straße
+        lat: 50.80556414973666
+        lng: 12.889026026328924
+      - name: Ikarus
+        lat: 50.80894210729651
+        lng: 12.892928084461461
+      - name: Am Flughafen
+        lat: 50.81087560623397
+        lng: 12.894927217841838
+      - name: Irkutsker Straße
+        lat: 50.81388974023503
+        lng: 12.89766115808985
+      - name: Haydnstraße
+        lat: 50.817103636497094
+        lng: 12.901856342132593
+      - name: Goetheplatz
+        lat: 50.82114938920578
+        lng: 12.906248016532963
+      - name: Parkstraße
+        lat: 50.823577182433276
+        lng: 12.910901558023003
+      - name: Bahnhof Mitte (Bf Mitte)
+        lat: 50.82696291382624
+        lng: 12.914361387633988
+      - name: Vita-Center
+        lat: 50.794859036441366
+        lng: 12.890793285152498
+      - name: Robert-Siewert-Straße
+        lat: 50.79774329679711
+        lng: 12.897261376792455
+      - name: Dittersdorfer Straße
+        lat: 50.797265162640386
+        lng: 12.903051912906838
+      - name: Markersdorfer Straße
+        lat: 50.79632823872929
+        lng: 12.908223858130539
+      - name: Schule Altchemnitz
+        lat: 50.79865540887145
+        lng: 12.913552367884279
+      - name: Scheffelstraße
+        lat: 50.802172523163776
+        lng: 12.91122319164732
+      - name: Uhlestraße
+        lat: 50.80611683650087
+        lng: 12.911918463689965
+      - name: Erdmannsdorfer Straße
+        lat: 50.81105939238161
+        lng: 12.911805536643072
+      - name: Rößlerstraße
+        lat: 50.816520759026425
+        lng: 12.914024343510082
+      - name: Treffurthstraße
+        lat: 50.819454646631144
+        lng: 12.915285148342932
+      - name: Gustav-Freytag-Straße
+        lat: 50.82564853388784
+        lng: 12.92024544509967
+      - name: Moritzhof
+        lat: 50.82955051875856
+        lng: 12.919996250391613
+      - name: Bahnhofstraße
+        lat: 50.83344661299765
+        lng: 12.92705029481769
+      - name: Zieschestraße
+        lat: 50.831679825891975
+        lng: 12.93204641918173
+      - name: Tschaikowskistraße
+        lat: 50.83057217001227
+        lng: 12.93783053246527
+      - name: Reineckerstraße
+        lat: 50.83121297930724
+        lng: 12.943601303319328
+      - name: Nürnberger Straße
+        lat: 50.831598295137134
+        lng: 12.949870898375586
+      - name: Gablenzplatz
+        lat: 50.831127931557056
+        lng: 12.953880899787155
+      - name: Arthur-Strobel-Straße
+        lat: 50.827950156718245
+        lng: 12.96074245046696
+      - name: Pappelhain
+        lat: 50.82234164005688
+        lng: 12.963755755685622
+      - name: Gablenz
+        lat: 50.82006912648606
+        lng: 12.964373780834704
     lines:
       - color: "#ff3366"
         number: 3
@@ -6593,6 +6758,7 @@ cities:
           - name: Technopark
             startTime: 00:40
             endTime: 00:50
+          - {}
         isInverted: false
       - color: "#ff3366"
         number: 3
@@ -6704,4 +6870,13 @@ cities:
             startTime: 00:40
             endTime: 00:50
         isInverted: false
+      - id: ""
+        name: Brückenstraße/Freie Presse
+        releaseDate: 2025-10-21T17:06:00.000+02:00
+        number: 1
+        artistName: "[to:n]"
+        timeStamps:
+          - startTime: 00:00
+            endTime: 00:02
+            name: Aargauerstrasse
 ---
