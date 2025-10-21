@@ -6914,4 +6914,348 @@ cities:
           - name: Technopark
             startTime: 15:11
             endTime: 15:13
+      - id: ""
+        name: Hauptbahnhof
+        releaseDate: 2025-10-21T18:00:00.000+02:00
+        number: 3
+        artistName: Tøsche
+        timeStamps:
+          - endTime: 00:03
+            name: Technopark
+            startTime: 00:00
+          - startTime: 01:06
+            name: TU Campus
+            endTime: 01:37
+          - startTime: 02:27
+            name: Rosenbergstraße
+            endTime: 02:47
+          - startTime: 03:29
+            name: Stadlerplatz
+            endTime: 03:45
+          - startTime: 05:07
+            name: Bernsbachplatz
+            endTime: 05:28
+          - startTime: 06:18
+            name: Annenstraße
+            endTime: 06:42
+          - startTime: 09:03
+            name: Zentralhaltestelle
+            endTime: 09:26
+          - startTime: 10:50
+            name: Roter Turm
+            endTime: 11:51
+          - startTime: 13:20
+            name: Theaterplatz
+            endTime: 13:36
+          - name: Omnibusbahnhof
+            startTime: 15:03
+            endTime: 15:20
+          - startTime: 16:43
+            name: Hauptbahnhof
+            endTime: 16:49
+      - id: ""
+        name: Hutholz
+        releaseDate: 2025-10-21T18:08:00.000+02:00
+        number: 4
+        artistName: Tony J
+        timeStamps:
+          - endTime: 00:02
+            startTime: 00:00
+            name: Hauptbahnhof
+          - startTime: 01:04
+            endTime: 01:20
+          - startTime: 02:18
+            name: Theaterplatz
+            endTime: 02:41
+          - startTime: 03:53
+            name: Roter Turm
+            endTime: 04:15
+          - startTime: 06:00
+            name: Zentralhaltestelle
+            endTime: 06:51
+          - startTime: 08:27
+            name: Falkeplatz/Museum Gunzenhauser
+            endTime: 08:44
+          - name: Bahnhof Mitte (Bf Mitte)
+            startTime: 09:43
+            endTime: 10:05
+          - startTime: 11:04
+            name: Parkstraße
+            endTime: 11:24
+          - name: Goetheplatz
+            startTime: 12:16
+            endTime: 12:32
+          - startTime: 13:37
+            name: Haydnstraße
+            endTime: 14:00
+          - startTime: 14:59
+            name: Irkutsker Straße
+            endTime: 15:25
+          - startTime: 16:11
+            name: Am Flughafen
+            endTime: 16:46
+          - startTime: 17:25
+            name: Ikarus
+            endTime: 17:45
+          - startTime: 18:38
+            name: Dr.-Salvador-Allende-Straße
+            endTime: 18:55
+          - startTime: 19:26
+            name: Südring
+            endTime: 19:45
+          - startTime: 20:49
+            name: Heiterer Blick
+            endTime: 20:55
+          - startTime: 22:05
+            name: Morgenleite
+            endTime: 22:24
+          - startTime: 23:09
+            name: Johann-Richter-Straße
+            endTime: 23:24
+          - startTime: 24:40
+            name: Ernst-Wabra-Straße
+            endTime: 24:55
+          - startTime: 25:52
+            name: Hutholz
+            endTime: 25:55
+      - id: ""
+        name: Hauptbahnhof
+        releaseDate: 2025-10-21T18:16:00.000+02:00
+        number: 4
+        artistName: Kainat
+        timeStamps:
+          - startTime: 00:00
+            endTime: 00:22
+            name: Hutholz
+          - startTime: 01:11
+            name: Ernst-Wabra-Straße
+            endTime: 01:27
+          - startTime: 02:39
+            name: Johann-Richter-Straße
+            endTime: 02:56
+          - startTime: 03:42
+            name: Morgenleite
+            endTime: 04:06
+          - name: Heiterer Blick
+            startTime: 05:18
+            endTime: 05:29
+          - startTime: 06:15
+            name: Südring
+            endTime: 06:33
+          - name: Dr.-Salvador-Allende-Straße
+            startTime: 07:01
+            endTime: 07:17
+          - name: Ikarus
+            startTime: 08:00
+            endTime: 08:19
+          - name: Am Flughafen
+            startTime: 08:57
+            endTime: 09:11
+          - name: Irkutsker Straße
+            startTime: 09:48
+            endTime: 10:07
+          - name: Haydnstraße
+            startTime: 10:48
+            endTime: 11:08
+          - name: Goetheplatz
+            startTime: 11:58
+            endTime: 12:15
+          - name: Parkstraße
+            startTime: 12:56
+            endTime: 13:11
+          - name: Bahnhof Mitte (Bf Mitte)
+            startTime: 14:13
+            endTime: 14:29
+          - name: Falkeplatz/Museum Gunzenhauser
+            startTime: 15:47
+            endTime: 16:20
+          - name: Zentralhaltestelle
+            startTime: 19:32
+            endTime: 19:53
+          - name: Roter Turm
+            startTime: 20:55
+            endTime: 21:11
+          - name: Theaterplatz
+            startTime: 22:46
+            endTime: 20:03
+          - startTime: 23:48
+            name: Omnibusbahnhof
+            endTime: 24:04
+          - name: Hauptbahnhof
+            startTime: 26:00
+            endTime: 26:07
+      - id: ""
+        name: Huholz
+        releaseDate: 2025-10-21T18:23:00.000+02:00
+        number: 5
+        artistName: Cath Boo
+        timeStamps:
+          - name: Gablenz
+            startTime: 00:00
+            endTime: 00:03
+          - name: Pappelhain
+            startTime: 00:54
+            endTime: 01:09
+          - name: Arthur-Strobel-Straße
+            startTime: 02:15
+            endTime: 02:31
+          - name: Gablenzplatz
+            startTime: 03:37
+            endTime: 04:04
+          - name: Nürnberger Straße
+            startTime: 04:39
+            endTime: 04:53
+          - name: Reineckerstraße
+            startTime: 05:39
+            endTime: 05:55
+          - name: Tschaikowskistraße
+            startTime: 06:53
+            endTime: 07:16
+          - name: Zieschestraße
+            startTime: 07:57
+            endTime: 08:15
+          - name: Bahnhofstraße
+            startTime: 08:58
+            endTime: 09:36
+          - name: Stefan-Heym-Platz
+            startTime: 10:14
+            endTime: 10:31
+          - name: Zentralhaltestelle
+            startTime: 11:12
+            endTime: 12:10
+          - name: Moritzhof
+            startTime: 13:50
+            endTime: 14:09
+          - name: Gustav-Freytag-Straße
+            startTime: 15:24
+            endTime: 16:29
+          - name: Treffurthstraße
+            startTime: 17:49
+            endTime: 18:03
+          - name: Rößlerstraße
+            startTime: 18:34
+            endTime: 18:58
+          - name: Erdmannsdorfer Straße
+            startTime: 20:13
+            endTime: 20:30
+          - name: Uhlestraße
+            startTime: 21:27
+            endTime: 21:45
+          - name: Scheffelstraße
+            startTime: 22:57
+            endTime: 23:17
+          - name: Schule Altchemnitz
+            startTime: 24:08
+            endTime: 24:26
+          - name: Markersdorfer Straße
+            startTime: 26:03
+            endTime: 27:10
+          - name: Dittersdorfer Straße
+            startTime: 27:53
+            endTime: 27:58
+          - name: Robert-Siewert-Straße
+            startTime: 28:56
+            endTime: 29:15
+          - name: Vita-Center
+            startTime: 30:18
+            endTime: 30:45
+          - name: Morgenleite
+            startTime: 32:24
+            endTime: 32:39
+          - name: Johann-Richter-Straße
+            startTime: 33:31
+            endTime: 33:51
+          - name: Ernst-Wabra-Straße
+            startTime: 35:02
+            endTime: 35:08
+          - name: Hutholz
+            startTime: 37:07
+            endTime: 37:17
+      - id: ""
+        name: Gablenz
+        releaseDate: 2025-10-21T18:33:00.000+02:00
+        number: 5
+        artistName: Sudden Hearing
+        timeStamps:
+          - name: Hutholz
+            startTime: 00:00
+            endTime: 00:04
+          - name: Ernst-Wabra-Straße
+            startTime: 00:58
+            endTime: 01:13
+          - name: Johann-Richter-Straße
+            startTime: 02:30
+            endTime: 02:39
+          - name: Morgenleite
+            startTime: 03:35
+            endTime: 03:59
+          - name: Vita-Center
+            startTime: 05:15
+            endTime: 05:39
+          - name: Robert-Siewert-Straße
+            startTime: 07:38
+            endTime: 08:00
+          - name: Dittersdorfer Straße
+            startTime: 09:03
+            endTime: 09:14
+          - name: Markersdorfer Straße
+            startTime: 09:57
+            endTime: 10:14
+          - name: Schule Altchemnitz
+            startTime: 11:42
+            endTime: 12:03
+          - name: Scheffelstraße
+            startTime: 12:50
+            endTime: 13:07
+          - name: Uhlestraße
+            startTime: 13:54
+            endTime: 14:00
+          - name: Erdmannsdorfer Straße
+            startTime: 14:59
+            endTime: 15:16
+          - name: Rößlerstraße
+            startTime: 16:29
+            endTime: 16:48
+          - name: Treffurthstraße
+            startTime: 17:26
+            endTime: 17:53
+          - name: Gustav-Freytag-Straße
+            startTime: 19:21
+            endTime: 19:42
+          - name: Moritzhof
+            startTime: 20:50
+            endTime: 21:06
+          - name: Zentralhaltestelle
+            startTime: 23:54
+            endTime: 24:40
+          - name: Stefan-Heym-Platz
+            startTime: 25:14
+            endTime: 25:47
+          - name: Bahnhofstraße
+            startTime: 26:27
+            endTime: 26:50
+          - name: Zieschestraße
+            startTime: 27:58
+            endTime: 28:15
+          - name: Tschaikowskistraße
+            startTime: 29:05
+            endTime: 29:28
+          - name: Reineckerstraße
+            startTime: 30:26
+            endTime: 30:46
+          - name: Nürnberger Straße
+            startTime: 31:35
+            endTime: 31:53
+          - name: Gablenzplatz
+            startTime: 32:32
+            endTime: 32:52
+          - name: Arthur-Strobel-Straße
+            startTime: 34:03
+            endTime: 34:22
+          - name: Pappelhain
+            startTime: 35:29
+            endTime: 35:45
+          - name: Gablenz
+            startTime: 36:26
+            endTime: 36:29
 ---
