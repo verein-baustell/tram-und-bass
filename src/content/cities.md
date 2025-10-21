@@ -6621,6 +6621,9 @@ cities:
       - name: Hauptbahnhof
         lat: 50.839852292428766
         lng: 12.929579768954804
+      - lat: 50.837794069241845
+        lng: 12.929044192654107
+        name: Hbf Bahnhofstraße
       - name: Hutholz
         lat: 50.783295836415576
         lng: 12.87672302317271
@@ -6727,156 +6730,188 @@ cities:
         lat: 50.82006912648606
         lng: 12.964373780834704
     lines:
-      - color: "#ff3366"
-        number: 3
-        name: Technopark
-        artistName: Viola
-        artistAboutText: >-
-          Seit sie in Zürich lebt, arbeitet und/oder wohnt sie entlang der
-          Tramlinie 2. In den 90er Jahren fanden in ihrer Wohnung im Seefeld,
-          unweit der Haltestelle «Kreuzstrasse», regelmässig Afterpartys statt.
-          Später zog sie in eine WG beim «Lochergut». Eine ihrer
-          Bürogemeinschaften war am «Albisriederplatz» eine andere bei der
-          Haltestelle «Kalkbreite». Die Produktion für diesen Mix entstand in
-          unmittelbarer Nähe der Haltestelle «Schlieren Zentrum/Bahnhof.
-
-
-          Mit der angenehm schleppenden Langsamkeit des Soundtracks gleiten wir von Halt zu Halt. Der Subbass verbindet sich mit der Reibung der Schienen. Durch die Heckscheibe sehen wir, wie die Stadt rückwärts verschwindet, als ziehe sie sich in eine andere Dimension zurück. Mit jedem vorbeiziehenden Tram wächst das Gefühl, wir bewegten uns nicht nur durch die Stadt, sondern auch durch die Zeit. Vergangenheit, Gegenwart und Zukunft scheinen miteinander verflochten und gleichzeitig zu existieren.
-
-
-          [Instagram @violazimmermann](<https://www.instagram.com/violazimmermann/ >)
-        videoUrl: dE02GfTAlJD4RcqNAlgiS2m00LqbdFqlBm
-        releaseDate: 2024-11-18T03:59:00.000Z
-        id: ""
-        timeStamps:
-          - name: Hauptbahnhof
-            startTime: 00:01
-            endTime: 0:10
-          - name: Stadlerplatz
-            startTime: 00:20
-            endTime: 00:30
-          - name: Technopark
-            startTime: 00:40
-            endTime: 00:50
-          - {}
-        isInverted: false
-      - color: "#ff3366"
-        number: 3
-        name: Hauptbahnhof
-        artistName: Nuevo Prohibido
-        artistAboutText: >-
-          Nuevo Prohibido is a Mexican-Swiss artist active in the electronic
-          music scene, especially in Berlin, Zurich, and now in CDMX. As a DJ,
-          producer, and co-founder of projects like Meta Rave and
-          Rhizomfestival, they also run labels Lustpoderosa and Philoxenia.
-          Inspired by the 90s-00s rave scene, they blend a multitude of genres
-          mostly with a focus on deconstructed club music. They co-curate Meta
-          Rave in Berlin, fostering a queer, multicultural space promoting
-          emerging artists.
-
-
-          This mix is an homage to Zurich's Tram Number 2, which I used almost daily. While compiling it, I felt a deep connection to Zurich, where I lived for more than a decade before moving to Berlin and then back to Mexico. Each track holds an emotional tie to the city and my past. Zurich taught me great musical lessons—there's so much talent in that town. I'm happy I spent time there. Sending love to all the lovely music creatures—have a nice ride.
-
-
-          [Instagram @nuevoprohibido](https://www.instagram.com/nuevoprohibido/)
-
-
-          [Soundcloud](https://soundcloud.com/neuverboten)
-
-
-          [Bandcamp](https://nuevoprohibido.bandcamp.com/)
-        videoUrl: oVubG7ZQO3vr8i0102qaQN6D5ovBN402wf02
-        releaseDate: 2025-01-01T00:00:00.000Z
-        id: ""
-        timeStamps:
-          - name: Technopark
-            startTime: 00:01
-            endTime: 0:10
-          - name: Stadlerplatz
-            startTime: 00:20
-            endTime: 00:30
-          - name: Hauptbahnhof
-            startTime: 00:40
-            endTime: 00:50
-        isInverted: false
-      - color: "#de2b2b"
-        number: 5
-        name: Hutholz
-        artistName: Viola
-        artistAboutText: >-
-          Seit sie in Zürich lebt, arbeitet und/oder wohnt sie entlang der
-          Tramlinie 2. In den 90er Jahren fanden in ihrer Wohnung im Seefeld,
-          unweit der Haltestelle «Kreuzstrasse», regelmässig Afterpartys statt.
-          Später zog sie in eine WG beim «Lochergut». Eine ihrer
-          Bürogemeinschaften war am «Albisriederplatz» eine andere bei der
-          Haltestelle «Kalkbreite». Die Produktion für diesen Mix entstand in
-          unmittelbarer Nähe der Haltestelle «Schlieren Zentrum/Bahnhof.
-
-
-          Mit der angenehm schleppenden Langsamkeit des Soundtracks gleiten wir von Halt zu Halt. Der Subbass verbindet sich mit der Reibung der Schienen. Durch die Heckscheibe sehen wir, wie die Stadt rückwärts verschwindet, als ziehe sie sich in eine andere Dimension zurück. Mit jedem vorbeiziehenden Tram wächst das Gefühl, wir bewegten uns nicht nur durch die Stadt, sondern auch durch die Zeit. Vergangenheit, Gegenwart und Zukunft scheinen miteinander verflochten und gleichzeitig zu existieren.
-
-
-          [Instagram @violazimmermann](<https://www.instagram.com/violazimmermann/ >)
-        videoUrl: dE02GfTAlJD4RcqNAlgiS2m00LqbdFqlBm
-        releaseDate: 2024-11-18T03:59:00.000Z
-        id: ""
-        timeStamps:
-          - name: Gablenz
-            startTime: 00:01
-            endTime: 0:10
-          - name: Moritzhof
-            startTime: 00:20
-            endTime: 00:30
-          - name: Hutholz
-            startTime: 00:40
-            endTime: 00:50
-        isInverted: false
-      - color: "#de2b2b"
-        number: 5
-        name: Gablenz
-        artistName: Nuevo Prohibido
-        artistAboutText: >-
-          Nuevo Prohibido is a Mexican-Swiss artist active in the electronic
-          music scene, especially in Berlin, Zurich, and now in CDMX. As a DJ,
-          producer, and co-founder of projects like Meta Rave and
-          Rhizomfestival, they also run labels Lustpoderosa and Philoxenia.
-          Inspired by the 90s-00s rave scene, they blend a multitude of genres
-          mostly with a focus on deconstructed club music. They co-curate Meta
-          Rave in Berlin, fostering a queer, multicultural space promoting
-          emerging artists.
-
-
-          This mix is an homage to Zurich's Tram Number 2, which I used almost daily. While compiling it, I felt a deep connection to Zurich, where I lived for more than a decade before moving to Berlin and then back to Mexico. Each track holds an emotional tie to the city and my past. Zurich taught me great musical lessons—there's so much talent in that town. I'm happy I spent time there. Sending love to all the lovely music creatures—have a nice ride.
-
-
-          [Instagram @nuevoprohibido](https://www.instagram.com/nuevoprohibido/)
-
-
-          [Soundcloud](https://soundcloud.com/neuverboten)
-
-
-          [Bandcamp](https://nuevoprohibido.bandcamp.com/)
-        videoUrl: oVubG7ZQO3vr8i0102qaQN6D5ovBN402wf02
-        releaseDate: 2025-01-01T00:00:00.000Z
-        id: ""
-        timeStamps:
-          - name: Hutholz
-            startTime: 00:01
-            endTime: 0:10
-          - name: Moritzhof
-            startTime: 00:20
-            endTime: 00:30
-          - name: Gablenz
-            startTime: 00:40
-            endTime: 00:50
-        isInverted: false
       - id: ""
-        name: Brückenstraße/Freie Presse
+        name: Brückenstraße
         releaseDate: 2025-10-21T17:06:00.000+02:00
         number: 1
         artistName: "[to:n]"
         timeStamps:
           - startTime: 00:00
             endTime: 00:02
-            name: Aargauerstrasse
+            name: Schönau
+          - startTime: 00:56
+            name: Guerickestraße/Messe Chemnitz
+            endTime: 01:12
+          - name: Am Feldschlößchen
+            startTime: 01:52
+            endTime: 02:06
+          - startTime: 03:12
+            name: Kappler Drehe
+            endTime: 03:26
+          - name: Industriemuseum
+            startTime: 04:23
+            endTime: 04:37
+          - startTime: 05:16
+            name: Marianne-Brandt-Straße
+            endTime: 05:41
+          - startTime: 06:27
+            name: Reichsstraße
+            endTime: 06:59
+          - startTime: 07:55
+            name: Falkeplatz/Museum Gunzenhauser
+            endTime: 08:12
+          - startTime: 12:02
+            name: Zentralhaltestelle
+            endTime: 12:24
+          - startTime: 13:32
+            name: Roter Turm
+            endTime: 14:06
+          - name: Brückenstraße/Freie Presse
+            startTime: 15:13
+            endTime: 15:15
+      - id: ""
+        name: Schönau
+        number: 1
+        artistName: em.aevi
+        timeStamps:
+          - endTime: 00:02
+            name: Brückenstraße/Freie Presse
+            startTime: 00:00
+          - startTime: 00:39
+            name: Roter Turm
+            endTime: 00:59
+          - name: Zentralhaltestelle
+            startTime: 02:37
+            endTime: 04:11
+          - name: Falkeplatz/Museum Gunzenhauser
+            startTime: 05:54
+            endTime: 06:10
+          - name: Reichsstraße
+            startTime: 07:05
+            endTime: 07:21
+          - name: Marianne-Brandt-Straße
+            startTime: 08:15
+            endTime: 08:32
+          - startTime: 09:13
+            name: Industriemuseum
+            endTime: 09:29
+          - startTime: 10:15
+            name: Kappler Drehe
+            endTime: 10:27
+          - name: Am Feldschlößchen
+            startTime: 11:41
+            endTime: 11:56
+          - startTime: 12:39
+            name: Guerickestraße/Messe Chemnitz
+            endTime: 12:53
+          - startTime: 13:49
+            name: Schönau
+            endTime: 13:51
+      - id: ""
+        name: Brückenstraße
+        number: 2
+        artistName: Bela Bender
+        timeStamps:
+          - name: Bernsdorf
+            startTime: 00:00
+            endTime: 00:00
+          - startTime: 01:18
+            endTime: 01:42
+          - name: Wartburgstraße
+            startTime: 02:25
+            endTime: 02:43
+          - startTime: 03:33
+            name: Gutenbergstraße
+            endTime: 03:55
+          - name: Lutherstraße
+            startTime: 04:42
+            endTime: 05:02
+          - name: Bernsbachplatz
+            startTime: 05:45
+            endTime: 06:02
+          - startTime: 06:45
+            name: Annenstraße
+            endTime: 07:06
+          - startTime: 09:00
+            name: Zentralhaltestelle
+            endTime: 09:24
+          - startTime: 10:03
+            name: Stefan-Heym-Platz
+            endTime: 10:30
+          - startTime: 11:25
+            name: Brückenstraße/Freie Presse
+            endTime: 11:27
+      - id: ""
+        name: Bernsdorf
+        number: 2
+        releaseDate: 2025-10-21T17:45:00.000+02:00
+        artistName: Selma Juhran
+        timeStamps:
+          - endTime: 00:02
+            startTime: 00:00
+            name: Brückenstraße/Freie Presse
+          - startTime: 01:08
+            name: Stefan-Heym-Platz
+            endTime: 01:25
+          - startTime: 01:58
+            name: Zentralhaltestelle
+            endTime: 03:27
+          - startTime: 05:03
+            name: Annenstraße
+            endTime: 05:23
+          - startTime: 06:10
+            name: Bernsbachplatz
+            endTime: 06:31
+          - name: Lutherstraße
+            startTime: 07:19
+            endTime: 07:37
+          - name: Gutenbergstraße
+            startTime: 08:41
+            endTime: 09:02
+          - startTime: 10:05
+            name: Wartburgstraße
+            endTime: 10:29
+          - startTime: 11:29
+            endTime: 11:45
+          - startTime: 12:55
+            name: Bernsdorf
+            endTime: 12:57
+      - id: ""
+        name: Technopark
+        releaseDate: 2025-10-21T17:49:00.000+02:00
+        number: 3
+        artistName: Subko
+        timeStamps:
+          - endTime: 00:01
+            name: Hauptbahnhof
+            startTime: 00:00
+          - startTime: 00:40
+            endTime: 00:58
+          - startTime: 02:04
+            name: Theaterplatz
+            endTime: 02:23
+          - name: Roter Turm
+            startTime: 03:50
+            endTime: 04:05
+          - name: Zentralhaltestelle
+            startTime: 05:13
+            endTime: 06:11
+          - name: Annenstraße
+            startTime: 08:23
+            endTime: 08:42
+          - name: Bernsbachplatz
+            startTime: 09:33
+            endTime: 09:51
+          - startTime: 11:24
+            name: Stadlerplatz
+            endTime: 11:43
+          - startTime: 12:29
+            name: Rosenbergstraße
+            endTime: 12:45
+          - startTime: 13:36
+            name: TU Campus
+            endTime: 13:52
+          - name: Technopark
+            startTime: 15:11
+            endTime: 15:13
 ---
