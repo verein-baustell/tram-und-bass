@@ -6886,6 +6886,7 @@ cities:
             name: Hauptbahnhof
             startTime: 00:00
           - startTime: 00:40
+            name: Hbf Bahnhofstraße
             endTime: 00:58
           - startTime: 02:04
             name: Theaterplatz
@@ -6963,6 +6964,7 @@ cities:
             startTime: 00:00
             name: Hauptbahnhof
           - startTime: 01:04
+            name: Hbf Bahnhofstraße
             endTime: 01:20
           - startTime: 02:18
             name: Theaterplatz
