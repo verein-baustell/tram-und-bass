@@ -104,10 +104,8 @@
         }[] = [];
         const samples = totalLength / 15;
         stations.forEach((station) => {
-            const stationId = station.stationName
-                .replaceAll(" ", "")
-                .toLowerCase();
-            const pos = stationPositions[stationId];
+            const stationId = stationNameToId(station.stationName);
+            const pos = stationPositions[stationId || ""];
             if (pos) {
                 const stationX = pos.x;
                 const stationY = pos.y;
@@ -146,6 +144,8 @@
             .selectChildren()
             .attr("class", null)
             .attr("stroke", null);
+
+        console.log("setActiveLine", newLine.id);
 
         const groupSelection = d3.select<SVGGElement, unknown>(
             "#map-svg #lines #" + newLine.id

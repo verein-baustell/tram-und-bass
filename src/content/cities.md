@@ -6732,9 +6732,12 @@ cities:
     lines:
       - id: ""
         name: Brückenstraße
+        color: "#de2b2b"
+        isInverted: false
         releaseDate: 2025-10-21T17:06:00.000+02:00
         number: 1
         artistName: "[to:n]"
+        videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
         timeStamps:
           - startTime: 00:00
             endTime: 00:02
@@ -6771,8 +6774,12 @@ cities:
             endTime: 15:15
       - id: ""
         name: Schönau
+        color: "#de2b2b"
+        isInverted: false
+        releaseDate: 2025-10-21T17:06:00.000+02:00
         number: 1
         artistName: em.aevi
+        videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
         timeStamps:
           - endTime: 00:02
             name: Brückenstraße/Freie Presse
@@ -6809,14 +6816,19 @@ cities:
             endTime: 13:51
       - id: ""
         name: Brückenstraße
+        color: "#de2b2b"
+        isInverted: false
         number: 2
         artistName: Bela Bender
+        releaseDate: 2025-10-21T17:06:00.000+02:00
+        videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
         timeStamps:
           - name: Bernsdorf
             startTime: 00:00
             endTime: 00:00
           - startTime: 01:18
             endTime: 01:42
+            name: Augsburger Straße
           - name: Wartburgstraße
             startTime: 02:25
             endTime: 02:43
@@ -6843,9 +6855,12 @@ cities:
             endTime: 11:27
       - id: ""
         name: Bernsdorf
+        color: "#de2b2b"
+        isInverted: false
         number: 2
         releaseDate: 2025-10-21T17:45:00.000+02:00
         artistName: Selma Juhran
+        videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
         timeStamps:
           - endTime: 00:02
             startTime: 00:00
@@ -6873,14 +6888,18 @@ cities:
             endTime: 10:29
           - startTime: 11:29
             endTime: 11:45
+            name: Augsburger Straße
           - startTime: 12:55
             name: Bernsdorf
             endTime: 12:57
       - id: ""
         name: Technopark
+        color: "#de2b2b"
+        isInverted: false
         releaseDate: 2025-10-21T17:49:00.000+02:00
         number: 3
         artistName: Subko
+        videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
         timeStamps:
           - endTime: 00:01
             name: Hauptbahnhof
@@ -6917,9 +6936,12 @@ cities:
             endTime: 15:13
       - id: ""
         name: Hauptbahnhof
+        color: "#de2b2b"
+        isInverted: false
         releaseDate: 2025-10-21T18:00:00.000+02:00
         number: 3
         artistName: Tøsche
+        videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
         timeStamps:
           - endTime: 00:03
             name: Technopark
@@ -6956,9 +6978,12 @@ cities:
             endTime: 16:49
       - id: ""
         name: Hutholz
+        color: "#de2b2b"
+        isInverted: false
         releaseDate: 2025-10-21T18:08:00.000+02:00
         number: 4
         artistName: Tony J
+        videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
         timeStamps:
           - endTime: 00:02
             startTime: 00:00
@@ -7022,9 +7047,12 @@ cities:
             endTime: 25:55
       - id: ""
         name: Hauptbahnhof
+        color: "#de2b2b"
+        isInverted: false
         releaseDate: 2025-10-21T18:16:00.000+02:00
         number: 4
         artistName: Kainat
+        videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
         timeStamps:
           - startTime: 00:00
             endTime: 00:22
@@ -7087,10 +7115,13 @@ cities:
             startTime: 26:00
             endTime: 26:07
       - id: ""
-        name: Huholz
+        name: Hutholz
+        color: "#de2b2b"
+        isInverted: false
         releaseDate: 2025-10-21T18:23:00.000+02:00
         number: 5
         artistName: Cath Boo
+        videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
         timeStamps:
           - name: Gablenz
             startTime: 00:00
@@ -7175,9 +7206,12 @@ cities:
             endTime: 37:17
       - id: ""
         name: Gablenz
+        color: "#de2b2b"
+        isInverted: false
         releaseDate: 2025-10-21T18:33:00.000+02:00
         number: 5
         artistName: Sudden Hearing
+        videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
         timeStamps:
           - name: Hutholz
             startTime: 00:00
