@@ -6621,7 +6621,8 @@ cities:
       - name: Hauptbahnhof
         lat: 50.839852292428766
         lng: 12.929579768954804
-      - lat: 50.837794069241845
+      - name: Hbf Bahnhofstraße
+        lat: 50.837794069241845
         lng: 12.929044192654107
         name: Hbf Bahnhofstraße
       - name: Hutholz
