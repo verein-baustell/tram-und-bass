@@ -6624,7 +6624,6 @@ cities:
       - name: Hbf Bahnhofstraße
         lat: 50.837794069241845
         lng: 12.929044192654107
-        name: Hbf Bahnhofstraße
       - name: Hutholz
         lat: 50.783295836415576
         lng: 12.87672302317271
