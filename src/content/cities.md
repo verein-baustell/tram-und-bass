@@ -6,8 +6,8 @@ cities:
     name: Zürich
     slug: zurich
     legal: |-
-      Verein Tram und Bass\
-      Hardgutstrasse 7, 8048 Zürich\
+      Verein Tram und Bass
+      Hardgutstrasse 7, 8048 Zürich
       info@tramundbass.ch
     map: >
       <path
@@ -6553,9 +6553,9 @@ cities:
     name: Chemnitz
     slug: chemnitz
     legal: |-
-      Verein Name Chemnitz\
-      Addresse\
-      Kontakt
+      Verein Name Chemnitz
+      Addresse
+      Kontakt Email
     description: TnB goes Chemnitz
     released: false
     lat: 50.8278
