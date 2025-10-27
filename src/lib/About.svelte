@@ -38,6 +38,11 @@
         </div>
     </a>
 
+    <div class="about-container impressum">
+        <p>Impressum</p>
+        <p>{$currentCity?.legal}</p>
+    </div>
+
     <div class="about-container">
         <p>
             <span
@@ -90,11 +95,6 @@
                 /></a
             >
         </div>
-    </div>
-
-    <div class="about-container text">
-        <p><span>Impressum</span></p>
-        <p>{$currentCity?.legal}</p>
     </div>
 </div>
 
@@ -160,7 +160,11 @@
         padding-left: 0.6em;
         padding-right: 0.6em;
     }
-    .text p {
+    .impressum {
+        background-color: black;
+        color: white;
+    }
+    .impressum p {
         white-space: pre-line;
     }
 </style>
