@@ -93,12 +93,8 @@
     </div>
 
     <div class="about-container text">
-        <p>
-            <span>Impressum</span>
-            <span>
-                <SvelteMarkdown source={$currentCity?.legal} />
-            </span>
-        </p>
+        <p><span>Impressum</span></p>
+        <p>{$currentCity?.legal}</p>
     </div>
 </div>
 
@@ -163,5 +159,8 @@
         row-gap: 1em;
         padding-left: 0.6em;
         padding-right: 0.6em;
+    }
+    .text p {
+        white-space: pre-line;
     }
 </style>
