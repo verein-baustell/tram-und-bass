@@ -5,7 +5,10 @@ cities:
     shortName: ZRH
     name: Zürich
     slug: zurich
-    legal: Rechte gehören uns.
+    legal: |-
+      Verein Tram und Bass\
+      Hardgutstrasse 7, 8048 Zürich\
+      info@tramundbass.ch
     map: >
       <path
         id="city-limits"
@@ -6549,8 +6552,8 @@ cities:
     shortName: CHZ
     name: Chemnitz
     slug: chemnitz
-    description: TnB goes Chemnitz
     legal: Chemnitz Legal Notice
+    description: TnB goes Chemnitz
     released: false
     lat: 50.8278
     stations:
