@@ -6,7 +6,8 @@ cities:
     name: Zürich
     slug: zurich
     legal: |-
-      Verein Tram und Bass Hardgutstrasse 7 8048 Zürich\
+      Verein Tram und Bass\
+      Hardgutstrasse 7 8048 Zürich\
       info@tramundbass.ch
     map: >
       <path
