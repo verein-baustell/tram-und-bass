@@ -372,7 +372,7 @@
         stroke-width="6"
     />
     <path
-        id="bahnhofmitte(bfmitte)"
+        id="bahnhofmittebfmitte"
         d="M934 1264C929.582 1264 926 1267.58 926 1272C926 1276.42 929.582 1280 934 1280C938.419 1280 942 1276.42 942 1272C942 1267.58 938.419 1264 934 1264Z"
         fill="white"
         stroke="black"

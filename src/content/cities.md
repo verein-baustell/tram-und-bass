@@ -6540,6 +6540,7 @@ cities:
     name: Chemnitz
     slug: chemnitz
     description: TnB goes Chemnitz
+    legal: Chemnitz Legal Notice
     released: false
     lat: 50.8278
     stations:
@@ -7107,7 +7108,7 @@ cities:
             endTime: 21:11
           - name: Theaterplatz
             startTime: 22:46
-            endTime: 20:03
+            endTime: 23:03
           - startTime: 23:48
             name: Omnibusbahnhof
             endTime: 24:04

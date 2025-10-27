@@ -8,6 +8,8 @@ export default (stationName?: string) =>
         .replaceAll(",", "")
         .replaceAll(".", "")
         .replaceAll("/", "")
+        .replaceAll("(", "")
+        .replaceAll(")", "")
         // .replaceAll("-", "")
         // .replaceAll("ö", "o")
         // .replaceAll("ä", "a")
