@@ -174,8 +174,6 @@ collections:
                         widget: "text"
                         required: false
                         hint: "SVG content for the city map. Leave empty to use default map components."
-                        collapsed: true
-                        minimize_collapsed: true
                       - label: "Lines"
                         name: "lines"
                         widget: "list"

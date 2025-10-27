@@ -7,7 +7,6 @@
 <div class="view detailed-view about-view">
     <div class="about-container text">
         <p><SvelteMarkdown source={$currentCity?.description} /></p>
-        <p><SvelteMarkdown source={$currentCity?.legal} /></p>
         <!-- <p>
             <SvelteMarkdown source={aboutContent} />
         </p> -->
@@ -97,8 +96,7 @@
         <p>
             <span>Impressum</span>
             <span>
-                Verein Tram und Bass Hardgutstrasse 7 8048 Zürich
-                info@tramundbass.ch
+                <SvelteMarkdown source={$currentCity?.legal} />
             </span>
         </p>
     </div>
