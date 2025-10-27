@@ -2852,7 +2852,17 @@ cities:
           stroke-width="6"
         />
       </g>
-    description: Rechte gehören uns.
+    description: >-
+      Tram und Bass lädt dich ein, verträumt aus dem Tram in die Stadt
+      hinauszuschauen und dabei 30 einzigartige Musikfahrten zu hören. Auf der
+      Musikplattform wird die Vielfalt elektronischer Musik aus Zürich
+      audiovisuell präsentiert und für alle zugänglich gemacht.
+
+
+      Musik, genauso wie Tramfahren, ist ein grosser Bestandteil des Zürcher Soziallebens. Sie verbindet und bringt Menschen zusammen. Während elektronische Musik immer mehr Platz im Internet findet, verliert sie ihren Platz im öffentlichen Raum. Die vielen musikalischen Nischen bilden soziale Subkulturen, welche wiederum als Nährboden für die Diversität der Zürcher Kultur dienen.
+
+
+      In den Tramfahrten zeigen wir nicht nur Techno, sondern die ganze Bandbreite elektronischer Musik von lokaler und internationaler Ausstrahlung. Die Vielfalt der musikalischen Subkultur prägt nicht nur die Nacht, sondern auch den Tag. Also steig ein, wir wünschen viel Spass beim Entdecken.
     released: true
     lat: 47.3769
     stations:
@@ -6731,14 +6741,13 @@ cities:
         lat: 50.82006912648606
         lng: 12.964373780834704
     lines:
-      - id: ""
-        name: Brückenstraße
-        color: "#de2b2b"
-        isInverted: false
-        releaseDate: 2025-10-21T17:06:00.000+02:00
+      - color: "#de2b2b"
         number: 1
+        name: Brückenstraße
         artistName: "[to:n]"
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
+        releaseDate: 2025-10-21T17:06:00.000+02:00
+        id: ""
         timeStamps:
           - startTime: 00:00
             endTime: 00:02
@@ -6773,14 +6782,14 @@ cities:
           - name: Brückenstraße/Freie Presse
             startTime: 15:13
             endTime: 15:15
-      - id: ""
-        name: Schönau
-        color: "#de2b2b"
         isInverted: false
-        releaseDate: 2025-10-21T17:06:00.000+02:00
+      - color: "#de2b2b"
         number: 1
+        name: Schönau
         artistName: em.aevi
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
+        releaseDate: 2025-10-21T17:06:00.000+02:00
+        id: ""
         timeStamps:
           - endTime: 00:02
             name: Brückenstraße/Freie Presse
@@ -6815,14 +6824,14 @@ cities:
           - startTime: 13:49
             name: Schönau
             endTime: 13:51
-      - id: ""
-        name: Brückenstraße
-        color: "#de2b2b"
         isInverted: false
+      - color: "#de2b2b"
         number: 2
+        name: Brückenstraße
         artistName: Bela Bender
-        releaseDate: 2025-10-21T17:06:00.000+02:00
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
+        releaseDate: 2025-10-21T17:06:00.000+02:00
+        id: ""
         timeStamps:
           - name: Bernsdorf
             startTime: 00:00
@@ -6854,14 +6863,14 @@ cities:
           - startTime: 11:25
             name: Brückenstraße/Freie Presse
             endTime: 11:27
-      - id: ""
-        name: Bernsdorf
-        color: "#de2b2b"
         isInverted: false
+      - color: "#de2b2b"
         number: 2
-        releaseDate: 2025-10-21T17:45:00.000+02:00
+        name: Bernsdorf
         artistName: Selma Juhran
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
+        releaseDate: 2025-10-21T17:45:00.000+02:00
+        id: ""
         timeStamps:
           - endTime: 00:02
             startTime: 00:00
@@ -6893,14 +6902,14 @@ cities:
           - startTime: 12:55
             name: Bernsdorf
             endTime: 12:57
-      - id: ""
-        name: Technopark
-        color: "#de2b2b"
         isInverted: false
-        releaseDate: 2025-10-21T17:49:00.000+02:00
+      - color: "#de2b2b"
         number: 3
+        name: Technopark
         artistName: Subko
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
+        releaseDate: 2025-10-21T17:49:00.000+02:00
+        id: ""
         timeStamps:
           - endTime: 00:01
             name: Hauptbahnhof
@@ -6935,14 +6944,14 @@ cities:
           - name: Technopark
             startTime: 15:11
             endTime: 15:13
-      - id: ""
-        name: Hauptbahnhof
-        color: "#de2b2b"
         isInverted: false
-        releaseDate: 2025-10-21T18:00:00.000+02:00
+      - color: "#de2b2b"
         number: 3
+        name: Hauptbahnhof
         artistName: Tøsche
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
+        releaseDate: 2025-10-21T18:00:00.000+02:00
+        id: ""
         timeStamps:
           - endTime: 00:03
             name: Technopark
@@ -6977,14 +6986,14 @@ cities:
           - startTime: 16:43
             name: Hauptbahnhof
             endTime: 16:49
-      - id: ""
-        name: Hutholz
-        color: "#de2b2b"
         isInverted: false
-        releaseDate: 2025-10-21T18:08:00.000+02:00
+      - color: "#de2b2b"
         number: 4
+        name: Hutholz
         artistName: Tony J
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
+        releaseDate: 2025-10-21T18:08:00.000+02:00
+        id: ""
         timeStamps:
           - endTime: 00:02
             startTime: 00:00
@@ -7046,14 +7055,14 @@ cities:
           - startTime: 25:52
             name: Hutholz
             endTime: 25:55
-      - id: ""
-        name: Hauptbahnhof
-        color: "#de2b2b"
         isInverted: false
-        releaseDate: 2025-10-21T18:16:00.000+02:00
+      - color: "#de2b2b"
         number: 4
+        name: Hauptbahnhof
         artistName: Kainat
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
+        releaseDate: 2025-10-21T18:16:00.000+02:00
+        id: ""
         timeStamps:
           - startTime: 00:00
             endTime: 00:22
@@ -7115,14 +7124,14 @@ cities:
           - name: Hauptbahnhof
             startTime: 26:00
             endTime: 26:07
-      - id: ""
-        name: Hutholz
-        color: "#de2b2b"
         isInverted: false
-        releaseDate: 2025-10-21T18:23:00.000+02:00
+      - color: "#de2b2b"
         number: 5
+        name: Hutholz
         artistName: Cath Boo
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
+        releaseDate: 2025-10-21T18:23:00.000+02:00
+        id: ""
         timeStamps:
           - name: Gablenz
             startTime: 00:00
@@ -7205,14 +7214,14 @@ cities:
           - name: Hutholz
             startTime: 37:07
             endTime: 37:17
-      - id: ""
-        name: Gablenz
-        color: "#de2b2b"
         isInverted: false
-        releaseDate: 2025-10-21T18:33:00.000+02:00
+      - color: "#de2b2b"
         number: 5
+        name: Gablenz
         artistName: Sudden Hearing
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
+        releaseDate: 2025-10-21T18:33:00.000+02:00
+        id: ""
         timeStamps:
           - name: Hutholz
             startTime: 00:00
@@ -7295,4 +7304,5 @@ cities:
           - name: Gablenz
             startTime: 36:26
             endTime: 36:29
+        isInverted: false
 ---
