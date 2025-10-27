@@ -2856,7 +2856,7 @@ cities:
         />
       </g>
     description: >-
-      Tram und Bass lädt dich ein, verträumt aus dem Tram in die Stadt
+      Tram und Bass Zürich lädt dich ein, verträumt aus dem Tram in die Stadt
       hinauszuschauen und dabei 30 einzigartige Musikfahrten zu hören. Auf der
       Musikplattform wird die Vielfalt elektronischer Musik aus Zürich
       audiovisuell präsentiert und für alle zugänglich gemacht.
