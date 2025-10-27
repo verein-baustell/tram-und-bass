@@ -6552,7 +6552,10 @@ cities:
     shortName: CHZ
     name: Chemnitz
     slug: chemnitz
-    legal: Chemnitz Legal Notice
+    legal: |-
+      Verein Name Chemnitz\
+      Addresse\
+      Kontakt
     description: TnB goes Chemnitz
     released: false
     lat: 50.8278
