@@ -1,6 +1,6 @@
 <script lang="ts">
     import * as d3 from "d3";
-    import { onMount } from "svelte";
+    import { onMount, onDestroy } from "svelte";
     import {
         allLines,
         currentLine,
@@ -11,6 +11,7 @@
         isMobile,
         videoIsLoading,
         currentCitySlug,
+        currentCity,
     } from "../store";
     import { changeToLineAtStation } from "../utils/changeToLineAtCurrentStation";
     import getLinesFromStationName from "../utils/getLinesFromStationName";
@@ -20,6 +21,7 @@
     import LineList from "./LineList.svelte";
     import MapInlineSvgZurich from "./MapInlineSvgZurich.svelte";
     import MapInlineSvgChemnitz from "./MapInlineSvgChemnitz.svelte";
+    import MapInlineSVG from "./MapInlineSVG.svelte";
     import LocateMe from "./LocateMe.svelte";
     type StationsPositions = { [stationId: string]: { x: number; y: number } };
 
@@ -102,10 +104,8 @@
         }[] = [];
         const samples = totalLength / 15;
         stations.forEach((station) => {
-            const stationId = station.stationName
-                .replaceAll(" ", "")
-                .toLowerCase();
-            const pos = stationPositions[stationId];
+            const stationId = stationNameToId(station.stationName);
+            const pos = stationPositions[stationId || ""];
             if (pos) {
                 const stationX = pos.x;
                 const stationY = pos.y;
@@ -144,6 +144,8 @@
             .selectChildren()
             .attr("class", null)
             .attr("stroke", null);
+
+        console.log("setActiveLine", newLine.id);
 
         const groupSelection = d3.select<SVGGElement, unknown>(
             "#map-svg #lines #" + newLine.id
@@ -521,8 +523,17 @@
 
         addClassesToStations();
         $currentLine && setActiveLine($currentLine);
+
         // minimize the bottom menu to make place for the locate me button
-        isMenuMinimized.set(true);
+        if ($isMobile) {
+            isMenuMinimized.set(true);
+        }
+    });
+
+    onDestroy(() => {
+        if ($isMobile) {
+            isMenuMinimized.set(false);
+        }
     });
 
     currentStation.subscribe((newStation) => {
@@ -593,7 +604,9 @@
         xmlns="http://www.w3.org/2000/svg"
         class={$videoIsLoading ? "isLoading" : ""}
         ><g>
-            {#if $currentCitySlug === "zurich"}
+            {#if $currentCity?.map}
+                <MapInlineSVG mapData={$currentCity.map} />
+            {:else if $currentCitySlug === "zurich"}
                 <MapInlineSvgZurich />
             {:else if $currentCitySlug === "chemnitz"}
                 <MapInlineSvgChemnitz />

@@ -98,9 +98,7 @@ collections:
                 - label: "Cities"
                   name: "cities"
                   widget: "list"
-                  summary: "{{fields.name}} ({{fields.lines.length}} lines)"
-                  collapsed: true
-                  minimize_collapsed: true
+                  summary: "{{fields.name}}"
                   fields:
                       - label: "City Name"
                         name: "name"
@@ -141,6 +139,28 @@ collections:
                         required: true
                         default: "#AD46FF"
                         hint: "Color of the city"
+                      - label: "Stations"
+                        name: "stations"
+                        widget: "list"
+                        summary: "{{fields.name}}"
+                        label_singular: "Station"
+                        collapsed: true
+                        minimize_collapsed: true
+                        fields:
+                            - label: "Name"
+                              name: "name"
+                              widget: "string"
+                              required: true
+                            - label: "Latitude"
+                              name: "lat"
+                              widget: "number"
+                              value_type: "float"
+                              required: true
+                            - label: "Longitude"
+                              name: "lng"
+                              widget: "number"
+                              value_type: "float"
+                              required: true
                       - label: "Legal"
                         name: "legal"
                         widget: "markdown"
@@ -149,10 +169,16 @@ collections:
                         name: "description"
                         widget: "markdown"
                         required: true
+                      - label: "Map SVG"
+                        name: "map"
+                        widget: "text"
+                        required: false
+                        hint: "SVG content for the city map. Leave empty to use default map components."
                       - label: "Lines"
                         name: "lines"
                         widget: "list"
                         summary: "{{fields.number}} {{fields.name}} {{fields.artistName}}"
+                        label_singular: "Line"
                         collapsed: true
                         minimize_collapsed: true
                         fields:
@@ -197,219 +223,14 @@ collections:
                               name: "timeStamps"
                               widget: "list"
                               summary: "{{fields.name}}"
+                              label_singular: "Timestamp"
                               fields:
                                   - label: "Station"
                                     name: "name"
                                     widget: "select"
                                     required: true
                                     hint: "Enter the station name for this city"
-                                    options:
-                                        [
-                                            "Aargauerstrasse",
-                                            "Albisgütli",
-                                            "Albisrieden",
-                                            "Albisriederplatz",
-                                            "Altes Krematorium",
-                                            "Alte Trotte",
-                                            "Altried",
-                                            "Am Ring",
-                                            "Auzelg",
-                                            "Bachmattstrasse",
-                                            "Bad Allenmoos",
-                                            "Bahnhof Altstetten Nord",
-                                            "Bahnhof Enge",
-                                            "Bahnhof Enge Bederstrasse",
-                                            "Bahnhof Hardbrücke",
-                                            "Bahnhof Oerlikon",
-                                            "Bahnhof Oerlikon Ost",
-                                            "Bahnhofplatz HB",
-                                            "Bahnhofquai HB",
-                                            "Bahnhof Selnau",
-                                            "Bahnhof Stadelhofen",
-                                            "Bahnhof Stettbach",
-                                            "Bahnhofstrasse HB",
-                                            "Bahnhof Tiefenbrunnen",
-                                            "Bahnhof Wiedikon",
-                                            "Balgrist",
-                                            "Bäckeranlage",
-                                            "Beckenhof",
-                                            "Belair",
-                                            "Bellevue",
-                                            "Berninaplatz",
-                                            "Bernoulli-Häuser",
-                                            "Bezirksgebäude",
-                                            "Bhf. Wollishofen Staubstrasse",
-                                            "Billoweg",
-                                            "Bändliweg",
-                                            "Bürkliplatz",
-                                            "Brunaustrasse",
-                                            "Bucheggplatz",
-                                            "Bäuler",
-                                            "Burgwies",
-                                            "Butzenstrasse",
-                                            "Central",
-                                            "Englischviertelstrasse",
-                                            "Eschergutweg",
-                                            "Escher-Wyss-Platz",
-                                            "ETH Universitätsspital",
-                                            "Farbhof",
-                                            "Feldeggstrasse",
-                                            "Fellenbergstrasse",
-                                            "Felsenrainstrasse",
-                                            "Fernsehstudio",
-                                            "Fischerweg",
-                                            "Zürich Flughafen Bahnhof",
-                                            "Fracht",
-                                            "Frankental",
-                                            "Freihofstrasse",
-                                            "Fröhlichstrasse",
-                                            "Friedhof Enzenbühl",
-                                            "Förrlibuckstrasse",
-                                            "Gasometerbrücke",
-                                            "Geissweid",
-                                            "Glattbrugg Bahnhof",
-                                            "Glattpark",
-                                            "Glatt",
-                                            "Glattwiesen",
-                                            "Goldbrunnenplatz",
-                                            "Grimselstrasse",
-                                            "Grünaustrasse",
-                                            "Güterbahnhof",
-                                            "Guggachstrasse",
-                                            "Haldenbach",
-                                            "Haldenegg",
-                                            "Hardhof",
-                                            "Hardplatz",
-                                            "Hardturm",
-                                            "Hedwigsteig",
-                                            "Heerenwiesen",
-                                            "Hegibachplatz",
-                                            "Helmhaus",
-                                            "Helvetiaplatz",
-                                            "Herti",
-                                            "Heuried",
-                                            "Hirschwiesenstrasse",
-                                            "Hirzenbach",
-                                            "Hölderlinstrasse",
-                                            "Hottingerplatz",
-                                            "Höschgasse",
-                                            "Hubertus",
-                                            "Kantonalbank",
-                                            "Kantonsschule",
-                                            "Kappeli",
-                                            "Kinkelstrasse",
-                                            "Kirche Fluntern",
-                                            "Kloten Balsberg Bahnhof",
-                                            "Klusplatz",
-                                            "Kreuzplatz",
-                                            "Kreuzstrasse",
-                                            "Kronenstrasse",
-                                            "Kunsthaus",
-                                            "Langmauerstrasse",
-                                            "Laubegg",
-                                            "Laubiweg",
-                                            "Letzigrund",
-                                            "Letzistrasse",
-                                            "Leutschenbach",
-                                            "Limmatplatz",
-                                            "Lindberghplatz",
-                                            "Lindenplatz",
-                                            "Lochergut",
-                                            "Luchswiesen",
-                                            "Luegisland",
-                                            "Löwenbräu",
-                                            "Löwenplatz",
-                                            "Mattenhof",
-                                            "Meierhofplatz",
-                                            "Messe Hallenstadion",
-                                            "Micafil",
-                                            "Milchbuck",
-                                            "Mülligen",
-                                            "Morgental",
-                                            "Museum für Gestaltung",
-                                            "Museum Rietberg",
-                                            "Neugut",
-                                            "Neumarkt",
-                                            "Oerlikerhus",
-                                            "Opernhaus",
-                                            "Ottikerstrasse",
-                                            "Paradeplatz",
-                                            "Platte",
-                                            "Renggerstrasse",
-                                            "Probstei",
-                                            "Quellenstrasse",
-                                            "Brunnenhof",
-                                            "Rathaus",
-                                            "Regensbergbrücke",
-                                            "Rehalp",
-                                            "Rennweg",
-                                            "Rentenanstalt",
-                                            "Ringwiesen",
-                                            "Römerhof",
-                                            "Roswiesen",
-                                            "Röslistrasse",
-                                            "Rudolf-Brun-Brücke",
-                                            "Saalsporthalle",
-                                            "Salersteig",
-                                            "Schaffhauserplatz",
-                                            "Schaufelbergerstrasse",
-                                            "Schiffbau",
-                                            "Schmiede Wiedikon",
-                                            "Schörlistrasse",
-                                            "Schwamendingerplatz",
-                                            "Schwert",
-                                            "Seebach",
-                                            "Seebacherplatz",
-                                            "Seilbahn Rigiblick",
-                                            "Siemens",
-                                            "Signaustrasse",
-                                            "Sihlcity Nord",
-                                            "Sihlpost HB",
-                                            "Sihlquai HB",
-                                            "Sihlstrasse",
-                                            "Sonneggstrasse",
-                                            "Sportweg",
-                                            "Stampfenbachplatz",
-                                            "Stauffacher",
-                                            "Sternen Oerlikon",
-                                            "Stockerstrasse",
-                                            "Strassenverkehrsamt",
-                                            "Susenbergstrasse",
-                                            "Talwiesenstrasse",
-                                            "Technopark",
-                                            "Tüffenwies",
-                                            "Tierspital",
-                                            "Toblerplatz",
-                                            "Toni-Areal",
-                                            "Triemli",
-                                            "Tunnelstrasse",
-                                            "Uetlihof",
-                                            "Ueberlandpark",
-                                            "Universität Irchel",
-                                            "Unterriet",
-                                            "Voltastrasse",
-                                            "Waffenplatzstrasse",
-                                            "Wagonsfabrik",
-                                            "Waidfussweg",
-                                            "Waldgarten",
-                                            "Wallisellen Bahnhof",
-                                            "Wartau",
-                                            "Werd",
-                                            "Werdhölzli",
-                                            "Wetlistrasse",
-                                            "Wildbachstrasse",
-                                            "Winkelriedstrasse",
-                                            "Winzerstrasse",
-                                            "Wipkingerplatz",
-                                            "Wollishoferplatz",
-                                            "Würzgraben",
-                                            "Schlieren Zentrum Bahnhof",
-                                            "Zoo",
-                                            "Zürichbergstrasse",
-                                            "Kalkbreite",
-                                            "Zwielplatz",
-                                            "Zypressenstrasse",
-                                        ]
+                                    options: [STATION_NAMES]
                                   - label: "Start Time"
                                     name: "startTime"
                                     widget: "string"
