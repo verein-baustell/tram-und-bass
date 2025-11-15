@@ -6556,7 +6556,18 @@ cities:
       Verein Name Chemnitz
       Addresse
       Kontakt Email
-    description: TnB goes Chemnitz
+    description: >-
+      Tram & Bass Chemnitz verbindet die Europäische Kulturhauptstadt 2025 auf
+      eine neue Art: mit zehn elektronischen Soundreisen, die  entlang der
+      Chemnitzer Straßenbahnlinien entstanden sind. DJs und Kollektive aus der
+      Region haben speziell für das Projekt Sets aufgenommen, die ihre eigene
+      Perspektive auf die Stadt hörbar machen. Anknüpfend an die Zürich-Edition
+      entsteht nun auch in Chemnitz eine Plattform, auf der die lokale Szene in
+      ihrer ganzen Vielfalt präsentiert wird – zugänglich für alle, die Lust auf
+      neue Klänge haben.
+
+
+      Die Soundfahrten zeigen, wie breit die elektronische Musik hier klingt: mal energetisch, mal atmosphärisch, mal experimentell – aber immer auch Chemnitz-Style.
     released: false
     lat: 50.8278
     stations:
@@ -6747,12 +6758,12 @@ cities:
         lat: 50.82006912648606
         lng: 12.964373780834704
     lines:
-      - color: "#de2b2b"
+      - color: "#22398e"
         number: 1
         name: Brückenstraße
         artistName: "[to:n]"
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
-        releaseDate: 2025-10-21T17:06:00.000+02:00
+        releaseDate: 2025-11-29T18:00:00.000+01:00
         id: ""
         timeStamps:
           - startTime: 00:00
@@ -6789,7 +6800,7 @@ cities:
             startTime: 15:13
             endTime: 15:15
         isInverted: false
-      - color: "#de2b2b"
+      - color: "#22398e"
         number: 1
         name: Schönau
         artistName: em.aevi
@@ -6831,7 +6842,7 @@ cities:
             name: Schönau
             endTime: 13:51
         isInverted: false
-      - color: "#de2b2b"
+      - color: "#ffd744"
         number: 2
         name: Brückenstraße
         artistName: Bela Bender
@@ -6870,7 +6881,7 @@ cities:
             name: Brückenstraße/Freie Presse
             endTime: 11:27
         isInverted: false
-      - color: "#de2b2b"
+      - color: "#ffd744"
         number: 2
         name: Bernsdorf
         artistName: Selma Juhran
@@ -6909,7 +6920,7 @@ cities:
             name: Bernsdorf
             endTime: 12:57
         isInverted: false
-      - color: "#de2b2b"
+      - color: "#00975f"
         number: 3
         name: Technopark
         artistName: Subko
@@ -6951,7 +6962,7 @@ cities:
             startTime: 15:11
             endTime: 15:13
         isInverted: false
-      - color: "#de2b2b"
+      - color: "#00975f"
         number: 3
         name: Hauptbahnhof
         artistName: Tøsche
@@ -6993,7 +7004,7 @@ cities:
             name: Hauptbahnhof
             endTime: 16:49
         isInverted: false
-      - color: "#de2b2b"
+      - color: "#754494"
         number: 4
         name: Hutholz
         artistName: Tony J
@@ -7062,7 +7073,7 @@ cities:
             name: Hutholz
             endTime: 25:55
         isInverted: false
-      - color: "#de2b2b"
+      - color: "#754494"
         number: 4
         name: Hauptbahnhof
         artistName: Kainat
@@ -7131,7 +7142,7 @@ cities:
             startTime: 26:00
             endTime: 26:07
         isInverted: false
-      - color: "#de2b2b"
+      - color: "#d24379"
         number: 5
         name: Hutholz
         artistName: Cath Boo
@@ -7221,7 +7232,7 @@ cities:
             startTime: 37:07
             endTime: 37:17
         isInverted: false
-      - color: "#de2b2b"
+      - color: "#d24379"
         number: 5
         name: Gablenz
         artistName: Sudden Hearing
