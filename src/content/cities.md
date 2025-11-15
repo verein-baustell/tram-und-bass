@@ -6558,7 +6558,7 @@ cities:
       club@atomino-chemnitz.de
     description: >-
       Tram & Bass Chemnitz verbindet die Europäische Kulturhauptstadt 2025 auf
-      eine neue Art: mit zehn elektronischen Soundreisen, die  entlang der
+      eine neue Art: mit zehn elektronischen Soundreisen, die entlang der
       Chemnitzer Straßenbahnlinien entstanden sind. DJs und Kollektive aus der
       Region haben speziell für das Projekt Sets aufgenommen, die ihre eigene
       Perspektive auf die Stadt hörbar machen. Anknüpfend an die Zürich-Edition
@@ -6567,7 +6567,7 @@ cities:
       neue Klänge haben.
 
 
-      Die Soundfahrten zeigen, wie breit die elektronische Musik hier klingt: mal energetisch, mal atmosphärisch, mal experimentell – aber immer auch Chemnitz-Style.
+      Die Straßenbahnfahrten zeigen, wie breit die elektronische Musik hier klingt: mal energetisch, mal atmosphärisch, mal experimentell – aber immer auch Chemnitz-Style.
     released: false
     lat: 50.8278
     stations:
