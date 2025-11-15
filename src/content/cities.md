@@ -6553,9 +6553,9 @@ cities:
     name: Chemnitz
     slug: chemnitz
     legal: |-
-      Verein Name Chemnitz
-      Addresse
-      Kontakt Email
+      Atomino e.V.\
+      Annaberger Str. 73, 09111 Chemnitz
+      club@atomino-chemnitz.de
     description: >-
       Tram & Bass Chemnitz verbindet die Europäische Kulturhauptstadt 2025 auf
       eine neue Art: mit zehn elektronischen Soundreisen, die  entlang der
@@ -6805,7 +6805,7 @@ cities:
         name: Schönau
         artistName: em.aevi
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
-        releaseDate: 2025-10-21T17:06:00.000+02:00
+        releaseDate: 2025-11-22T10:00:00.000+01:00
         id: ""
         timeStamps:
           - endTime: 00:02
@@ -6847,7 +6847,7 @@ cities:
         name: Brückenstraße
         artistName: Bela Bender
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
-        releaseDate: 2025-10-21T17:06:00.000+02:00
+        releaseDate: 2025-11-22T10:00:00.000+01:00
         id: ""
         timeStamps:
           - name: Bernsdorf
@@ -6886,7 +6886,7 @@ cities:
         name: Bernsdorf
         artistName: Selma Juhran
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
-        releaseDate: 2025-10-21T17:45:00.000+02:00
+        releaseDate: 2025-11-26T18:00:00.000+01:00
         id: ""
         timeStamps:
           - endTime: 00:02
@@ -6925,7 +6925,7 @@ cities:
         name: Technopark
         artistName: Subko
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
-        releaseDate: 2025-10-21T17:49:00.000+02:00
+        releaseDate: 2025-11-30T18:00:00.000+01:00
         id: ""
         timeStamps:
           - endTime: 00:01
@@ -6967,7 +6967,7 @@ cities:
         name: Hauptbahnhof
         artistName: Tøsche
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
-        releaseDate: 2025-10-21T18:00:00.000+02:00
+        releaseDate: 2025-11-24T18:00:00.000+01:00
         id: ""
         timeStamps:
           - endTime: 00:03
@@ -7009,7 +7009,7 @@ cities:
         name: Hutholz
         artistName: Tony J
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
-        releaseDate: 2025-10-21T18:08:00.000+02:00
+        releaseDate: 2025-11-28T18:00:00.000+01:00
         id: ""
         timeStamps:
           - endTime: 00:02
@@ -7078,7 +7078,7 @@ cities:
         name: Hauptbahnhof
         artistName: Kainat
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
-        releaseDate: 2025-10-21T18:16:00.000+02:00
+        releaseDate: 2025-11-25T18:00:00.000+01:00
         id: ""
         timeStamps:
           - startTime: 00:00
@@ -7147,7 +7147,7 @@ cities:
         name: Hutholz
         artistName: Cath Boo
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
-        releaseDate: 2025-10-21T18:23:00.000+02:00
+        releaseDate: 2025-11-22T10:00:00.000+01:00
         id: ""
         timeStamps:
           - name: Gablenz
@@ -7237,7 +7237,7 @@ cities:
         name: Gablenz
         artistName: Sudden Hearing
         videoUrl: j003m2DL1OgQJIfjEGv800qwnL1CLHvWqqriU6IswLljY
-        releaseDate: 2025-10-21T18:33:00.000+02:00
+        releaseDate: 2025-11-27T18:00:00.000+01:00
         id: ""
         timeStamps:
           - name: Hutholz
