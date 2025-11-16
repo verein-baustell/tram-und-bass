@@ -41,7 +41,7 @@
     </a>
 
     <div class="about-container impressum">
-        <p>Impressum</p>
+        <p class="impressum-title">Impressum und Kontakt</p>
         <p>{$currentCity?.legal}</p>
     </div>
 
@@ -173,5 +173,10 @@
         display: flex;
         flex-direction: column;
         gap: 5px;
+    }
+    .impressum-title {
+        margin-bottom: 5px;
+        // border-bottom: 1px solid white;
+        // width: fit-content;
     }
 </style>

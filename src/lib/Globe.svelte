@@ -399,6 +399,7 @@
     .tooltip-wrapper {
         position: fixed;
         z-index: 1000;
+        width: fit-content;
         pointer-events: none;
         display: flex;
         justify-content: center;
@@ -411,7 +412,7 @@
 
     .tooltip-wrapper.expanded {
         opacity: 1;
-        transform: translate(-50%, -110%);
+        /* transform: translate(-55%, -100%); */
     }
 
     .tooltip {
