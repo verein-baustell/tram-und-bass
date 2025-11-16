@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount, onDestroy } from "svelte";
+    import { fade } from "svelte/transition";
     import { browser } from "$app/environment";
     import { goto } from "$app/navigation";
     import { attributes as citiesContent } from "../content/cities.md";
@@ -17,7 +18,10 @@
     let tooltip: HTMLDivElement;
     let tooltipVisible = false;
     let tooltipData: any = null;
+    let tooltipX = 0;
+    let tooltipY = 0;
     let isHovering = false;
+    let hideTooltipTimeout: ReturnType<typeof setTimeout> | null = null;
     let mobilePopupVisible = false;
     let mobilePopupData: any = null;
 
@@ -34,31 +38,23 @@
         mobilePopupData = null;
     }
 
-    // Function to update tooltip position
-    function updateTooltipPosition() {
-        if (tooltip && tooltipVisible && tooltipData) {
-            // Calculate position based on the hovered city
-            const rect = container.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
+    // Function to update tooltip position based on hovered point location
+    function updateTooltipPosition(point: any) {
+        if (!globe || !container || !point) return;
 
-            // Position tooltip to the right of the center
-            tooltip.style.left = `${centerX + 100}px`;
-            tooltip.style.top = `${centerY - 50}px`;
-        }
-    }
+        const rect = container.getBoundingClientRect();
 
-    // Function to handle mouse move for tooltip positioning
-    function handleMouseMove(event: MouseEvent) {
-        if (tooltip && tooltipVisible) {
-            // Get tooltip dimensions
-            const tooltipRect = tooltip.getBoundingClientRect();
-            const tooltipWidth = tooltipRect.width || 200; // fallback width
-            const tooltipHeight = tooltipRect.height || 100; // fallback height
+        if (typeof globe.getScreenCoords === "function") {
+            // Use globe.gl helper if available
+            const { x, y } = globe.getScreenCoords(point.lat, point.lng);
 
-            // Center horizontally on mouse and position above mouse
-            tooltip.style.left = `${event.clientX - tooltipWidth / 2}px`;
-            tooltip.style.top = `${event.clientY - tooltipHeight - 5}px`; // 5px gap above mouse
+            // Store the point position in screen space; wrapper will center above it
+            tooltipX = rect.left + x;
+            tooltipY = rect.top + y - 20; // 20px above the point
+        } else {
+            // Fallback: approximate position near center
+            tooltipX = rect.left + rect.width / 2;
+            tooltipY = rect.top + rect.height / 2 - 20;
         }
     }
 
@@ -169,6 +165,11 @@
                         ); // Debug log
                         // Change cursor to pointer when hovering over cities
                         if (point) {
+                            // Cancel any pending hide so we don't flicker
+                            if (hideTooltipTimeout) {
+                                clearTimeout(hideTooltipTimeout);
+                                hideTooltipTimeout = null;
+                            }
                             console.log(
                                 "Hovering over point, setting isHovering to true"
                             );
@@ -187,24 +188,32 @@
                             if (point.name) {
                                 console.log("Showing tooltip for:", point.name); // Debug log
                                 tooltipData = point;
+                                updateTooltipPosition(point);
                                 tooltipVisible = true;
-                                updateTooltipPosition();
                             }
                         } else {
                             console.log(
-                                "Not hovering over point, setting isHovering to false"
+                                "Not hovering over point, scheduling tooltip hide"
                             );
                             container.style.cursor = "default";
                             isHovering = false;
-                            tooltipVisible = false;
 
-                            // Resume auto-rotation when not hovering
-                            if (globe.controls() && enableAutoRotate) {
-                                console.log(
-                                    "Resuming auto-rotate after point hover ends"
-                                );
-                                globe.controls().autoRotate = true;
+                            // Delay hiding slightly to avoid flicker when hover is intermittent
+                            if (hideTooltipTimeout) {
+                                clearTimeout(hideTooltipTimeout);
                             }
+                            hideTooltipTimeout = setTimeout(() => {
+                                tooltipVisible = false;
+                                tooltipData = null;
+
+                                // Resume auto-rotation when not hovering
+                                if (globe.controls() && enableAutoRotate) {
+                                    console.log(
+                                        "Resuming auto-rotate after point hover ends"
+                                    );
+                                    globe.controls().autoRotate = true;
+                                }
+                            }, 50);
                         }
                     }
                 })
@@ -269,7 +278,6 @@
             };
 
             window.addEventListener("resize", handleResize);
-            container.addEventListener("mousemove", handleMouseMove);
 
             // Configure auto-rotate if enabled
             if (enableAutoRotate) {
@@ -290,9 +298,7 @@
                 window.removeEventListener("resize", handleResize);
                 handleResize = null;
             }
-            if (container) {
-                container.removeEventListener("mousemove", handleMouseMove);
-            }
+            // Mousemove listener removed (no longer used for tooltip positioning)
         };
     });
 
@@ -327,17 +333,23 @@
 </div>
 
 <!-- Tooltip for city information -->
-{#if tooltipVisible && tooltipData}
-    <div class="tooltip" bind:this={tooltip} class:expanded={tooltipVisible}>
-        <div class="tooltip-content">
-            <div class="tooltip-header">
-                {#if tooltipData.released}
-                    <h3 class="tooltip-title">{tooltipData.name}</h3>
-                {:else}
-                    <h3 class="tooltip-title">
-                        {tooltipData.name} - Coming Soon
-                    </h3>
-                {/if}
+{#if tooltipData}
+    <div
+        class="tooltip-wrapper"
+        class:expanded={tooltipVisible}
+        style={`left: ${tooltipX}px; top: ${tooltipY}px;`}
+    >
+        <div class="tooltip" bind:this={tooltip}>
+            <div class="tooltip-content">
+                <div class="tooltip-header">
+                    {#if tooltipData.released}
+                        <h3 class="tooltip-title">{tooltipData.name}</h3>
+                    {:else}
+                        <h3 class="tooltip-title">
+                            {tooltipData.name} - Coming Soon
+                        </h3>
+                    {/if}
+                </div>
             </div>
         </div>
     </div>
@@ -384,24 +396,32 @@
         background-color: #000000 !important;
     }
 
-    .tooltip {
+    .tooltip-wrapper {
         position: fixed;
         z-index: 1000;
+        pointer-events: none;
+        display: flex;
+        justify-content: center;
+        opacity: 0;
+        transform: translate(-50%, -100%);
+        transition:
+            opacity 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .tooltip-wrapper.expanded {
+        opacity: 1;
+        transform: translate(-50%, -110%);
+    }
+
+    .tooltip {
         pointer-events: auto;
         background: rgba(0, 0, 0, 0.9);
         color: white;
         border-radius: 8px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         border: 1px solid rgba(255, 255, 255, 0.3);
-        transform: translateX(100px) translateY(-0%);
-        opacity: 0;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         overflow: hidden;
-    }
-
-    .tooltip.expanded {
-        transform: translateX(0) translateY(-10px);
-        opacity: 1;
     }
 
     .tooltip-content {
