@@ -6763,7 +6763,15 @@ cities:
         name: Brückenstraße
         artistName: "[to:n]"
         artistAboutText: >-
-          Der DJ und Produzent [to:n] verbindet einen club-orientierten Ansatz mit experimentierfreudiger elektronischer Musik und lässt sich dabei sowohl von aktueller als auch klassischer Popmusik und einem modernen Klangbild inspirieren. Als Mitglied des Multimedia-Kollektivs @nonirritating hat [to:n] an mehreren Veranstaltungen mitgewirkt und EPs in verschiedenen Formationen veröffentlicht. Seine Projekte zeichnen sich durch unerwartete Wendungen und konzeptuelle Tiefe aus. Er erzeugt immersive Erfahrungen, die zum Versinken und Abschweifen einladen.
+          Der DJ und Produzent [to:n] verbindet einen club-orientierten Ansatz
+          mit experimentierfreudiger elektronischer Musik und lässt sich dabei
+          sowohl von aktueller als auch klassischer Popmusik und einem modernen
+          Klangbild inspirieren. Als Mitglied des Multimedia-Kollektivs
+          @nonirritating hat [to:n] an mehreren Veranstaltungen mitgewirkt und
+          EPs in verschiedenen Formationen veröffentlicht. Seine Projekte
+          zeichnen sich durch unerwartete Wendungen und konzeptuelle Tiefe aus.
+          Er erzeugt immersive Erfahrungen, die zum Versinken und Abschweifen
+          einladen.
 
 
           [Instagram @tontont0ntonton](<https://www.instagram.com/tontont0ntonton/ >)
@@ -6813,11 +6821,12 @@ cities:
         name: Schönau
         artistName: em.aevi
         artistAboutText: >-
-          em.ævi ist eine Künstlerin und DJ aus Chemnitz, @signal.transmitter @transit.club.
-          
-          
+          em.ævi ist eine Künstlerin und DJ aus Chemnitz, @signal.transmitter
+          @transit.club.
+
+
           Indem sie äußere Klänge mit ihren inneren Frequenzen verschmelzt, gestaltet em Klanglandschaften im Spannungsfeld zwischen atmosphärischer Tiefe, rhythmischer Spannung, elfenhaften Aufträgen und lebendigen Geysiren. Angetrieben vom wundersamen Zusammenspiel der Elemente, der Begegnung mit Licht und Dunkelheit.
-          
+
 
           Ihre Vielseitigkeit kennt keine Grenzen und eröffnet eine tiefgehende Erkundung ihrer klanglichen Spektren. Ihre Energie zieht sich wie ein untrennbarer Faden durch das Gefüge der lokalen Szene und hinterlässt einen unauslöschlichen Eindruck – nicht nur durch ihre Musikauswahl, sondern auch durch ihr unerschütterliches Engagement für das nachhaltige Wachstum der Community in Chemnitz und darüber hinaus.
 
@@ -6869,12 +6878,18 @@ cities:
         name: Brückenstraße
         artistName: Bela Bender
         artistAboutText: >-
-          Béla Bender steht für einen experimentellen Stil, der durch autodidaktisches Lernen, den Mut zum Einfachen und die Bereitschaft, Neues zu wagen, geprägt ist. Als Künstler und Musikproduzent hat er sich das Klavierspielen eigenständig beigebracht und seine Fähigkeiten kontinuierlich erweitert. Seine Arbeiten zeichnen sich durch eine klare, mutige Ästhetik aus, die hybride Klangwelten erforscht. Er hat vielfältige Interessen in verschiedenen künstlerischen Bereichen.
-          
+          Béla Bender steht für einen experimentellen Stil, der durch
+          autodidaktisches Lernen, den Mut zum Einfachen und die Bereitschaft,
+          Neues zu wagen, geprägt ist. Als Künstler und Musikproduzent hat er
+          sich das Klavierspielen eigenständig beigebracht und seine Fähigkeiten
+          kontinuierlich erweitert. Seine Arbeiten zeichnen sich durch eine
+          klare, mutige Ästhetik aus, die hybride Klangwelten erforscht. Er hat
+          vielfältige Interessen in verschiedenen künstlerischen Bereichen.
+
 
           Béla, geboren in Chemnitz, studiert Bildende Kunst an der HfBK Dresden und hat 2025 den Projektraum momentum gegründet, der sich zu einer bedeutenden Plattform entwickelt hat, die die kulturelle Landschaft der Stadt prägt. momentum ist mehr als nur ein Raum; es ist ein Ort zum Vernetzen, Experimentieren und zur aktiven Förderung von Verbindung – ähnlich einer Straßenbahnfahrt, auf der jeder mit seinen Gedanken, seiner Musik und seinen Gesprächen unterwegs ist. Béla hat die Musik selbst produziert – ein Symbol für das einfache Machen und den Mut, eigene Wege zu gehen.
-          
-          
+
+
           Béla hat ein Atelier in Chemnitz, in dem er seine Erfahrungen und Impulse aus der Stadt in sein kreatives Schaffen integriert. Seine Herangehensweise steht für Offenheit, Eigeninitiative und die Fähigkeit, Neues aus Begegnungen entstehen zu lassen.
 
 
@@ -6922,7 +6937,15 @@ cities:
         name: Bernsdorf
         artistName: Selma Juhran
         artistAboutText: >-
-          Selma ist Sängerin, Songwriterin, Produzentin elektronischer Musik und Performerin. Sie studiert Popmusikdesign mit Schwerpunkt Singer-Songwriter und kreiert Klangwelten zwischen cineastischen, sphärischen Texturen und düsterem, basslastigem Alternative Pop. Selma erschafft Räume, in denen Verletzlichkeit und Stärke nebeneinander existieren und Zuhörende Selbstermächtigung finden können. Mit einem hypnotischen Mix aus sanften, schwebenden Sounds und düsteren, brutalen Bässen erzeugt Selma einen Vibe, der zarte Melancholie mit roher Energie verbindet.
+          Selma ist Sängerin, Songwriterin, Produzentin elektronischer Musik und
+          Performerin. Sie studiert Popmusikdesign mit Schwerpunkt
+          Singer-Songwriter und kreiert Klangwelten zwischen cineastischen,
+          sphärischen Texturen und düsterem, basslastigem Alternative Pop. Selma
+          erschafft Räume, in denen Verletzlichkeit und Stärke nebeneinander
+          existieren und Zuhörende Selbstermächtigung finden können. Mit einem
+          hypnotischen Mix aus sanften, schwebenden Sounds und düsteren,
+          brutalen Bässen erzeugt Selma einen Vibe, der zarte Melancholie mit
+          roher Energie verbindet.
 
 
           [Instagram @selmajuhran](<https://www.instagram.com/selmajuhran/ >)
@@ -6966,7 +6989,16 @@ cities:
         name: Technopark
         artistName: SubkoØne
         artistAboutText: >-
-          SubkoØnes Sound ist geprägt von jahrelanger, unerschütterlicher Liebe zur Musik und der Kombination zahlreicher Genres. Schon immer hat ihn die Faszination für einzigartige Klänge begleitet – völlig unabhängig vom Genre. Er beschreibt seinen Sound als hart und treibend, trippy, industrial und offen für Überraschungen, die mit Trance- und melodischen Elementen verwoben sind. Seine Sets erzählen eine Geschichte, sodass die Crowd nie gelangweilt wird: Höhen für ekstatische Momente, Tiefen, um Herzen zu öffnen, und Breaks zum Ausatmen. Sein Sound wurde von renommierten Labels wie Mama told ya, Taapion, Maison Close und vielen weiteren geprägt.
+          SubkoØnes Sound ist geprägt von jahrelanger, unerschütterlicher Liebe
+          zur Musik und der Kombination zahlreicher Genres. Schon immer hat ihn
+          die Faszination für einzigartige Klänge begleitet – völlig unabhängig
+          vom Genre. Er beschreibt seinen Sound als hart und treibend, trippy,
+          industrial und offen für Überraschungen, die mit Trance- und
+          melodischen Elementen verwoben sind. Seine Sets erzählen eine
+          Geschichte, sodass die Crowd nie gelangweilt wird: Höhen für
+          ekstatische Momente, Tiefen, um Herzen zu öffnen, und Breaks zum
+          Ausatmen. Sein Sound wurde von renommierten Labels wie Mama told ya,
+          Taapion, Maison Close und vielen weiteren geprägt.
 
 
           [Instagram @subko_1](<https://www.instagram.com/subko_1 >)
@@ -7016,9 +7048,13 @@ cities:
         name: Hauptbahnhof
         artistName: TØSCHE
         artistAboutText: >-
-          TØSCHE erschafft organische, transformative Klangreisen, die Psy, Tribal, Tekno und Techno zu einem psychedelischen Ganzen verweben. Ihre Sets sind immersive Erlebnisse – kraftvoll, heilend und energiegeladen – und eröffnen neue Klangdimensionen zwischen Instinkt und Illusion. 
-          
-          
+          TØSCHE erschafft organische, transformative Klangreisen, die Psy,
+          Tribal, Tekno und Techno zu einem psychedelischen Ganzen verweben.
+          Ihre Sets sind immersive Erlebnisse – kraftvoll, heilend und
+          energiegeladen – und eröffnen neue Klangdimensionen zwischen Instinkt
+          und Illusion. 
+
+
           Als Gründerin der TENSIØN-Reihe verbindet sie ihre Musik mit einem Bewusstsein für Gender-Gleichheit und nachhaltige Clubkultur.
 
 
@@ -7065,9 +7101,8 @@ cities:
         number: 4
         name: Hutholz
         artistName: TonyJ
-        artistAboutText: >-
+        artistAboutText: |-
           xxx
-
 
           [Instagram @tonyjdj11](<https://www.instagram.com/tonyjdj11/ >)
         videoUrl: f7mAjYwi0026j3Pi7JaTzsq5wPaYqQi00aDfIjQQiffkI
@@ -7139,9 +7174,8 @@ cities:
         number: 4
         name: Hauptbahnhof
         artistName: KAINAT
-        artistAboutText: >-
+        artistAboutText: |-
           xxx
-
 
           [Instagram @kainatm__](<https://www.instagram.com/kainatm__ >)
         videoUrl: dJgqkL1HvnrzTPrBzd00nIdBhXWoN0052lf2Wp1ODcABU
@@ -7214,11 +7248,16 @@ cities:
         name: Hutholz
         artistName: Cath Boo & LeSuri
         artistAboutText: >-
-          Zwei DJs, ein Set, eine Strecke: Cath Boo und LeSuri nehmen euch mit auf einen musikalischen Ride entlang der Tram 5 – von Hutholz bis Gablenz. Was euch erwartet? Ein Soundtrip, der in Chemnitz startet – mit Tracks von lokalen Artists – und sich dann in alle Richtungen öffnet: von der Hood in die Welt. Beats mit Ecken, Kanten und globalem Drive. Aus Chemnitz, für Chemnitz – und weit darüber hinaus.
-          
-          
-          DJ Cath Boo ist seit 2001 Wahl-Chemnitzerin und eine feste Größe der ostdeutschen Clubszene. Mit einem feinen Gespür für düstere, treibende und emotionale Sounds bewegt sie sich zwischen House, Garage und Electro – stets mit klarer Haltung und Liebe zum Detail. Als Initiatorin des Projekts 365 fe*male DJs setzt sie sich aktiv für die Sichtbarkeit von FLINTA* Artists ein und supportet weibliche, nicht-binäre und trans DJs – online wie offline. Cath Boo ist außerdem Gründerin der Booking-Agentur DIEDA, einem Netzwerk für progressive Clubkultur mit Fokus auf Diversität, Solidarität und Empowerment. Darüber hinaus ist sie Teil des internationalen Kollektivs Women of Techno, das sich für Gleichberechtigung und Repräsentanz in der elektronischen Musik stark macht. Mit ihrer künstlerischen und politischen Arbeit prägt DJ Cath Boo weit mehr als nur die Tanzflächen – sie gestaltet aktiv eine gerechtere Clubkultur mit.
-        
+          Zwei DJs, ein Set, eine Strecke: Cath Boo und LeSuri nehmen euch mit
+          auf einen musikalischen Ride entlang der Tram 5 – von Hutholz bis
+          Gablenz. Was euch erwartet? Ein Soundtrip, der in Chemnitz startet –
+          mit Tracks von lokalen Artists – und sich dann in alle Richtungen
+          öffnet: von der Hood in die Welt. Beats mit Ecken, Kanten und globalem
+          Drive. Aus Chemnitz, für Chemnitz – und weit darüber hinaus.
+
+
+          DJ Cath Boo ist seit 2001 Wahl-Chemnitzerin und eine feste Größe der ostdeutschen Clubszene. Mit einem feinen Gespür für düstere, treibende und emotionale Sounds bewegt sie sich zwischen House, Garage und Electro – stets mit klarer Haltung und Liebe zum Detail. Als Initiatorin des Projekts 365 fe\*male DJs setzt sie sich aktiv für die Sichtbarkeit von FLINTA\* Artists ein und supportet weibliche, nicht-binäre und trans DJs – online wie offline. Cath Boo ist außerdem Gründerin der Booking-Agentur DIEDA, einem Netzwerk für progressive Clubkultur mit Fokus auf Diversität, Solidarität und Empowerment. Darüber hinaus ist sie Teil des internationalen Kollektivs Women of Techno, das sich für Gleichberechtigung und Repräsentanz in der elektronischen Musik stark macht. Mit ihrer künstlerischen und politischen Arbeit prägt DJ Cath Boo weit mehr als nur die Tanzflächen – sie gestaltet aktiv eine gerechtere Clubkultur mit.
+
 
           DJ LeSuri ist ein energetischer Bestandteil der DIEDA-Crew und bringt mit ihren Sets eine frische und eklektische Note in die Clubszene. Als Mitglied der Agentur DIEDA steht sie für Vielfalt, Solidarität und musikalische Qualität. Ihr Sound bewegt sich zwischen treibendem Techno, rhythmischem House und verträumten Klangwelten – stets tanzbar, kraftvoll und mit eigener Handschrift. Darüber hinaus ist DJ LeSuri Teil der „Duffy Brenner Show“, einem performativen DJ-Projekt, das audiovisuelle Kunst mit Clubkultur verbindet und dabei spielerisch mit Rollenbildern, Humor und Subversion arbeitet. DJ LeSuri steht für Empowerment und Präsenz – hinter den Decks genauso wie auf der Bühne.
 
@@ -7226,8 +7265,7 @@ cities:
           [Instagram @em.aevi](<https://www.instagram.com/em.aevi/ >)
 
 
-          [Soundcloud CATH BOO](<soundcloud.com/cath_boo >)
-          [Soundcloud LeSuri](<soundcloud.com/nelesuri >)
+          [Soundcloud CATH BOO](<soundcloud.com/cath_boo >) [Soundcloud LeSuri](<soundcloud.com/nelesuri >)
         videoUrl: yxWnfvhZwvNk6heYn02SmGahhTYNI028YDKwvb2pwd6GQ
         releaseDate: 2025-11-22T10:00:00.000+01:00
         id: ""
@@ -7319,9 +7357,13 @@ cities:
         name: Gablenz
         artistName: Sudden Hearing & [Re]Turn
         artistAboutText: >-
-          Sudden Hearing wurde 2013 gegründet, angetrieben von der klaren Vision, deepen Underground-Sound zu etablieren. Seit der Neukonstituierung 2016 (mit Viator, Silentium & Noxium) liegt der Fokus der Crew auf einem präzisen Sound: liquider und deeper Drum & Bass, ergänzt durch selektiven Dubstep.
-          
-          
+          Sudden Hearing wurde 2013 gegründet, angetrieben von der klaren
+          Vision, deepen Underground-Sound zu etablieren. Seit der
+          Neukonstituierung 2016 (mit Viator, Silentium & Noxium) liegt der
+          Fokus der Crew auf einem präzisen Sound: liquider und deeper Drum &
+          Bass, ergänzt durch selektiven Dubstep.
+
+
           In Partnerschaft mit C-Recordings hostet Sudden Hearing die erfolgreiche Eventreihe [Re]Turn im Chemnitzer Weltecho. Ziel ist die Etablierung einer musikalisch anspruchsvollen D&B-Nacht mit internationalem Line-up. Highlights der [Re]Turn-Line-ups umfassen Artists wie: Etherwood, Kyrist, Enei, DLR, Monty, SubMarine, Satl und Monrroe.
 
 
