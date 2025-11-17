@@ -6,7 +6,9 @@
 
 <div class="view detailed-view about-view">
     <div class="about-container text">
-        <p><SvelteMarkdown source={$currentCity?.description} /></p>
+        <div class="text-container">
+            <SvelteMarkdown source={$currentCity?.description} />
+        </div>
         <!-- <p>
             <SvelteMarkdown source={aboutContent} />
         </p> -->
@@ -39,7 +41,7 @@
     </a>
 
     <div class="about-container impressum">
-        <p>Impressum</p>
+        <p class="impressum-title">Impressum und Kontakt</p>
         <p>{$currentCity?.legal}</p>
     </div>
 
@@ -166,5 +168,15 @@
     }
     .impressum p {
         white-space: pre-line;
+    }
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .impressum-title {
+        margin-bottom: 5px;
+        // border-bottom: 1px solid white;
+        // width: fit-content;
     }
 </style>

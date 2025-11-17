@@ -7,6 +7,7 @@
         isBtmOpen,
         isTopOpen,
         isWider,
+        isImmersive,
     } from "../store";
     import LineNumber from "./LineNumber.svelte";
     import ChangeLineList from "./ChangeLineList.svelte";
@@ -71,7 +72,7 @@
     });
 </script>
 
-{#if $currentLine}
+{#if $currentLine && !$isImmersive}
     <div class="btmMenu--cont">
         <div
             id="bottom-menu"

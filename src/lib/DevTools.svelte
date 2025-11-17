@@ -101,6 +101,7 @@
                 <tr> <td> muxVideoObject:</td><td> {$muxVideoObject}</td></tr>
                 <tr> <td> currentLine:</td><td> {$currentLine?.id}</td></tr>
                 <tr> <td> currentCity:</td><td> {$currentCitySlug}</td></tr>
+                <tr> <td> immersive:</td><td> {$isImmersive}</td></tr>
                 <tr>
                     <td> timeToSeekAfterVideoLoad:</td><td>
                         {$timeToSeekAfterVideoLoad}</td

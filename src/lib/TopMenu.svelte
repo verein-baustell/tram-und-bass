@@ -16,6 +16,7 @@
         currentCityShortName,
         isMobile,
         videoIsLoading,
+        isImmersive,
     } from "../store";
     import { addState } from "../utils/stateManager";
     export let aboutContent: string;
@@ -36,7 +37,7 @@
     let currentComponent = CityList; // Default to CityList component
 </script>
 
-{#if $currentLine}
+{#if !$isImmersive}
     <div class="topMenu--cont">
         <div
             id="top-menu"
