@@ -5,6 +5,25 @@ cities:
     shortName: ZRH
     name: Zürich
     slug: zurich
+    sponsorLogos:
+      - name: Stadt Supporter Logo
+        logo: /images/uploads/stadt.png
+        url: https://www.stadt-zuerich.ch/fd/de/index.html
+      - url: https://engagement.migros.ch/de/kulturprozent
+        logo: /images/uploads/migros.png
+        name: Migros Supporter Logo
+      - url: https://www.ernst-goehner-stiftung.ch/index.php/de
+        logo: /images/uploads/ernstgohner.png
+        name: Ernst Göhner Supporter Logo
+      - url: https://www.stadt-zuerich.ch/vbz/de/index.html
+        logo: /images/uploads/vbz.png
+        name: VBZ Supporter Logo
+      - url: https://temperatio.ch/
+        logo: /images/uploads/temperatio.png
+        name: Temperatio Supporter Logo
+      - url: https://www.zh.ch/de/direktion-der-justiz-und-des-innern/fachstelle-kultur.html
+        logo: /images/uploads/kanton.png
+        name: Kanton Supporter Logo
     legal: |-
       Verein Tram und Bass
       Hardgutstrasse 7, 8048 Zürich
