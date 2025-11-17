@@ -5,6 +5,25 @@ cities:
     shortName: ZRH
     name: Zürich
     slug: zurich
+    sponsorLogos:
+      - name: Stadt Supporter Logo
+        logo: /images/uploads/stadt.png
+        url: https://www.stadt-zuerich.ch/fd/de/index.html
+      - url: https://engagement.migros.ch/de/kulturprozent
+        logo: /images/uploads/migros.png
+        name: Migros Supporter Logo
+      - url: https://www.ernst-goehner-stiftung.ch/index.php/de
+        logo: /images/uploads/ernstgohner.png
+        name: Ernst Göhner Supporter Logo
+      - url: https://www.stadt-zuerich.ch/vbz/de/index.html
+        logo: /images/uploads/vbz.png
+        name: VBZ Supporter Logo
+      - url: https://temperatio.ch/
+        logo: /images/uploads/temperatio.png
+        name: Temperatio Supporter Logo
+      - url: https://www.zh.ch/de/direktion-der-justiz-und-des-innern/fachstelle-kultur.html
+        logo: /images/uploads/kanton.png
+        name: Kanton Supporter Logo
     legal: |-
       Verein Tram und Bass
       Hardgutstrasse 7, 8048 Zürich
@@ -2856,7 +2875,7 @@ cities:
         />
       </g>
     description: >-
-      Tram und Bass Zürich lädt dich ein, verträumt aus dem Tram in die Stadt
+      Tram & Bass Zürich lädt dich ein, verträumt aus dem Tram in die Stadt
       hinauszuschauen und dabei 30 einzigartige Musikfahrten zu hören. Auf der
       Musikplattform wird die Vielfalt elektronischer Musik aus Zürich
       audiovisuell präsentiert und für alle zugänglich gemacht.
@@ -4427,7 +4446,7 @@ cities:
           gerne in verschiedene Türen und bringt sich für eine offene und
           lebendige Kulturszene ein. Glücklicherweise trifft er dabei immer
           wieder die richtigen Leute, zuletzt als er Menschen von RTFM von der
-          „Tram und Bass“ Idee erzählte. Der Verein Baustell war schnell zur
+          „Tram & Bass“ Idee erzählte. Der Verein Baustell war schnell zur
           Stell, und das Projekt kam in Fahrt.
 
 
@@ -5976,7 +5995,7 @@ cities:
           seit Jahren anspruchsvolle House- und Techno-Liebhaber in ihren Bann. 
 
 
-          Die Tramlinie 14 führt vom Triemli nach Seebach und spiegelt die Vielfalt Zürichs auf eindrucksvolle Weise wider – mal urban, dann wieder malerisch wie eine Postkarte, fast kitschig schön. Seit 17 Jahren lebe ich mit meiner Familie irgendwo in der Mitte dieser Strecke. Am häufigsten nutze ich sie von der Guggachstrasse zum Hauptbahnhof, gelegentlich auch für Spaziergänge am Uetliberg. Für mich ist die 14er eine cinematische Reise durch Zürich – wie der sphärische Soundtrack, den ich für die „Tram und Bass“-Reihe produziert habe. Abseits meiner Club-Sets wollte ich bewusst Ruhe und Tiefe schaffen, um das morgendliche Pendeln entspannter zu gestalten.
+          Die Tramlinie 14 führt vom Triemli nach Seebach und spiegelt die Vielfalt Zürichs auf eindrucksvolle Weise wider – mal urban, dann wieder malerisch wie eine Postkarte, fast kitschig schön. Seit 17 Jahren lebe ich mit meiner Familie irgendwo in der Mitte dieser Strecke. Am häufigsten nutze ich sie von der Guggachstrasse zum Hauptbahnhof, gelegentlich auch für Spaziergänge am Uetliberg. Für mich ist die 14er eine cinematische Reise durch Zürich – wie der sphärische Soundtrack, den ich für die „Tram & Bass“-Reihe produziert habe. Abseits meiner Club-Sets wollte ich bewusst Ruhe und Tiefe schaffen, um das morgendliche Pendeln entspannter zu gestalten.
 
 
           [Instagram @alex.dallas_](https://www.instagram.com/alex.dallas_/)
@@ -6552,6 +6571,25 @@ cities:
     shortName: CHZ
     name: Chemnitz
     slug: chemnitz
+    sponsorLogos:
+      - logo: /images/uploads/tb-c_00-atomino.svg
+        name: Atomino
+        url: https://www.instagram.com/clubatomino?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==
+      - logo: /images/uploads/tb-c_01-chemnitz2025.svg
+        name: Chemnitz 2025
+        url: https://chemnitz2025.de/
+      - logo: /images/uploads/tb-c_02-stadtchemnitz.svg
+        name: Stadt Chemnitz
+        url: https://www.chemnitz.de/
+      - logo: /images/uploads/tb-c_03-bundesregierung.svg
+        url: https://kulturstaatsminister.de/
+        name: Die Beauftragte der Bundesregierung für Kultur und Medien
+      - logo: /images/uploads/tb-c_04-freistaat.svg
+        url: https://www.sachsen.de/
+        name: Sachsen
+      - logo: /images/uploads/tb-c_05-kulturhauptstadt.svg
+        name: Kulturhauptstadt Europas
+        url: https://www.kmk.org/themen/internationales/eu-zusammenarbeit/kulturhauptstadt-europas.html
     legal: |-
       Atomino e.V.
       Annaberger Str. 73, 09111 Chemnitz

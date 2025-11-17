@@ -31,7 +31,7 @@
     <a href="https://tramundbass.bandcamp.com/">
         <div class="about-container support">
             <p>
-                <span>Support Tram und Bass auf Bandcamp</span>
+                <span>Support Tram & Bass auf Bandcamp</span>
             </p>
             <div class="products">
                 <img class="pic" src="/images/product1.webp" alt="Bandcamp" />
@@ -41,62 +41,50 @@
     </a>
 
     <div class="about-container impressum">
-        <p class="impressum-title">Impressum und Kontakt</p>
-        <p>{$currentCity?.legal}</p>
+        <p class="impressum-title">
+            Inhaltliche und rechtliche Verantwortung für Tram & Bass {$currentCity?.name}
+            wird übernommen von:
+        </p>
+        <p style="padding: 0 10px; border-left: 1px solid white">
+            {$currentCity?.legal}
+        </p>
+        <p style="padding-top: 15px; white-space: normal;">
+            Tram & Bass {$currentCity?.name} wurde ermöglicht durch die Unterstützung
+            von:
+        </p>
+        <div class="sponsors">
+            <div class="unter">
+                {#each $currentCity?.sponsorLogos as sponsor}
+                    <a href={sponsor.url}>
+                        <img
+                            class="pic"
+                            src={sponsor.logo}
+                            alt={sponsor.name}
+                        />
+                    </a>
+                {/each}
+            </div>
+        </div>
     </div>
 
-    <div class="about-container">
+    <div class="about-container love">
         <p>
-            <span
-                >Das Projekt Tram und Bass wurde mit viel Liebe von den Vereinen
-                Baustell und RTFM initiiert und umgesetzt. Unterstützt von:</span
-            >
+            Die Platform Tram & Bass wurde mit viel Liebe von den Vereinen
+            Baustell und RTFM initiiert und umgesetzt.
         </p>
-        <div class="unter">
-            <a href="https://www.stadt-zuerich.ch/fd/de/index.html"
-                ><img
-                    class="pic"
-                    src="/images/uploads/stadt.png"
-                    alt="Stadt Supporter Logo"
-                /></a
+        <p class="love-heart">❤❤❤</p>
+        <p style="margin-top: 5px;">
+            Für allgemeine Anfragen zum Projekt Tram & Bass und bei Interesse an
+            einer Kollaboration schreib uns eine <a
+                class="link"
+                href="mailto:info@trambass.net">Email</a
             >
-            <a href="https://engagement.migros.ch/de/kulturprozent"
-                ><img
-                    class="pic"
-                    src="/images/uploads/migros.png"
-                    alt="Migros Supporter Logo"
-                /></a
+            oder Kontaktiere uns auf
+            <a class="link" href="https://www.instagram.com/tramundbass/"
+                >Instagram</a
             >
-            <a href="https://www.ernst-goehner-stiftung.ch/index.php/de"
-                ><img
-                    class="pic"
-                    src="/images/uploads/ernstgohner.png"
-                    alt="Ernst Göhner Supporter Logo"
-                /></a
-            >
-            <a href="https://www.stadt-zuerich.ch/vbz/de/index.html"
-                ><img
-                    class="pic"
-                    src="/images/uploads/vbz.png"
-                    alt="VBZ Supporter Logo"
-                /></a
-            >
-            <a href="https://temperatio.ch/"
-                ><img
-                    class="pic"
-                    src="/images/uploads/temperatio.png"
-                    alt="Temperatio Supporter Logo"
-                /></a
-            >
-            <a
-                href="https://www.zh.ch/de/direktion-der-justiz-und-des-innern/fachstelle-kultur.html"
-                ><img
-                    class="pic"
-                    src="/images/uploads/kanton.png"
-                    alt="Kanton Supporter Logo"
-                /></a
-            >
-        </div>
+            .
+        </p>
     </div>
 </div>
 
@@ -175,8 +163,49 @@
         gap: 5px;
     }
     .impressum-title {
-        margin-bottom: 5px;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        white-space: normal !important;
         // border-bottom: 1px solid white;
         // width: fit-content;
     }
+    .impressum-title span {
+        margin-bottom: 0;
+    }
+    .sponsors img {
+        filter: brightness(1) invert(1);
+        max-height: 35px;
+        width: auto;
+        margin: 0 auto;
+        border-radius: 0;
+    }
+    .sponsors img:hover {
+        filter: brightness(1) invert(1);
+    }
+    .link {
+        color: black;
+        text-decoration: underline;
+    }
+    .link:hover {
+        color: #8b2062;
+    }
+    .love-heart {
+        text-align: center;
+        transition: 0.2s;
+    }
+    .love:hover .love-heart {
+        color: rgb(227, 0, 0);
+        scale: 1.5;
+    }
+    // .love:hover {
+    //     background-color: rgb(227, 0, 0);
+    //     transition: 0.2s;
+    //     color: white;
+    // }
+    // .love:hover a {
+    //     transition: 0.2s;
+    //     color: white;
+    // }
 </style>
