@@ -6562,6 +6562,15 @@ cities:
       - logo: /images/uploads/tb-c_02-stadtchemnitz.svg
         name: Stadt Chemnitz
         url: https://www.chemnitz.de/
+      - logo: /images/uploads/tb-c_03-bundesregierung.svg
+        url: https://kulturstaatsminister.de/
+        name: Die Beauftragte der Bundesregierung für Kultur und Medien
+      - logo: /images/uploads/tb-c_04-freistaat.svg
+        url: https://www.sachsen.de/
+        name: Sachsen
+      - logo: /images/uploads/tb-c_05-kulturhauptstadt.svg
+        name: Kulturhauptstadt Europas
+        url: https://www.kmk.org/themen/internationales/eu-zusammenarbeit/kulturhauptstadt-europas.html
     legal: |-
       Atomino e.V.
       Annaberger Str. 73, 09111 Chemnitz
