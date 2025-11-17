@@ -41,8 +41,12 @@
     </a>
 
     <div class="about-container impressum">
-        <p class="impressum-title">Impressum und Kontakt</p>
-        <p>{$currentCity?.legal}</p>
+        <p class="impressum-title">
+            Impressum und Kontakt<span>{$currentCity?.name}</span>
+        </p>
+        <p style="padding: 0 10px; border-left: 1px solid white">
+            {$currentCity?.legal}
+        </p>
     </div>
 
     <div class="about-container">
@@ -176,7 +180,13 @@
     }
     .impressum-title {
         margin-bottom: 5px;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
         // border-bottom: 1px solid white;
         // width: fit-content;
+    }
+    .impressum-title span {
+        margin-bottom: 0;
     }
 </style>
