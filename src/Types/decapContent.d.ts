@@ -6,6 +6,7 @@ type City = {
     lng: number;
     color: string;
     legal: string;
+    sponsorLogos: SponsorLogo[];
     description: string;
     lines: Line[];
     map?: string; // SVG content as string

@@ -2875,7 +2875,7 @@ cities:
         />
       </g>
     description: >-
-      Tram und Bass Zürich lädt dich ein, verträumt aus dem Tram in die Stadt
+      Tram & Bass Zürich lädt dich ein, verträumt aus dem Tram in die Stadt
       hinauszuschauen und dabei 30 einzigartige Musikfahrten zu hören. Auf der
       Musikplattform wird die Vielfalt elektronischer Musik aus Zürich
       audiovisuell präsentiert und für alle zugänglich gemacht.
@@ -4446,7 +4446,7 @@ cities:
           gerne in verschiedene Türen und bringt sich für eine offene und
           lebendige Kulturszene ein. Glücklicherweise trifft er dabei immer
           wieder die richtigen Leute, zuletzt als er Menschen von RTFM von der
-          „Tram und Bass“ Idee erzählte. Der Verein Baustell war schnell zur
+          „Tram & Bass“ Idee erzählte. Der Verein Baustell war schnell zur
           Stell, und das Projekt kam in Fahrt.
 
 
@@ -5995,7 +5995,7 @@ cities:
           seit Jahren anspruchsvolle House- und Techno-Liebhaber in ihren Bann. 
 
 
-          Die Tramlinie 14 führt vom Triemli nach Seebach und spiegelt die Vielfalt Zürichs auf eindrucksvolle Weise wider – mal urban, dann wieder malerisch wie eine Postkarte, fast kitschig schön. Seit 17 Jahren lebe ich mit meiner Familie irgendwo in der Mitte dieser Strecke. Am häufigsten nutze ich sie von der Guggachstrasse zum Hauptbahnhof, gelegentlich auch für Spaziergänge am Uetliberg. Für mich ist die 14er eine cinematische Reise durch Zürich – wie der sphärische Soundtrack, den ich für die „Tram und Bass“-Reihe produziert habe. Abseits meiner Club-Sets wollte ich bewusst Ruhe und Tiefe schaffen, um das morgendliche Pendeln entspannter zu gestalten.
+          Die Tramlinie 14 führt vom Triemli nach Seebach und spiegelt die Vielfalt Zürichs auf eindrucksvolle Weise wider – mal urban, dann wieder malerisch wie eine Postkarte, fast kitschig schön. Seit 17 Jahren lebe ich mit meiner Familie irgendwo in der Mitte dieser Strecke. Am häufigsten nutze ich sie von der Guggachstrasse zum Hauptbahnhof, gelegentlich auch für Spaziergänge am Uetliberg. Für mich ist die 14er eine cinematische Reise durch Zürich – wie der sphärische Soundtrack, den ich für die „Tram & Bass“-Reihe produziert habe. Abseits meiner Club-Sets wollte ich bewusst Ruhe und Tiefe schaffen, um das morgendliche Pendeln entspannter zu gestalten.
 
 
           [Instagram @alex.dallas_](https://www.instagram.com/alex.dallas_/)
