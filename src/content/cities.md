@@ -6606,7 +6606,7 @@ cities:
 
 
       Die Straßenbahnfahrten zeigen, wie breit die elektronische Musik hier klingt: mal energetisch, mal atmosphärisch, mal experimentell – aber immer auch Chemnitz-Style.
-    released: false
+    released: true
     lat: 50.8278
     stations:
       - name: Schönau
