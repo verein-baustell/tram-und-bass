@@ -80,17 +80,31 @@
     console.log("tempLine", tempLine);
 
     let videoIsReady = false;
+    let currentLineId: string | undefined = undefined;
+
     function onPlayerReady(event: any) {
-        if (event.target) {
+        if (event.target && $currentLine?.videoUrl) {
             console.log("Player is ready");
             muxVideoObject.set(event.target);
-            // only register the event listeners once
-            if (!videoIsReady) {
+            // only register the event listeners once per line
+            if (!videoIsReady || currentLineId !== $currentLine?.id) {
                 videoIsReady = true;
+                currentLineId = $currentLine?.id;
                 registerMuxEventListeners();
             }
         }
     }
+
+    // Clear muxVideoObject when currentLine becomes invalid
+    $effect(() => {
+        if (!$currentLine || !$currentLine.videoUrl) {
+            console.log("Clearing muxVideoObject - no valid currentLine");
+            muxVideoObject.set(null);
+            videoIsReady = false;
+            currentLineId = undefined;
+            videoIsPlaying.set(false);
+        }
+    });
 
     // Set `currentLine` when consent is granted (layout handles the UI and consent checking)
     import { browser } from "$app/environment";
@@ -137,6 +151,9 @@
 
     onMount(() => {
         // consoleInit();
+        // Reset video ready state on mount to ensure fresh initialization
+        videoIsReady = false;
+        currentLineId = undefined;
         initFinalState();
         readLineFromPath();
 

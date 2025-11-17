@@ -9,6 +9,7 @@
         cookieConsent,
         isPlayButtonOn,
         videoIsSeeking,
+        currentLine,
     } from "../store";
     import ThreeJsComponent from "./ThreeJSComponent.svelte";
 </script>
@@ -25,7 +26,7 @@
         </div>
     {/if}
 
-    {#if ($currentTime == 0 && !$videoIsPlaying && !$videoIsLoading && $cookieConsent) || $isPlayButtonOn}
+    {#if $currentLine?.videoUrl !== undefined && (($currentTime == 0 && !$videoIsPlaying && !$videoIsLoading && $cookieConsent) || $isPlayButtonOn)}
         <ThreeJsComponent></ThreeJsComponent>
     {/if}
 
