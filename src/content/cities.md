@@ -6552,6 +6552,10 @@ cities:
     shortName: CHZ
     name: Chemnitz
     slug: chemnitz
+    sponsorLogos:
+      - logo: /images/uploads/tb-c_00-atomino.svg
+        name: Atomino
+        url: https://www.instagram.com/clubatomino?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==
     legal: |-
       Atomino e.V.
       Annaberger Str. 73, 09111 Chemnitz
