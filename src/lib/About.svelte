@@ -199,6 +199,10 @@
         color: rgb(227, 0, 0);
         scale: 1.5;
     }
+    .love a:hover {
+        transition: 0.2s;
+        color: rgb(227, 0, 0);
+    }
     // .love:hover {
     //     background-color: rgb(227, 0, 0);
     //     transition: 0.2s;
