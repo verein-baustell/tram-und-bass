@@ -6556,6 +6556,12 @@ cities:
       - logo: /images/uploads/tb-c_00-atomino.svg
         name: Atomino
         url: https://www.instagram.com/clubatomino?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==
+      - logo: /images/uploads/tb-c_01-chemnitz2025.svg
+        name: Chemnitz 2025
+        url: https://chemnitz2025.de/
+      - logo: /images/uploads/tb-c_02-stadtchemnitz.svg
+        name: Stadt Chemnitz
+        url: https://www.chemnitz.de/
     legal: |-
       Atomino e.V.
       Annaberger Str. 73, 09111 Chemnitz
