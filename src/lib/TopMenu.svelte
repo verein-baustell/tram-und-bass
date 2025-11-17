@@ -16,6 +16,7 @@
         currentCityShortName,
         isMobile,
         videoIsLoading,
+        isImmersive,
     } from "../store";
     import { addState } from "../utils/stateManager";
     export let aboutContent: string;
@@ -36,57 +37,56 @@
     let currentComponent = CityList; // Default to CityList component
 </script>
 
-<!-- {#if $currentLine} -->
-<div class="topMenu--cont">
-    <div
-        id="top-menu"
-        use:clickoutside
-        on:clickoutside={() => {
-            if ($isTopOpen && currentComponent === Map) {
-                return;
-            }
-            isTopOpen.set(false);
-        }}
-    >
-        <nav>
-            {#each menuEntries as { name, component } (name)}
-                <Button
-                    isActive={currentComponent === component && $isTopOpen}
-                    on:click={() => {
-                        if ($isTopOpen && currentComponent === component) {
+{#if !$isImmersive}
+    <div class="topMenu--cont">
+        <div
+            id="top-menu"
+            use:clickoutside
+            on:clickoutside={() => {
+                if ($isTopOpen && currentComponent === Map) {
+                    return;
+                }
+                isTopOpen.set(false);
+            }}
+        >
+            <nav>
+                {#each menuEntries as { name, component } (name)}
+                    <Button
+                        isActive={currentComponent === component && $isTopOpen}
+                        on:click={() => {
+                            if ($isTopOpen && currentComponent === component) {
+                                isTopOpen.set(false);
+                                return;
+                            }
+                            currentComponent = component;
+                            isTopOpen.set(true);
+                        }}
+                    >
+                        {name}
+                    </Button>
+                {/each}
+                {#if $isTopOpen}
+                    <svelte:component
+                        this={currentComponent}
+                        onClick={(clickedLine) => {
+                            addState();
+                            if (clickedLine.name !== $currentLine?.name) {
+                                videoIsLoading.set(true);
+                            }
                             isTopOpen.set(false);
-                            return;
-                        }
-                        currentComponent = component;
-                        isTopOpen.set(true);
-                    }}
-                >
-                    {name}
-                </Button>
-            {/each}
-            {#if $isTopOpen}
-                <svelte:component
-                    this={currentComponent}
-                    onClick={(clickedLine) => {
-                        addState();
-                        if (clickedLine.name !== $currentLine?.name) {
-                            videoIsLoading.set(true);
-                        }
-                        isTopOpen.set(false);
-                        isPlayButtonOn.set(false);
-                        setTimeout(() => {
-                            currentLine.set(clickedLine);
-                        }, 500);
-                    }}
-                    lines={$allLines}
-                    {aboutContent}
-                />
-            {/if}
-        </nav>
+                            isPlayButtonOn.set(false);
+                            setTimeout(() => {
+                                currentLine.set(clickedLine);
+                            }, 500);
+                        }}
+                        lines={$allLines}
+                        {aboutContent}
+                    />
+                {/if}
+            </nav>
+        </div>
     </div>
-</div>
-
-<!-- {/if} -->
+{/if}
 
 <style lang="scss" scoped>
     .topMenu--cont {

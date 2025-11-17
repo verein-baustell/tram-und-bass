@@ -63,6 +63,9 @@
         if (!browser) return;
 
         const cities = [];
+        const isMobile = isMobileDevice();
+        const pointSize = isMobile ? 0.75 : 0.5;
+        const initialAltitudeValue = isMobile ? 0.75 : initialAltitude;
 
         citiesContent.cities.forEach((city) => {
             cities.push({
@@ -71,7 +74,7 @@
                 name: city.name,
                 released: city.released,
                 url: `/${city.slug}`,
-                size: 0.5,
+                size: pointSize,
                 color: city.color,
             });
         });
@@ -98,7 +101,7 @@
                     {
                         lat: initialLat,
                         lng: initialLng,
-                        altitude: initialAltitude,
+                        altitude: initialAltitudeValue,
                     },
                     0
                 ); // Set transition duration to 0 for immediate positioning
@@ -387,7 +390,7 @@
         top: 0;
         left: 0;
         width: 100vw;
-        height: 100vh;
+        height: 100dvh;
         overflow: hidden;
         background-color: #000000;
     }
@@ -455,6 +458,7 @@
         align-items: center;
         justify-content: center;
         padding: 20px;
+        pointer-events: none;
     }
 
     .mobile-popup {
@@ -465,6 +469,7 @@
         width: 100%;
         position: relative;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        pointer-events: auto;
     }
 
     .mobile-popup-close {

@@ -166,22 +166,20 @@
 
         // add a event listener for mouse movement to animate the panning of the video by changing the left css property
         const mousePan = (e: MouseEvent) => {
+            const videoContainer = document.getElementById("video-container");
             if (get(videoIsPlaying) && isImmersiveValue) {
-                const videoContainer =
-                    document.getElementById("video-container");
                 if (videoContainer) {
                     if (extraWidth > 0) {
                         const percentage = e.clientX / window.innerWidth - 0.5; // Range from -0.5 to +0.5
                         const translateX = -percentage * extraWidth;
-                        videoContainer.style.transition = "";
                         videoContainer.style.setProperty(
                             "--translateX",
                             `${translateX}px`
                         );
-                    } else {
-                        videoContainer.style.setProperty("--translateX", "0px");
                     }
                 }
+            } else {
+                videoContainer?.style.setProperty("--translateX", "0px");
             }
         };
         if (!get(isMobile)) {
@@ -339,7 +337,9 @@
 
 <style lang="scss">
     #video-container {
-        transition: filter 0.5s ease-in-out;
+        transition:
+            transform 0.35s ease-out,
+            filter 0.5s ease-in-out;
         // &.isLoading {
         //   filter: blur(24px);
         // }
