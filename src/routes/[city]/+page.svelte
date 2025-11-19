@@ -103,6 +103,7 @@
             videoIsReady = false;
             currentLineId = undefined;
             videoIsPlaying.set(false);
+            currentTime.set(0);
         }
     });
 

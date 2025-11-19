@@ -74,7 +74,7 @@
                                 videoIsLoading.set(true);
                             }
                             isTopOpen.set(false);
-                            isPlayButtonOn.set(false);
+                            // isPlayButtonOn.set(false);
                             setTimeout(() => {
                                 currentLine.set(clickedLine);
                             }, 500);
