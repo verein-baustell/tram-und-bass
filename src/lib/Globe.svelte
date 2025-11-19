@@ -64,7 +64,7 @@
 
         const cities = [];
         const isMobile = isMobileDevice();
-        const pointSize = isMobile ? 0.75 : 0.5;
+        const pointSize = isMobile ? 0.9 : 0.5;
         const initialAltitudeValue = isMobile ? 0.75 : initialAltitude;
 
         citiesContent.cities.forEach((city) => {
