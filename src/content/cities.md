@@ -4567,7 +4567,7 @@ cities:
           der alle zusammen eine musikalische Reise antraten.
 
 
-          Jeden Sonntagabend machte sich Tatana auf den Weg von Wollishofen nach Oerlikon, stets begleitet von der Vorfreude auf eine Nacht voller Musik. Die Reise mit der Tramlinie 7 war für sie mehr als nur eine Fahrt; es war eine Reise in eine Welt, in der sie frei war, ihre Kunst auszudrücken und zu experimentieren. Die Fahrten waren auch Momente der Vorbereitung und Reflexion. Sie stimmten Tatana auf die Nacht ein und waren ein Ritual, das sie bis heute in Ehren haltet. Durch die Tramlinie 7 und die Nächte im Oxa wurde Tatana nicht nur zu einer besseren Künstlerin, sondern auch zu einer Botschafterin der Trance-Musik, die bis heute Menschen weltweit inspiriert.[](https://www.instagram.com/djtatana/)
+          Jeden Sonntagabend machte sich Tatana auf den Weg von Wollishofen nach Oerlikon, stets begleitet von der Vorfreude auf eine Nacht voller Musik. Die Reise mit der Tramlinie 7 war für sie mehr als nur eine Fahrt; es war eine Reise in eine Welt, in der sie frei war, ihre Kunst auszudrücken und zu experimentieren. Die Fahrten waren auch Momente der Vorbereitung und Reflexion. Sie stimmten Tatana auf die Nacht ein und waren ein Ritual, das sie bis heute in Ehren haltet. Durch die Tramlinie 7 und die Nächte im Oxa wurde Tatana nicht nur zu einer besseren Künstlerin, sondern auch zu einer Botschafterin der Trance-Musik, die bis heute Menschen weltweit inspiriert.
 
 
           [Instagram @djtatana](https://www.instagram.com/djtatana/)
@@ -4787,13 +4787,13 @@ cities:
           I first approached my mix for the tram line 8, which runs past my house, by making a field recording on a Sunday night. With this recording as a basis, it became clear in which tempo the music should be, and which moods should be present in the mix. The tracks were layered on top of each other in several rounds, adding detail, density, and chaos step by step. Melodic fragments echo both the architecture of the city, as well as the characteristics of the places seen through the rear window.
 
 
-          \[Instagram @ink.panique](www.instagram.com/ink.panique)
+          [Instagram @ink.panique](www.instagram.com/ink.panique)
 
 
-          \[Soundcloud](www.soundcloud.com/ink_panique)
+          [Soundcloud](www.soundcloud.com/ink_panique)
 
 
-          \[Bandcamp](https://ousooo.bandcamp.com)
+          [Bandcamp](https://ousooo.bandcamp.com)
         videoUrl: 00UekMawegb7ReLeFW01yAeEklMocDIhX2v500i1s2GWCA
         releaseDate: 2025-01-01T00:00:00.000Z
         id: ""
@@ -5686,10 +5686,10 @@ cities:
           There's a chaotic ride waiting inside the bubble of these headphones. One that clashes with Zurich's unbreakable drive for law and order, its neat separation of green grass and gray concrete and its business administration type urban planning. Join me on the overstimulating side and listen, as familiar becomes stranger around you. But most importantly, never make eye contact!!
 
 
-          \[Soundcloud](https://soundcloud.com/endobliss)
+          [Soundcloud](https://soundcloud.com/endobliss)
 
 
-          \[Bandcamp](https://endlessbazaar.bandcamp.com/track/endobliss-golden-era-glitch)
+          [Bandcamp](https://endlessbazaar.bandcamp.com/track/endobliss-golden-era-glitch)
         videoUrl: ARFENf802JXxsR00N6bQpPTNVyw9smV2vof7Ia6EVcZ7Q
         releaseDate: 2024-11-21T05:45:00.000Z
         id: ""
@@ -6470,7 +6470,7 @@ cities:
           Welt von elektronischen Klängen zu tanzen.
 
 
-          Tram Nr. 17 ist für mich wie die kleine Schwester vom Tram Nr. 13. Beide enden beim Werdhölzli. Beim Wort Werdhölzli bekomme ich jedes mal einen Back-Flash an die Zeiten wo sich Letten, GZ Wollishofen und Autobahnbrücke Schlieren die Sonntage im Sommer geteilt haben um am jehweiligen Ort abwechselnd einen Sonntag Outdoor Afterhour Raver zu veranstalten. Somit ist man jedes dritte Wochenende im Sommer jeweils mit dem Tram 17 oder Tram 13 zum Werdhölzli gefahren und ab der Endstation danach der Limmat entlang bis zur Autobahnbrücke Schlieren zur Sonntags Veranstaltung, draussen im Freien an der Schönen Limmat, gelaufen. Mehr Sommer ging nicht! Danke für die schöne Erinnerung an diese Zeiten und FTP, dass dies heutzutage nicht mehr möglich ist, wegen diversen Überregulierungen in jedem Rave-Bereich. Das war Kulturbetrieb auf eine schöne sommerliche Art und Kultur ist für unsere Zwinglistadt mehr als wichtig. Aus diesem Grund habe ich auch bei Tram & Bass mitgemacht, da dies genau so eine schöne Kulturförderung für diese schöne Stadt ist. Somit schliesst sich ein schöner Kreis für mich. „Macht doch Sinn, oder nöd?“[](https://www.instagram.com/andreasramos_sihlrec/)
+          Tram Nr. 17 ist für mich wie die kleine Schwester vom Tram Nr. 13. Beide enden beim Werdhölzli. Beim Wort Werdhölzli bekomme ich jedes mal einen Back-Flash an die Zeiten wo sich Letten, GZ Wollishofen und Autobahnbrücke Schlieren die Sonntage im Sommer geteilt haben um am jehweiligen Ort abwechselnd einen Sonntag Outdoor Afterhour Raver zu veranstalten. Somit ist man jedes dritte Wochenende im Sommer jeweils mit dem Tram 17 oder Tram 13 zum Werdhölzli gefahren und ab der Endstation danach der Limmat entlang bis zur Autobahnbrücke Schlieren zur Sonntags Veranstaltung, draussen im Freien an der Schönen Limmat, gelaufen. Mehr Sommer ging nicht! Danke für die schöne Erinnerung an diese Zeiten und FTP, dass dies heutzutage nicht mehr möglich ist, wegen diversen Überregulierungen in jedem Rave-Bereich. Das war Kulturbetrieb auf eine schöne sommerliche Art und Kultur ist für unsere Zwinglistadt mehr als wichtig. Aus diesem Grund habe ich auch bei Tram & Bass mitgemacht, da dies genau so eine schöne Kulturförderung für diese schöne Stadt ist. Somit schliesst sich ein schöner Kreis für mich. „Macht doch Sinn, oder nöd?“
 
 
           [Instagram @andreasramos_sihlrec](https://www.instagram.com/andreasramos_sihlrec/)
