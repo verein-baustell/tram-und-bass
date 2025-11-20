@@ -69,5 +69,7 @@
         justify-content: center;
         margin-top: 40px;
         cursor: pointer;
+        background: transparent;
+        border: none;
     }
 </style>
