@@ -63,6 +63,7 @@
         height: 28px;
         padding: 0px 20px;
         cursor: inherit;
+        width: 100%;
     }
 
     button {
