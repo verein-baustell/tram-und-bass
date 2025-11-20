@@ -26,6 +26,7 @@
     let mobilePopupData: any = null;
 
     let handleResize: (() => void) | null = null;
+    let autoRotateResumeTimeout: ReturnType<typeof setTimeout> | null = null;
 
     // Check if device is mobile/touch
     function isMobileDevice() {
@@ -36,6 +37,32 @@
     function closeMobilePopup() {
         mobilePopupVisible = false;
         mobilePopupData = null;
+    }
+
+    function stopAutoRotateTemporarily() {
+        if (!globe?.controls()) return;
+
+        globe.controls().autoRotate = false;
+
+        if (autoRotateResumeTimeout) {
+            clearTimeout(autoRotateResumeTimeout);
+            autoRotateResumeTimeout = null;
+        }
+    }
+
+    function scheduleAutoRotateResume() {
+        if (!globe?.controls() || !enableAutoRotate) return;
+
+        if (autoRotateResumeTimeout) {
+            clearTimeout(autoRotateResumeTimeout);
+        }
+
+        autoRotateResumeTimeout = setTimeout(() => {
+            if (globe?.controls() && enableAutoRotate) {
+                globe.controls().autoRotate = true;
+                globe.controls().autoRotateSpeed = autoRotateSpeed;
+            }
+        }, 10000);
     }
 
     // Function to update tooltip position based on hovered point location
@@ -62,20 +89,34 @@
         // Only run on client side
         if (!browser) return;
 
-        const cities = [];
+        const cityPoints: any[] = [];
         const isMobile = isMobileDevice();
-        const pointSize = isMobile ? 0.9 : 0.5;
-        const initialAltitudeValue = isMobile ? 0.75 : initialAltitude;
+        const visiblePointSize = isMobile ? 0.32 : 0.32;
+        const hitPointSize = isMobile ? 1.2 : 0.7;
+        const initialAltitudeValue = isMobile ? 0.5 : initialAltitude;
 
         citiesContent.cities.forEach((city) => {
-            cities.push({
+            const baseData = {
                 lat: city.lat,
                 lng: city.lng,
                 name: city.name,
                 released: city.released,
                 url: `/${city.slug}`,
-                size: pointSize,
+                visibleSize: visiblePointSize,
+                hitSize: hitPointSize,
                 color: city.color,
+            };
+
+            // Visible marker
+            cityPoints.push({
+                ...baseData,
+                role: "visible",
+            });
+
+            // Invisible hit target (bigger)
+            cityPoints.push({
+                ...baseData,
+                role: "hit",
             });
         });
 
@@ -149,13 +190,19 @@
             globe
                 .lights([new THREE.AmbientLight(0xffffff, 10)])
                 .backgroundColor("#000000")
-                .pointsData(cities)
+                .pointsData(cityPoints)
                 .pointLat("lat")
                 .pointLng("lng")
-                .pointColor("color")
+                .pointColor((point: any) =>
+                    point.role === "hit" ? "rgba(0,0,0,0)" : point.color
+                )
                 .pointAltitude(0.011)
-                .pointRadius("size")
                 .pointResolution(100)
+                .pointRadius((point: any) =>
+                    point.role === "hit"
+                        ? (point.hitSize ?? hitPointSize)
+                        : (point.visibleSize ?? visiblePointSize)
+                )
                 .pointLabel(() => null)
                 .onPointHover((point: any) => {
                     // Only show tooltip on desktop devices
@@ -282,10 +329,18 @@
 
             window.addEventListener("resize", handleResize);
 
+            const controls = globe.controls();
+
             // Configure auto-rotate if enabled
-            if (enableAutoRotate) {
-                globe.controls().autoRotate = true;
-                globe.controls().autoRotateSpeed = autoRotateSpeed;
+            if (enableAutoRotate && controls) {
+                controls.autoRotate = true;
+                controls.autoRotateSpeed = autoRotateSpeed;
+            }
+
+            // Detect manual interaction to pause auto-rotate temporarily
+            if (controls) {
+                controls.addEventListener("start", stopAutoRotateTemporarily);
+                controls.addEventListener("end", scheduleAutoRotateResume);
             }
 
             // Disable zoom
@@ -300,6 +355,18 @@
             if (handleResize && typeof window !== "undefined") {
                 window.removeEventListener("resize", handleResize);
                 handleResize = null;
+            }
+            if (globe?.controls()) {
+                globe
+                    .controls()
+                    .removeEventListener("start", stopAutoRotateTemporarily);
+                globe
+                    .controls()
+                    .removeEventListener("end", scheduleAutoRotateResume);
+            }
+            if (autoRotateResumeTimeout) {
+                clearTimeout(autoRotateResumeTimeout);
+                autoRotateResumeTimeout = null;
             }
             // Mousemove listener removed (no longer used for tooltip positioning)
         };
@@ -327,6 +394,10 @@
             } catch (error) {
                 console.warn("Error disposing globe:", error);
             }
+        }
+        if (autoRotateResumeTimeout) {
+            clearTimeout(autoRotateResumeTimeout);
+            autoRotateResumeTimeout = null;
         }
     });
 </script>
