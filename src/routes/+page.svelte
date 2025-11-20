@@ -3,7 +3,9 @@
     import { cookieConsent } from "../store";
     import ConsentBanner from "$lib/ConsentBanner.svelte";
     import { attributes as citiesContent } from "../content/cities.md";
+    import { attributes as aboutContent } from "../content/about.md";
     import { goto } from "$app/navigation";
+    import SvelteMarkdown from "svelte-markdown";
     let noConsent = false;
 
     $: cookieConsent.subscribe((value) => {
@@ -44,6 +46,9 @@
                 autoRotateSpeed={0.1}
             />
         </div>
+        <div class="about-content">
+            <SvelteMarkdown source={aboutContent?.aboutText} />
+        </div>
     {/if}
 </main>
 
@@ -60,6 +65,7 @@
         max-width: 800px;
         z-index: 1;
         position: relative;
+        transition: transform 0.2s ease-in-out;
         /* top: 40px; */
     }
     .title-logo-button {
@@ -71,5 +77,39 @@
         cursor: pointer;
         background: transparent;
         border: none;
+    }
+    .title-logo:hover {
+        transform: scale(1.05);
+    }
+    .about-content {
+        width: 90%;
+        max-width: 600px;
+        padding: 10px;
+        z-index: 1;
+        background-color: #ff6313;
+        border: 2px solid black;
+        border-radius: 0.5em;
+        padding: 1em;
+        text-align: center;
+        position: absolute;
+        bottom: 40px;
+        transition: transform 0.2s ease-in-out;
+    }
+    .about-content:hover {
+        transform: scale(1.05);
+    }
+    :global(.about-content p) {
+        font-family: Rene;
+        font-size: 0.9em;
+        font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+        .about-content {
+            bottom: 20px;
+        }
+        :global(.about-content p) {
+            font-size: 0.8em;
+        }
     }
 </style>
