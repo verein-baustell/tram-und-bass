@@ -7217,8 +7217,13 @@ cities:
         number: 4
         name: Hauptbahnhof
         artistName: KAINAT
-        artistAboutText: |-
-          xxx
+        artistAboutText: >-
+          Kainat bringt Rap, Baile-Rhythmen und elektronische Elemente zusammen,
+          ohne dabei laut wirken zu müssen. Ihre Sets leben von direkter
+          Energie, klaren Grooves und einem Flow, der einfach natürlich
+          funktioniert. Sie ist Resident im Club Atomino und im Chemnitzer
+          Nachtleben nicht mehr wegzudenken.
+
 
           [Instagram @kainatm__](<https://www.instagram.com/kainatm__ >)
         videoUrl: dJgqkL1HvnrzTPrBzd00nIdBhXWoN0052lf2Wp1ODcABU
