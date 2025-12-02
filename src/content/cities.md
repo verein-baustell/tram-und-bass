@@ -6933,8 +6933,6 @@ cities:
 
           In seinem Atelier in Chemnitz integriert er Erfahrungen und Impulse in sein kreatives Schaffen. Seine Herangehensweise steht für Offenheit, Eigeninitiative und die Fähigkeit, aus Begegnungen Neues entstehen zu lassen.
 
-          [](<https://www.instagram.com/bela_bender/ >)
-
 
           [Instagram @bela_bender](<https://www.instagram.com/bela_bender/ >)
 
@@ -7226,7 +7224,7 @@ cities:
 
 
           [Instagram @kainatm__](<https://www.instagram.com/kainatm__ >)
-        videoUrl: dJgqkL1HvnrzTPrBzd00nIdBhXWoN0052lf2Wp1ODcABU
+        videoUrl: p001668835lc3yxO5ZVJoPsXR4T6IUcagesBUq7mItyg
         releaseDate: 2025-11-25T18:00:00.000+01:00
         id: ""
         timeStamps:
