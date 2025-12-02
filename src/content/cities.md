@@ -6916,19 +6916,24 @@ cities:
         name: Brückenstraße
         artistName: Bela Bender
         artistAboutText: >-
-          Béla Bender steht für einen experimentellen Stil, der durch
-          autodidaktisches Lernen, den Mut zum Einfachen und die Bereitschaft,
-          Neues zu wagen, geprägt ist. Als Künstler und Musikproduzent hat er
-          sich das Klavierspielen eigenständig beigebracht und seine Fähigkeiten
-          kontinuierlich erweitert. Seine Arbeiten zeichnen sich durch eine
-          klare, mutige Ästhetik aus, die hybride Klangwelten erforscht. Er hat
-          vielfältige Interessen in verschiedenen künstlerischen Bereichen.
+          Béla Bender verkörpert einen experimentellen Stil, geprägt von
+          autodidaktischem Lernen, Mut zum Minimalismus und der Bereitschaft,
+          Neues zu wagen. Als Künstler und Musikproduzent brachte er sich das
+          Klavierspielen selbst bei und erweitert seine Fähigkeiten
+          kontinuierlich. Seine Werke stehen für eine klare Ästhetik und
+          erforschen hybride Klangwelten. Dabei webt er stets sein eigenes
+          ästhetisches Empfinden in seine Projekte ein.
 
 
-          Béla, geboren in Chemnitz, studiert Bildende Kunst an der HfBK Dresden und hat 2025 den Projektraum momentum gegründet, der sich zu einer bedeutenden Plattform entwickelt hat, die die kulturelle Landschaft der Stadt prägt. momentum ist mehr als nur ein Raum; es ist ein Ort zum Vernetzen, Experimentieren und zur aktiven Förderung von Verbindung – ähnlich einer Straßenbahnfahrt, auf der jeder mit seinen Gedanken, seiner Musik und seinen Gesprächen unterwegs ist. Béla hat die Musik selbst produziert – ein Symbol für das einfache Machen und den Mut, eigene Wege zu gehen.
+
+          Béla ist in vielen künstlerischen Bereichen tätig. Geboren in Chemnitz, studiert er Bildende Kunst an der HfBK Dresden. 2025 gründete er den Projektraum momentum, der sich zu einer künstlerischen Plattform entwickelte und die kulturelle Landschaft der Stadt prägt. momentum ist mehr als eine Veranstaltungsfläche; es ist ein Ort des Netzwerkens, des Experimentierens und der aktiven Förderung von Verbindungen.
 
 
-          Béla hat ein Atelier in Chemnitz, in dem er seine Erfahrungen und Impulse aus der Stadt in sein kreatives Schaffen integriert. Seine Herangehensweise steht für Offenheit, Eigeninitiative und die Fähigkeit, Neues aus Begegnungen entstehen zu lassen.
+
+
+          In seinem Atelier in Chemnitz integriert er Erfahrungen und Impulse in sein kreatives Schaffen. Seine Herangehensweise steht für Offenheit, Eigeninitiative und die Fähigkeit, aus Begegnungen Neues entstehen zu lassen.
+
+          [](<https://www.instagram.com/bela_bender/ >)
 
 
           [Instagram @bela_bender](<https://www.instagram.com/bela_bender/ >)
