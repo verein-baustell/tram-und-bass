@@ -178,7 +178,6 @@
                 isMobile.set(false);
             }
             extraWidth = videoWidth - window.innerWidth;
-            console.log("videoWrapperWidth", videoWrapperWidth, "videoWrapperHeight", videoWrapperHeight);
         };
         adjustDimensionsOfVideoWrapper();
         window.addEventListener("resize", adjustDimensionsOfVideoWrapper);
