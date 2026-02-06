@@ -2,6 +2,7 @@ import { derived, get, writable, type Readable } from "svelte/store";
 import { attributes as content } from "../content/cities.md";
 import { hmsToSeconds } from "../utils/timeFormatter";
 import { goto } from "$app/navigation";
+import { browser } from "$app/environment";
 import changeFaviconToLine from "../utils/changeFaviconToLine";
 import {
     getCityNameFromSlug,
@@ -14,10 +15,9 @@ import {
 const localStorageKey = "devToolsState";
 
 // Check if there's an existing state in local storage
-const storedState =
-    typeof localStorage != "undefined"
-        ? localStorage.getItem(localStorageKey)
-        : "false";
+const storedState = browser
+    ? localStorage.getItem(localStorageKey)
+    : null;
 
 // Define the initial state for the store
 const initialState = storedState
@@ -29,13 +29,12 @@ export const devToolsState = writable<DevToolsState>(initialState);
 
 // Subscribe to the store and save any changes to local storage
 devToolsState.subscribe((value) => {
-    typeof localStorage != "undefined"
-        ? localStorage.setItem(localStorageKey, JSON.stringify(value))
-        : "false";
+    if (browser) {
+        localStorage.setItem(localStorageKey, JSON.stringify(value));
+    }
 });
 
 // Load Cookie
-import { browser } from "$app/environment";
 // Check if consent has already been given when initializing
 const initialConsent = browser
     ? document.cookie.includes("cookieConsent=true")
@@ -290,10 +289,9 @@ muxVideoObject.subscribe((muxPlayer) => {
 const historyKey = "history";
 
 // Check if there's an existing state in local storage
-const storedHistory =
-    typeof localStorage != "undefined"
-        ? localStorage.getItem(historyKey)
-        : "[]";
+const storedHistory = browser
+    ? localStorage.getItem(historyKey)
+    : null;
 
 // Define the initial state for the store
 const initialHistory = storedHistory ? JSON.parse(storedHistory) : [];
@@ -303,7 +301,7 @@ export const history = writable<State[]>(initialHistory);
 
 // Subscribe to the store and save any changes to local storage
 history.subscribe((value) => {
-    typeof localStorage != "undefined"
-        ? localStorage.setItem(historyKey, JSON.stringify(value))
-        : "[]";
+    if (browser) {
+        localStorage.setItem(historyKey, JSON.stringify(value));
+    }
 });
