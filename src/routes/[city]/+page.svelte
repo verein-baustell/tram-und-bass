@@ -35,11 +35,11 @@
     import { hmsToSeconds } from "../../utils/timeFormatter";
     import consoleInit from "../../utils/consoleInit";
 
-    let videoWrapperWidth = "100%";
-    let videoWrapperHeight = "100%";
-    let videoWidth = 0;
-    let videoHeight = 0;
-    let extraWidth = 0;
+    let videoWrapperWidth = $state("100%");
+    let videoWrapperHeight = $state("100%");
+    let videoWidth = $state(0);
+    let videoHeight = $state(0);
+    let extraWidth = $state(0);
     // DevTools and cookie consent are now handled globally in the layout
     let showSplashScreen = true;
 
@@ -178,6 +178,7 @@
                 isMobile.set(false);
             }
             extraWidth = videoWidth - window.innerWidth;
+            console.log("videoWrapperWidth", videoWrapperWidth, "videoWrapperHeight", videoWrapperHeight);
         };
         adjustDimensionsOfVideoWrapper();
         window.addEventListener("resize", adjustDimensionsOfVideoWrapper);
@@ -323,7 +324,7 @@
     <div
         id="video-container"
         class={$videoIsLoading ? "" : "isLoading"}
-        style={`height: ${videoWrapperHeight};`}
+        style={`width: ${videoWrapperWidth}; height: ${videoWrapperHeight};`}
     >
         {#if $currentLine?.videoUrl}
             <mux-player
