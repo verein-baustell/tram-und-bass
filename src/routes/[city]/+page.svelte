@@ -23,6 +23,7 @@
         nextStation,
         cookieConsent,
         currentCitySlug,
+        isMuted,
     } from "../../store";
     import registerMuxEventListeners from "../../utils/registerMuxEventListeners";
     import SplashScreen from "$lib/SplashScreen.svelte";
@@ -331,7 +332,7 @@
                 controls={false}
                 autoplay={false}
                 loop={false}
-                muted={true}
+                muted={$isMuted}
                 style="height: 100%; --controls: none;"
                 metadata-video-title={$currentLine?.name || ""}
                 metadata-video-id={$currentLine?.id || ""}
